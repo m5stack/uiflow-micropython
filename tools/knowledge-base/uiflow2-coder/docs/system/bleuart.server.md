@@ -1,18 +1,11 @@
-<!-- .. currentmodule:: bleuart -->
 
 # class BLEUARTServer
-
-<!-- .. include:: ../refs/system.bleuart.server.ref -->
 
 BLEUARTServer class is a BLE UART server, which can be connected to by a BLE UART client and communicate with it.
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -55,67 +48,48 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_bleuart_server_example.m5f2|
 
 ## Constructors
 
-<!-- .. class:: bleuart.BLEUARTServer(name="", rxbuf=100, verbose=False) -->
+### `class bleuart.BLEUARTServer(name="", rxbuf=100, verbose=False)`
 
     Create a BLE UART server.
 
-    :param str name: The name of the ble device.
-    :param int rxbuf: The size of the receive buffer.
-    :param bool verbose: Enable verbose output.
-
-    UIFLOW2:
+    - Parameter `name` (`str`): The name of the ble device.
+    - Parameter `rxbuf` (`int`): The size of the receive buffer.
+    - Parameter `verbose` (`bool`): Enable verbose output.
 
 ## Methods
 
-<!-- .. method:: BLEUARTServer.irq() -->
+### `BLEUARTServer.irq()`
 
     The irq of the ble uart server.
 
-<!-- .. method:: BLEUARTServer.any() -> int -->
+### `BLEUARTServer.any() -> int`
 
     Check if there is any data in the receive buffer.
 
-    :return: The number of bytes in the receive buffer.
+    - Returns: The number of bytes in the receive buffer.
 
-    UIFLOW2:
-
-<!-- .. method:: BLEUARTServer.read(sz=None) -> bytes -->
+### `BLEUARTServer.read(sz=None) -> bytes`
 
     Read data from the receive buffer.
 
-    :param int sz: The number of bytes to read. If not specified, read all data.
+    - Parameter `sz` (`int`): The number of bytes to read. If not specified, read all data.
 
-    :return: The data read from the receive buffer.
+    - Returns: The data read from the receive buffer.
 
-    UIFLOW2:
-
-<!-- .. method:: BLEUARTServer.write(data: bytes) -->
+### `BLEUARTServer.write(data: bytes)`
 
     Write data to the ble uart server.
 
-    :param bytes data: The data to write.
+    - Parameter `data` (`bytes`): The data to write.
 
-    UIFLOW2:
-
-<!-- .. method:: BLEUARTServer.close() -->
+### `BLEUARTServer.close()`
 
     Close the ble uart server.
 
-    UIFLOW2:
-
-<!-- .. method:: BLEUARTServer.deinit() -->
+### `BLEUARTServer.deinit()`
 
     Deinitialize the ble uart server.
-
-    UIFLOW2:

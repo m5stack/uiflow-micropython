@@ -1,10 +1,8 @@
 # Dual_Button Unit
 
-<!-- .. include:: ../refs/unit.dual_button.ref -->
-
 Support the following products:
 
-    |Dual_Button|
+    Dual_Button
 
 Micropython Example:
 
@@ -50,44 +48,29 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |dual_button_core_example.m5f2|
 
 ## class DualButton
 
 ## Constructors
 
-<!-- .. class:: DualButton(IO1,IO2) -->
+### `class DualButton(IO1,IO2)`
 
     Create a DualButton object.
 
     The parameters are:
-        - ``IO1,IO2`` Define two key pins.
-
-    UIFLOW2:
+        - `IO1,IO2` Define two key pins.
 
 ## Methods
 
-<!-- .. method:: Dual_Button.isHolding() -->
+### `Dual_Button.isHolding()`
 
     The parameters are:
 
-    UIFLOW2:
-
-<!-- .. method:: Dual_Button.setCallback() -->
+### `Dual_Button.setCallback()`
 
     Execute the program when the key is pressed.
 
-    UIFLOW2:
-
-<!-- .. method:: Dual_Button.tick() -->
+### `Dual_Button.tick()`
 
     The polling method, placed in the loop function, constantly detects the state of the key.
-
-    UIFLOW2:

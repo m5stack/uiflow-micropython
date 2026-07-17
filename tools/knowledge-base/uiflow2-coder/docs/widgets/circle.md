@@ -1,18 +1,11 @@
-<!-- .. currentmodule:: Widgets -->
 
 # class Circle -- display circle
 
 Circle is the basic object type used to display text.
 
-<!-- .. include:: ../refs/widgets.circle.ref -->
-
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -58,59 +51,44 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |circle_core2_example.m5f2|
 
 ## Constructors
 
-<!-- .. class:: Widgets.Circle(x: int, y: int, r: int, fg_color: int=0xffffff, bg_color: int=0xffffff) -->
+### `class Widgets.Circle(x: int, y: int, r: int, fg_color: int=0xffffff, bg_color: int=0xffffff)`
 
     Create a Circle object. It accepts the following parameters:
 
-        - ``x`` is the starting X-axis coordinate displayed.
-        - ``y`` is the starting Y-axis coordinate displayed.
-        - ``r`` is the radius of the circle.
-        - ``fg_color`` is the foreground color of the displayed circle.
-        - ``bg_color`` is the background color of the displayed circle.
+        - `x` is the starting X-axis coordinate displayed.
+        - `y` is the starting Y-axis coordinate displayed.
+        - `r` is the radius of the circle.
+        - `fg_color` is the foreground color of the displayed circle.
+        - `bg_color` is the background color of the displayed circle.
 
 ## Methods
 
-<!-- .. method:: Widgets.setColor(fg_color: int=0xffffff, bg_color: int=0x000000) -->
+### `Widgets.setColor(fg_color: int=0xffffff, bg_color: int=0x000000)`
 
     Set the color of the Circle object. Accept the following parameters:
 
-        - ``fg_color`` is the foreground color of the displayed circle.
-        - ``bg_color`` is the background color of the displayed circle.
+        - `fg_color` is the foreground color of the displayed circle.
+        - `bg_color` is the background color of the displayed circle.
 
-    UIFLOW2:
-
-<!-- .. method:: Widgets.setCursor(x: int, y: int) -->
+### `Widgets.setCursor(x: int, y: int)`
 
     Set the position of the Circle object. Accept the following parameters:
 
-        - ``x`` is the starting X-axis coordinate displayed.
-        - ``y`` is the starting Y-axis coordinate displayed.
+        - `x` is the starting X-axis coordinate displayed.
+        - `y` is the starting Y-axis coordinate displayed.
 
-    UIFLOW2:
-
-<!-- .. method:: Widgets.setRadius(radius: int) -->
+### `Widgets.setRadius(radius: int)`
 
     Set the radius of the Circle object. Accept the following parameters:
 
-        - ``r`` is the radius of the circle.
+        - `r` is the radius of the circle.
 
-    UIFLOW2:
-
-<!-- .. method:: Widgets.setVisible(visible: bool) -->
+### `Widgets.setVisible(visible: bool)`
 
     Set the visibility of the Circle object. Accept the following parameters:
 
-        - ``visible`` is the visibility of the displayed circle.
-
-    UIFLOW2:
+        - `visible` is the visibility of the displayed circle.

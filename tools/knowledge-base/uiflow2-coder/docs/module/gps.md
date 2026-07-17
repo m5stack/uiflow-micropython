@@ -1,14 +1,11 @@
 
 # GPS Module
 
-<!-- .. include:: ../refs/module.gps.ref -->
-
 COM.GPS is a satellite positioning module in the M5Stack stacking module series. It is developed based on the NEO-M8N module.
 
 Support the following products:
-######
 
-###### | |GPSModule|             | |COM.GPSModule|         |
+     GPSModule              COM.GPSModule         |
 
 Micropython Example:
 
@@ -114,135 +111,77 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |gps_core2_example.m5f2|
 
 ## class GPSModule
 
 ## Constructors
 
-<!-- .. class:: GPSModule(id, rx, tx) -->
+### `class GPSModule(id, rx, tx)`
 
     initialize Function.
 
-    :param int id: UART controllers id, the range is 0 to 2.
-    :param int rx: UART rx pin.
-    :param int tx: UART tx pin.
-
-    UIFLOW2:
+    - Parameter `id` (`int`): UART controllers id, the range is 0 to 2.
+    - Parameter `rx` (`int`): UART rx pin.
+    - Parameter `tx` (`int`): UART tx pin.
 
 ## Methods
 
-<!-- .. method:: GPSModule.set_time_zone(value) -->
+### `GPSModule.set_time_zone(value)`
 
     set timezone function.
 
-    :param int value: timezone value
+    - Parameter `value` (`int`): timezone value
 
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_time_zone() -->
+### `GPSModule.get_time_zone()`
 
     get timezone function.
 
-    :return (int): timezone value
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_satellite_num() -->
+### `GPSModule.get_satellite_num()`
 
     get satellite numbers.
 
-    :return (str): satellite numbers value.
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_altitude() -->
+### `GPSModule.get_altitude()`
 
     get altitude.
 
-    :return (str): altitude unit is meter.
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_time() -->
+### `GPSModule.get_time()`
 
     get time.
 
-    :return (str): time(hh:mm:ss)
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_date() -->
+### `GPSModule.get_date()`
 
     get date.
 
-    :return (str): date(dd/mm/yy)
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_latitude() -->
+### `GPSModule.get_latitude()`
 
     get latitude.
 
-    :return (str): latitude, using degrees minutes format (ddmm.mmmmmN/S).
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_longitude() -->
+### `GPSModule.get_longitude()`
 
     get longitude.
 
-    :return (str): longitude, using degrees minutes format (ddmm.mmmmmE/W).
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_latitude_decimal() -->
+### `GPSModule.get_latitude_decimal()`
 
     get latitude decimal.
 
-    :return (float): latitude decimal(dd.dddd).
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_longitude_decimal() -->
+### `GPSModule.get_longitude_decimal()`
 
     get longitude decimal.
 
-    :return (float): longitude decimal(dd.dddd).
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_speed(type) -->
+### `GPSModule.get_speed(type)`
 
     get speed.
 
-    :return (str): speed.
-    :param int type: speed type, 0 km/h, 1 knot/h
+    - Parameter `type` (`int`): speed type, 0 km/h, 1 knot/h
         Options:
-        - ``km/h``: 0
-        - ``knot/h``: 1
+        - `km/h`: 0
+        - `knot/h`: 1
 
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.get_course() -->
+### `GPSModule.get_course()`
 
     get course.
 
-    :return (str): course unit is °.
-
-    UIFLOW2:
-
-<!-- .. method:: GPSModule.is_locate_valid() -->
+### `GPSModule.is_locate_valid()`
 
     get locate status.
-
-    :return (bool): locate status, true is locate, false is not locate.
-
-    UIFLOW2:

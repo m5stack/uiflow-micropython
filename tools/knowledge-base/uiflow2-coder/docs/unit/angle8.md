@@ -1,22 +1,15 @@
 
 # Angle8 Unit
 
-<!-- .. sku:U154 -->
-<!-- .. include:: ../refs/unit.angle8.ref -->
-
 UNIT 8Angle is an input unit integrating 8 adjustable potentiometers, internal STM32F030 microcomputer as acquisition and communication processor, and the host computer adopts I2C communication interface, each adjustable potentiometer corresponds to 1 RGB LED light, and there is also a physical toggle switch and its corresponding RGB LED light, containing 5V->3V3 DCDC circuit.
 
 Support the following products:
 
-|Angle8Unit|
+Angle8Unit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -75,106 +68,81 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |angle8unit_cores3_example.m5f2|
 
 ## class Angle8Unit
 
 ## Constructors
 
-<!-- .. class:: Angle8Unit(i2c, address) -->
+### `class Angle8Unit(i2c, address)`
 
     Initialize the Angle8Unit with the specified I2C interface and address.
 
-    :param  i2c: The I2C or PAHUBUnit instance for communication.
-    :param int address: The I2C address of the device (default is ANGLE8_ADDR).
-
-    UIFLOW2:
+    - Parameter `i2c`: The I2C or PAHUBUnit instance for communication.
+    - Parameter `address` (`int`): The I2C address of the device (default is ANGLE8_ADDR).
 
 ## Methods
 
-<!-- .. method:: Angle8Unit.available() -->
+### `Angle8Unit.available()`
 
     Check if the device is available on the I2C bus.
 
-<!-- .. method:: Angle8Unit.get_adc12_raw(channel) -->
+### `Angle8Unit.get_adc12_raw(channel)`
 
     Get the raw 12-bit ADC value from the specified channel.
 
-    :param int channel: The channel number (1 to 8).
+    - Parameter `channel` (`int`): The channel number (1 to 8).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.get_adc8_raw(channel) -->
+### `Angle8Unit.get_adc8_raw(channel)`
 
     Get the raw 8-bit ADC value from the specified channel.
 
-    :param int channel: The channel number (1 to 8).
+    - Parameter `channel` (`int`): The channel number (1 to 8).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.get_switch_status() -->
+### `Angle8Unit.get_switch_status()`
 
     Get the status of the switch button.
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.set_led_rgb(channel, rgb, bright) -->
+### `Angle8Unit.set_led_rgb(channel, rgb, bright)`
 
     Set the RGB color and brightness of the specified LED channel.
 
-    :param int channel: The LED channel number (0 to 8).
-    :param int rgb: The RGB color value (0x00 to 0xFFFFFF).
-    :param int bright: The brightness level (0 to 100, default is 50).
+    - Parameter `channel` (`int`): The LED channel number (0 to 8).
+    - Parameter `rgb` (`int`): The RGB color value (0x00 to 0xFFFFFF).
+    - Parameter `bright` (`int`): The brightness level (0 to 100, default is 50).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.set_led_rgb_from(begin, end, rgb, bright, per_delay) -->
+### `Angle8Unit.set_led_rgb_from(begin, end, rgb, bright, per_delay)`
 
     Set the RGB color and brightness for a range of LED channels.
 
-    :param int begin: The starting LED channel (0 to 8).
-    :param int end: The ending LED channel (0 to 8).
-    :param int rgb: The RGB color value (0x00 to 0xFFFFFF).
-    :param int bright: The brightness level (0 to 100, default is 50).
-    :param int per_delay: The delay in milliseconds between setting each channel (default is 0).
+    - Parameter `begin` (`int`): The starting LED channel (0 to 8).
+    - Parameter `end` (`int`): The ending LED channel (0 to 8).
+    - Parameter `rgb` (`int`): The RGB color value (0x00 to 0xFFFFFF).
+    - Parameter `bright` (`int`): The brightness level (0 to 100, default is 50).
+    - Parameter `per_delay` (`int`): The delay in milliseconds between setting each channel (default is 0).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.set_angle_sync_bright(channel, rgb) -->
+### `Angle8Unit.set_angle_sync_bright(channel, rgb)`
 
     Set the LED brightness synchronized with the angle value.
 
-    :param int channel: The LED channel number (0 to 8).
-    :param int rgb: The RGB color value (0x00 to 0xFFFFFF).
+    - Parameter `channel` (`int`): The LED channel number (0 to 8).
+    - Parameter `rgb` (`int`): The RGB color value (0x00 to 0xFFFFFF).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.get_device_spec(mode) -->
+### `Angle8Unit.get_device_spec(mode)`
 
     Get device specifications such as firmware version or I2C address.
 
-    :param int mode: The register to read (FW_VER_REG or I2C_ADDR_REG).
+    - Parameter `mode` (`int`): The register to read (FW_VER_REG or I2C_ADDR_REG).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.set_i2c_address(address) -->
+### `Angle8Unit.set_i2c_address(address)`
 
     Set a new I2C address for the device.
 
-    :param int address: The new I2C address (1 to 127).
+    - Parameter `address` (`int`): The new I2C address (1 to 127).
 
-    UIFLOW2:
-
-<!-- .. method:: Angle8Unit.readfrommem(reg, num) -->
+### `Angle8Unit.readfrommem(reg, num)`
 
     Read a specified number of bytes from a device register.
 
-    :param  reg: The register address to read from.
-    :param  num: The number of bytes to read.
+    - Parameter `reg`: The register address to read from.
+    - Parameter `num`: The number of bytes to read.

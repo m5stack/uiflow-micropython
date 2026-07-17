@@ -1,18 +1,12 @@
 # Vibrator HAT
 
-<!-- .. include:: ../refs/hat.vibrator.ref -->
-
 Support the following products:
 
-    |Vibrator|
+    Vibrator
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -155,61 +149,42 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stick_plus2_vibrator_example.m5f2|
 
 ## class VibratorHAT
 
 ## Constructors
 
-<!-- .. class:: VibratorHAT() -->
+### `class VibratorHAT()`
 
     Create an VibratorHAT object.
 
-    UIFLOW2:
-
 ## Methods
 
-<!-- .. method:: VibratorHAT.once(freq=10, duty=50, duration=50) -> None -->
+### `VibratorHAT.once(freq=10, duty=50, duration=50) -> None`
 
     Play the haptic effect once on the motor.
 
-    :param int freq: The frequency of vibration ranges from 10-55Hz.
-    :param int duty: The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
-    :param int duration: The duration of the vibration effect, in milliseconds.
+    - Parameter `freq` (`int`): The frequency of vibration ranges from 10-55Hz.
+    - Parameter `duty` (`int`): The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
+    - Parameter `duration` (`int`): The duration of the vibration effect, in milliseconds.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorHAT.set_freq(freq) -->
+### `VibratorHAT.set_freq(freq)`
 
     Set the vibration frequency.
 
-    :param int freq: The frequency of vibration ranges from 10-55Hz.
+    - Parameter `freq` (`int`): The frequency of vibration ranges from 10-55Hz.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorHAT.set_duty(freq) -> None -->
+### `VibratorHAT.set_duty(freq) -> None`
 
     Set the vibration duty cycle.
 
-    :param int duty: The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
+    - Parameter `duty` (`int`): The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorHAT.turn_off() -> None -->
+### `VibratorHAT.turn_off() -> None`
 
     Turn off the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorHAT.deint() -> None -->
+### `VibratorHAT.deint() -> None`
 
     Deinitialize the motor.
-
-    UIFLOW2:

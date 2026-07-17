@@ -1,21 +1,15 @@
 
 # TimerPWR Unit
 
-<!-- .. include:: ../refs/unit.timerpwr.ref -->
-
 The TimerPWR Unit is a timed power supply unit whose main functions are "charging & discharging + timed switching + screen display + boost output." It features an internal STM32 microcontroller that implements RTC and overall control, allowing users to set automatic power on/off times as needed. It is powered via the Type-C interface and can be connected to an external rechargeable battery via a 1.25-2P interface. The unit includes a built-in battery charging circuit supporting a charging current of 330mA. It also features an integrated DCDC boost circuit that provides a 5V/800mA (1400mA @ 1C battery power) power output to external devices via the Grove port. Additionally, the INA3221 sensor is built-in, allowing real-time monitoring of power input and output current and voltage. The unit is equipped with a 0.66-inch OLED display and two side buttons for user interaction, making it easy to view real-time system status and modify settings. Users can set parameters such as power on/off using the side buttons or via the I2C bus through the Grove interface with I2C commands. This product is suitable for smart homes, industrial automation, and timed control devices.
 
 Support the following products:
 
-|TimerPWRUnit|
+TimerPWRUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -381,307 +375,236 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |atoms3_timerpwr_example.m5f2|
 
 ## class TimerPWRUnit
 
 ## Constructors
 
-<!-- .. class:: TimerPWRUnit(i2c, address) -->
+### `class TimerPWRUnit(i2c, address)`
 
     Create a TimerPWR object.
 
-    :param  i2c: I2C object
-    :param int address: I2C address, 0x56 by default
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C object
+    - Parameter `address` (`int`): I2C address, 0x56 by default
 
 ## Methods
 
-<!-- .. method:: TimerPWRUnit.get_firmware_version() -->
+### `TimerPWRUnit.get_firmware_version()`
 
     Get firmware version.
 
-    :return (int): Firmware version.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_battery_voltage() -->
+### `TimerPWRUnit.get_battery_voltage()`
 
     Get battery voltage.
 
-    :return (int): Battery voltage, in millivolt.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_battery_current() -->
+### `TimerPWRUnit.get_battery_current()`
 
     Get battery current.
 
-    :return (int): Battery current, in milliamperes.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_usb_voltage() -->
+### `TimerPWRUnit.get_usb_voltage()`
 
     Get USB voltage.
 
-    :return (int): USB voltage, in millivolt.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_usb_current() -->
+### `TimerPWRUnit.get_usb_current()`
 
     Get USB current.
 
-    :return (int): USB current, in milliamperes.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_grove_voltage() -->
+### `TimerPWRUnit.get_grove_voltage()`
 
     Get Grove voltage.
 
-    :return (int): Grove voltage, in millivolt.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_grove_current() -->
+### `TimerPWRUnit.get_grove_current()`
 
     Get Grove current.
 
-    :return (int): Grove current, in milliamperes.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.is_charging() -->
+### `TimerPWRUnit.is_charging()`
 
     Check if the battery is charging.
 
-    :return (bool): True if charging, False if not.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_button_status(btn) -->
+### `TimerPWRUnit.get_button_status(btn)`
 
     Get button status.
 
-    :param int btn: button index.
+    - Parameter `btn` (`int`): button index.
 
         Options:
-            - ``A``: 0
-            - ``B``: 1
+            - `A`: 0
+            - `B`: 1
 
-    :return (bool): True if pressed, False if not.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.save_data_to_flash() -->
+### `TimerPWRUnit.save_data_to_flash()`
 
     Save data to flash.
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_grove_output_status() -->
+### `TimerPWRUnit.get_grove_output_status()`
 
     Get Grove output status
 
-    :return (bool): True if enabled, False if disabled.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_grove_output_status(enable) -->
+### `TimerPWRUnit.set_grove_output_status(enable)`
 
     Set Grove output status.
 
-    :param bool enable: Enable or disable Grove output.
+    - Parameter `enable` (`bool`): Enable or disable Grove output.
 
         Options:
-            - ``Enable``: True
-            - ``Disable``: False
+            - `Enable`: True
+            - `Disable`: False
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.get_oled_backlight_status() -->
+### `TimerPWRUnit.get_oled_backlight_status()`
 
     Get OLED backlight status.
 
-    :return (bool): True if enabled, False if disabled.
-
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_oled_backlight_status(enable) -->
+### `TimerPWRUnit.set_oled_backlight_status(enable)`
 
     Set OLED backlight status.
 
-    :param bool enable: Enable or disable OLED backlight.
+    - Parameter `enable` (`bool`): Enable or disable OLED backlight.
 
         Options:
-            - ``Enable``: True
-            - ``Disable``: False
+            - `Enable`: True
+            - `Disable`: False
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.sleep_once(whours, wmintues, wseconds, shours, smintues, sseconds) -->
+### `TimerPWRUnit.sleep_once(whours, wmintues, wseconds, shours, smintues, sseconds)`
 
     Set sleep once after hours, mintues, seconds and wake up in hours, mintues, seconds.
 
-    :param int whours: Hours to wait before sleep.
-    :param int wmintues: Mintues to wait before sleep.
-    :param int wseconds: Seconds to wait before sleep.
-    :param int shours: Hours to wait before wake up.
-    :param int smintues: Mintues to wait before wake up.
-    :param int sseconds: Seconds to wait before wake up.
+    - Parameter `whours` (`int`): Hours to wait before sleep.
+    - Parameter `wmintues` (`int`): Mintues to wait before sleep.
+    - Parameter `wseconds` (`int`): Seconds to wait before sleep.
+    - Parameter `shours` (`int`): Hours to wait before wake up.
+    - Parameter `smintues` (`int`): Mintues to wait before wake up.
+    - Parameter `sseconds` (`int`): Seconds to wait before wake up.
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_power_on_time(hours, mintues, seconds) -->
+### `TimerPWRUnit.set_power_on_time(hours, mintues, seconds)`
 
     Set power on time.
 
-    :param int hours: Hours to power on.
-    :param int mintues: Mintues to power on.
-    :param int seconds: Seconds to power on.
+    - Parameter `hours` (`int`): Hours to power on.
+    - Parameter `mintues` (`int`): Mintues to power on.
+    - Parameter `seconds` (`int`): Seconds to power on.
 
-<!-- .. method:: TimerPWRUnit.set_power_off_time(hours, mintues, seconds) -->
+### `TimerPWRUnit.set_power_off_time(hours, mintues, seconds)`
 
     Set power off time.
 
-    :param int hours: Hours to power off.
-    :param int mintues: Mintues to power off.
-    :param int seconds: Seconds to power off.
+    - Parameter `hours` (`int`): Hours to power off.
+    - Parameter `mintues` (`int`): Mintues to power off.
+    - Parameter `seconds` (`int`): Seconds to power off.
 
-<!-- .. method:: TimerPWRUnit.sleep_cycle(whours, wmintues, wseconds, shours, smintues, sseconds) -->
+### `TimerPWRUnit.sleep_cycle(whours, wmintues, wseconds, shours, smintues, sseconds)`
 
     Set sleep cycle after hours, mintues, seconds and wake up in hours, mintues, seconds.
 
-    :param int whours: Hours to wait before sleep.
-    :param int wmintues: Mintues to wait before sleep.
-    :param int wseconds: Seconds to wait before sleep.
-    :param int shours: Hours to wait before wake up.
-    :param int smintues: Mintues to wait before wake up.
-    :param int sseconds: Seconds to wait before wake up.
+    - Parameter `whours` (`int`): Hours to wait before sleep.
+    - Parameter `wmintues` (`int`): Mintues to wait before sleep.
+    - Parameter `wseconds` (`int`): Seconds to wait before sleep.
+    - Parameter `shours` (`int`): Hours to wait before wake up.
+    - Parameter `smintues` (`int`): Mintues to wait before wake up.
+    - Parameter `sseconds` (`int`): Seconds to wait before wake up.
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_cycle_sleep(enable) -->
+### `TimerPWRUnit.set_cycle_sleep(enable)`
 
     Set cycle sleep.
 
-    :param bool enable: Enable or disable cycle sleep.
+    - Parameter `enable` (`bool`): Enable or disable cycle sleep.
 
         Options:
-            - ``Enable``: True
-            - ``Disable``: False
+            - `Enable`: True
+            - `Disable`: False
 
-<!-- .. method:: TimerPWRUnit.set_wakeup_trigger(trigger) -->
+### `TimerPWRUnit.set_wakeup_trigger(trigger)`
 
     Set wake-up trigger.
 
-    :param  trigger: Set wake-up trigger.
+    - Parameter `trigger`: Set wake-up trigger.
 
         Options:
-            - ``ALL``: timerpwrunit_0.TRIG_ALL
-            - ``TIMER``: timerpwrunit_0.TRIG_TIMER
-            - ``BUTTON``: timerpwrunit_0.TRIG_BUTTON
-            - ``NONE``: timerpwrunit_0.TRIG_NONE
+            - `ALL`: timerpwrunit_0.TRIG_ALL
+            - `TIMER`: timerpwrunit_0.TRIG_TIMER
+            - `BUTTON`: timerpwrunit_0.TRIG_BUTTON
+            - `NONE`: timerpwrunit_0.TRIG_NONE
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_sleep_trigger(trigger) -->
+### `TimerPWRUnit.set_sleep_trigger(trigger)`
 
     Set sleep trigger.
 
-    :param  trigger: Set sleep trigger.
+    - Parameter `trigger`: Set sleep trigger.
 
         Options:
-            - ``ALL``: timerpwrunit_0.TRIG_ALL
-            - ``TIMER``: timerpwrunit_0.TRIG_TIMER
-            - ``BUTTON``: timerpwrunit_0.TRIG_BUTTON
-            - ``I2C``: timerpwrunit_0.TRIG_I2C
-            - ``NONE``: timerpwrunit_0.TRIG_NONE
+            - `ALL`: timerpwrunit_0.TRIG_ALL
+            - `TIMER`: timerpwrunit_0.TRIG_TIMER
+            - `BUTTON`: timerpwrunit_0.TRIG_BUTTON
+            - `I2C`: timerpwrunit_0.TRIG_I2C
+            - `NONE`: timerpwrunit_0.TRIG_NONE
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.set_callback(event, callback) -->
+### `TimerPWRUnit.set_callback(event, callback)`
 
     Set callback function.
 
-    :param  event: event type.
+    - Parameter `event`: event type.
 
         Options:
-            - ``USB inserted``: timerpwrunit_0.EVENT_USB_INSERTED
-            - ``USB removed``: timerpwrunit_0.EVENT_USB_REMOVED
-            - ``Button A pressed``: timerpwrunit_0.EVENT_BUTTONA_PRESSED
-            - ``Button A released``: timerpwrunit_0.EVENT_BUTTONA_RELEASED
-            - ``Button B pressed``: timerpwrunit_0.EVENT_BUTTONB_PRESSED
-            - ``Button B released``: timerpwrunit_0.EVENT_BUTTONB_RELEASED
-            - ``Not charging``: timerpwrunit_0.EVENT_NOT_CHARGING
-            - ``Charging``: timerpwrunit_0.EVENT_CHARGING
+            - `USB inserted`: timerpwrunit_0.EVENT_USB_INSERTED
+            - `USB removed`: timerpwrunit_0.EVENT_USB_REMOVED
+            - `Button A pressed`: timerpwrunit_0.EVENT_BUTTONA_PRESSED
+            - `Button A released`: timerpwrunit_0.EVENT_BUTTONA_RELEASED
+            - `Button B pressed`: timerpwrunit_0.EVENT_BUTTONB_PRESSED
+            - `Button B released`: timerpwrunit_0.EVENT_BUTTONB_RELEASED
+            - `Not charging`: timerpwrunit_0.EVENT_NOT_CHARGING
+            - `Charging`: timerpwrunit_0.EVENT_CHARGING
 
-    :param  callback: callback function.
+    - Parameter `callback`: callback function.
 
-    UIFLOW2:
-
-<!-- .. method:: TimerPWRUnit.tick() -->
+### `TimerPWRUnit.tick()`
 
     Update status in loop.
 
-    UIFLOW2:
-
 ## Constants
 
-<!-- .. data:: TimerPWRUnit._SLEEP_COMMAND_REG -->
-<!-- .. data:: TimerPWRUnit._CYCLE_REG -->
-<!-- .. data:: TimerPWRUnit._GROVE_OUTPUT_REG -->
-<!-- .. data:: TimerPWRUnit._OLED_BACKLIGHT_REG -->
-<!-- .. data:: TimerPWRUnit._WAKE_UP_TRIGGER_REG -->
-<!-- .. data:: TimerPWRUnit._SLEEP_TRIGGER_REG -->
-<!-- .. data:: TimerPWRUnit._POWER_ON_TIME_REG -->
-<!-- .. data:: TimerPWRUnit._POWER_OFF_TIME_REG -->
-<!-- .. data:: TimerPWRUnit._BUTTON_STATUS_REG -->
-<!-- .. data:: TimerPWRUnit._USB_VOLTAGE_REG -->
-<!-- .. data:: TimerPWRUnit._USB_CURRENT_REG -->
-<!-- .. data:: TimerPWRUnit._GROVE_VOLTAGE_REG -->
-<!-- .. data:: TimerPWRUnit._GROVE_CURRENT_REG -->
-<!-- .. data:: TimerPWRUnit._BATTERY_VOLTAGE_REG -->
-<!-- .. data:: TimerPWRUnit._BATTERY_CURRENT_REG -->
-<!-- .. data:: TimerPWRUnit._CHARGING_STATUS_REG -->
-<!-- .. data:: TimerPWRUnit._SAVE_DATA_TO_FLASH_REG -->
-<!-- .. data:: TimerPWRUnit._FW_VERSION_REG -->
-<!-- .. data:: TimerPWRUnit._I2C_ADDRESS_REG -->
+### `TimerPWRUnit._SLEEP_COMMAND_REG`
+### `TimerPWRUnit._CYCLE_REG`
+### `TimerPWRUnit._GROVE_OUTPUT_REG`
+### `TimerPWRUnit._OLED_BACKLIGHT_REG`
+### `TimerPWRUnit._WAKE_UP_TRIGGER_REG`
+### `TimerPWRUnit._SLEEP_TRIGGER_REG`
+### `TimerPWRUnit._POWER_ON_TIME_REG`
+### `TimerPWRUnit._POWER_OFF_TIME_REG`
+### `TimerPWRUnit._BUTTON_STATUS_REG`
+### `TimerPWRUnit._USB_VOLTAGE_REG`
+### `TimerPWRUnit._USB_CURRENT_REG`
+### `TimerPWRUnit._GROVE_VOLTAGE_REG`
+### `TimerPWRUnit._GROVE_CURRENT_REG`
+### `TimerPWRUnit._BATTERY_VOLTAGE_REG`
+### `TimerPWRUnit._BATTERY_CURRENT_REG`
+### `TimerPWRUnit._CHARGING_STATUS_REG`
+### `TimerPWRUnit._SAVE_DATA_TO_FLASH_REG`
+### `TimerPWRUnit._FW_VERSION_REG`
+### `TimerPWRUnit._I2C_ADDRESS_REG`
 
     register address.
 
-<!-- .. data:: TimerPWRUnit.TRIG_ALL -->
-<!-- .. data:: TimerPWRUnit.TRIG_TIMER -->
-<!-- .. data:: TimerPWRUnit.TRIG_BUTTON -->
-<!-- .. data:: TimerPWRUnit.TRIG_I2C -->
-<!-- .. data:: TimerPWRUnit.TRIG_NONE -->
+### `TimerPWRUnit.TRIG_ALL`
+### `TimerPWRUnit.TRIG_TIMER`
+### `TimerPWRUnit.TRIG_BUTTON`
+### `TimerPWRUnit.TRIG_I2C`
+### `TimerPWRUnit.TRIG_NONE`
 
     trigger type.
 
-<!-- .. data:: TimerPWRUnit.EVENT_USB_INSERTED -->
-<!-- .. data:: TimerPWRUnit.EVENT_USB_REMOVED -->
-<!-- .. data:: TimerPWRUnit.EVENT_BUTTONA_RELEASED -->
-<!-- .. data:: TimerPWRUnit.EVENT_BUTTONA_PRESSED -->
-<!-- .. data:: TimerPWRUnit.EVENT_BUTTONB_RELEASED -->
-<!-- .. data:: TimerPWRUnit.EVENT_BUTTONB_PRESSED -->
-<!-- .. data:: TimerPWRUnit.EVENT_NOT_CHARGING -->
-<!-- .. data:: TimerPWRUnit.EVENT_CHARGING -->
+### `TimerPWRUnit.EVENT_USB_INSERTED`
+### `TimerPWRUnit.EVENT_USB_REMOVED`
+### `TimerPWRUnit.EVENT_BUTTONA_RELEASED`
+### `TimerPWRUnit.EVENT_BUTTONA_PRESSED`
+### `TimerPWRUnit.EVENT_BUTTONB_RELEASED`
+### `TimerPWRUnit.EVENT_BUTTONB_PRESSED`
+### `TimerPWRUnit.EVENT_NOT_CHARGING`
+### `TimerPWRUnit.EVENT_CHARGING`
 
     event type.
 
-<!-- .. data:: TimerPWRUnit._USB -->
-<!-- .. data:: TimerPWRUnit._BUTTON_A -->
-<!-- .. data:: TimerPWRUnit._BUTTON_B -->
-<!-- .. data:: TimerPWRUnit._CHARGING -->
+### `TimerPWRUnit._USB`
+### `TimerPWRUnit._BUTTON_A`
+### `TimerPWRUnit._BUTTON_B`
+### `TimerPWRUnit._CHARGING`
 
     index.

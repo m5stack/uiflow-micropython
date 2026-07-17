@@ -1,18 +1,12 @@
 # Vibrator Unit
 
-<!-- .. include:: ../refs/unit.vibrator.ref -->
-
 Support the following products:
 
-    |Vibrator|
+    Vibrator
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -53,63 +47,44 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |core_vibrator_example.m5f2|
 
 ## class VibratorUnit
 
 ## Constructors
 
-<!-- .. class:: VibratorUnit(port: tuple = (26, 0)) -->
+### `class VibratorUnit(port: tuple = (26, 0))`
 
     Create an VibratorUnit object.
 
-    :param port: The port where the VibratorUnit is connected to.
-
-    UIFLOW2:
+    - Parameter `port`: The port where the VibratorUnit is connected to.
 
 ## Methods
 
-<!-- .. method:: VibratorUnit.once(freq=10, duty=50, duration=50) -> None -->
+### `VibratorUnit.once(freq=10, duty=50, duration=50) -> None`
 
     Play the haptic effect once on the motor.
 
-    :param int freq: The frequency of vibration ranges from 10-55Hz.
-    :param int duty: The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
-    :param int duration: The duration of the vibration effect, in milliseconds.
+    - Parameter `freq` (`int`): The frequency of vibration ranges from 10-55Hz.
+    - Parameter `duty` (`int`): The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
+    - Parameter `duration` (`int`): The duration of the vibration effect, in milliseconds.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorUnit.set_freq(freq) -->
+### `VibratorUnit.set_freq(freq)`
 
     Set the vibration frequency.
 
-    :param int freq: The frequency of vibration ranges from 10-55Hz.
+    - Parameter `freq` (`int`): The frequency of vibration ranges from 10-55Hz.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorUnit.set_duty(freq) -> None -->
+### `VibratorUnit.set_duty(freq) -> None`
 
     Set the vibration duty cycle.
 
-    :param int duty: The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
+    - Parameter `duty` (`int`): The duty cycle of vibration ranges from 0-100, representing the corresponding percentage.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorUnit.turn_off() -> None -->
+### `VibratorUnit.turn_off() -> None`
 
     Turn off the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: VibratorUnit.deint() -> None -->
+### `VibratorUnit.deint() -> None`
 
     Deinitialize the motor.
-
-    UIFLOW2:

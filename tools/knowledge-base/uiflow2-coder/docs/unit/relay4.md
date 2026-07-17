@@ -1,7 +1,5 @@
 # Relay4 Unit
 
-<!-- .. include:: ../refs/unit.relay4.ref -->
-
 4-Relay unit is an integrated 4-way relay module which can be controlled by I2C
 protocol. The maximum control voltage of each relay is AC-250V/DC-28V, the rated
 current is 10A and the instantaneous current can hold up to 16A. Each relay can
@@ -10,15 +8,11 @@ indictor as well to show the state of the relay at any given time.
 
 Support the following products:
 
-    |Relay4Unit|
+    Relay4Unit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -58,94 +52,71 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_relay4_example.m5f2|
 
 ## class Relay4Unit
 
 ## Constructors
 
-<!-- .. class:: Relay4Unit(i2c: I2C, address: int | list | tuple = 0x26) -->
+### `class Relay4Unit(i2c: I2C, address: int  list  tuple = 0x26)`
 
     Initialize the Relay4Unit object.
 
-    :param I2C i2c: I2C port to use.
-    :param int address: I2C address of the Relay4Unit.
-
-    UIFLOW2:
+    - Parameter `i2c` (`I2C`): I2C port to use.
+    - Parameter `address` (`int`): I2C address of the Relay4Unit.
 
 ## Methods
 
-<!-- .. method:: Relay4Unit.set_mode(mode: int) -->
+### `Relay4Unit.set_mode(mode: int)`
 
     Set the mode of the relay.
 
-    :param int mode: The mode of the relay
+    - Parameter `mode` (`int`): The mode of the relay
 
         Options:
-        - ``Relay4Unit.ASYNC_MODE``: async
-        - ``Relay4Unit.SYNC_MODE``: sync
+        - `Relay4Unit.ASYNC_MODE`: async
+        - `Relay4Unit.SYNC_MODE`: sync
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.get_mode() -> int -->
+### `Relay4Unit.get_mode() -> int`
 
     Get the mode of the relay.
 
-    :return: The mode of the relay
+    - Returns: The mode of the relay
 
         Options:
-        - ``Relay4Unit.ASYNC_MODE``: async
-        - ``Relay4Unit.SYNC_MODE``: sync
+        - `Relay4Unit.ASYNC_MODE`: async
+        - `Relay4Unit.SYNC_MODE`: sync
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.get_led_state(n: int) -> int -->
+### `Relay4Unit.get_led_state(n: int) -> int`
 
     Get the state of the LED.
 
-    :param int n: The number of the LED.
+    - Parameter `n` (`int`): The number of the LED.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.set_led_state(n: int, state: int) -> None -->
+### `Relay4Unit.set_led_state(n: int, state: int) -> None`
 
     Set the state of the LED.
 
-    :param int n: The number of the LED.
-    :param int state: The state of the LED.
+    - Parameter `n` (`int`): The number of the LED.
+    - Parameter `state` (`int`): The state of the LED.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.get_relay_state(n: int) -> int -->
+### `Relay4Unit.get_relay_state(n: int) -> int`
 
     Get the state of the relay.
 
-    :param int n: The number of the relay.
+    - Parameter `n` (`int`): The number of the relay.
 
-    :return: The state of the relay.
+    - Returns: The state of the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.set_relay_state(n: int, state: int) -> None -->
+### `Relay4Unit.set_relay_state(n: int, state: int) -> None`
 
     Set the state of the relay.
 
-    :param int n: The number of the relay.
-    :param int state: The state of the relay.
+    - Parameter `n` (`int`): The number of the relay.
+    - Parameter `state` (`int`): The state of the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay4Unit.set_relay_all(state: int) -> None -->
+### `Relay4Unit.set_relay_all(state: int) -> None`
 
     Set the state of all the relay.
 
-    :param int state: The state of the relay.
-
-    UIFLOW2:
+    - Parameter `state` (`int`): The state of the relay.

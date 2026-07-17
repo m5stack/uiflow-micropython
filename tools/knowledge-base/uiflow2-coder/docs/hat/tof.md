@@ -1,18 +1,12 @@
 # ToF Hat
 
-<!-- .. include:: ../refs/hat.tof.ref -->
-
 The following products are supported:
 
-    |ToFHat|
+    ToFHat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -49,27 +43,18 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_tof_example.m5f2|
 
 ## class ToFHat
 
 ## Constructors
 
-<!-- .. class:: ToFHat(i2c: I2C, address: int = 0x29, io_timeout_ms: int = 0) -->
+### `class ToFHat(i2c: I2C, address: int = 0x29, io_timeout_ms: int = 0)`
 
     Creates an instance of the ToFHat class.
 
-    :param i2c: the I2C object.
-    :param address: the I2C address of the device. Default is 0x23.
-    :param io_timeout_ms: the timeout of I2C communication. Default is 0ms.
+    - Parameter `i2c`: the I2C object.
+    - Parameter `address`: the I2C address of the device. Default is 0x23.
+    - Parameter `io_timeout_ms`: the timeout of I2C communication. Default is 0ms.
 
-    UIFLOW2:
-
-ToFHat class inherits ToFUnit class, See :ref:`unit.ToFUnit.Methods <unit.ToFUnit.Methods>` for more details.
+ToFHat class inherits ToFUnit class, See `unit.ToFUnit.Methods <unit.ToFUnit.Methods>` for more details.

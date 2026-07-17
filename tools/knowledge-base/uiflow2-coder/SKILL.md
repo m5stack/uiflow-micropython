@@ -28,9 +28,10 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (335 Markdown files, 21 directories; .md suffix omitted)
+docs/  (343 Markdown files, 21 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
+  - addon/: display_out
   - advanced/: camera, code_scanner, dl, image, jpg
     - usb/: _overview
       - device/: keyboard, mouse
@@ -38,27 +39,26 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            dtu_nbiot2v11, echo, echo_pyramid, gpsv2, hdriver, motion, pwm, qrcode, qrcode2, rs232, rs485, speaker
            stepmotor, tfcard
   - cap/: lora1262, lora868
-  - chain/: angle, chainbus, encoder, joystick, key, mono, rgb, tof, unit_bus
-  - contribute/: template
+  - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, switch, tof, unit_bus
   - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, dinmeter, dualkey, nesso-n1, paper, stackchan
                   stamplc, sticks3, stopwatch
   - get-started/: _overview
-  - hardware/: adc, als, button, can, display, imu, ir, lora, mic, pin, pwr485, pwrcan, rotary, scd40, sen55, sht30
-               speaker, touch, uart, wdt
+  - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, pin, pwr485, pwrcan, rotary, scd40, sen55
+               sht30, speaker, touch, uart, wdt
   - hat/: adc, cardkb, dac, dac2, dlight, env, finger, heart, joyc, joystick, mini_encoder, mini_joy, ncir, neoflash
           pir, servo, servo8, speaker, speaker2, thermal, tof, vibrator
   - iot-devices/: _overview, switchc6
   - m5ui/: _overview, arc, bar, button, buttonmatrix, calendar, canvas, chart, checkbox, dropdown, image, keyboard
            label, led, line, list, menu, msgbox, page, roller, scale, slider, spinbox, spinner, switch, table, tabview
            textarea, win
-  - module/: 4in8out, ain4, asr, audio, bala2, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg, encoder4_motor
-             fan, gateway_h2, gnss, goplus2, gps, gpsv2, grbl, hmi, lan, llm, lora, lora868_v12, lorawan868
-             lorawan_rui3, lte, nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2, rs232, servo2
-             step_motor_driver, usb, zigbee
+  - module/: 4in8out, ain4, asr, audio, baesx, bala2, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
+             encoder4_motor, fan, gateway_h2, gnss, goplus2, gps, gpsv2, grbl, hmi, lan, llm, lora, lora868_v12
+             lorawan868, lorawan_rui3, lte, module16340, nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2
+             rs232, servo2, step_motor_driver, usb, zigbee
   - quick-reference/: get-started, usb-mode
   - software/: easysocket, modbus, modbus.rtu.master, modbus.rtu.slave, modbus.tcp.client, modbus.tcp.server
                requests2, tcp.client, tcp.server, udp.client, udp.server, umqtt.default, umqtt
-  - stamplc/: ac, poe
+  - stamplc/: ac, io, poe
   - system/: audio, audio.player, audio.recorder, bleuart.client, bleuart, bleuart.server, m5ble, m5espnow, power
              time, wlan.ap, wlan.sta
   - tab5/: keyboard

@@ -1,31 +1,16 @@
 
 # SCD40
 
-<!-- .. sku:U103 -->
-<!-- .. include:: ../refs/hardware.scd40.ref -->
-
 The SCD4x is Sensirion’s next generation miniature CO2 sensor. On-chip signal compensation is realized with the build-in SHT4x humidity and temperature sensor.
 
 The specific support of the host for SCD40 is as follows:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
-
-###### | Controller        | SCD40           |
-
-###### | AirQ              | |S|             |
-
-<!-- .. |S| unicode:: U+2714 -->
+     Controller         SCD40           |
+     AirQ               S             |
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -68,188 +53,145 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |airq_scd40_example.m5f2|
 
 ## class SCD40
 
 ## Constructors
 
-<!-- .. class:: SCD40() -->
+### `class SCD40()`
 
     Initialize the SCD40 with the I2C interface and address.
 
-    UIFLOW2:
-
 ## Methods
 
-<!-- .. method:: SCD40.available() -->
+### `SCD40.available()`
 
     Check if the SCD40 sensor is available on the I2C bus.
 
-<!-- .. method:: SCD40.set_start_periodic_measurement() -->
+### `SCD40.set_start_periodic_measurement()`
 
     Set the sensor into working mode, which takes about 5 seconds per measurement.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_stop_periodic_measurement() -->
+### `SCD40.set_stop_periodic_measurement()`
 
     Stop the measurement mode for the sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.get_sensor_measurement() -->
+### `SCD40.get_sensor_measurement()`
 
     Get temperature, humidity, and CO2 concentration from the sensor.
 
-<!-- .. method:: SCD40.is_data_ready() -->
+### `SCD40.is_data_ready()`
 
     Check if the data (temperature, humidity, CO2) is ready from the sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.get_temperature_offset() -->
+### `SCD40.get_temperature_offset()`
 
     Get the temperature offset to be added to the reported measurements.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_temperature_offset(offset) -->
+### `SCD40.set_temperature_offset(offset)`
 
     Set the maximum value of 374°C temperature offset.
 
-    :param int offset: The temperature offset to set, default is 0.
+    - Parameter `offset` (`int`): The temperature offset to set, default is 0.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.get_sensor_altitude() -->
+### `SCD40.get_sensor_altitude()`
 
     Get the altitude value of the measurement location in meters above sea level.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_sensor_altitude(height) -->
+### `SCD40.set_sensor_altitude(height)`
 
     Set the altitude value of the measurement location in meters above sea level.
 
-    :param int height: The altitude in meters to set. Must be between 0 and 65535 meters.
+    - Parameter `height` (`int`): The altitude in meters to set. Must be between 0 and 65535 meters.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_ambient_pressure(ambient_pressure) -->
+### `SCD40.set_ambient_pressure(ambient_pressure)`
 
     Set the ambient pressure in hPa at any time to adjust CO2 calculations.
 
-    :param int ambient_pressure: The ambient pressure in hPa, constrained to the range [0, 65535].
+    - Parameter `ambient_pressure` (`int`): The ambient pressure in hPa, constrained to the range [0, 65535].
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_force_calibration(target_co2) -->
+### `SCD40.set_force_calibration(target_co2)`
 
     Force the sensor to recalibrate with a given current CO2 level.
 
-    :param int target_co2: The current CO2 concentration to be used for recalibration.
+    - Parameter `target_co2` (`int`): The current CO2 concentration to be used for recalibration.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.get_calibration_enabled() -->
+### `SCD40.get_calibration_enabled()`
 
     Get whether automatic self-calibration (ASC) is enabled or disabled.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_calibration_enabled(enabled) -->
+### `SCD40.set_calibration_enabled(enabled)`
 
     Enable or disable automatic self-calibration (ASC).
 
-    :param bool enabled: Set to True to enable ASC, or False to disable it.
+    - Parameter `enabled` (`bool`): Set to True to enable ASC, or False to disable it.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_start_low_periodic_measurement() -->
+### `SCD40.set_start_low_periodic_measurement()`
 
     Set the sensor into low power working mode, with about 30 seconds per measurement.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.data_isready() -->
+### `SCD40.data_isready()`
 
     Check if new data is available from the sensor.
 
-<!-- .. method:: SCD40.save_to_eeprom() -->
+### `SCD40.save_to_eeprom()`
 
     Save temperature offset, altitude offset, and self-calibration enable settings to EEPROM.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.get_serial_number() -->
+### `SCD40.get_serial_number()`
 
     Get a unique serial number for this sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_self_test() -->
+### `SCD40.set_self_test()`
 
     Perform a self-test, which can take up to 10 seconds.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_factory_reset() -->
+### `SCD40.set_factory_reset()`
 
     Reset all configuration settings stored in the EEPROM and erase the FRC and ASC algorithm history.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.reinit() -->
+### `SCD40.reinit()`
 
     Reinitialize the sensor by reloading user settings from EEPROM.
 
-    UIFLOW2:
-
-<!-- .. method:: SCD40.set_single_shot_measurement_all() -->
+### `SCD40.set_single_shot_measurement_all()`
 
     Set the sensor to perform a single-shot measurement for CO2, humidity, and temperature.
 
-<!-- .. method:: SCD40.set_single_shot_measurement_ht() -->
+### `SCD40.set_single_shot_measurement_ht()`
 
     Set the sensor to perform a single-shot measurement for humidity and temperature.
 
-<!-- .. method:: SCD40.set_sleep_mode() -->
+### `SCD40.set_sleep_mode()`
 
     Put the sensor into sleep mode to reduce current consumption.
 
-<!-- .. method:: SCD40.set_wake_up() -->
+### `SCD40.set_wake_up()`
 
     Wake up the sensor from sleep mode into idle mode.
 
-<!-- .. method:: SCD40.write_cmd(cmd_wr, value) -->
+### `SCD40.write_cmd(cmd_wr, value)`
 
     Write a command to the sensor.
 
-    :param int cmd_wr: The command to write to the sensor.
-    :param int value: The value to send with the command, if any.
+    - Parameter `cmd_wr` (`int`): The command to write to the sensor.
+    - Parameter `value` (`int`): The value to send with the command, if any.
 
-<!-- .. method:: SCD40.read_response(num) -->
+### `SCD40.read_response(num)`
 
     Read the sensor's response.
 
-    :param int num: The number of bytes to read from the sensor.
+    - Parameter `num` (`int`): The number of bytes to read from the sensor.
 
-<!-- .. method:: SCD40.check_crc(buf) -->
+### `SCD40.check_crc(buf)`
 
     Check the CRC of the received data to ensure it is correct.
 
-    :param bytearray buf: The buffer of bytes to check the CRC.
+    - Parameter `buf` (`bytearray`): The buffer of bytes to check the CRC.
 
-<!-- .. method:: SCD40.crc8(buffer) -->
+### `SCD40.crc8(buffer)`
 
     Calculate the CRC-8 checksum for a given buffer.
 
-    :param bytearray buffer: The buffer of bytes to calculate the CRC for.
+    - Parameter `buffer` (`bytearray`): The buffer of bytes to calculate the CRC for.

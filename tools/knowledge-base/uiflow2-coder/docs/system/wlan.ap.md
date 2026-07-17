@@ -1,19 +1,11 @@
-<!-- .. currentmodule:: network -->
-<!-- .. _network.WLAN: -->
 
 # WLAN AP -- control built-in WiFi interfaces
 
 This class provides a driver for WiFi AP network processors.
 
-<!-- .. include:: ../refs/system.wlan.ap.ref -->
-
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -63,53 +55,42 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |wlan_ap_cores3_example.m5f2|
 
 ## Constructors
 
-<!-- .. class:: WLAN(interface_id) -->
+### `class WLAN(interface_id)`
 
 Create a WLAN network interface object. Supported interfaces are
-``network.AP_IF`` (access point, allows other WiFi clients to connect)
-
-    UIFLOW2:
+`network.AP_IF` (access point, allows other WiFi clients to connect)
 
 ## Methods
 
-<!-- .. method:: WLAN.status([param]) -->
+### `WLAN.status([param])`
 
     Return the current status of the wireless connection.
 
     When called with no argument the return value describes the network link status.
 
-    UIFLOW2:
+### `WLAN.isconnected()`
 
-<!-- .. method:: WLAN.isconnected() -->
+    In AP mode returns `True` when a
+    station is connected. Returns `False` otherwise.
 
-    In AP mode returns ``True`` when a
-    station is connected. Returns ``False`` otherwise.
-
-<!-- .. method:: WLAN.active([is_active]) -->
+### `WLAN.active([is_active])`
 
     Activate ("up") or deactivate ("down") network interface, if boolean
     argument is passed. Otherwise, query current state if no argument is
     provided. Most other methods require active interface.
 
-<!-- .. method:: WLAN.ifconfig([(ip, subnet, gateway, dns)]) -->
+### `WLAN.ifconfig([(ip, subnet, gateway, dns)])`
 
    Get/set IP-level network interface parameters: IP address, subnet mask,
    gateway and DNS server. When called with no arguments, this method returns
    a 4-tuple with the above information. To set the above values, pass a
    4-tuple with the required information.
 
-<!-- .. method:: WLAN.config('param') -->
+### `WLAN.config('param')`
             WLAN.config(param=value, ...)
 
    Get or set general network interface parameters. These methods allow to work
@@ -122,24 +103,21 @@ Create a WLAN network interface object. Supported interfaces are
    Following are commonly supported parameters (availability of a specific parameter
    depends on network technology type, driver, and `MicroPython port`).
 
-   =============  ===========
    Parameter      Description
-   =============  ===========
    mac            MAC address (bytes)
    ssid           WiFi access point name (string)
    channel        WiFi channel (integer)
    hidden         Whether SSID is hidden (boolean)
    security       Security protocol supported (enumeration, see module constants)
    key            Access key (string)
-   hostname       The hostname that will be sent to DHCP (STA interfaces) and mDNS (if supported, both STA and AP). (Deprecated, use :func:`network.hostname` instead)
+   hostname       The hostname that will be sent to DHCP (STA interfaces) and mDNS (if supported, both STA and AP). (Deprecated, use `network.hostname` instead)
    reconnects     Number of reconnect attempts to make (integer, 0=none, -1=unlimited)
    txpower        Maximum transmit power in dBm (integer or float)
    pm             WiFi Power Management setting (see below for allowed values)
-   =============  ===========
 
 ## Constants
 
-<!-- .. data:: WLAN.AUTH_OPEN -->
+### `WLAN.AUTH_OPEN`
         WLAN.AUTH_WEP
         WLAN.AUTH_WPA_PSK
         WLAN.AUTH_WPA2_PSK
@@ -149,14 +127,14 @@ Create a WLAN network interface object. Supported interfaces are
         WLAN.AUTH_WPA2_WPA3_PSK
         WLAN.AUTH_WAPI_PSK
 
-Allowed values for the ``WLAN.config(authmode=...)`` network interface parameter:
+Allowed values for the `WLAN.config(authmode=...)` network interface parameter:
 
-        - ``AUTH_OPEN``: 0 -- open
-        - ``AUTH_WEP``: 1 -- WEP
-        - ``AUTH_WPA_PSK``: 2 -- WPA-PSK
-        - ``AUTH_WPA2_PSK``: 3 -- WPA2-PSK
-        - ``AUTH_WPA_WPA2_PSK``: 4 -- WPA/WPA2-PSK
-        - ``AUTH_WPA2_ENTERPRISE``: 5 -- WPA2-Enterprise
-        - ``AUTH_WPA3_PSK``: 6 -- WPA3-PSK
-        - ``AUTH_WPA2_WPA3_PSK``: 7 -- WPA2/WPA3-PSK
-        - ``AUTH_WAPI_PSK``: 8 -- WAPI-PSK
+        - `AUTH_OPEN`: 0 -- open
+        - `AUTH_WEP`: 1 -- WEP
+        - `AUTH_WPA_PSK`: 2 -- WPA-PSK
+        - `AUTH_WPA2_PSK`: 3 -- WPA2-PSK
+        - `AUTH_WPA_WPA2_PSK`: 4 -- WPA/WPA2-PSK
+        - `AUTH_WPA2_ENTERPRISE`: 5 -- WPA2-Enterprise
+        - `AUTH_WPA3_PSK`: 6 -- WPA3-PSK
+        - `AUTH_WPA2_WPA3_PSK`: 7 -- WPA2/WPA3-PSK
+        - `AUTH_WAPI_PSK`: 8 -- WAPI-PSK

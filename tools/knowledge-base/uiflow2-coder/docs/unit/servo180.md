@@ -1,24 +1,10 @@
 # Servo Kit 180°
 
-<!-- .. sku: A076-B -->
-
-<!-- .. include:: ../refs/unit.servo180.ref -->
-
 This is the driver library of Servo 180 Unit, which is used to control the rotation angle of the servo.
 
 Support the following products:
 
     |Servo Kit 180°|
-
-## UiFlow2 Example
-
-#### Set servo angle
-
-Open the |cores3_servo180_example.m5f2| project in UiFlow2.
-
-This example controls the servo to rotate to different angles.
-
-UiFlow2 Code Block:
 
 ## MicroPython Example
 
@@ -26,13 +12,7 @@ UiFlow2 Code Block:
 
 This example controls the servo to rotate to different angles.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -410,88 +390,67 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 ## **API**
 
 #### Servo180Unit
 
-## Servo180Unit
+## `Servo180Unit`
 Control a 180-degree servo motor.
 
-:param port: The port the servo is connected to.
-:type port: tuple
-:param int pin: The pin the servo is connected to (if not using a port).
-:param int freq: The PWM frequency. Default is 50Hz.
-:param int count_low: The duty cycle microseconds count for 0 degrees. Default is 500.
-:param int count_high: The duty cycle microseconds count for 180 degrees. Default is 2500.
+- Parameter `port`: The port the servo is connected to.
+- Type of `port`: tuple
+- Parameter `pin` (`int`): The pin the servo is connected to (if not using a port).
+- Parameter `freq` (`int`): The PWM frequency. Default is 50Hz.
+- Parameter `count_low` (`int`): The duty cycle microseconds count for 0 degrees. Default is 500.
+- Parameter `count_high` (`int`): The duty cycle microseconds count for 180 degrees. Default is 2500.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import Servo180Unit
-        servo_0 = Servo180Unit((33, 32)) # Adjust the port as needed
-        servo_1 = Servo180Unit(None, pin=15)  # Directly specify the pin
+```python
+from unit import Servo180Unit
+servo_0 = Servo180Unit((33, 32)) # Adjust the port as needed
+servo_1 = Servo180Unit(None, pin=15)  # Directly specify the pin
+```
 
 ### `set_angle`
 Set the servo to a specific angle.
 
-:param int angle: Angle in degrees (0 to 180).
-:param bool wait: Whether to wait for the servo to reach the position.
+- Parameter `angle` (`int`): Angle in degrees (0 to 180).
+- Parameter `wait` (`bool`): Whether to wait for the servo to reach the position.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.set_angle(90)  # Set servo to 90 degrees
+```python
+servo_0.set_angle(90)  # Set servo to 90 degrees
+```
 
 ### `set_duty`
 Set the duty cycle in microseconds.
 
-:param int duty: Duty cycle in microseconds (500 to 2500).
-:param bool wait: Whether to wait for the servo to reach the position.
+- Parameter `duty` (`int`): Duty cycle in microseconds (500 to 2500).
+- Parameter `wait` (`bool`): Whether to wait for the servo to reach the position.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-.. code-block:: python
-
-    servo_0.set_duty(1500)  # Set duty to 1500 microseconds
+```python
+servo_0.set_duty(1500)  # Set duty to 1500 microseconds
+```
 
 ### `set_percent`
 Set the servo position as a percentage.
 
-:param int percent: Position as a percentage (0 to 100).
-:param bool wait: Whether to wait for the servo to reach the position.
+- Parameter `percent` (`int`): Position as a percentage (0 to 100).
+- Parameter `wait` (`bool`): Whether to wait for the servo to reach the position.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.set_percent(50)  # Set servo to 50% position
+```python
+servo_0.set_percent(50)  # Set servo to 50% position
+```
 
 ### `set_radian`
 Set the servo position in radians.
 
-:param float radian: Position in radians (0 to π).
-:param bool wait: Whether to wait for the servo to reach the position.
+- Parameter `radian` (`float`): Position in radians (0 to π).
+- Parameter `wait` (`bool`): Whether to wait for the servo to reach the position.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.set_radian(1.57)  # Set servo to π/2 radians
+```python
+servo_0.set_radian(1.57)  # Set servo to π/2 radians
+```
 
 ### `deinit`
 Deinitialize the servo motor.

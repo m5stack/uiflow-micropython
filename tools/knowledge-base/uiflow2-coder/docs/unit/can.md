@@ -1,45 +1,11 @@
-<!-- .. _unit.CANUnit: -->
 
-<!-- .. py:currentmodule:: unit -->
 
 # CANUnit
-
-<!-- .. include:: ../refs/unit.can.ref -->
 
 The CAN Unit is used to communicate via the CAN bus.
 The following products are supported:
 
-    ================== ==================
-    |CAN Unit|         |MiniCAN Unit|
-    ================== ==================
-
-## UiFlow2 Example
-
-#### TX Example
-
-Open the |stickc_plus2_can_tx_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to transmit data using CAN Unit.
-
-Click the BtnA to change the data to be sent.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### RX Example
-
-Open the |dial_can_rx_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to receive data using CAN Unit.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Screen will display the received CAN data.
+    CAN Unit         MiniCAN Unit
 
 ## MicroPython Example
 
@@ -47,13 +13,7 @@ Example output:
 
 This example demonstrates how to transmit data using CAN Unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -144,24 +104,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### RX Example
 
 This example demonstrates how to receive data using CAN Unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -218,7 +167,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -229,53 +177,37 @@ Example output:
 
 #### CANUnit
 
-<!-- .. class:: CANUnit(port, mode, baudrate=125000) -->
+### `class CANUnit(port, mode, baudrate=125000)`
 
     Create a CANUnit object.
 
-    :param int id: The CAN ID.
-    :param tuple port: The port pins (tx, rx).
-    :param int mode: One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    :param int baudrate: The baudrate of CANUnit.
+    - Parameter `id` (`int`): The CAN ID.
+    - Parameter `port` (`tuple`): The port pins (tx, rx).
+    - Parameter `mode` (`int`): One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
+    - Parameter `baudrate` (`int`): The baudrate of CANUnit.
 
-    UiFlow2 Code Block:
+```python
+from unit import CANUnit
 
-    MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-            from unit import CANUnit
-
-            can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, baudrate=125000)
-
-<!-- .. note:: -->
-
-        CANUnit class inherits CAN class. See :class:`hardware.CAN <hardware.CAN>` for more details.
-
-<!-- .. class:: CANUnit(tx, rx, mode, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False) -->
-    :no-index:
+can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, baudrate=125000)
+```
+> Note: CANUnit class inherits CAN class. See `hardware.CAN <hardware.CAN>` for more details.
+### `class CANUnit(tx, rx, mode, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
 
     Initialise the CAN bus with the given parameters.
 
-    :param int id: The CAN ID.
-    :param tuple port: The port pins (tx, rx).
-    :param int mode: One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    :param int prescaler: The value by which the CAN input clock is divided to generate the nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive for classic CAN.
-    :param int sjw: The resynchronisation jump width in units of time quanta for nominal bits; it can be a value between 1 and 4 inclusive for classic CAN.
-    :param int bs1: Defines the location of the sample point in units of the time quanta for nominal bits; it can be a value between 1 and 16 inclusive for classic CAN.
-    :param int bs2: Defines the location of the transmit point in units of the time quanta for nominal bits; it can be a value between 1 and 8 inclusive for classic CAN.
-    :param bool triple_sampling: is Enables triple sampling when the TWAI controller samples a bit.
+    - Parameter `id` (`int`): The CAN ID.
+    - Parameter `port` (`tuple`): The port pins (tx, rx).
+    - Parameter `mode` (`int`): One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
+    - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive for classic CAN.
+    - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits; it can be a value between 1 and 4 inclusive for classic CAN.
+    - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits; it can be a value between 1 and 16 inclusive for classic CAN.
+    - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits; it can be a value between 1 and 8 inclusive for classic CAN.
+    - Parameter `triple_sampling` (`bool`): is Enables triple sampling when the TWAI controller samples a bit.
 
-    UiFlow2 Code Block:
+```python
+from unit import CANUnit
 
-    MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-            from unit import CANUnit
-
-            can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, prescaler=128, sjw=3, bs1=16, bs2=8, triple_sampling=False)
-
-<!-- .. note:: -->
-
-        CANUnit class inherits CAN class. See :class:`hardware.CAN <hardware.CAN>` for more details.
+can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, prescaler=128, sjw=3, bs1=16, bs2=8, triple_sampling=False)
+```
+> Note: CANUnit class inherits CAN class. See `hardware.CAN <hardware.CAN>` for more details.

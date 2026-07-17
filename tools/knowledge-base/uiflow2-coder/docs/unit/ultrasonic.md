@@ -1,18 +1,12 @@
 # Ultrasonic Unit
 
-<!-- .. include:: ../refs/unit.ultrasonic.ref -->
-
 Support the following products:
 
-    |Ultrasonic|
+    Ultrasonic
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -51,32 +45,21 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |ultrasonic_core_example.m5f2|
 
 ## class ULTRASONIC_I2C
 
 ## Constructors
 
-<!-- .. class:: ULTRASONIC_I2C(PORT) -->
+### `class ULTRASONIC_I2C(PORT)`
 
     Create a ULTRASONIC I2C object.
 
     The parameters is:
-        - ``PORT`` Define an i2c port.
-
-    UIFLOW2:
+        - `PORT` Define an i2c port.
 
 ## Methods
 
-<!-- .. method:: ULTRASONIC_I2C.get_target_distance() -->
+### `ULTRASONIC_I2C.get_target_distance()`
 
     Acquire transmitting distance
-
-    UIFLOW2:

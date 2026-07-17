@@ -1,18 +1,13 @@
 
 # Relay2 Module
 
-<!-- .. include:: ../refs/module.relay_2.ref -->
-
 Support the following products:
 
-|Relay2Module|
+Relay2Module
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -69,68 +64,49 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
 
 ## class Relay2Module
 
 ## Constructors
 
-<!-- .. class:: Relay2Module(address) -->
+### `class Relay2Module(address)`
 
     Initialize the 2Relay Module with the specified I2C address.
 
-    :param int|list|tuple address: I2C address of the Relay2Module.
-
-    UIFLOW2:
+    - Parameter `address` (`intlisttuple`): I2C address of the Relay2Module.
 
 ## Methods
 
-<!-- .. method:: Relay2Module.set_relay_state(num, state) -> None -->
+### `Relay2Module.set_relay_state(num, state) -> None`
 
     Set the state of a specific relay.
 
-    :param int num: The relay number (1 or 2).
-    :param bool state: True to turn on, False to turn off.
+    - Parameter `num` (`int`): The relay number (1 or 2).
+    - Parameter `state` (`bool`): True to turn on, False to turn off.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay2Module.get_relay_status(num) -> bool -->
+### `Relay2Module.get_relay_status(num) -> bool`
 
     Get the status of a specific relay.
 
-    :param int num: The relay number (1 or 2).
+    - Parameter `num` (`int`): The relay number (1 or 2).
 
-    UIFLOW2:
-
-<!-- .. method:: Relay2Module.set_all_relay_state(state) -> None -->
+### `Relay2Module.set_all_relay_state(state) -> None`
 
     Set the state of both relays simultaneously.
 
-    :param bool state: True to turn on both relays, False to turn off both relays.
+    - Parameter `state` (`bool`): True to turn on both relays, False to turn off both relays.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay2Module.get_firmware_version() -> int -->
+### `Relay2Module.get_firmware_version() -> int`
 
     Get the firmware version of the Relay2 Module.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay2Module.set_i2c_address(addr) -> None -->
+### `Relay2Module.set_i2c_address(addr) -> None`
 
     Set a new I2C address(0x08~0x77) for the Relay2 Module.
 
-    :param int addr: The new I2C address to set.
+    - Parameter `addr` (`int`): The new I2C address to set.
 
-    UIFLOW2:
-
-<!-- .. method:: Relay2Module.get_i2c_address() -> int -->
+### `Relay2Module.get_i2c_address() -> int`
 
     Get the current I2C address of the Relay2 Module.
-
-    UIFLOW2:

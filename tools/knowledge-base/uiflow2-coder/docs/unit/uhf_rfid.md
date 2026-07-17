@@ -1,18 +1,12 @@
 # UHF-RFID Unit
 
-<!-- .. include:: ../refs/unit.uhf_rfid.ref -->
-
 Support the following products:
 
-    |UHFRFIDUnit|
+    UHFRFIDUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -52,39 +46,28 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_uhf_rfid_example.m5f2|
 
 ## class UHFRFIDUnit
 
 ## Constructors
 
-<!-- .. class:: UHFRFIDUnit(id: Literal[0, 1, 2], port: list | tuple, verbose: bool = False) -->
+### `class UHFRFIDUnit(id: Literal[0, 1, 2], port: list | tuple, verbose: bool = False)`
 
     Create a UHF-RFID unit.
 
-    :param int id: The ID of the unit.
-    :param list|tuple port: The port that the unit is connected to.
-    :param bool verbose: Print the log information. Default is True.
-
-    UIFLOW2:
+    - Parameter `id` (`int`): The ID of the unit.
+    - Parameter `port` (`list|tuple`): The port that the unit is connected to.
+    - Parameter `verbose` (`bool`): Print the log information. Default is True.
 
 ## Methods
 
 #### Demodulator
 
-<!-- .. method:: UHFRFIDUnit.get_demodulator_mixer() -> int -->
+### `UHFRFIDUnit.get_demodulator_mixer() -> int`
 
     Get demodulator mixer value.
 
-    :return int: demodulator mixer value.
-
     Options:
         - 0x00: 0dB
         - 0x01: 3dB
@@ -94,13 +77,11 @@ UIFLOW2 Example:
         - 0x05: 15dB
         - 0x06: 16dB
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_demodulator_mixer(value: int) -> bool -->
+### `UHFRFIDUnit.set_demodulator_mixer(value: int) -> bool`
 
     Set demodulator mixer value.
 
-    :param int value: demodulator mixer value.
+    - Parameter `value` (`int`): demodulator mixer value.
 
     Options:
         - 0x00: 0dB
@@ -111,16 +92,10 @@ UIFLOW2 Example:
         - 0x05: 15dB
         - 0x06: 16dB
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_demodulator_amplifier() -> int -->
+### `UHFRFIDUnit.get_demodulator_amplifier() -> int`
 
     Get demodulator amplifier value.
 
-    :return int: demodulator amplifier value.
-
     Options:
         - 0x00: 12dB
         - 0x01: 18dB
@@ -131,13 +106,11 @@ UIFLOW2 Example:
         - 0x06: 36dB
         - 0x07: 40dB
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_demodulator_amplifier(value: int) -> bool -->
+### `UHFRFIDUnit.set_demodulator_amplifier(value: int) -> bool`
 
     Set demodulator amplifier value.
 
-    :param int value: demodulator amplifier value.
+    - Parameter `value` (`int`): demodulator amplifier value.
 
     Options:
         - 0x00: 12dB
@@ -149,36 +122,22 @@ UIFLOW2 Example:
         - 0x06: 36dB
         - 0x07: 40dB
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_demodulator_threshold() -> int -->
+### `UHFRFIDUnit.get_demodulator_threshold() -> int`
 
     Get demodulator threshold value.
 
-    :return int: demodulator threshold value. the range is from 0x01B0 to 0xFFFF.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_demodulator_threshold(value: int) -> bool -->
+### `UHFRFIDUnit.set_demodulator_threshold(value: int) -> bool`
 
     Set demodulator threshold value.
 
-    :param int value: demodulator threshold value. the range is from 0x01B0 to 0xFFFF.
-
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
+    - Parameter `value` (`int`): demodulator threshold value. the range is from 0x01B0 to 0xFFFF.
 
 #### Working
 
-<!-- .. method:: UHFRFIDUnit.get_working_region() -> int -->
+### `UHFRFIDUnit.get_working_region() -> int`
 
     Get work region.
 
-    :return int: work region.
-
     Options:
         - UHFRFIDUnit.CN_900MHZ: China 900MHz
         - UHFRFIDUnit.CN_800MHZ: China 800MHz
@@ -186,13 +145,11 @@ UIFLOW2 Example:
         - UHFRFIDUnit.EUR: EUR
         - UHFRFIDUnit.KR: KR
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_working_region(region: int) -> bool -->
+### `UHFRFIDUnit.set_working_region(region: int) -> bool`
 
     Set work region.
 
-    :param int region: work region.
+    - Parameter `region` (`int`): work region.
 
     Options:
         - UHFRFIDUnit.CN_900MHZ: China 900MHz
@@ -201,254 +158,160 @@ UIFLOW2 Example:
         - UHFRFIDUnit.EUR: EUR
         - UHFRFIDUnit.KR: KR
 
-    :return int: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_working_channel() -> int -->
+### `UHFRFIDUnit.get_working_channel() -> int`
 
     Get work channel.
 
-    :return int: work channel. the range is from 0 to 19.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_working_channel(channel: int) -> bool -->
+### `UHFRFIDUnit.set_working_channel(channel: int) -> bool`
 
     Set work channel.
 
-    :param int channel: work channel. the range is from 0 to 19.
+    - Parameter `channel` (`int`): work channel. the range is from 0 to 19.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.insert_working_channel(channel: int) -> bool -->
+### `UHFRFIDUnit.insert_working_channel(channel: int) -> bool`
 
     Insert work channel.
 
-    :param int channel: work channel. the range is from 0 to 19.
+    - Parameter `channel` (`int`): work channel. the range is from 0 to 19.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.clear_working_channel() -> bool -->
+### `UHFRFIDUnit.clear_working_channel() -> bool`
 
     Clear work channel.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_automatic_hopping(enable: bool) -> bool -->
+### `UHFRFIDUnit.set_automatic_hopping(enable: bool) -> bool`
 
     Set automatic hopping.
 
-    :param bool enable: enable automatic hopping.
-
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
+    - Parameter `enable` (`bool`): enable automatic hopping.
 
 #### RF Power
 
-<!-- .. method:: UHFRFIDUnit.get_channel_rssi(channel: int) -> int -->
+### `UHFRFIDUnit.get_channel_rssi(channel: int) -> int`
 
     Get channel RSSI value.
 
-    :param int channel: work channel. the range is from 0 to 19.
+    - Parameter `channel` (`int`): work channel. the range is from 0 to 19.
 
-    :return int: channel RSSI value. the unit is dBm.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_blocking_signal_strength(channel: int) -> int -->
+### `UHFRFIDUnit.get_blocking_signal_strength(channel: int) -> int`
 
     Get blocking signal strength.
 
-    :param int channel: work channel. the range is from 0 to 19.
+    - Parameter `channel` (`int`): work channel. the range is from 0 to 19.
 
-    :return int: blocking signal strength. the unit is dBm.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_tx_power() -> int -->
+### `UHFRFIDUnit.get_tx_power() -> int`
 
     Get TX power.
 
-    :return int: TX power. the unit is dBm. the range is from -7dBm to 30dBm.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_tx_power(power: int) -> bool -->
+### `UHFRFIDUnit.set_tx_power(power: int) -> bool`
 
     Set TX power.
 
-    :param int power: TX power. the range is from -7dBm to 30dBm.
+    - Parameter `power` (`int`): TX power. the range is from -7dBm to 30dBm.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_continuous_wave(enable: bool) -> bool -->
+### `UHFRFIDUnit.set_continuous_wave(enable: bool) -> bool`
 
     Set continuous wave.
 
-    :param bool enable: enable continuous wave.
-
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
+    - Parameter `enable` (`bool`): enable continuous wave.
 
 #### Module Information and Settings
 
-<!-- .. method:: UHFRFIDUnit.get_manufacturer_id() -> str -->
+### `UHFRFIDUnit.get_manufacturer_id() -> str`
 
     Get manufacturer ID.
 
-    :return str: manufacturer ID.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_hardware_version() -> str -->
+### `UHFRFIDUnit.get_hardware_version() -> str`
 
     Get hardware version.
 
-    :return str: hardware version.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_firmware_version() -> str -->
+### `UHFRFIDUnit.get_firmware_version() -> str`
 
     Get firmware version.
 
-    :return str: firmware version.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.sleep() -> bool -->
+### `UHFRFIDUnit.sleep() -> bool`
 
     Set sleep.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.wake() -> bool -->
+### `UHFRFIDUnit.wake() -> bool`
 
     Set wake up.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_automatic_sleep_time(min: int) -> bool -->
+### `UHFRFIDUnit.set_automatic_sleep_time(min: int) -> bool`
 
     Set automatic sleep time.
 
-    :param int min: automatic sleep time in minutes. the range is from 1 to 30.
+    - Parameter `min` (`int`): automatic sleep time in minutes. the range is from 1 to 30.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.disable_automatic_sleep() -> bool -->
+### `UHFRFIDUnit.disable_automatic_sleep() -> bool`
 
     Disable automatic sleep.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
 #### Read and Write Tag
 
-<!-- .. method:: UHFRFIDUnit.inventory() -> str -->
+### `UHFRFIDUnit.inventory() -> str`
 
     Get tag epc code. if no tag is found, return empty string.
 
-    :return: hexadecimal string of tag epc code.
+    - Returns: hexadecimal string of tag epc code.
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_select_mode(mode: int) -> bool -->
+### `UHFRFIDUnit.set_select_mode(mode: int) -> bool`
 
     Set select mode.
 
-    :param int mode: select mode.
+    - Parameter `mode` (`int`): select mode.
 
     Options:
         - 0x00: need select command
         - 0x01: no need select command
         - 0x02: part operation need select command
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.select(target: int, action: int, membank: int, pointer: int, truncate: bool, mask: str) -> bool -->
+### `UHFRFIDUnit.select(target: int, action: int, membank: int, pointer: int, truncate: bool, mask: str) -> bool`
 
     Set select tag.
 
-    :param int target: target.
-    :param int action: action.
-    :param int membank: memory bank.
-    :param int pointer: pointer.
-    :param bool truncate: truncate.
-    :param str mask: EPC code. hexadecimal string.
+    - Parameter `target` (`int`): target.
+    - Parameter `action` (`int`): action.
+    - Parameter `membank` (`int`): memory bank.
+    - Parameter `pointer` (`int`): pointer.
+    - Parameter `truncate` (`bool`): truncate.
+    - Parameter `mask` (`str`): EPC code. hexadecimal string.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_access_password(old_password: str, new_password: str) -> None -->
+### `UHFRFIDUnit.set_access_password(old_password: str, new_password: str) -> None`
 
     Set access password.
 
-    :param str old_password: old access password. hexadecimal string.
-    :param str new_password: new access password. hexadecimal string.
+    - Parameter `old_password` (`str`): old access password. hexadecimal string.
+    - Parameter `new_password` (`str`): new access password. hexadecimal string.
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_kill_password(password) -> None -->
+### `UHFRFIDUnit.set_kill_password(password) -> None`
 
     Set kill password.
 
-    :param str password: kill password. hexadecimal string.
+    - Parameter `password` (`str`): kill password. hexadecimal string.
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.kill(password: str) -> bool -->
+### `UHFRFIDUnit.kill(password: str) -> bool`
 
     Kill tag.
 
-    :param str password: kill password. hexadecimal string.
+    - Parameter `password` (`str`): kill password. hexadecimal string.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_query_param(dr=0b0, m=0b00, tr_ext=0b1, sel=0b00, session=0b00, target=0b0, q=0b0100) -> bool -->
+### `UHFRFIDUnit.set_query_param(dr=0b0, m=0b00, tr_ext=0b1, sel=0b00, session=0b00, target=0b0, q=0b0100) -> bool`
 
     Set query parameter.
 
-    :param int dr: dr. fixed to 0.
-    :param int m: m. fixed to 0.
-    :param int tr_ext: tr_ext. fixed to 1.
-    :param int sel: sel. the range is from 0 to 3.
-    :param int session: session. the range is from 0 to 3.
-    :param int target: target. the range is from 0 to 1.
-    :param int q: q. the range is from 0 to 8.
+    - Parameter `dr` (`int`): dr. fixed to 0.
+    - Parameter `m` (`int`): m. fixed to 0.
+    - Parameter `tr_ext` (`int`): tr_ext. fixed to 1.
+    - Parameter `sel` (`int`): sel. the range is from 0 to 3.
+    - Parameter `session` (`int`): session. the range is from 0 to 3.
+    - Parameter `target` (`int`): target. the range is from 0 to 1.
+    - Parameter `q` (`int`): q. the range is from 0 to 8.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.lock_mem_bank( kill_lock: int = 0b00, access_lock: int = 0b00, epc_lock: int = 0b00, tid_lock: int = 0b00, user_lock: int = 0b00, access: str = "00000000",) -> bool -->
+### `UHFRFIDUnit.lock_mem_bank( kill_lock: int = 0b00, access_lock: int = 0b00, epc_lock: int = 0b00, tid_lock: int = 0b00, user_lock: int = 0b00, access: str = "00000000",) -> bool`
 
     Lock memory bank.
 
-    :param int kill_lock: kill lock.
+    - Parameter `kill_lock` (`int`): kill lock.
 
         Options:
             - UHFRFIDUnit.OPEN: open
@@ -456,7 +319,7 @@ UIFLOW2 Example:
             - UHFRFIDUnit.PERMA_OPEN: perma open
             - UHFRFIDUnit.PERMA_LOCK: perma lock
 
-    :param int access_lock: access lock.
+    - Parameter `access_lock` (`int`): access lock.
 
         Options:
             - UHFRFIDUnit.OPEN: open
@@ -464,7 +327,7 @@ UIFLOW2 Example:
             - UHFRFIDUnit.PERMA_OPEN: perma open
             - UHFRFIDUnit.PERMA_LOCK: perma lock
 
-    :param int epc_lock: epc lock.
+    - Parameter `epc_lock` (`int`): epc lock.
 
         Options:
             - UHFRFIDUnit.OPEN: open
@@ -472,7 +335,7 @@ UIFLOW2 Example:
             - UHFRFIDUnit.PERMA_OPEN: perma open
             - UHFRFIDUnit.PERMA_LOCK: perma lock
 
-    :param int tid_lock: tid lock.
+    - Parameter `tid_lock` (`int`): tid lock.
 
         Options:
             - UHFRFIDUnit.OPEN: open
@@ -480,7 +343,7 @@ UIFLOW2 Example:
             - UHFRFIDUnit.PERMA_OPEN: perma open
             - UHFRFIDUnit.PERMA_LOCK: perma lock
 
-    :param int user_lock: user lock.
+    - Parameter `user_lock` (`int`): user lock.
 
         Options:
             - UHFRFIDUnit.OPEN: open
@@ -488,15 +351,13 @@ UIFLOW2 Example:
             - UHFRFIDUnit.PERMA_OPEN: perma open
             - UHFRFIDUnit.PERMA_LOCK: perma lock
 
-    :param str access: access password. hexadecimal string.
+    - Parameter `access` (`str`): access password. hexadecimal string.
 
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.read_mem_bank(bank: int, offset: int, length: int, access_password: str = "00000000") -> str -->
+### `UHFRFIDUnit.read_mem_bank(bank: int, offset: int, length: int, access_password: str = "00000000") -> str`
 
     Read memory bank.
 
-    :param int bank: memory bank.
+    - Parameter `bank` (`int`): memory bank.
 
         Options:
             - UHFRFIDUnit.RFU: reserved
@@ -504,19 +365,15 @@ UIFLOW2 Example:
             - UHFRFIDUnit.TID: tid
             - UHFRFIDUnit.USER: user
 
-    :param int offset: offset.
-    :param int length: length.
-    :param str access_password: access password. hexadecimal string.
+    - Parameter `offset` (`int`): offset.
+    - Parameter `length` (`int`): length.
+    - Parameter `access_password` (`str`): access password. hexadecimal string.
 
-    :return str: data. hexadecimal string.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.write_mem_bank(bank: int, offset: int, data: str, access_password: str = "00000000") -->
+### `UHFRFIDUnit.write_mem_bank(bank: int, offset: int, data: str, access_password: str = "00000000")`
 
     Write memory bank.
 
-    :param int bank: memory bank.
+    - Parameter `bank` (`int`): memory bank.
 
         Options:
             - UHFRFIDUnit.RFU: reserved
@@ -524,109 +381,71 @@ UIFLOW2 Example:
             - UHFRFIDUnit.TID: tid
             - UHFRFIDUnit.USER: user
 
-    :param int offset: offset.
-    :param str data: data. hexadecimal string.
-    :param str access_password: access password. hexadecimal string.
-
-    UIFLOW2:
+    - Parameter `offset` (`int`): offset.
+    - Parameter `data` (`str`): data. hexadecimal string.
+    - Parameter `access_password` (`str`): access password. hexadecimal string.
 
 #### Impinj Monza
 
-<!-- .. method:: UHFRFIDUnit.get_impinj_monza_qt_sr(persistence, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.get_impinj_monza_qt_sr(persistence, password: str = "00000000") -> bool`
 
     Get Impinj Monza QT_SR.
 
-    :param int persistence: persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
-    :param str password: access password. hexadecimal string.
+    - Parameter `persistence` (`int`): persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return bool: QT_SR status.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_impinj_monza_qt_sr(qt_sr: bool, persistence: int, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.set_impinj_monza_qt_sr(qt_sr: bool, persistence: int, password: str = "00000000") -> bool`
 
     Set Impinj Monza QT_SR.
 
-    :param bool qt_sr: QT_SR status.
-    :param int persistence: persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
-    :param str password: access password. hexadecimal string.
+    - Parameter `qt_sr` (`bool`): QT_SR status.
+    - Parameter `persistence` (`int`): persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_impinj_monza_qt_mem(persistence, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.get_impinj_monza_qt_mem(persistence, password: str = "00000000") -> bool`
 
     Set Impinj Monza QT_MEM.
 
-    :param int persistence: persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
-    :param str password: access password. hexadecimal string.
+    - Parameter `persistence` (`int`): persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return bool: QT_MEM status.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_impinj_monza_qt_mem(qt_mem: bool, persistence: int, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.set_impinj_monza_qt_mem(qt_mem: bool, persistence: int, password: str = "00000000") -> bool`
 
     Set Impinj Monza QT_MEM.
 
-    :param bool qt_mem: QT_MEM status.
-    :param int persistence: persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
-    :param str password: access password. hexadecimal string.
-
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
+    - Parameter `qt_mem` (`bool`): QT_MEM status.
+    - Parameter `persistence` (`int`): persistence. 0x00 is volatile memory, 0x01 is non-volatile memory.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
 #### NXP
 
-<!-- .. method:: UHFRFIDUnit.nxp_eas_alarm() -> str -->
+### `UHFRFIDUnit.nxp_eas_alarm() -> str`
 
     Get NXP EAS alarm code.
 
-    :return str: NXP EAS alarm code. hexadecimal string.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.get_nxp_config_word(password: str = "00000000") -> int -->
+### `UHFRFIDUnit.get_nxp_config_word(password: str = "00000000") -> int`
 
     Get NXP config word.
 
-    :param str password: access password. hexadecimal string.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return int: NXP config word.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.set_nxp_config_word(config_word: int, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.set_nxp_config_word(config_word: int, password: str = "00000000") -> bool`
 
     Set NXP config word.
 
-    :param int config_word: NXP config word.
-    :param str password: access password. hexadecimal string.
+    - Parameter `config_word` (`int`): NXP config word.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.nxp_read_protect(set: int, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.nxp_read_protect(set: int, password: str = "00000000") -> bool`
 
     Set NXP read protect.
 
-    :param int set: set read protect. 0x00 is set read protect, 0x01 is reset read protect.
-    :param str password: access password. hexadecimal string.
+    - Parameter `set` (`int`): set read protect. 0x00 is set read protect, 0x01 is reset read protect.
+    - Parameter `password` (`str`): access password. hexadecimal string.
 
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
-
-<!-- .. method:: UHFRFIDUnit.nxp_change_eas(set: int, password: str = "00000000") -> bool -->
+### `UHFRFIDUnit.nxp_change_eas(set: int, password: str = "00000000") -> bool`
 
     Change NXP EAS.
 
-    :param int set: set EAS. 0x00 is set EAS, 0x01 is reset EAS.
-    :param str password: access password. hexadecimal string.
-
-    :return bool: True if success, False if failed.
-
-    UIFLOW2:
+    - Parameter `set` (`int`): set EAS. 0x00 is set EAS, 0x01 is reset EAS.
+    - Parameter `password` (`str`): access password. hexadecimal string.

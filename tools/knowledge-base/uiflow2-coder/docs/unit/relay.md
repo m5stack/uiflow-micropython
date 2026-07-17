@@ -1,18 +1,12 @@
 # Relay Unit
 
-<!-- .. include:: ../refs/unit.relay.ref -->
-
 Support the following products:
 
-    |RELAY|
+    RELAY
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -52,50 +46,33 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |relay_core_example.m5f2|
 
 ## class RelayUnit
 
 ## Constructors
 
-<!-- .. class:: RelayUnit(io) -->
+### `class RelayUnit(io)`
 
     Create a RelayUnit object.
 
     The parameters is:
-        - ``io`` Define the control pin.
-
-    UIFLOW2:
+        - `io` Define the control pin.
 
 ## Methods
 
-<!-- .. method:: RelayUnit.get_status() -->
+### `RelayUnit.get_status()`
 
     Gets the relay switch status.
 
-    UIFLOW2:
-
-<!-- .. method:: RealyUnit.on() -->
+### `RealyUnit.on()`
 
    turn on the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: RealyUnit.off() -->
+### `RealyUnit.off()`
 
    Turn off the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: RealyUnit.set_status() -->
+### `RealyUnit.set_status()`
 
    Set the relay status (True or false).
-
-    UIFLOW2:

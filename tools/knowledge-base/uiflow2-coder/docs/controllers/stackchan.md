@@ -1,137 +1,19 @@
-#########
-###### StackChan
-
-<!-- .. include:: ../refs/controllers.stackchan.ref -->
+# StackChan
 
 Support the following products:
 
-    |StackChan|
-
-## UiFlow2 Example
-
-#### Servo zero calibration
-
-<!-- .. NOTE:: -->
-   Mechanical assembly varies between units. After flashing new firmware, calibrate the servo zero reference manually.
-
-Open the |stackchan_servo_zero_calibrate.m5f2| project in UiFlow2.
-
-#. Run the program.
-#. Move the head by hand: on **X**, align the display with the base orientation; on **Y**, set the display perpendicular to the base.
-#. Tap **Save** button.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Servo angle read
-
-Open the |stackchan_servo_read_example.m5f2| project in UiFlow2.
-
-This example demonstrates reading X and Y servo angles in degrees with torque disabled so the head can move freely.
-
-<!-- .. NOTE:: -->
-   **Torque on** holds the last target and resists moving by hand. **Torque off** lets you pose the head freely while readings update—handy for checking calibration.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Servo control
-
-Open the |stackchan_servo_control_example.m5f2| project in UiFlow2.
-
-This example demonstrates moving the servos to commanded positions and driving the X servo in PWM mode using ``set_servo_angle`` and ``set_servo_x_pwm``.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Face tracking
-
-Open the |stackchan_face_tracking_example.m5f2| project in UiFlow2.
-
-This demo implements face tracking.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Servo power info
-
-Open the |stackchan_servo_power_example.m5f2| project in UiFlow2.
-
-This example demonstrates read and display servo power information.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Touch & RGB
-
-Open the |stackchan_tp_rgb_example.m5f2| project in UiFlow2.
-
-This example demonstrates mapping touch zones to RGB strip colours (three logical touch points on two strips).
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### NFC
-
-Open the |stackchan_nfc_detect_example.m5f2| project in UiFlow2.
-
-This example demonstrates detecting NFC tags and displaying UID and tag type on screen.
-For the full **NFC Unit** API reference (``detect``, read/write, tag types, etc.), see `NFC Unit <../unit/nfc.html>`__.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Infrared (IR)
-
-Open the |stackchan_ir_tx_rx_example.m5f2| project in UiFlow2.
-
-This example demonstrates infrared transmit and receive in NEC style.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    StackChan
 
 ## MicroPython Example
 
 #### Servo zero calibration
 
-<!-- .. NOTE:: -->
-   Mechanical assembly varies between units. After flashing new firmware, calibrate the servo zero reference manually.
-
-#. Run the program.
-#. Move the head by hand: on **X**, align the display with the base orientation; on **Y**, set the display perpendicular to the base.
-#. Tap **Save** button.
-
-MicroPython Code Block:
+> Note: Mechanical assembly varies between units. After flashing new firmware, calibrate the servo zero reference manually.
+1. Run the program.
+1. Move the head by hand: on **X**, align the display with the base orientation; on **Y**, set the display perpendicular to the base.
+1. Tap **Save** button.
 
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -166,6 +48,7 @@ def button_save_short_clicked_event(event_struct):
     stackchan.set_servo_zero()
     label_tip.set_text(str("Tip: Calibration success"))
     Speaker.tone(1000, 100)
+    last_time = time.ticks_ms()
 
 def button_save_event_handler(event_struct):
     global \
@@ -255,12 +138,13 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    stackchan.set_servo_power(enable=True)
+    stackchan.set_servo_power(enable=True, settle_ms=500)
     stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
     stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
     Speaker.begin()
     Speaker.setVolumePercentage(0.6)
     Speaker.tone(1000, 100)
+    last_time = time.ticks_ms()
 
 def loop():
     global \
@@ -276,6 +160,7 @@ def loop():
         last_time
     M5.update()
     if (time.ticks_diff((time.ticks_ms()), last_time)) >= 100:
+        last_time = time.ticks_ms()
         x_angle = stackchan.get_servo_angle(stackchan.SERVO_ID_X)
         y_angle = stackchan.get_servo_angle(stackchan.SERVO_ID_Y)
         label_angle_x.set_text(str((str("X-Axis Servo Angle:") + str(x_angle))))
@@ -294,21 +179,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Servo angle read
 
 This example demonstrates reading X and Y servo angles in degrees with torque disabled so the head can move freely.
 
-<!-- .. NOTE:: -->
-   **Torque on** holds the last target and resists moving by hand. **Torque off** lets you pose the head freely while readings update—handy for checking calibration.
-
-MicroPython Code Block:
+> Note: **Torque on** holds the last target and resists moving by hand. **Torque off** lets you pose the head freely while readings update—handy for checking calibration.
 
 ```python
 import os, sys, io
@@ -368,9 +245,10 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    stackchan.set_servo_power(enable=True)
+    stackchan.set_servo_power(enable=True, settle_ms=500)
     stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
     stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
+    last_time = time.ticks_ms()
 
 def loop():
     global page0, label_title, label_agnle_x, label_angle_y, stackchan, last_time, x_angle, y_angle
@@ -395,24 +273,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Servo control
 
-This example demonstrates moving the servos to commanded positions and driving the X servo in PWM mode using ``set_servo_angle`` and ``set_servo_x_pwm``.
-
-MicroPython Code Block:
+This example demonstrates moving the servos to commanded positions and driving the X servo in PWM mode using `set_servo_angle` and `set_servo_x_pwm`.
 
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -425,6 +292,22 @@ page0 = None
 label_title = None
 label_status = None
 stackchan = None
+
+def cleanup():
+    global stackchan
+    if stackchan is None:
+        return
+    try:
+        stackchan.set_servo_x_pwm(0)
+        time.sleep_ms(100)
+        stackchan.set_servo_angle(stackchan.SERVO_ID_X, 0, 500, 0)
+        stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 45, 500, 0)
+        time.sleep_ms(600)
+        stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
+        stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
+        stackchan.set_servo_power(enable=False)
+    except Exception as e:
+        print("StackChan cleanup failed:", e)
 
 def setup():
     global page0, label_title, label_status, stackchan
@@ -458,24 +341,51 @@ def setup():
     page0.screen_load()
     Speaker.begin()
     Speaker.setVolumePercentage(0.5)
+    # A previous run may have been interrupted while X was in PWM mode.
+    # Power-cycle the servo rail before enabling torque to recover cleanly.
+    stackchan.set_servo_power(enable=False, settle_ms=300)
     stackchan.set_servo_power(enable=True)
     stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=True)
-    stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=True)
+    stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=True)
+
+    label_status.set_text(str("Center X/Y"))
+    label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
     stackchan.set_servo_angle(stackchan.SERVO_ID_X, 0, 1000, 0)
     stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 45, 1000, 0)
     Speaker.tone(678, 300)
     time.sleep_ms(2000)
-    label_status.set_text(str("Rotate counterclockwise"))
+
+    label_status.set_text(str("Y tilt up"))
+    label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
+    stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 20, 1000, 0)
+    time.sleep_ms(1800)
+
+    label_status.set_text(str("Y tilt down"))
+    label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
+    stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 70, 1000, 0)
+    time.sleep_ms(1800)
+
+    label_status.set_text(str("Y back to center"))
+    label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
+    stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 45, 1000, 0)
+    time.sleep_ms(1500)
+
+    label_status.set_text(str("X rotate counterclockwise"))
     label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
     stackchan.set_servo_x_pwm(-50)
     time.sleep_ms(3000)
-    label_status.set_text(str("Rotate clockwise"))
+
+    label_status.set_text(str("X rotate clockwise"))
     label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
     stackchan.set_servo_x_pwm(50)
     time.sleep_ms(3000)
-    label_status.set_text(str("Go back to center"))
+
+    label_status.set_text(str("X/Y back to center"))
     label_status.align_to(page0, lv.ALIGN.CENTER, 0, 0)
+    stackchan.set_servo_x_pwm(0)
+    time.sleep_ms(100)
     stackchan.set_servo_angle(stackchan.SERVO_ID_X, 0, 1000, 0)
+    stackchan.set_servo_angle(stackchan.SERVO_ID_Y, 45, 1000, 0)
 
 def loop():
     global page0, label_title, label_status, stackchan
@@ -487,6 +397,7 @@ if __name__ == "__main__":
         while True:
             loop()
     except (Exception, KeyboardInterrupt) as e:
+        cleanup()
         try:
             m5ui.deinit()
             from utility import print_error_msg
@@ -494,18 +405,11 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Face tracking
 
 This example implements face tracking.
-
-MicroPython Code Block:
 
 ```python
 import os, sys, io
@@ -669,24 +573,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Servo power info
 
 This example demonstrates read and display servo power information.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -766,6 +659,7 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
+    last_time = time.ticks_ms()
 
 def loop():
     global \
@@ -802,24 +696,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Touch & RGB
 
 This example demonstrates mapping touch zones to RGB strip colours (three logical touch points on two strips).
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -828,17 +711,28 @@ import lvgl as lv
 import time
 from hardware.stackchan import StackChan
 
+HOLD_MS = 300
+TOUCH_COLORS = (0x33CC00, 0x00CCCC, 0x000099)
+TOUCH_TONES = (700, 900, 1100)
+TOUCH_LEDS = (
+    ((0, 0), (0, 1), (1, 0), (1, 1)),
+    ((0, 2), (0, 3), (1, 2), (1, 3)),
+    ((0, 4), (0, 5), (1, 4), (1, 5)),
+)
+
 page0 = None
 label_title = None
 stackchan = None
 tp = None
-tp1 = None
 last_time = None
-tp2 = None
-tp3 = None
+active = None
+
+def set_touch_group(index, color):
+    for strip, led in TOUCH_LEDS[index]:
+        stackchan.set_rgb_color(strip, led, color)
 
 def setup():
-    global page0, label_title, stackchan, tp, tp1, last_time, tp2, tp3
+    global page0, label_title, stackchan, tp, last_time, active
 
     M5.begin()
     Widgets.setRotation(1)
@@ -857,56 +751,31 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    last_time = [0, 0, 0]
+    now = time.ticks_ms()
+    last_time = [now, now, now]
+    active = [False, False, False]
     Speaker.begin()
     Speaker.setVolumePercentage(0.5)
+    stackchan.set_rgb_color(0x000000)
 
 def loop():
-    global page0, label_title, stackchan, tp, tp1, last_time, tp2, tp3
+    global page0, label_title, stackchan, tp, last_time, active
     M5.update()
+    now = time.ticks_ms()
     tp = stackchan.get_touch()
-    tp1 = tp[0]
-    tp2 = tp[1]
-    tp3 = tp[2]
-    if tp1:
-        last_time[0] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 0, 0x33CC00)
-        stackchan.set_rgb_color(0, 1, 0x33CC00)
-        stackchan.set_rgb_color(1, 0, 0x33CC00)
-        stackchan.set_rgb_color(1, 1, 0x33CC00)
-        Speaker.tone(700, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[0]))) > 300:
-            stackchan.set_rgb_color(0, 0, 0x000000)
-            stackchan.set_rgb_color(0, 1, 0x000000)
-            stackchan.set_rgb_color(1, 0, 0x000000)
-            stackchan.set_rgb_color(1, 1, 0x000000)
-    if tp2:
-        last_time[1] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 2, 0x00CCCC)
-        stackchan.set_rgb_color(0, 3, 0x00CCCC)
-        stackchan.set_rgb_color(1, 2, 0x00CCCC)
-        stackchan.set_rgb_color(1, 3, 0x00CCCC)
-        Speaker.tone(900, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[1]))) > 300:
-            stackchan.set_rgb_color(0, 2, 0x000000)
-            stackchan.set_rgb_color(0, 3, 0x000000)
-            stackchan.set_rgb_color(1, 2, 0x000000)
-            stackchan.set_rgb_color(1, 3, 0x000000)
-    if tp3:
-        last_time[2] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 4, 0x000099)
-        stackchan.set_rgb_color(0, 5, 0x000099)
-        stackchan.set_rgb_color(1, 4, 0x000099)
-        stackchan.set_rgb_color(1, 5, 0x000099)
-        Speaker.tone(1100, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[2]))) > 300:
-            stackchan.set_rgb_color(0, 4, 0x000000)
-            stackchan.set_rgb_color(0, 5, 0x000000)
-            stackchan.set_rgb_color(1, 4, 0x000000)
-            stackchan.set_rgb_color(1, 5, 0x000000)
+    if tp is None:
+        tp = [0, 0, 0]
+
+    for index in range(3):
+        if tp[index]:
+            last_time[index] = now
+            if not active[index]:
+                active[index] = True
+                set_touch_group(index, TOUCH_COLORS[index])
+                Speaker.tone(TOUCH_TONES[index], 50)
+        elif active[index] and time.ticks_diff(now, last_time[index]) > HOLD_MS:
+            active[index] = False
+            set_touch_group(index, 0x000000)
 
 if __name__ == "__main__":
     try:
@@ -921,25 +790,14 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### NFC
 
 This example demonstrates detecting NFC tags and displaying UID and tag type on screen.
-For the full **NFC Unit** API reference (``detect``, read/write, tag types, etc.), see `NFC Unit <../unit/nfc.html>`__.
-
-MicroPython Code Block:
+For the full **NFC Unit** API reference (`detect`, read/write, tag types, etc.), see `NFC Unit <../unit/nfc.html>`__.
 
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -1072,24 +930,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Infrared (IR)
 
 This example demonstrates infrared transmit and receive in NEC style.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -1225,218 +1072,152 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### StackChan
 
-<!-- .. class:: hardware.stackchan.StackChan -->
+### `class hardware.stackchan.StackChan`
 
-    StackChan board driver: SCS serial servos on UART, RGB and servo power on M5IOE1, Si12T touch, INA226 (battery bus), and onboard NFC (``ST25R3916``) as :class:`unit.nfc.NFCUnit`.
+    StackChan board driver: SCS serial servos on UART, RGB and servo power on M5IOE1, Si12T touch, INA226 (battery bus), and onboard NFC (`ST25R3916`) as `unit.nfc.NFCUnit`.
 
-    The class is a **singleton**; always construct with the same ``i2c`` and ``uart`` ids.
+    The class is a **singleton**; always construct with the same `i2c` and `uart` ids.
 
-    :param int i2c: ``I2C`` peripheral id.
-    :param int uart: ``UART`` id for the 1 Mbaud servo bus.
+    - Parameter `i2c` (`int`): `I2C` peripheral id.
+    - Parameter `uart` (`int`): `UART` id for the 1 Mbaud servo bus.
 
-    After init, the instance exposes ``nfc`` (a :class:`unit.nfc.NFCUnit`—see `NFC Unit <../unit/nfc.html>`__ for the complete API), ``touch``, ``i2c``, and low-level ``servo`` (``Scscl`` instance) for advanced use.
+    After init, the instance exposes `nfc` (a `unit.nfc.NFCUnit`—see `NFC Unit <../unit/nfc.html>`__ for the complete API), `touch`, `i2c`, and low-level `servo` (`Scscl` instance) for advanced use.
 
-    Module constants include ``SERVO_ID_X`` (``1``), ``SERVO_ID_Y`` (``2``) and related limits—also available as class attributes on ``StackChan``.
+    Module constants include `SERVO_ID_X` (`1`), `SERVO_ID_Y` (`2`) and related limits—also available as class attributes on `StackChan`.
 
-    UiFlow2 Code Block:
+```python
+from hardware.stackchan import StackChan, SERVO_ID_X, SERVO_ID_Y
 
-    MicroPython Code Block:
+sc = StackChan(i2c=1, uart=1)
+```
+### `set_servo_zero()`
 
-<!-- .. code-block:: python -->
+        Save logical **zero** for both axes into NVS (namespace `servo`, keys `zero_pos_1` / `zero_pos_2`).
 
-            from hardware.stackchan import StackChan, SERVO_ID_X, SERVO_ID_Y
-
-            sc = StackChan(i2c=1, uart=1)
-
-<!-- .. method:: set_servo_zero() -->
-
-        Save logical **zero** for both axes into NVS (namespace ``servo``, keys ``zero_pos_1`` / ``zero_pos_2``).
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                sc.set_servo_zero()
-
-<!-- .. method:: set_servo_power(enable=True) -->
+```python
+sc.set_servo_zero()
+```
+### `set_servo_power(enable=True, settle_ms=None)`
 
         Enable or disable servo rail power via the IO expander.
 
-        :param bool enable: Power on or off.
+        - Parameter `enable` (`bool`): Power on or off.
+        - Parameter `settle_ms` (`int`): Optional power-on wait time in milliseconds. If omitted,
+            the default is 500 ms.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                sc.set_servo_power(True)
-
-<!-- .. method:: set_servo_torque(servo_id, enable=True) -->
+```python
+sc.set_servo_power(True)
+```
+### `set_servo_torque(servo_id, enable=True)`
 
         Enable or disable torque on one servo.
 
-        :param int servo_id: ``SERVO_ID_X`` or ``SERVO_ID_Y``.
-        :param bool enable: Torque on or off.
+        - Parameter `servo_id` (`int`): `SERVO_ID_X` or `SERVO_ID_Y`.
+        - Parameter `enable` (`bool`): Torque on or off.
 
-        UiFlow2 Code Block:
+```python
+sc.set_servo_torque(SERVO_ID_X, True)
+```
+### `set_servo_angle(servo_id, angle_deg, time_ms=10, speed=0)`
 
-        MicroPython Code Block:
+        Move the given servo to `angle_deg` (degrees). Use about **-135°~135°** for the X axis (`SERVO_ID_X` / pan) and **0°~90°** for the Y axis (`SERVO_ID_Y` / tilt).
 
-<!-- .. code-block:: python -->
+        - Parameter `servo_id` (`int`): `SERVO_ID_X` or `SERVO_ID_Y`.
+        - Parameter `angle_deg` (`float`): Target angle in degrees (**-135~135** for X, **0~90** for Y).
+        - Parameter `time_ms` (`int`): Move time (ms) passed to the controller; `0` means the time parameter does not take effect.
+        - Parameter `speed` (`int`): User speed **0~100** (mapped to the bus); `0` means the speed parameter does not take effect.
 
-                sc.set_servo_torque(SERVO_ID_X, True)
-
-<!-- .. method:: set_servo_angle(servo_id, angle_deg, time_ms=10, speed=0) -->
-
-        Move the given servo to ``angle_deg`` (degrees). Use about **-135°~135°** for the X axis (``SERVO_ID_X`` / pan) and **0°~90°** for the Y axis (``SERVO_ID_Y`` / tilt).
-
-        :param int servo_id: ``SERVO_ID_X`` or ``SERVO_ID_Y``.
-        :param float angle_deg: Target angle in degrees (**-135~135** for X, **0~90** for Y).
-        :param int time_ms: Move time (ms) passed to the controller; ``0`` means the time parameter does not take effect.
-        :param int speed: User speed **0~100** (mapped to the bus); ``0`` means the speed parameter does not take effect.
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                sc.set_servo_angle(SERVO_ID_X, 0.0, 500, 0)
-                sc.set_servo_angle(SERVO_ID_X, 0.0, 0, 50)
-
-<!-- .. method:: get_servo_angle(servo_id) -->
+```python
+sc.set_servo_angle(SERVO_ID_X, 0.0, 500, 0)
+sc.set_servo_angle(SERVO_ID_X, 0.0, 0, 50)
+```
+### `get_servo_angle(servo_id)`
 
         Read the servo angle in degrees.
 
-        :param int servo_id: ``SERVO_ID_X`` or ``SERVO_ID_Y``.
-        :returns: Angle in degrees, or ``None`` if the read failed.
+        - Parameter `servo_id` (`int`): `SERVO_ID_X` or `SERVO_ID_Y`.
+        - Returns: Angle in degrees, or `None` if the read failed.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                deg = sc.get_servo_angle(SERVO_ID_X)
-
-<!-- .. method:: set_servo_x_pwm(value) -->
+```python
+deg = sc.get_servo_angle(SERVO_ID_X)
+```
+### `set_servo_x_pwm(value)`
 
         Run the **X** servo in PWM mode for continuous rotation. User range is **-100~100**; the sign selects rotation direction, and the magnitude sets drive strength.
 
-        :param int value: Signed PWM strength (clamped). Positive and negative values rotate in opposite directions; ``0`` stops output.
+        - Parameter `value` (`int`): Signed PWM strength (clamped). Positive and negative values rotate in opposite directions; `0` stops output.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                sc.set_servo_x_pwm(50)
-
-<!-- .. method:: set_rgb_color(*args) -->
+```python
+sc.set_servo_x_pwm(50)
+```
+### `set_rgb_color(*args)`
 
         Set RGB LEDs on the strip.
 
-        - One argument: fill all LEDs with ``color``.
-        - Two arguments: ``strip`` (``0`` or ``1``) and ``color`` for that logical strip.
-        - Three arguments: ``strip``, ``index``, ``color`` for a single LED (strip ``1`` index order matches the driver).
+        - One argument: fill all LEDs with `color`.
+        - Two arguments: `strip` (`0` or `1`) and `color` for that logical strip.
+        - Three arguments: `strip`, `index`, `color` for a single LED (strip `1` index order matches the driver).
 
-        :returns: ``True`` on success where applicable.
+        - Returns: `True` on success where applicable.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                sc.set_rgb_color(0x00FF00)
-                sc.set_rgb_color(0, 0x0000FF)
-                sc.set_rgb_color(0, 0, 0xFF0000)
-
-<!-- .. method:: get_rgb_color(strip, index) -->
+```python
+sc.set_rgb_color(0x00FF00)
+sc.set_rgb_color(0, 0x0000FF)
+sc.set_rgb_color(0, 0, 0xFF0000)
+```
+### `get_rgb_color(strip, index)`
 
         Get RGB color of a single LED.
 
-        :param int strip: ``0`` or ``1``.
-        :param int index: ``0~5`` per logical strip.
-        :returns: ``tuple`` ``(r, g, b)``.
+        - Parameter `strip` (`int`): `0` or `1`.
+        - Parameter `index` (`int`): `0~5` per logical strip.
+        - Returns: `tuple` `(r, g, b)`.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                r, g, b = sc.get_rgb_color(0, 0)
-
-<!-- .. method:: get_touch(index=None) -->
+```python
+r, g, b = sc.get_rgb_color(0, 0)
+```
+### `get_touch(index=None)`
 
         Read touch state (three logical slots).
 
-        :param int index: If ``None``, return a list of three levels; if ``0``, ``1``, or ``2``, return that slot’s level.
-        :returns: ``OUTPUT_NONE``…``OUTPUT_HIGH`` style values, or ``None`` on failure.
+        - Parameter `index` (`int`): If `None`, return a list of three levels; if `0`, `1`, or `2`, return that slot's level.
+        - Returns: `OUTPUT_NONE`...`OUTPUT_HIGH` style values. A read failure returns
+            `OUTPUT_NONE` values so examples can safely index the result.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                tp = sc.get_touch()
-                one = sc.get_touch(0)
-
-<!-- .. method:: get_battery_voltage() -->
+```python
+tp = sc.get_touch()
+one = sc.get_touch(0)
+```
+### `get_battery_voltage()`
 
         Bus voltage from the INA226 (volts).
 
-        :returns: ``float`` or ``None`` if unavailable.
+        - Returns: `float` or `None` if unavailable.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                v = sc.get_battery_voltage()
-
-<!-- .. method:: get_battery_current() -->
+```python
+v = sc.get_battery_voltage()
+```
+### `get_battery_current()`
 
         Current from the INA226 (A).
 
-        :returns: ``float`` or ``None``.
+        - Returns: `float` or `None`.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                a = sc.get_battery_current()
-
-<!-- .. method:: get_battery_power() -->
+```python
+a = sc.get_battery_current()
+```
+### `get_battery_power()`
 
         Power from the INA226 (W), when both voltage and current are valid.
 
-        :returns: ``float`` or ``None``.
+        - Returns: `float` or `None`.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                p = sc.get_battery_power()
+```python
+p = sc.get_battery_power()
+```

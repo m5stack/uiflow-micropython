@@ -1,51 +1,10 @@
 # LoRa
 
-<!-- .. include:: ../refs/hardware.lora.ref -->
-
 LoRa is used to control the built-in long-range wireless communication module inside the host device. Below is the detailed LoRa support for the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
-
-###### | Controllers     | LoRa    |
-
-###### | UnitC6L         | |S|     |
-
-###### | Nesso N1        | |S|     |
-
-<!-- .. |S| unicode:: U+2714 -->
-
-## UiFlow2 Example
-
-#### Sender
-
-Open the |unit_c6l_tx_example.m5f2| project in UiFlow2.
-
-Open the |nesso_n1_sender_example.m5f2| project in UiFlow2.
-
-This example sends data every second.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Receiver
-
-Open the |unit_c6l_rx_example.m5f2| project in UiFlow2.
-
-Open the |nesso_n1_receiver_example.m5f2| project in UiFlow2.
-
-This example receives and displays data.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+     Controllers      LoRa    |
+     UnitC6L          S     |
+     Nesso N1         S     |
 
 ## MicroPython Example
 
@@ -53,13 +12,7 @@ Example output:
 
 This example sends data every second.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -113,24 +66,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Receiver
 
 This example receives and displays data.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -185,31 +127,23 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Important: IRQ when using interrupt receive
 
-<!-- .. note:: -->
-
-   When receiving data with the interrupt method (``set_irq_callback`` and
-   ``start_recv()``), the firmware automatically clears the LoRa IRQ flag
-   after interrupt handling.
-
-   In this case, polling ``irq_triggered()`` may always return ``False``
-   because the flag has already been cleared. This is not a receive failure.
-
-   Please use synchronous receive mode (``recv()``) for testing.
-
+> Note: When receiving data with the interrupt method (`set_irq_callback` and
+> `start_recv()`), the firmware automatically clears the LoRa IRQ flag
+> after interrupt handling.
+>
+> In this case, polling `irq_triggered()` may always return `False`
+> because the flag has already been cleared. This is not a receive failure.
+>
+> Please use synchronous receive mode (`recv()`) for testing.
 ## **API**
 
 #### class LoRa
 
-<!-- .. class:: hardware.LoRa(freq_khz = 868000, \ -->
+### `class hardware.LoRa(freq_khz = 868000, \`
                         bw = "250", \
                         sf = 8, \
                         coding_rate = 8, \
@@ -219,250 +153,175 @@ Example output:
 
     Create an LoRa object.
 
-    :param int freq_khz: LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
-    :param str bw: Bandwidth, options include:
+    - Parameter `freq_khz` (`int`): LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
+    - Parameter `bw` (`str`): Bandwidth, options include:
 
-        - ``"7.8"``: 7.8 KHz
-        - ``"10.4"``: 10.4 KHz
-        - ``"15.6"``: 15.6 KHz
-        - ``"20.8"``: 20.8 KHz
-        - ``"31.25"``: 31.25 KHz
-        - ``"41.7"``: 41.7 KHz
-        - ``"62.5"``: 62.5 KHz
-        - ``"125"``: 125 KHz
-        - ``"250"``: 250 KHz
-        - ``"500"``: 500 KHz
-    :param int sf: Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
-    :param int coding_rate: Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
-    :param int preamble_len: Length of the preamble sequence in symbols, range from 0 to 255.
-    :param int syncword: Sync word to mark the start of the data frame, default is 0x12.
-    :param int output_power: Output power in dBm, range from -9 to 22.
+        - `"7.8"`: 7.8 KHz
+        - `"10.4"`: 10.4 KHz
+        - `"15.6"`: 15.6 KHz
+        - `"20.8"`: 20.8 KHz
+        - `"31.25"`: 31.25 KHz
+        - `"41.7"`: 41.7 KHz
+        - `"62.5"`: 62.5 KHz
+        - `"125"`: 125 KHz
+        - `"250"`: 250 KHz
+        - `"500"`: 500 KHz
+    - Parameter `sf` (`int`): Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
+    - Parameter `coding_rate` (`int`): Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
+    - Parameter `preamble_len` (`int`): Length of the preamble sequence in symbols, range from 0 to 255.
+    - Parameter `syncword` (`int`): Sync word to mark the start of the data frame, default is 0x12.
+    - Parameter `output_power` (`int`): Output power in dBm, range from -9 to 22.
 
-    UiFlow2 Code Block:
+```python
+from hardware import LoRa
 
-    MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-            from hardware import LoRa
-
-            lora_0 = LoRa(868000, '250', 8, 8, 12, 0x12, 10)
-
-<!-- .. method:: set_freq(freq_khz) -->
+lora_0 = LoRa(868000, '250', 8, 8, 12, 0x12, 10)
+```
+### `set_freq(freq_khz)`
 
         Set frequency in kHz.
 
-        :param int freq_khz: Frequency in kHz (850000 ~ 930000), default is 868000.
+        - Parameter `freq_khz` (`int`): Frequency in kHz (850000 ~ 930000), default is 868000.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_freq(freq_khz)
-
-<!-- .. method:: set_sf(sf) -->
+```python
+lora_0.set_freq(freq_khz)
+```
+### `set_sf(sf)`
 
         Set spreading factor (SF).
 
-        :param int sf: Spreading factor (7 ~ 12)
+        - Parameter `sf` (`int`): Spreading factor (7 ~ 12)
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_sf(sf)
-
-<!-- .. method:: set_bw(bw) -->
+```python
+lora_0.set_sf(sf)
+```
+### `set_bw(bw)`
 
         Set bandwidth.
 
-        :param str bw: Bandwidth in kHz as string. Must be one of:
+        - Parameter `bw` (`str`): Bandwidth in kHz as string. Must be one of:
                        '7.8', '10.4', '15.6', '20.8', '31.25', '41.7',
                        '62.5', '125', '250', '500'.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_bw(bw)
-
-<!-- .. method:: set_coding_rate(coding_rate) -->
+```python
+lora_0.set_bw(bw)
+```
+### `set_coding_rate(coding_rate)`
 
         Set coding rate.
 
-        :param int coding_rate: Coding rate (5 ~ 8)
+        - Parameter `coding_rate` (`int`): Coding rate (5 ~ 8)
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_coding_rate(coding_rate)
-
-<!-- .. method:: set_syncword(syncword) -->
+```python
+lora_0.set_coding_rate(coding_rate)
+```
+### `set_syncword(syncword)`
 
         Set syncword.
 
-        :param int syncword: Sync word (0 ~ 0xFF)
+        - Parameter `syncword` (`int`): Sync word (0 ~ 0xFF)
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_syncword(syncword)
-
-<!-- .. method:: set_preamble_len(preamble_len) -->
+```python
+lora_0.set_syncword(syncword)
+```
+### `set_preamble_len(preamble_len)`
 
         Set preamble length.
 
-        :param int preamble_len: Preamble length, range: 0~255.
+        - Parameter `preamble_len` (`int`): Preamble length, range: 0~255.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_preamble_len(preamble_len)
-
-<!-- .. method:: set_output_power(output_power) -->
+```python
+lora_0.set_preamble_len(preamble_len)
+```
+### `set_output_power(output_power)`
 
         Set output power in dBm.
 
-        :param int output_power: Output power in dBm (-9 ~ 22)
+        - Parameter `output_power` (`int`): Output power in dBm (-9 ~ 22)
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_output_power(output_power)
-
-<!-- .. method:: set_irq_callback(callback) -->
+```python
+lora_0.set_output_power(output_power)
+```
+### `set_irq_callback(callback)`
 
         Set the interrupt callback function to be executed on IRQ.
 
-        :param callback: The callback function to be invoked when the interrupt is triggered.
+        - Parameter `callback`: The callback function to be invoked when the interrupt is triggered.
                           The callback should not take any arguments and should return nothing.
 
         Call `start_recv()` to begin receiving data.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.set_irq_callback()
-
-<!-- .. method:: start_recv() -->
+```python
+lora_0.set_irq_callback()
+```
+### `start_recv()`
 
         Start receive data.
 
         This method initiates the process to begin receiving data.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.start_recv()
-
-<!-- .. method:: recv(self, timeout_ms, rx_length, rx_packet) -->
+```python
+lora_0.start_recv()
+```
+### `recv(self, timeout_ms, rx_length, rx_packet)`
 
         Receive data.
 
-        :param int timeout_ms: Timeout in milliseconds (optional). Default is None.
-        :param int rx_length: Length of the data to be read. Default is 0xFF.
-        :param RxPacket rx_packet: An instance of `RxPacket` (optional) to reuse.
-        :returns: Received packet instance
-        :rtype: RxPacket
+        - Parameter `timeout_ms` (`int`): Timeout in milliseconds (optional). Default is None.
+        - Parameter `rx_length` (`int`): Length of the data to be read. Default is 0xFF.
+        - Parameter `rx_packet` (`RxPacket`): An instance of `RxPacket` (optional) to reuse.
+        - Returns: Received packet instance
+        - Return type: RxPacket
 
         Attempt to receive a LoRa packet. Returns `None` if timeout occurs, or returns the received packet instance.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                data = lora_0.recv()
-
-<!-- .. method:: send(buf, tx_at_ms=None) -->
+```python
+data = lora_0.recv()
+```
+### `send(buf, tx_at_ms=None)`
 
         Send data.
 
-        :param str | list | tuple | int | bytearray packet: The data to be sent.
-        :param int tx_at_ms: The timestamp in milliseconds when to send the data (optional). Default is None.
-        :returns: Returns a timestamp (result of `time.ticks_ms()`) indicating when the data packet was sent.
-        :rtype: int
+        - Parameter ` list  tuple  int  bytearray packet` (`str`): The data to be sent.
+        - Parameter `tx_at_ms` (`int`): The timestamp in milliseconds when to send the data (optional). Default is None.
+        - Returns: Returns a timestamp (result of `time.ticks_ms()`) indicating when the data packet was sent.
+        - Return type: int
 
         Send a data packet and return the timestamp after the packet is sent.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.send()
-
-<!-- .. method:: standby() -->
+```python
+lora_0.send()
+```
+### `standby()`
 
         Set module to standby mode.
 
         Puts the LoRa module into standby mode, consuming less power.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.standby()
-
-<!-- .. method:: sleep() -->
+```python
+lora_0.standby()
+```
+### `sleep()`
 
         Put the module to sleep mode.
 
         Reduces the power consumption by putting the module into deep sleep mode.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.sleep()
-
-<!-- .. method:: irq_triggered() -->
+```python
+lora_0.sleep()
+```
+### `irq_triggered()`
 
         Check IRQ trigger.
 
-        :returns: Returns ``True`` if an interrupt service routine (ISR) has been
+        - Returns: Returns `True` if an interrupt service routine (ISR) has been
                   triggered since the last send or receive started. In **interrupt
                   receive** mode the IRQ is usually cleared inside the driver when
-                  the callback runs, so this method may stay ``False``. Use
-                  synchronous ``recv()`` to test reception (see the note above).
-        :rtype: bool
+                  the callback runs, so this method may stay `False`. Use
+                  synchronous `recv()` to test reception (see the note above).
+        - Return type: bool
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                lora_0.irq_triggered()
-
-Refer to :ref:`lora_rxpacket` for more details about RxPacket.
+```python
+lora_0.irq_triggered()
+```
+Refer to `lora_rxpacket` for more details about RxPacket.

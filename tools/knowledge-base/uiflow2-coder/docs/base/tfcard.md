@@ -1,30 +1,10 @@
 # Atomic TFCard Base
 
-<!-- .. sku: A135/K044 -->
-
-<!-- .. include:: ../refs/base.tfcard.ref -->
-
 This is the driver library for the Atomic TFCard Base, which is used to mount TFCard.
 
 Support the following products:
 
-    ================== =====================
-    |Atom TFCard|      |Atomic TFCard Base|
-    ================== =====================
-
-## UiFlow2 Example
-
-#### TFCard mount
-
-Open the |atoms3r_tfcard_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to read/create a directory using Atomic TFCard Base.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Files in the /sd directory.
+    Atom TFCard      Atomic TFCard Base
 
 ## MicroPython Example
 
@@ -32,13 +12,7 @@ Example output:
 
 This example demonstrates how to read/create a directory using Atomic TFCard Base.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -85,7 +59,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -96,32 +69,27 @@ Example output:
 
 #### function AtomicTFCardBase
 
-<!-- .. function:: AtomicTFCardBase(slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, freq=20000000) -->
+### `AtomicTFCardBase(slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, freq=20000000)`
 
     This function is only used to initialize and mount the SD card to
     the /sd directory, and to try to unmount the existing SD card before
     mounting it. Other file operations (such as reading/writing files,
     creating directories, etc.) need to be performed by the os module.
 
-    :param int slot: Which of the available interfaces to use. The default value is 1.
-    :param int width: The bus width for the SD/MMC interface. The default value is 1.
-    :param int cd: The card-detect pin to use. The default value is None.
-    :param int wp: The write-protect pin to use. The default value is None.
-    :param int sck: The SPI clock pin to use. The default value is None.
-    :param int miso: The SPI miso pin to use. The default value is None.
-    :param int mosi: The SPI mosi pin to use. The default value is None.
-    :param int cs: The SPI chip select pin to use. The default value is None.
-    :param int freq: The SD/MMC interface frequency in Hz. The default value is 20000000.
+    - Parameter `slot` (`int`): Which of the available interfaces to use. The default value is 1.
+    - Parameter `width` (`int`): The bus width for the SD/MMC interface. The default value is 1.
+    - Parameter `cd` (`int`): The card-detect pin to use. The default value is None.
+    - Parameter `wp` (`int`): The write-protect pin to use. The default value is None.
+    - Parameter `sck` (`int`): The SPI clock pin to use. The default value is None.
+    - Parameter `miso` (`int`): The SPI miso pin to use. The default value is None.
+    - Parameter `mosi` (`int`): The SPI mosi pin to use. The default value is None.
+    - Parameter `cs` (`int`): The SPI chip select pin to use. The default value is None.
+    - Parameter `freq` (`int`): The SD/MMC interface frequency in Hz. The default value is 20000000.
 
-    :return: None
+    - Returns: None
 
-    UiFlow2 Code Block:
-
-    MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-            from base import AtomicTFCardBase
-            base_tfcard = AtomicTFCardBase(slot=3, width=1, sck=7, miso=8, mosi=6, freq=20000000)
-
-    See :mod:`micropython:os` -- basic "operating system" for more details.
+```python
+from base import AtomicTFCardBase
+base_tfcard = AtomicTFCardBase(slot=3, width=1, sck=7, miso=8, mosi=6, freq=20000000)
+```
+    See `micropython:os` -- basic "operating system" for more details.

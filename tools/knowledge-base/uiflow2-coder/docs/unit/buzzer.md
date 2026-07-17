@@ -1,18 +1,12 @@
 # Buzzer Unit
 
-<!-- .. include:: ../refs/unit.buzzer.ref -->
-
 Support the following products:
 
-    |Buzzer|
+    Buzzer
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -46,64 +40,45 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_buzzer_example.m5f2|
 
 ## class BuzzerUnit
 
 ## Constructors
 
-<!-- .. class:: BuzzerUnit(port) -->
+### `class BuzzerUnit(port)`
 
     Create an BuzzerUnit object.
 
     The parameters are:
-        - ``port`` Is the pin number of the port
-
-    UIFLOW2:
+        - `port` Is the pin number of the port
 
 ## Methods
 
-<!-- .. method:: BuzzerUnit.once(freq=10, duty=50, duration=50) -->
+### `BuzzerUnit.once(freq=10, duty=50, duration=50)`
 
     Play buzzer once.
 
-    :param int freq: The frequency of the vibration, range is 100 - 10000Hz.
-    :param int duty: The duty cycle of the vibration, range is 0 - 100.
-    :param int duration: The duration of the vibration, range is 0 - 10000ms.
+    - Parameter `freq` (`int`): The frequency of the vibration, range is 100 - 10000Hz.
+    - Parameter `duty` (`int`): The duty cycle of the vibration, range is 0 - 100.
+    - Parameter `duration` (`int`): The duration of the vibration, range is 0 - 10000ms.
 
-    UIFLOW2:
-
-<!-- .. method:: BuzzerUnit.set_freq(freq: int) -->
+### `BuzzerUnit.set_freq(freq: int)`
 
     Set the frequency of the buzzer.
 
-    :param int freq: The frequency of the vibration, range is 100 - 10000Hz.
+    - Parameter `freq` (`int`): The frequency of the vibration, range is 100 - 10000Hz.
 
-    UIFLOW2:
-
-<!-- .. method:: BuzzerUnit.set_duty(duty: int) -->
+### `BuzzerUnit.set_duty(duty: int)`
 
     Set the duty cycle of the buzzer.
 
-    :param int duty: The duty cycle of the vibration, range is 0 - 100.
+    - Parameter `duty` (`int`): The duty cycle of the vibration, range is 0 - 100.
 
-    UIFLOW2:
-
-<!-- .. method:: BuzzerUnit.turn_off() -->
+### `BuzzerUnit.turn_off()`
 
     Turn off the buzzer.
 
-    UIFLOW2:
-
-<!-- .. method:: BuzzerUnit.deint() -->
+### `BuzzerUnit.deint()`
 
     Deinitialize the buzzer.
-
-    UIFLOW2:

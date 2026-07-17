@@ -1,28 +1,10 @@
 # Tube Pressure Unit
 
-<!-- .. sku: U131 -->
-
-<!-- .. include:: ../refs/unit.tube_pressure.ref -->
-
 This is the driver library of Tube Pressure Unit, which is used to control the pressure sensor.
 
 Support the following products:
 
-    |Tube Pressure|
-
-## UiFlow2 Example
-
-#### get pressure value
-
-Open the |tube_pressure_core2_example.m5f2| project in UiFlow2.
-
-The example shows the pressure value of the tube pressure unit.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Tube Pressure
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 The example shows the pressure value of the tube pressure unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -81,71 +57,50 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### TubePressureUnit
 
-## TubePressureUnit
+## `TubePressureUnit`
 Create an TubePressureUnit object.
 
-:param tuple port: The port of the tube pressure.
+- Parameter `port` (`tuple`): The port of the tube pressure.
 
-UiFlow2 Code Block:
+```python
+from unit import TubePressureUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import TubePressureUnit
-
-        tube_pressure_0 = TubePressureUnit((32, 26))
+tube_pressure_0 = TubePressureUnit((32, 26))
+```
 
 ### `get_pressure`
 Getting the pressure value of the tube pressure.
 
-:returns: pressure value.
-:rtype: float
+- Returns: pressure value.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tube_pressure_0.get_pressure()
+```python
+tube_pressure_0.get_pressure()
+```
 
 ### `get_voltage`
 Getting the voltage value of the tube pressure.
 
-:returns: voltage value.
-:rtype: float
+- Returns: voltage value.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tube_pressure_0.get_voltage()
+```python
+tube_pressure_0.get_voltage()
+```
 
 ### `get_analog_value`
 Getting the analog value of the tube pressure.
 
-:param int bits: The bits of the analog value.
-:returns: analog value.
-:rtype: int
+- Parameter `bits` (`int`): The bits of the analog value.
+- Returns: analog value.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tube_pressure_0.get_analog_value()
+```python
+tube_pressure_0.get_analog_value()
+```

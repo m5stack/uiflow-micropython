@@ -1,55 +1,47 @@
-<!-- .. py:currentmodule:: hardware -->
 
 # CAN
-
-<!-- .. include:: ../refs/hardware.can.ref -->
 
 CAN currently only supports the classic CAN controller on ESP32 series.
 At the physical level CAN bus consists of 2 lines: RX and TX.  Note that to connect the M5Stack device
 to a CAN bus you must use a CAN transceiver to convert the CAN logic signals from the MCU to the
 correct voltage levels on the bus.
 
-For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
+For detailed examples, please refer to: `unit.CANUnit <unit.CANUnit>`
 
 ## API
 
 #### CAN
 
-<!-- .. class:: CAN(bus, mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False) -->
+### `class CAN(bus, mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
 
     Construct a CAN object on the given bus.
 
-    :param int bus: must be 0.
-    :param int mode: One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
-    :param int tx: The pin to use for transmitting data.
-    :param int rx: The pin to use for receiving data.
-    :param int prescaler: The value by which the CAN input clock is divided to generate the nominal bit time quanta. Value between 1 and 1024 inclusive for classic CAN.
-    :param int sjw: The resynchronisation jump width in units of time quanta for nominal bits; value between 1 and 4 inclusive for classic CAN.
-    :param int bs1: Defines the location of the sample point in units of the time quanta for nominal bits; value between 1 and 16 inclusive for classic CAN.
-    :param int bs2: Defines the location of the transmit point in units of the time quanta for nominal bits; value between 1 and 8 inclusive for classic CAN.
-    :param bool triple_sampling: Enables triple sampling when the TWAI controller samples a bit.
+    - Parameter `bus` (`int`): must be 0.
+    - Parameter `mode` (`int`): One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
+    - Parameter `tx` (`int`): The pin to use for transmitting data.
+    - Parameter `rx` (`int`): The pin to use for receiving data.
+    - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta. Value between 1 and 1024 inclusive for classic CAN.
+    - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits; value between 1 and 4 inclusive for classic CAN.
+    - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits; value between 1 and 16 inclusive for classic CAN.
+    - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits; value between 1 and 8 inclusive for classic CAN.
+    - Parameter `triple_sampling` (`bool`): Enables triple sampling when the TWAI controller samples a bit.
 
-    UiFlow2 Code Block:
-
-    MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-            from hardware import CAN
-            can = CAN(0, CAN.NORMAL, 0, 0, 25000)
-
-<!-- .. py:method:: CAN.init(mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False) -->
+```python
+from hardware import CAN
+can = CAN(0, CAN.NORMAL, 0, 0, 25000)
+```
+### `CAN.init(mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
 
         Initialise the CAN bus with the given parameters.
 
-        :param int mode: One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
-        :param int tx: The pin to use for transmitting data.
-        :param int rx: The pin to use for receiving data.
-        :param int prescaler: The value by which the CAN input clock is divided to generate the nominal bit time quanta.
-        :param int sjw: The resynchronisation jump width in units of time quanta for nominal bits.
-        :param int bs1: Defines the location of the sample point in units of the time quanta for nominal bits.
-        :param int bs2: Defines the location of the transmit point in units of the time quanta for nominal bits.
-        :param bool triple_sampling: Enables triple sampling when the TWAI controller samples a bit.
+        - Parameter `mode` (`int`): One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
+        - Parameter `tx` (`int`): The pin to use for transmitting data.
+        - Parameter `rx` (`int`): The pin to use for receiving data.
+        - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta.
+        - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits.
+        - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits.
+        - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits.
+        - Parameter `triple_sampling` (`bool`): Enables triple sampling when the TWAI controller samples a bit.
 
         The time quanta tq is the basic unit of time for the CAN bus.  tq is the CAN
         prescaler value divided by APB_CLK clock source (typically 80 MHz);
@@ -66,25 +58,17 @@ For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
 
         See esp32 technical reference manual for more details.
 
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                can.init(CAN.NORMAL, 0, 0, 25000)
-
-<!-- .. py:method:: CAN.deinit() -->
+```python
+can.init(CAN.NORMAL, 0, 0, 25000)
+```
+### `CAN.deinit()`
 
         Turn off the CAN bus.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                can.deinit()
-
-<!-- .. py:method:: CAN.restart() -->
+```python
+can.deinit()
+```
+### `CAN.restart()`
 
         Force a software restart of the CAN controller without resetting its configuration.
 
@@ -94,39 +78,29 @@ For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
         and the controller will follow the CAN protocol to leave the bus-off state and
         go into the error active state.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                can.restart()
-
-<!-- .. py:method:: CAN.state() -->
+```python
+can.restart()
+```
+### `CAN.state()`
 
         Return the state of the controller.
 
-        :returns: int
+        - Returns: int
 
         - \`\`0\`\` -- \`\`CAN.STOPPED\`\` : the controller is completely off and reset;
         - \`\`4\`\` -- \`\`CAN.BUS_OFF\`\` : the controller is on but not participating in bus activity (TEC overflowed beyond 255);
         - \`\`5\`\` -- \`\`CAN.RECOVERING\`\` -- The controller is undergoing bus recovery.
         - \`\`6\`\` -- \`\`CAN.RUNNING\`\` : The controller can transmit and receive messages;
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                status = can.state()
-
-<!-- .. py:method:: CAN.info([list]) -->
+```python
+status = can.state()
+```
+### `CAN.info([list])`
 
         Get information about the controller's error states and TX and RX buffers.
 
-        :param list list: Optional list object with at least 8 entries.
-        :returns: list
+        - Parameter `list` (`list`): Optional list object with at least 8 entries.
+        - Returns: list
 
         The values in the list are:
 
@@ -139,38 +113,28 @@ For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
         - number of pending RX messages
         - number of pending RX messages on fifo 1(ignored for now, compatible with pyb.CAN)
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                info = can.info()
-
-<!-- .. py:method:: CAN.any(fifo) -->
+```python
+info = can.info()
+```
+### `CAN.any(fifo)`
 
         Return \`\`True\`\` if any message waiting on the FIFO, else \`\`False\`\`.
 
-        :param int fifo: FIFO index.
-        :returns: bool
+        - Parameter `fifo` (`int`): FIFO index.
+        - Returns: bool
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                if can.any(0):
-                    print("Message waiting")
-
-<!-- .. py:method:: CAN.recv(fifo, list=None, *, timeout=5000) -->
+```python
+if can.any(0):
+    print("Message waiting")
+```
+### `CAN.recv(fifo, list=None, *, timeout=5000)`
 
         Receive data on the bus.
 
-        :param int fifo: fifo is an integer, it can be any number and compatible with pyb.CAN
-        :param list list: optional list object to be used as the return value
-        :param int timeout: timeout in milliseconds to wait for the receive.
-        :returns: tuple
+        - Parameter `fifo` (`int`): fifo is an integer, it can be any number and compatible with pyb.CAN
+        - Parameter `list` (`list`): optional list object to be used as the return value
+        - Parameter `timeout` (`int`): timeout in milliseconds to wait for the receive.
+        - Returns: tuple
 
         Return value: A tuple containing five values.
 
@@ -191,30 +155,26 @@ For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
         will be resized inplace to the size of the data and filled in with that data.
         The same list and memoryview objects can be reused in subsequent calls to
         this method, providing a way of receiving data without using the heap.
-        For example::
+        For example:
+```
+buf = bytearray(8)
+lst = [0, 0, 0, 0, memoryview(buf)]
+# No heap memory is allocated in the following call
+can.recv(0, lst)
+```
 
-            buf = bytearray(8)
-            lst = [0, 0, 0, 0, memoryview(buf)]
-            # No heap memory is allocated in the following call
-            can.recv(0, lst)
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                can.recv(0)
-
-<!-- .. py:method:: CAN.send(data, id, *, timeout=0, rtr=False, extframe=False) -->
+```python
+can.recv(0)
+```
+### `CAN.send(data, id, *, timeout=0, rtr=False, extframe=False)`
 
         Send a message on the bus.
 
-        :param data: data is the data to send (an integer to send, or a buffer object).
-        :param int id: id is the id of the message to be sent.
-        :param int timeout: timeout is the timeout in milliseconds to wait for the send.
-        :param bool rtr: rtr is a boolean that specifies if the message shall be sent as a remote transmission request. If rtr is True then only the length of data is used to fill in the DLC slot of the frame; the actual bytes in data are unused.
-        :param bool extframe: extframe if True the frame will have an extended identifier (29 bits), otherwise a standard identifier (11 bits) is used.
+        - Parameter `data`: data is the data to send (an integer to send, or a buffer object).
+        - Parameter `id` (`int`): id is the id of the message to be sent.
+        - Parameter `timeout` (`int`): timeout is the timeout in milliseconds to wait for the send.
+        - Parameter `rtr` (`bool`): rtr is a boolean that specifies if the message shall be sent as a remote transmission request. If rtr is True then only the length of data is used to fill in the DLC slot of the frame; the actual bytes in data are unused.
+        - Parameter `extframe` (`bool`): extframe if True the frame will have an extended identifier (29 bits), otherwise a standard identifier (11 bits) is used.
 
         If timeout is 0 the message is placed in a buffer in one of three hardware
         buffers and the method returns immediately. If all three buffers are in use
@@ -222,23 +182,18 @@ For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
         message is transmitted. If the message can't be transmitted within the
         specified time an exception is thrown.
 
-        :returns: None
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                can.send('message!', 123)
-
-<!-- .. py:data:: CAN.NORMAL -->
+```python
+can.send('message!', 123)
+```
+### `CAN.NORMAL`
             CAN.NO_ACKNOWLEDGE
             CAN.LISTEN_ONLY
 
         The mode of the CAN bus used in :meth:\`~CAN.init()\`.
 
-<!-- .. py:data:: CAN.STOPPED -->
+### `CAN.STOPPED`
             CAN.RUNNING
             CAN.BUS_OFF
             CAN.RECOVERING

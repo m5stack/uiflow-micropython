@@ -1,21 +1,15 @@
 
 # Limit Unit
 
-<!-- .. include:: ../refs/unit.limit.ref -->
-
 The Unit Limit is a travel switch unit that provides a limit trigger signal to the MCU or other master peripherals by pulling the digital signal interface from 3.3V high to 0V low when the switch handle is closed by an external force. It is suitable for all kinds of moving machinery and equipment to control its stroke and carry out terminal limit protection.
 
 Support the following products:
 
-|LimitUnit|
+LimitUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -61,54 +55,37 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |limit_core2_example.m5f2|
 
 ## class LimitUnit
 
 ## Constructors
 
-<!-- .. class:: LimitUnit(pin_num, active_low, pullup_active) -->
+### `class LimitUnit(pin_num, active_low, pullup_active)`
 
     Initialize a Limit instance with the specified pin, active-low configuration, and pull-up resistor state.
 
-    :param  pin_num: The GPIO pin number connected to the limit.
-    :param bool active_low: Determines whether the limit signal is active-low. Default is True.
-    :param bool pullup_active: Specifies whether the internal pull-up resistor is enabled. Default is True.
-
-    UIFLOW2:
+    - Parameter `pin_num`: The GPIO pin number connected to the limit.
+    - Parameter `active_low` (`bool`): Determines whether the limit signal is active-low. Default is True.
+    - Parameter `pullup_active` (`bool`): Specifies whether the internal pull-up resistor is enabled. Default is True.
 
 ## Methods
 
-<!-- .. method:: LimitUnit.count_reset() -->
+### `LimitUnit.count_reset()`
 
     Reset the count value to zero.
 
-    UIFLOW2:
-
-<!-- .. method:: LimitUnit.isHolding() -->
+### `LimitUnit.isHolding()`
 
     Check if the limit is currently being held.
 
-    UIFLOW2:
-
-<!-- .. method:: LimitUnit.setCallback(type, cb) -->
+### `LimitUnit.setCallback(type, cb)`
 
     Set a callback function for a specified limit event type.
 
-    :param  type: The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED).
-    :param  cb: The callback function to be executed for the event.
+    - Parameter `type`: The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED).
+    - Parameter `cb`: The callback function to be executed for the event.
 
-    UIFLOW2:
-
-<!-- .. method:: LimitUnit.tick(pin) -->
+### `LimitUnit.tick(pin)`
 
     Monitor the state transitions of a limit based on its pin state and trigger appropriate handlers.
-
-    UIFLOW2:

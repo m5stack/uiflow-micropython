@@ -1,23 +1,18 @@
-# :mod:`time` -- time related functions
+# `time` -- time related functions
 
-<!-- .. module:: time -->
-    :synopsis: time related functions
-
-<!-- .. include:: ../refs/system.time.ref -->
-
-The ``time`` module provides functions for getting the current time and date,
+The `time` module provides functions for getting the current time and date,
 measuring time intervals, and for delays.
 
 **Time Epoch**: It is January 1, 1970, 00:00:00 (UTC) on all platforms.
-Epoch year may be determined with ``gmtime(0)[0]``.
+Epoch year may be determined with `gmtime(0)[0]`.
 
 **Maintaining actual calendar date/time**: This requires a
 Real Time Clock (RTC). On systems with underlying OS (including some
 RTOS), an RTC may be implicit. Setting and maintaining actual calendar
 time is responsibility of OS/RTOS and is done outside of MicroPython,
 it just uses OS API to query date/time. On baremetal ports however
-system time depends on ``machine.RTC()`` object. The current calendar time
-may be set using ``machine.RTC().datetime(tuple)`` function, and maintained
+system time depends on `machine.RTC()` object. The current calendar time
+may be set using `machine.RTC().datetime(tuple)` function, and maintained
 by following means:
 
 - By a backup battery (which may be an additional, optional component for
@@ -34,10 +29,6 @@ behave not as expected.
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -79,35 +70,24 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_time_example.m5f2|
 
 ## Functions
 
-<!-- .. function:: timezone([tz]) -->
+### `timezone([tz])`
 
     When no parameters are passed in, get the current time zone and return the
     string of the time zone.
 
-    UIFLOW2:
-
-    Pass in a time zone string to set the time zone. The value of ``tz`` can be
+    Pass in a time zone string to set the time zone. The value of `tz` can be
     found at this `link <tz_database_>`_.
 
-    UIFLOW2:
-
-<!-- .. function:: gmtime([secs]) -->
+### `gmtime([secs])`
               localtime([secs])
 
     Convert the time *secs* expressed in seconds since the Epoch (see above)
     into an 8-tuple which contains:
-    ``(year, month, mday, hour, minute, second, weekday, yearday)``
+    `(year, month, mday, hour, minute, second, weekday, yearday)`
     If *secs* is not provided or None, then the current time from the RTC is
     used.
 
@@ -125,26 +105,20 @@ UIFLOW2 Example:
     - weekday is 0-6 for Mon-Sun
     - yearday is 1-366
 
-    UIFLOW2:
-
-<!-- .. function:: mktime() -->
+### `mktime()`
 
     This is inverse function of localtime. It's argument is a full 8-tuple
     which expresses a time as per localtime. It returns an integer which is
     the number of seconds since Jan 1, 1970.
 
-    UIFLOW2:
-
-<!-- .. function:: sleep(seconds) -->
+### `sleep(seconds)`
 
     Sleep for the given number of seconds. Some boards may accept *seconds* as
     a floating-point number to sleep for a fractional number of seconds.
     Note that other boards may not accept a floating-point argument,
     for compatibility with them use `sleep_ms()` and `sleep_us()` functions.
 
-    UIFLOW2:
-
-<!-- .. function:: sleep_ms(ms) -->
+### `sleep_ms(ms)`
 
     Delay for given number of milliseconds, should be positive or 0.
 
@@ -154,9 +128,7 @@ UIFLOW2 Example:
     Passing in 0 for *ms* will still allow this other processing to occur.
     Use `sleep_us()` for more precise delays.
 
-    UIFLOW2:
-
-<!-- .. function:: sleep_us(us) -->
+### `sleep_us(us)`
 
     Delay for given number of microseconds, should be positive or 0.
 
@@ -164,9 +136,7 @@ UIFLOW2 Example:
     microseconds, but it may take longer if the system has other higher priority
     processing to perform.
 
-    UIFLOW2:
-
-<!-- .. function:: ticks_ms() -->
+### `ticks_ms()`
 
     Returns an increasing millisecond counter with an arbitrary reference point,
     that wraps around after some value.
@@ -188,31 +158,25 @@ UIFLOW2 Example:
     as arguments to `ticks_diff()` or `ticks_add()` will also lead to
     invalid results from the latter functions.
 
-    UIFLOW2:
-
-<!-- .. function:: ticks_us() -->
+### `ticks_us()`
 
         Just like `ticks_ms()` above, but in microseconds.
 
-   UIFLOW2:
-
-<!-- .. function:: ticks_cpu() -->
+### `ticks_cpu()`
 
     Similar to `ticks_ms()` and `ticks_us()`, but with the highest possible
     resolution in the system. This is usually CPU clocks, and that's why the
     function is named that way. But it doesn't have to be a CPU clock, some
     other timing source available in a system (e.g. high-resolution timer) can
     be used instead. The exact timing unit (resolution) of this function is not
-    specified on ``time`` module level, but documentation for a specific port
+    specified on `time` module level, but documentation for a specific port
     may provide more specific information. This function is intended for very \
     fine benchmarking or very tight real-time loops.
     Avoid using it in portable code.
 
     Availability: Not every port implements this function.
 
-    UIFLOW2:
-
-<!-- .. function:: ticks_add(ticks, delta) -->
+### `ticks_add(ticks, delta)`
 
     Offset ticks value by a given number, which can be either positive or
     negative. Given a *ticks* value, this function allows to calculate ticks
@@ -224,29 +188,28 @@ UIFLOW2 Example:
     `ticks_add()` is useful for calculating deadlines for events/tasks.
     (Note: you must use `ticks_diff()` function to work with deadlines.)
 
-    Examples::
+    Examples:
+```
+# Find out what ticks value there was 100ms ago
+print(ticks_add(time.ticks_ms(), -100))
 
-        # Find out what ticks value there was 100ms ago
-        print(ticks_add(time.ticks_ms(), -100))
+# Calculate deadline for operation and test for it
+deadline = ticks_add(time.ticks_ms(), 200)
+while ticks_diff(deadline, time.ticks_ms()) > 0:
+    do_a_little_of_something()
 
-        # Calculate deadline for operation and test for it
-        deadline = ticks_add(time.ticks_ms(), 200)
-        while ticks_diff(deadline, time.ticks_ms()) > 0:
-            do_a_little_of_something()
+# Find out TICKS_MAX used by this port
+print(ticks_add(0, -1))
+```
 
-        # Find out TICKS_MAX used by this port
-        print(ticks_add(0, -1))
-
-    UIFLOW2:
-
-<!-- .. function:: ticks_diff(ticks1, ticks2) -->
+### `ticks_diff(ticks1, ticks2)`
 
     Measure ticks difference between values returned from `ticks_ms()`,
     `ticks_us()`, or `ticks_cpu()` functions, as a signed value which may wrap
     around.
 
     The argument order is the same as for subtraction operator,
-    ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
+    `ticks_diff(ticks1, ticks2)` has the same meaning as `ticks1 - ticks2`.
     However, values returned by `ticks_ms()`, etc. functions may wrap around,
     so directly using subtraction on them will produce incorrect result.
     That is why `ticks_diff()` is needed, it implements modular
@@ -279,38 +242,36 @@ UIFLOW2 Example:
     them:
 
     - Polling with timeout. In this case, the order of events is known, and you
-      will deal only with positive results of `ticks_diff()`::
-
-        # Wait for GPIO pin to be asserted, but at most 500us
-        start = time.ticks_us()
-        while pin.value() == 0:
-            if time.ticks_diff(time.ticks_us(), start) > 500:
-                raise TimeoutError
-
+      will deal only with positive results of `ticks_diff()`:
+```
+# Wait for GPIO pin to be asserted, but at most 500us
+start = time.ticks_us()
+while pin.value() == 0:
+    if time.ticks_diff(time.ticks_us(), start) > 500:
+        raise TimeoutError
+```
     - Scheduling events. In this case, `ticks_diff()` result may be negative
-      if an event is overdue::
-
-        # This code snippet is not optimized
-        now = time.ticks_ms()
-        scheduled_time = task.scheduled_time()
-        if ticks_diff(scheduled_time, now) > 0:
-            print("Too early, let's nap")
-            sleep_ms(ticks_diff(scheduled_time, now))
-            task.run()
-        elif ticks_diff(scheduled_time, now) == 0:
-            print("Right at time!")
-            task.run()
-        elif ticks_diff(scheduled_time, now) < 0:
-            print("Oops, running late, tell task to run faster!")
-            task.run(run_faster=true)
-
+      if an event is overdue:
+```
+# This code snippet is not optimized
+now = time.ticks_ms()
+scheduled_time = task.scheduled_time()
+if ticks_diff(scheduled_time, now) > 0:
+    print("Too early, let's nap")
+    sleep_ms(ticks_diff(scheduled_time, now))
+    task.run()
+elif ticks_diff(scheduled_time, now) == 0:
+    print("Right at time!")
+    task.run()
+elif ticks_diff(scheduled_time, now) < 0:
+    print("Oops, running late, tell task to run faster!")
+    task.run(run_faster=true)
+```
     Note: Do not pass `time()` values to `ticks_diff()`, you should use
     normal mathematical operations on them. But note that `time()` may (and will)
     also overflow. This is known as https://en.wikipedia.org/wiki/Year_2038_problem .
 
-    UIFLOW2:
-
-<!-- .. function:: time() -->
+### `time()`
 
     Returns the number of seconds, as an integer, since the Epoch, assuming that
     underlying RTC is set and maintained as described above. If an RTC is not
@@ -323,27 +284,21 @@ UIFLOW2 Example:
     and `ticks_us()` functions.  If you need calendar time, `gmtime()` or
     `localtime()` without an argument is a better choice.
 
-<!-- .. admonition:: Difference to CPython -->
-        :class: attention
+> Admonition: Difference to CPython
+> In CPython, this function returns number of
+> seconds since Unix epoch, 1970-01-01 00:00 UTC, as a floating-point,
+> usually having microsecond precision. With MicroPython, only Unix port
+> uses the same Epoch, and if floating-point precision allows,
+> returns sub-second precision. Embedded hardware usually doesn't have
+> floating-point precision to represent both long time ranges and
+> subsecond precision, so they use integer value with second precision.
+> Some embedded hardware also lacks battery-powered RTC, so returns number
+> of seconds since last power-up or from other relative, hardware-specific
+> point(e.g. reset).
 
-        In CPython, this function returns number of
-        seconds since Unix epoch, 1970-01-01 00:00 UTC, as a floating-point,
-        usually having microsecond precision. With MicroPython, only Unix port
-        uses the same Epoch, and if floating-point precision allows,
-        returns sub-second precision. Embedded hardware usually doesn't have
-        floating-point precision to represent both long time ranges and
-        subsecond precision, so they use integer value with second precision.
-        Some embedded hardware also lacks battery-powered RTC, so returns number
-        of seconds since last power-up or from other relative, hardware-specific
-        point(e.g. reset).
-
-    UIFLOW2:
-
-<!-- .. function:: time_ns() -->
+### `time_ns()`
 
     Similar to `time()` but returns nanoseconds since the Epoch, as an integer
     (usually a big integer, so will allocate on the heap).
-
-    UIFLOW2:
 
         None

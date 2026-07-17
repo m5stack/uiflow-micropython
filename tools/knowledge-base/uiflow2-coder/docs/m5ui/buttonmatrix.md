@@ -1,26 +1,9 @@
-<!-- .. currentmodule:: m5ui -->
 
 # M5ButtonMatrix
-
-<!-- .. include:: ../refs/m5ui.buttonmatrix.ref -->
 
 M5ButtonMatrix is a widget that can be used to create a matrix of buttons in the
 user interface. It provides a flexible layout for displaying multiple buttons in
 a grid format with support for different button configurations and text labels.
-
-## UiFlow2 Example
-
-#### basic buttonmatrix
-
-Open the |cores3_buttonmatrix_basic_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to create a button matrix with custom labels and handle button press events.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -28,13 +11,7 @@ Example output:
 
 This example demonstrates how to create a button matrix with custom labels and handle button press events.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -129,437 +106,308 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### M5ButtonMatrix
 
-## M5ButtonMatrix
+## `M5ButtonMatrix`
 Create a button matrix object.
 
-:param list map: A list of button labels. Use "\\n" to create a new row.
-:param int x: The x position of the button matrix.
-:param int y: The y position of the button matrix.
-:param int w: The width of the button matrix.
-:param int h: The height of the button matrix.
-:param m5ui.M5TextArea target_textarea: A M5TextArea to display the button text when a button is pressed.
-:param lv.obj parent: The parent object to attach the button matrix to.
-
-UiFlow2 Code Block:
+- Parameter `map` (`list`): A list of button labels. Use "\\n" to create a new row.
+- Parameter `x` (`int`): The x position of the button matrix.
+- Parameter `y` (`int`): The y position of the button matrix.
+- Parameter `w` (`int`): The width of the button matrix.
+- Parameter `h` (`int`): The height of the button matrix.
+- Parameter `target_textarea` (`m5ui.M5TextArea`): A M5TextArea to display the button text when a button is pressed.
+- Parameter `parent` (`lv.obj`): The parent object to attach the button matrix to.
 
     None
 
-MicroPython Code Block:
+```python
+import m5ui
+import lvgl as lv
 
-    .. code-block:: python
-
-        import m5ui
-        import lvgl as lv
-
-        m5ui.init()
-        page0 = m5ui.M5Page()
-        page0.screen_load()
-        textarea0 = m5ui.M5TextArea(x=10, y=10, w=200, h=60, parent=page0)
-        buttonmatrix_0 = m5ui.M5ButtonMatrix(
-            ["0", "1", "2", "3", "4","\n", "5", "6", "7", "8", "9",],
-            x=10, y=80, w=260, h=130,
-            target_textarea=textarea0,
-            parent=page0
-        )
+m5ui.init()
+page0 = m5ui.M5Page()
+page0.screen_load()
+textarea0 = m5ui.M5TextArea(x=10, y=10, w=200, h=60, parent=page0)
+buttonmatrix_0 = m5ui.M5ButtonMatrix(
+    ["0", "1", "2", "3", "4","\n", "5", "6", "7", "8", "9",],
+    x=10, y=80, w=260, h=130,
+    target_textarea=textarea0,
+    parent=page0
+)
+```
 
 ### `value_changed_event`
 
 ### `toggle_button_ctrl`
 Toggle control flags for a specific button.
 
-:param int btn_id: The button ID to toggle control flags for.
-:param int ctrl: The control flags to toggle.
+- Parameter `btn_id` (`int`): The button ID to toggle control flags for.
+- Parameter `ctrl` (`int`): The control flags to toggle.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        buttonmatrix_0.toggle_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
+```python
+buttonmatrix_0.toggle_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
+```
 
 ### `set_textarea`
 Set a M5TextArea to display button text.
 
-:param m5ui.M5TextArea textarea: The M5TextArea to set.
+- Parameter `textarea` (`m5ui.M5TextArea`): The M5TextArea to set.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        buttonmatrix_0.set_textarea(textarea0)
+```python
+buttonmatrix_0.set_textarea(textarea0)
+```
 
 ### `get_textarea`
 Get the currently set M5TextArea.
 
-:return: The M5TextArea currently set for the button matrix.
-:rtype: m5ui.M5TextArea
+- Returns: The M5TextArea currently set for the button matrix.
+- Return type: m5ui.M5TextArea
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        textarea = buttonmatrix_0.get_textarea()
+```python
+textarea = buttonmatrix_0.get_textarea()
+```
 
 ### `get_selected_button`
 Get the ID of the currently selected button.
 
-:return: The ID of the currently selected button, or -1 if none is selected.
-:rtype: int
+- Returns: The ID of the currently selected button, or -1 if none is selected.
+- Return type: int
 
-UiFlow2 Code Block:
+```python
+selected_button = buttonmatrix_0.get_selected_button()
+```
 
-MicroPython Code Block:
+### `set_flag(flag, value)`
 
-    .. code-block:: python
+        Set a flag on the object. If `value` is True, the flag is added; if False, the flag is removed.
 
-        selected_button = buttonmatrix_0.get_selected_button()
+        - Parameter `flag` (`int`): The flag to set.
+        - Parameter `value` (`bool`): If True, the flag is added; if False, the flag is removed.
+        - Returns: None
 
-<!-- .. py:method:: set_flag(flag, value) -->
-
-        Set a flag on the object. If ``value`` is True, the flag is added; if False, the flag is removed.
-
-        :param int flag: The flag to set.
-        :param bool value: If True, the flag is added; if False, the flag is removed.
-        :return: None
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_flag(lv.obj.FLAG.HIDDEN, True)
-
-<!-- .. py:method:: toggle_flag(flag) -->
+```python
+buttonmatrix_0.set_flag(lv.obj.FLAG.HIDDEN, True)
+```
+### `toggle_flag(flag)`
 
         Toggle a flag on the object. If the flag is set, it is removed; if not set, it is added.
 
-        :param int flag: The flag to toggle.
-        :return: None
+        - Parameter `flag` (`int`): The flag to toggle.
+        - Returns: None
 
-        UiFlow2 Code Block:
+```python
+buttonmatrix_0.toggle_flag(lv.obj.FLAG.HIDDEN)
+```
+### `set_state(state, value)`
 
-        MicroPython Code Block:
+        Set the state of the buttonmatrix. If `value` is True, the state is set; if False, the state is unset.
 
-<!-- .. code-block:: python -->
+        - Parameter `state` (`int`): The state to set.
+        - Parameter `value` (`bool`): If True, the state is set; if False, the state is unset.
+        - Returns: None
 
-                buttonmatrix_0.toggle_flag(lv.obj.FLAG.HIDDEN)
-
-<!-- .. py:method:: set_state(state, value) -->
-
-        Set the state of the buttonmatrix. If ``value`` is True, the state is set; if False, the state is unset.
-
-        :param int state: The state to set.
-        :param bool value: If True, the state is set; if False, the state is unset.
-        :return: None
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_state(lv.STATE.PRESSED, True)
-
-<!-- .. py:method:: toggle_state(state) -->
+```python
+buttonmatrix_0.set_state(lv.STATE.PRESSED, True)
+```
+### `toggle_state(state)`
 
         Toggle the state of the buttonmatrix. If the state is set, it is unset; if not set, it is set.
 
-        :param int state: The state to toggle.
-        :return: None
+        - Parameter `state` (`int`): The state to toggle.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.toggle_state(lv.STATE.PRESSED)
-
-<!-- .. py:method:: add_event_cb(handler, event, user_data) -->
+```python
+buttonmatrix_0.toggle_state(lv.STATE.PRESSED)
+```
+### `add_event_cb(handler, event, user_data)`
 
         Add an event callback to the buttonmatrix. The callback will be called when the specified event occurs.
 
-        :param function handler: The callback function to call.
-        :param int event: The event to listen for.
-        :param Any user_data: Optional user data to pass to the callback.
-        :return: None
+        - Parameter `handler` (`function`): The callback function to call.
+        - Parameter `event` (`int`): The event to listen for.
+        - Parameter `user_data` (`Any`): Optional user data to pass to the callback.
+        - Returns: None
 
-        UiFlow2 Code Block:
+```python
+def buttonmatrix_0_pressed_event(event_struct):
+    global page0
+    btn_id = buttonmatrix_0.get_selected_button()
+    print(f"Button {btn_id} pressed")
 
-        MicroPython Code Block:
+def buttonmatrix_0_event_handler(event_struct):
+    event = event_struct.code
+    if event == lv.EVENT.VALUE_CHANGED:
+        buttonmatrix_0_pressed_event(event_struct)
+    return
 
-<!-- .. code-block:: python -->
-
-                def buttonmatrix_0_pressed_event(event_struct):
-                    global page0
-                    btn_id = buttonmatrix_0.get_selected_button()
-                    print(f"Button {btn_id} pressed")
-
-                def buttonmatrix_0_event_handler(event_struct):
-                    event = event_struct.code
-                    if event == lv.EVENT.VALUE_CHANGED:
-                        buttonmatrix_0_pressed_event(event_struct)
-                    return
-
-                buttonmatrix_0.add_event_cb(buttonmatrix_0_event_handler, lv.EVENT.ALL, None)
-
-<!-- .. py:method:: set_button_width(btn_id, width) -->
+buttonmatrix_0.add_event_cb(buttonmatrix_0_event_handler, lv.EVENT.ALL, None)
+```
+### `set_button_width(btn_id, width)`
 
         Set the relative width of a specific button.
 
-        :param int btn_id: The index of the button.
-        :param int width: The relative width (1-7, where 1 is normal width).
-        :return: None
+        - Parameter `btn_id` (`int`): The index of the button.
+        - Parameter `width` (`int`): The relative width (1-7, where 1 is normal width).
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_button_width(0, 2)  # Make first button twice as wide
-
-<!-- .. py:method:: get_button_text(btn_id) -->
+```python
+buttonmatrix_0.set_button_width(0, 2)  # Make first button twice as wide
+```
+### `get_button_text(btn_id)`
 
         Get the text of a specific button.
 
-        :param int btn_id: The index of the button.
-        :return: The text of the button.
-        :rtype: str
+        - Parameter `btn_id` (`int`): The index of the button.
+        - Returns: The text of the button.
+        - Return type: str
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                text = buttonmatrix_0.get_button_text(0)
-
-<!-- .. py:method:: clear_button_ctrl(btn_id, ctrl) -->
+```python
+text = buttonmatrix_0.get_button_text(0)
+```
+### `clear_button_ctrl(btn_id, ctrl)`
 
         Clear control flags for a specific button.
 
-        :param int btn_id: The button ID to clear control flags for.
-        :param int ctrl: The control flags to clear.
+        - Parameter `btn_id` (`int`): The button ID to clear control flags for.
+        - Parameter `ctrl` (`int`): The control flags to clear.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.clear_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
-
-<!-- .. py:method:: set_button_ctrl(btn_id, ctrl) -->
+```python
+buttonmatrix_0.clear_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
+```
+### `set_button_ctrl(btn_id, ctrl)`
 
         Set control flags for a specific button.
 
-        :param int btn_id: The button ID to set control flags for.
-        :param int ctrl: The control flags to set.
+        - Parameter `btn_id` (`int`): The button ID to set control flags for.
+        - Parameter `ctrl` (`int`): The control flags to set.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
-
-<!-- .. py:method:: set_button_ctrl_all(ctrl) -->
+```python
+buttonmatrix_0.set_button_ctrl(0, lv.buttonmatrix.CTRL.HIDDEN)
+```
+### `set_button_ctrl_all(ctrl)`
 
         Set control flags for all buttons.
 
-        :param int ctrl: The control flags to set for all buttons.
+        - Parameter `ctrl` (`int`): The control flags to set for all buttons.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_button_ctrl_all(lv.buttonmatrix.CTRL.HIDDEN)
-
-<!-- .. py:method:: clear_button_ctrl_all(ctrl) -->
+```python
+buttonmatrix_0.set_button_ctrl_all(lv.buttonmatrix.CTRL.HIDDEN)
+```
+### `clear_button_ctrl_all(ctrl)`
 
         Clear control flags for all buttons.
 
-        :param int ctrl: The control flags to clear for all buttons.
+        - Parameter `ctrl` (`int`): The control flags to clear for all buttons.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.clear_button_ctrl_all(lv.buttonmatrix.CTRL.HIDDEN)
-
-<!-- .. py:method:: set_one_checked(btn_id) -->
+```python
+buttonmatrix_0.clear_button_ctrl_all(lv.buttonmatrix.CTRL.HIDDEN)
+```
+### `set_one_checked(btn_id)`
 
         Set a specific button as checked.
 
-        :param int btn_id: The button ID to set as checked.
+        - Parameter `btn_id` (`int`): The button ID to set as checked.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_one_checked(0)
-
-<!-- .. py:method:: set_pos(x, y) -->
+```python
+buttonmatrix_0.set_one_checked(0)
+```
+### `set_pos(x, y)`
 
         Set the position of the buttonmatrix.
 
-        :param int x: The x-coordinate of the buttonmatrix.
-        :param int y: The y-coordinate of the buttonmatrix.
-        :return: None
+        - Parameter `x` (`int`): The x-coordinate of the buttonmatrix.
+        - Parameter `y` (`int`): The y-coordinate of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_pos(100, 100)
-
-<!-- .. py:method:: set_x(x) -->
+```python
+buttonmatrix_0.set_pos(100, 100)
+```
+### `set_x(x)`
 
         Set the x-coordinate of the buttonmatrix.
 
-        :param int x: The x-coordinate of the buttonmatrix.
-        :return: None
+        - Parameter `x` (`int`): The x-coordinate of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_x(100)
-
-<!-- .. py:method:: set_y(y) -->
+```python
+buttonmatrix_0.set_x(100)
+```
+### `set_y(y)`
 
         Set the y-coordinate of the buttonmatrix.
 
-        :param int y: The y-coordinate of the buttonmatrix.
-        :return: None
+        - Parameter `y` (`int`): The y-coordinate of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_y(100)
-
-<!-- .. py:method:: set_size(width, height) -->
+```python
+buttonmatrix_0.set_y(100)
+```
+### `set_size(width, height)`
 
         Set the size of the buttonmatrix.
 
-        :param int width: The width of the buttonmatrix.
-        :param int height: The height of the buttonmatrix.
-        :return: None
+        - Parameter `width` (`int`): The width of the buttonmatrix.
+        - Parameter `height` (`int`): The height of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_size(300, 200)
-
-<!-- .. py:method:: set_width(width) -->
+```python
+buttonmatrix_0.set_size(300, 200)
+```
+### `set_width(width)`
 
         Set the width of the buttonmatrix.
 
-        :param int width: The width of the buttonmatrix.
-        :return: None
+        - Parameter `width` (`int`): The width of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_width(300)
-
-<!-- .. py:method:: get_width() -->
+```python
+buttonmatrix_0.set_width(300)
+```
+### `get_width()`
 
         Get the width of the buttonmatrix.
 
-        :return: The width of the buttonmatrix.
-        :rtype: int
+        - Returns: The width of the buttonmatrix.
+        - Return type: int
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                width = buttonmatrix_0.get_width()
-
-<!-- .. py:method:: set_height(height) -->
+```python
+width = buttonmatrix_0.get_width()
+```
+### `set_height(height)`
 
         Set the height of the buttonmatrix.
 
-        :param int height: The height of the buttonmatrix.
-        :return: None
+        - Parameter `height` (`int`): The height of the buttonmatrix.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.set_height(200)
-
-<!-- .. py:method:: get_height() -->
+```python
+buttonmatrix_0.set_height(200)
+```
+### `get_height()`
 
         Get the height of the buttonmatrix.
 
-        :return: The height of the buttonmatrix.
-        :rtype: int
+        - Returns: The height of the buttonmatrix.
+        - Return type: int
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                height = buttonmatrix_0.get_height()
-
-<!-- .. py:method:: align_to(obj, align, x, y) -->
+```python
+height = buttonmatrix_0.get_height()
+```
+### `align_to(obj, align, x, y)`
 
         Align the buttonmatrix to another object.
 
-        :param lv.obj obj: The object to align to.
-        :param int align: The alignment type.
-        :param int x: The x-offset from the aligned object.
-        :param int y: The y-offset from the aligned object.
-        :return: None
+        - Parameter `obj` (`lv.obj`): The object to align to.
+        - Parameter `align` (`int`): The alignment type.
+        - Parameter `x` (`int`): The x-offset from the aligned object.
+        - Parameter `y` (`int`): The y-offset from the aligned object.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                buttonmatrix_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+```python
+buttonmatrix_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+```

@@ -1,24 +1,13 @@
 # mouse
 
-<!-- .. currentmodule:: usb.device.keyboard -->
-
-<!-- .. module:: mouse -->
-    :synopsis: usb mouse
-
 usb device mouse
 
-<!-- .. include:: ../../../refs/advanced.usb.device.mouse.ref -->
-
-<!-- .. note:: This module is only applicable to the CoreS3 Controller -->
-
+> Note: This module is only applicable to the CoreS3 Controller
 ## Micropython Example
 
-###### USB Mouse
+### USB Mouse
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -119,60 +108,43 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-## UIFlow2.0 Example
-
-###### USB Mouse
-
-<!-- .. only:: builder_html -->
-
-    |m5cores3_usbd_mouse_example.m5f2|
 
 ## class Mouse
 
-<!-- .. class:: usb.device.mouse.Mouse() -->
+### `class usb.device.mouse.Mouse()`
 
     Create Mouse object
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.set_axes(x: int = 0, y: int = 0) -->
+### `Mouse.set_axes(x: int = 0, y: int = 0)`
 
     Set Cursor Position
 
-    - ``x`` Horizontal movement, range: -127 to 127. A value less than 0 moves the cursor to the left, and a value greater than 0 moves it to the right.
-    - ``y`` Vertical movement, range: -127 to 127. A value less than 0 scrolls the cursor up, and a value greater than 0 scrolls it down.
-
-    :note: Changes will take effect after calling Mouse.send_report().
+    - `x` Horizontal movement, range: -127 to 127. A value less than 0 moves the cursor to the left, and a value greater than 0 moves it to the right.
+    - `y` Vertical movement, range: -127 to 127. A value less than 0 scrolls the cursor up, and a value greater than 0 scrolls it down.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.set_wheel(w: int = 0) -->
+### `Mouse.set_wheel(w: int = 0)`
 
     Set mouse wheel value
 
-    - ``w`` Wheel value, range: -127 to 127. A value less than 0 scrolls the wheel down, and a value greater than 0 scrolls the wheel up.
-
-    :note: Changes will take effect after calling Mouse.send_report().
+    - `w` Wheel value, range: -127 to 127. A value less than 0 scrolls the wheel down, and a value greater than 0 scrolls the wheel up.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.set_buttons(left: bool = False, right: bool = False, middle: bool = False) -->
+### `Mouse.set_buttons(left: bool = False, right: bool = False, middle: bool = False)`
 
     Set mouse button status
 
-    - ``left`` True indicates the left button is pressed.
-    - ``right`` True indicates the right button is pressed.
-    - ``middle`` True indicates the middle (wheel) button is pressed.
-
-    :note: Changes will take effect after calling Mouse.send_report().
+    - `left` True indicates the left button is pressed.
+    - `right` True indicates the right button is pressed.
+    - `middle` True indicates the middle (wheel) button is pressed.
 
     example: Mouse click left button
 
-```
-```
         set_buttons(left=True)  # press
         send_report()
         set_buttons(left=False) # release
@@ -180,65 +152,65 @@ if __name__ == "__main__":
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.send_report() -->
+### `Mouse.send_report()`
 
     Send the mouse status report.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.move(x: int = 0, y: int = 0) -->
+### `Mouse.move(x: int = 0, y: int = 0)`
 
     Move cursor
 
-    - ``x`` Horizontal movement, range: -127 to 127. A value less than 0 moves the cursor to the left, and a value greater than 0 moves it to the right.
-    - ``y`` Vertical movement, range: -127 to 127. A value less than 0 moves the cursor up, and a value greater than 0 moves it down.
+    - `x` Horizontal movement, range: -127 to 127. A value less than 0 moves the cursor to the left, and a value greater than 0 moves it to the right.
+    - `y` Vertical movement, range: -127 to 127. A value less than 0 moves the cursor up, and a value greater than 0 moves it down.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.click_left(release: bool = True) -->
+### `Mouse.click_left(release: bool = True)`
 
     Click left button
 
-    - ``release``  Set to True to release the left mouse button after pressing, or False to not release.
+    - `release`  Set to True to release the left mouse button after pressing, or False to not release.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.click_right(release: bool = True) -->
+### `Mouse.click_right(release: bool = True)`
 
     Click right button
 
-    - ``release``  Set to True to release the right mouse button after pressing, or False to not release.
+    - `release`  Set to True to release the right mouse button after pressing, or False to not release.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.click_middle(release: bool = True) -->
+### `Mouse.click_middle(release: bool = True)`
 
     Click middle button
 
-    - ``release``  Set to True to release the left middle button after pressing, or False to not release.
+    - `release`  Set to True to release the left middle button after pressing, or False to not release.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.click_forawrd() -->
+### `Mouse.click_forawrd()`
 
     Click forward button
 
-    - ``release``  Set to True to release the left forward button after pressing, or False to not release.
+    - `release`  Set to True to release the left forward button after pressing, or False to not release.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.click_backward() -->
+### `Mouse.click_backward()`
 
     Click backward button
 
-    - ``release``  Set to True to release the left backward button after pressing, or False to not release.
+    - `release`  Set to True to release the left backward button after pressing, or False to not release.
 
     UIFlow2.0
 
-<!-- .. method:: Mouse.scroll(w: int) -->
+### `Mouse.scroll(w: int)`
 
     Scroll wheel
 
-    - ``w`` range: -127 to 127, values less than 0 scroll up, and values greater than 0 scroll down.
+    - `w` range: -127 to 127, values less than 0 scroll up, and values greater than 0 scroll down.
 
     UIFlow2.0

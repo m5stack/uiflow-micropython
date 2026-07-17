@@ -1,30 +1,11 @@
-<!-- .. _hat.Speaker2: -->
 
 # Speaker2 Hat
-
-<!-- .. sku: U055-B -->
-
-<!-- .. include:: ../refs/hat.speaker2.ref -->
 
 This is the driver library of Speaker2 Hat, which is provides a set of methods to control the speaker.
 
 Support the following products:
 
-    |Speaker2|
-
-## UiFlow2 Example
-
-#### play audio
-
-Open the |speaker2_stickcplus2_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to play audio.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Speaker2
 
 ## MicroPython Example
 
@@ -32,13 +13,7 @@ Example output:
 
 This example demonstrates how to play audio.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -85,17 +60,12 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### Speaker2
 
-## Speaker2Hat
+## `Speaker2Hat`
 
-    Speaker2 class inherits Speaker class, See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details.
+    Speaker2 class inherits Speaker class, See `hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details.

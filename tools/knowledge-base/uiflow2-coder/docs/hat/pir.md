@@ -1,18 +1,12 @@
 # PIR Hat
 
-<!-- .. include:: ../refs/hat.pir.ref -->
-
 Support the following products:
 
-    |PIR|
+    PIR
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -51,50 +45,33 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_pir_hat_example.m5f2|
 
 ## class PIRHat
 
 ## Constructors
 
-<!-- .. class:: PIRHat(port) -->
+### `class PIRHat(port)`
 
     Create a PIRHat object.
 
     The parameters are:
-        - ``port`` GPIO pin.
-
-    UIFLOW2:
+        - `port` GPIO pin.
 
 ## Methods
 
-<!-- .. method:: PIRHat.get_status() -->
+### `PIRHat.get_status()`
 
     Get detection status.
 
-    UIFLOW2:
-
-<!-- .. method:: PIRHat.enable_irq() -->
+### `PIRHat.enable_irq()`
 
    Enable Human detection function.
 
-    UIFLOW2:
-
-<!-- .. method:: PIRHat.disable_irq() -->
+### `PIRHat.disable_irq()`
 
     Disable Human detection function.
 
-    UIFLOW2:
-
-<!-- .. method:: PIRHat.set_callback() -->
+### `PIRHat.set_callback()`
 
     Polling method, placed in the loop function, constantly check.
-
-    UIFLOW2:

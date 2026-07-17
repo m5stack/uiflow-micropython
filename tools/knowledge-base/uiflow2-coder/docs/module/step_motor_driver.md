@@ -1,21 +1,15 @@
 
 # StepMotorDriver Module
 
-<!-- .. include:: ../refs/module.step_motor_driver.ref -->
-
 StepMotor Driver Module 13.2 V1.1 is a stepper motor driver adapted to M5 main control, using STM32+HR8825 stepper motor drive scheme, providing 3-way bipolar stepper motor control interface.
 
 Support the following products:
 
-|StepMotorDriverModule|
+StepMotorDriverModule
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -71,181 +65,150 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |step_motor_driver.m5f2|
 
 ## class StepMotorDriverModule
 
 ## Constructors
 
-<!-- .. class:: StepMotorDriverModule(address, step_pin, dir_pin) -->
+### `class StepMotorDriverModule(address, step_pin, dir_pin)`
 
     Initialize the StepMotorDriverModule.
 
-    :param hex address: The I2C address of the device.
-    :param tuple step_pin: The step pin (X, Y, Z) of the motor.
-    :param tuple dir_pin: The dir pin (X, Y, Z) of the motor.
-
-    UIFLOW2:
+    - Parameter `address` (`hex`): The I2C address of the device.
+    - Parameter `step_pin` (`tuple`): The step pin (X, Y, Z) of the motor.
+    - Parameter `dir_pin` (`tuple`): The dir pin (X, Y, Z) of the motor.
 
 ## Methods
 
-<!-- .. method:: StepMotorDriverModule.reset_motor(motor_id, state) -->
+### `StepMotorDriverModule.reset_motor(motor_id, state)`
 
     Reset the motor.
 
-    :param  motor_id: The motor to reset.
+    - Parameter `motor_id`: The motor to reset.
         Options:
-        - ``X``: StepMotorDriverModule.MOTOR_X
-        - ``Y``: StepMotorDriverModule.MOTOR_Y
-        - ``Z``: StepMotorDriverModule.MOTOR_Z
-    :param bool state: The state of the motor.
+        - `X`: StepMotorDriverModule.MOTOR_X
+        - `Y`: StepMotorDriverModule.MOTOR_Y
+        - `Z`: StepMotorDriverModule.MOTOR_Z
+    - Parameter `state` (`bool`): The state of the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.set_motor_state(state) -->
+### `StepMotorDriverModule.set_motor_state(state)`
 
     Enable or disable the motor.
 
-    :param bool state: The state of the motor.
+    - Parameter `state` (`bool`): The state of the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.set_microstep(step) -->
+### `StepMotorDriverModule.set_microstep(step)`
 
     Set the microstep.
 
-    :param  step: The microstep value.
+    - Parameter `step`: The microstep value.
         Options:
-        - ``FULL``: StepMotorDriverModule.STEP_FULL
-        - ``1/2``: StepMotorDriverModule.STEP1_2
-        - ``1/4``: StepMotorDriverModule.STEP1_4
-        - ``1/8``: StepMotorDriverModule.STEP1_8
-        - ``1/16``: StepMotorDriverModule.STEP1_16
-        - ``1/32``: StepMotorDriverModule.STEP1_32
+        - `FULL`: StepMotorDriverModule.STEP_FULL
+        - `1/2`: StepMotorDriverModule.STEP1_2
+        - `1/4`: StepMotorDriverModule.STEP1_4
+        - `1/8`: StepMotorDriverModule.STEP1_8
+        - `1/16`: StepMotorDriverModule.STEP1_16
+        - `1/32`: StepMotorDriverModule.STEP1_32
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.set_motor_pwm_freq(motor_id, freq) -->
+### `StepMotorDriverModule.set_motor_pwm_freq(motor_id, freq)`
 
     Set the motor pwm freq.
 
-    :param  motor_id: The motor to set the freq.
+    - Parameter `motor_id`: The motor to set the freq.
         Options:
-        - ``X``: StepMotorDriverModule.MOTOR_X
-        - ``Y``: StepMotorDriverModule.MOTOR_Y
-        - ``Z``: StepMotorDriverModule.MOTOR_Z
-    :param int freq: The freq value.
+        - `X`: StepMotorDriverModule.MOTOR_X
+        - `Y`: StepMotorDriverModule.MOTOR_Y
+        - `Z`: StepMotorDriverModule.MOTOR_Z
+    - Parameter `freq` (`int`): The freq value.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.set_motor_direction(motor_id, direction) -->
+### `StepMotorDriverModule.set_motor_direction(motor_id, direction)`
 
     Set the motor direction.
 
-    :param  motor_id: The motor to set the direction.
+    - Parameter `motor_id`: The motor to set the direction.
         Options:
-        - ``X``: StepMotorDriverModule.MOTOR_X
-        - ``Y``: StepMotorDriverModule.MOTOR_Y
-        - ``Z``: StepMotorDriverModule.MOTOR_Z
-    :param bool direction: The direction value.
+        - `X`: StepMotorDriverModule.MOTOR_X
+        - `Y`: StepMotorDriverModule.MOTOR_Y
+        - `Z`: StepMotorDriverModule.MOTOR_Z
+    - Parameter `direction` (`bool`): The direction value.
         Options:
-        - ``Positive``: 1
-        - ``Negative``: 0
+        - `Positive`: 1
+        - `Negative`: 0
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.get_all_limit_switch_state() -->
+### `StepMotorDriverModule.get_all_limit_switch_state()`
 
     Get all io state.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.get_limit_switch_state(switch_id) -->
+### `StepMotorDriverModule.get_limit_switch_state(switch_id)`
 
     Get the io state.
 
-    :param int switch_id: The io id.
+    - Parameter `switch_id` (`int`): The io id.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.get_fault_io_state(motor_id) -->
+### `StepMotorDriverModule.get_fault_io_state(motor_id)`
 
     Get the fault io state.
 
-    :param int motor_id: The motor id.
+    - Parameter `motor_id` (`int`): The motor id.
         Options:
-        - ``X``: StepMotorDriverModule.MOTOR_X
-        - ``Y``: StepMotorDriverModule.MOTOR_Y
-        - ``Z``: StepMotorDriverModule.MOTOR_Z
+        - `X`: StepMotorDriverModule.MOTOR_X
+        - `Y`: StepMotorDriverModule.MOTOR_Y
+        - `Z`: StepMotorDriverModule.MOTOR_Z
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.motor_control(motor_id, state) -->
+### `StepMotorDriverModule.motor_control(motor_id, state)`
 
     Control the motor to rotate/stop.
 
-    :param  motor_id: The motor id.
+    - Parameter `motor_id`: The motor id.
         Options:
-        - ``X``: StepMotorDriverModule.MOTOR_X
-        - ``Y``: StepMotorDriverModule.MOTOR_Y
-        - ``Z``: StepMotorDriverModule.MOTOR_Z
-    :param bool state: The state value.
+        - `X`: StepMotorDriverModule.MOTOR_X
+        - `Y`: StepMotorDriverModule.MOTOR_Y
+        - `Z`: StepMotorDriverModule.MOTOR_Z
+    - Parameter `state` (`bool`): The state value.
         Options:
-        - ``Rotate``: 1
-        - ``Stop``: 0
+        - `Rotate`: 1
+        - `Stop`: 0
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.get_firmware_version() -->
+### `StepMotorDriverModule.get_firmware_version()`
 
     Get the firmware version.
 
-    UIFLOW2:
-
-<!-- .. method:: StepMotorDriverModule.set_i2c_address(new_address) -->
+### `StepMotorDriverModule.set_i2c_address(new_address)`
 
     Set the i2c address.
 
-    :param int new_address: The new address.
-
-    UIFLOW2:
+    - Parameter `new_address` (`int`): The new address.
 
 ## Constants
 
-<!-- .. data:: StepMotorDriverModule.MOTOR_X -->
-<!-- .. data:: StepMotorDriverModule.MOTOR_Y -->
-<!-- .. data:: StepMotorDriverModule.MOTOR_Z -->
+### `StepMotorDriverModule.MOTOR_X`
+### `StepMotorDriverModule.MOTOR_Y`
+### `StepMotorDriverModule.MOTOR_Z`
 
     Motor IDs
 
-<!-- .. data:: StepMotorDriverModule.MOTOR_STATE_ENABLE -->
-<!-- .. data:: StepMotorDriverModule.MOTOR_STATE_DISABLE -->
+### `StepMotorDriverModule.MOTOR_STATE_ENABLE`
+### `StepMotorDriverModule.MOTOR_STATE_DISABLE`
 
     Motor states
 
-<!-- .. data:: StepMotorDriverModule.INPUT_REG -->
-<!-- .. data:: StepMotorDriverModule.OUTPUT_REG -->
-<!-- .. data:: StepMotorDriverModule.POLINV_REG -->
-<!-- .. data:: StepMotorDriverModule.CONFIG_REG -->
-<!-- .. data:: StepMotorDriverModule.FAULT_REG -->
-<!-- .. data:: StepMotorDriverModule.RESET_REG -->
-<!-- .. data:: StepMotorDriverModule.FIRM_REG -->
-<!-- .. data:: StepMotorDriverModule.I2C_REG -->
+### `StepMotorDriverModule.INPUT_REG`
+### `StepMotorDriverModule.OUTPUT_REG`
+### `StepMotorDriverModule.POLINV_REG`
+### `StepMotorDriverModule.CONFIG_REG`
+### `StepMotorDriverModule.FAULT_REG`
+### `StepMotorDriverModule.RESET_REG`
+### `StepMotorDriverModule.FIRM_REG`
+### `StepMotorDriverModule.I2C_REG`
 
     Register addresses
 
-<!-- .. data:: StepMotorDriverModule.STEP_FULL -->
-<!-- .. data:: StepMotorDriverModule.STEP1_2 -->
-<!-- .. data:: StepMotorDriverModule.STEP1_4 -->
-<!-- .. data:: StepMotorDriverModule.STEP1_8 -->
-<!-- .. data:: StepMotorDriverModule.STEP1_16 -->
-<!-- .. data:: StepMotorDriverModule.STEP1_32 -->
+### `StepMotorDriverModule.STEP_FULL`
+### `StepMotorDriverModule.STEP1_2`
+### `StepMotorDriverModule.STEP1_4`
+### `StepMotorDriverModule.STEP1_8`
+### `StepMotorDriverModule.STEP1_16`
+### `StepMotorDriverModule.STEP1_32`
 
     Microstep values

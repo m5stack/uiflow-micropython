@@ -1,123 +1,32 @@
-<!-- .. py:currentmodule:: base.echo_pyramid -->
 
 # Atomic Echo Pyramid Base
 
-<!-- .. sku: A167 -->
-
-<!-- .. include:: ../refs/base.echo_pyramid.ref -->
-
 The following products are supported:
 
-    |Atomic Echo Pyramid Base|
+    Atomic Echo Pyramid Base
 
 Below is the detailed support for Atomic Echo Pyramid Base on the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
+    Controller        Atomic Echo Pyramid Base  |
+     Atom Echo        O                       |
+     Atom Lite        S                       |
+     Atom Matrix      S                       |
+     AtomS3           S                       |
+     AtomS3 Lite      S                       |
+     AtomS3R          S                       |
+     AtomS3R-CAM      S                       |
+     AtomS3R-Ext      S                       |
 
-###### |Controller       | Atomic Echo Pyramid Base  |
+The `AtomicEchoPyramidBase` class controls the Echo Pyramid base for Atom Series, providing audio playback/recording, touch input, and dual RGB LED strips.
 
-###### | Atom Echo       | |O|                       |
-
-###### | Atom Lite       | |S|                       |
-
-###### | Atom Matrix     | |S|                       |
-
-###### | AtomS3          | |S|                       |
-
-###### | AtomS3 Lite     | |S|                       |
-
-###### | AtomS3R         | |S|                       |
-
-###### | AtomS3R-CAM     | |S|                       |
-
-###### | AtomS3R-Ext     | |S|                       |
-
-<!-- .. |S| unicode:: U+2705 -->
-<!-- .. |O| unicode:: U+2B55 -->
-
-The ``AtomicEchoPyramidBase`` class controls the Echo Pyramid base for Atom Series, providing audio playback/recording, touch input, and dual RGB LED strips.
-
-<!-- .. note:: -->
-
-    Power must be supplied to both the EchoPyramid base and the Atom controller.
-
-## UiFlow2 Example
-
-#### LED Strip Effects
-
-Open the |atoms3r_echopyramid_led_strip_example.m5f2| project in UiFlow2.
-
-This example demonstrates breathing and flowing effects on both RGB strips.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Touch Control
-
-Open the |atoms3r_echopyramid_touch_example.m5f2| project in UiFlow2.
-
-This example uses the capacitive touch pads to light different LED segments.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Audio Record And Playback
-
-Open the |atoms3r_echopyramid_audio_example.m5f2| project in UiFlow2.
-
-This example records a short WAV clip and then plays it back.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Audio Beep
-
-Open the |atoms3r_echopyramid_audio_beep_example.m5f2| project in UiFlow2.
-
-This example plays a random beep tone on each touch.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### USB Voltage
-
-Open the |atoms3r_echopyramid_usb_voltage_example.m5f2| project in UiFlow2.
-
-This example reads USB input voltage (mV) from the base and displays it.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
+> Note: Power must be supplied to both the EchoPyramid base and the Atom controller.
 ## MicroPython Example
 
 #### LED Strip Effects
 
 This example demonstrates breathing and flowing effects on both RGB strips.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -291,24 +200,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Touch Control
 
 This example uses the capacitive touch pads to light different LED segments.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -425,24 +323,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Audio Record And Playback
 
 This example records a short WAV clip and then plays it back.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -577,24 +464,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Audio Beep
 
 This example plays a random beep tone on each touch.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -666,24 +542,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### USB Voltage
 
 This example reads USB input voltage (mV) from the base and displays it.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import time
 import M5
 from M5 import *
@@ -759,358 +624,257 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## API
 
 #### AtomicEchoPyramidBase
 
-## AtomicEchoPyramidBase
+## `AtomicEchoPyramidBase`
 Echo Pyramid base for AtomS3R + Echo Pyramid.
 
-:param i2c: I2C bus.
-:param int dev_addr: STM32 I2C address. Default 0x1A.
-:param int es8311_addr: ES8311 I2C address. Default 0x18.
-:param int i2s_port: I2S port number. Default 1.
-:param int sample_rate: Sample rate. Default 24000.
-:param int i2s_sck: I2S BCLK pin. Default 6.
-:param int i2s_ws: I2S WS pin. Default 8.
-:param int i2s_di: I2S DIN (mic) pin. Default 5.
-:param int i2s_do: I2S DOUT (spk) pin. Default 7.
+- Parameter `i2c`: I2C bus.
+- Parameter `dev_addr` (`int`): STM32 I2C address. Default 0x1A.
+- Parameter `es8311_addr` (`int`): ES8311 I2C address. Default 0x18.
+- Parameter `i2s_port` (`int`): I2S port number. Default 1.
+- Parameter `sample_rate` (`int`): Sample rate. Default 24000.
+- Parameter `i2s_sck` (`int`): I2S BCLK pin. Default 6.
+- Parameter `i2s_ws` (`int`): I2S WS pin. Default 8.
+- Parameter `i2s_di` (`int`): I2S DIN (mic) pin. Default 5.
+- Parameter `i2s_do` (`int`): I2S DOUT (spk) pin. Default 7.
 
-UiFlow2 Code Block:
+```python
+from hardware import I2C, Pin
+from base import AtomicEchoPyramidBase
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from hardware import I2C, Pin
-        from base import AtomicEchoPyramidBase
-
-        i2c = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
-        echo_pyramid = AtomicEchoPyramidBase(i2c, dev_addr=0x1A, i2s_sck=6, i2s_ws=8, i2s_di=5, i2s_do=7)
-        echo_pyramid.speaker.tone(2000, 500)
+i2c = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
+echo_pyramid = AtomicEchoPyramidBase(i2c, dev_addr=0x1A, i2s_sck=6, i2s_ws=8, i2s_di=5, i2s_do=7)
+echo_pyramid.speaker.tone(2000, 500)
+```
 
 ### `get_touch`
 Get touch status.
 
-:return: (tp1, tp2, tp3, tp4), True=pressed False=released.
+- Returns: (tp1, tp2, tp3, tp4), True=pressed False=released.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tp1, tp2, tp3, tp4 = echo_pyramid.get_touch()
+```python
+tp1, tp2, tp3, tp4 = echo_pyramid.get_touch()
+```
 
 ### `set_rgb_brightness`
 Set RGB strip brightness.
 
-:param int strip: Strip index (1 or 2).
-:param int brightness: Brightness 0~100.
-:param bool save: Save to flash.
+- Parameter `strip` (`int`): Strip index (1 or 2).
+- Parameter `brightness` (`int`): Brightness 0~100.
+- Parameter `save` (`bool`): Save to flash.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.set_rgb_brightness(1, 50, False)
+```python
+echo_pyramid.set_rgb_brightness(1, 50, False)
+```
 
 ### `get_rgb_brightness`
 Get RGB strip brightness.
 
-:param int strip: Strip index (1 or 2).
-:return: Brightness 0~100, or 0 on error/invalid strip.
+- Parameter `strip` (`int`): Strip index (1 or 2).
+- Returns: Brightness 0~100, or 0 on error/invalid strip.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        brightness = echo_pyramid.get_rgb_brightness(1)
+```python
+brightness = echo_pyramid.get_rgb_brightness(1)
+```
 
 ### `set_rgb_color`
 Set single RGB LED color.
 
-:param int strip: Strip index (1 or 2).
-:param int index: LED index 0~13.
-:param int color: 24-bit color (R << 16 | G << 8 | B).
+- Parameter `strip` (`int`): Strip index (1 or 2).
+- Parameter `index` (`int`): LED index 0~13.
+- Parameter `color` (`int`): 24-bit color (R << 16 | G << 8 | B).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.set_rgb_color(1, 0, 0x33CCFF)
+```python
+echo_pyramid.set_rgb_color(1, 0, 0x33CCFF)
+```
 
 ### `get_rgb_color`
 Get single RGB LED color.
 
-:param int strip: Strip index (1 or 2).
-:param int index: LED index 0~13.
-:return: 24-bit color (R << 16 | G << 8 | B), or 0 on error.
+- Parameter `strip` (`int`): Strip index (1 or 2).
+- Parameter `index` (`int`): LED index 0~13.
+- Returns: 24-bit color (R << 16 | G << 8 | B), or 0 on error.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        color = echo_pyramid.get_rgb_color(1, 0)
+```python
+color = echo_pyramid.get_rgb_color(1, 0)
+```
 
 ### `set_addr`
 Set STM32 I2C address. Takes effect after a short delay.
 
-:param int new_addr: New address 0x08~0x77.
+- Parameter `new_addr` (`int`): New address 0x08~0x77.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.set_addr(0x1B)
+```python
+echo_pyramid.set_addr(0x1B)
+```
 
 ### `get_addr`
 Get current STM32 I2C address.
 
-:return: I2C address, or 0 on error.
+- Returns: I2C address, or 0 on error.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        addr = echo_pyramid.get_addr()
+```python
+addr = echo_pyramid.get_addr()
+```
 
 ### `get_firmware_version`
 Get STM32 firmware version.
 
-:return: Version number, or 0 on error.
+- Returns: Version number, or 0 on error.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        ver = echo_pyramid.get_firmware_version()
+```python
+ver = echo_pyramid.get_firmware_version()
+```
 
 ### `get_input_voltage`
 Get input voltage (from STM32 ADC).
 
-:return: Voltage in mV, or 0 on error.
+- Returns: Voltage in mV, or 0 on error.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        mv = echo_pyramid.get_input_voltage()
+```python
+mv = echo_pyramid.get_input_voltage()
+```
 
 ### `set_mute`
 Mute or unmute speaker (AW87559).
 
-:param bool mute: True to mute, False to unmute.
+- Parameter `mute` (`bool`): True to mute, False to unmute.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.set_mute(True)
+```python
+echo_pyramid.set_mute(True)
+```
 
 ### `change_sample_rate`
 Change audio sample rate. Affects playback and recording.
 
-:param int sample_rate: Sample rate in Hz (e.g. 16000, 24000).
+- Parameter `sample_rate` (`int`): Sample rate in Hz (e.g. 16000, 24000).
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.change_sample_rate(24000)
+```python
+echo_pyramid.change_sample_rate(24000)
+```
 
 ### `play_wav_file`
 Play a WAV file from storage.
 
-:param str file: WAV file path.
+- Parameter `file` (`str`): WAV file path.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.play_wav_file("/flash/res/audio/test.wav")
+```python
+echo_pyramid.play_wav_file("/flash/res/audio/test.wav")
+```
 
 ### `tone`
 Play a beep tone.
 
-:param int freq: Frequency in Hz.
-:param int duration: Duration in milliseconds.
+- Parameter `freq` (`int`): Frequency in Hz.
+- Parameter `duration` (`int`): Duration in milliseconds.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.tone(1000, 200)
+```python
+echo_pyramid.tone(1000, 200)
+```
 
 ### `play_wav`
 Play WAV data from buffer.
 
-:param bytes buf: WAV data.
-:param int duration: Duration in ms, or -1 for full buffer.
+- Parameter `buf` (`bytes`): WAV data.
+- Parameter `duration` (`int`): Duration in ms, or -1 for full buffer.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.play_wav(wav_bytes, duration=1000)
+```python
+echo_pyramid.play_wav(wav_bytes, duration=1000)
+```
 
 ### `play_raw`
 Play raw PCM data.
 
-:param bytes buf: Raw PCM data.
-:param int rate: Sample rate in Hz.
-:param int bits: Bit depth (e.g. 16).
-:param int channel: Number of channels (1 or 2).
-:param int duration: Duration in ms, or -1 for full buffer.
+- Parameter `buf` (`bytes`): Raw PCM data.
+- Parameter `rate` (`int`): Sample rate in Hz.
+- Parameter `bits` (`int`): Bit depth (e.g. 16).
+- Parameter `channel` (`int`): Number of channels (1 or 2).
+- Parameter `duration` (`int`): Duration in ms, or -1 for full buffer.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.play_raw(pcm_bytes, rate=16000, bits=16, channel=2)
+```python
+echo_pyramid.play_raw(pcm_bytes, rate=16000, bits=16, channel=2)
+```
 
 ### `pause`
 Pause playback.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.pause()
+```python
+echo_pyramid.pause()
+```
 
 ### `resume`
 Resume playback.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.resume()
+```python
+echo_pyramid.resume()
+```
 
 ### `stop`
 Stop playback.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.stop()
+```python
+echo_pyramid.stop()
+```
 
 ### `get_volume`
 Get speaker volume.
 
-:return: Current volume value.
+- Returns: Current volume value.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        volume = echo_pyramid.get_volume()
+```python
+volume = echo_pyramid.get_volume()
+```
 
 ### `set_volume`
 Set speaker volume.
 
-:param int volume: Volume value.
+- Parameter `volume` (`int`): Volume value.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.set_volume(60)
+```python
+echo_pyramid.set_volume(60)
+```
 
 ### `record_wav_file`
 Record audio to a WAV file.
 
-:param str path: Output file path.
-:param int rate: Sample rate in Hz.
-:param int bits: Bit depth.
-:param int channel: Channel mode. Use ``MONO`` or ``STEREO``.
-:param int duration: Duration in milliseconds.
+- Parameter `path` (`str`): Output file path.
+- Parameter `rate` (`int`): Sample rate in Hz.
+- Parameter `bits` (`int`): Bit depth.
+- Parameter `channel` (`int`): Channel mode. Use `MONO` or `STEREO`.
+- Parameter `duration` (`int`): Duration in milliseconds.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.record_wav_file("/flash/res/audio/test.wav", rate=16000, bits=16, channel=echo_pyramid.STEREO, duration=3000)
+```python
+echo_pyramid.record_wav_file("/flash/res/audio/test.wav", rate=16000, bits=16, channel=echo_pyramid.STEREO, duration=3000)
+```
 
 ### `record`
 Record audio to PCM buffer.
 
-:param int rate: Sample rate in Hz.
-:param int bits: Bit depth.
-:param int channel: Number of channels.
-:param int duration: Duration in milliseconds.
-:return: Record result (implementation-dependent).
+- Parameter `rate` (`int`): Sample rate in Hz.
+- Parameter `bits` (`int`): Bit depth.
+- Parameter `channel` (`int`): Number of channels.
+- Parameter `duration` (`int`): Duration in milliseconds.
+- Returns: Record result (implementation-dependent).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        buf = echo_pyramid.record(rate=16000, bits=16, channel=2, duration=3000)
+```python
+buf = echo_pyramid.record(rate=16000, bits=16, channel=2, duration=3000)
+```
 
 ### `pcm_buffer`
 PCM buffer from the microphone (read-only). Available after recording.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        data = echo_pyramid.pcm_buffer
+```python
+data = echo_pyramid.pcm_buffer
+```
 
 ### `deinit`
 Deinitialize speaker and microphone, and mute output.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        echo_pyramid.deinit()
+```python
+echo_pyramid.deinit()
+```

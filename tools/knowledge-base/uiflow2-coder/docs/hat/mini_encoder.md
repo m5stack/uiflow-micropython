@@ -1,18 +1,12 @@
 # MiniEncoderC Hat
 
-<!-- .. include:: ../refs/hat.mini_encoder.ref -->
-
 The following products are supported:
 
-    |Encoder|
+    Encoder
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -137,85 +131,58 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_mini_encoder_example.m5f2|
 
 ## class MiniEncoderCHat
 
 ## Constructors
 
-<!-- .. class:: MiniEncoderCHat(i2c, address: int | list | tuple = 0x42) -->
+### `class MiniEncoderCHat(i2c, address: int  list  tuple = 0x42)`
 
     Creates a Rotary object.
 
-    :param i2c: I2C object.
-    :param address: I2C address, Default is 0x40.
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C object.
+    - Parameter `address`: I2C address, Default is 0x40.
 
 ## Methods
 
-<!-- .. method:: MiniEncoderCHat.get_rotary_status() -> bool -->
+### `MiniEncoderCHat.get_rotary_status() -> bool`
 
     Gets the rotation status of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.get_rotary_value() -> int -->
+### `MiniEncoderCHat.get_rotary_value() -> int`
 
     Gets the rotation value of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.get_rotary_increments() -> int -->
+### `MiniEncoderCHat.get_rotary_increments() -> int`
 
     Gets the rotation increment of the Rotary object. Can be used to determine
     the direction of rotation.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.reset_rotary_value() -> None -->
+### `MiniEncoderCHat.reset_rotary_value() -> None`
 
     Resets the rotation value of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.get_button_status() -> bool -->
+### `MiniEncoderCHat.get_button_status() -> bool`
 
     Get the current status of the rotary encoder keys.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.set_rotary_value(new_value: int) -> None -->
+### `MiniEncoderCHat.set_rotary_value(new_value: int) -> None`
 
     Sets the rotation value of the Rotary object.
 
-    :param int new_value: adjust the current value.
+    - Parameter `new_value` (`int`): adjust the current value.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.fill_color(rgb: int) -> None -->
+### `MiniEncoderCHat.fill_color(rgb: int) -> None`
 
     Set the color of the LED
 
-    :param int rgb: the color of the LED, 0x000000 - 0xFFFFFF.
+    - Parameter `rgb` (`int`): the color of the LED, 0x000000 - 0xFFFFFF.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.read_fw_version() -> str -->
+### `MiniEncoderCHat.read_fw_version() -> str`
 
     Get the firmware version of the device.
 
-    UIFLOW2:
-
-<!-- .. method:: MiniEncoderCHat.set_address(address) -> None -->
+### `MiniEncoderCHat.set_address(address) -> None`
 
     Set the I2C address of the device.
-
-    UIFLOW2:

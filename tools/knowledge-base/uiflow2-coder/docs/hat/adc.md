@@ -1,18 +1,12 @@
 # ADC Hat
 
-<!-- .. include:: ../refs/hat.adc.ref -->
-
 The following products are supported:
 
-    |ADC|
+    ADC
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -49,26 +43,17 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_adc_example.m5f2|
 
 ## class CANUnit
 
 ## Constructors
 
-<!-- .. class:: ADCHat(i2c, address: int = 0x48) -->
+### `class ADCHat(i2c, address: int = 0x48)`
 
     Create an instance of the ADC Hat.
 
-    :param i2c: I2C bus
-    :param address: I2C address of the ADC Hat
+    - Parameter `i2c`: I2C bus
+    - Parameter `address`: I2C address of the ADC Hat
 
-    UIFLOW2:
-
-ADCHat class inherits ADCUnit class, See :ref:`unit.ADCUnit.Methods <unit.ADCUnit.Methods>` for more details.
+ADCHat class inherits ADCUnit class, See `unit.ADCUnit.Methods <unit.ADCUnit.Methods>` for more details.

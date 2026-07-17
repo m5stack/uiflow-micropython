@@ -1,24 +1,7 @@
-<!-- .. currentmodule:: m5ui -->
 
 # M5Arc
 
-<!-- .. include:: ../refs/m5ui.arc.ref -->
-
 M5Arc is a widget that can be used to create arcs in the user interface. It can be used to display circular progress or other circular indicators.
-
-## UiFlow2 Example
-
-#### event arc
-
-Open the |cores3_arc_event_example.m5f2| project in UiFlow2.
-
-This example creates an arc that triggers an event when the value changes.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -26,13 +9,7 @@ Example output:
 
 This example creates an arc that triggers an event when the value changes.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -104,264 +81,192 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### M5Arc
 
-## M5Arc
+## `M5Arc`
 Create a arc object.
 
-:param int x: The x position of the arc.
-:param int y: The y position of the arc.
-:param int w: The width of the arc.
-:param int h: The height of the arc.
-:param int value: The initial value of the arc.
-:param int min_value: The minimum value of the arc.
-:param int max_value: The maximum value of the arc.
-:param int rotation: The rotation of the arc in degrees.
-:param int bg_c: The color of the arc in the off state in hexadecimal format.
-:param int bg_c_indicator: The color of the arc in the on state in hexadecimal format.
-:param int bg_c_knob: The color of the knob on the arc in hexadecimal format.
-:param lv.obj parent: The parent object to attach the arc to. If not specified, the arc will be attached to the default screen.
-
-UiFlow2 Code Block:
+- Parameter `x` (`int`): The x position of the arc.
+- Parameter `y` (`int`): The y position of the arc.
+- Parameter `w` (`int`): The width of the arc.
+- Parameter `h` (`int`): The height of the arc.
+- Parameter `value` (`int`): The initial value of the arc.
+- Parameter `min_value` (`int`): The minimum value of the arc.
+- Parameter `max_value` (`int`): The maximum value of the arc.
+- Parameter `rotation` (`int`): The rotation of the arc in degrees.
+- Parameter `bg_c` (`int`): The color of the arc in the off state in hexadecimal format.
+- Parameter `bg_c_indicator` (`int`): The color of the arc in the on state in hexadecimal format.
+- Parameter `bg_c_knob` (`int`): The color of the knob on the arc in hexadecimal format.
+- Parameter `parent` (`lv.obj`): The parent object to attach the arc to. If not specified, the arc will be attached to the default screen.
 
     None
 
-MicroPython Code Block:
+```python
+from m5ui import M5Arc
+import lvgl as lv
 
-    .. code-block:: python
-
-        from m5ui import M5Arc
-        import lvgl as lv
-
-        m5ui.init()
-        arc_0 = M5Arc(
-            x=0,
-            y=0,
-            w=100,
-            h=100,
-            value=10,
-            min_value=0,
-            max_value=100,
-            rotation=0,
-            mode=lv.arc.MODE.REVERSE,
-            bg_c=0xE7E3E7,
-            bg_c_indicator=0x0288FB,
-            bg_c_knob=0xE7E3E7,
-            parent=page0,
-        )
+m5ui.init()
+arc_0 = M5Arc(
+    x=0,
+    y=0,
+    w=100,
+    h=100,
+    value=10,
+    min_value=0,
+    max_value=100,
+    rotation=0,
+    mode=lv.arc.MODE.REVERSE,
+    bg_c=0xE7E3E7,
+    bg_c_indicator=0x0288FB,
+    bg_c_knob=0xE7E3E7,
+    parent=page0,
+)
+```
 
 ### `set_arc_color`
 Set the color of the arc.
 
-:param int color: The color of the arc in hexadecimal format.
-:param int opa: The opacity level (0-255).
-:param int part: The part of the arc to apply the style to (e.g., lv.PART.MAIN | lv.STATE.DEFAULT).
+- Parameter `color` (`int`): The color of the arc in hexadecimal format.
+- Parameter `opa` (`int`): The opacity level (0-255).
+- Parameter `part` (`int`): The part of the arc to apply the style to (e.g., lv.PART.MAIN | lv.STATE.DEFAULT).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        label_0.set_arc_color(0x2196F3, lv.PART.MAIN | lv.STATE.DEFAULT)
+```python
+label_0.set_arc_color(0x2196F3, lv.PART.MAIN | lv.STATE.DEFAULT)
+```
 
 ### `set_range`
 
 ### `set_style_radius`
 
-<!-- .. py:method:: set_rotation(rotation) -->
+### `set_rotation(rotation)`
 
         Set the rotation of the arc.
 
-        :param int rotation: The rotation angle of the arc in degrees.
+        - Parameter `rotation` (`int`): The rotation angle of the arc in degrees.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_rotation(90)
-
-<!-- .. py:method:: set_value(value) -->
+```python
+arc_0.set_rotation(90)
+```
+### `set_value(value)`
 
         Set the value of the arc.
 
-        :param int value: The value of the arc.
+        - Parameter `value` (`int`): The value of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_value(90)
-
-<!-- .. py:method:: get_value() -->
+```python
+arc_0.set_value(90)
+```
+### `get_value()`
 
         Get the value of the arc.
 
-        :return: The value of the arc.
-        :rtype: int
+        - Returns: The value of the arc.
+        - Return type: int
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.get_value()
-
-<!-- .. py:method:: set_range() -->
+```python
+arc_0.get_value()
+```
+### `set_range()`
 
         Set the range of the arc.
 
-        :param int min: The minimum value of the arc.
-        :param int max: The maximum value of the arc.
+        - Parameter `min` (`int`): The minimum value of the arc.
+        - Parameter `max` (`int`): The maximum value of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_range(0, 100)
-
-<!-- .. py:method:: set_mode() -->
+```python
+arc_0.set_range(0, 100)
+```
+### `set_mode()`
 
         Set the mode of the arc.
 
-        :param int mode: The mode of the arc.
+        - Parameter `mode` (`int`): The mode of the arc.
 
             Option:
                 - lv.arc.MODE.NORMAL: Normal mode.
                 - lv.arc.MODE.REVERSE: Reverse mode.
                 - lv.arc.MODE.SYMMETRICAL: Symmetrical mode.
 
-        UiFlow2 Code Block:
+```python
+arc_0.set_mode(lv.ARC.MODE.NORMAL)
+```
+### `set_flag(flag, value)`
 
-        MicroPython Code Block:
+        Set a flag on the object. If `value` is True, the flag is added; if False, the flag is removed.
 
-<!-- .. code-block:: python -->
+        - Parameter `flag` (`int`): The flag to set.
+        - Parameter `value` (`bool`): If True, the flag is added; if False, the flag is removed.
+        - Returns: None
 
-                arc_0.set_mode(lv.ARC.MODE.NORMAL)
-
-<!-- .. py:method:: set_flag(flag, value) -->
-
-        Set a flag on the object. If ``value`` is True, the flag is added; if False, the flag is removed.
-
-        :param int flag: The flag to set.
-        :param bool value: If True, the flag is added; if False, the flag is removed.
-        :return: None
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                button_0.set_flag(lv.obj.FLAG.HIDDEN, True)
-
-<!-- .. py:method:: set_pos(x, y) -->
+```python
+button_0.set_flag(lv.obj.FLAG.HIDDEN, True)
+```
+### `set_pos(x, y)`
 
         Set the position of the arc.
 
-        :param int x: The x-coordinate of the arc.
-        :param int y: The y-coordinate of the arc.
+        - Parameter `x` (`int`): The x-coordinate of the arc.
+        - Parameter `y` (`int`): The y-coordinate of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_pos(100, 100)
-
-<!-- .. py:method:: set_x(x) -->
+```python
+arc_0.set_pos(100, 100)
+```
+### `set_x(x)`
 
         Set the x-coordinate of the arc.
 
-        :param int x: The x-coordinate of the arc.
+        - Parameter `x` (`int`): The x-coordinate of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_x(100)
-
-<!-- .. py:method:: set_y(y) -->
+```python
+arc_0.set_x(100)
+```
+### `set_y(y)`
 
         Set the y-coordinate of the arc.
 
-        :param int y: The y-coordinate of the arc.
+        - Parameter `y` (`int`): The y-coordinate of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_y(100)
-
-<!-- .. py:method:: set_size(width, height) -->
+```python
+arc_0.set_y(100)
+```
+### `set_size(width, height)`
 
         Set the size of the arc.
 
-        :param int width: The width of the arc.
-        :param int height: The height of the arc.
+        - Parameter `width` (`int`): The width of the arc.
+        - Parameter `height` (`int`): The height of the arc.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.set_size(100, 50)
-
-<!-- .. py:method:: align_to(obj, align, x, y) -->
+```python
+arc_0.set_size(100, 50)
+```
+### `align_to(obj, align, x, y)`
 
         Align the arc to another object.
 
-        :param lv.obj obj: The object to align to.
-        :param int align: The alignment type.
-        :param int x: The x-offset from the aligned object.
-        :param int y: The y-offset from the aligned object.
+        - Parameter `obj` (`lv.obj`): The object to align to.
+        - Parameter `align` (`int`): The alignment type.
+        - Parameter `x` (`int`): The x-offset from the aligned object.
+        - Parameter `y` (`int`): The y-offset from the aligned object.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                arc_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
-
-<!-- .. py:method:: add_event_cb(handler, event, user_data) -->
+```python
+arc_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+```
+### `add_event_cb(handler, event, user_data)`
 
         Add an event callback to the arc. The callback will be called when the specified event occurs.
 
-        :param function handler: The callback function to call.
-        :param int event: The event to listen for.
-        :param Any user_data: Optional user data to pass to the callback.
+        - Parameter `handler` (`function`): The callback function to call.
+        - Parameter `event` (`int`): The event to listen for.
+        - Parameter `user_data` (`Any`): Optional user data to pass to the callback.
 
-        UiFlow2 Code Block:
+```python
+def value_changed_event(event_struct):
+    global page0, arc_0
+    print("value changed:", arc_0.get_value())
 
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                def value_changed_event(event_struct):
-                    global page0, arc_0
-                    print("value changed:", arc_0.get_value())
-
-                arc_0.add_event_cb(value_changed_event, lv.EVENT.VALUE_CHANGED, None)
+arc_0.add_event_cb(value_changed_event, lv.EVENT.VALUE_CHANGED, None)
+```

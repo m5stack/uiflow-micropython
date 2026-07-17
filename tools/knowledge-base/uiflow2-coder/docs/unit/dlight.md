@@ -1,18 +1,12 @@
 # DLight Unit
 
-<!-- .. include:: ../refs/unit.dlight.ref -->
-
 Support the following products:
 
-    |Dlight|
+    Dlight
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -51,40 +45,25 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |dlight_core_example.m5f2|
 
 ## class DLight
 
 ## Constructors
 
-<!-- .. class:: DLightUnit(i2c, address: int = 0x23) -->
+### `class DLightUnit(i2c, address: int = 0x23)`
 
     Create a DLight object.
 
-    :param i2c: the I2C object.
-    :param address: the I2C address of the device. Default is 0x23.
-
-    UIFLOW2:
-
-<!-- .. _unit.DLightUnit.Methods: -->
+    - Parameter `i2c`: the I2C object.
+    - Parameter `address`: the I2C address of the device. Default is 0x23.
 
 ## Methods
 
-<!-- .. method:: DLightUnit.get_lux() -->
+### `DLightUnit.get_lux()`
 
    Get light lux.
 
-    UIFLOW2:
-
-<!-- .. method:: DLightUnit.configure() -->
+### `DLightUnit.configure()`
 
     Configure the measurement mode (continuous measurement/single measurement) and resolution.
-
-    UIFLOW2:

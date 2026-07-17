@@ -1,20 +1,12 @@
 # CardKB Unit
 
-<!-- .. include:: ../refs/unit.cardkb.ref -->
-
 Support the following products:
 
-    ================== ==================
-    |CardKB Unit|      |CardKB Unit v1.1|
-    ================== ==================
+    CardKB Unit      CardKB Unit v1.1
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -57,80 +49,58 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_cardkb_example.m5f2|
 
 ## class CardKBUnit
 
 ## Constructors
 
-<!-- .. class:: CardKBUnit(i2c: I2C, address: int | list | tuple = 0x5F) -->
+### `class CardKBUnit(i2c: I2C, address: int  list  tuple = 0x5F)`
 
     Create a CardKBUnit object.
 
-    :param i2c: I2C object
-    :param address: I2C address, 0x5F by default
-
-    UIFLOW2:
-
-<!-- .. _unit.CardKBUnit.Methods: -->
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: I2C address, 0x5F by default
 
 ## Methods
 
-<!-- .. method:: CardKBUnit.get_key() -> int -->
+### `CardKBUnit.get_key() -> int`
 
     Read the key value.
 
-    :return: key value, int
+    - Returns: key value, int
 
-    UIFLOW2:
-
-<!-- .. method:: CardKBUnit.get_string() -> str -->
+### `CardKBUnit.get_string() -> str`
 
     Read the key string.
 
-    :return: key string, str
+    - Returns: key string, str
 
-    UIFLOW2:
-
-<!-- .. method:: CardKBUnit.is_pressed() -> bool -->
+### `CardKBUnit.is_pressed() -> bool`
 
     Check if the key is pressed.
 
-    :return: True if the key is pressed, False otherwise
+    - Returns: True if the key is pressed, False otherwise
 
-    UIFLOW2:
-
-<!-- .. method:: CardKBUnit.set_callback(handler) -->
+### `CardKBUnit.set_callback(handler)`
 
     Set the key press event callback.
 
-    :param handler: callback function
-
-    UIFLOW2:
+    - Parameter `handler`: callback function
 
     Example:
 
-<!-- .. code-block:: python -->
+```python
+from cardkb_unit import CardKBUnit
 
-        from cardkb_unit import CardKBUnit
+def cb(key):
+    print(key)
 
-        def cb(key):
-            print(key)
-
-        cardkb = CardKBUnit(i2c)
-        cardkb.set_callback(cb)
-        while True:
-            cardkb.tick()
-
-<!-- .. method:: CardKBUnit.tick() -->
+cardkb = CardKBUnit(i2c)
+cardkb.set_callback(cb)
+while True:
+    cardkb.tick()
+```
+### `CardKBUnit.tick()`
 
     Update the key status.
-
-    UIFLOW2:

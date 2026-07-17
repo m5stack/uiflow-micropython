@@ -1,21 +1,15 @@
 
 # GRBL Module
 
-<!-- .. include:: ../refs/module.grbl.ref -->
-
 GRBL 13.2 is a three-axis stepper motor driver module in the M5Stack stacking module series. It uses an ATmega328P-AU controller with three sets of DRV8825PWPR stepper motor driver chip control ways, which can drive three bipolar steppers at the same time.
 
 Support the following products:
 
-|GRBLModule|
+GRBLModule
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -56,144 +50,98 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |grbl_example.m5f2|
 
 ## class GRBLModule
 
 ## Constructors
 
-<!-- .. class:: GRBLModule(address) -->
+### `class GRBLModule(address)`
 
     Initialize the GRBLModule.
 
-    :param hex address: The I2C address of the device.
-
-    UIFLOW2:
+    - Parameter `address` (`hex`): The I2C address of the device.
 
 ## Methods
 
-<!-- .. method:: GRBLModule.g_code(command) -->
+### `GRBLModule.g_code(command)`
 
     Send the G-code command.
 
-    :param  command: The G-code command.
+    - Parameter `command`: The G-code command.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.get_code_time(code) -->
+### `GRBLModule.get_code_time(code)`
 
     Get the time of the code.
 
-    :return (int): The estimated time of the command.
-    :param  code: The G-code command
+    - Parameter `code`: The G-code command
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.turn(x, y, z, speed) -->
+### `GRBLModule.turn(x, y, z, speed)`
 
     Turn the motor to a specific position.
 
-    :param  x: The position of the X motor, 1.6&#x3D;360°.
-    :param  y: The position of the Y motor, 1.6&#x3D;360°.
-    :param  z: The position of the Z motor, 1.6&#x3D;360°.
-    :param  speed: The speed of the motor.
+    - Parameter `x`: The position of the X motor, 1.6&#x3D;360°.
+    - Parameter `y`: The position of the Y motor, 1.6&#x3D;360°.
+    - Parameter `z`: The position of the Z motor, 1.6&#x3D;360°.
+    - Parameter `speed`: The speed of the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.set_mode(mode) -->
+### `GRBLModule.set_mode(mode)`
 
     Set the mode of the motor.
 
-    :param  mode: The mode of the motor.
+    - Parameter `mode`: The mode of the motor.
         Options:
-        - ``Absolute``: GRBLModule.MODE_ABSOLUTE
-        - ``Relative``: GRBLModule.MODE_RELATIVE
+        - `Absolute`: GRBLModule.MODE_ABSOLUTE
+        - `Relative`: GRBLModule.MODE_RELATIVE
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.init(x_step, y_step, z_step, acc) -->
+### `GRBLModule.init(x_step, y_step, z_step, acc)`
 
     Initialize the motor.
 
-    :param  x_step: The step of the X motor.
-    :param  y_step: The step of the Y motor.
-    :param  z_step: The step of the Z motor.
-    :param  acc: The acceleration of the motor.
+    - Parameter `x_step`: The step of the X motor.
+    - Parameter `y_step`: The step of the Y motor.
+    - Parameter `z_step`: The step of the Z motor.
+    - Parameter `acc`: The acceleration of the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.flush() -->
+### `GRBLModule.flush()`
 
     Flush the buffer.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.get_message() -->
+### `GRBLModule.get_message()`
 
     Get the message.
 
-    :return (str): The message string.
-
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.get_status() -->
+### `GRBLModule.get_status()`
 
     Get the status.
 
-    :return (str): The status string.
-
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.get_idle_state() -->
+### `GRBLModule.get_idle_state()`
 
     Get the idle state.
 
-    :return (bool): The idle state.
-
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.get_lock_state() -->
+### `GRBLModule.get_lock_state()`
 
     Get the lock state.
 
-    :return (bool): The lock state.
-
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.wait_idle() -->
+### `GRBLModule.wait_idle()`
 
     Wait until the motor is idle.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.unlock_alarm_state() -->
+### `GRBLModule.unlock_alarm_state()`
 
     Unlock the alarm state.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.lock() -->
+### `GRBLModule.lock()`
 
     Lock the motor.
 
-    UIFLOW2:
-
-<!-- .. method:: GRBLModule.unlock() -->
+### `GRBLModule.unlock()`
 
     Unlock the motor.
 
-    UIFLOW2:
-
 ## Constants
 
-<!-- .. data:: GRBLModule.MODE_ABSOLUTE -->
-<!-- .. data:: GRBLModule.MODE_RELATIVE -->
+### `GRBLModule.MODE_ABSOLUTE`
+### `GRBLModule.MODE_RELATIVE`
 
     Motor mode

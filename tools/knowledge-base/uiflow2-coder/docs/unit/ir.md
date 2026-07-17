@@ -1,10 +1,8 @@
 # IR Unit
 
-<!-- .. include:: ../refs/unit.ir.ref -->
-
 Support the following products:
 
-    |IR|
+    IR
 
 Micropython Example:
 
@@ -43,37 +41,24 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |ir_core_example.m5f2|
 
 ## class IRUnit
 
 ## Constructors
 
-<!-- .. class:: IRUnit(port) -->
+### `class IRUnit(port)`
 
     Create an IRUnit object.
 
-    :param tuple port: The port to which the IR unit is connected. the tuple is a pair of values, the first value is the receive pin, and the second value is the transmit pin.
-
-    UIFLOW2:
+    - Parameter `port` (`tuple`): The port to which the IR unit is connected. the tuple is a pair of values, the first value is the receive pin, and the second value is the transmit pin.
 
 ## Methods
 
-<!-- .. method:: IRUnit.tx() -->
+### `IRUnit.tx()`
 
     Sends an ir signal value to an address.
 
-    UIFLOW2:
-
-<!-- .. method:: IRUnit.rx_event() -->
+### `IRUnit.rx_event()`
 
     Determine when the infrared signal is read and start to do some processing procedures.
-
-    UIFLOW2:

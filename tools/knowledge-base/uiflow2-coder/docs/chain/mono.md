@@ -1,7 +1,5 @@
 # Chain Mono
 
-<!-- .. include:: ../refs/chain.mono.ref -->
-
 MonoChain is the helper class for Chain Mono display devices on the Chain bus. It
 provides methods to control an 8 x 8 monochrome display, including pixel drawing,
 full-screen buffer refresh, ASCII character display, scrolling text, brightness,
@@ -9,64 +7,38 @@ and rotation.
 
 Support the following products:
 
-    |Chain Mono|
+    Chain Mono
 
 ## Constants
 
-Display modes use ``MonoChain.MODE_PIXEL`` and ``MonoChain.MODE_SCROLL``.
+Display modes use `MonoChain.MODE_PIXEL` and `MonoChain.MODE_SCROLL`.
 
-Scroll directions use ``MonoChain.SCROLL_DIR_LEFT``,
-``MonoChain.SCROLL_DIR_RIGHT``, ``MonoChain.SCROLL_DIR_UP``, and
-``MonoChain.SCROLL_DIR_DOWN``.
+Scroll directions use `MonoChain.SCROLL_DIR_LEFT`,
+`MonoChain.SCROLL_DIR_RIGHT`, `MonoChain.SCROLL_DIR_UP`, and
+`MonoChain.SCROLL_DIR_DOWN`.
 
-Scroll modes use ``MonoChain.SCROLL_MODE_ONCE``,
-``MonoChain.SCROLL_MODE_LOOP``, and ``MonoChain.SCROLL_MODE_BOUNCE``.
+Scroll modes use `MonoChain.SCROLL_MODE_ONCE`,
+`MonoChain.SCROLL_MODE_LOOP`, and `MonoChain.SCROLL_MODE_BOUNCE`.
 
-Scroll states use ``MonoChain.SCROLL_STATE_START``,
-``MonoChain.SCROLL_STATE_PAUSE``, and ``MonoChain.SCROLL_STATE_RESET``.
+Scroll states use `MonoChain.SCROLL_STATE_START`,
+`MonoChain.SCROLL_STATE_PAUSE`, and `MonoChain.SCROLL_STATE_RESET`.
 
-Display rotation uses ``MonoChain.ROTATION_0``, ``MonoChain.ROTATION_90``,
-``MonoChain.ROTATION_180``, and ``MonoChain.ROTATION_270``.
-
-## UiFlow2 Example
-
-#### Scroll text, rotation, and brightness control
-
-Open the |basic_chain_mono_example.m5f2| project in UiFlow2.
-
-This example initializes Chain Mono in scroll mode and displays the text
-``M5STACK``. It also shows a simple controller UI on the host display and uses
-the hardware buttons to control the Chain Mono module.
-
-- ``BtnA`` toggles the scroll state between start and pause.
-- ``BtnB`` cycles the display rotation through 0, 90, 180, and 270 degrees.
-- ``BtnC`` cycles the display brightness level.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+Display rotation uses `MonoChain.ROTATION_0`, `MonoChain.ROTATION_90`,
+`MonoChain.ROTATION_180`, and `MonoChain.ROTATION_270`.
 
 ## MicroPython Examples
 
 #### Scroll text, rotation, and brightness control
 
 This example initializes Chain Mono in scroll mode and displays the text
-``M5STACK``. It also shows a simple controller UI on the host display and uses
+`M5STACK`. It also shows a simple controller UI on the host display and uses
 the hardware buttons to control the Chain Mono module:
 
-- ``BtnA`` toggles the scroll state between start and pause.
-- ``BtnB`` cycles the display rotation through 0, 90, 180, and 270 degrees.
-- ``BtnC`` cycles the display brightness level.
-
-MicroPython Code Block:
+- `BtnA` toggles the scroll state between start and pause.
+- `BtnB` cycles the display rotation through 0, 90, 180, and 270 degrees.
+- `BtnC` cycles the display brightness level.
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -211,370 +183,277 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### MonoChain
 
-## MonoChain
+## `MonoChain`
 Mono Chain class for interacting with 8x8 monochrome display devices over Chain bus.
 
-:param ChainBus bus: The Chain bus instance.
-:param int device_id: The device ID of the Mono display on the Chain bus.
+- Parameter `bus` (`ChainBus`): The Chain bus instance.
+- Parameter `device_id` (`int`): The device ID of the Mono display on the Chain bus.
 
-UiFlow2 Code Block:
+```python
+from chain import ChainBus
+from chain import MonoChain
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from chain import ChainBus
-        from chain import MonoChain
-
-        bus2 = ChainBus(2, tx=21, rx=22)
-        chain_mono_0 = MonoChain(bus2, 1)
+bus2 = ChainBus(2, tx=21, rx=22)
+chain_mono_0 = MonoChain(bus2, 1)
+```
 
 ### `set_display_mode`
 Set the display mode.
 
-:param int mode: Display mode. Use :attr:`MonoChain.MODE_PIXEL` (0) for pixel mode or :attr:`MonoChain.MODE_SCROLL` (1) for scrolling string mode.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `mode` (`int`): Display mode. Use `MonoChain.MODE_PIXEL` (0) for pixel mode or `MonoChain.MODE_SCROLL` (1) for scrolling string mode.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_display_mode(MonoChain.MODE_PIXEL)
+```python
+success = chain_mono_0.set_display_mode(MonoChain.MODE_PIXEL)
+```
 
 ### `get_display_mode`
 Get the display mode.
 
-:return: Display mode. 0 means pixel mode, 1 means scrolling string mode. Returns None if failed.
-:rtype: int
+- Returns: Display mode. 0 means pixel mode, 1 means scrolling string mode. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        mode = chain_mono_0.get_display_mode()
+```python
+mode = chain_mono_0.get_display_mode()
+```
 
 ### `set_pixel`
 Set one pixel state on the 8x8 display.
 
-:param int x: X coordinate, range 0-7.
-:param int y: Y coordinate, range 0-7.
-:param bool state: Pixel state. True means on, False means off.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `x` (`int`): X coordinate, range 0-7.
+- Parameter `y` (`int`): Y coordinate, range 0-7.
+- Parameter `state` (`bool`): Pixel state. True means on, False means off.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_pixel(0, 0, True)
+```python
+success = chain_mono_0.set_pixel(0, 0, True)
+```
 
 ### `set_pixels`
 Set multiple pixel states on the 8x8 display.
 
-:param coordinates: Iterable of ``(x, y, state)`` or ``(x, y)`` values. Supports 1-64 pixels.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `coordinates`: Iterable of `(x, y, state)` or `(x, y)` values. Supports 1-64 pixels.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_pixels(((0, 0, True), (1, 0, False)))
+```python
+success = chain_mono_0.set_pixels(((0, 0, True), (1, 0, False)))
+```
 
 ### `get_pixel`
 Get one pixel state from the 8x8 display.
 
-:param int x: X coordinate, range 0-7.
-:param int y: Y coordinate, range 0-7.
-:return: Pixel state. True means on, False means off. Returns None if failed.
-:rtype: bool
+- Parameter `x` (`int`): X coordinate, range 0-7.
+- Parameter `y` (`int`): Y coordinate, range 0-7.
+- Returns: Pixel state. True means on, False means off. Returns None if failed.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        state = chain_mono_0.get_pixel(0, 0)
+```python
+state = chain_mono_0.get_pixel(0, 0)
+```
 
 ### `get_pixels`
 Get multiple pixel states from the 8x8 display.
 
-:param coordinates: Iterable of ``(x, y)`` coordinates. Supports 1-64 pixels.
-:return: Tuple of 0/1 pixel states, or None if failed.
-:rtype: tuple
+- Parameter `coordinates`: Iterable of `(x, y)` coordinates. Supports 1-64 pixels.
+- Returns: Tuple of 0/1 pixel states, or None if failed.
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        states = chain_mono_0.get_pixels(((0, 0), (1, 0)))
+```python
+states = chain_mono_0.get_pixels(((0, 0), (1, 0)))
+```
 
 ### `set_display_buffer`
 Refresh the full 8x8 display buffer.
 
-:param buffer: 8 row bytes. Row 0 is Y=0, bit7 maps to X=0 and bit0 maps to X=7.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `buffer`: 8 row bytes. Row 0 is Y=0, bit7 maps to X=0 and bit0 maps to X=7.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_display_buffer((0xFF, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0xFF))
+```python
+success = chain_mono_0.set_display_buffer((0xFF, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0xFF))
+```
 
 ### `get_display_buffer`
 Get the full 8-byte display buffer.
 
-:return: Tuple of 8 row bytes, or None if failed.
-:rtype: tuple
+- Returns: Tuple of 8 row bytes, or None if failed.
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        buffer = chain_mono_0.get_display_buffer()
+```python
+buffer = chain_mono_0.get_display_buffer()
+```
 
 ### `set_matrix`
 Refresh the display from an 8x8 matrix.
 
-:param matrix: 8 rows of row bytes or boolean/0/1 values.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `matrix`: 8 rows of row bytes or boolean/0/1 values.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_matrix(((1, 0, 0, 0, 0, 0, 0, 1),) * 8)
+```python
+success = chain_mono_0.set_matrix(((1, 0, 0, 0, 0, 0, 0, 1),) * 8)
+```
 
 ### `set_display_char`
 Set one ASCII character in pixel mode.
 
-:param char: Character or ASCII code in range 32-127.
-:param int x_offset: X offset, range 0-7.
-:param int y_offset: Y offset, range 0-7.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `char`: Character or ASCII code in range 32-127.
+- Parameter `x_offset` (`int`): X offset, range 0-7.
+- Parameter `y_offset` (`int`): Y offset, range 0-7.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_display_char("A", 1, 0)
+```python
+success = chain_mono_0.set_display_char("A", 1, 0)
+```
 
 ### `set_scroll_text`
 Set the scrolling ASCII text.
 
-:param text: ASCII string or bytes to display. Supports ASCII characters 32-127.
-:param int direction: Scroll direction. Use :attr:`MonoChain.SCROLL_DIR_RIGHT` (0), :attr:`MonoChain.SCROLL_DIR_LEFT` (1), :attr:`MonoChain.SCROLL_DIR_UP` (2), or :attr:`MonoChain.SCROLL_DIR_DOWN` (3).
-:param int mode: Scroll mode. Use :attr:`MonoChain.SCROLL_MODE_ONCE` (0), :attr:`MonoChain.SCROLL_MODE_LOOP` (1), or :attr:`MonoChain.SCROLL_MODE_BOUNCE` (3).
-:param int speed: Scroll speed in milliseconds per pixel. Range: 0-65535.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `text`: ASCII string or bytes to display. Supports ASCII characters 32-127.
+- Parameter `direction` (`int`): Scroll direction. Use `MonoChain.SCROLL_DIR_RIGHT` (0), `MonoChain.SCROLL_DIR_LEFT` (1), `MonoChain.SCROLL_DIR_UP` (2), or `MonoChain.SCROLL_DIR_DOWN` (3).
+- Parameter `mode` (`int`): Scroll mode. Use `MonoChain.SCROLL_MODE_ONCE` (0), `MonoChain.SCROLL_MODE_LOOP` (1), or `MonoChain.SCROLL_MODE_BOUNCE` (3).
+- Parameter `speed` (`int`): Scroll speed in milliseconds per pixel. Range: 0-65535.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_scroll_text("M5Stack", MonoChain.SCROLL_DIR_LEFT, MonoChain.SCROLL_MODE_LOOP, 100)
+```python
+success = chain_mono_0.set_scroll_text("M5Stack", MonoChain.SCROLL_DIR_LEFT, MonoChain.SCROLL_MODE_LOOP, 100)
+```
 
 ### `set_scroll_state`
 Set the scrolling text state.
 
-:param int state: Scroll state. Use :attr:`MonoChain.SCROLL_STATE_START` (0), :attr:`MonoChain.SCROLL_STATE_PAUSE` (1), or :attr:`MonoChain.SCROLL_STATE_RESET` (2).
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `state` (`int`): Scroll state. Use `MonoChain.SCROLL_STATE_START` (0), `MonoChain.SCROLL_STATE_PAUSE` (1), or `MonoChain.SCROLL_STATE_RESET` (2).
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_scroll_state(MonoChain.SCROLL_STATE_START)
+```python
+success = chain_mono_0.set_scroll_state(MonoChain.SCROLL_STATE_START)
+```
 
 ### `get_scroll_state`
 Get the scrolling text state.
 
-:return: Scroll state. 0 means scrolling, 1 means paused, 2 means reset/idle. Returns None if failed.
-:rtype: int
+- Returns: Scroll state. 0 means scrolling, 1 means paused, 2 means reset/idle. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        state = chain_mono_0.get_scroll_state()
+```python
+state = chain_mono_0.get_scroll_state()
+```
 
 ### `set_display_rotation`
 Set the display rotation.
 
-:param int rotation: Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 degrees, 3 clockwise 270 degrees.
-:param bool save: Whether to save the setting to flash.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `rotation` (`int`): Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 degrees, 3 clockwise 270 degrees.
+- Parameter `save` (`bool`): Whether to save the setting to flash.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_display_rotation(MonoChain.ROTATION_0, save=False)
+```python
+success = chain_mono_0.set_display_rotation(MonoChain.ROTATION_0, save=False)
+```
 
 ### `get_display_rotation`
 Get the display rotation.
 
-:return: Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 degrees, 3 clockwise 270 degrees. Returns None if failed.
-:rtype: int
+- Returns: Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 degrees, 3 clockwise 270 degrees. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        rotation = chain_mono_0.get_display_rotation()
+```python
+rotation = chain_mono_0.get_display_rotation()
+```
 
 ### `set_brightness`
 Set the screen brightness level.
 
-:param int brightness: Brightness level. Range: 0-7.
-:param bool save: Whether to save the setting to flash.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `brightness` (`int`): Brightness level. Range: 0-7.
+- Parameter `save` (`bool`): Whether to save the setting to flash.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_brightness(7, save=False)
+```python
+success = chain_mono_0.set_brightness(7, save=False)
+```
 
 ### `get_brightness`
 Get the screen brightness level.
 
-:return: Brightness level, range 0-7. Returns None if failed.
-:rtype: int
+- Returns: Brightness level, range 0-7. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        brightness = chain_mono_0.get_brightness()
+```python
+brightness = chain_mono_0.get_brightness()
+```
 
 ### `set_rgb_color`
 Set Chain RGB LED color.
 
 Mono display modules do not provide a separate Chain RGB LED, so this method returns False.
 
-:param int color: RGB color value.
-:return: Always False.
-:rtype: bool
+- Parameter `color` (`int`): RGB color value.
+- Returns: Always False.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_rgb_color(0xFF0000)
+```python
+success = chain_mono_0.set_rgb_color(0xFF0000)
+```
 
 ### `get_rgb_color`
 Get Chain RGB LED color.
 
 Mono display modules do not provide a separate Chain RGB LED, so this method returns -1.
 
-:return: Always -1.
-:rtype: int
+- Returns: Always -1.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        color = chain_mono_0.get_rgb_color()
+```python
+color = chain_mono_0.get_rgb_color()
+```
 
 ### `set_rgb_brightness`
 Set Chain RGB LED brightness.
 
 Mono display modules do not provide a separate Chain RGB LED, so this method returns False.
 
-:param int brightness: Brightness value.
-:param bool save: Whether to save the setting to flash.
-:return: Always False.
-:rtype: bool
+- Parameter `brightness` (`int`): Brightness value.
+- Parameter `save` (`bool`): Whether to save the setting to flash.
+- Returns: Always False.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_mono_0.set_rgb_brightness(50, save=False)
+```python
+success = chain_mono_0.set_rgb_brightness(50, save=False)
+```
 
 ### `get_rgb_brightness`
 Get Chain RGB LED brightness.
 
 Mono display modules do not provide a separate Chain RGB LED, so this method returns -1.
 
-:return: Always -1.
-:rtype: int
+- Returns: Always -1.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        brightness = chain_mono_0.get_rgb_brightness()
+```python
+brightness = chain_mono_0.get_rgb_brightness()
+```
 
 ### `clear_display`
 Clear the display.
 
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-MicroPython Code Block:
+```python
+success = chain_mono_0.clear_display()
+```
 
-    .. code-block:: python
-
-        success = chain_mono_0.clear_display()
-
-    For general Chain device methods, please refer to the :class:`ChainKey <chain.key.KeyChain>` class.
+    For general Chain device methods, please refer to the `ChainKey <chain.key.KeyChain>` class.

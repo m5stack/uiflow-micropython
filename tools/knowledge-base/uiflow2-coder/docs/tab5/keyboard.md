@@ -1,26 +1,8 @@
 # Tab5 Keyboard
 
-<!-- .. py:currentmodule:: tab5.keyboard -->
-
-<!-- .. include:: ../refs/tab5.keyboard.ref -->
-
 The `Keyboard` class controls the Tab5 keyboard controller over I2C. It supports
 character input callbacks, raw key matrix events, keyboard mode configuration,
 backlight brightness, RGB LED settings, and I2C address management.
-
-## UiFlow2 Example
-
-#### keyboard input
-
-Open the |tab5_keyboard_example.m5f2| project in UiFlow2.
-
-This example reads character input from the Tab5 keyboard and appends it to a text area.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -28,13 +10,7 @@ Example output:
 
 This example reads character input from the Tab5 keyboard and appends it to a text area.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -101,51 +77,42 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### Keyboard
 
-## Keyboard
+## `Keyboard`
 Create a Tab5 keyboard controller object.
 
-:param I2C i2c: The I2C bus the Tab5 keyboard is connected to.
-:param int address: The I2C address of the keyboard controller. Default is ``0x6D``.
+- Parameter `i2c` (`I2C`): The I2C bus the Tab5 keyboard is connected to.
+- Parameter `address` (`int`): The I2C address of the keyboard controller. Default is `0x6D`.
 
-UiFlow2 Code Block:
+```python
+from tab5 import Keyboard
+from hardware import Pin, SoftI2C
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from tab5 import Keyboard
-        from hardware import Pin, SoftI2C
-
-        softi2c_0 = SoftI2C(scl=Pin(1), sda=Pin(0), freq=100000)
-        keyboard = Keyboard(softi2c_0, 0x6D)
+softi2c_0 = SoftI2C(scl=Pin(1), sda=Pin(0), freq=100000)
+keyboard = Keyboard(softi2c_0, 0x6D)
+```
 
 ### `available`
 Check whether unread keyboard events are queued.
 
-:returns: ``True`` if the controller has pending events.
-:rtype: bool
+- Returns: `True` if the controller has pending events.
+- Return type: bool
 
 ### `set_int_enable`
 Enable keyboard interrupt sources.
 
-:param int mask: Interrupt mask composed from ``INT_NORMAL`` and ``INT_CHAR``.
+- Parameter `mask` (`int`): Interrupt mask composed from `INT_NORMAL` and `INT_CHAR`.
 
 ### `get_int_status`
 Get the current keyboard interrupt status.
 
-:returns: The latched interrupt status bits.
-:rtype: int
+- Returns: The latched interrupt status bits.
+- Return type: int
 
 ### `clear_int`
 Clear the current keyboard interrupt status.
@@ -153,111 +120,93 @@ Clear the current keyboard interrupt status.
 ### `get_event_count`
 Get the number of unread keyboard events.
 
-:returns: The number of queued events.
-:rtype: int
+- Returns: The number of queued events.
+- Return type: int
 
 ### `set_brightness`
 Set the keyboard backlight brightness.
 
-:param int brightness: Brightness value in the range ``0`` to ``255``.
+- Parameter `brightness` (`int`): Brightness value in the range `0` to `255`.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.set_brightness(20)
+```python
+keyboard.set_brightness(20)
+```
 
 ### `get_brightness`
 Get the keyboard backlight brightness.
 
-:returns: The current brightness value.
-:rtype: int
+- Returns: The current brightness value.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.get_brightness()
+```python
+keyboard.get_brightness()
+```
 
 ### `set_keyboard_mode`
 Set the keyboard event mode.
 
-:param int mode: Event mode such as ``MODE_NORMAL`` or ``MODE_CHAR``.
+- Parameter `mode` (`int`): Event mode such as `MODE_NORMAL` or `MODE_CHAR`.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.set_keyboard_mode(keyboard.MODE_CHAR)
+```python
+keyboard.set_keyboard_mode(keyboard.MODE_CHAR)
+```
 
 ### `get_keyboard_mode`
 Get the current keyboard event mode.
 
-:returns: The current keyboard mode.
-:rtype: int
+- Returns: The current keyboard mode.
+- Return type: int
 
 ### `set_rgb_mode`
 Set the RGB LED control mode.
 
-:param int mode: RGB mode such as ``RGB_MODE_BOUND`` or ``RGB_MODE_CUSTOM``.
+- Parameter `mode` (`int`): RGB mode such as `RGB_MODE_BOUND` or `RGB_MODE_CUSTOM`.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.set_rgb_mode(keyboard.RGB_MODE_BOUND)
+```python
+keyboard.set_rgb_mode(keyboard.RGB_MODE_BOUND)
+```
 
 ### `get_rgb_mode`
 Get the RGB LED control mode.
 
-:returns: The current RGB mode.
-:rtype: int
+- Returns: The current RGB mode.
+- Return type: int
 
 ### `read_key_event`
 Read one key matrix event.
 
-:returns: A tuple of ``(row, col, pressed)`` or ``None`` when no event is available.
-:rtype: tuple | None
+- Returns: A tuple of `(row, col, pressed)` or `None` when no event is available.
+- Return type: tuple | None
 
 ### `get_char_event_length`
 Get the byte length of the queued character event.
 
-:returns: The length of the character payload.
-:rtype: int
+- Returns: The length of the character payload.
+- Return type: int
 
 ### `read_char_event`
 Read one decoded character event.
 
-:returns: A tuple of ``(modifier, text)`` or ``None`` when no event is available.
-:rtype: tuple | None
+- Returns: A tuple of `(modifier, text)` or `None` when no event is available.
+- Return type: tuple | None
 
 ### `is_pressed`
 Check whether the keyboard has pending input.
 
-:returns: ``True`` if unread input is available.
-:rtype: bool
+- Returns: `True` if unread input is available.
+- Return type: bool
 
 ### `set_callback`
-Register the callback used by :meth:`tick`.
+Register the callback used by `tick`.
 
-:param callable handler: Callback that receives the keyboard event payload.
+- Parameter `handler` (`callable`): Callback that receives the keyboard event payload.
 
-MicroPython Code Block:
+```python
+def on_keyboard(data):
+    print(data)
 
-    .. code-block:: python
-
-        def on_keyboard(data):
-            print(data)
-
-        keyboard.set_callback(on_keyboard)
+keyboard.set_callback(on_keyboard)
+```
 
 ### `tick`
 Dispatch one pending keyboard event to the registered callback.
@@ -265,71 +214,51 @@ Dispatch one pending keyboard event to the registered callback.
 ### `set_rgb_color`
 Set the color of a keyboard RGB LED.
 
-:param int led_num: The LED index to update.
-:param int color: The 24-bit RGB color value.
+- Parameter `led_num` (`int`): The LED index to update.
+- Parameter `color` (`int`): The 24-bit RGB color value.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.set_rgb_color(0, 0x6600CC)
+```python
+keyboard.set_rgb_color(0, 0x6600CC)
+```
 
 ### `get_rgb_color`
 Get the color of a keyboard RGB LED.
 
-:param int led_num: The LED index to read.
-:returns: The 24-bit RGB color value.
-:rtype: int
+- Parameter `led_num` (`int`): The LED index to read.
+- Returns: The 24-bit RGB color value.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.get_rgb_color(0)
+```python
+keyboard.get_rgb_color(0)
+```
 
 ### `get_firmware_version`
 Get the firmware version of the keyboard controller.
 
-:returns: The firmware version byte.
-:rtype: int
+- Returns: The firmware version byte.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.get_firmware_version()
+```python
+keyboard.get_firmware_version()
+```
 
 ### `set_i2c_address`
 Set a new I2C address for the keyboard controller.
 
-:param int addr: The new I2C address. Valid range is ``0x08`` to ``0x77``.
-:returns: The active I2C address after the update.
-:rtype: int
+- Parameter `addr` (`int`): The new I2C address. Valid range is `0x08` to `0x77`.
+- Returns: The active I2C address after the update.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.set_i2c_address(0x6D)
+```python
+keyboard.set_i2c_address(0x6D)
+```
 
 ### `get_i2c_address`
 Get the current I2C address of the keyboard controller.
 
-:returns: The current I2C address.
-:rtype: int
+- Returns: The current I2C address.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        keyboard.get_i2c_address()
+```python
+keyboard.get_i2c_address()
+```

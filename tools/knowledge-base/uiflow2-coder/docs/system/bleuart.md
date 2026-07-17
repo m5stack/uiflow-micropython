@@ -1,4 +1,4 @@
-# :mod:`bleuart` --- UART/Serial Port Emulation over BLE
+# `bleuart` --- UART/Serial Port Emulation over BLE
 
 The Nordic UART Service (NUS) Application is an example that emulates a serial port over BLE.
 
@@ -7,9 +7,3 @@ The application includes one service: the Nordic UART Service. The 128-bit vendo
 This service exposes two characteristics: one for transmitting and one for receiving (as seen from the peer).
 
 ## Classes
-
-<!-- .. toctree:: -->
-    :maxdepth: 1
-
-    bleuart.server.rst
-    bleuart.client.rst

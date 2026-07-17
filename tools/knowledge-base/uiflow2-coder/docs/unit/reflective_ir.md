@@ -1,18 +1,12 @@
 # Reflective IR Unit
 
-<!-- .. include:: ../refs/unit.reflective_ir.ref -->
-
 Support the following products:
 
-    |Reflective IR Unit|
+    Reflective IR Unit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -58,65 +52,46 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus_reflectiverir_example.m5f2|
 
 ## class ReflectiveIRUnit
 
 ## Constructors
 
-<!-- .. class:: ReflectiveIRUnit(port: tuple) -->
+### `class ReflectiveIRUnit(port: tuple)`
 
     Create a ReflectiveIRUnit object.
 
-    :param tuple port: Specify the port to which the Reflective IR Unit is connected.
-
-    UIFLOW2:
+    - Parameter `port` (`tuple`): Specify the port to which the Reflective IR Unit is connected.
 
 ## Methods
 
-<!-- .. method:: ReflectiveIRUnit.get_analog_value() -> int -->
+### `ReflectiveIRUnit.get_analog_value() -> int`
 
     This method allows read the ADC value of the Reflective IR Unit and return an integer value. The value ranges from 0 to 65535.
 
-    UIFLOW2:
-
-<!-- .. method:: ReflectiveIRUnit.get_digital_value() -> int -->
+### `ReflectiveIRUnit.get_digital_value() -> int`
 
     This method allows read the digital value of the Reflective IR Unit and return an integer value. The value ranges from 0 to 1.
 
-    UIFLOW2:
-
-<!-- .. method:: ReflectiveIRUnit.enable_irq() -> None -->
+### `ReflectiveIRUnit.enable_irq() -> None`
 
    Enable Obstacle detection event
 
-    UIFLOW2:
-
-<!-- .. method:: ReflectiveIRUnit.disable_irq() -> None -->
+### `ReflectiveIRUnit.disable_irq() -> None`
 
     Disable Obstacle detection event
 
-    UIFLOW2:
-
-<!-- .. method:: ReflectiveIRUnit.set_callback(handler, trigger=ReflectiveIRUnit.EVENT_DETECTED | ReflectiveIRUnit.EVENT_NOT_DETECTED) -> None -->
+### `ReflectiveIRUnit.set_callback(handler, trigger=ReflectiveIRUnit.EVENT_DETECTED | ReflectiveIRUnit.EVENT_NOT_DETECTED) -> None`
 
     Set the callback function for the Reflective IR Unit.
 
-    :param handler: The callback function to be set.
-    :param trigger: The trigger condition for the callback function.
-
-    UIFLOW2:
+    - Parameter `handler`: The callback function to be set.
+    - Parameter `trigger`: The trigger condition for the callback function.
 
 ## Constants
 
-<!-- .. data:: ReflectiveIRUnit.EVENT_DETECTED -->
+### `ReflectiveIRUnit.EVENT_DETECTED`
           ReflectiveIRUnit.EVENT_NOT_DETECTED
 
     select the EVENT type of the Reflective IR Unit.

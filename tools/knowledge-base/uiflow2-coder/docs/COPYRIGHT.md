@@ -1,7 +1,4 @@
-************************
-###### Copyrights and Licenses
-
-<!-- .. include:: ./refs/COPYRIGHT.ref -->
+## Copyrights and Licenses
 
 # Software Copyrights
 

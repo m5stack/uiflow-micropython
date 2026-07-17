@@ -1,18 +1,12 @@
 # ADC Unit
 
-<!-- .. include:: ../refs/unit.adc.ref -->
-
 Support the following products:
 
-    |ADC|
+    ADC
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -50,76 +44,49 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |adc_cores3_example.m5f2|
 
 ## class ADCUnit
 
 ## Constructors
 
-<!-- .. class:: ADCUnit(i2c0) -->
+### `class ADCUnit(i2c0)`
 
     Create an ADCUnit object.
 
     parameters is:
-        - ``I2C0`` is I2C Port.
-
-    UIFLOW2:
-
-<!-- .. _unit.ADCUnit.Methods: -->
+        - `I2C0` is I2C Port.
 
 ## Methods
 
-<!-- .. method:: ADCUnit.get_value() -->
+### `ADCUnit.get_value()`
 
     Gets the original value read by the adc(16 bit).
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.get_voltage() -->
+### `ADCUnit.get_voltage()`
 
     Get the voltage value.
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.get_operating_mode() -->
+### `ADCUnit.get_operating_mode()`
 
     Get working mode. (Single read or continuous read)
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.get_data_rate() -->
+### `ADCUnit.get_data_rate()`
 
     Get the read rate of the data.
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.get_gain() -->
+### `ADCUnit.get_gain()`
 
     Get the gain multiple of the data.
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.operating_mode() -->
+### `ADCUnit.operating_mode()`
 
     Set working mode (single read or continuous read)
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.data_rate() -->
+### `ADCUnit.data_rate()`
 
     Set the data acquisition rate.
 
-    UIFLOW2:
-
-<!-- .. method:: ADCUnit.gain() -->
+### `ADCUnit.gain()`
 
     Set the gain multiple for reading data.
-
-    UIFLOW2:

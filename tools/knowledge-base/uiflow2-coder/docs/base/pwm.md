@@ -1,26 +1,8 @@
 # Atomic PWM Base
 
-<!-- .. sku: A114 -->
-
-<!-- .. include:: ../refs/base.pwm.ref -->
-
 Support the following products:
 
-    |Atomic PWM Base|
-
-## UiFlow2 Example:
-
-#### PWM output control
-
-Open the |atoms3r_pwm_base_example.m5f2| project in UiFlow2.
-
-The example demonstrates controlling the PWM signal's duty cycle to fluctuate between low to high and high to low.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Atomic PWM Base
 
 ## MicroPython Example:
 
@@ -28,13 +10,7 @@ Example output:
 
 The example demonstrates controlling the PWM signal's duty cycle to fluctuate between low to high and high to low.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -84,85 +60,60 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### PWM
 
-## AtomicPWMBase
+## `AtomicPWMBase`
 Create an AtomicPWMBase object.
 
-:param int out_pin: The PWM output pin. Default is 5.
-:param int freq: The PWM frequency. Default is 1000.
+- Parameter `out_pin` (`int`): The PWM output pin. Default is 5.
+- Parameter `freq` (`int`): The PWM frequency. Default is 1000.
 
-UiFlow2 Code Block:
+```python
+from base import AtomicPWMBase
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from base import AtomicPWMBase
-
-        base_pwm = AtomicPWMBase(out_pin=5, freq=1000)
+base_pwm = AtomicPWMBase(out_pin=5, freq=1000)
+```
 
 ### `set_freq`
 Set PWM frequency.
 
-:param int freq: The PWM frequency. Default is 1000.
+- Parameter `freq` (`int`): The PWM frequency. Default is 1000.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_pwm.set_freq()
+```python
+base_pwm.set_freq()
+```
 
 ### `get_freq`
 Get PWM frequency.
 
-:returns: PWM frequency.
-:rtype: int
+- Returns: PWM frequency.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_pwm.get_freq()
+```python
+base_pwm.get_freq()
+```
 
 ### `set_duty_u16`
 Set PWM duty cycle.
 
 set the current duty cycle of the PWM output, as an unsigned 16-bit value in the range 0 to 65535 inclusive.
 
-:param int duty: The PWM duty cycle. Range: 0 ~ 65535. Default is 0.
+- Parameter `duty` (`int`): The PWM duty cycle. Range: 0 ~ 65535. Default is 0.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_pwm.set_duty_u16()
+```python
+base_pwm.set_duty_u16()
+```
 
 ### `get_duty_u16`
 Get PWM duty cycle.
 
-:returns: PWM duty cycle. Range: 0~65535.
-:rtype: int
+- Returns: PWM duty cycle. Range: 0~65535.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_pwm.get_duty_u16()
+```python
+base_pwm.get_duty_u16()
+```

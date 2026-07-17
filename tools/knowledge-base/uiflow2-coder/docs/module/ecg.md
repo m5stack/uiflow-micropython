@@ -1,41 +1,10 @@
 # ECG Module
 
-<!-- .. sku: M034 -->
-
-<!-- .. include:: ../refs/module.ecg.ref -->
-
 This library is the driver for Module13.2 ECG, and the module communicates via UART.
 
 Support the following products:
 
-    |Module13.2 ECG|
-
-## UiFlow2 Example:
-
-#### Heart Rate Monitoring Display
-
-Open the |cores3_ecg_module_base_example.m5f2| project in UiFlow2.
-
-This example program is used for real-time heart rate monitoring and ECG waveform display. During measurement, the device continuously plots the ECG (Electrocardiogram) waveform and automatically calculates and displays the heart rate data once the signal stabilizes.
-
-**Electrode Placement Instructions**:
-Please follow the guidelines below to correctly connect the ECG electrodes:
-
-- ``Right Arm (RA)``: Place the right arm electrode on the right edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the right shoulder.
-- ``Left Arm (LA)``: Place the left arm electrode on the left edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the left shoulder.
-- ``Left Leg (LL)``: Place the left leg electrode above the iliac crest (hip bone) on the left lower abdomen, or on the lower left side of the abdomen.
-
-**Measurement Precautions**:
-To ensure stable and accurate ECG signals, please follow these precautions:
-
-- ``Stay relaxed``: Avoid muscle tension to reduce signal interference.
-- ``Remain still``: Minimize movement during measurement to obtain a stable ECG signal.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Module13.2 ECG
 
 ## MicroPython Example:
 
@@ -46,23 +15,17 @@ This example program is used for real-time heart rate monitoring and ECG wavefor
 **Electrode Placement Instructions**:
 Please follow the guidelines below to correctly connect the ECG electrodes:
 
-- ``Right Arm (RA)``: Place the right arm electrode on the right edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the right shoulder.
-- ``Left Arm (LA)``: Place the left arm electrode on the left edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the left shoulder.
-- ``Left Leg (LL)``: Place the left leg electrode above the iliac crest (hip bone) on the left lower abdomen, or on the lower left side of the abdomen.
+- `Right Arm (RA)`: Place the right arm electrode on the right edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the right shoulder.
+- `Left Arm (LA)`: Place the left arm electrode on the left edge of the sternum, at the 2nd intercostal space along the midclavicular line, near the left shoulder.
+- `Left Leg (LL)`: Place the left leg electrode above the iliac crest (hip bone) on the left lower abdomen, or on the lower left side of the abdomen.
 
 **Measurement Precautions**:
 To ensure stable and accurate ECG signals, please follow these precautions:
 
-- ``Stay relaxed``: Avoid muscle tension to reduce signal interference.
-- ``Remain still``: Minimize movement during measurement to obtain a stable ECG signal.
-
-MicroPython Code Block:
+- `Stay relaxed`: Avoid muscle tension to reduce signal interference.
+- `Remain still`: Minimize movement during measurement to obtain a stable ECG signal.
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -180,33 +143,24 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### ECGModule
 
-## ECGModule
+## `ECGModule`
 Create an ECGModule object.
 
-:param int id: UART id.
-:param int tx: the UART TX pin.
-:param int rx: the UART RX pin.
+- Parameter `id` (`int`): UART id.
+- Parameter `tx` (`int`): the UART TX pin.
+- Parameter `rx` (`int`): the UART RX pin.
 
-UiFlow2 Code Block:
+```python
+from module import ECGModule
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from module import ECGModule
-
-        module_ecg = ECGModule(id = 1, tx = 7, rx = 1)
+module_ecg = ECGModule(id = 1, tx = 7, rx = 1)
+```
 
 ### `poll_data`
 Poll data.
@@ -215,40 +169,28 @@ This function checks for new data from the module and
 should be called repeatedly in a loop to ensure continuous
 data retrieval.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_ecg.poll_data()
+```python
+module_ecg.poll_data()
+```
 
 ### `read_heartrate`
 Read heartrate.
 
-:returns: heart rate
-:rtype: int
+- Returns: heart rate
+- Return type: int
 
 If heart rate is no valid, return -1.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_ecg.read_heartrate()
+```python
+module_ecg.read_heartrate()
+```
 
 ### `read_raw_ecg_data`
 Read raw ECG data.
 
-:returns: ECG data
-:rtype: list
+- Returns: ECG data
+- Return type: list
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_ecg.read_raw_ecg_data()
+```python
+module_ecg.read_raw_ecg_data()
+```

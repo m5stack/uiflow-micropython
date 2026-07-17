@@ -1,64 +1,22 @@
 # Atom DTU NBIoT2 V11
 
-<!-- .. sku: K059-B -->
-
-<!-- .. include:: ../refs/base.dtu_nbiot2v11.ref -->
-
 This is the driver library for the ATOM DTU NBIoT2 V11 to accept and send data from the DTU NBIoT.
 
 Support the following products:
 
-    |Atom DTU NBIoT2|
+    Atom DTU NBIoT2
 
-<!-- .. note:: -->
-
-    Please ensure that the device supports the NB-IoT frequency bands in your area before use.
-
-<!-- .. note:: -->
-
-    Please ensure that the firmware version of SIM7028 is greater than or equal to **2110B07SIM7028**.
-
-     can be used to check the firmware version.
-
-## UiFlow2 Example
-
-#### NBIoT HTTP Example
-
-Open the |atoms3_base_nbiot2v11_http_example.m5f2| project in UiFlow2.
-
-This example shows how to send HTTP request using the Atom DTU NBIoT2 V11.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data via serial port.
-
-#### MQTT Example
-
-Open the |atoms3_base_nbiot2v11_mqtt_example.m5f2| project in UiFlow2.
-
-This example shows how to send MQTT message using the Atom DTU NBIoT2 V11.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
+> Note: Please ensure that the device supports the NB-IoT frequency bands in your area before use.
+> Note: Please ensure that the firmware version of SIM7028 is greater than or equal to **2110B07SIM7028**.
+>
+>  can be used to check the firmware version.
 ## MicroPython Example
 
 #### NBIoT HTTP Example
 
 This example shows how to send HTTP request using the Atom DTU NBIoT2 V11.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -123,7 +81,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -134,13 +91,7 @@ Example output:
 
 This example shows how to send MQTT message using the Atom DTU NBIoT2 V11.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -207,7 +158,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -218,64 +168,43 @@ Example output:
 
 #### AtomDTUNBIoT2V11
 
-## AtomDTUNBIoT2V11
+## `AtomDTUNBIoT2V11`
 Create an AtomDTUNBIoT2V11 object.
 
-:param machine.UART uart: The UART object to use.
-:param bool verbose: Whether to print debug information.
+- Parameter `uart` (`machine.UART`): The UART object to use.
+- Parameter `verbose` (`bool`): Whether to print debug information.
 
-UiFlow2 Code Block:
+```python
+from base import AtomDTUNBIoT2V11
+from hardware import UART
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from base import AtomDTUNBIoT2V11
-        from hardware import UART
-
-        uart2 = UART(2, baudrate=115200, bits=8, parity=None, stop=1, tx=22, rx=19)
-        base_nbiot2v11 = AtomDTUNBIoT2V11(uart2, verbose=False)
+uart2 = UART(2, baudrate=115200, bits=8, parity=None, stop=1, tx=22, rx=19)
+base_nbiot2v11 = AtomDTUNBIoT2V11(uart2, verbose=False)
+```
 
 ### `power_on`
 Power on the DTU NB-IoT module.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_nbiot2v11.power_on()
+```python
+base_nbiot2v11.power_on()
+```
 
 ### `power_off`
 Power off the DTU NB-IoT module.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        base_nbiot2v11.power_off()
+```python
+base_nbiot2v11.power_off()
+```
 
 ### `get_voltage`
 Get the RS485 Port voltage in volts.
 
-UiFlow2 Code Block:
+```python
+voltage = base_nbiot2v11.get_voltage()
+print("Voltage:", voltage)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        voltage = base_nbiot2v11.get_voltage()
-        print("Voltage:", voltage)
-
-<!-- .. note:: -->
-
-        See :class:`NBIOT2Unit <unit.nbiot2.NBIOT2Unit>` for more details.
-
+> Note: See `NBIOT2Unit <unit.nbiot2.NBIOT2Unit>` for more details.
 #### AtomRS485
 
-<!-- .. note:: -->
-
-    See :class:`AtomRS485 <base.rs232.AtomRS232>` for more details.
+> Note: See `AtomRS485 <base.rs232.AtomRS232>` for more details.

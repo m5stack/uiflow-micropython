@@ -1,28 +1,10 @@
 # Relay2 Unit
 
-<!-- .. sku: U131 -->
-
-<!-- .. include:: ../refs/unit.relay2.ref -->
-
 This is the driver library of Relay2 Unit, which is used to control the relay.
 
 Support the following products:
 
-    |RELAY2|
-
-## UiFlow2 Example
-
-#### control relay
-
-Open the |relay2_core2_example.m5f2| project in UiFlow2.
-
-This example controls the relay of the Relay2 Unit and displays it on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    RELAY2
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 This example controls the relay of the Relay2 Unit and displays it on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -86,57 +62,40 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### Relay2Unit
 
-## Relay2Unit
+## `Relay2Unit`
 Create an Relay2Unit object.
 
-:param tuple port: The port of the relay.
+- Parameter `port` (`tuple`): The port of the relay.
 
-UiFlow2 Code Block:
+```python
+from unit import Relay2Unit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import Relay2Unit
-
-        relay2_0 = Relay2Unit((32, 26))
+relay2_0 = Relay2Unit((32, 26))
+```
 
 ### `set_relay_cntrl`
 Set the on/off status of a relay
 
-:param int num: The relay number(the range is 1-2).
-:param int control: The control value(0: off, 1: on).
+- Parameter `num` (`int`): The relay number(the range is 1-2).
+- Parameter `control` (`int`): The control value(0: off, 1: on).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        relay2_0.set_relay_cntrl(1, 1)
+```python
+relay2_0.set_relay_cntrl(1, 1)
+```
 
 ### `get_relay_status`
 Getting the on/off status of a relay
 
-:param int num: The relay number.
-:returns: relay status.
-:rtype: bool
+- Parameter `num` (`int`): The relay number.
+- Returns: relay status.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        relay2_0.get_relay_status()
+```python
+relay2_0.get_relay_status()
+```

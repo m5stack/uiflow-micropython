@@ -1,18 +1,13 @@
 
 # 4In8Out Module
 
-<!-- .. include:: ../refs/module.module_4in8out.ref -->
-
 Support the following products:
 
-|Module4In8Out|
+Module4In8Out
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -112,70 +107,49 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |module4in8out_fire_example.m5f2|
 
 ## class Module4In8Out
 
 ## Constructors
 
-<!-- .. class:: Module4In8Out(address) -->
+### `class Module4In8Out(address)`
 
     Init I2C Module 4In8Out I2C Address.
 
-    :param int|list|tuple address: I2C address of the 4In8OutModule.
-
-    UIFLOW2:
+    - Parameter `address` (`intlisttuple`): I2C address of the 4In8OutModule.
 
 ## Methods
 
-<!-- .. method:: Module4In8Out.get_switch_value(switch_num) -> bool -->
+### `Module4In8Out.get_switch_value(switch_num) -> bool`
 
     Get the current value of the rotary.
 
-    :param int switch_num: Switch number (1 to 4).
+    - Parameter `switch_num` (`int`): Switch number (1 to 4).
 
-    UIFLOW2:
-
-<!-- .. method:: Module4In8Out.get_load_state(load_num) -> bool -->
+### `Module4In8Out.get_load_state(load_num) -> bool`
 
     Get the state of a specific LED.
 
-    :param int load_num: Load number (1 to 8).
+    - Parameter `load_num` (`int`): Load number (1 to 8).
 
-    UIFLOW2:
-
-<!-- .. method:: Module4In8Out.set_load_state(load_num, state) -> None -->
+### `Module4In8Out.set_load_state(load_num, state) -> None`
 
     Set the state of a specific Load.
 
-    :param int load_num: Load number (1 to 8).
-    :param int state: The state to set for the Load.
+    - Parameter `load_num` (`int`): Load number (1 to 8).
+    - Parameter `state` (`int`): The state to set for the Load.
 
-    UIFLOW2:
-
-<!-- .. method:: Module4In8Out.get_firmware_version() -> int -->
+### `Module4In8Out.get_firmware_version() -> int`
 
     Get the firmware version of the 4In8Out module.
 
-    UIFLOW2:
-
-<!-- .. method:: Module4In8Out.get_i2c_address() -> int -->
+### `Module4In8Out.get_i2c_address() -> int`
 
     Get the current I2C address of the 4In8Out module.
 
-    UIFLOW2:
-
-<!-- .. method:: Module4In8Out.set_i2c_address(addr) -> None -->
+### `Module4In8Out.set_i2c_address(addr) -> None`
 
     Set a new I2C address for the 4In8Out module.
 
-    :param int addr: The new I2C address to set.
-
-    UIFLOW2:
+    - Parameter `addr` (`int`): The new I2C address to set.

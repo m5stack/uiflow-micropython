@@ -1,30 +1,15 @@
 # Rotary
 
-<!-- .. include:: ../refs/hardware.rotary.ref -->
-
 Rotary is used to control the rotary encoder integrated inside the host. Below
 is the detailed Rotary support for the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
-
-###### | Controller      | Rotary |
-
-###### | Dial            | |S|    |
-
-###### | DinMeter        | |S|    |
-
-<!-- .. |S| unicode:: U+2714 -->
+     Controller       Rotary |
+     Dial             S    |
+     DinMeter         S    |
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -67,58 +52,37 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |dial_rotary_example.m5f2|
 
 ## class Rotary
 
 ## Constructors
 
-<!-- .. class:: Rotary() -->
+### `class Rotary()`
 
     Creates a Rotary object.
 
-    UIFLOW2:
-
 ## Methods
 
-<!-- .. method:: Rotary.get_rotary_status() -> bool -->
+### `Rotary.get_rotary_status() -> bool`
 
     Gets the rotation status of the Rotary object.
 
-    UIFLOW2:
+### `Rotary.get_rotary_value() -> int`
 
-<!-- .. method:: Rotary.get_rotary_value() -> int -->
-
-<!-- .. note:: Cannot be used simultaneously with :meth:`Rotary.get_rotary_increments()`. -->
-
+> Note: Cannot be used simultaneously with `Rotary.get_rotary_increments()`.
     Gets the rotation value of the Rotary object.
 
-    UIFLOW2:
+### `Rotary.get_rotary_increments() -> int`
 
-<!-- .. method:: Rotary.get_rotary_increments() -> int -->
-
-<!-- .. note:: Cannot be used simultaneously with :meth:`Rotary.get_rotary_increments()`. -->
-
+> Note: Cannot be used simultaneously with `Rotary.get_rotary_increments()`.
     Gets the rotation increment of the Rotary object. Can be used to determine
     the direction of rotation.
 
-    UIFLOW2:
-
-<!-- .. method:: Rotary.reset_rotary_value() -> None -->
+### `Rotary.reset_rotary_value() -> None`
 
     Resets the rotation value of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: Rotary.set_rotary_value() -> None -->
+### `Rotary.set_rotary_value() -> None`
 
     Sets the rotation value of the Rotary object.
-
-    UIFLOW2:

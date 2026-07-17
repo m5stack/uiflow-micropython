@@ -1,18 +1,12 @@
 # PIR Unit
 
-<!-- .. include:: ../refs/unit.pir.ref -->
-
 Support the following products:
 
-    |PIR|
+    PIR
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -57,50 +51,33 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |pir_core_example.m5f2|
 
 ## class PIR
 
 ## Constructors
 
-<!-- .. class:: PIR(IO1,IO2) -->
+### `class PIR(IO1,IO2)`
 
     Create a PIR object.
 
     The parameters are:
-        - ``IO1,IO2`` I2C pin.
-
-    UIFLOW2:
+        - `IO1,IO2` I2C pin.
 
 ## Methods
 
-<!-- .. method:: PIR.get_status() -->
+### `PIR.get_status()`
 
     Get detection status.
 
-    UIFLOW2:
-
-<!-- .. method:: PIR.enable_irq() -->
+### `PIR.enable_irq()`
 
    Enable Human detection function.
 
-    UIFLOW2:
-
-<!-- .. method:: PIR.disable_irq() -->
+### `PIR.disable_irq()`
 
     Disable Human detection function.
 
-    UIFLOW2:
-
-<!-- .. method:: PIR.set_callback() -->
+### `PIR.set_callback()`
 
     Polling method, placed in the loop function, constantly check.
-
-    UIFLOW2:

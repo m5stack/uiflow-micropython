@@ -1,27 +1,8 @@
 # SwitchC6
 
-<!-- .. module:: switchc6 -->
-    :synopsis: A module for controlling the SwitchC6 device
-
-<!-- .. include:: ../refs/iot-devices.switchc6.ref -->
-
 The SwitchC6 is a device that can be controlled using the M5Stack platform. This module provides functions to interact with the SwitchC6 device.
 
-|SwitchC6|
-
-## UiFlow2 Example
-
-#### SwitchC6 Control
-
-Open the |cores3_switchc6_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to control the SwitchC6 device using UiFlow2.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+SwitchC6
 
 ## MicroPython Example
 
@@ -29,13 +10,7 @@ Example output:
 
 This example demonstrates how to control the SwitchC6 device using MicroPython.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -245,129 +220,95 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### SwitchC6Controller
 
-## SwitchC6Controller
+## `SwitchC6Controller`
 Create a SwitchC6Controller instance to control M5Stack SwitchC6 devices.
 
-:param target_mac: List of target MAC addresses in "XXXX-XXXX-XXXX" format.
-:param wifi_channel: WiFi channel to use for communication (default is 0, which uses the current channel).
-:param verbose: If True, print debug information (default is False).
-:raises ValueError: If any MAC address in target_mac is not in the "XXXX-XXXX-XXXX" format.
+- Parameter `target_mac`: List of target MAC addresses in "XXXX-XXXX-XXXX" format.
+- Parameter `wifi_channel`: WiFi channel to use for communication (default is 0, which uses the current channel).
+- Parameter `verbose`: If True, print debug information (default is False).
 
-UiFlow2 Code Block:
+```python
+import switchc6
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        import switchc6
-
-        controller = switchc6.SwitchC6Controller(
-            target_mac=["1122-AABB-CCDD", "2233-BBEE-DDEE"],
-            wifi_channel=0,
-            verbose=True
-        )
+controller = switchc6.SwitchC6Controller(
+    target_mac=["1122-AABB-CCDD", "2233-BBEE-DDEE"],
+    wifi_channel=0,
+    verbose=True
+)
+```
 
 ### `espnow_recv_callback`
 
 ### `set_switch`
 Set the switch state of the target device.
 
-:param target_mac: Target MAC address in "XXXX-XXXX-XXXX" format.
-:param onoff: True to turn on, False to turn off.
-:param timeout: Timeout in milliseconds for waiting for a response (default is 5000).
+- Parameter `target_mac`: Target MAC address in "XXXX-XXXX-XXXX" format.
+- Parameter `onoff`: True to turn on, False to turn off.
+- Parameter `timeout`: Timeout in milliseconds for waiting for a response (default is 5000).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.set_switch("1122-AABB-CCDD", True, timeout=5000)
+```python
+switchc6.set_switch("1122-AABB-CCDD", True, timeout=5000)
+```
 
 ### `toggle_switch`
 Toggle the switch status of the target device.
 
-:param target_mac: Target MAC address in "XXXX-XXXX-XXXX" format.
-:param timeout: Timeout in milliseconds for waiting for a response (default is 5000).
+- Parameter `target_mac`: Target MAC address in "XXXX-XXXX-XXXX" format.
+- Parameter `timeout`: Timeout in milliseconds for waiting for a response (default is 5000).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.toggle_switch("1122-AABB-CCDD", timeout=5000)
+```python
+switchc6.toggle_switch("1122-AABB-CCDD", timeout=5000)
+```
 
 ### `get_capacitor_voltage`
 Get the capacitor voltage of the target device.
 
-:param target_mac: Target MAC address in "XXXX-XXXX-XXXX" format.
-:param timeout: Timeout in milliseconds for waiting for a response (default is 5000).
-:returns: The capacitor voltage as a float.
-:rtype: float
+- Parameter `target_mac`: Target MAC address in "XXXX-XXXX-XXXX" format.
+- Parameter `timeout`: Timeout in milliseconds for waiting for a response (default is 5000).
+- Returns: The capacitor voltage as a float.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.get_capacitor_voltage("1122-AABB-CCDD", timeout=5000)
+```python
+switchc6.get_capacitor_voltage("1122-AABB-CCDD", timeout=5000)
+```
 
 ### `get_switch_status`
 Get the switch status of the target device.
 
-:param target_mac: Target MAC address in "XXXX-XXXX-XXXX" format.
-:param timeout: Timeout in milliseconds for waiting for a response (default is 5000).
-:returns: True if the switch is ON, False if it is OFF.
-:rtype: bool
+- Parameter `target_mac`: Target MAC address in "XXXX-XXXX-XXXX" format.
+- Parameter `timeout`: Timeout in milliseconds for waiting for a response (default is 5000).
+- Returns: True if the switch is ON, False if it is OFF.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.get_switch_status("1122-AABB-CCDD", timeout=5000)
+```python
+switchc6.get_switch_status("1122-AABB-CCDD", timeout=5000)
+```
 
 ### `set_callback`
 Set a callback function for the specified trigger.
 
-:param handler: The callback function to be called when the trigger occurs.
-:param trigger: The trigger type (0 for OFF, 1 for ON).
+- Parameter `handler`: The callback function to be called when the trigger occurs.
+- Parameter `trigger`: The trigger type (0 for OFF, 1 for ON).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.set_callback(handler, trigger)
+```python
+switchc6.set_callback(handler, trigger)
+```
 
 ### `get_firmware_version`
 Get the firmware version of the target device.
 
-:param target_mac: Target MAC address in "XXXX-XXXX-XXXX" format.
-:param timeout: Timeout in milliseconds for waiting for a response (default is 5000).
+- Parameter `target_mac`: Target MAC address in "XXXX-XXXX-XXXX" format.
+- Parameter `timeout`: Timeout in milliseconds for waiting for a response (default is 5000).
 
-:returns: The firmware version as a string.
-:rtype: str
+- Returns: The firmware version as a string.
+- Return type: str
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switchc6.get_firmware_version("1122-AABB-CCDD", timeout=5000)
+```python
+switchc6.get_firmware_version("1122-AABB-CCDD", timeout=5000)
+```

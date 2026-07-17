@@ -1,30 +1,10 @@
 # Atomic CAN Base
 
-<!-- .. sku: A103/KO57 -->
-
-<!-- .. include:: ../refs/base.can.ref -->
-
 This is the driver library for the ATOM CAN Base to accept and send data from the CAN module.
 
 Support the following products:
 
-    ================== ==================
-    |Atom CAN|         |Atomic CAN Base|
-    ================== ==================
-
-## UiFlow2 Example
-
-#### CAN communication
-
-Open the |atoms3_can_example.m5f2| project in UiFlow2.
-
-This example shows how to receive and send data using the Atom CAN Base.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received CAN message data via serial port.
+    Atom CAN         Atomic CAN Base
 
 ## MicroPython Example
 
@@ -32,13 +12,7 @@ Example output:
 
 This example shows how to receive and send data using the Atom CAN Base.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -86,7 +60,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -97,23 +70,19 @@ Example output:
 
 #### ATOMCANBase
 
-## ATOMCANBase
+## `ATOMCANBase`
 Create an ATOMCANBase object
 
-:param int id: The CAN ID to use, Default is 0.
-:param port: A list or tuple containing the TX and RX pin numbers.
-:type port: list | tuple
-:param int mode: The CAN mode to use(NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY), Default is NORMAL.
-:param int baudrate: The baudrate to use, Default is 1000000.
+- Parameter `id` (`int`): The CAN ID to use, Default is 0.
+- Parameter `port`: A list or tuple containing the TX and RX pin numbers.
+- Type of `port`: list | tuple
+- Parameter `mode` (`int`): The CAN mode to use(NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY), Default is NORMAL.
+- Parameter `baudrate` (`int`): The baudrate to use, Default is 1000000.
 
-UiFlow2 Code Block:
+```python
+from base import ATOMCANBase
 
-MicroPython Code Block:
+base_can = ATOMCANBase(0, (6, 5), ATOMCANBase.NORMAL, baudrate=1000000)
+```
 
-    .. code-block:: python
-
-        from base import ATOMCANBase
-
-        base_can = ATOMCANBase(0, (6, 5), ATOMCANBase.NORMAL, baudrate=1000000)
-
-    ATOMCANBase class inherits CAN class, See :class:`hardware.CAN <hardware.CAN>` for more details.
+    ATOMCANBase class inherits CAN class, See `hardware.CAN <hardware.CAN>` for more details.

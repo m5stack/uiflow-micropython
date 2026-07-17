@@ -1,9 +1,5 @@
 # LCD Unit
 
-<!-- .. sku: U120 -->
-
-<!-- .. include:: ../refs/unit.lcd.ref -->
-
 Unit LCD is a 1.14 inch color LCD expansion screen unit. It adopts ST7789V2
 drive scheme, the resolution is 135*240, and it supports
 RGB666 display (262,144 colors). The internal integration of ESP32-PICO control
@@ -16,21 +12,7 @@ to display simple content as a display panel.
 
 Support the following products:
 
-    |LCDUnit|
-
-## UiFlow2 Example
-
-#### Draw Text
-
-Open the |cores3_lcd_example.m5f2| project in UiFlow2.
-
-This example displays the text "LCD" on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    LCDUnit
 
 ## MicroPython Example
 
@@ -38,13 +20,7 @@ Example output:
 
 This example displays the text "LCD" on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -84,31 +60,22 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### class LCDUnit
 
-## LCDUnit
+## `LCDUnit`
 Initialize the LCD Unit.
 
-:param i2c: The I2C bus the LCD Unit is connected to.
-:type i2c: I2C
-:param int address: The I2C address of the LCD Unit, default is 0x3E.
+- Parameter `i2c`: The I2C bus the LCD Unit is connected to.
+- Type of `i2c`: I2C
+- Parameter `address` (`int`): The I2C address of the LCD Unit, default is 0x3E.
 
-UiFlow2 Code Block:
+```python
+from unit import LCDUnit
+lcd_0 = LCDUnit(i2c0, 0x3e)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import LCDUnit
-        lcd_0 = LCDUnit(i2c0, 0x3e)
-
-    LCDUnit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.
+    LCDUnit class inherits Display class, See `hardware.Display <hardware.Display>` for more details.

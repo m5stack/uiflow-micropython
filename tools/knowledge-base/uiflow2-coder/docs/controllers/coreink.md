@@ -1,10 +1,6 @@
-#########
-###### CoreInk
+# CoreInk
 
-<!-- .. include:: ../refs/controllers.coreink.ref -->
-######
-
-###### UI
+## UI
 
 CoreInk has 4 buttons, **Up**, **Down**, **Center**, and **Btn.EXT**.
 

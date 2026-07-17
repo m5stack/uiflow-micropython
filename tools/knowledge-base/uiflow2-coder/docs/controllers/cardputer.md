@@ -1,60 +1,55 @@
-#########
-###### Cardputer
+# Cardputer
 
-<!-- .. include:: ../refs/controllers.cardputer.ref -->
+## Startup UI
 
-######
+## Launcher
 
-###### Startup UI
+`FN` + `LEFT` and `FN` + `RIGHT` key cycle through the available applications.
 
-###### Launcher
+`Enter` launches the selected application.
 
-``FN`` + ``LEFT`` and ``FN`` + ``RIGHT`` key cycle through the available applications.
+## Setting
 
-``Enter`` launches the selected application.
+`FN` + `LEFT` and `FN` + `RIGHT` key cycle through the available applications.
 
-###### Setting
+`Enter` launches the selected application.
 
-``FN`` + ``LEFT`` and ``FN`` + ``RIGHT`` key cycle through the available applications.
-
-``Enter`` launches the selected application.
-
-``BtnA`` quits the application.
+`BtnA` quits the application.
 
 # WLAN
 
-``FN`` + ``UP`` and ``FN`` + ``DOWN`` keys select the corresponding input box or button.
+`FN` + `UP` and `FN` + `DOWN` keys select the corresponding input box or button.
 
-``Enter`` performs the corresponding action.
+`Enter` performs the corresponding action.
 
-``BtnA`` quits the application.
+`BtnA` quits the application.
 
 # Gerneral
 
-The ``FN`` + ``UP`` and ``FN`` + ``DOWN`` keys select menus.
+The `FN` + `UP` and `FN` + `DOWN` keys select menus.
 
-``Enter`` set.
+`Enter` set.
 
-``BtnA`` quits the application.
+`BtnA` quits the application.
 
-###### Develop
+## Develop
 
-``BtnA`` quits the application.
+`BtnA` quits the application.
 
-###### APP.RUN
+## APP.RUN
 
-``FN`` + ``LEFT`` and ``FN`` + ``RIGHT`` keys select the corresponding execution action.
+`FN` + `LEFT` and `FN` + `RIGHT` keys select the corresponding execution action.
 
-``Enter`` runs main.py according to the corresponding action.
+`Enter` runs main.py according to the corresponding action.
 
-``BtnA`` quits the application.
+`BtnA` quits the application.
 
-###### APP.LIST
+## APP.LIST
 
-``FN`` + ``UP` and ``FN`` + ``DOWN`` key cycle through the available applications.
+`FN` + ``UP` and `FN` + `DOWN` key cycle through the available applications.
 
-``Enter`` key runs the application once.
+`Enter` key runs the application once.
 
-``A`` key runs the application always.
+`A` key runs the application always.
 
-``BtnA`` quits the application.
+`BtnA` quits the application.

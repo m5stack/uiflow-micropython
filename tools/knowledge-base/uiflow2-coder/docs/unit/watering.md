@@ -1,7 +1,5 @@
 # Watering Unit
 
-<!-- .. include:: ../refs/unit.watering.ref -->
-
 Watering is a capacitive soil moisture detection and adjustment unit.
 The product integrates water pump and measuring plates for soil moisture
 detection and pump water control. It can be used for intelligent plant breeding
@@ -12,7 +10,7 @@ compared with the resistive electrode plate.
 
 Support the following products:
 
-    |WateringUnit|
+    WateringUnit
 
 Micropython Example:
 
@@ -62,61 +60,42 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_watering_example.m5f2|
 
 ## class WateringUnit
 
 ## Constructors
 
-<!-- .. class:: WateringUnit(port: tuple) -> None -->
+### `class WateringUnit(port: tuple) -> None`
 
     Initialize the Fader.
 
-    :param port: The port to which the Fader is connected. port[0]: adc pin, port[1]: pump pin.
-
-    UIFLOW2:
+    - Parameter `The port to which the Fader is connected. port[0]` (`port:`): adc pin, port[1]: pump pin.
 
 ## Methods
 
-<!-- .. method:: WateringUnit.get_voltage() -> float -->
+### `WateringUnit.get_voltage() -> float`
 
     Get the voltage of the sensor.
 
-    :return: The voltage of the sensor.
+    - Returns: The voltage of the sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: WateringUnit.get_raw() -> int -->
+### `WateringUnit.get_raw() -> int`
 
     Read the raw value of the ADC.
 
-    :return: The raw value of the ADC.
+    - Returns: The raw value of the ADC.
 
-    UIFLOW2:
-
-<!-- .. method:: WateringUnit.on() -> None -->
+### `WateringUnit.on() -> None`
 
     Turn on the pump.
 
-    UIFLOW2:
-
-<!-- .. method:: WateringUnit.off() -> None -->
+### `WateringUnit.off() -> None`
 
     Turn off the pump.
 
-    UIFLOW2:
-
-<!-- .. method:: WateringUnit.set_pump(state: int) -> None -->
+### `WateringUnit.set_pump(state: int) -> None`
 
     Set the state of the pump.
 
-    :param int state: The state of the pump.
-
-    UIFLOW2:
+    - Parameter `state` (`int`): The state of the pump.

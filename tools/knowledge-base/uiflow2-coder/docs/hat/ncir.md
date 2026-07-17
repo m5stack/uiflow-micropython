@@ -1,18 +1,12 @@
 # NCIR Hat
 
-<!-- .. include:: ../refs/hat.ncir.ref -->
-
 The following products are supported:
 
-    |NCIRHAT|
+    NCIRHAT
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -49,26 +43,17 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_ncir_example.m5f2|
 
 ## class NCIRHat
 
 ## Constructors
 
-<!-- .. class:: NCIRHat(i2c, address: int = 0x5A) -->
+### `class NCIRHat(i2c, address: int = 0x5A)`
 
     Create a NCIRHat object.
 
-    :param i2c: I2C object
-    :param address: the I2C address of the device. Default is 0x5A.
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: the I2C address of the device. Default is 0x5A.
 
-    UIFLOW2:
-
-NCIRHat class inherits NCIRUnit class, See :ref:`unit.NCIRUnit.Methods <unit.NCIRUnit.Methods>` for more details.
+NCIRHat class inherits NCIRUnit class, See `unit.NCIRUnit.Methods <unit.NCIRUnit.Methods>` for more details.

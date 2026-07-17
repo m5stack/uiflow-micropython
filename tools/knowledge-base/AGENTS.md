@@ -24,6 +24,13 @@ python tools\knowledge-base\sync_uiflow2_skill.py
 3. 批量同步到系统 skill 和本地副本的 `docs` 目录。
 4. 生成 skill 根目录的紧凑 `file_tree.txt`。
 5. 刷新 `SKILL.md` 内的 `BEGIN_DOC_TREE` / `END_DOC_TREE` 紧凑索引。
+6. 最后把本地 skill 副本整体复制到系统 skill，确保脚本、`SKILL.md`、`file_tree.txt` 和 `docs` 字节一致。
+
+如果正在修改本目录中的 `SKILL.md`、`scripts` 或生成脚本，不要让旧系统 skill 反向覆盖仓库副本，改用：
+
+```powershell
+python tools\knowledge-base\sync_uiflow2_skill.py --skip-copy-shell
+```
 
 如需使用已有生成目录，可显式指定：
 
@@ -37,8 +44,10 @@ python tools\knowledge-base\sync_uiflow2_skill.py --source-docs C:\path\to\docs
 - 只有包含实质性整体指导的 `index.rst` 会转换为 `_overview.md`；纯 `toctree` 目录页不要生成 overview，因为文件树已经覆盖导航信息。
 - `SKILL.md` 内嵌索引统一省略 `.md` 后缀，例如 `unit/env` 表示 `docs/unit/env.md`。
 - `file_tree.txt` 保留在 skill 根目录，只作为外部工具、人工 diff 和脚本验证的冗余索引。
-- 缺失 class 的注释必须使用仓库相对路径，不要写入 `D:\...` 或 `/tmp/...` 这类本机绝对路径。
+- 生成器会解析常见 RST 标题、代码块、autodoc API 签名、字段列表和简单 Python class alias；不要把这些内容退回到 HTML 注释形式。
+- 生成器会删除 UIFlow/Blockly 可视化积木残留、`.m5f2` 工程引用、纯导航/截图占位和空示例输出；skill 面向 MicroPython 编程，保留 MicroPython 示例、API、返回值和兼容性信息。
 - 生成的 Markdown 要去掉尾随空白、多余 EOF 空行，并保持 UTF-8。
+- `contribute/template.rst` 这类面向文档贡献者的模板不进入 skill；skill 只保留对 UIFlow2 编码有用的资料。
 
 ## 验证清单
 
@@ -55,6 +64,8 @@ python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_
 - 没有 `U+FFFD` replacement character。
 - skill 文档中没有本机绝对路径残留。
 - 系统 skill 和本地副本内容一致。
+- 生成质量计数应为 0：`Failed to find`、`<!-- ..`、裸 `:param`/`:returns:`/`:rtype:`、裸 `.. code-block::`。
+- 低价值 UIFlow/Blockly 残留计数应为 0：`UiFlow2 Code Block:`、`MicroPython Code Block:`、`UiFlow2 Example:`、`.m5f2`。
 
 ## Windows 编码注意
 

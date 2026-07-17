@@ -1,30 +1,10 @@
 # Atom DTU LoRaWAN-Series Base
 
-<!-- .. sku: K061/K062/K063 -->
-
-<!-- .. include:: ../refs/base.dtu_lorawan.ref -->
-
 This is the driver library for the Atom DTU LoRaWAN-Series Base to accept and send data from the LoRaWAN module.
 
 Support the following products:
 
-    ===================== ===================== =====================
-    |Atom DTU LoRaWAN470| |Atom DTU LoRaWAN868| |Atom DTU LoRaWAN915|
-    ===================== ===================== =====================
-
-## UiFlow2 Example
-
-#### LoRaWAN communication
-
-Open the |atoms3r_dtu_lorawan_example.m5f2| project in UiFlow2.
-
-This example shows how to receive and send data using the Atom DTU LoRaWAN Base.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Atom DTU LoRaWAN470 Atom DTU LoRaWAN868 Atom DTU LoRaWAN915
 
 ## MicroPython Example
 
@@ -32,13 +12,7 @@ Example output:
 
 This example shows how to receive and send data using the Atom DTU LoRaWAN Base.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -83,65 +57,50 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### AtomDTULoRaWANBase
 
-## AtomDTULoRaWANBase
+## `AtomDTULoRaWANBase`
 Create an AtomDTULoRaWANBase object
 
-:param int id: The UART ID to use (0, 1, or 2). Default is 2.
-:param port: A list or tuple containing the TX and RX pin numbers.
-:type port: list | tuple
+- Parameter `id` (`int`): The UART ID to use (0, 1, or 2). Default is 2.
+- Parameter `port`: A list or tuple containing the TX and RX pin numbers.
+- Type of `port`: list | tuple
 
-UiFlow2 Code Block:
+```python
+from base import AtomDTULoRaWANBase
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from base import AtomDTULoRaWANBase
-
-        dtu_lorawan = AtomDTULoRaWANBase(0, (6, 5))
+dtu_lorawan = AtomDTULoRaWANBase(0, (6, 5))
+```
 
 ### `deinit`
 
-## LoRaWAN_470
+## `LoRaWAN_470`
 Create an LoRaWAN object.
 
-:param int tx: The UART TX pin number.
-:param int rx: The UART RX pin number.
-:param bool debug: Whether to enable debug mode.
+- Parameter `tx` (`int`): The UART TX pin number.
+- Parameter `rx` (`int`): The UART RX pin number.
+- Parameter `debug` (`bool`): Whether to enable debug mode.
 
-MicroPython Code Block:
+```python
+from driver.asr650x import LoRaWAN_470
 
-    .. code-block:: python
-
-        from driver.asr650x import LoRaWAN_470
-
-        lora = LoRaWAN_470(tx=17, rx=16)
+lora = LoRaWAN_470(tx=17, rx=16)
+```
 
 ### `config_abp`
 Config the ABP join mode information.
 
-:param str devaddr: The device address.
-:param str appskey: The application session key.
-:param str nwkskey: The network session key.
+- Parameter `devaddr` (`str`): The device address.
+- Parameter `appskey` (`str`): The application session key.
+- Parameter `nwkskey` (`str`): The network session key.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.config_abp("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+```python
+lora.config_abp("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+```
 
 ### `config_ABP`
 Config the ABP join mode information.
@@ -152,16 +111,12 @@ Return:
 ### `get_abp_config`
 Get the ABP join mode information.
 
-:returns: The ABP join mode information(devaddr, appskey, newskey).
-:rtype: tuple
+- Returns: The ABP join mode information(devaddr, appskey, newskey).
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.get_abp_config()
+```python
+lora.get_abp_config()
+```
 
 ### `get_ABP_config`
 Get the ABP join mode information.
@@ -173,17 +128,13 @@ Return:
 ### `config_otaa`
 Config the OTAA join mode information.
 
-:param str deveui: The device EUI.
-:param str appeui: The application EUI.
-:param str appkey: The application key.
+- Parameter `deveui` (`str`): The device EUI.
+- Parameter `appeui` (`str`): The application EUI.
+- Parameter `appkey` (`str`): The application key.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.config_otaa("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+```python
+lora.config_otaa("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+```
 
 ### `config_OTAA`
 Config the OTAA join mode information.
@@ -196,16 +147,12 @@ Return:
 ### `get_otaa_config`
 Get the OTAA join mode information.
 
-:returns: The OTAA join mode information(deveui, appeui, appkey).
-:rtype: tuple
+- Returns: The OTAA join mode information(deveui, appeui, appkey).
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.get_otaa_config()
+```python
+lora.get_otaa_config()
+```
 
 ### `get_OTAA_config`
 Get the OTAA join mode information.
@@ -216,59 +163,45 @@ Return:
 ### `check_join_status`
 Check the LoRaWAN network join status.
 
-:returns: The LoRaWAN network join status.
-:rtype: bool
+- Returns: The LoRaWAN network join status.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.check_join_status()
+```python
+lora.check_join_status()
+```
 
 ### `check_uplink_status`
 Check the data uplink status.
 
-:returns: The data uplink status.
-:rtype: bool
+- Returns: The data uplink status.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.check_uplink_status()
+```python
+lora.check_uplink_status()
+```
 
 ### `check_downlink_data`
 Check downlink data, if have downlink data, return the message.
 
-:param int timeout: The timeout time.
-:returns: False if no downlink data, otherwise return the downlink data.
-:rtype: bool | str
+- Parameter `timeout` (`int`): The timeout time.
+- Returns: False if no downlink data, otherwise return the downlink data.
+- Return type: bool | str
 
-UiFlow2 Code Block:
+```python
+lora.check_downlink_data()
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.check_downlink_data()
-
-## LoRaWAN_Asr650x
+## `LoRaWAN_Asr650x`
 Create an LoRaWAN object.
 
-:param machine.UART uart: The UART object.
-:param bool debug: Whether to enable debug mode.
+- Parameter `uart` (`machine.UART`): The UART object.
+- Parameter `debug` (`bool`): Whether to enable debug mode.
 
-MicroPython Code Block:
+```python
+from driver.asr650x import LoRaWAN_Asr650x
 
-    .. code-block:: python
-
-        from driver.asr650x import LoRaWAN_Asr650x
-
-        lora = LoRaWAN_Asr650x(uart)
+lora = LoRaWAN_Asr650x(uart)
+```
 
 ### `get_product_serial_number`
 AT+CGSN?
@@ -409,15 +342,11 @@ Return:
 ### `set_join_mode`
 Set the LoRaWAN join mode.
 
-:param int mode: The LoRaWAN join mode.
+- Parameter `mode` (`int`): The LoRaWAN join mode.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_join_mode(0)
+```python
+lora.set_join_mode(0)
+```
 
 ### `get_frequency_band_mask`
 Get frequency band mask.
@@ -429,13 +358,11 @@ Return:
 ### `set_frequency_band_mask`
 Set the frequency band mask.
 
-:param str mask: The frequency band mask.
+- Parameter `mask` (`str`): The frequency band mask.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_frequency_band_mask("0001")
+```python
+lora.set_frequency_band_mask("0001")
+```
 
 ### `get_uplink_downlink_mode`
 Get uplink and downlink mode.
@@ -449,13 +376,11 @@ Return:
 ### `set_uplink_downlink_mode`
 Set the uplink and downlink frequency.
 
-:param int mode: The uplink and downlink frequency.
+- Parameter `mode` (`int`): The uplink and downlink frequency.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_uplink_downlink_mode(1)
+```python
+lora.set_uplink_downlink_mode(1)
+```
 
 ### `get_work_mode`
 Get model work mode.
@@ -488,18 +413,16 @@ Return:
 ### `set_class_mode`
 Set the class mode, if the class mode is 0, the branch, para1, para2, para3, para4 will be ignored.
 
-:param int class_mode: The class mode.
-:param int branch: The branch selection.
-:param int para1: Set the beacon frequency, unit is Hz.
-:param int para2: Set the beacon data rate.
-:param int para3: Set ping frequency, unit is Hz.
-:param int para4: Set ping data rate.
+- Parameter `class_mode` (`int`): The class mode.
+- Parameter `branch` (`int`): The branch selection.
+- Parameter `para1` (`int`): Set the beacon frequency, unit is Hz.
+- Parameter `para2` (`int`): Set the beacon data rate.
+- Parameter `para3` (`int`): Set ping frequency, unit is Hz.
+- Parameter `para4` (`int`): Set ping data rate.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_class_mode(0, 0, 0, 0, 0, 0)
+```python
+lora.set_class_mode(0, 0, 0, 0, 0, 0)
+```
 
 ### `get_status`
 Get status.
@@ -521,35 +444,27 @@ Return:
 ### `join`
 Join the LoRaWAN network.
 
-:param int para1: 0 stop join, 1 start join.
-:param int para2: 0 close auto join, 1 open auto join.
-:param int para3: join interval, unit is second(7~255).
-:param int para4: join retry times(1~256).
+- Parameter `para1` (`int`): 0 stop join, 1 start join.
+- Parameter `para2` (`int`): 0 close auto join, 1 open auto join.
+- Parameter `para3` (`int`): join interval, unit is second(7~255).
+- Parameter `para4` (`int`): join retry times(1~256).
 
-UiFlow2 Code Block:
+```python
+lora.join(1, 1, 8, 1)
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.join(1, 1, 8, 1)
-
-        lora.join(0)
+lora.join(0)
+```
 
 ### `send_data`
 Send data payload to LoRaWAN gateway.
 
-:param str payload: The data to send.
-:param int confirm: The confirm mode.
-:param int nbtrials: The number of trials.
+- Parameter `payload` (`str`): The data to send.
+- Parameter `confirm` (`int`): The confirm mode.
+- Parameter `nbtrials` (`int`): The number of trials.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.send_data("Hello, World!", 1, 1)
+```python
+lora.send_data("Hello, World!", 1, 1)
+```
 
 ### `receive_data`
 Receive downlink data if have.
@@ -572,15 +487,11 @@ Return:
 ### `set_uplink_app_port`
 Set the uplink app port.
 
-:param int port: The uplink app port.
+- Parameter `port` (`int`): The uplink app port.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_uplink_app_port(1)
+```python
+lora.set_uplink_app_port(1)
+```
 
 ### `set_datarate`
 Set datarate.
@@ -636,15 +547,13 @@ Return:
 ### `set_rx_window_param`
 Set the receive window parameter.
 
-:param int rx1_offset: The RX1 offset.
-:param int rx2_dr: The RX2 data rate.
-:param int rx2_freq: The RX2 frequency.
+- Parameter `rx1_offset` (`int`): The RX1 offset.
+- Parameter `rx2_dr` (`int`): The RX2 data rate.
+- Parameter `rx2_freq` (`int`): The RX2 frequency.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        lora.set_rx_window_param(0, 0, 868100000)
+```python
+lora.set_rx_window_param(0, 0, 868100000)
+```
 
 ### `set_rx1_delay_time`
 Set receive window param.

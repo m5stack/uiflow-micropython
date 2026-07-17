@@ -1,65 +1,59 @@
-########
-###### DinMeter
+# DinMeter
 
-<!-- .. include:: ../refs/controllers.dinmeter.ref -->
-######
+## Startup UI
 
-###### Startup UI
+> Note: 1.  `ENCODER` is used for menu selection.
+> 2.  `BtnA` is used to execute menu items.
+> 3.  Long press `BtnA` to exit the application.
+> 4.  `CardKB Unit` is used for input.
+## Launcher
 
-<!-- .. NOTE:: -->
-    1.  ``ENCODER`` is used for menu selection.
-    2.  ``BtnA`` is used to execute menu items.
-    3.  Long press ``BtnA`` to exit the application.
-    4.  ``CardKB Unit`` is used for input.
+`ENCODER` cycles through available applications.
 
-###### Launcher
+`BtnA` click to launch the selected application.
 
-``ENCODER`` cycles through available applications.
+## Setting
 
-``BtnA`` click to launch the selected application.
+`ENCODER` cycles through available applications.
 
-###### Setting
+`BtnA` click to launch the selected application.
 
-``ENCODER`` cycles through available applications.
-
-``BtnA`` click to launch the selected application.
-
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.
 
 # WLAN
 
-``ENCODER`` selects the corresponding input box or button.
+`ENCODER` selects the corresponding input box or button.
 
-``BtnA`` click to perform the corresponding action.
+`BtnA` click to perform the corresponding action.
 
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.
 
 # General
 
-``ENCODER`` selects menu.
+`ENCODER` selects menu.
 
-``BtnA`` click to set.
+`BtnA` click to set.
 
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.
 
-###### Develop
+## Develop
 
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.
 
-###### APP.RUN
+## APP.RUN
 
-``ENCODER`` selects the corresponding action.
+`ENCODER` selects the corresponding action.
 
-``BtnA`` click to run main.py according to the corresponding action.
+`BtnA` click to run main.py according to the corresponding action.
 
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.
 
-###### APP.LIST
+## APP.LIST
 
-``ENCODER`` cycles through available applications.
+`ENCODER` cycles through available applications.
 
-``BtnA`` click to run the application once.
+`BtnA` click to run the application once.
 
-Double click ``BtnA`` to always run the application.
+Double click `BtnA` to always run the application.
 
-Long press ``BtnA`` to exit the application.
+Long press `BtnA` to exit the application.

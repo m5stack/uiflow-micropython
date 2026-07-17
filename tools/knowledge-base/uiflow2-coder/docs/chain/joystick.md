@@ -1,26 +1,10 @@
 # Chain Joystick
 
-<!-- .. include:: ../refs/chain.joystick.ref -->
-
 Chain Joystick is a joystick module that can be connected to the M5Chain series devices. This module provides functions to read the joystick position and button states.
 
 Support the following products:
 
-    |Chain Joystick|
-
-## UiFlow2 Example
-
-#### USB Mouse
-
-Open the |chain_joystick_usb_mouse_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to use the Chain Joystick as a USB mouse.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Chain Joystick
 
 ## MicroPython Example
 
@@ -28,13 +12,7 @@ Example output:
 
 This example demonstrates how to use the Chain Joystick as a USB mouse.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -89,175 +67,126 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### JoystickChain
 
-## JoystickChain
+## `JoystickChain`
 Joystick Chain class for interacting with joystick devices over Chain bus.
 
-:param ChainBus bus: The Chain bus instance.
-:param int device_id: The device ID of the joystick on the Chain bus.
+- Parameter `bus` (`ChainBus`): The Chain bus instance.
+- Parameter `device_id` (`int`): The device ID of the joystick on the Chain bus.
 
-UiFlow2 Code Block:
+```python
+from chain import ChainBus
+from chain import JoystickChain
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from chain import ChainBus
-        from chain import JoystickChain
-
-        chainbus_0 = ChainBus(2, 32, 33, verbose=True)
-        joystick_0 = JoystickChain(chainbus_0, 1)
+chainbus_0 = ChainBus(2, 32, 33, verbose=True)
+joystick_0 = JoystickChain(chainbus_0, 1)
+```
 
 ### `get_x`
 Get the X position of the joystick.
 
-:return: X position (-128 to 127).
-:rtype: int
+- Returns: X position (-128 to 127).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        x = joystick_0.get_x()
+```python
+x = joystick_0.get_x()
+```
 
 ### `get_y`
 Get the Y position of the joystick.
 
-:return: Y position (-128 to 127).
-:rtype: int
+- Returns: Y position (-128 to 127).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        y = joystick_0.get_y()
+```python
+y = joystick_0.get_y()
+```
 
 ### `get_x_16bit`
 Get the X position of the joystick in 16-bit resolution.
 
-:return: X position (-4095 to 4095).
-:rtype: int
+- Returns: X position (-4095 to 4095).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        x = joystick_0.get_x_16bit()
+```python
+x = joystick_0.get_x_16bit()
+```
 
 ### `get_y_16bit`
 Get the Y position of the joystick in 16-bit resolution.
 
-:return: Y position (-4095 to 4095).
-:rtype: int
+- Returns: Y position (-4095 to 4095).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        y = joystick_0.get_y_16bit()
+```python
+y = joystick_0.get_y_16bit()
+```
 
 ### `get_x_raw`
 Get the raw X ADC value of the joystick.
 
-:return: Raw X ADC value (0-255).
-:rtype: int
+- Returns: Raw X ADC value (0-255).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        x = joystick_0.get_x_raw()
+```python
+x = joystick_0.get_x_raw()
+```
 
 ### `get_y_raw`
 Get the raw Y ADC value of the joystick.
 
-:return: Raw Y ADC value (0-255).
-:rtype: int
+- Returns: Raw Y ADC value (0-255).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        y = joystick_0.get_y_raw()
+```python
+y = joystick_0.get_y_raw()
+```
 
 ### `get_x_16bit_raw`
 Get the raw X ADC value of the joystick in 16-bit resolution.
 
-:return: Raw X ADC value (0-65535).
-:rtype: int
+- Returns: Raw X ADC value (0-65535).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        x = joystick_0.get_x_16bit_raw()
+```python
+x = joystick_0.get_x_16bit_raw()
+```
 
 ### `get_y_16bit_raw`
 Get the raw Y ADC value of the joystick in 16-bit resolution.
 
-:return: Raw Y ADC value (0-65535).
-:rtype: int
+- Returns: Raw Y ADC value (0-65535).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        y = joystick_0.get_y_16bit_raw()
+```python
+y = joystick_0.get_y_16bit_raw()
+```
 
 ### `get_mapping_value`
 Get the mapping values of the joystick.
 
-:return: A tuple containing the mapping values (x_negative_min, x_negative_max, x_positive_min, x_positive_max, y_negative_min, y_negative_max, y_positive_min, y_positive_max).
-:rtype: tuple
+- Returns: A tuple containing the mapping values (x_negative_min, x_negative_max, x_positive_min, x_positive_max, y_negative_min, y_negative_max, y_positive_min, y_positive_max).
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        mapping = joystick_0.get_mapping_value()
+```python
+mapping = joystick_0.get_mapping_value()
+```
 
 ### `set_mapping_value`
 Set the mapping values of the joystick.
 
-:param tuple value: A tuple containing the mapping values (x_negative_min, x_negative_max, x_positive_min, x_positive_max, y_negative_min, y_negative_max, y_positive_min, y_positive_max).
-:param bool save: Whether to save the mapping values to non-volatile memory.
-:return: True if the mapping values were set successfully, False otherwise.
-:rtype: bool
+- Parameter `value` (`tuple`): A tuple containing the mapping values (x_negative_min, x_negative_max, x_positive_min, x_positive_max, y_negative_min, y_negative_max, y_positive_min, y_positive_max).
+- Parameter `save` (`bool`): Whether to save the mapping values to non-volatile memory.
+- Returns: True if the mapping values were set successfully, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
+```python
+success = joystick_0.set_mapping_value((100, 200, 300, 400, 100, 200, 300, 400), True)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = joystick_0.set_mapping_value((100, 200, 300, 400, 100, 200, 300, 400), True)
-
-    For other button and some general methods, please refer to the :class:`ChainKey <chain.key.KeyChain>` class.
+    For other button and some general methods, please refer to the `ChainKey <chain.key.KeyChain>` class.

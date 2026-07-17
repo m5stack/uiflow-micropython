@@ -1,71 +1,29 @@
 # Atomic Audio-3.5 Base
 
-<!-- .. sku: A166 -->
-
-<!-- .. include:: ../refs/base.audio35.ref -->
-
 The following products are supported:
 
-    |Atomic Audio-3.5 Base|
+    Atomic Audio-3.5 Base
 
 Below is the detailed support for Atomic Audio-3.5 Base on the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
+    Controller        Atomic Audio-3.5 Base  |
+     Atom Echo        O                    |
+     Atom Lite        S                    |
+     Atom Matrix      S                    |
+     AtomS3           S                    |
+     AtomS3 Lite      S                    |
+     AtomS3R          S                    |
+     AtomS3R-CAM      S                    |
+     AtomS3R-Ext      S                    |
 
-###### |Controller       | Atomic Audio-3.5 Base  |
-
-###### | Atom Echo       | |O|                    |
-
-###### | Atom Lite       | |S|                    |
-
-###### | Atom Matrix     | |S|                    |
-
-###### | AtomS3          | |S|                    |
-
-###### | AtomS3 Lite     | |S|                    |
-
-###### | AtomS3R         | |S|                    |
-
-###### | AtomS3R-CAM     | |S|                    |
-
-###### | AtomS3R-Ext     | |S|                    |
-
-<!-- .. |S| unicode:: U+2705 -->
-<!-- .. |O| unicode:: U+2B55 -->
-
-<!-- .. note:: -->
-    Atomic Audio-3.5 Base uses the same Audio CODEC and pin connections as Atomic Echo Base. For detailed usage instructions, please refer to the `Atomic Echo Base <echo.html>`_ documentation.
-
-## UiFlow2 Example
-
-#### Record and play WAV file
-
-Open the |atoms3r_aduio_record_play_example.m5f2| project in UiFlow2.
-
-This example initializes Atomic Audio-3.5 Base, records stereo audio to ``/flash/res/audio/test.wav`` for 5 seconds after pressing BtnA, and then plays the recorded WAV file.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
+> Note: Atomic Audio-3.5 Base uses the same Audio CODEC and pin connections as Atomic Echo Base. For detailed usage instructions, please refer to the `Atomic Echo Base <echo.html>`_ documentation.
 ## MicroPython Example
 
 #### Record and play WAV file
 
-This example initializes Atomic Audio-3.5 Base, records stereo audio to ``/flash/res/audio/test.wav`` for 5 seconds after pressing BtnA, and then plays the recorded WAV file.
-
-MicroPython Code Block:
+This example initializes Atomic Audio-3.5 Base, records stereo audio to `/flash/res/audio/test.wav` for 5 seconds after pressing BtnA, and then plays the recorded WAV file.
 
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -156,18 +114,190 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### class AtomicAudio35Base
 
-## AtomicAudio35Base
-<!-- Failed to find class AtomicAudio35Base in m5stack/libs/base/audio35.py -->
+## `AtomicAudio35Base`
+`AtomicAudio35Base` is an alias of `AtomicEchoBase` in `m5stack/libs/base/echo.py`.
 
-``AtomicAudio35Base`` is an alias for ``AtomicEchoBase``. Please refer to the `AtomicEchoBase <echo.html#base.echo.AtomicEchoBase>`_ class for detailed documentation.
+Create an AtomicEchoBase object.
+
+- Parameter `i2c` (`I2C`): I2C object
+- Parameter `address` (`int`): The I2C address of the ES8311. Default is 0x18.
+- Parameter `i2s_port` (`int`): The I2S port number. Default is 1.
+- Parameter `sample_rate` (`int`): The sample rate of the audio. Default is 16000.
+- Parameter `i2s_sck` (`int`): The I2S SCK pin. Default is -1.
+- Parameter `i2s_ws` (`int`): The I2S WS pin. Default is -1.
+- Parameter `i2s_di` (`int`): The I2S DI pin. Default is -1.
+- Parameter `i2s_do` (`int`): The I2S DO pin. Default is -1.
+
+```python
+from hardware import I2C
+from hardware import Pin
+from base import AtomicEchoBase
+
+# atom echo
+i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
+base_echo = AtomicEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
+
+# atom lite
+i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
+base_echo = AtomicEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
+
+# atom matrix
+i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
+base_echo = AtomicEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
+
+# atoms3 / atoms3 lite
+i2c1 = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
+base_echo = AtomicEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=8, i2s_ws=6, i2s_di=7, i2s_do=5)
+
+# atoms3r / atoms3r-cam / atoms3-ext
+i2c1 = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
+base_echo = AtomicEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=8, i2s_ws=6, i2s_di=7, i2s_do=5)
+
+base_echo.speaker.tone(2000, 1000)
+base_echo.speaker.playWavFile('res/audio/66.wav')
+```
+
+### `pi4ioe_init`
+
+### `set_mute`
+
+### `change_sample_rate`
+
+### `play_wav_file`
+Play a WAV file.
+
+- Parameter `file` (`str`): The path of the WAV file to play.
+- Returns: None
+
+```python
+base_echo.play_wav_file("/flash/res/audio/test.wav")
+```
+
+### `tone`
+Play simple tone sound.
+
+- Parameter `freq` (`int`): Frequency of the tone in Hz.
+- Parameter `duration` (`int`): Duration of the tone in milliseconds.
+- Returns: None
+
+```python
+base_echo.tone(2000, 50)
+```
+
+### `play_wav`
+Play a WAV buffer.
+
+- Parameter `buf` (`bytes`): The WAV buffer to play.
+- Parameter `duration` (`int`): Duration of the WAV buffer in milliseconds. when duration is -1, it will play until stopped. (default is -1).
+- Returns: None
+
+```python
+base_echo.play_wav(wav_buffer, duration=1000)
+```
+
+### `play_raw`
+Play a pcm buffer.
+
+- Parameter `buf` (`bytes`): The PCM buffer to play.
+- Parameter `rate` (`int`): Sample rate (default is 16000).
+- Parameter `bits` (`int`): Bit depth (default is 16).
+- Parameter `channel` (`int`): Number of channels (default is 2).
+- Parameter `duration` (`int`): Duration of the PCM buffer in milliseconds. when duration is -1, it will play until stopped. (default is -1).
+- Returns: None
+
+```python
+base_echo.play_raw(pcm_buffer, rate=16000, bits=16, channel=2, duration=1000)
+```
+
+### `pause`
+Pause the playback.
+
+```python
+audio.tone(2000, 100)
+time.sleep(0.05)
+base_echo.pause()
+time.sleep(0.05)
+base_echo.resume()
+```
+
+### `resume`
+Resume the playback.
+
+```python
+audio.tone(2000, 100)
+time.sleep(0.05)
+base_echo.pause()
+time.sleep(0.05)
+base_echo.resume()
+```
+
+### `stop`
+Stop the playback.
+
+```python
+audio.tone(2000, 100)
+time.sleep(0.05)
+base_echo.stop()
+```
+
+### `get_volume`
+Get the speaker volume level.
+
+- Returns: The volume level (0-100).
+
+```python
+base_echo.get_volume()
+```
+
+### `set_volume`
+Set the speaker volume level.
+
+- Parameter `volume` (`int`): The volume level (0-100).
+
+```python
+base_echo.set_volume(50)
+```
+
+### `record_wav_file`
+Record audio to a WAV file.
+
+- Parameter `path` (`str`): The path to save the WAV file.
+- Parameter `rate` (`int`): Sample rate (default is 16000).
+- Parameter `bits` (`int`): Bit depth (default is 16).
+- Parameter `channel` (`int`): Number of channels (default is 2).
+- Parameter `duration` (`int`): Duration of the recording in milliseconds (default is 3000).
+
+```python
+base_echo.record_wav_file("/flash/res/audio/test.wav", rate=16000, bits=16, channel=2, duration=3000)
+```
+
+### `record`
+Record audio to a PCM buffer.
+
+- Parameter `rate` (`int`): Sample rate (default is 16000).
+- Parameter `bits` (`int`): Bit depth (default is 16).
+- Parameter `channel` (`int`): Number of channels (default is 2).
+- Parameter `duration` (`int`): Duration of the recording in milliseconds (default is 3000).
+
+```python
+base_echo.record(rate=16000, bits=16, channel=2, duration=3000)
+```
+
+### `pcm_buffer`
+Get the PCM buffer.
+
+- Returns: The PCM buffer.
+
+```python
+base_echo.pcm_buffer
+```
+
+### `deinit`
+
+`AtomicAudio35Base` is an alias for `AtomicEchoBase`. Please refer to the `AtomicEchoBase <echo.html#base.echo.AtomicEchoBase>`_ class for detailed documentation.

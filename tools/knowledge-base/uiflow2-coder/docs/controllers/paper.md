@@ -1,10 +1,6 @@
-#########
-###### Paper
+# Paper
 
-<!-- .. include:: ../refs/controllers.paper.ref -->
-######
-
-###### UI
+## UI
 
 M5Paper features touch panel, allowing you to directly tap on the tabs on the right side to switch to application.
 

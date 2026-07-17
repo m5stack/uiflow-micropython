@@ -1,28 +1,10 @@
 # Commu Module
 
-<!-- .. sku: M011 -->
-
-<!-- .. include:: ../refs/module.commu.ref -->
-
 This is the driver library for the module Commu for receiving and sending CAN / RS485 / I2C data.
 
 Support the following products:
 
-    |commu|
-
-## UiFlow2 Example
-
-#### CAN, RS485, I2C communication
-
-Open the |commu_core2_example.m5f2| project in UiFlow2.
-
-This example shows how to receive and send data using the Commu Module.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    commu
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 This example shows how to receive and send data using the Commu Module.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -93,78 +69,65 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### CommuModule
 
-## CommuModuleCAN
+## `CommuModuleCAN`
 Create an CommuModuleCAN object
 
-:param int mode: The CAN mode to use(NORMAL, LISTEN_ONLY), Default is NORMAL.
+- Parameter `mode` (`int`): The CAN mode to use(NORMAL, LISTEN_ONLY), Default is NORMAL.
 
     Options:
-        - ``NORMAL``: Normal mode
-        - ``LISTEN_ONLY``: Listen only mode
+        - `NORMAL`: Normal mode
+        - `LISTEN_ONLY`: Listen only mode
 
-:param int baudrate: The baudrate to use, Default is CAN_1000KBPS.
-
-    Options:
-        - ``CAN_5KBPS``: 5Kbps
-        - ``CAN_10KBPS``: 10Kbps
-        - ``CAN_20KBPS``: 20Kbps
-        - ``CAN_31K25BPS``: 31.25Kbps
-        - ``CAN_33KBPS``: 33Kbps
-        - ``CAN_40KBPS``: 40Kbps
-        - ``CAN_50KBPS``: 50Kbps
-        - ``CAN_80KBPS``: 80Kbps
-        - ``CAN_83K3BPS``: 83.33Kbps
-        - ``CAN_95KBPS``: 95Kbps
-        - ``CAN_100KBPS``: 100Kbps
-        - ``CAN_125KBPS``: 125Kbps
-        - ``CAN_200KBPS``: 200Kbps
-        - ``CAN_250KBPS``: 250Kbps
-        - ``CAN_500KBPS``: 500Kbps
-        - ``CAN_1000KBPS``: 1Mbps
-
-:param int spi_baud: The SPI baudrate to use, Default is 8000000.
-:param int canIDMode: The CAN ID mode to use(MCP_STDEXT, MCP_EXTDONLY), Default is MCP_STDEXT.
+- Parameter `baudrate` (`int`): The baudrate to use, Default is CAN_1000KBPS.
 
     Options:
-        - ``MCP_STDEXT``: Standard and Extended
-        - ``MCP_EXTDONLY``: Extended only
+        - `CAN_5KBPS`: 5Kbps
+        - `CAN_10KBPS`: 10Kbps
+        - `CAN_20KBPS`: 20Kbps
+        - `CAN_31K25BPS`: 31.25Kbps
+        - `CAN_33KBPS`: 33Kbps
+        - `CAN_40KBPS`: 40Kbps
+        - `CAN_50KBPS`: 50Kbps
+        - `CAN_80KBPS`: 80Kbps
+        - `CAN_83K3BPS`: 83.33Kbps
+        - `CAN_95KBPS`: 95Kbps
+        - `CAN_100KBPS`: 100Kbps
+        - `CAN_125KBPS`: 125Kbps
+        - `CAN_200KBPS`: 200Kbps
+        - `CAN_250KBPS`: 250Kbps
+        - `CAN_500KBPS`: 500Kbps
+        - `CAN_1000KBPS`: 1Mbps
 
-:param bool debug: Whether to enable debug mode, Default is False.
+- Parameter `spi_baud` (`int`): The SPI baudrate to use, Default is 8000000.
+- Parameter `canIDMode` (`int`): The CAN ID mode to use(MCP_STDEXT, MCP_EXTDONLY), Default is MCP_STDEXT.
 
-UiFlow2 Code Block:
+    Options:
+        - `MCP_STDEXT`: Standard and Extended
+        - `MCP_EXTDONLY`: Extended only
 
-MicroPython Code Block:
+- Parameter `debug` (`bool`): Whether to enable debug mode, Default is False.
 
-    .. code-block:: python
+```python
+from module import CommuModuleCAN
 
-        from module import CommuModuleCAN
-
-        commu = CommuModuleCAN(CommuModule.NORMAL, baudrate=16)
+commu = CommuModuleCAN(CommuModule.NORMAL, baudrate=16)
+```
 
 ### `info`
 Get the state of error information.
 
-:returns: The current error information.
-:rtype: str
+- Returns: The current error information.
+- Return type: str
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        commu.info()
+```python
+commu.info()
+```
 
 ### `reset`
 
@@ -173,27 +136,23 @@ MicroPython Code Block:
 ### `any`
 Check if any message is available.
 
-:returns: The current message availability.
-:rtype: bool
+- Returns: The current message availability.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        commu.any()
+```python
+commu.any()
+```
 
 ### `clear_interrupts`
 
 ### `recv`
 Read a message from the CAN bus.
 
-:param int fifo: The fifo is an integer, it can be any number and compatible with Pyb.CAN
-:param list list: list is an optional list object to be used as the return value.
-:param int timeout: timeout is the timeout in milliseconds to wait for the receive.
-:returns: Tuple containing (can_id, is_extended, is_rtr, fmi, data)
-:rtype: tuple
+- Parameter `fifo` (`int`): The fifo is an integer, it can be any number and compatible with Pyb.CAN
+- Parameter `list` (`list`): list is an optional list object to be used as the return value.
+- Parameter `timeout` (`int`): timeout is the timeout in milliseconds to wait for the receive.
+- Returns: Tuple containing (can_id, is_extended, is_rtr, fmi, data)
+- Return type: tuple
 
     - The id of the message.
     - A boolean that indicates if the message ID is standard or extended.
@@ -201,35 +160,27 @@ Read a message from the CAN bus.
     - The FMI (Filter Match Index) value.
     - An array containing the data.
 
-UiFlow2 Code Block:
+```python
+commu.recv(0)
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        commu.recv(0)
-
-        buf = bytearray(8)
-        lst = [0, 0, 0, 0, memoryview(buf)]
-        # No heap memory is allocated in the following call
-        commu.recv(0, lst)
+buf = bytearray(8)
+lst = [0, 0, 0, 0, memoryview(buf)]
+# No heap memory is allocated in the following call
+commu.recv(0, lst)
+```
 
 ### `send`
 Send a message to the CAN bus.
 
-:param str data: The message data.
-:param int can_id: The CAN ID.
-:param bool extframe: Whether to use extended frame format.
-:returns: The message data.
-:rtype: str
+- Parameter `data` (`str`): The message data.
+- Parameter `can_id` (`int`): The CAN ID.
+- Parameter `extframe` (`bool`): Whether to use extended frame format.
+- Returns: The message data.
+- Return type: str
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        commu.send('uiflow2', 0, extframe=False)
+```python
+commu.send('uiflow2', 0, extframe=False)
+```
 
 ### `commu_can_debug`
 
@@ -237,14 +188,14 @@ MicroPython Code Block:
 
 ### `commu_can_config_rate`
 
-## CommuModuleRS485
+## `CommuModuleRS485`
 
     The `CommuModuleRS485` class wraps an instance of the `UART` class.
 
-    For more details, see :ref:`hardware.UART <hardware.UART>`.
+    For more details, see `hardware.UART <hardware.UART>`.
 
-## CommuModuleI2C
+## `CommuModuleI2C`
 
     The `CommuModuleI2C` class wraps an instance of the `I2C` class.
 
-    For more details, see :ref:`machine.I2C <machine.I2C>`. -- a two-wire serial protocol.
+    For more details, see `machine.I2C <machine.I2C>`. -- a two-wire serial protocol.

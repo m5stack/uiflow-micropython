@@ -1,21 +1,12 @@
-# :mod:`requests2` --- Network Request Module
-
-<!-- .. include:: ../refs/software.requests2.ref -->
-
-<!-- .. module:: requests2 -->
-    :synopsis: Network Request Module
+# `requests2` --- Network Request Module
 
 requests2 is based on urequests and supports Streaming Uploads and x-www-form-urlencoded.
 
-The main functionality and function of the ``requests2`` module.
+The main functionality and function of the `requests2` module.
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -52,123 +43,86 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_http_get_example.m5f2|
 
 ## Function
 
-<!-- .. function:: requests2.request(method, url, data=None, json=None, headers={}) -> Response -->
+### `requests2.request(method, url, data=None, json=None, headers={}) -> Response`
 
     Send a network request, it will block the response data returned to the network, parameters:
 
-    :param str method: method of establishing a network request. e.g. ``HEAD``,``GET``,``POST``,``PUT``,``PATCH``, ``DELETE``.
-    :param str url: URL of the network request.
-    :param data: (optional), a dictionary, tuple list [(key, value)] (will be form coded), byte or class file object sent in the request body.
-    :param json: (optional), json data sent in the request body.
-    :param dict headers: (optional), HTTP header dictionary to be sent with the request.
+    - Parameter `method` (`str`): method of establishing a network request. e.g. `HEAD`,`GET`,`POST`,`PUT`,`PATCH`, `DELETE`.
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `data`: (optional), a dictionary, tuple list [(key, value)] (will be form coded), byte or class file object sent in the request body.
+    - Parameter `json`: (optional), json data sent in the request body.
+    - Parameter `headers` (`dict`): (optional), HTTP header dictionary to be sent with the request.
 
-<!-- .. function:: requests2.head(url, **kw) -> Response -->
+### `requests2.head(url, **kw) -> Response`
 
-    Send a ``HEAD`` request, the return type is the response of the request, parameters：
+    Send a `HEAD` request, the return type is the response of the request, parameters：
 
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
-<!-- .. function:: requests2.get(url, **kw) -> Response -->
+### `requests2.get(url, **kw) -> Response`
 
-    Send a ``GET`` request, the return type is the response of the request, parameters：
+    Send a `GET` request, the return type is the response of the request, parameters：
 
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
-    UIFLOW2:
+### `requests2.post(url, **kw) -> Response`
 
-<!-- .. function:: requests2.post(url, **kw) -> Response -->
+    Send a `POST` request, the return type is the response of the request, parameters：
 
-    Send a ``POST`` request, the return type is the response of the request, parameters：
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
+### `requests2.put(url, **kw) -> Response`
 
-    UIFLOW2:
+    Send a `PUT` request, the return type is the response of the request, parameters：
 
-<!-- .. function:: requests2.put(url, **kw) -> Response -->
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
-    Send a ``PUT`` request, the return type is the response of the request, parameters：
+### `requests2.patch(url, **kw) -> Response`
 
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
+    Send a `PATCH` request, the return type is the response of the request, parameters:
 
-    UIFLOW2:
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
-<!-- .. function:: requests2.patch(url, **kw) -> Response -->
+### `requests2.delete(url, **kw) -> Response`
 
-    Send a ``PATCH`` request, the return type is the response of the request, parameters:
+    Send a `DELETE` request, the return type is the response of the request, parameters：
 
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
-
-    UIFLOW2:
-
-<!-- .. function:: requests2.delete(url, **kw) -> Response -->
-
-    Send a ``DELETE`` request, the return type is the response of the request, parameters：
-
-    :param str url: URL of the network request.
-    :param kw: request optional parameters.
-
-    UIFLOW2:
+    - Parameter `url` (`str`): URL of the network request.
+    - Parameter `kw`: request optional parameters.
 
 ## class Response
 
 ## Methods
 
-<!-- .. attribute:: Response.headers -->
-
-    :type: dict
+### `Response.headers`
 
     Return the response header.
 
-    UIFLOW2:
-
-<!-- .. attribute:: Response.status_code -->
-
-    :type: int
+### `Response.status_code`
 
     Return the status code of the response.
 
-    UIFLOW2:
-
-<!-- .. method:: Response.close() -> None -->
+### `Response.close() -> None`
 
     Close the connection and release resources.
 
-    UIFLOW2:
-
-<!-- .. property:: Response.content -->
-
-    :type: dict
+### `Response.content`
 
     Return the content of the response, in bytes.
 
-    UIFLOW2:
-
-<!-- .. property:: Response.text -->
-
-    :type: str
+### `Response.text`
 
     Return the content of the response, in str.
 
-    UIFLOW2:
-
-<!-- .. method:: Response.json() -> dict -->
+### `Response.json() -> dict`
 
     Return the content of the response, in dict.
-
-    UIFLOW2:

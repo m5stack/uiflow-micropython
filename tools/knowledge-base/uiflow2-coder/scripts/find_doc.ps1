@@ -47,44 +47,70 @@ Write-Host "------------------------------------------"
 
 $files = @(Get-ChildItem -LiteralPath $docsRoot -Recurse -File -Filter "*.md")
 
-$nameMatches = New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
+$nameMatches = New-Object "System.Collections.Generic.List[object]"
+$contentMatches = New-Object "System.Collections.Generic.List[object]"
+$nameHitByPath = @{}
 foreach ($file in $files) {
     $relative = Get-RelativeDocPath -Path $file.FullName
+    $nameHits = 0
     foreach ($word in $Keyword) {
         if ($relative.IndexOf($word, [System.StringComparison]::OrdinalIgnoreCase) -ge 0) {
-            [void] $nameMatches.Add($relative)
-            break
+            $nameHits += 1
         }
+    }
+    if ($nameHits -gt 0) {
+        $nameHitByPath[$relative] = $nameHits
+        [void] $nameMatches.Add([PSCustomObject]@{
+            Path = $relative
+            Score = (1000 * $nameHits)
+        })
     }
 }
 
-$sortedNameMatches = @($nameMatches | Sort-Object)
-
-$contentMatches = @()
 if ($files.Count -gt 0) {
     $matches = Select-String -LiteralPath $files.FullName -Pattern $Keyword -SimpleMatch -Encoding UTF8 -ErrorAction SilentlyContinue
     foreach ($match in $matches) {
         $relative = Get-RelativeDocPath -Path $match.Path
-        $contentMatches += "{0}:{1}:{2}" -f $relative, $match.LineNumber, $match.Line
+        $nameHits = 0
+        if ($nameHitByPath.ContainsKey($relative)) {
+            $nameHits = $nameHitByPath[$relative]
+        }
+        $lineHits = 0
+        foreach ($word in $Keyword) {
+            if ($match.Line.IndexOf($word, [System.StringComparison]::OrdinalIgnoreCase) -ge 0) {
+                $lineHits += 1
+            }
+        }
+        [void] $contentMatches.Add([PSCustomObject]@{
+            Path = $relative
+            LineNumber = $match.LineNumber
+            Line = $match.Line
+            Score = (1000 * $nameHits) + (100 * $lineHits)
+        })
     }
 }
+
+$sortedNameMatches = @($nameMatches | Sort-Object -Property @{ Expression = "Score"; Descending = $true }, Path)
+$sortedContentMatches = @($contentMatches | Sort-Object -Property @{ Expression = "Score"; Descending = $true }, Path, LineNumber)
 
 Write-Host ""
 Write-Host ("File name matches ({0}):" -f $sortedNameMatches.Count)
 if ($sortedNameMatches.Count -gt 0) {
-    $sortedNameMatches | ForEach-Object { Write-Host $_ }
+    $sortedNameMatches | ForEach-Object { Write-Host $_.Path }
 } else {
     Write-Host "  (none)"
 }
 
 Write-Host ""
-Write-Host ("Content matches ({0} line hits, first {1}):" -f $contentMatches.Count, $MaxResults)
-if ($contentMatches.Count -gt 0) {
-    $contentMatches | Select-Object -First $MaxResults | ForEach-Object { Write-Host $_ }
+Write-Host ("Content matches ({0} line hits, first {1}; ranked by keyword coverage):" -f $sortedContentMatches.Count, $MaxResults)
+if ($sortedContentMatches.Count -gt 0) {
+    $sortedContentMatches | Select-Object -First $MaxResults | ForEach-Object {
+        Write-Host ("{0}:{1}:{2}" -f $_.Path, $_.LineNumber, $_.Line)
+    }
 } else {
     Write-Host "  (none)"
 }
 
-if ($sortedNameMatches.Count -eq 0 -and $contentMatches.Count -eq 0) {
+if ($sortedNameMatches.Count -eq 0 -and $sortedContentMatches.Count -eq 0) {
     exit 1
 }

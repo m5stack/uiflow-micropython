@@ -1,24 +1,16 @@
 # jpg
 
-<!-- .. include:: ../refs/advanced.jpg.ref -->
+> Note: This module is only applicable to the CoreS3 Controller
 
-<!-- .. note:: This module is only applicable to the CoreS3 Controller -->
-
-<!-- .. module:: jpg -->
-   :synopsis:
-
-``jpg`` module for encoding and decoding operations of JPG format images
+`jpg` module for encoding and decoding operations of JPG format images
 
 ## Micropython Example
 
-###### take photo
+### take photo
 
 Click the screen to start the countdown and take a photo
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -77,37 +69,26 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-## UIFlow2.0 Example
-
-###### take photo
-
-Click the screen to start the countdown and take a photo
-
-<!-- .. only:: builder_html -->
-
-    |take_photo_example.m5f2|
 
 ## Methods
 
-<!-- .. method:: encode(img: image.Image, quality=60) -> image.Image -->
+### `encode(img: image.Image, quality=60) -> image.Image`
 
     encode to jog photo
 
-    - ``img`` Image to be encoded, in the format of image.RGB565
+    - `img` Image to be encoded, in the format of image.RGB565
 
-    Return ``image.Image`` instance, image format image.JPEG
+    Return `image.Image` instance, image format image.JPEG
 
     UIFlow2.0
 
-<!-- .. method:: decode(img_jpg: image.Image) -> image.Image -->
+### `decode(img_jpg: image.Image) -> image.Image`
 
     jpg photo decode
 
-    - ``img`` Image to be decoded, in the format of image.JPEG
+    - `img` Image to be decoded, in the format of image.JPEG
 
-    Return ``image.Image`` instance, image format image.RGB565
+    Return `image.Image` instance, image format image.RGB565
 
     UIFlow2.0

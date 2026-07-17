@@ -1,18 +1,12 @@
 # CardKB Hat
 
-<!-- .. include:: ../refs/hat.cardkb.ref -->
-
 The following products are supported:
 
-    |CardKB Hat|
+    CardKB Hat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -54,26 +48,17 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_cardkb_example.m5f2|
 
 ## class CardKBHat
 
 ## Constructors
 
-<!-- .. class:: CardKBHat(i2c: I2C, address: int | list | tuple = 0x5F) -->
+### `class CardKBHat(i2c: I2C, address: int  list  tuple = 0x5F)`
 
     Create a CardKBHat object.
 
-    :param i2c: I2C object
-    :param address: the I2C address of the device. Default is 0x5F.
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: the I2C address of the device. Default is 0x5F.
 
-    UIFLOW2:
-
-CardKBHat class inherits CardKBUnit class, See :ref:`unit.CardKBUnit.Methods <unit.CardKBUnit.Methods>` for more details.
+CardKBHat class inherits CardKBUnit class, See `unit.CardKBUnit.Methods <unit.CardKBUnit.Methods>` for more details.

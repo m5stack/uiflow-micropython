@@ -1,22 +1,18 @@
 # DCSSR Unit
 
-<!-- .. include:: ../refs/unit.dcssr.ref -->
-
 Support the following products:
 
-    |DCSSR Unit|
+    DCSSR Unit
 
 ## class DCSSRUnit
 
 ## Constructors
 
-<!-- .. class:: DCSSRUnit(bus, address=0x50) -->
+### `class DCSSRUnit(bus, address=0x50)`
 
     Create an DCSSRUnit object.
 
-    :param i2c: I2C bus or Modbus.
-    :param address: Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus mode.
+    - Parameter `i2c`: I2C bus or Modbus.
+    - Parameter `address`: Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus mode.
 
-    UIFLOW2:
-
-DCSSRUnit class inherits ACSSRUnit class, See :ref:`unit.ACSSRUnit.Methods <unit.ACSSRUnit.Methods>` for more details.
+DCSSRUnit class inherits ACSSRUnit class, See `unit.ACSSRUnit.Methods <unit.ACSSRUnit.Methods>` for more details.

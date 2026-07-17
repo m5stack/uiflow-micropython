@@ -1,62 +1,22 @@
 # NB-IoT Module
 
-<!-- .. include:: ../refs/module.nbiot.ref -->
-
-The ``NB-IoT Module`` is a wireless communication module suitable for global Cat-NB frequency bands. It features an integrated SIM7020G communication module and communicates via serial port (AT commands).
+The `NB-IoT Module` is a wireless communication module suitable for global Cat-NB frequency bands. It features an integrated SIM7020G communication module and communicates via serial port (AT commands).
 
 Support the following products:
 
-    |NB-IoT Module|
+    NB-IoT Module
 
-<!-- .. note:: -->
-
-    Please ensure that the device supports the NB-IoT frequency bands in your area before use.
-
-<!-- .. note:: -->
-
-    Please ensure that the firmware version of SIM7020 is greater than or equal to **1752B12SIM7020C**.
-
-     can be used to check the firmware version.
-
-## UiFlow2 Example
-
-#### NBIoT HTTP Example
-
-Open the |cores3_module_nbiot_http_example.m5f2| project in UiFlow2.
-
-This example shows how to send HTTP request using the NBIoT Module.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
-#### MQTT Example
-
-Open the |cores3_module_nbiot_mqtt_example.m5f2| project in UiFlow2.
-
-This example shows how to send MQTT message using the NBIoT Module.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
+> Note: Please ensure that the device supports the NB-IoT frequency bands in your area before use.
+> Note: Please ensure that the firmware version of SIM7020 is greater than or equal to **1752B12SIM7020C**.
+>
+>  can be used to check the firmware version.
 ## MicroPython Example
 
 #### NBIoT HTTP Example
 
 This example shows how to send HTTP request using the NBIoT Module.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -213,7 +173,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -224,13 +183,7 @@ Example output:
 
 This example shows how to send MQTT message using the NBIoT Module.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -294,7 +247,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -303,31 +255,25 @@ Example output:
 
 ## **API**
 
-## NBIOTModule
+## `NBIOTModule`
 Create an NBIOTModule object.
 
-:param uart_or_id: The UART object or UART ID.
-:type uart_or_id: machine.UART | int
-:param int tx: The UART TX pin. Required if uart_or_id is an ID.
-:param int rx: The UART RX pin. Required if uart_or_id is an ID.
-:param bool verbose: Whether to print debug information.
+- Parameter `uart_or_id`: The UART object or UART ID.
+- Type of `uart_or_id`: machine.UART | int
+- Parameter `tx` (`int`): The UART TX pin. Required if uart_or_id is an ID.
+- Parameter `rx` (`int`): The UART RX pin. Required if uart_or_id is an ID.
+- Parameter `verbose` (`bool`): Whether to print debug information.
 
-UiFlow2 Code Block:
+```python
+from module import NBIOTModule
+import machine
 
-MicroPython Code Block:
+# Using UART ID and pins (rx, tx)
+nbiot = NBIOTModule(1, tx=17, rx=16)
 
-    .. code-block:: python
+# Or using UART object
+uart = machine.UART(1, tx=17, rx=16)
+nbiot = NBIOTModule(uart)
+```
 
-        from module import NBIOTModule
-        import machine
-
-        # Using UART ID and pins (rx, tx)
-        nbiot = NBIOTModule(1, tx=17, rx=16)
-
-        # Or using UART object
-        uart = machine.UART(1, tx=17, rx=16)
-        nbiot = NBIOTModule(uart)
-
-<!-- .. note:: -->
-
-        See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.
+> Note: See `NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.

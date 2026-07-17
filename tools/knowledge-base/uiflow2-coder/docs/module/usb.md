@@ -1,25 +1,19 @@
 # USB Module
 
-<!-- .. include:: ../refs/module.usb.ref -->
-
 The USB Module is a module that uses the SPI interface to expand USB functionality, implemented with the MAX3421E.
 
 Support the following products:
 
-|USB Module|
+USB Module
 
 ## Micropython Example
 
-<!-- .. note:: Before using the following examples, please check the DIP switches on the module to ensure that the pins used in the example match the DIP switch positions. For specific configurations, please refer to the product manual page. The SPI configuration has been implemented internally, so users do not need to worry about it. -->
-
-###### Input/Output Pin Control
+> Note: Before using the following examples, please check the DIP switches on the module to ensure that the pins used in the example match the DIP switch positions. For specific configurations, please refer to the product manual page. The SPI configuration has been implemented internally, so users do not need to worry about it.
+### Input/Output Pin Control
 
 The module exposes 5 IN (input) pins and 5 OUT (output) pins through headers. This example demonstrates controlling the high and low level switching of the output pins, as well as reading and printing the level status of the input pins.
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -79,17 +73,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
-###### Mouse
+### Mouse
 
 Implementing USB host to capture mouse input
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -149,17 +139,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
-###### Keyboard
+### Keyboard
 
 Implementing USB host to capture keyboard input
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -212,41 +198,18 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-## UIFlow2.0 Example
-
-###### Input/Output Pin Control
-
-<!-- .. only:: builder_html -->
-
-    |cores3_module_usb_gpio_example.m5f2|
-
-###### Mouse
-
-<!-- .. only:: builder_html -->
-
-    |cores3_module_usb_mouse_example.m5f2|
-
-###### Keyboard
-
-<!-- .. only:: builder_html -->
-
-    |cores3_module_usb_kb_example.m5f2|
 
 ## class USBModule
 
 ## Constructors
 
-<!-- .. class:: USBModule(pin_cs: int = 1, pin_int: int = 10) -->
+### `class USBModule(pin_cs: int = 1, pin_int: int = 10)`
 
-    :param int pin_cs: (RST) 复位引脚
-    :param int pin_irq: (INT) 中断引脚
+    - Parameter `pin_cs` (`int`): (RST) 复位引脚
+    - Parameter `pin_irq` (`int`): (INT) 中断引脚
 
-    UIFLOW2:
-
-<!-- .. method:: poll_data() -->
+### `poll_data()`
 
     poll data
 
@@ -254,37 +217,37 @@ if __name__ == "__main__":
 
     UIFlow2.0
 
-<!-- .. method:: is_left_btn_pressed() -> bool -->
+### `is_left_btn_pressed() -> bool`
 
     Check if the left mouse button is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: is_right_btn_pressed() -> bool -->
+### `is_right_btn_pressed() -> bool`
 
     Check if the right mouse button is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: is_middle_btn_pressed() -> bool -->
+### `is_middle_btn_pressed() -> bool`
 
     Check if the middle mouse button is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: is_forward_btn_pressed() -> bool -->
+### `is_forward_btn_pressed() -> bool`
 
     Check if the forward mouse button is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: is_back_btn_pressed() -> bool -->
+### `is_back_btn_pressed() -> bool`
 
     Check if the back mouse button is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: read_mouse_move() -> tuple[int, int] -->
+### `read_mouse_move() -> tuple[int, int]`
 
     Read Mouse Cursor Movement
 
@@ -294,15 +257,13 @@ if __name__ == "__main__":
 
     **Example:**
 
-```
-```
         move = usb_module.read_mouse_move()
         x = move[0]
         y = move[1]
 
     UIFlow2.0
 
-<!-- .. method:: read_wheel_move() -> int -->
+### `read_wheel_move() -> int`
 
     Read Mouse Wheel Movement
 
@@ -310,18 +271,16 @@ if __name__ == "__main__":
 
     UIFlow2.0
 
-<!-- .. method:: read_kb_input(convert: bool = True) -> list -->
+### `read_kb_input(convert: bool = True) -> list`
 
     Read keyboard input
 
-    - ``convert`` Whether to convert HID Keycode to the corresponding string.
+    - `convert` Whether to convert HID Keycode to the corresponding string.
 
     Returns a list containing keyboard inputs (up to 6 elements, meaning a maximum of 6 key values can be input at once).
 
     **Example:**
 
-```
-```
         res = usb_module.read_kb_input(convert=True)
         # output ['a', 'b', 'Enter']
 
@@ -330,11 +289,11 @@ if __name__ == "__main__":
 
     UIFlow2.0
 
-<!-- .. method:: read_kb_modifier() -> int -->
+### `read_kb_modifier() -> int`
 
     Read the keyboard modifier keys, namely "Ctrl", "Shift", "Alt", and "Win" keys.
 
-    - ``Return``: The status of the keyboard modifier keys, usually represented by a bit mask to indicate the status of different modifier keys.
+    - `Return`: The status of the keyboard modifier keys, usually represented by a bit mask to indicate the status of different modifier keys.
         - 0x01: Left Control key
         - 0x02: Left Shift key
         - 0x04: Left Alt key
@@ -346,28 +305,26 @@ if __name__ == "__main__":
 
     **Example:**
 
-```
-```
         modifier = module_usb.read_kb_modifier()
         if modifier & 0x01:
             print("left ctrl key pressed")
 
     UIFlow2.0
 
-<!-- .. method:: read_gpin(pin) -> int -->
+### `read_gpin(pin) -> int`
 
     Read input pin value
 
-    - ``pin`` pin number
-    - ``Return`` 1 represents high level, and 0 represents low level.
+    - `pin` pin number
+    - `Return` 1 represents high level, and 0 represents low level.
 
     UIFlow2.0
 
-<!-- .. method:: write_gpout(pin, value) -->
+### `write_gpout(pin, value)`
 
     Write output pin value
 
-    - ``pin`` pin number
-    - ``Return`` 1 represents high level, and 0 represents low level.
+    - `pin` pin number
+    - `Return` 1 represents high level, and 0 represents low level.
 
     UIFlow2.0

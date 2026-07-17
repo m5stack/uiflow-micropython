@@ -1,10 +1,6 @@
-###########
-###### Get Started
+# Get Started
 
-<!-- .. include:: ../refs/qr.get-started.ref -->
-######
-
-###### Preparation
+## Preparation
 
 # Driver Installation
 
@@ -17,24 +13,14 @@ package corresponding to the number of operating systems to install.
 If you are not sure of the USB chip used by your device, you can install both
 drivers at the same time.
 
-<!-- .. warning:: -->
-
-    During the installation process of CH9102_VCP_SER_MacOS v1.7, an error may
-    occur, but the installation is actually completed, just ignore it.
-
-========================= ======================= =========================
+> Warning: During the installation process of CH9102_VCP_SER_MacOS v1.7, an error may
+> occur, but the installation is actually completed, just ignore it.
 Driver name               Applicable driver chip   Download link
-========================= ======================= =========================
-CP210x_VCP_Windows        CP2104                  |CP210x_VCP_Windows|_
-------------------------- ----------------------- -------------------------
-CP210x_VCP_MacOS          CP2104                  |CP210x_VCP_MacOS|_
-------------------------- ----------------------- -------------------------
-CP210x_VCP_Linux          CP2104                  |CP210x_VCP_Linux|_
-------------------------- ----------------------- -------------------------
-CH9102_VCP_SER_Windows    CH9102                  |CH9102_VCP_SER_Windows|_
-------------------------- ----------------------- -------------------------
-CH9102_VCP_SER_MacOS v1.7 CH9102                  |CH9102_VCP_MacOS_v1.7|_
-========================= ======================= =========================
+CP210x_VCP_Windows        CP2104                  CP210x_VCP_Windows_
+CP210x_VCP_MacOS          CP2104                  CP210x_VCP_MacOS_
+CP210x_VCP_Linux          CP2104                  CP210x_VCP_Linux_
+CH9102_VCP_SER_Windows    CH9102                  CH9102_VCP_SER_Windows_
+CH9102_VCP_SER_MacOS v1.7 CH9102                  CH9102_VCP_MacOS_v1.7_
 
 # M5Burner
 
@@ -42,18 +28,12 @@ Please click the button below to download the corresponding M5Burner firmware
 burning tool according to your operating system. Open the application after
 decompression.
 
-================ =============================
 Software         Link
-================ =============================
-M5Burner_Windows |M5Burner-v3-beta-win-x64|_
----------------- -----------------------------
-M5Burner_MacOS   |M5Burner-v3-beta-mac-x64|_
----------------- -----------------------------
-M5Burner_Linux   |M5Burner-v3-beta-linux-x64|_
-================ =============================
-######
+M5Burner_Windows M5Burner-v3-beta-win-x64_
+M5Burner_MacOS   M5Burner-v3-beta-mac-x64_
+M5Burner_Linux   M5Burner-v3-beta-linux-x64_
 
-###### Installation UIFLOW2
+## Installation UIFLOW2
 
 # Login M5Burner
 
@@ -69,9 +49,7 @@ corresponding host product documentation.
 Before burning, M5Burner will bind your host and M5Stack account.
 After binding, you can use your host in UIFlow2.
 
-######
-
-###### Start using UIFLOW2
+## Start using UIFLOW2
 
 # Login UIFlow2
 

@@ -1,39 +1,18 @@
-<!-- .. _unit.PDMUnit: -->
 
 # PDM Unit
-
-<!-- .. sku: U089 -->
-
-<!-- .. include:: ../refs/unit.pdm.ref -->
 
 This is the driver library of PDM Unit, which is provides a set of methods to control the PDM microphone. Through the
 I2S interface, the module can record audio data and save it as WAV files.
 
 Support the following products:
 
-    |PDM|
-
-## UiFlow2 Example
-
-#### record voice and play voice
-
-Open the |pdm_cores3_example.m5f2| project in UiFlow2.
-
-This example records voice and plays voice.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    PDM
 
 ## MicroPython Example
 
 #### record voice and play voice
 
 This example records voice and plays voice.
-
-MicroPython Code Block:
 
 ```python
 import os, sys, io
@@ -100,34 +79,25 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### PDMUnit
 
-## PDMUnit
+## `PDMUnit`
 PDM Unit class.
 
-:param list | tuple port: Connect to the PDM Unit.
-:param int i2s_port: I2S port number(0 or 1, 2 is automatic select of available ports).
-:param int sample_rate: Sample rate.
+- Parameter `| tuple port` (`list`): Connect to the PDM Unit.
+- Parameter `i2s_port` (`int`): I2S port number(0 or 1, 2 is automatic select of available ports).
+- Parameter `sample_rate` (`int`): Sample rate.
 
-UiFlow2 Code Block:
+```python
+from unit import PDMUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import PDMUnit
-
-        pdm_0 = PDMUnit((1, 2), i2s_port=0, sample_rate=44100)
+pdm_0 = PDMUnit((1, 2), i2s_port=0, sample_rate=44100)
+```
 
 ### `deinit`
 
-    PDMUnit class inherits Mic class, See :ref:`hardware.Mic <hardware.Mic>` for more details.
+    PDMUnit class inherits Mic class, See `hardware.Mic <hardware.Mic>` for more details.

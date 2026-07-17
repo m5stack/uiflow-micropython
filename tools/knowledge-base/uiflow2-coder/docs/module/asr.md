@@ -1,28 +1,11 @@
 
 # ASR Module
 
-<!-- .. sku:M147 -->
-<!-- .. include:: ../refs/module.asr.ref -->
-
 This is the driver library of ASR Module.
 
 Support the following products:
 
-|ASRModule|
-
-## UiFlow2 Example
-
-#### ASR Example
-
-Open the |asr_core2_example.m5f2| project in UiFlow2.
-
-This example shows how to use Module ASR to get the current command word, command number, and trigger an event when you say hello to do something you want to do.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+ASRModule
 
 ## MicroPython Example
 
@@ -30,13 +13,7 @@ Example output:
 
 This example shows how to use Module ASR to get the current command word, command number, and trigger an event when you say hello to do something you want to do.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -120,32 +97,23 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### ASRModule
 
-## ASRModule
+## `ASRModule`
 Voice recognition hardware module.
 
-:param int id: UART port ID for communication. Default is 2.
-:param int tx: TX pin number.
-:param int rx: RX pin number.
-:param bool verbose: Enable verbose output. Default is False.
+- Parameter `id` (`int`): UART port ID for communication. Default is 2.
+- Parameter `tx` (`int`): TX pin number.
+- Parameter `rx` (`int`): RX pin number.
+- Parameter `verbose` (`bool`): Enable verbose output. Default is False.
 
-UiFlow2 Code Block:
+```python
+from unit import ASRUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import ASRUnit
-
-        # Initialize with UART1, TX on pin 2, RX on pin 1
-        asr = ASRModule(id=2, tx=2, rx=1)
+# Initialize with UART1, TX on pin 2, RX on pin 1
+asr = ASRModule(id=2, tx=2, rx=1)
+```

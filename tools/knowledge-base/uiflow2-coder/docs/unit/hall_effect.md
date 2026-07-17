@@ -1,18 +1,12 @@
 # Hall Effect Unit
 
-<!-- .. include:: ../refs/unit.hall_effect.ref -->
-
 Support the following products:
 
-    |HallEffect|
+    HallEffect
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -58,56 +52,39 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_hall_effect_example.m5f2|
 
 ## class HallEffectUnit
 
 ## Constructors
 
-<!-- .. class:: HallEffectUnit(port: tuple) -->
+### `class HallEffectUnit(port: tuple)`
 
     Create a HallEffectUnit object.
 
-    :param tuple port: Specify the port number according to the label on the unit.
-
-    UIFLOW2:
+    - Parameter `port` (`tuple`): Specify the port number according to the label on the unit.
 
 ## Methods
 
-<!-- .. method:: HallEffectUnit.get_status() -->
+### `HallEffectUnit.get_status()`
 
     Get the status of the Hall Effect sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: HallEffectUnit.enable_irq() -->
+### `HallEffectUnit.enable_irq()`
 
     Enable HAll Effect sensor interrupt.
 
-    UIFLOW2:
-
-<!-- .. method:: HallEffectUnit.disable_irq() -->
+### `HallEffectUnit.disable_irq()`
 
     Disable Hall Effect sensor interrupt.
 
-    UIFLOW2:
-
-<!-- .. method:: HallEffectUnit.set_callback(handler, trigger=HallEffectUnit.IRQ_ACTIVE | HallEffectUnit.IRQ_NEGATIVE) -->
+### `HallEffectUnit.set_callback(handler, trigger=HallEffectUnit.IRQ_ACTIVE | HallEffectUnit.IRQ_NEGATIVE)`
 
     Set the callback function.
 
-    UIFLOW2:
-
 ## Constants
 
-<!-- .. data:: HallEffectUnit.IRQ_ACTIVE -->
+### `HallEffectUnit.IRQ_ACTIVE`
           HallEffectUnit.IRQ_NEGATIVE
 
     used to set the trigger mode of the interrupt.

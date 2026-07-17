@@ -1,18 +1,12 @@
 # DLight Hat
 
-<!-- .. include:: ../refs/hat.dlight.ref -->
-
 The following products are supported:
 
-    |DLightHAT|
+    DLightHAT
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -50,26 +44,17 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_dlight_example.m5f2|
 
 ## class DLightHat
 
 ## Constructors
 
-<!-- .. class:: DLightHat(i2c, address: int = 0x23) -->
+### `class DLightHat(i2c, address: int = 0x23)`
 
     Create a DLightHat object.
 
-    :param i2c: I2C object
-    :param address: the I2C address of the device. Default is 0x23.
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: the I2C address of the device. Default is 0x23.
 
-    UIFLOW2:
-
-DLightHat class inherits DLightUnit class, See :ref:`unit.DLightUnit.Methods <unit.DLightUnit.Methods>` for more details.
+DLightHat class inherits DLightUnit class, See `unit.DLightUnit.Methods <unit.DLightUnit.Methods>` for more details.

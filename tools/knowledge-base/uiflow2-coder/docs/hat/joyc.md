@@ -1,18 +1,12 @@
 # JoyC Hat
 
-<!-- .. include:: ../refs/hat.joyc.ref -->
-
 The following products are supported:
 
-    |JoyCHat|
+    JoyCHat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -120,97 +114,72 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_joyc_example.m5f2|
 
 ## class JoyCHat
 
 ## Constructors
 
-<!-- .. class:: JoyCHat(i2c, address: int | list | tuple = 0x38) -->
+### `class JoyCHat(i2c, address: int  list  tuple = 0x38)`
 
     Create a new instance of the JoyCHat class.
 
-    :param i2c: I2C bus
-    :param address: I2C address
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C bus
+    - Parameter `address`: I2C address
 
 ## Methods
 
-<!-- .. method:: JoyCHat.get_x_raw(channel: int = 0) -> int -->
+### `JoyCHat.get_x_raw(channel: int = 0) -> int`
 
     Get the raw x-axis value.
 
-    :param channel: 0 or 1
+    - Parameter `channel`: 0 or 1
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.get_y_raw(channel: int = 0) -> int -->
+### `JoyCHat.get_y_raw(channel: int = 0) -> int`
 
     Get the raw y-axis value.
 
-    :param channel: 0 or 1
+    - Parameter `channel`: 0 or 1
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.get_x(channel: int = 0) -> int -->
+### `JoyCHat.get_x(channel: int = 0) -> int`
 
     Get the x-axis value.
 
-    :param channel: 0 or 1
+    - Parameter `channel`: 0 or 1
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.get_y(channel: int = 0) -> int -->
+### `JoyCHat.get_y(channel: int = 0) -> int`
 
     Get the y-axis value.
 
-    :param channel: 0 or 1
+    - Parameter `channel`: 0 or 1
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.swap_x(swap: bool = True) -> None -->
+### `JoyCHat.swap_x(swap: bool = True) -> None`
 
     Swap x-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.swap_y(swap: bool = True) -> None -->
+### `JoyCHat.swap_y(swap: bool = True) -> None`
 
     Swap y-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.get_button_status(channel: int = 0) -> bool -->
+### `JoyCHat.get_button_status(channel: int = 0) -> bool`
 
     Get the button status.
 
-    :param channel: 0 or 1
-    :return: True or False
+    - Parameter `channel`: 0 or 1
+    - Returns: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: JoyCHat.fill_color() -> None -->
+### `JoyCHat.fill_color() -> None`
 
     Fill the screen with a color.
-
-    UIFLOW2:

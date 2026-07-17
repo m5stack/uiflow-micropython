@@ -1,21 +1,15 @@
 
 # Button Unit
 
-<!-- .. include:: ../refs/unit.button.ref -->
-
 BUTTON is a single button Unit. The button status can be detected by the input pin by simply capturing the high/low electrical level. If the button is pressed, the signal level will be *high* if the button is released, the signal level will be *low*.
 
 Support the following products:
 
-|ButtonUnit|
+ButtonUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -60,54 +54,37 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |button_core2_example.m5f2|
 
 ## class ButtonUnit
 
 ## Constructors
 
-<!-- .. class:: ButtonUnit(pin_num, active_low, pullup_active) -->
+### `class ButtonUnit(pin_num, active_low, pullup_active)`
 
     Initialize a Button instance with the specified pin, active-low configuration, and pull-up resistor state.
 
-    :param  pin_num: The GPIO pin number connected to the button.
-    :param bool active_low: Determines whether the button signal is active-low. Default is True.
-    :param bool pullup_active: Specifies whether the internal pull-up resistor is enabled. Default is True.
-
-    UIFLOW2:
+    - Parameter `pin_num`: The GPIO pin number connected to the button.
+    - Parameter `active_low` (`bool`): Determines whether the button signal is active-low. Default is True.
+    - Parameter `pullup_active` (`bool`): Specifies whether the internal pull-up resistor is enabled. Default is True.
 
 ## Methods
 
-<!-- .. method:: ButtonUnit.count_reset() -->
+### `ButtonUnit.count_reset()`
 
     Reset the count value to zero.
 
-    UIFLOW2:
-
-<!-- .. method:: ButtonUnit.isHolding() -->
+### `ButtonUnit.isHolding()`
 
     Check if the button is currently being held.
 
-    UIFLOW2:
-
-<!-- .. method:: ButtonUnit.setCallback(type, cb) -->
+### `ButtonUnit.setCallback(type, cb)`
 
     Set a callback function for a specified button event type.
 
-    :param  type: The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED).
-    :param  cb: The callback function to be executed for the event.
+    - Parameter `type`: The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED).
+    - Parameter `cb`: The callback function to be executed for the event.
 
-    UIFLOW2:
-
-<!-- .. method:: ButtonUnit.tick(pin) -->
+### `ButtonUnit.tick(pin)`
 
     Monitor the state transitions of a button based on its pin state and trigger appropriate handlers.
-
-    UIFLOW2:

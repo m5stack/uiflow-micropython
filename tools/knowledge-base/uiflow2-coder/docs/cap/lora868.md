@@ -1,52 +1,10 @@
 # LoRa868 Cap
 
-<!-- .. sku: U201 -->
-
-<!-- .. include:: ../refs/cap.lora868.ref -->
-
 Cap LoRa868 is a high-performance LoRa communication and GNSS global navigation expansion module designed for the Cardputer-Adv.
 
 Support the following products:
 
-    |LoRa868Cap|
-
-## UiFlow2 Example
-
-#### Sender
-
-Open the |cardputer_adv_lora868_cap_sender_example.m5f2| project in UiFlow2.
-
-Use the keyboard to enter the text you want to send and press ENTER to send it.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### Receiver
-
-Open the |cardputer_adv_lora868_cap_receiver_example.m5f2| project in UiFlow2.
-
-This example receives and displays data.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
-#### GPS Usage
-
-Open the |cardputer_adv_lora868_cap_gps_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to use the GPS functionality of the LoRa868 Cap.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    LoRa868Cap
 
 ## MicroPython Example
 
@@ -54,13 +12,7 @@ Example output:
 
 Use the keyboard to enter the text you want to send and press ENTER to send it.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -129,24 +81,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### Receiver
 
 This example receives and displays data.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -214,24 +155,13 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### GPS Usage
 
 This example demonstrates how to use the GPS functionality of the LoRa868 Cap.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -272,267 +202,198 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### class LoRa868Cap
 
-## LoRa868Cap
+## `LoRa868Cap`
 Create a LoRa868Cap object.
 
-:param int pin_rst: (RST) Reset pin number.
-:param int pin_cs: (NSS) Chip select pin number.
-:param int pin_irq: (IRQ) Interrupt pin number.
-:param int pin_busy: (BUSY) Busy pin number.
-:param int freq_khz: LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
-:param str bw: Bandwidth, options include:
+- Parameter `pin_rst` (`int`): (RST) Reset pin number.
+- Parameter `pin_cs` (`int`): (NSS) Chip select pin number.
+- Parameter `pin_irq` (`int`): (IRQ) Interrupt pin number.
+- Parameter `pin_busy` (`int`): (BUSY) Busy pin number.
+- Parameter `freq_khz` (`int`): LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
+- Parameter `bw` (`str`): Bandwidth, options include:
 
-    - ``"7.8"``: 7.8 KHz
-    - ``"10.4"``: 10.4 KHz
-    - ``"15.6"``: 15.6 KHz
-    - ``"20.8"``: 20.8 KHz
-    - ``"31.25"``: 31.25 KHz
-    - ``"41.7"``: 41.7 KHz
-    - ``"62.5"``: 62.5 KHz
-    - ``"125"``: 125 KHz
-    - ``"250"``: 250 KHz
-    - ``"500"``: 500 KHz
-:param int sf: Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
-:param int coding_rate: Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
-:param int preamble_len: Length of the preamble sequence in symbols, range from 0 to 255.
-:param int syncword: Sync word to mark the start of the data frame, default is 0x12.
-:param int output_power: Output power in dBm, range from -9 to 22.
+    - `"7.8"`: 7.8 KHz
+    - `"10.4"`: 10.4 KHz
+    - `"15.6"`: 15.6 KHz
+    - `"20.8"`: 20.8 KHz
+    - `"31.25"`: 31.25 KHz
+    - `"41.7"`: 41.7 KHz
+    - `"62.5"`: 62.5 KHz
+    - `"125"`: 125 KHz
+    - `"250"`: 250 KHz
+    - `"500"`: 500 KHz
+- Parameter `sf` (`int`): Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
+- Parameter `coding_rate` (`int`): Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
+- Parameter `preamble_len` (`int`): Length of the preamble sequence in symbols, range from 0 to 255.
+- Parameter `syncword` (`int`): Sync word to mark the start of the data frame, default is 0x12.
+- Parameter `output_power` (`int`): Output power in dBm, range from -9 to 22.
 
-UiFlow2 Code Block:
+```python
+from cap import LoRa868Cap
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from cap import LoRa868Cap
-
-        cap_lora868_0 = LoRa868Cap(5, 1, 10, 2, 868000, '250', 8, 8, 12, 0x12, 10)
+cap_lora868_0 = LoRa868Cap(5, 1, 10, 2, 868000, '250', 8, 8, 12, 0x12, 10)
+```
 
 ### `set_freq`
 Set frequency in kHz.
 
-:param int freq_khz: Frequency in kHz (850000 ~ 930000), default is 868000.
+- Parameter `freq_khz` (`int`): Frequency in kHz (850000 ~ 930000), default is 868000.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_freq(868000)
+```python
+module_lora868v12_0.set_freq(868000)
+```
 
 ### `set_sf`
 Set spreading factor (SF).
 
-:param int sf: Spreading factor (7 ~ 12)
+- Parameter `sf` (`int`): Spreading factor (7 ~ 12)
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_sf(7)
+```python
+module_lora868v12_0.set_sf(7)
+```
 
 ### `set_bw`
 Set bandwidth.
 
-:param str bw: Bandwidth in kHz as string. Must be one of:
+- Parameter `bw` (`str`): Bandwidth in kHz as string. Must be one of:
                '7.8', '10.4', '15.6', '20.8', '31.25', '41.7',
                '62.5', '125', '250', '500'.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_bw(bw)
+```python
+module_lora868v12_0.set_bw(bw)
+```
 
 ### `set_coding_rate`
 Set coding rate.
 
-:param int coding_rate: Coding rate (5 ~ 8)
+- Parameter `coding_rate` (`int`): Coding rate (5 ~ 8)
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_coding_rate(coding_rate)
+```python
+module_lora868v12_0.set_coding_rate(coding_rate)
+```
 
 ### `set_syncword`
 Set syncword.
 
-:param int syncword: Sync word (0 ~ 0xFF)
+- Parameter `syncword` (`int`): Sync word (0 ~ 0xFF)
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_syncword(syncword)
+```python
+module_lora868v12_0.set_syncword(syncword)
+```
 
 ### `set_preamble_len`
 Set preamble length.
 
-:param int preamble_len: Preamble length, range: 0~255.
+- Parameter `preamble_len` (`int`): Preamble length, range: 0~255.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_preamble_len(preamble_len)
+```python
+module_lora868v12_0.set_preamble_len(preamble_len)
+```
 
 ### `set_output_power`
 Set output power in dBm.
 
-:param int output_power: Output power in dBm (-9 ~ 22)
+- Parameter `output_power` (`int`): Output power in dBm (-9 ~ 22)
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_output_power(output_power)
+```python
+module_lora868v12_0.set_output_power(output_power)
+```
 
 ### `send`
 Send data
 
-:param str | list | tuple | int | bytearray packet: The data to be sent.
-:param int tx_at_ms: The timestamp in milliseconds when to send the data (optional). Default is None.
-:returns: timestamp
-:rtype: int
+- Parameter ` list  tuple  int  bytearray packet` (`str`): The data to be sent.
+- Parameter `tx_at_ms` (`int`): The timestamp in milliseconds when to send the data (optional). Default is None.
+- Returns: timestamp
+- Return type: int
 
 Send a data packet and return the timestamp after the packet is sent.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.send()
+```python
+module_lora868v12_0.send()
+```
 
 ### `recv`
 Receive data
 
-:param int timeout_ms: Timeout in milliseconds (optional). Default is None.
-:param int rx_length: Length of the data to be read. Default is 0xFF.
-:param RxPacket rx_packet: An instance of `RxPacket` (optional) to reuse.
-:returns: Received packet instance
-:rtype: RxPacket
+- Parameter `timeout_ms` (`int`): Timeout in milliseconds (optional). Default is None.
+- Parameter `rx_length` (`int`): Length of the data to be read. Default is 0xFF.
+- Parameter `rx_packet` (`RxPacket`): An instance of `RxPacket` (optional) to reuse.
+- Returns: Received packet instance
+- Return type: RxPacket
 
 Attempt to receive a LoRa packet. Returns `None` if timeout occurs, or returns the received packet instance.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        data = module_lora868v12_0.recv()
+```python
+data = module_lora868v12_0.recv()
+```
 
 ### `start_recv`
 Start receive data
 
 This method initiates the process to begin receiving data.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.start_recv()
+```python
+module_lora868v12_0.start_recv()
+```
 
 ### `set_irq_callback`
 Set the interrupt callback function to be executed on IRQ.
 
-:param callback: The callback function to be invoked when the interrupt is triggered.
+- Parameter `callback`: The callback function to be invoked when the interrupt is triggered.
                   The callback should not take any arguments and should return nothing.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.set_irq_callback()
+```python
+module_lora868v12_0.set_irq_callback()
+```
 
 ### `standby`
 Set module to standby mode.
 
 Puts the LoRa module into standby mode, consuming less power.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.standby()
+```python
+module_lora868v12_0.standby()
+```
 
 ### `sleep`
 Set module to sleep mode.
 
 Reduces the power consumption by putting the module into deep sleep mode.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.sleep()
+```python
+module_lora868v12_0.sleep()
+```
 
 ### `irq_triggered`
 Check IRQ trigger.
 
-:returns: Returns `True` if an interrupt service routine (ISR) has been triggered since the last send or receive started.
-:rtype: bool
+- Returns: Returns `True` if an interrupt service routine (ISR) has been triggered since the last send or receive started.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        module_lora868v12_0.irq_triggered()
+```python
+module_lora868v12_0.irq_triggered()
+```
 
 ### `deinit`
 
 #### class GPSCap
 
-## GPSCap
+## `GPSCap`
 Initialize the GPSCap with a specific UART id and port for communication.
 
-:param int id: The UART ID for communication with the GPS module. It can be 0, 1, or 2.
-:param int rx: The RX pin for UART communication. If None, uses default pin from board definition.
-:param int tx: The TX pin for UART communication. If None, uses default pin from board definition.
-:param int pps: The PPS (Pulse Per Second) pin, used for high-precision time synchronization. Default is -1 (not used).
+- Parameter `id` (`int`): The UART ID for communication with the GPS module. It can be 0, 1, or 2.
+- Parameter `rx` (`int`): The RX pin for UART communication. If None, uses default pin from board definition.
+- Parameter `tx` (`int`): The TX pin for UART communication. If None, uses default pin from board definition.
+- Parameter `pps` (`int`): The PPS (Pulse Per Second) pin, used for high-precision time synchronization. Default is -1 (not used).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from cap import GPSCap
-        gps_0 = GPSCap(id=2)
+```python
+from cap import GPSCap
+gps_0 = GPSCap(id=2)
+```

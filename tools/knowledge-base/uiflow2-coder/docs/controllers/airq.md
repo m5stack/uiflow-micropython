@@ -1,10 +1,6 @@
-#########
-###### AirQ
+# AirQ
 
-<!-- .. include:: ../refs/controllers.airq.ref -->
-######
-
-###### UI
+## UI
 
 **A** key cycles through the available applications.
 

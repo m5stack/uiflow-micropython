@@ -1,28 +1,10 @@
 # Fan v1.1 Module
 
-<!-- .. sku: M013-V11 -->
-
-<!-- .. include:: ../refs/module.fan.ref -->
-
 This is the driver library of Fan Module, which is used to control the fan.
 
 Support the following products:
 
-    |FAN|
-
-## UiFlow2 Example
-
-#### control module fan v1.1
-
-Open the |fan_cores3_example.m5f2| project in UiFlow2.
-
-Initializes the fan module, sets the fan status, PWM frequency and duty cycle, and displays the fan status, speed, PWM frequency and duty cycle on the screen in real time. When the user touches the screen, the fan status toggles on/off.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    FAN
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 Initializes the fan module, sets the fan status, PWM frequency and duty cycle, and displays the fan status, speed, PWM frequency and duty cycle on the screen in real time. When the user touches the screen, the fan status toggles on/off.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -91,175 +67,122 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### FanModule
 
-## FanModule
+## `FanModule`
 ### `set_fan_state`
 Set the fan state to on or off.
 
-:param bool state: The state of the fan.
+- Parameter `state` (`bool`): The state of the fan.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.set_fan_state(True)
+```python
+fan_v11_0.set_fan_state(True)
+```
 
 ### `get_fan_state`
 Get current fan state.
 
-:returns: The current fan state.
-:rtype: bool
+- Returns: The current fan state.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_fan_state()
+```python
+fan_v11_0.get_fan_state()
+```
 
 ### `set_pwm_frequency`
 Set the PWM frequency of the fan.
 
-:param int freq: The PWM frequency of the fan.
+- Parameter `freq` (`int`): The PWM frequency of the fan.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.set_pwm_frequency(2)
+```python
+fan_v11_0.set_pwm_frequency(2)
+```
 
 ### `get_pwm_frequency`
 Get current PWM frequency.
 
-:returns: The current PWM frequency.
-:rtype: int
+- Returns: The current PWM frequency.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_pwm_frequency()
+```python
+fan_v11_0.get_pwm_frequency()
+```
 
 ### `set_pwm_duty_cycle`
 Set the PWM duty cycle of the fan.
 
-:param int duty_cycle: The PWM duty cycle of the fan.
+- Parameter `duty_cycle` (`int`): The PWM duty cycle of the fan.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.set_pwm_duty_cycle(50)
+```python
+fan_v11_0.set_pwm_duty_cycle(50)
+```
 
 ### `get_pwm_duty_cycle`
 Get current PWM duty cycle.
 
-:returns: The current PWM duty cycle.
-:rtype: int
+- Returns: The current PWM duty cycle.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_pwm_duty_cycle()
+```python
+fan_v11_0.get_pwm_duty_cycle()
+```
 
 ### `get_fan_rpm`
 Get current fan RPM.
 
-:returns: The current fan RPM.
-:rtype: int
+- Returns: The current fan RPM.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_fan_rpm()
+```python
+fan_v11_0.get_fan_rpm()
+```
 
 ### `get_single_frequency`
 Get current single frequency.
 
-:returns: The current single frequency.
-:rtype: int
+- Returns: The current single frequency.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_single_frequency()
+```python
+fan_v11_0.get_single_frequency()
+```
 
 ### `write_flash`
 Save the current configuration(fan status, PWM frequency, and PWM duty cycle) to the flash.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.write_flash()
+```python
+fan_v11_0.write_flash()
+```
 
 ### `get_firmware_version`
 Get current firmware version.
 
-:returns: The current firmware version.
-:rtype: int
+- Returns: The current firmware version.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_firmware_version()
+```python
+fan_v11_0.get_firmware_version()
+```
 
 ### `get_i2c_address`
 Get current I2C address.
 
-:returns: The current I2C address.
-:rtype: int
+- Returns: The current I2C address.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.get_i2c_address()
+```python
+fan_v11_0.get_i2c_address()
+```
 
 ### `set_i2c_address`
 Set the I2C address of the fan.
 
-:param int addr: The I2C address of the fan.
+- Parameter `addr` (`int`): The I2C address of the fan.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        fan_v11_0.set_i2c_address(0x18)
+```python
+fan_v11_0.set_i2c_address(0x18)
+```

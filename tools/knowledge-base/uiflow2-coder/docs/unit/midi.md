@@ -1,17 +1,11 @@
 
 # MIDI Unit
 
-<!-- .. include:: ../refs/unit.midi.ref -->
-
 Support the following products:
 
-|MIDIUnit|
+MIDIUnit
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -57,250 +51,199 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |midi_cores3_example.m5f2|
 
 ## class MIDIUnit
 
 ## Constructors
 
-<!-- .. class:: MIDIUnit(id, port) -->
+### `class MIDIUnit(id, port)`
 
     Initializes the MIDI unit with a specified UART ID and port pins.
         The UART interface is used to transmit MIDI messages.
 
-    :param Literal[0,1,2] id: UART device ID.
-    :param List[int]|Tuple[int,int] port: UART TX and RX pins.
-
-    UIFLOW2:
+    - Parameter `id` (`Literal[0,1,2]`): UART device ID.
+    - Parameter `port` (`List[int]|Tuple[int,int]`): UART TX and RX pins.
 
 ## Methods
 
-<!-- .. method:: MIDIUnit.set_note_on(channel, pitch, velocity) -->
+### `MIDIUnit.set_note_on(channel, pitch, velocity)`
 
     Sends a MIDI Note On message to the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  pitch: Note pitch (0-127).
-    :param  velocity: Note velocity (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `pitch`: Note pitch (0-127).
+    - Parameter `velocity`: Note velocity (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_note_off(channel, pitch) -->
+### `MIDIUnit.set_note_off(channel, pitch)`
 
     Sends a MIDI Note Off message to the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  pitch: Note pitch (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `pitch`: Note pitch (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_instrument(bank, channel, value) -->
+### `MIDIUnit.set_instrument(bank, channel, value)`
 
     Changes the program (instrument) on the specified channel.
 
-    :param  bank: Bank selector (MSB) for the program change.
-    :param  channel: MIDI channel (0-15).
-    :param  value: Program number (0-127).
+    - Parameter `bank`: Bank selector (MSB) for the program change.
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `value`: Program number (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_drums_instrument(drum_pitch, velocity) -->
+### `MIDIUnit.set_drums_instrument(drum_pitch, velocity)`
 
     Sets a drum instrument and plays a note on MIDI channel 10.
 
-    :param  drum_pitch: Drum pitch number.
-    :param  velocity: Note velocity (0-127).
+    - Parameter `drum_pitch`: Drum pitch number.
+    - Parameter `velocity`: Note velocity (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_pitch_bend(channel, value) -->
+### `MIDIUnit.set_pitch_bend(channel, value)`
 
     Sends a MIDI Pitch Bend message to the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  value: Pitch bend value (0-16383).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `value`: Pitch bend value (0-16383).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_pitch_bend_range(channel, value) -->
+### `MIDIUnit.set_pitch_bend_range(channel, value)`
 
     Sets the pitch bend range on the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  value: Pitch bend range in semitones.
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `value`: Pitch bend range in semitones.
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.midi_reset() -->
+### `MIDIUnit.midi_reset()`
 
     Sends a MIDI System Exclusive Reset command.
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_channel_volume(channel, level) -->
+### `MIDIUnit.set_channel_volume(channel, level)`
 
     Sets the channel volume for the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  level: Volume level (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `level`: Volume level (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_all_notes_off(channel) -->
+### `MIDIUnit.set_all_notes_off(channel)`
 
     Sends a MIDI Control Change message to turn off all notes on the specified channel.
 
-    :param  channel: MIDI channel (0-15).
+    - Parameter `channel`: MIDI channel (0-15).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_master_volume(level) -->
+### `MIDIUnit.set_master_volume(level)`
 
     Sets the master volume using a standard System Exclusive message.
 
-    :param  level: Volume level (0-127).
+    - Parameter `level`: Volume level (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_reverb(channel, program, level, delayfeedback) -->
+### `MIDIUnit.set_reverb(channel, program, level, delayfeedback)`
 
     Configures reverb effect on the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  program: Reverb program number (0-7).
-    :param  level: Reverb level (0-127).
-    :param  delayfeedback: Delay feedback amount (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `program`: Reverb program number (0-7).
+    - Parameter `level`: Reverb level (0-127).
+    - Parameter `delayfeedback`: Delay feedback amount (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_chorus(channel, program, level, feedback, chorusdelay) -->
+### `MIDIUnit.set_chorus(channel, program, level, feedback, chorusdelay)`
 
     Configures chorus effect on the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  program: Chorus program number (0-7).
-    :param  level: Chorus level (0-127).
-    :param  feedback: Chorus feedback amount (0-127).
-    :param  chorusdelay: Chorus delay amount (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `program`: Chorus program number (0-7).
+    - Parameter `level`: Chorus level (0-127).
+    - Parameter `feedback`: Chorus feedback amount (0-127).
+    - Parameter `chorusdelay`: Chorus delay amount (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_pan(channel, value) -->
+### `MIDIUnit.set_pan(channel, value)`
 
     Sets the pan position for the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  value: Pan position (0-127).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `value`: Pan position (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_equalizer(channel, lowband, medlowband, medhighband, highband, lowfreq, medlowfreq, medhighfreq, highfreq) -->
+### `MIDIUnit.set_equalizer(channel, lowband, medlowband, medhighband, highband, lowfreq, medlowfreq, medhighfreq, highfreq)`
 
     Sets the equalizer levels and frequencies for the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  lowband: Low band level (-12dB to +12dB).
-    :param  medlowband: Mid-low band level (-12dB to +12dB).
-    :param  medhighband: Mid-high band level (-12dB to +12dB).
-    :param  highband: High band level (-12dB to +12dB).
-    :param  lowfreq: Low band frequency (Hz).
-    :param  medlowfreq: Mid-low band frequency (Hz).
-    :param  medhighfreq: Mid-high band frequency (Hz).
-    :param  highfreq: High band frequency (Hz).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `lowband`: Low band level (-12dB to +12dB).
+    - Parameter `medlowband`: Mid-low band level (-12dB to +12dB).
+    - Parameter `medhighband`: Mid-high band level (-12dB to +12dB).
+    - Parameter `highband`: High band level (-12dB to +12dB).
+    - Parameter `lowfreq`: Low band frequency (Hz).
+    - Parameter `medlowfreq`: Mid-low band frequency (Hz).
+    - Parameter `medhighfreq`: Mid-high band frequency (Hz).
+    - Parameter `highfreq`: High band frequency (Hz).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_tuning(channel, fine, coarse) -->
+### `MIDIUnit.set_tuning(channel, fine, coarse)`
 
     Sets the tuning for the specified channel.
 
-    :param  channel: MIDI channel (0-15).
-    :param  fine: Fine tuning value (cents).
-    :param  coarse: Coarse tuning value (semitones).
+    - Parameter `channel`: MIDI channel (0-15).
+    - Parameter `fine`: Fine tuning value (cents).
+    - Parameter `coarse`: Coarse tuning value (semitones).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_vibrate(channel, rate, depth, delay) -->
+### `MIDIUnit.set_vibrate(channel, rate, depth, delay)`
 
     Sets the vibrato effect parameters on the specified channel.
 
-    :param  channel: The MIDI channel to apply the vibrato effect to (0-15).
-    :param  rate: The vibrato rate (0-127).
-    :param  depth: The vibrato depth (0-127).
-    :param  delay: The vibrato delay (0-127).
+    - Parameter `channel`: The MIDI channel to apply the vibrato effect to (0-15).
+    - Parameter `rate`: The vibrato rate (0-127).
+    - Parameter `depth`: The vibrato depth (0-127).
+    - Parameter `delay`: The vibrato delay (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_tvf(channel, cutoff, resonance) -->
+### `MIDIUnit.set_tvf(channel, cutoff, resonance)`
 
     Sets the parameters for a TVF (Tone-Voltage Filter) on the specified channel.
 
-    :param  channel: The MIDI channel to apply the filter to (0-15).
-    :param  cutoff: The filter cutoff frequency (0-127).
-    :param  resonance: The filter resonance (0-127).
+    - Parameter `channel`: The MIDI channel to apply the filter to (0-15).
+    - Parameter `cutoff`: The filter cutoff frequency (0-127).
+    - Parameter `resonance`: The filter resonance (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_envelope(channel, attack, decay, release) -->
+### `MIDIUnit.set_envelope(channel, attack, decay, release)`
 
     Sets the ADSR (Attack, Decay, Sustain, Release) envelope parameters on the specified channel.
 
-    :param  channel: The MIDI channel to apply the envelope to (0-15).
-    :param  attack: The attack time (0-127).
-    :param  decay: The decay time (0-127).
-    :param  release: The release time (0-127).
+    - Parameter `channel`: The MIDI channel to apply the envelope to (0-15).
+    - Parameter `attack`: The attack time (0-127).
+    - Parameter `decay`: The decay time (0-127).
+    - Parameter `release`: The release time (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_scale_tuning(channel, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) -->
+### `MIDIUnit.set_scale_tuning(channel, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12)`
 
     Sets scale tuning for the specified channel.
 
-    :param  channel: The MIDI channel to apply the scale tuning to (0-15).
-    :param  v1~v12: Tuning values for each note in the scale (0-127).
+    - Parameter `channel`: The MIDI channel to apply the scale tuning to (0-15).
+    - Parameter `v1~v12`: Tuning values for each note in the scale (0-127).
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_mod_wheel(channel, pitch, tvtcutoff, amplitude, rate, pitchdepth, tvfdepth, tvadepth) -->
+### `MIDIUnit.set_mod_wheel(channel, pitch, tvtcutoff, amplitude, rate, pitchdepth, tvfdepth, tvadepth)`
 
     Sets modulation wheel parameters that affect various effects on the specified channel.
 
-    :param  channel: The MIDI channel to apply the modulation to (0-15).
-    :param  pitch: Pitch modulation depth.
-    :param  tvtcutoff: Cutoff frequency modulation depth.
-    :param  amplitude: Amplitude modulation depth.
-    :param  rate: Modulation rate.
-    :param  pitchdepth: Depth of pitch modulation.
-    :param  tvfdepth: Depth of TVF modulation.
-    :param  tvadepth: Depth of TVA (Tone-Voltage Amplifier) modulation.
+    - Parameter `channel`: The MIDI channel to apply the modulation to (0-15).
+    - Parameter `pitch`: Pitch modulation depth.
+    - Parameter `tvtcutoff`: Cutoff frequency modulation depth.
+    - Parameter `amplitude`: Amplitude modulation depth.
+    - Parameter `rate`: Modulation rate.
+    - Parameter `pitchdepth`: Depth of pitch modulation.
+    - Parameter `tvfdepth`: Depth of TVF modulation.
+    - Parameter `tvadepth`: Depth of TVA (Tone-Voltage Amplifier) modulation.
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.set_all_drums() -->
+### `MIDIUnit.set_all_drums()`
 
     Sends a System Exclusive message to set all drums on channel 10 to default values.
 
-    UIFLOW2:
-
-<!-- .. method:: MIDIUnit.cmd_write(cmd) -->
+### `MIDIUnit.cmd_write(cmd)`
 
     Writes a MIDI command to the UART interface.
 
-    :param  cmd: List of MIDI command bytes.
+    - Parameter `cmd`: List of MIDI command bytes.
 
-<!-- .. method:: MIDIUnit.map(x, in_min, in_max, out_min, out_max) -->
+### `MIDIUnit.map(x, in_min, in_max, out_min, out_max)`
 
     Maps a value from one range to another.
 
-    :param  x: Value to map.
-    :param  in_min: Minimum value of the input range.
-    :param  in_max: Maximum value of the input range.
-    :param  out_min: Minimum value of the output range.
-    :param  out_max: Maximum value of the output range.
+    - Parameter `x`: Value to map.
+    - Parameter `in_min`: Minimum value of the input range.
+    - Parameter `in_max`: Maximum value of the input range.
+    - Parameter `out_min`: Minimum value of the output range.
+    - Parameter `out_max`: Maximum value of the output range.

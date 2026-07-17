@@ -102,6 +102,11 @@ def copy_current_skill_to_repo(skill_dir: Path) -> None:
     replace_dir(skill_dir, LOCAL_SKILL_DIR, SCRIPT_DIR)
 
 
+def copy_repo_skill_to_system(skill_dir: Path) -> None:
+    print(f"Copying repo skill to system skill: {LOCAL_SKILL_DIR} -> {skill_dir}")
+    replace_dir(LOCAL_SKILL_DIR, skill_dir, skill_dir.parent)
+
+
 def update_skill_doc_tree(skill_dir: Path) -> None:
     skill_md = skill_dir / "SKILL.md"
     docs_dir = skill_dir / "docs"
@@ -141,6 +146,72 @@ def sync_docs_to_skill(generated_docs: Path, skill_dir: Path) -> None:
         update_skill_doc_tree(target)
 
 
+def read_utf8_checked(path: Path) -> str:
+    data = path.read_bytes()
+    if data.startswith(b"\xef\xbb\xbf"):
+        raise RuntimeError(f"UTF-8 BOM found in {path}")
+    text = data.decode("utf-8")
+    if "\ufffd" in text:
+        raise RuntimeError(f"Replacement character found in {path}")
+    return text
+
+
+def file_map(root: Path) -> dict[str, Path]:
+    return {
+        str(path.relative_to(root)).replace("\\", "/"): path
+        for path in root.rglob("*")
+        if path.is_file()
+    }
+
+
+def assert_same_tree(left: Path, right: Path) -> None:
+    left_files = file_map(left)
+    right_files = file_map(right)
+    missing = sorted(set(left_files) - set(right_files))
+    extra = sorted(set(right_files) - set(left_files))
+    different = sorted(
+        rel
+        for rel in set(left_files) & set(right_files)
+        if left_files[rel].read_bytes() != right_files[rel].read_bytes()
+    )
+    if missing or extra or different:
+        raise RuntimeError(
+            "Repo/system skill mismatch: "
+            f"missing={missing[:10]}, extra={extra[:10]}, different={different[:10]}"
+        )
+
+
+def report_doc_quality(target: Path) -> None:
+    docs_dir = target / "docs"
+    patterns = {
+        "rst_directive_comments": "<!-- ..",
+        "failed_find": "Failed to find",
+        "raw_param_fields": ":param",
+        "raw_return_fields": ":returns:",
+        "raw_rtype_fields": ":rtype:",
+        "raw_code_block_directives": ".. code-block::",
+        "visual_code_block_labels": "UiFlow2 Code Block:",
+        "visual_code_block_upper_labels": "UIFLOW2 Code Block:",
+        "micropython_code_block_labels": "MicroPython Code Block:",
+        "micropython_code_block_alt_labels": "Micropython Code Block:",
+        "visual_example_labels": "UiFlow2 Example:",
+        "visual_example_upper_labels": "UIFLOW2 Example:",
+        "visual_example_headings": "## UiFlow2 Example",
+        "visual_standalone_labels": "UIFLOW2:",
+        "visual_project_files": ".m5f2",
+    }
+    for label, pattern in patterns.items():
+        files = 0
+        hits = 0
+        for path in docs_dir.rglob("*.md"):
+            text = read_utf8_checked(path)
+            count = text.count(pattern)
+            if count:
+                files += 1
+                hits += count
+        print(f"Quality {target.name}: {label}={hits} hits in {files} files")
+
+
 def validate(skill_dir: Path) -> None:
     for target in (LOCAL_SKILL_DIR, skill_dir):
         docs_dir = target / "docs"
@@ -148,40 +219,55 @@ def validate(skill_dir: Path) -> None:
         if not md_files:
             raise RuntimeError(f"No markdown files found in {docs_dir}")
         for path in md_files:
-            text = path.read_text(encoding="utf-8")
-            if "\ufffd" in text:
-                raise RuntimeError(f"Replacement character found in {path}")
+            text = read_utf8_checked(path)
+            if "D:\\" in text or "/tmp/" in text:
+                raise RuntimeError(f"Local absolute path leaked into {path}")
         for path in (target / "file_tree.txt", target / "SKILL.md"):
-            text = path.read_text(encoding="utf-8")
-            if "\ufffd" in text:
-                raise RuntimeError(f"Replacement character found in {path}")
+            read_utf8_checked(path)
+        if (target / "SKILL.md").read_bytes()[:3] != b"---":
+            raise RuntimeError(f"SKILL.md frontmatter does not start at byte 0: {target / 'SKILL.md'}")
         print(
             f"Validated {target}: {len(md_files)} markdown files, "
             f"{sum(1 for p in docs_dir.rglob('*') if p.is_dir())} directories"
         )
+        report_doc_quality(target)
+    assert_same_tree(LOCAL_SKILL_DIR, skill_dir)
+    print("Validated repo/system skill trees are byte-identical.")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
     parser.add_argument("--source-docs", type=Path, help="Use an existing generated docs directory instead of regenerating.")
+    parser.add_argument(
+        "--skip-copy-shell",
+        action="store_true",
+        help="Keep the repo skill shell as the source of truth instead of copying the current system skill first.",
+    )
     args = parser.parse_args()
 
     skill_dir = args.skill_dir.resolve()
     if not skill_dir.is_dir():
         raise FileNotFoundError(f"Skill directory does not exist: {skill_dir}")
 
-    copy_current_skill_to_repo(skill_dir)
+    if args.skip_copy_shell:
+        print(f"Keeping repo skill shell: {LOCAL_SKILL_DIR}")
+    else:
+        copy_current_skill_to_repo(skill_dir)
     if args.source_docs:
-        generated_docs = args.source_docs.resolve()
-        if not generated_docs.is_dir():
-            raise FileNotFoundError(f"Generated docs directory does not exist: {generated_docs}")
-        sync_docs_to_skill(generated_docs, skill_dir)
+        source_docs = args.source_docs.resolve()
+        if not source_docs.is_dir():
+            raise FileNotFoundError(f"Generated docs directory does not exist: {source_docs}")
+        with tempfile.TemporaryDirectory(prefix="uiflow2-docs-source-") as tmp:
+            generated_docs = Path(tmp) / "docs"
+            shutil.copytree(source_docs, generated_docs)
+            sync_docs_to_skill(generated_docs, skill_dir)
     else:
         with tempfile.TemporaryDirectory(prefix="uiflow2-docs-") as tmp:
             generated_docs = Path(tmp) / "docs"
             generate_docs(generated_docs)
             sync_docs_to_skill(generated_docs, skill_dir)
+    copy_repo_skill_to_system(skill_dir)
     validate(skill_dir)
 
 

@@ -1,18 +1,12 @@
 # DAC Hat
 
-<!-- .. include:: ../refs/hat.dac.ref -->
-
 The following products are supported:
 
-    |DAC|
+    DAC
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -73,28 +67,19 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_dac_example.m5f2|
 
 ## class DACHat
 
 ## Constructors
 
-<!-- .. class:: DACHat(i2c: I2C, address: int = 0x60, vdd: float = 5.0, vout: float = 3.3) -->
+### `class DACHat(i2c: I2C, address: int = 0x60, vdd: float = 5.0, vout: float = 3.3)`
 
     Create a DAC Hat object.
 
-    :param i2c: I2C object
-    :param address: I2C address of the DAC Hat
-    :param vdd: VDD voltage of the DAC Hat
-    :param vout: VOUT voltage of the DAC Hat
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: I2C address of the DAC Hat
+    - Parameter `vdd`: VDD voltage of the DAC Hat
+    - Parameter `vout`: VOUT voltage of the DAC Hat
 
-    UIFLOW2:
-
-DACHat class inherits DACUnit class, See :ref:`unit.DACUnit.Methods <unit.DACUnit.Methods>` for more details.
+DACHat class inherits DACUnit class, See `unit.DACUnit.Methods <unit.DACUnit.Methods>` for more details.

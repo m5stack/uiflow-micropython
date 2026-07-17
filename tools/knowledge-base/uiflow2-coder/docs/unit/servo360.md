@@ -1,24 +1,10 @@
 # Servo Kit 360°
 
-<!-- .. sku: A076-A -->
-
-<!-- .. include:: ../refs/unit.servo360.ref -->
-
 This is the driver library of Servo 360 Unit, which is used to control the rotation speed and direction of the servo.
 
 Support the following products:
 
     |Servo Kit 360°|
-
-## UiFlow2 Example
-
-#### Control servo rotation
-
-Open the |cores3_servo360_example.m5f2| project in UiFlow2.
-
-This example controls the servo rotation direction and speed.
-
-UiFlow2 Code Block:
 
 ## MicroPython Example
 
@@ -26,13 +12,7 @@ UiFlow2 Code Block:
 
 This example controls the servo rotation direction and speed.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -164,82 +144,62 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 ## **API**
 
 #### Servo360Unit
 
-## Servo360Unit
+## `Servo360Unit`
 Control a 360-degree continuous rotation servo motor.
 
-.. note::
+> Note: For Servo Kit 360°, the duty cycle microseconds count controls rotation
+> speed and direction: **count_low** corresponds to maximum
+> clockwise speed, **count_high** to maximum counterclockwise speed, and
+> the **midpoint** value indicates stop. Values in
+> **count_low** ~ **midpoint** rotate clockwise
+> (smaller values = faster speed), while values in
+> **midpoint** ~ **count_high** rotate counterclockwise
+> (larger values = faster speed). **midpoint** controls the stop position.
+- Parameter `port`: The port the servo is connected to.
+- Type of `port`: tuple
+- Parameter `pin` (`int`): The pin the servo is connected to (if not using a port).
+- Parameter `freq` (`int`): The PWM frequency. Default is 50Hz.
+- Parameter `count_low` (`int`): The duty cycle microseconds count for the lowest range. Default is 500.
+- Parameter `count_high` (`int`): The duty cycle microseconds count for the highest range. Default is 2500.
 
-    For Servo Kit 360°, the duty cycle microseconds count controls rotation
-    speed and direction: **count_low** corresponds to maximum
-    clockwise speed, **count_high** to maximum counterclockwise speed, and
-    the **midpoint** value indicates stop. Values in
-    **count_low** ~ **midpoint** rotate clockwise
-    (smaller values = faster speed), while values in
-    **midpoint** ~ **count_high** rotate counterclockwise
-    (larger values = faster speed). **midpoint** controls the stop position.
+```python
+from unit import Servo360Unit
 
-:param port: The port the servo is connected to.
-:type port: tuple
-:param int pin: The pin the servo is connected to (if not using a port).
-:param int freq: The PWM frequency. Default is 50Hz.
-:param int count_low: The duty cycle microseconds count for the lowest range. Default is 500.
-:param int count_high: The duty cycle microseconds count for the highest range. Default is 2500.
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import Servo360Unit
-
-        servo_0 = Servo360Unit((33, 32)) # Adjust the port as needed
-        servo_1 = Servo360Unit(None, pin=15)  # Directly specify the pin
+servo_0 = Servo360Unit((33, 32)) # Adjust the port as needed
+servo_1 = Servo360Unit(None, pin=15)  # Directly specify the pin
+```
 
 ### `clockwise`
 Rotate the servo clockwise at a specified speed.
 
-:param int speed: Speed percentage (0 to 100).
-:param bool wait: Whether to wait for the operation to complete.
+- Parameter `speed` (`int`): Speed percentage (0 to 100).
+- Parameter `wait` (`bool`): Whether to wait for the operation to complete.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.clockwise(50)  # Rotate clockwise at 50% speed
+```python
+servo_0.clockwise(50)  # Rotate clockwise at 50% speed
+```
 
 ### `counterclockwise`
 Rotate the servo counterclockwise at a specified speed.
 
-:param int speed: Speed percentage (0 to 100).
-:param bool wait: Whether to wait for the operation to complete.
+- Parameter `speed` (`int`): Speed percentage (0 to 100).
+- Parameter `wait` (`bool`): Whether to wait for the operation to complete.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.counterclockwise(50)  # Rotate counterclockwise at 50% speed
+```python
+servo_0.counterclockwise(50)  # Rotate counterclockwise at 50% speed
+```
 
 ### `stop`
 Stop the servo rotation.
 
-:param bool wait: Whether to wait for the operation to complete.
+- Parameter `wait` (`bool`): Whether to wait for the operation to complete.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        servo_0.stop()  # Stop the servo
+```python
+servo_0.stop()  # Stop the servo
+```

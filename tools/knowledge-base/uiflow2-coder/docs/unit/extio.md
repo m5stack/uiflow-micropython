@@ -1,141 +1,105 @@
 # EXTIO Unit
 
-<!-- .. sku:U011 -->
-<!-- .. include:: ../refs/unit.extio.ref -->
-
 Support the following products:
 
-|EXTIOUnit|
-
-..
-    Micropython Example:
-
-```python
-<!-- Failed to find example file: ../../../examples/unit/extio/extio_core2_example.py -->
-```
-
-    UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-        |extio_core2_example.m5f2|
+EXTIOUnit
 
 ## class EXTIOUnit
 
 ## Constructors
 
-<!-- .. class:: EXTIOUnit(i2c, address) -->
+### `class EXTIOUnit(i2c, address)`
 
     Initialize the PCA9554 device.
 
-    :param I2C i2c: An instance of the I2C bus to communicate with the device.
-    :param int address: The I2C address of the PCA9554 device (default is _PCA9554_DEFAULT_ADDRESS).
-
-    UIFLOW2:
+    - Parameter `i2c` (`I2C`): An instance of the I2C bus to communicate with the device.
+    - Parameter `address` (`int`): The I2C address of the PCA9554 device (default is _PCA9554_DEFAULT_ADDRESS).
 
 ## Methods
 
-<!-- .. method:: EXTIOUnit.set_port_mode(mode) -> None -->
+### `EXTIOUnit.set_port_mode(mode) -> None`
 
     Set the mode of the entire port.
 
-    :param Literal[0x00,0x01] mode: The mode to set, either PCA9554.IN (input, 0x00) or PCA9554.OUT (output, 0x01).
+    - Parameter `mode` (`Literal[0x00,0x01]`): The mode to set, either PCA9554.IN (input, 0x00) or PCA9554.OUT (output, 0x01).
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.set_pin_mode(id, mode) -> None -->
+### `EXTIOUnit.set_pin_mode(id, mode) -> None`
 
     Set the mode of a specific pin.
 
-    :param int id: The pin number (0-7).
-    :param Literal[0x00,0x01] mode: The mode to set, either PCA9554.IN (input, 0x00) or PCA9554.OUT (output, 0x01).
+    - Parameter `id` (`int`): The pin number (0-7).
+    - Parameter `mode` (`Literal[0x00,0x01]`): The mode to set, either PCA9554.IN (input, 0x00) or PCA9554.OUT (output, 0x01).
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.digit_write_port(value) -> None -->
+### `EXTIOUnit.digit_write_port(value) -> None`
 
     Set a value to the entire port.
 
-    :param int value: An 8-bit value to set to the port.
+    - Parameter `value` (`int`): An 8-bit value to set to the port.
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.digit_write(id, value) -> None -->
+### `EXTIOUnit.digit_write(id, value) -> None`
 
     Set a value to a specific pin.
 
-    :param int id: The pin number (0-7).
-    :param int value: The value to set, either 0 (low) or 1 (high).
+    - Parameter `id` (`int`): The pin number (0-7).
+    - Parameter `value` (`int`): The value to set, either 0 (low) or 1 (high).
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.digit_read_port() -> int -->
+### `EXTIOUnit.digit_read_port() -> int`
 
     Read the value from the entire port.
 
-    :return: An 8-bit value representing the state of the port.
+    - Returns: An 8-bit value representing the state of the port.
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.digit_read(id) -> int -->
+### `EXTIOUnit.digit_read(id) -> int`
 
     Read the value from a specific pin.
 
-    :param int id: The pin number (0-7).
-    :return: The value of the pin, either 0 (low) or 1 (high).
+    - Parameter `id` (`int`): The pin number (0-7).
+    - Returns: The value of the pin, either 0 (low) or 1 (high).
 
-    UIFLOW2:
-
-<!-- .. method:: EXTIOUnit.pin(id, mode, value) -> Pin -->
+### `EXTIOUnit.pin(id, mode, value) -> Pin`
 
     Provide a MicroPython-style interface for handling GPIO pins.
 
-    :param int id: The GPIO pin number to configure and control.
-    :param int mode: The pin mode, either `Pin.IN` (default) or `Pin.OUT`.
-    :param value: The initial value to set for the pin if in `OUT` mode. Use `None` for no initial value.
-    :return: A `Pin` object for further pin operations such as reading or writing values.
+    - Parameter `id` (`int`): The GPIO pin number to configure and control.
+    - Parameter `mode` (`int`): The pin mode, either `Pin.IN` (default) or `Pin.OUT`.
+    - Parameter `value`: The initial value to set for the pin if in `OUT` mode. Use `None` for no initial value.
+    - Returns: A `Pin` object for further pin operations such as reading or writing values.
 
 ## class Pin
 
 ## Constructors
 
-<!-- .. class:: Pin(port, id, mode, value) -->
-    :no-index:
+### `class Pin(port, id, mode, value)`
 
     Initialize the Pin object with specified parameters.
 
-    :param port: The port object controlling the pin.
-    :param id: The pin identifier (e.g., GPIO number).
-    :param int mode: The mode of the pin, either `Pin.IN` (default) or `Pin.OUT`.
-    :param value: Optional initial value for the pin, 0 or 1.
-
-    UIFLOW2:
+    - Parameter `port`: The port object controlling the pin.
+    - Parameter `id`: The pin identifier (e.g., GPIO number).
+    - Parameter `mode` (`int`): The mode of the pin, either `Pin.IN` (default) or `Pin.OUT`.
+    - Parameter `value`: Optional initial value for the pin, 0 or 1.
 
 ## Methods
 
-<!-- .. method:: Pin.init(mode, value) -->
+### `Pin.init(mode, value)`
 
     Reinitialize the pin with a new mode or value.
 
-    :param int mode: New mode for the pin, `Pin.IN` (default) or `Pin.OUT`.
-    :param value: New value for the pin, 0 or 1.
+    - Parameter `mode` (`int`): New mode for the pin, `Pin.IN` (default) or `Pin.OUT`.
+    - Parameter `value`: New value for the pin, 0 or 1.
 
-<!-- .. method:: Pin.value(args) -->
-    :no-index:
+### `Pin.value(args)`
 
     Get or set the digital value of the pin.
 
     If no arguments are passed, the method returns the current value of the pin.
     If one argument is passed, it sets the pin to the specified value.
 
-    :param args: Optional argument to set the pin value.
+    - Parameter `args`: Optional argument to set the pin value.
 
-<!-- .. method:: Pin.on() -->
-    :no-index:
+### `Pin.on()`
 
     Set the pin to a high state (1).
 
-<!-- .. method:: Pin.off() -->
-    :no-index:
+### `Pin.off()`
 
     Set the pin to a low state (0).

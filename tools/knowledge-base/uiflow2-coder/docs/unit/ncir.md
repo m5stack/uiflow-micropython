@@ -1,18 +1,12 @@
 # NCIR Unit
 
-<!-- .. include:: ../refs/unit.ncir.ref -->
-
 Support the following products:
 
-    |NCIR|
+    NCIR
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -49,40 +43,25 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |ncir_core_example.m5f2|
 
 ## class NCIRUnit
 
 ## Constructors
 
-<!-- .. class:: NCIRUnit(i2c) -->
+### `class NCIRUnit(i2c)`
 
     Create an NCIRUnit object.
 
     The parameters is:
-        - ``i2c`` Define the i2c pin.
-
-    UIFLOW2:
-
-<!-- .. _unit.NCIRUnit.Methods: -->
+        - `i2c` Define the i2c pin.
 
 ## Methods
 
-<!-- .. method:: ncir.get_ambient_temperature() -->
+### `ncir.get_ambient_temperature()`
 
     Obtain the ambient temperature.
 
-    UIFLOW2:
-
-<!-- .. method:: ncir.get_object_temperature() -->
+### `ncir.get_object_temperature()`
 
    Get the temperature of the measured object.
-
-    UIFLOW2:

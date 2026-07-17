@@ -1,66 +1,22 @@
 # NB-IoT2 Unit
 
-<!-- .. sku: U111-B -->
-
-<!-- .. include:: ../refs/unit.nbiot2.ref -->
-
-The ``NB-IOT2 Unit`` is a wireless communication module suitable for global Cat-NB frequency bands. It features an integrated SIM7028 communication module, utilizing serial communication (controlled via AT commands).
+The `NB-IOT2 Unit` is a wireless communication module suitable for global Cat-NB frequency bands. It features an integrated SIM7028 communication module, utilizing serial communication (controlled via AT commands).
 
 Support the following products:
 
-    |NB-IOT2Unit|
+    NB-IOT2Unit
 
-<!-- .. note:: -->
-
-    Please ensure that the device supports the NB-IoT frequency bands in your area before use.
-
-<!-- .. note:: -->
-
-    Please ensure that the firmware version of SIM7028 is greater than or equal to **2110B07SIM7028**.
-
-     can be used to check the firmware version.
-
-## UiFlow2 Example
-
-#### NBIoT HTTP Example
-
-Open the |cores3_unit_nbiot2_http_example.m5f2| project in UiFlow2.
-
-This example shows how to send HTTP request using the NBIoT2 Unit.
-
-click **Send** button to send HTTP request. Response data will be printed in the textarea.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
-#### MQTT Example
-
-Open the |cores3_unit_nbiot2_mqtt_example.m5f2| project in UiFlow2.
-
-This example shows how to send MQTT message using the NBIoT2 Unit.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
+> Note: Please ensure that the device supports the NB-IoT frequency bands in your area before use.
+> Note: Please ensure that the firmware version of SIM7028 is greater than or equal to **2110B07SIM7028**.
+>
+>  can be used to check the firmware version.
 ## MicroPython Example
 
 #### NBIoT HTTP Example
 
 This example shows how to send HTTP request using the NBIoT2 Unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -185,7 +141,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -196,13 +151,7 @@ Example output:
 
 This example shows how to send MQTT message using the NBIoT2 Unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -266,7 +215,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -277,25 +225,19 @@ Example output:
 
 #### NBIOT2Unit
 
-## NBIOT2Unit
+## `NBIOT2Unit`
 Create an NBIOT2Unit object.
 
-:param int id: The UART ID.
-:param port: A list or tuple containing the RX and TX pin numbers.
-:type port: list | tuple
-:param bool verbose: Whether to print debug information.
+- Parameter `id` (`int`): The UART ID.
+- Parameter `port`: A list or tuple containing the RX and TX pin numbers.
+- Type of `port`: list | tuple
+- Parameter `verbose` (`bool`): Whether to print debug information.
 
-UiFlow2 Code Block:
+```python
+from unit import NBIOT2Unit
 
-MicroPython Code Block:
+# Using UART ID 1 and pins (rx=16, tx=17)
+nbiot2 = NBIOT2Unit(1, port=(16, 17))
+```
 
-    .. code-block:: python
-
-        from unit import NBIOT2Unit
-
-        # Using UART ID 1 and pins (rx=16, tx=17)
-        nbiot2 = NBIOT2Unit(1, port=(16, 17))
-
-<!-- .. note:: -->
-
-        See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.
+> Note: See `NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.

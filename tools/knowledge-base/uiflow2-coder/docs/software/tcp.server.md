@@ -1,22 +1,6 @@
 # EasyTCPServer
 
-<!-- .. include:: ../refs/software.easysocket.tcp.server.ref -->
-
 EasyTCPServer and EasyTCPClientSocket provide a simple way to create TCP servers and manage client connections in an event-driven manner.
-
-## UiFlow2 Example
-
-#### simple server
-
-Open the |cores3_simple_server_example.m5f2| project in UiFlow2.
-
-This example creates a TCP server that listens on port 8000 and displays the received data on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -24,13 +8,7 @@ Example output:
 
 This example creates a TCP server that listens on port 8000 and displays the received data on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -306,144 +284,102 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
-## EasyTCPServer
+## `EasyTCPServer`
 Create an EasyTCPServer object.
 
-:param str host: The host address to bind to. Default is "0.0.0.0".
-:param int port: The port number to bind to. Default is 8000.
-:param int listen: The number of unaccepted connections that the system will allow before refusing new connections. Default is 3.
-:param bool verbose: Whether to print verbose output. Default is False.
+- Parameter `host` (`str`): The host address to bind to. Default is "0.0.0.0".
+- Parameter `port` (`int`): The port number to bind to. Default is 8000.
+- Parameter `listen` (`int`): The number of unaccepted connections that the system will allow before refusing new connections. Default is 3.
+- Parameter `verbose` (`bool`): Whether to print verbose output. Default is False.
 
-.. note::
+> Note: start service automatically when initialized.
+> Note: This class is non-blocking and event-driven. You need to call `check_event()` periodically
+> to process events.
 
-    start service automatically when initialized.
+```python
+from easysocket import EasyTCPServer
 
-.. note::
-
-    This class is non-blocking and event-driven. You need to call `check_event()` periodically
-    to process events.
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from easysocket import EasyTCPServer
-
-        server = EasyTCPServer(host="0.0.0.0", port=8080)
+server = EasyTCPServer(host="0.0.0.0", port=8080)
+```
 
 ### `start`
 Start the server.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        server.start()
+```python
+server.start()
+```
 
 ### `stop`
 Stop the server.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        server.stop()
+```python
+server.stop()
+```
 
 ### `close`
 
 ### `get_sessions`
 Get all connected client sockets.
 
-:return: A tuple of connected client sockets.
-:rtype: tuple[EasyTCPClientSocket]
+- Returns: A tuple of connected client sockets.
+- Return type: tuple[EasyTCPClientSocket]
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        sessions = server.get_sessions()
+```python
+sessions = server.get_sessions()
+```
 
 ### `on_client_connect`
 Set the callback function for client connection event.
 
-:param callback: The callback function. The callback function must accept a single argument,
-                 which is the connected client socket instance of :class:`EasyTCPClientSocket`.
+- Parameter `callback`: The callback function. The callback function must accept a single argument,
+                 which is the connected client socket instance of `EasyTCPClientSocket`.
 
-UiFlow2 Code Block:
+```python
+def on_client_connect_cb(client_socket):
+    print("Client connected")
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        def on_client_connect_cb(client_socket):
-            print("Client connected")
-
-        server.on_client_connect(on_client_connect_cb)
+server.on_client_connect(on_client_connect_cb)
+```
 
 ### `on_client_disconnect`
 Set the callback function for client disconnection event.
 
-:param callback: The callback function. The callback function must accept a single argument,
-                 which is the disconnected client socket instance of :class:`EasyTCPClientSocket`.
+- Parameter `callback`: The callback function. The callback function must accept a single argument,
+                 which is the disconnected client socket instance of `EasyTCPClientSocket`.
 
-UiFlow2 Code Block:
+```python
+def on_client_disconnect_cb(client_socket):
+    print("Client disconnected")
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        def on_client_disconnect_cb(client_socket):
-            print("Client disconnected")
-
-        server.on_client_disconnect(on_client_disconnect_cb)
+server.on_client_disconnect(on_client_disconnect_cb)
+```
 
 ### `on_data_received`
 Set the callback function for data received event.
 
-:param callback: The callback function. The callback function must accept a single argument,
-                 which is a tuple containing the client socket instance of :class:`EasyTCPClientSocket` and the received data (bytes).
+- Parameter `callback`: The callback function. The callback function must accept a single argument,
+                 which is a tuple containing the client socket instance of `EasyTCPClientSocket` and the received data (bytes).
 
-UiFlow2 Code Block:
+```python
+def on_data_received_cb(args):
+    client_socket, data = args
+    print("Received:", data)
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        def on_data_received_cb(args):
-            client_socket, data = args
-            print("Received:", data)
-
-        server.on_data_received(on_data_received_cb)
+server.on_data_received(on_data_received_cb)
+```
 
 ### `check_event`
 Check for events.
 
-:param int timeout: The timeout in milliseconds. Default is -1 (no timeout).
+- Parameter `timeout` (`int`): The timeout in milliseconds. Default is -1 (no timeout).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        server.check_event()
+```python
+server.check_event()
+```
 
 ### `setsockopt`
 
@@ -455,55 +391,40 @@ MicroPython Code Block:
 
 ### `getpeername`
 
-## EasyTCPClientSocket
+## `EasyTCPClientSocket`
 Create an EasyTCPClientSocket object.
 
-.. note::
-
-    this is a wrapper class for the socket object used in EasyTCPServer.
-
-:param socket sock: The socket object.
+> Note: this is a wrapper class for the socket object used in EasyTCPServer.
+- Parameter `sock` (`socket`): The socket object.
 
 ### `send`
 Send data to the client.
 
-:param bytes data: The data to send.
-:return: The number of bytes sent.
-:rtype: int
+- Parameter `data` (`bytes`): The data to send.
+- Returns: The number of bytes sent.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        client_socket.send(data)
+```python
+client_socket.send(data)
+```
 
 ### `sendall`
 Send all data to the client.
 
-:param bytes data: The data to send.
+- Parameter `data` (`bytes`): The data to send.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        client_socket.sendall(data)
+```python
+client_socket.sendall(data)
+```
 
 ### `recv`
 
 ### `close`
 Close the connection.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        client_socket.close()
+```python
+client_socket.close()
+```
 
 ### `settimeout`
 
@@ -512,29 +433,21 @@ MicroPython Code Block:
 ### `getsockname`
 Return the socket's own address.
 
-:return: The socket's own address. the format is (host, port).
-:rtype: tuple
+- Returns: The socket's own address. the format is (host, port).
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        # get local ip address
-        client_socket.getsockname()[0]
+```python
+# get local ip address
+client_socket.getsockname()[0]
+```
 
 ### `getpeername`
 Return the remote address to which the socket is connected.
 
-:return: The remote address. the format is (host, port).
-:rtype: tuple
+- Returns: The remote address. the format is (host, port).
+- Return type: tuple
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        # get remote ip address
-        client_socket.getpeername()[0]
+```python
+# get remote ip address
+client_socket.getpeername()[0]
+```

@@ -1,29 +1,10 @@
 # DCMotor Module
 
-<!-- .. sku: M021 -->
-
-<!-- .. include:: ../refs/module.dc_motor.ref -->
-
 This library is the driver for Module DCMotor, and the module communicates via I2C.
 
 Support the following products:
 
-    |Module DCMotor|
-
-## UiFlow2 Example
-
-#### Speed Control
-
-Open the |cores3_dc_motor_module_speed_control.m5f2| project in UiFlow2.
-
-This example demonstrates the use of the DCMotor Module to control the speed of a DC motor and display the motor's encoder value in real-time.
-The program automatically adjusts the motor speed, gradually increasing or decreasing the speed until it reaches the maximum or minimum value, then reverses the direction.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Module DCMotor
 
 ## MicroPython Example
 
@@ -32,13 +13,7 @@ Example output:
 This example demonstrates the use of the DCMotor Module to control the speed of a DC motor and display the motor's encoder value in real-time.
 The program automatically adjusts the motor speed, gradually increasing or decreasing the speed until it reaches the maximum or minimum value, then reverses the direction.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -126,80 +101,55 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### DCMotorModule
 
-## DCMotorModule
+## `DCMotorModule`
 Create an DCMotorModule object.
 
-UiFlow2 Code Block:
+```python
+from module import DCMotorModule
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from module import DCMotorModule
-
-        dcmotor_module = DCMotorModule()
+dcmotor_module = DCMotorModule()
+```
 
 ### `set_motor_speed`
 Set speed of motor.
 
-:param int id: port num, range: 1~4
-:param int speed: motor speed, range: -255~255
+- Parameter `id` (`int`): port num, range: 1~4
+- Parameter `speed` (`int`): motor speed, range: -255~255
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        dcmotor_module.set_motor_speed(id, speed)
+```python
+dcmotor_module.set_motor_speed(id, speed)
+```
 
 ### `set_motor_speed_percent`
 Set motor speed as a percentage.
 
-:param int id: port num, range: 1~4.
-:param float percent: motor speed percent, range: -100.0% ~ +100.0%.
+- Parameter `id` (`int`): port num, range: 1~4.
+- Parameter `percent` (`float`): motor speed percent, range: -100.0% ~ +100.0%.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        dcmotor_module.set_motor_speed_percent(id, percent)
+```python
+dcmotor_module.set_motor_speed_percent(id, percent)
+```
 
 ### `get_encoder`
 Get encoder count.
 
-:param int id: port num, range: 1~4.
-:returns: encoder count.
-:rtype: int
+- Parameter `id` (`int`): port num, range: 1~4.
+- Returns: encoder count.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        dcmotor_module.get_encoder()
+```python
+dcmotor_module.get_encoder()
+```
 
 ### `clear_encoder`
 Clear encoder value.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        dcmotor_module.clear_encoder()
+```python
+dcmotor_module.clear_encoder()
+```

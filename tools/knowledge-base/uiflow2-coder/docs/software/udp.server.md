@@ -1,22 +1,6 @@
 # EasyUDPServer
 
-<!-- .. include:: ../refs/software.easysocket.udp.server.ref -->
-
 EasyUDPServer and EasyUDPClientSocket provide a simple way to create UDP servers and manage client connections in an event-driven manner.
-
-## UiFlow2 Example
-
-#### simple server
-
-Open the |udp_server_core2_example.m5f2| project in UiFlow2.
-
-This example creates a UDP server that listens on port 8000 and displays the received data on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -24,13 +8,7 @@ Example output:
 
 This example creates a UDP server that listens on port 8000 and displays the received data on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -103,105 +81,75 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
-## EasyUDPServer
+## `EasyUDPServer`
 Create an EasyUDPServer object.
 
-:param str host: The host address to bind to.
-:param int port: The port number to bind to.
-:param int mode: The UDP mode (unicast, broadcast, multicast). Default is unicast.
-:param str multicast_group: The multicast group address (required if mode is multicast).
-:param bool verbose: Whether to print verbose output.
+- Parameter `host` (`str`): The host address to bind to.
+- Parameter `port` (`int`): The port number to bind to.
+- Parameter `mode` (`int`): The UDP mode (unicast, broadcast, multicast). Default is unicast.
+- Parameter `multicast_group` (`str`): The multicast group address (required if mode is multicast).
+- Parameter `verbose` (`bool`): Whether to print verbose output.
 
-.. note::
+> Note: start service automatically when initialized.
+> Note: This class is non-blocking and event-driven. You need to call `check_event()` periodically to process events.
 
-    start service automatically when initialized.
+```python
+from easysocket import EasyUDPServer
 
-.. note::
-
-    This class is non-blocking and event-driven. You need to call `check_event()` periodically to process events.
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from easysocket import EasyUDPServer
-
-        udp_server = EasyUDPServer(host="0.0.0.0", port=8080)
+udp_server = EasyUDPServer(host="0.0.0.0", port=8080)
+```
 
 ### `start`
 Start the server.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        udp_server.start()
+```python
+udp_server.start()
+```
 
 ### `stop`
 Stop the server.
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        udp_server.stop()
+```python
+udp_server.stop()
+```
 
 ### `close`
 
 ### `on_data_received`
 Set the callback function for data received event.
 
-:param callback: The callback function.
+- Parameter `callback`: The callback function.
 
-UiFlow2 Code Block:
+```python
+def on_data_received_cb(args):
+    client, address, data = args
+    print("Received:", data, "from", address)
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        def on_data_received_cb(args):
-            client, address, data = args
-            print("Received:", data, "from", address)
-
-        udp_server.on_data_received(on_data_received_cb)
+udp_server.on_data_received(on_data_received_cb)
+```
 
 ### `check_event`
 Check for events.
 
-:param int timeout: The timeout in milliseconds. Default is -1 (no timeout).
+- Parameter `timeout` (`int`): The timeout in milliseconds. Default is -1 (no timeout).
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        udp_server.check_event()
+```python
+udp_server.check_event()
+```
 
 ### `sendto`
 Send data to the remote server.
 
-:param bytes data: The data to send.
-:param tuple address: The (host, port) tuple to send data to.
-:return: The number of bytes sent.
+- Parameter `data` (`bytes`): The data to send.
+- Parameter `address` (`tuple`): The (host, port) tuple to send data to.
+- Returns: The number of bytes sent.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        udp_server.sendto(b"Hello", ("192.168.1.100", 8080))
+```python
+udp_server.sendto(b"Hello", ("192.168.1.100", 8080))
+```
 
 ### `setsockopt`

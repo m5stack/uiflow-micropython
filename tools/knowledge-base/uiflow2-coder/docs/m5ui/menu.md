@@ -1,24 +1,7 @@
-<!-- .. currentmodule:: m5ui -->
 
 # M5Menu
 
-<!-- .. include:: ../refs/m5ui.menu.ref -->
-
 M5Menu is a widget that can be used to create multi-level menus in the user interface.
-
-## UiFlow2 Example
-
-#### menu event
-
-Open the |menu_core2_example.m5f2| project in UiFlow2.
-
-This example creates a multi-level menus.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -26,13 +9,7 @@ Example output:
 
 This example creates a multi-level menus.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -187,142 +164,106 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### M5Menu
 
-## M5Menu
+## `M5Menu`
 Create a list object.
 
-:param int x: The x position of the menu.
-:param int y: The y position of the menu.
-:param int w: The width of the menu.
-:param int h: The height of the menu.
-:param str page_name: The name of the main page of the menu.
-:param lv.obj parent: The parent object to attach the menu to. If not specified, the menu will be attached to the default screen.
-
-UiFlow2 Code Block:
+- Parameter `x` (`int`): The x position of the menu.
+- Parameter `y` (`int`): The y position of the menu.
+- Parameter `w` (`int`): The width of the menu.
+- Parameter `h` (`int`): The height of the menu.
+- Parameter `page_name` (`str`): The name of the main page of the menu.
+- Parameter `parent` (`lv.obj`): The parent object to attach the menu to. If not specified, the menu will be attached to the default screen.
 
     None
 
-MicroPython Code Block:
+```python
+from m5ui import M5Menu
+import lvgl as lv
 
-    .. code-block:: python
-
-        from m5ui import M5Menu
-        import lvgl as lv
-
-        m5ui.init()
-        menu0 = M5Menu(x=120, y=80, w=60, h=30, parent=page0)
+m5ui.init()
+menu0 = M5Menu(x=120, y=80, w=60, h=30, parent=page0)
+```
 
 ### `add_label`
 Add a label to the menu.
 
-:param str text: The text to display on the label.
-:param int text_c: The text color of the label.
-:param int bg_c: The background color of the label.
-:param int bg_opa: The background opacity of the label.
-:param lv.font_t font: The font of the label.
-:param lv.obj parent: The parent object to attach the label to. If not specified, the label will be attached to the main page of the menu.
-:return: The created label object.
-:rtype: :ref:`m5ui.M5Label <m5ui.M5Label>`
+- Parameter `text` (`str`): The text to display on the label.
+- Parameter `text_c` (`int`): The text color of the label.
+- Parameter `bg_c` (`int`): The background color of the label.
+- Parameter `bg_opa` (`int`): The background opacity of the label.
+- Parameter `font` (`lv.font_t`): The font of the label.
+- Parameter `parent` (`lv.obj`): The parent object to attach the label to. If not specified, the label will be attached to the main page of the menu.
+- Returns: The created label object.
+- Return type: `m5ui.M5Label <m5ui.M5Label>`
 
- UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        label0 = menu0.add_label("Hello, World!", text_c=0x212121, bg_c=0xFFFFFF, bg_opa=255, font=lv.font_montserrat_14, parent=menu0.main_page)
+```python
+label0 = menu0.add_label("Hello, World!", text_c=0x212121, bg_c=0xFFFFFF, bg_opa=255, font=lv.font_montserrat_14, parent=menu0.main_page)
+```
 
 ### `add_switch`
 Add a switch to the menu.
 
-:param str text: The text to display next to the switch.
-:param int w: The width of the switch.
-:param int h: The height of the switch.
-:param int bg_c: The background color of the switch when unchecked.
-:param int bg_c_checked: The background color of the switch when checked.
-:param int circle_c: The color of the switch circle.
-:param lv.obj parent: The parent object to attach the switch to. If not specified, the switch will be attached to the main page of the menu.
-:return: The created switch object.
-:rtype: :ref:`m5ui.M5Switch <m5ui.M5Switch>`
+- Parameter `text` (`str`): The text to display next to the switch.
+- Parameter `w` (`int`): The width of the switch.
+- Parameter `h` (`int`): The height of the switch.
+- Parameter `bg_c` (`int`): The background color of the switch when unchecked.
+- Parameter `bg_c_checked` (`int`): The background color of the switch when checked.
+- Parameter `circle_c` (`int`): The color of the switch circle.
+- Parameter `parent` (`lv.obj`): The parent object to attach the switch to. If not specified, the switch will be attached to the main page of the menu.
+- Returns: The created switch object.
+- Return type: `m5ui.M5Switch <m5ui.M5Switch>`
 
-UiFlow2 Code Block:
+```python
+switch_0 = menu0.add_switch("Switch 1", w=50, h=20, bg_c=0xE7E3E7, bg_c_checked=0x0288FB, circle_c=0xFFFFFF, parent=menu0.main_page)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        switch_0 = menu0.add_switch("Switch 1", w=50, h=20, bg_c=0xE7E3E7, bg_c_checked=0x0288FB, circle_c=0xFFFFFF, parent=menu0.main_page)
-
-<!-- .. py:method:: set_page(page) -->
+### `set_page(page)`
 
         Set main page for the menu.
 
-        :param lv.obj page: The main page object.
+        - Parameter `page` (`lv.obj`): The main page object.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                menu0.set_page(menu0.main_page)
-
-<!-- .. py:method:: set_mode_header(mode) -->
+```python
+menu0.set_page(menu0.main_page)
+```
+### `set_mode_header(mode)`
 
         Set the mode header for the menu.
 
-        :param int mode: The mode header text.
+        - Parameter `mode` (`int`): The mode header text.
 
             Options:
 
-                - ``lv.menu.HEADER.TOP_FIXED``
-                - ``lv.menu.HEADER.TOP_UNFIXED``
-                - ``lv.menu.HEADER.BOTTOM_FIXED``
+                - `lv.menu.HEADER.TOP_FIXED`
+                - `lv.menu.HEADER.TOP_UNFIXED`
+                - `lv.menu.HEADER.BOTTOM_FIXED`
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                menu0.set_mode_header(lv.menu.HEADER.TOP_FIXED)
-
-<!-- .. py:method:: set_pos(x, y) -->
+```python
+menu0.set_mode_header(lv.menu.HEADER.TOP_FIXED)
+```
+### `set_pos(x, y)`
 
         Set the position of the menu.
 
-        :param int x: The x-coordinate of the menu.
-        :param int y: The y-coordinate of the menu.
+        - Parameter `x` (`int`): The x-coordinate of the menu.
+        - Parameter `y` (`int`): The y-coordinate of the menu.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                menu0.set_pos(100, 100)
-
-<!-- .. py:method:: set_size(width, height) -->
+```python
+menu0.set_pos(100, 100)
+```
+### `set_size(width, height)`
 
         Set the size of the menu.
 
-        :param int width: The width of the menu.
-        :param int height: The height of the menu.
+        - Parameter `width` (`int`): The width of the menu.
+        - Parameter `height` (`int`): The height of the menu.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                menu0.set_size(100, 50)
+```python
+menu0.set_size(100, 50)
+```

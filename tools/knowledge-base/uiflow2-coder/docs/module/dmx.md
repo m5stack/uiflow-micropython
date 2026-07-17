@@ -1,20 +1,14 @@
 # DMX512 Module
 
-<!-- .. include:: ../refs/module.dmx.ref -->
-
 DMX-Base is a functional base specially designed for DMX-512 data transmission scenarios, communicating and enabling control with M5 host through serial port, equipped with XLR-5 and XLR-3 male and female interfaces, convenient for users to connect DMX devices with different interfaces, in addition, the module has HT3.96 pitch 485 interface to facilitate connection to Expansion 485 devices.
 
 Support the following products:
 
-|dmx|
+dmx
 
 Micropython Example Send Data:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -70,16 +64,11 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Micropython Example Receive Data:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -135,97 +124,66 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Master Example:
-
-UIFLOW2 Slave Example:
-
-<!-- .. only:: builder_html -->
-
-    |dmx512_core2_send_example.m5f2|
-
-    |dmx512_core2_receive_example.m5f2|
 
 ## class DMX512Module
 
 ## Constructors
 
-<!-- .. class:: DMX512Module(id, mode = DMX_MASTER) -->
+### `class DMX512Module(id, mode = DMX_MASTER)`
 
     Initializes the DMX512 module with a specified UART ID and port pins.
 
-    :param Literal[0,1,2] id: UART device ID(DMX port id).
-    :param int mode: Operating mode (1 for Master, 2 for Slave).
-
-    UIFLOW2:
+    - Parameter `id` (`Literal[0,1,2]`): UART device ID(DMX port id).
+    - Parameter `mode` (`int`): Operating mode (1 for Master, 2 for Slave).
 
 ## Methods
 
-<!-- .. method:: DMX512Module.dmx_init(mode) -> None -->
+### `DMX512Module.dmx_init(mode) -> None`
 
     Initializes the DMX512 communication with UART pins and mode.
 
-    :param  mode: Operating mode (1 for Master, 2 for Slave).
+    - Parameter `mode`: Operating mode (1 for Master, 2 for Slave).
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.deinit() -> None -->
+### `DMX512Module.deinit() -> None`
 
     Deinitializes the DMX512 module and stops any ongoing operations.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.write_data(channel, data) -> None -->
+### `DMX512Module.write_data(channel, data) -> None`
 
     Updates the data for a specified DMX channel. Data is sent on the next update cycle.
 
-    :param  channel: DMX channel number (1-512).
-    :param  data: Data value to be sent (0-255).
+    - Parameter `channel`: DMX channel number (1-512).
+    - Parameter `data`: Data value to be sent (0-255).
         @raises ValueError if the channel number is out of range.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.clear_buffer() -> None -->
+### `DMX512Module.clear_buffer() -> None`
 
     Clears the DMX buffer and resets the data.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.read_data(channel) -> int -->
+### `DMX512Module.read_data(channel) -> int`
 
     Reads data from a specified DMX channel in Slave mode.
 
-    :param  channel: DMX channel number (1-512).
+    - Parameter `channel`: DMX channel number (1-512).
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512.receive_none_block() -> None -->
-    :no-index:
+### `DMX512.receive_none_block() -> None`
 
     Starts non-blocking data reception for the specified channels with associated callbacks.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.attach_channel(channel, callback) -> None -->
+### `DMX512Module.attach_channel(channel, callback) -> None`
 
     Attaches a callback function to a specified DMX channel.
 
-    :param channel: DMX channel number (1-512) to attach the callback to.
-    :param callback: The function to be called when data changes on the specified channel.
+    - Parameter `channel`: DMX channel number (1-512) to attach the callback to.
+    - Parameter `callback`: The function to be called when data changes on the specified channel.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512.stop_receive() -> None -->
-    :no-index:
+### `DMX512.stop_receive() -> None`
 
     Stops the non-blocking data reception task.
 
-    UIFLOW2:
-
-<!-- .. method:: DMX512Module.detach_channel(channel) -> None -->
+### `DMX512Module.detach_channel(channel) -> None`
 
     Detaches the callback function from a specified DMX channel.
 
-    :param channel: DMX channel number (1-512) to detach the callback from.
+    - Parameter `channel`: DMX channel number (1-512) to detach the callback from.

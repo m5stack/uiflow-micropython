@@ -1,22 +1,15 @@
 
 # Weight Unit
 
-<!-- .. sku:U030 -->
-<!-- .. include:: ../refs/unit.weight.ref -->
-
 Weight unit integrates a HX711 24 bits A/D chip that is specifically designed for electronic weighing device.
 
 Support the following products:
 
-|WEIGHTUnit|
+WEIGHTUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -60,65 +53,44 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |weight_cores3_example.m5f2|
 
 ## class WEIGHTUnit
 
 ## Constructors
 
-<!-- .. class:: WEIGHTUnit(port) -->
+### `class WEIGHTUnit(port)`
 
     Initialize the WEIGHTUnit with specified port pins.
 
-    :param  port: A tuple containing data and clock pin numbers.
-
-    UIFLOW2:
+    - Parameter `port`: A tuple containing data and clock pin numbers.
 
 ## Methods
 
-<!-- .. method:: WEIGHTUnit.get_raw_weight() -->
+### `WEIGHTUnit.get_raw_weight()`
 
     Read the raw weight value from the HX711.
 
-    UIFLOW2:
-
-<!-- .. method:: WEIGHTUnit.get_scale_weight() -->
+### `WEIGHTUnit.get_scale_weight()`
 
     Get the scaled weight value based on calibration.
 
-    UIFLOW2:
-
-<!-- .. method:: WEIGHTUnit.set_tare() -->
+### `WEIGHTUnit.set_tare()`
 
     Set the tare weight to zero out the scale.
 
-    UIFLOW2:
-
-<!-- .. method:: WEIGHTUnit.set_calibrate_scale(weight) -->
+### `WEIGHTUnit.set_calibrate_scale(weight)`
 
     Calibrate the scale with a known weight.
 
-    :param  weight: The known weight used for calibration.
+    - Parameter `weight`: The known weight used for calibration.
 
-    UIFLOW2:
-
-<!-- .. method:: WEIGHTUnit.is_ready_wait() -->
+### `WEIGHTUnit.is_ready_wait()`
 
     Check if the HX711 is ready to provide data.
 
-    UIFLOW2:
-
-<!-- .. method:: WEIGHTUnit.set_channel(chan) -->
+### `WEIGHTUnit.set_channel(chan)`
 
     Set the channel for the HX711.
 
-    :param int chan: The channel to set (1, 2, or 3).
-
-    UIFLOW2:
+    - Parameter `chan` (`int`): The channel to set (1, 2, or 3).

@@ -1,22 +1,15 @@
 
 # ByteSwitch Unit
 
-<!-- .. sku:U191 -->
-<!-- .. include:: ../refs/unit.byteswitch.ref -->
-
 Unit ByteSwitch is an 8-switch touch switch input unit equipped with 8 switch inputs and 9 WS2812C RGB LEDs. It uses the STM32 microcontroller and supports I2C communication. The board includes two Port A interfaces and supports cascading multiple Unit ByteSwitch modules, making it suitable for complex systems. It can achieve switch input detection and dynamic lighting feedback, ideal for smart home control, gaming devices, educational platforms, industrial status displays, and interactive exhibitions.
 
 Support the following products:
 
-|ByteSwitchUnit|
+ByteSwitchUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -102,179 +95,138 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |byteswitch_cores3_example.m5f2|
 
 ## class ByteSwitchUnit
 
 ## Constructors
 
-<!-- .. class:: ByteSwitchUnit(i2c, address) -->
+### `class ByteSwitchUnit(i2c, address)`
 
     Initialize the ByteSwitchUnit with a specified I2C address.
 
-    :param I2C i2c: The I2C interface instance for communication.
-    :param int address: The I2C address of the ByteSwitchUnit, default is 0x46.
-
-    UIFLOW2:
+    - Parameter `i2c` (`I2C`): The I2C interface instance for communication.
+    - Parameter `address` (`int`): The I2C address of the ByteSwitchUnit, default is 0x46.
 
 ## Methods
 
-<!-- .. method:: ByteSwitchUnit.get_byte_switch_state() -> int -->
+### `ByteSwitchUnit.get_byte_switch_state() -> int`
 
     Get the status of all switchs as an integer, where each bit represents the state of each switch.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_switch_state(num) -> bool -->
+### `ByteSwitchUnit.get_switch_state(num) -> bool`
 
     Get the state of a specific switch.
 
-    :param int num: The index of the switch (0-7).
+    - Parameter `num` (`int`): The index of the switch (0-7).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_led_show_mode() -> bool -->
+### `ByteSwitchUnit.get_led_show_mode() -> bool`
 
     Get the current LED show mode.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_led_show_mode(mode) -->
+### `ByteSwitchUnit.set_led_show_mode(mode)`
 
     Set the LED show mode.
 
-    :param int mode: The LED show mode to set.
+    - Parameter `mode` (`int`): The LED show mode to set.
 
         Options:
-            - ``BYTESWITCH_LED_USER_MODE``: 0
-            - ``BYTESWITCH_LED_SYS_MODE``: 1
+            - `BYTESWITCH_LED_USER_MODE`: 0
+            - `BYTESWITCH_LED_SYS_MODE`: 1
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_led_brightness(num, brightness) -->
+### `ByteSwitchUnit.set_led_brightness(num, brightness)`
 
     Set the brightness of a specific LED.
 
-    :param int num: The index of the LED (0-7).
-    :param int brightness: The brightness level (0-255).
+    - Parameter `num` (`int`): The index of the LED (0-7).
+    - Parameter `brightness` (`int`): The brightness level (0-255).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_led_brightness(num) -> int -->
+### `ByteSwitchUnit.get_led_brightness(num) -> int`
 
     Get the brightness of a specific LED.
 
-    :param int num: The index of the LED (0-7).
+    - Parameter `num` (`int`): The index of the LED (0-7).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_led_color(num, color, led_show_mode, btn_is_pressed) -->
+### `ByteSwitchUnit.set_led_color(num, color, led_show_mode, btn_is_pressed)`
 
     Set the color of a specific LED.
 
-    :param int num: The index of the LED (0-7).
-    :param int color: The RGB888 color value to set.
-    :param int led_show_mode: The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
-    :param bool btn_is_pressed: Whether the switch is pressed (affects color in SYS mode).
+    - Parameter `num` (`int`): The index of the LED (0-7).
+    - Parameter `color` (`int`): The RGB888 color value to set.
+    - Parameter `led_show_mode` (`int`): The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
+    - Parameter `btn_is_pressed` (`bool`): Whether the switch is pressed (affects color in SYS mode).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_led_color(num, led_show_mode, btn_is_pressed) -> int -->
+### `ByteSwitchUnit.get_led_color(num, led_show_mode, btn_is_pressed) -> int`
 
     Get the color of a specific LED.
 
-    :param int num: The index of the LED (0-7).
-    :param int led_show_mode: The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
-    :param bool btn_is_pressed: Whether the switch is pressed (affects color in SYS mode).
+    - Parameter `num` (`int`): The index of the LED (0-7).
+    - Parameter `led_show_mode` (`int`): The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
+    - Parameter `btn_is_pressed` (`bool`): Whether the switch is pressed (affects color in SYS mode).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_indicator_brightness(brightness) -->
+### `ByteSwitchUnit.set_indicator_brightness(brightness)`
 
     Set the brightness of the indicator LED.
 
-    :param int brightness: The brightness level (0-255).
+    - Parameter `brightness` (`int`): The brightness level (0-255).
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_indicator_brightness() -> int -->
+### `ByteSwitchUnit.get_indicator_brightness() -> int`
 
     Get the brightness of the indicator LED.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_indicator_color(color) -->
+### `ByteSwitchUnit.set_indicator_color(color)`
 
     Set the color of the indicator LED in RGB888 format.
 
-    :param int color: The RGB888 color value to set.
+    - Parameter `color` (`int`): The RGB888 color value to set.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_indicator_color() -> int -->
+### `ByteSwitchUnit.get_indicator_color() -> int`
 
     Get the color of the indicator LED in RGB888 format.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.rgb888_to_rgb233(color) -->
+### `ByteSwitchUnit.rgb888_to_rgb233(color)`
 
     Convert an RGB888 color value to RGB233 format.
 
-    :param int color: The RGB888 color value as a 32-bit integer.
+    - Parameter `color` (`int`): The RGB888 color value as a 32-bit integer.
 
-<!-- .. method:: ByteSwitchUnit.set_rgb233(num, color) -->
+### `ByteSwitchUnit.set_rgb233(num, color)`
 
     Set the color of a specific LED in RGB233 format.
 
-    :param int num: The index of the LED (0-7).
-    :param int color: The RGB233 color value to set.
+    - Parameter `num` (`int`): The index of the LED (0-7).
+    - Parameter `color` (`int`): The RGB233 color value to set.
 
-<!-- .. method:: ByteSwitchUnit.get_rgb233(num) -->
+### `ByteSwitchUnit.get_rgb233(num)`
 
     Get the color of a specific LED in RGB233 format.
 
-    :param int num: The index of the LED (0-7).
+    - Parameter `num` (`int`): The index of the LED (0-7).
 
-<!-- .. method:: ByteSwitchUnit.set_irq_enable(enable) -->
+### `ByteSwitchUnit.set_irq_enable(enable)`
 
     Enable or disable IRQ functionality.
 
-    :param bool enable: Whether to enable (True) or disable (False) IRQ.
+    - Parameter `enable` (`bool`): Whether to enable (True) or disable (False) IRQ.
 
-<!-- .. method:: ByteSwitchUnit.get_irq_enable() -->
+### `ByteSwitchUnit.get_irq_enable()`
 
     Get the current IRQ enable status.
 
-<!-- .. method:: ByteSwitchUnit.save_to_flash() -->
+### `ByteSwitchUnit.save_to_flash()`
 
     Save the current user settings to flash.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_firmware_version() -> int -->
+### `ByteSwitchUnit.get_firmware_version() -> int`
 
     Get the firmware version of the ByteSwitchUnit.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.set_i2c_address(new_addr) -->
+### `ByteSwitchUnit.set_i2c_address(new_addr)`
 
     Set a new I2C address for the ByteSwitchUnit.
 
-    :param int new_addr: The new I2C address to set. Must be in the range 0x08 to 0x77.
+    - Parameter `new_addr` (`int`): The new I2C address to set. Must be in the range 0x08 to 0x77.
 
-    UIFLOW2:
-
-<!-- .. method:: ByteSwitchUnit.get_i2c_address() -> int -->
+### `ByteSwitchUnit.get_i2c_address() -> int`
 
     Get the current I2C address of the ByteSwitchUnit.
-
-    UIFLOW2:

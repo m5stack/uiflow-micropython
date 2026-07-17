@@ -1,19 +1,13 @@
 
 # AIN4-20mA Unit
 
-<!-- .. include:: ../refs/unit.ain4.ref -->
-
 The following products are supported:
 
-|AIN4_20MAUnit|
+AIN4_20MAUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -58,74 +52,53 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |ain4_core2_example.m5f2|
 
 ## class AIN4_20MAUnit
 
 ## Constructors
 
-<!-- .. class:: AIN4_20MAUnit(i2c, address) -->
+### `class AIN4_20MAUnit(i2c, address)`
 
     Init I2C port & UNIT AIN 4-20mA I2C Address.
 
-    :param I2C i2c: I2C port to use.
-    :param int|list|tuple address: I2C address of the Unit AIN4-20mA.
-
-    UIFLOW2:
+    - Parameter `i2c` (`I2C`): I2C port to use.
+    - Parameter `address` (`intlisttuple`): I2C address of the Unit AIN4-20mA.
 
 ## Methods
 
-<!-- .. method:: AIN4_20MAUnit.get_adc_raw_value() -> int -->
+### `AIN4_20MAUnit.get_adc_raw_value() -> int`
 
     Retrieves the raw ADC value from the channel.
 
-    :return: Raw ADC value as a 12-bit integer.
+    - Returns: Raw ADC value as a 12-bit integer.
 
-    UIFLOW2:
-
-<!-- .. method:: AIN4_20MAUnit.get_current_value() -> float -->
+### `AIN4_20MAUnit.get_current_value() -> float`
 
     Retrieves the current value (in mA) from the channel.
 
-    :return: Current value in milliamperes (mA).
+    - Returns: Current value in milliamperes (mA).
 
-    UIFLOW2:
-
-<!-- .. method:: AIN4_20MAUnit.set_cal_current(val) -->
+### `AIN4_20MAUnit.set_cal_current(val)`
 
     Sets the calibration current for the specified channel.
 
-    :param int val: The calibration current value, ranging from 4 to 20 mA.
+    - Parameter `val` (`int`): The calibration current value, ranging from 4 to 20 mA.
 
-    UIFLOW2:
-
-<!-- .. method:: AIN4_20MAUnit.get_firmware_version() -> int -->
+### `AIN4_20MAUnit.get_firmware_version() -> int`
 
     Retrieves the firmware version of the AIN 4-20mA unit.
 
-    :return: Firmware version.
+    - Returns: Firmware version.
 
-    UIFLOW2:
-
-<!-- .. method:: AIN4_20MAUnit.get_i2c_address() -> str -->
+### `AIN4_20MAUnit.get_i2c_address() -> str`
 
     Retrieves the current I2C address of the AIN 4-20mA unit.
 
-    :return: I2C address as a string in hexadecimal format.
+    - Returns: I2C address as a string in hexadecimal format.
 
-    UIFLOW2:
-
-<!-- .. method:: AIN4_20MAUnit.set_i2c_address(addr) -->
+### `AIN4_20MAUnit.set_i2c_address(addr)`
 
     Sets a new I2C address for the AIN 4-20mA unit.
 
-    :param int addr: The new I2C address, must be between 0x08 and 0x77.
-
-    UIFLOW2:
+    - Parameter `addr` (`int`): The new I2C address, must be between 0x08 and 0x77.

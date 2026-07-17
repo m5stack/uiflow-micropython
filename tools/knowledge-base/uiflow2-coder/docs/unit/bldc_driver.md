@@ -1,28 +1,10 @@
 # BLDCDriver Unit
 
-<!-- .. sku: U181 -->
-
-<!-- .. include:: ../refs/unit.bldc_driver.ref -->
-
 This library is the driver for Unit BLDCDriver.
 
 Support the following products:
 
-    |Unit BLDCDriver|
-
-## UiFlow2 Example
-
-#### Motor speed control
-
-Open the |cores3_bldc_driver_example.m5f2| project in UiFlow2.
-
-The example program gradually increases the motor speed and then stops the motor.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Unit BLDCDriver
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 The example program gradually increases the motor speed and then stops the motor.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -91,392 +67,277 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### BLDCDriverUnit
 
-## BLDCDriverUnit
+## `BLDCDriverUnit`
 Create an BLDCDriverUnit object.
 
-:param i2c: I2C port.
-:type i2c: machine.I2C | PAHUBUnit
-:param address: BLDCDriverUnit Slave Address.
-:type address: int | list | tuple
+- Parameter `i2c`: I2C port.
+- Type of `i2c`: machine.I2C | PAHUBUnit
+- Parameter `address`: BLDCDriverUnit Slave Address.
+- Type of `address`: int  list  tuple
 
-UiFlow2 Code Block:
+```python
+from unit import BLDCDriverUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import BLDCDriverUnit
-
-        unit_bldcdriver_0 = BLDCDriverUnit(i2c0, 0x65)
+unit_bldcdriver_0 = BLDCDriverUnit(i2c0, 0x65)
+```
 
 ### `get_current_mode`
 Get the current mode setting.
 
-:returns: current mode.
-:rtype: int
+- Returns: current mode.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_current_mode()
+```python
+unit_bldcdriver_0.get_current_mode()
+```
 
 ### `set_mode`
 Set the mode setting.
 
-:param: int mode: 0 mean open loop, 1 mean close loop.
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_mode(mode)
+```python
+unit_bldcdriver_0.set_mode(mode)
+```
 
 ### `get_motor_current_direction`
 Get the current direction setting.
 
-:returns: current direction.
-:rtype: int
+- Returns: current direction.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_motor_current_direction()
+```python
+unit_bldcdriver_0.get_motor_current_direction()
+```
 
 ### `set_direction`
 Set the direction.
 
-:param int model: 0 forward, 1 backward.
+- Parameter `model` (`int`): 0 forward, 1 backward.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_direction()
+```python
+unit_bldcdriver_0.set_direction()
+```
 
 ### `get_motor_current_model`
 Get the motor current model setting.
 
-:returns: motor current model.
-:rtype: int
+- Returns: motor current model.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_motor_current_model()
+```python
+unit_bldcdriver_0.get_motor_current_model()
+```
 
 ### `set_motor_model`
 Set the motor model setting.
 
-:param int model: 0 mean low speed, 1 mean high speed.
+- Parameter `model` (`int`): 0 mean low speed, 1 mean high speed.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_motor_model(model)
+```python
+unit_bldcdriver_0.set_motor_model(model)
+```
 
 ### `get_motor_pole_pairs`
 Get the pole pairs setting.
 
-:returns: motor pole pairs.
-:rtype: int
+- Returns: motor pole pairs.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_motor_pole_pairs()
+```python
+unit_bldcdriver_0.get_motor_pole_pairs()
+```
 
 ### `set_pole_pairs`
 Set pole pairs.
 
-:param int pole: pole pairs, range: 0~255.
+- Parameter `pole` (`int`): pole pairs, range: 0~255.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_pole_pairs(pole)
+```python
+unit_bldcdriver_0.set_pole_pairs(pole)
+```
 
 ### `get_motor_status`
 Get motor status.
 
-:returns: motor status.
-:rtype: int
+- Returns: motor status.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_motor_status()
+```python
+unit_bldcdriver_0.get_motor_status()
+```
 
 ### `get_open_loop_pwm`
 Get the open loop pwm.
 
-:returns: open loop pwm.
-:rtype: int
+- Returns: open loop pwm.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_open_loop_pwm()
+```python
+unit_bldcdriver_0.get_open_loop_pwm()
+```
 
 ### `set_open_loop_pwm`
 Set the open loop pwm.
 
-:param int pwm:  open loop pwm., range: 0~2047.
+- Parameter `pwm` (`int`): open loop pwm., range: 0~2047.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_open_loop_pwm(pwm)
+```python
+unit_bldcdriver_0.set_open_loop_pwm(pwm)
+```
 
 ### `get_read_back_rpm_float`
 Get the read back rpm in float.
 
-:returns: read back rpm.
-:rtype: float
+- Returns: read back rpm.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_rpm_float()
+```python
+unit_bldcdriver_0.get_read_back_rpm_float()
+```
 
 ### `get_read_back_rpm_int`
 Get the read back rpm in int.
 
-:returns: read back rpm.
-:rtype: int
+- Returns: read back rpm.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_rpm_int()
+```python
+unit_bldcdriver_0.get_read_back_rpm_int()
+```
 
 ### `get_read_back_rpm_str`
 Get the read back rpm in str.
 
-:returns: read back rpm.
-:rtype: str
+- Returns: read back rpm.
+- Return type: str
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_rpm_str()
+```python
+unit_bldcdriver_0.get_read_back_rpm_str()
+```
 
 ### `get_read_back_freq_float`
 Get the read back frequency in float.
 
-:returns: read back frequency.
-:rtype: float
+- Returns: read back frequency.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_freq_float()
+```python
+unit_bldcdriver_0.get_read_back_freq_float()
+```
 
 ### `get_read_back_freq_int`
 Get the read back frequency in int.
 
-:returns: read back frequency.
-:rtype: int
+- Returns: read back frequency.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_freq_int()
+```python
+unit_bldcdriver_0.get_read_back_freq_int()
+```
 
 ### `get_read_back_freq_str`
 Get the read back frequency in str.
 
-:returns: read back frequency.
-:rtype: str
+- Returns: read back frequency.
+- Return type: str
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_read_back_freq_str()
+```python
+unit_bldcdriver_0.get_read_back_freq_str()
+```
 
 ### `get_rpm_float`
 Get the rpm in float.
 
-:returns: rpm.
-:rtype: float
+- Returns: rpm.
+- Return type: float
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_rpm_float()
+```python
+unit_bldcdriver_0.get_rpm_float()
+```
 
 ### `set_rpm_float`
 Set the rpm in float.
 
-:param float rpm: Revolutions per minute.
+- Parameter `rpm` (`float`): Revolutions per minute.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_rpm_float(rpm)
+```python
+unit_bldcdriver_0.set_rpm_float(rpm)
+```
 
 ### `get_rpm_int`
 Get the rpm in int.
 
-:returns: Revolutions per minute.
-:rtype: int
+- Returns: Revolutions per minute.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_rpm_int()
+```python
+unit_bldcdriver_0.get_rpm_int()
+```
 
 ### `set_rpm_int`
 Set the rpm in int.
 
-:param int rpm: Revolutions per minute.
+- Parameter `rpm` (`int`): Revolutions per minute.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_rpm_int(rpm)
+```python
+unit_bldcdriver_0.set_rpm_int(rpm)
+```
 
 ### `get_pid_value`
 Get the PID value.
 
 This method retrieves the PID values from the specified register and returns them as a tuple.
 
-:returns: A tuple containing the PID values (proportional, integral, derivative).
-:rtype: tuple[int, int, int]
+- Returns: A tuple containing the PID values (proportional, integral, derivative).
+- Return type: tuple[int, int, int]
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.get_pid_value()
+```python
+unit_bldcdriver_0.get_pid_value()
+```
 
 ### `set_pid_value`
 ! Set the PID values (Proportional, Integral, Derivative).
 
 This method sets the PID values to the specified register, which will control the motor's PID behavior.
 
-:param int p: The proportional value.
-:param int i: The integral value.
-:param int d: The derivative value.
+- Parameter `p` (`int`): The proportional value.
+- Parameter `i` (`int`): The integral value.
+- Parameter `d` (`int`): The derivative value.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.set_pid_value(p, i, d)
+```python
+unit_bldcdriver_0.set_pid_value(p, i, d)
+```
 
 ### `save_data_in_flash`
 Save motor data to flash.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_bldcdriver_0.save_data_in_flash()
+```python
+unit_bldcdriver_0.save_data_in_flash()
+```
 
 ### `get_device_spec`
 Get device firmware version and I2C address.
 
 This method retrieves either the firmware version or the I2C address of the device based on the provided mode.
 
-:param int mode: The mode to determine what information to fetch.
+- Parameter `mode` (`int`): The mode to determine what information to fetch.
     - `0xFE`: Retrieve firmware version.
     - `0xFF`: Retrieve I2C address.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_device.get_device_spec(mode)
+```python
+unit_device.get_device_spec(mode)
+```
 
 ### `set_i2c_address`
 Set the I2C address.
 
-:param int addr: The new I2C address, range: 1~127.
+- Parameter `addr` (`int`): The new I2C address, range: 1~127.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        unit_device.set_i2c_address(addr)
+```python
+unit_device.set_i2c_address(addr)
+```

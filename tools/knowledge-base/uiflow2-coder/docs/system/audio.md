@@ -1,9 +1,4 @@
-# :mod:`audio` --- player and recorder
-
-<!-- .. module:: audio -->
-    :synopsis: player and recorder
-
-<!-- .. include:: ../refs/system.audio.ref -->
+# `audio` --- player and recorder
 
 This module implements player and recorder
 
@@ -12,26 +7,13 @@ This module implements player and recorder
 
 Below is the detailed audio support for the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
-
-###### |                 | AW88298 | ES7210 | ES8311 | I2S Philips | I2S PDM |
-
-###### | CoreS3          | |S|     | |S|    |        |             |         |
-
-###### | BOX3            |         | |S|    | |S|    |             |         |
-
-<!-- .. |S| unicode:: U+2714 -->
+                      AW88298  ES7210  ES8311  I2S Philips  I2S PDM |
+     CoreS3           S      S                                  |
+     BOX3                      S     S                          |
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -68,19 +50,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_audio_example.m5f2|
-
 ## Classes
-
-<!-- .. toctree:: -->
-    :maxdepth: 1
-
-    audio.player.rst
-    audio.recorder.rst

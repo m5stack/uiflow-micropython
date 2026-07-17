@@ -1,27 +1,11 @@
 
 # MiniOLED Unit
 
-<!-- .. include:: ../refs/unit.minioled.ref -->
-
 MiniOLED UNIT is a 0.42-inch I2C interface OLED screen unit, it's a 72*40, monochrome white display.
 
 Support the following products:
 
-    |MiniOLEDUnit|
-
-## UiFlow2 Example
-
-#### Draw Text
-
-Open the |cores3_minioled_example.m5f2| project in UiFlow2.
-
-This example displays the text "Mini" on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    MiniOLEDUnit
 
 ## MicroPython Example
 
@@ -29,13 +13,7 @@ Example output:
 
 This example displays the text "Mini" on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -77,31 +55,22 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### class MiniOLEDUnit
 
-## MiniOLEDUnit
+## `MiniOLEDUnit`
 Initialize the Mini OLED Unit.
 
-:param i2c: The I2C bus the Mini OLED Unit is connected to.
-:type i2c: I2C | PAHUBUnit
-:param int address: The I2C address of the Mini OLED Unit, default is 0x3C.
+- Parameter `i2c`: The I2C bus the Mini OLED Unit is connected to.
+- Type of `i2c`: I2C | PAHUBUnit
+- Parameter `address` (`int`): The I2C address of the Mini OLED Unit, default is 0x3C.
 
-UiFlow2 Code Block:
+```python
+from unit import MiniOLEDUnit
+minioled_0 = MiniOLEDUnit(i2c0, 0x3c)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import MiniOLEDUnit
-        minioled_0 = MiniOLEDUnit(i2c0, 0x3c)
-
-    MiniOLEDUnit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.
+    MiniOLEDUnit class inherits Display class, See `hardware.Display <hardware.Display>` for more details.

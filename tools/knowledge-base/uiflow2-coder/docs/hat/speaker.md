@@ -1,40 +1,20 @@
 # Speaker Hat
 
-<!-- .. sku: U055 -->
-
-<!-- .. include:: ../refs/hat.speaker.ref -->
-
 The following products are supported:
 
-    |Speaker Hat|
+    Speaker Hat
 
 Below is the detailed support for Speaker on the host:
 
-<!-- .. table:: -->
-    :widths: auto
-    :align: center
-######
-
-###### |Controller       | Speaker Hat       |
-
-###### | CoreInk         | |S|               |
-
-###### | StickC          | |S|               |
-
-###### | StickC PLUS     | |S|               |
-
-###### | StickC PLUS2    | |S|               |
-
-<!-- .. |S| unicode:: U+2705 -->
-<!-- .. |N| unicode:: U+274C -->
+    Controller        Speaker Hat       |
+     CoreInk          S               |
+     StickC           S               |
+     StickC PLUS      S               |
+     StickC PLUS2     S               |
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -67,25 +47,14 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_speaker_example.m5f2|
-
-    :download:`poweron_2_5s.wav <../../../examples/hardware/speaker/poweron_2_5s.wav>`
 
 ## class SpeakerHat
 
 ## Constructors
 
-<!-- .. class:: SpeakerHat(*args, **kwargs) -->
+### `class SpeakerHat(*args, **kwargs)`
 
     Create an SpeakerHat object.
 
-    UIFLOW2:
-
-    SpeakerHat class inherits M5.Speaker class, See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details.
+    SpeakerHat class inherits M5.Speaker class, See `hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details.

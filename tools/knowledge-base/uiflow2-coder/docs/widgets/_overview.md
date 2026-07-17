@@ -1,9 +1,4 @@
-# :mod:`Widgets` --- A basic UI library
-
-<!-- .. module:: Widgets -->
-    :synopsis: A basic UI library
-
-<!-- .. include:: ../refs/widgets.ref -->
+# `Widgets` --- A basic UI library
 
 ## M5 Series Display Libraries
 
@@ -33,10 +28,6 @@
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -64,49 +55,27 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_widgets_example.m5f2|
 
 ## Screen functions
 
-<!-- .. function:: Widgets.setBrightness(brightness: int) -->
+### `Widgets.setBrightness(brightness: int)`
 
-    Set the backlight of the monitor。``brightness`` ranges from 0 to 255.
+    Set the backlight of the monitor。`brightness` ranges from 0 to 255.
 
-    UIFLOW2:
+### `Widgets.fillScreen(color: int)`
 
-<!-- .. function:: Widgets.fillScreen(color: int) -->
+    Set the background color of the monitor. `color` accepts the color code of RGB888.
 
-    Set the background color of the monitor. ``color`` accepts the color code of RGB888.
-
-    UIFLOW2:
-
-<!-- .. function:: Widgets.setRotation(rotation: int) -->
+### `Widgets.setRotation(rotation: int)`
 
     Set the rotation Angle of the display.
 
-    The ``rotation`` parameter only accepts the following values:
+    The `rotation` parameter only accepts the following values:
 
-        - ``0``: Portrait (0°C)
-        - ``1``: Landscape (90°C)
-        - ``2``: Inverse Portrait (180°C)
-        - ``3``: Inverse Landscape (270°C)
-
-    UIFLOW2:
+        - `0`: Portrait (0°C)
+        - `1`: Landscape (90°C)
+        - `2`: Inverse Portrait (180°C)
+        - `3`: Inverse Landscape (270°C)
 
 ## Classes
-
-<!-- .. toctree:: -->
-    :maxdepth: 1
-
-    circle.rst
-    image.rst
-    image+.rst
-    label.rst
-    label+.rst

@@ -1,18 +1,12 @@
 # Thermal Hat
 
-<!-- .. include:: ../refs/hat.thermal.ref -->
-
 The following products are supported:
 
-    |ThermalHat|
+    ThermalHat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -50,26 +44,17 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_thermal_example.m5f2|
 
 ## class ThermalHat
 
 ## Constructors
 
-<!-- .. class:: ThermalHat(i2c, address: int = 0x33) -->
+### `class ThermalHat(i2c, address: int = 0x33)`
 
     Create a ThermalHat object.
 
-    :param i2c: I2C object
-    :param address: the I2C address of the device. Default is 0x33.
+    - Parameter `i2c`: I2C object
+    - Parameter `address`: the I2C address of the device. Default is 0x33.
 
-    UIFLOW2:
-
-ThermalHat class inherits ThermalUnit class, See :ref:`unit.ThermaltUnit.Methods <unit.ThermaltUnit.Methods>` for more details.
+ThermalHat class inherits ThermalUnit class, See `unit.ThermaltUnit.Methods <unit.ThermaltUnit.Methods>` for more details.

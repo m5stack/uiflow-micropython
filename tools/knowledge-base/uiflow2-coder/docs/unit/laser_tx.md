@@ -1,22 +1,15 @@
 
 # LaserTX Unit
 
-<!-- .. sku:U066 -->
-<!-- .. include:: ../refs/unit.laser_tx.ref -->
-
 LASER.TX is one of the communication devices among the M5Units family - a Laser emitter with adjustable focal length.It is mainly built with a laser diode Laser communications devices are wireless connections through the atmosphere. They work similarly to fiber-optic links, except the beam is transmitted through free space. While the transmitter and receiver must require line-of-sight conditions, they have the benefit of eliminating the need for broadcast rights and buried cables.
 
 Support the following products:
 
-|LaserTXUnit|
+LaserTXUnit
 
 LaserTX Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -62,16 +55,11 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 LaserRX Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -110,68 +98,47 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-LaserTX UIFLOW2 Example:
-
-LaserRX UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |laserrx_core2_example.m5f2|
-
-    |lasertx_cores3_example.m5f2|
 
 ## class LaserTXUnit
 
 ## Constructors
 
-<!-- .. class:: LaserTXUnit(port, mode, id) -->
+### `class LaserTXUnit(port, mode, id)`
 
     Initialize the LaserTXUnit with the specified port, communication mode, and UART ID.
 
-    :param tuple port: A tuple containing pin numbers for TX and RX.
-    :param int mode: Communication mode; use PIN_MODE or UART_MODE.
-    :param int id: UART ID, either 1 or 2.
-
-    UIFLOW2:
+    - Parameter `port` (`tuple`): A tuple containing pin numbers for TX and RX.
+    - Parameter `mode` (`int`): Communication mode; use PIN_MODE or UART_MODE.
+    - Parameter `id` (`int`): UART ID, either 1 or 2.
 
 ## Methods
 
-<!-- .. method:: LaserTXUnit.init_uart(baudrate, bits, parity, stop) -->
+### `LaserTXUnit.init_uart(baudrate, bits, parity, stop)`
 
     Initialize UART communication with specified parameters.
 
-    :param int baudrate: The baud rate for UART communication. Default is 115200.
-    :param int bits: The number of data bits; 7, 8, or 9. Default is 8.
-    :param int parity: Parity setting; None, 0, or 1. Default is 8.
-    :param int stop: The number of stop bits; 1 or 2. Default is 1.
+    - Parameter `baudrate` (`int`): The baud rate for UART communication. Default is 115200.
+    - Parameter `bits` (`int`): The number of data bits; 7, 8, or 9. Default is 8.
+    - Parameter `parity` (`int`): Parity setting; None, 0, or 1. Default is 8.
+    - Parameter `stop` (`int`): The number of stop bits; 1 or 2. Default is 1.
 
-    UIFLOW2:
-
-<!-- .. method:: LaserTXUnit.write(payload) -->
+### `LaserTXUnit.write(payload)`
 
     Transmit data through UART.
 
-    :param  payload: The data to be transmitted via UART.
+    - Parameter `payload`: The data to be transmitted via UART.
 
-    UIFLOW2:
-
-<!-- .. method:: LaserTXUnit.on() -->
+### `LaserTXUnit.on()`
 
     Turn on the laser when using PIN_MODE.
 
-    UIFLOW2:
-
-<!-- .. method:: LaserTXUnit.off() -->
+### `LaserTXUnit.off()`
 
     Turn off the laser when using PIN_MODE.
 
-    UIFLOW2:
-
-<!-- .. method:: LaserTXUnit.value(x) -->
+### `LaserTXUnit.value(x)`
 
     Set the laser state to either on or off using PIN_MODE.
 
-    :param bool x: A boolean value; True turns the laser on, False turns it off.
+    - Parameter `x` (`bool`): A boolean value; True turns the laser on, False turns it off.

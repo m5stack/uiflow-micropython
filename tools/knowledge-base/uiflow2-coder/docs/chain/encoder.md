@@ -1,26 +1,10 @@
 # Chain Encoder
 
-<!-- .. include:: ../refs/chain.encoder.ref -->
-
 EncoderChain is the helper class for encoder devices on the Chain bus. It provides methods to read encoder values and increments, reset the encoder, configure the clockwise rotation direction, and handle button events with RGB LED feedback.
 
 Support the following products:
 
-    |Chain Encoder|
-
-## UiFlow2 Example
-
-#### Encoder reading with brightness control
-
-Open the |m5core_chain_encoder_basic_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to read encoder values and increments, handle button click events, and control RGB LED brightness based on encoder rotation. The encoder value is displayed on screen and updated in real-time.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Chain Encoder
 
 ## MicroPython Example
 
@@ -28,13 +12,7 @@ Example output:
 
 This example demonstrates how to read encoder values and increments, handle button click events, and control RGB LED brightness based on encoder rotation. The encoder value is displayed on screen and updated in real-time.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -101,119 +79,86 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### EncoderChain
 
-## EncoderChain
+## `EncoderChain`
 Encoder Chain class for interacting with encoder devices over Chain bus.
 
-:param ChainBus bus: The Chain bus instance.
-:param int device_id: The device ID of the encoder on the Chain bus.
+- Parameter `bus` (`ChainBus`): The Chain bus instance.
+- Parameter `device_id` (`int`): The device ID of the encoder on the Chain bus.
 
-UiFlow2 Code Block:
+```python
+from chain import ChainBus
+from chain import EncoderChain
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from chain import ChainBus
-        from chain import EncoderChain
-
-        chainbus_0 = ChainBus(2, 32, 33, verbose=True)
-        encoder_0 = EncoderChain(chainbus_0, 1)
+chainbus_0 = ChainBus(2, 32, 33, verbose=True)
+encoder_0 = EncoderChain(chainbus_0, 1)
+```
 
 ### `get_encoder_value`
 Get the encoder value.
 
-:return: Encoder value as int16_t (-32768 to 32767), or None if failed.
-:rtype: int
+- Returns: Encoder value as int16_t (-32768 to 32767), or None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        value = encoder_0.get_encoder_value()
+```python
+value = encoder_0.get_encoder_value()
+```
 
 ### `get_encoder_increment`
 Get the encoder increment value.
 
-:return: Encoder increment value as int16_t (-32768 to 32767), or None if failed.
-:rtype: int
+- Returns: Encoder increment value as int16_t (-32768 to 32767), or None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        increment = encoder_0.get_encoder_increment()
+```python
+increment = encoder_0.get_encoder_increment()
+```
 
 ### `reset_encoder_value`
 Reset the encoder value.
 
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = encoder_0.reset_encoder_value()
+```python
+success = encoder_0.reset_encoder_value()
+```
 
 ### `reset_encoder_increment`
 Reset the encoder increment value.
 
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = encoder_0.reset_increment()
+```python
+success = encoder_0.reset_increment()
+```
 
 ### `set_cw_increase`
 Set whether clockwise rotation increases the encoder value.
 
-:param bool clockwise_increase: Whether clockwise rotation increases. True means clockwise increases (sends 0), False means clockwise decreases (sends 1).
-:param bool save: Whether to save to flash. False means don't save, True means save.
-:return: True if the setting was set successfully, False otherwise.
-:rtype: bool
+- Parameter `clockwise_increase` (`bool`): Whether clockwise rotation increases. True means clockwise increases (sends 0), False means clockwise decreases (sends 1).
+- Parameter `save` (`bool`): Whether to save to flash. False means don't save, True means save.
+- Returns: True if the setting was set successfully, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = encoder_0.set_cw_increase(True, True)
+```python
+success = encoder_0.set_cw_increase(True, True)
+```
 
 ### `get_cw_increase`
 Get whether clockwise rotation increases the encoder value.
 
-:return: Whether clockwise rotation increases. True means clockwise increases, False means clockwise decreases. Returns False if failed.
-:rtype: bool
+- Returns: Whether clockwise rotation increases. True means clockwise increases, False means clockwise decreases. Returns False if failed.
+- Return type: bool
 
-UiFlow2 Code Block:
+```python
+increase = encoder_0.get_cw_increase()
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        increase = encoder_0.get_cw_increase()
-
-    For other button and some general methods, please refer to the :class:`ChainKey <chain.key.KeyChain>` class.
+    For other button and some general methods, please refer to the `ChainKey <chain.key.KeyChain>` class.

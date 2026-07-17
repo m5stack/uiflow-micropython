@@ -1,26 +1,10 @@
 # Chain ToF
 
-<!-- .. include:: ../refs/chain.tof.ref -->
-
 ToFChain is the helper class for ToF (Time of Flight) sensor devices on the Chain bus. It provides methods to read distance measurements, configure measurement parameters (time, mode, status), and check measurement completion status.
 
 Support the following products:
 
-    |Chain ToF|
-
-## UiFlow2 Example
-
-#### Distance measurement display
-
-Open the |m5core_chain_tof_basic_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to read distance measurements from the Chain ToF sensor and display them on screen. The example configures the sensor for continuous measurement mode and updates the distance value in real-time.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Chain ToF
 
 ## MicroPython Example
 
@@ -28,13 +12,7 @@ Example output:
 
 This example demonstrates how to read distance measurements from the Chain ToF sensor and display them on screen. The example configures the sensor for continuous measurement mode and updates the distance value in real-time.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -84,146 +62,105 @@ if __name__ == '__main__':
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### ToFChain
 
-## ToFChain
+## `ToFChain`
 ToF Chain class for interacting with ToF (Time of Flight) devices over Chain bus.
 
-:param ChainBus bus: The Chain bus instance.
-:param int device_id: The device ID of the ToF sensor on the Chain bus.
+- Parameter `bus` (`ChainBus`): The Chain bus instance.
+- Parameter `device_id` (`int`): The device ID of the ToF sensor on the Chain bus.
 
-UiFlow2 Code Block:
+```python
+from chain import ChainBus
+from chain import ToFChain
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from chain import ChainBus
-        from chain import ToFChain
-
-        bus2 = ChainBus(2, tx=21, rx=22)
-        chain_tof_0 = ToFChain(bus2, 1)
+bus2 = ChainBus(2, tx=21, rx=22)
+chain_tof_0 = ToFChain(bus2, 1)
+```
 
 ### `get_distance`
 Get the distance measurement.
 
-:return: Distance in millimeters, or None if failed.
-:rtype: int
+- Returns: Distance in millimeters, or None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        distance = chain_tof_0.get_distance()
+```python
+distance = chain_tof_0.get_distance()
+```
 
 ### `set_measure_time`
 Set the measurement time.
 
-:param int time_ms: Measurement time in milliseconds. Range: 20-200, default: 33.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `time_ms` (`int`): Measurement time in milliseconds. Range: 20-200, default: 33.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_tof_0.set_measure_time(33)
+```python
+success = chain_tof_0.set_measure_time(33)
+```
 
 ### `get_measure_time`
 Get the measurement time.
 
-:return: Measurement time in milliseconds, or None if failed.
-:rtype: int
+- Returns: Measurement time in milliseconds, or None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        time = chain_tof_0.get_measure_time()
+```python
+time = chain_tof_0.get_measure_time()
+```
 
 ### `set_measure_mode`
 Set the measurement mode.
 
-:param int mode: Measurement mode. Use :attr:`ToFChain.MODE_STOP` (0), :attr:`ToFChain.MODE_SINGLE` (1), or :attr:`ToFChain.MODE_CONTINUOUS` (2). Default: 2.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `mode` (`int`): Measurement mode. Use `ToFChain.MODE_STOP` (0), `ToFChain.MODE_SINGLE` (1), or `ToFChain.MODE_CONTINUOUS` (2). Default: 2.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_tof_0.set_measure_mode(ToFChain.MODE_CONTINUOUS)
+```python
+success = chain_tof_0.set_measure_mode(ToFChain.MODE_CONTINUOUS)
+```
 
 ### `get_measure_mode`
 Get the measurement mode.
 
-:return: Measurement mode. :attr:`ToFChain.MODE_STOP` (0), :attr:`ToFChain.MODE_SINGLE` (1), or :attr:`ToFChain.MODE_CONTINUOUS` (2). Returns None if failed.
-:rtype: int
+- Returns: Measurement mode. `ToFChain.MODE_STOP` (0), `ToFChain.MODE_SINGLE` (1), or `ToFChain.MODE_CONTINUOUS` (2). Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        mode = chain_tof_0.get_measure_mode()
+```python
+mode = chain_tof_0.get_measure_mode()
+```
 
 ### `set_measure_status`
 Set the measurement status.
 
-:param int status: Measurement status. 0 means not measuring, 1 means measuring.
-:return: True if the operation was successful, False otherwise.
-:rtype: bool
+- Parameter `status` (`int`): Measurement status. 0 means not measuring, 1 means measuring.
+- Returns: True if the operation was successful, False otherwise.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        success = chain_tof_0.set_measure_status(1)
+```python
+success = chain_tof_0.set_measure_status(1)
+```
 
 ### `get_measure_status`
 Get the measurement status.
 
-:return: Measurement status. 0 means not measuring, 1 means measuring. Returns None if failed.
-:rtype: int
+- Returns: Measurement status. 0 means not measuring, 1 means measuring. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        status = chain_tof_0.get_measure_status()
+```python
+status = chain_tof_0.get_measure_status()
+```
 
 ### `get_measure_complete_flag`
 Get the measurement complete flag.
 
-:return: Measurement complete flag. 0 means measurement not complete, 1 means measurement complete. Returns None if failed.
-:rtype: int
+- Returns: Measurement complete flag. 0 means measurement not complete, 1 means measurement complete. Returns None if failed.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        flag = chain_tof_0.get_measure_complete_flag()
+```python
+flag = chain_tof_0.get_measure_complete_flag()
+```

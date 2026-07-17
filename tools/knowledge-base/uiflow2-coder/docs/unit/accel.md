@@ -1,29 +1,11 @@
 # Accel Unit
 
-<!-- .. sku: U056 -->
-
-<!-- .. include:: ../refs/unit.accel.ref -->
-
 This is the driver library of Accel Unit, which is used to obtain data from the
 acceleration sensor and support motion detection.
 
 Support the following products:
 
-    |ACCEL|
-
-## UiFlow2 Example
-
-#### get accel value
-
-Open the |stickcplus2_unit_accel_example.m5f2| project in UiFlow2.
-
-This example gets the acceleration value of the Accel Unit and displays it on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    ACCEL
 
 ## MicroPython Example
 
@@ -31,13 +13,7 @@ Example output:
 
 This example gets the acceleration value of the Accel Unit and displays it on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -91,315 +67,392 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### AccelUnit
 
-## AccelUnit
+## `AccelUnit`
 Create an AccelUnit object.
 
-:param I2C i2c: The I2C bus the Accel Unit is connected to.
-:param int address: The I2C address of the device. Default is 0x53.
+- Parameter `i2c` (`I2C`): The I2C bus the Accel Unit is connected to.
+- Parameter `address` (`int`): The I2C address of the device. Default is 0x53.
 
-UiFlow2 Code Block:
+```python
+from hardware import I2C
+from unit import AccelUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from hardware import I2C
-        from unit import AccelUnit
-
-        acceli2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-        accel_0 = AccelUnit(i2c0)
+acceli2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+accel_0 = AccelUnit(i2c0)
+```
 
 ### `get_accel`
 The x, y, z acceleration values returned in a 3-tuple in :math:`m / s ^ 2`.
 
-:returns: x, y, z acceleration values in :math:`m / s ^ 2`.
-:rtype: tuple[float, float, float]
+- Returns: x, y, z acceleration values in :math:`m / s ^ 2`.
+- Return type: tuple[float, float, float]
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.get_accel()
+```python
+accel_0.get_accel()
+```
 
 ### `enable_motion_detection`
 The activity detection parameters.
 
-:param int threshold: The value that acceleration on any axis must
+- Parameter `threshold` (`int`): The value that acceleration on any axis must
                       exceed to register as active. The scale factor is
                       62.5 mg/LSB.
 
 If you wish to set them yourself rather than using the defaults,
-you must use keyword arguments::
+you must use keyword arguments:
+```
+accelerometer.enable_motion_detection(threshold=20)
+```
 
-    accelerometer.enable_motion_detection(threshold=20)
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.enable_motion_detection(threshold=18)
+```python
+accel_0.enable_motion_detection(threshold=18)
+```
 
 ### `disable_motion_detection`
 Disable motion detection.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.disable_motion_detection()
+```python
+accel_0.disable_motion_detection()
+```
 
 ### `get_data_rate`
 Get the data rate of the sensor.
 
-:returns: The data rate of the sensor.
-:rtype: int
+- Returns: The data rate of the sensor.
+- Return type: int
 
 Rate options are:
 
-    - ``0``: 0.1 Hz
-    - ``1``: 0.20 Hz
-    - ``2``: 0.39 Hz
-    - ``3``: 0.78 Hz
-    - ``4``: 1.56 Hz
-    - ``5``: 3.13 Hz
-    - ``6``: 6.25 Hz
-    - ``7``: 12.5 Hz
-    - ``8``: 25 Hz
-    - ``9``: 50 Hz
-    - ``10``: 100 Hz
-    - ``11``: 200 Hz
-    - ``12``: 400 Hz
-    - ``13``: 800 Hz
-    - ``14``: 1600 Hz
-    - ``15``: 3200 Hz
+    - `0`: 0.1 Hz
+    - `1`: 0.20 Hz
+    - `2`: 0.39 Hz
+    - `3`: 0.78 Hz
+    - `4`: 1.56 Hz
+    - `5`: 3.13 Hz
+    - `6`: 6.25 Hz
+    - `7`: 12.5 Hz
+    - `8`: 25 Hz
+    - `9`: 50 Hz
+    - `10`: 100 Hz
+    - `11`: 200 Hz
+    - `12`: 400 Hz
+    - `13`: 800 Hz
+    - `14`: 1600 Hz
+    - `15`: 3200 Hz
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.get_data_rate()
+```python
+accel_0.get_data_rate()
+```
 
 ### `set_data_rate`
 Set the data rate of the sensor.
 
-:param int rate: The data rate of the sensor.
+- Parameter `rate` (`int`): The data rate of the sensor.
 
 Rate options are:
 
-    - ``0``: 0.1 Hz
-    - ``1``: 0.20 Hz
-    - ``2``: 0.39 Hz
-    - ``3``: 0.78 Hz
-    - ``4``: 1.56 Hz
-    - ``5``: 3.13 Hz
-    - ``6``: 6.25 Hz
-    - ``7``: 12.5 Hz
-    - ``8``: 25 Hz
-    - ``9``: 50 Hz
-    - ``10``: 100 Hz
-    - ``11``: 200 Hz
-    - ``12``: 400 Hz
-    - ``13``: 800 Hz
-    - ``14``: 1600 Hz
-    - ``15``: 3200 Hz
+    - `0`: 0.1 Hz
+    - `1`: 0.20 Hz
+    - `2`: 0.39 Hz
+    - `3`: 0.78 Hz
+    - `4`: 1.56 Hz
+    - `5`: 3.13 Hz
+    - `6`: 6.25 Hz
+    - `7`: 12.5 Hz
+    - `8`: 25 Hz
+    - `9`: 50 Hz
+    - `10`: 100 Hz
+    - `11`: 200 Hz
+    - `12`: 400 Hz
+    - `13`: 800 Hz
+    - `14`: 1600 Hz
+    - `15`: 3200 Hz
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.set_data_rate(accel_0.RATE_3200_HZ)
+```python
+accel_0.set_data_rate(accel_0.RATE_3200_HZ)
+```
 
 ### `get_range`
 Get the measurement range of the sensor.
 
-:returns: The measurement range of the sensor.
-:rtype: int
+- Returns: The measurement range of the sensor.
+- Return type: int
 
 Range options are:
 
-    - ``0``: 2G
-    - ``1``: 4G
-    - ``2``: 8G
-    - ``3``: 16G
+    - `0`: 2G
+    - `1`: 4G
+    - `2`: 8G
+    - `3`: 16G
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.get_range()
+```python
+accel_0.get_range()
+```
 
 ### `set_range`
 The measurement range of the sensor.
 
-:param int range: The measurement range of the sensor.
+- Parameter `range` (`int`): The measurement range of the sensor.
 
 Range options are:
 
-    - ``0``: 2G
-    - ``1``: 4G
-    - ``2``: 8G
-    - ``3``: 16G
+    - `0`: 2G
+    - `1`: 4G
+    - `2`: 8G
+    - `3`: 16G
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.set_range(accel_0.RANGE_2_G)
+```python
+accel_0.set_range(accel_0.RANGE_2_G)
+```
 
 ### `is_tap`
 Returns True if a tap has been detected.
 
-:returns: True if a tap has been detected.
-:rtype: bool
+- Returns: True if a tap has been detected.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.is_tap()
+```python
+accel_0.is_tap()
+```
 
 ### `is_motion`
 Returns True if motion has been detected.
 
-:returns: True if motion has been detected.
-:rtype: bool
+- Returns: True if motion has been detected.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.is_motion()
+```python
+accel_0.is_motion()
+```
 
 ### `is_freefall`
 Returns True if freefall has been detected.
 
-:returns: True if freefall has been detected.
-:rtype: bool
+- Returns: True if freefall has been detected.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.is_freefall()
+```python
+accel_0.is_freefall()
+```
 
 ### `enable_freefall_detection`
 Freefall detection parameters:
 
-:param int threshold: The value that acceleration on all axes must be
+- Parameter `threshold` (`int`): The value that acceleration on all axes must be
                       under to register as dropped. The scale factor
                       is 62.5 mg/LSB.
 
-:param int time: The amount of time that acceleration on all axes must be
-                 less than ``threshold`` to register as dropped. The scale
+- Parameter `time` (`int`): The amount of time that acceleration on all axes must be
+                 less than `threshold` to register as dropped. The scale
                  factor is 5 ms/LSB. Values between 100 ms and 350 ms
                  (20 to 70) are recommended.
 
 If you wish to set them yourself rather than using the defaults,
 you must use keyword arguments:
 
-.. code-block:: python
+```python
+accelerometer.enable_freefall_detection(time=30)
+```
 
-    accelerometer.enable_freefall_detection(time=30)
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.enable_freefall_detection()
+```python
+accel_0.enable_freefall_detection()
+```
 
 ### `disable_freefall_detection`
 Disable freefall detection.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.disable_freefall_detection()
+```python
+accel_0.disable_freefall_detection()
+```
 
 ### `enable_tap_detection`
 The tap detection parameters.
 
-:param int tap_count: 1 to detect only single taps, and 2 to detect only
+- Parameter `tap_count` (`int`): 1 to detect only single taps, and 2 to detect only
                     double taps.
 
-:param int threshold: A threshold for the tap detection. The scale factor is
+- Parameter `threshold` (`int`): A threshold for the tap detection. The scale factor is
                     62.5 mg/LSB The higher the value the less sensitive
                     the detection.
 
-:param int duration: This caps the duration of the impulse above
-                    ``threshold``. Anything above ``duration`` won't
+- Parameter `duration` (`int`): This caps the duration of the impulse above
+                    `threshold`. Anything above `duration` won't
                     register as a tap. The scale factor is 625 µs/LSB.
 
-:param int latency: (double tap only) The length of time after the initial
-                    impulse falls below ``threshold`` to start the window
+- Parameter `latency` (`int`): (double tap only) The length of time after the initial
+                    impulse falls below `threshold` to start the window
                     looking for a second impulse. The scale factor is
                     1.25 ms/LSB.
 
-:param int window: (double tap only) The length of the window in which to
+- Parameter `window` (`int`): (double tap only) The length of the window in which to
                 look for a second tap. The scale factor is 1.25 ms/LSB.
 
 If you wish to set them yourself rather than using the defaults,
 you must use keyword arguments:
 
-.. code-block:: python
+```python
+accelerometer.enable_tap_detection(duration=30, threshold=25)
+```
 
-    accelerometer.enable_tap_detection(duration=30, threshold=25)
-
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.enable_tap_detection(tap_count=1, threshold=20, duration=50, latency=20, window=255)
+```python
+accel_0.enable_tap_detection(tap_count=1, threshold=20, duration=50, latency=20, window=255)
+```
 
 ### `disable_tap_detection`
 Disable tap detection.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        accel_0.disable_tap_detection()
+```python
+accel_0.disable_tap_detection()
+```
 
 #### ADXL345
 
-## ADXL345
-<!-- Failed to find class ADXL345 in m5stack/libs/unit/accel.py -->
+## `ADXL345`
+`ADXL345` is an alias of `ADXL345` in `m5stack/libs/driver/adxl34x.py`.
+
+Driver for the ADXL345 3 axis accelerometer.
+
+- Parameter `i2c` (`I2C`): The I2C bus the ADXL345 is connected to.
+- Parameter `address` (`int`): The I2C device address for the sensor. Default is
+
+**Quickstart: Importing and using the device**
+
+    Here is an example of using the `ADXL345` class.
+    First you will need to import the libraries to use the sensor:
+
+```python
+import machine
+import adxl34x
+```
+    Once this is done you can define your `I2C` object and define your
+    sensor object:
+
+```python
+i2c = machine.I2C(0)  # uses board default SDA and SCL pins
+accelerometer = adxl34x.ADXL343(i2c)
+```
+    Now you have access to the `acceleration` attribute:
+
+```python
+acceleration = accelerometer.acceleration
+```
+
+### `acceleration`
+The x, y, z acceleration values returned in a 3-tuple in :math:`m / s ^ 2`.
+
+### `raw_x`
+The raw x value.
+
+### `raw_y`
+The raw y value.
+
+### `raw_z`
+The raw z value.
+
+### `events`
+that has been enabled.
+
+The possible keys are:
+
+ Key         Description                                                                |
+| `tap`    | True if a tap was detected recently. Whether it's looking for a single or  |
+             double tap is determined by the tap param of `enable_tap_detection`.       |
+| `motion`  True if the sensor has seen acceleration above the threshold
+             set with `enable_motion_detection`.                                        |
+|`freefall` True if the sensor was in freefall. Parameters are set when enabled with
+             `enable_freefall_detection`.                                               |
+
+### `enable_motion_detection`
+The activity detection parameters.
+
+- Parameter `threshold` (`int`): The value that acceleration on any axis must
+                      exceed to register as active. The scale factor
+                      is 62.5 mg/LSB.
+
+If you wish to set them yourself rather than using the defaults,
+you must use keyword arguments:
+
+```python
+accelerometer.enable_motion_detection(threshold=20)
+```
+
+### `disable_motion_detection`
+Disable motion detection.
+
+### `enable_freefall_detection`
+Freefall detection parameters:
+
+- Parameter `threshold` (`int`): The value that acceleration on all axes must be
+                      under to register as dropped. The scale factor is
+                      62.5 mg/LSB.
+
+- Parameter `time` (`int`): The amount of time that acceleration on all axes must
+                 be less than `threshold` to register as dropped. The
+                 scale factor is 5 ms/LSB. Values between 100 ms and
+                 350 ms (20 to 70) are recommended.
+
+If you wish to set them yourself rather than using the defaults,
+you must use keyword arguments:
+
+```python
+accelerometer.enable_freefall_detection(time=30)
+```
+
+### `disable_freefall_detection`
+Disable freefall detection.
+
+### `enable_tap_detection`
+The tap detection parameters.
+
+- Parameter `tap_count` (`int`): 1 to detect only single taps, and 2 to detect only
+                      double taps.
+
+- Parameter `threshold` (`int`): A threshold for the tap detection. The scale
+                      factor is 62.5 mg/LSB The higher the value the
+                      less sensitive the detection.
+
+- Parameter `duration` (`int`): This caps the duration of the impulse above
+                     `threshold`. Anything above `duration` won't
+                     register as a tap. The scale factor is 625 µs/LSB.
+
+- Parameter `latency` (`int`): (double tap only) The length of time after the
+                    initial impulse falls below `threshold` to start
+                    the window looking for a second impulse. The scale
+                    factor is 1.25 ms/LSB.
+
+- Parameter `window` (`int`): (double tap only) The length of the window in which
+                   to look for a second tap. The scale factor is
+                   1.25 ms/LSB.
+
+If you wish to set them yourself rather than using the defaults,
+you must use keyword arguments:
+
+```python
+accelerometer.enable_tap_detection(duration=30, threshold=25)
+```
+
+### `disable_tap_detection`
+Disable tap detection.
+
+### `data_rate`
+The data rate of the sensor.
+
+### `data_rate`
+
+### `range`
+The measurement range of the sensor.
+
+### `range`
+
+### `offset`
+The x, y, z offsets as a tuple of raw count values.
+
+See offset_calibration example for usage.
+
+### `offset`

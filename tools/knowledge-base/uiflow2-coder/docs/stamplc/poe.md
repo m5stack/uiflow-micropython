@@ -1,22 +1,8 @@
 # StamPLC PoE
 
-<!-- .. include:: ../refs/stamplc.poe.ref -->
-
 Supported Products:
 
-    |StamPLC PoE|
-
-## UiFlow2 Example
-
-#### Get the weather
-
-This example connects to the network using the StamPLC PoE and sends an HTTP request to query the geographical location of the current public IP address.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    StamPLC PoE
 
 ## MicroPython Example
 
@@ -24,13 +10,7 @@ Example output:
 
 This example connects to the network using the StamPLC PoE and sends an HTTP request to query the geographical location of the current public IP address.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -96,32 +76,23 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### StamPLC PoE
 
-## PoEStamPLC
+## `PoEStamPLC`
 Create an PoEStamPLC object
 
-:param int cs_pin: The chip select pin number.
-:param int rst_pin: The reset pin number.
-:param int int_pin: The interrupt pin number.
+- Parameter `cs_pin` (`int`): The chip select pin number.
+- Parameter `rst_pin` (`int`): The reset pin number.
+- Parameter `int_pin` (`int`): The interrupt pin number.
 
-UiFlow2 Code Block:
+```python
+from stamplc import PoEStamPLC
 
-MicroPython Code Block:
+stamplc_poe_0 = PoEStamPLC()
+```
 
-    .. code-block:: python
-
-        from stamplc import PoEStamPLC
-
-        stamplc_poe_0 = PoEStamPLC()
-
-See :ref:`module.LAN.Methods <module.LAN.Methods>` for more APIs details.
+See `module.LAN.Methods <module.LAN.Methods>` for more APIs details.

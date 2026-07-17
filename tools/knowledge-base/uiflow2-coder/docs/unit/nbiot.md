@@ -1,55 +1,15 @@
 # NB-IoT Unit
 
-<!-- .. sku: U111 U112 -->
-
-<!-- .. include:: ../refs/unit.nbiot.ref -->
-
-The ``NB-IOT Unit`` is a wireless communication module suitable for global wide Cat-NB frequency band . It has a built-in SIM7020G communication module, uses serial communication (AT instruction set control).
+The `NB-IOT Unit` is a wireless communication module suitable for global wide Cat-NB frequency band . It has a built-in SIM7020G communication module, uses serial communication (AT instruction set control).
 
 Support the following products:
 
-    ================== ====================
-    |Unit NBIoT|       |Unit NBIoT-CN|
-    ================== ====================
+    Unit NBIoT       Unit NBIoT-CN
 
-<!-- .. note:: -->
-
-    Please ensure that the device supports the NB-IoT frequency bands in your area before use.
-
-<!-- .. note:: -->
-
-    Please ensure that the firmware version of SIM7020 is greater than or equal to **1752B12SIM7020C**.
-
-     can be used to check the firmware version.
-
-## UiFlow2 Example
-
-#### NBIoT HTTP Example
-
-Open the |cores3_unit_nbiot_http_example.m5f2| project in UiFlow2.
-
-This example shows how to send HTTP request using the NBIoT Unit.
-
-click **Send** button to send HTTP request. Response data will be printed in the textarea.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
-#### MQTT Example
-
-Open the |cores3_unit_nbiot_mqtt_example.m5f2| project in UiFlow2.
-
-This example shows how to send MQTT message using the NBIoT Unit.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    Output of received NBIoT message data on screen.
-
+> Note: Please ensure that the device supports the NB-IoT frequency bands in your area before use.
+> Note: Please ensure that the firmware version of SIM7020 is greater than or equal to **1752B12SIM7020C**.
+>
+>  can be used to check the firmware version.
 ## MicroPython Example
 
 #### NBIoT HTTP Example
@@ -58,13 +18,7 @@ This example shows how to send HTTP request using the NBIoT Unit.
 
 click **Send** button to send HTTP request. Response data will be printed in the textarea.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -189,7 +143,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -200,13 +153,7 @@ Example output:
 
 This example shows how to send MQTT message using the NBIoT Unit.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -270,7 +217,6 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Example output:
@@ -279,205 +225,155 @@ Example output:
 
 ## **API**
 
-## NBIOTUnit
+## `NBIOTUnit`
 Create an NBIOTUnit object.
 
-:param uart_or_id: The UART object or UART ID.
-:type uart_or_id: machine.UART | int
-:param port: A list or tuple containing the RX and TX pin numbers. Required if uart_or_id is an ID.
-:type port: list | tuple
-:param bool verbose: Whether to print debug information.
+- Parameter `uart_or_id`: The UART object or UART ID.
+- Type of `uart_or_id`: machine.UART | int
+- Parameter `port`: A list or tuple containing the RX and TX pin numbers. Required if uart_or_id is an ID.
+- Type of `port`: list | tuple
+- Parameter `verbose` (`bool`): Whether to print debug information.
 
-UiFlow2 Code Block:
+```python
+from unit import NBIOTUnit
+import machine
 
-MicroPython Code Block:
+# Using UART ID and pins (rx, tx)
+nbiot = NBIOTUnit(1, (16, 17))
 
-    .. code-block:: python
+# Or using UART object
+uart = machine.UART(1, tx=17, rx=16)
+nbiot = NBIOTUnit(uart)
+```
 
-        from unit import NBIOTUnit
-        import machine
-
-        # Using UART ID and pins (rx, tx)
-        nbiot = NBIOTUnit(1, (16, 17))
-
-        # Or using UART object
-        uart = machine.UART(1, tx=17, rx=16)
-        nbiot = NBIOTUnit(uart)
-
-<!-- .. py:method:: connect(apn="cmnbiot") -->
+### `connect(apn="cmnbiot")`
 
         Connect to the NB-IoT network.
 
-        :param str apn: The APN of the NB-IoT network. Default is "cmnbiot".
+        - Parameter `apn` (`str`): The APN of the NB-IoT network. Default is "cmnbiot".
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                nbiot.connect("cmnbiot")
-
-<!-- .. py:method:: isconnected() -->
+```python
+nbiot.connect("cmnbiot")
+```
+### `isconnected()`
 
         Check if the NB-IoT unit is connected to the network.
 
-        :return: True if connected, False otherwise.
-        :rtype: bool
+        - Returns: True if connected, False otherwise.
+        - Return type: bool
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                if nbiot.isconnected():
-                    print("NB-IoT unit is connected")
-                else:
-                    print("NB-IoT unit is not connected")
-
-<!-- .. py:method:: active(en) -->
+```python
+if nbiot.isconnected():
+    print("NB-IoT unit is connected")
+else:
+    print("NB-IoT unit is not connected")
+```
+### `active(en)`
 
         Activate or deactivate the NB-IoT unit. Deactivating will enter low power consumption mode.
 
-        :param bool en: True to activate, False to deactivate.
+        - Parameter `en` (`bool`): True to activate, False to deactivate.
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                nbiot.active(True)
-
-<!-- .. py:method:: status([param]) -->
+```python
+nbiot.active(True)
+```
+### `status([param])`
 
         Get the status of the NB-IoT unit.
 
         Following are commonly supported parameters.
 
-        ================= =================
         Parameter         Description
-        ----------------- -----------------
         rssi              signal strength
-        ----------------- -----------------
         pin               SIM Card status
-        ----------------- -----------------
         station           station registration status
-        ================= =================
 
-        :param str param: Optional parameter to specify the status type.
-        :return: Status information.
-        :rtype: str | tuple
+        - Parameter `param` (`str`): Optional parameter to specify the status type.
+        - Returns: Status information.
+        - Return type: str | tuple
 
-        UiFlow2 Code Block:
+```python
+# get signal strength
+print(nbiot.status("rssi"))
 
-        MicroPython Code Block:
+# get SIM Card status
+print(nbiot.status("pin"))
 
-<!-- .. code-block:: python -->
-
-                # get signal strength
-                print(nbiot.status("rssi"))
-
-                # get SIM Card status
-                print(nbiot.status("pin"))
-
-                # get station registration status
-                print(nbiot.status("station"))
-
-<!-- .. py:method:: ifconfig -->
+# get station registration status
+print(nbiot.status("station"))
+```
+### `ifconfig`
 
         Get IP-level network interface parameters: IP address, subnet mask, gateway and DNS server.
 
-        :return: A tuple with the network interface parameters.
-        :rtype: tuple
+        - Returns: A tuple with the network interface parameters.
+        - Return type: tuple
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                # Get IP address
-                print(nbiot.ifconfig()[0])
-                # Get subnet mask
-                print(nbiot.ifconfig()[1])
-                # Get gateway
-                print(nbiot.ifconfig()[2])
-                # Get DNS server
-                print(nbiot.ifconfig()[3])
-
-<!-- .. py:method:: config('param') -->
+```python
+# Get IP address
+print(nbiot.ifconfig()[0])
+# Get subnet mask
+print(nbiot.ifconfig()[1])
+# Get gateway
+print(nbiot.ifconfig()[2])
+# Get DNS server
+print(nbiot.ifconfig()[3])
+```
+### `config('param')`
                    config(param=value)
 
         Get or set the configuration parameters of the NB-IoT unit.
 
         Following are commonly supported parameters.
 
-        ================= ================= =================
         Parameter         permissions       Description
-        ----------------- ----------------- -----------------
         apn               R                 Access Point Name
-        ----------------- ----------------- -----------------
         mode              R                 Network mode(only supported NB-IoT)
-        ----------------- ----------------- -----------------
         band              R/W               Frequency Band
-        ----------------- ----------------- -----------------
         ccid              R                 SIM Card CCID
-        ----------------- ----------------- -----------------
         imei              R                 Device IMEI
-        ----------------- ----------------- -----------------
         imsi              R                 SIM Card IMSI
-        ----------------- ----------------- -----------------
         mfr               R                 Manufacturer
-        ----------------- ----------------- -----------------
         model             R                 Module Model
-        ----------------- ----------------- -----------------
         version           R                 Firmware Version
-        ================= ================= =================
 
-        :param str param: The configuration parameter to get or set.
-        :param value: The value to set for the configuration parameter.
-        :return: The value of the configuration parameter when getting.
-        :rtype: None | str | int | tuple
+        - Parameter `param` (`str`): The configuration parameter to get or set.
+        - Parameter `value`: The value to set for the configuration parameter.
+        - Returns: The value of the configuration parameter when getting.
+        - Return type: None  str  int | tuple
 
-        UiFlow2 Code Block:
+```python
+# Get apn
+print(nbiot.config('apn'))
 
-        MicroPython Code Block:
+# Get network mode
+nbiot.config('mode')
 
-<!-- .. code-block:: python -->
+# Get Frequency Band
+nbiot.config('band')
 
-                # Get apn
-                print(nbiot.config('apn'))
+# Set Frequency Band
+nbiot.config(band=(1, 3, 5, 8))
 
-                # Get network mode
-                nbiot.config('mode')
+# Get CCID
+nbiot.config('ccid')
 
-                # Get Frequency Band
-                nbiot.config('band')
+# Get IMEI
+nbiot.config('imei')
 
-                # Set Frequency Band
-                nbiot.config(band=(1, 3, 5, 8))
+# Get IMSI
+nbiot.config('imsi')
 
-                # Get CCID
-                nbiot.config('ccid')
+# Get Manufacturer
+nbiot.config('mfr')
 
-                # Get IMEI
-                nbiot.config('imei')
+# Get Module Model
+nbiot.config('model')
 
-                # Get IMSI
-                nbiot.config('imsi')
-
-                # Get Manufacturer
-                nbiot.config('mfr')
-
-                # Get Module Model
-                nbiot.config('model')
-
-                # Get Firmware Version
-                nbiot.config('version')
-
-<!-- .. py:method:: request(method, url, data=None, json=None, headers={}, stream=None, auth=None, timeout=None, parse_headers=True) -->
+# Get Firmware Version
+nbiot.config('version')
+```
+### `request(method, url, data=None, json=None, headers={}, stream=None, auth=None, timeout=None, parse_headers=True)`
                    head(url, **kw)
                    get(url, **kw)
                    post(url, **kw)
@@ -487,66 +383,53 @@ MicroPython Code Block:
 
         Send an HTTP request.
 
-        :param str method: HTTP method to use (e.g. "GET", "POST").
-        :param str url: URL to send the request to.
-        :param data: (optional) Dictionary, list of tuples, bytes, or file-like object to send in the body of the Request.
-        :param json: (optional) A JSON serializable Python object to send in the body of the Request.
-        :param dict headers: (optional) Dictionary of HTTP Headers to send with the Request.
-        :param bool stream: (optional) if False, the response content will be immediately downloaded.
-        :param tuple auth: (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.
-        :param float timeout: (optional) How many seconds to wait for the server to send data before giving up.
-        :param bool parse_headers: (optional) Whether to parse response headers.
+        - Parameter `method` (`str`): HTTP method to use (e.g. "GET", "POST").
+        - Parameter `url` (`str`): URL to send the request to.
+        - Parameter `data`: (optional) Dictionary, list of tuples, bytes, or file-like object to send in the body of the Request.
+        - Parameter `json`: (optional) A JSON serializable Python object to send in the body of the Request.
+        - Parameter `headers` (`dict`): (optional) Dictionary of HTTP Headers to send with the Request.
+        - Parameter `stream` (`bool`): (optional) if False, the response content will be immediately downloaded.
+        - Parameter `auth` (`tuple`): (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.
+        - Parameter `timeout` (`float`): (optional) How many seconds to wait for the server to send data before giving up.
+        - Parameter `parse_headers` (`bool`): (optional) Whether to parse response headers.
 
-        :return: A Response object.
+        - Returns: A Response object.
 
-<!-- .. note:: -->
+> Note: See `requests2` for more details.
 
-            See :mod:`requests2` for more details.
+```python
+# GET request
+response = nbiot.get("http://httpbin.org/get")
+print(response.status_code)
+print(response.text)
+response.close()
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                # GET request
-                response = nbiot.get("http://httpbin.org/get")
-                print(response.status_code)
-                print(response.text)
-                response.close()
-
-                # POST request with JSON data
-                response = nbiot.post("http://httpbin.org/post", json={"key": "value"})
-                print(response.json())
-                response.close()
-
-<!-- .. py:method:: MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={}) -->
+# POST request with JSON data
+response = nbiot.post("http://httpbin.org/post", json={"key": "value"})
+print(response.json())
+response.close()
+```
+### `MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={})`
 
         Create an MQTT client.
 
-        :param str client_id: The unique client ID string.
-        :param str server: The hostname or IP address of the remote broker.
-        :param int port: Network port of the server host to connect to. Default is 0.
-        :param str user: User name for authentication.
-        :param str password: Password for authentication.
-        :param int keepalive: Maximum period in seconds allowed between communications with the broker. Default is 0.
-        :param bool ssl: Whether to use SSL/TLS support. Default is False.
-        :param dict ssl_params: SSL/TLS parameters.
+        - Parameter `client_id` (`str`): The unique client ID string.
+        - Parameter `server` (`str`): The hostname or IP address of the remote broker.
+        - Parameter `port` (`int`): Network port of the server host to connect to. Default is 0.
+        - Parameter `user` (`str`): User name for authentication.
+        - Parameter `password` (`str`): Password for authentication.
+        - Parameter `keepalive` (`int`): Maximum period in seconds allowed between communications with the broker. Default is 0.
+        - Parameter `ssl` (`bool`): Whether to use SSL/TLS support. Default is False.
+        - Parameter `ssl_params` (`dict`): SSL/TLS parameters.
 
-        :return: An MQTTClient object.
+        - Returns: An MQTTClient object.
 
-<!-- .. note:: -->
+> Note: See `MQTTClient <umqtt.MQTTClient>` for more details.
 
-            See :class:`MQTTClient <umqtt.MQTTClient>` for more details.
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                mqtt = nbiot.MQTTClient("client_id", "mqtt.m5stack.com", port=1883, user="user", password="password")
-                mqtt.connect()
-                mqtt.publish("topic", "message")
-                mqtt.subscribe("topic", lambda topic, msg: print(topic, msg))
-                mqtt.check_msg()
+```python
+mqtt = nbiot.MQTTClient("client_id", "mqtt.m5stack.com", port=1883, user="user", password="password")
+mqtt.connect()
+mqtt.publish("topic", "message")
+mqtt.subscribe("topic", lambda topic, msg: print(topic, msg))
+mqtt.check_msg()
+```

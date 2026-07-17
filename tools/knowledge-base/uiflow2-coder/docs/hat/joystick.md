@@ -1,18 +1,12 @@
 # Joystick Hat
 
-<!-- .. include:: ../refs/hat.joystick.ref -->
-
 The following products are supported:
 
-    |JoystickHat|
+    JoystickHat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -136,82 +130,59 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_joystick_example.m5f2|
 
 ## class JoystickHat
 
 ## Constructors
 
-<!-- .. class:: JoystickHat(i2c, address: int | list | tuple = 0x38) -->
+### `class JoystickHat(i2c, address: int  list  tuple = 0x38)`
 
     Create a new instance of the JoystickHat class.
 
-    :param i2c: I2C bus
-    :param address: I2C address
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C bus
+    - Parameter `address`: I2C address
 
 ## Methods
 
-<!-- .. method:: JoystickHat.get_x_raw() -> int -->
+### `JoystickHat.get_x_raw() -> int`
 
     Get the raw x-axis value.
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.get_y_raw() -> int -->
+### `JoystickHat.get_y_raw() -> int`
 
     Get the raw y-axis value.
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.get_x() -> int -->
+### `JoystickHat.get_x() -> int`
 
     Get the x-axis value.
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.get_y() -> int -->
+### `JoystickHat.get_y() -> int`
 
     Get the y-axis value.
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.swap_x(swap: bool = True) -> None -->
+### `JoystickHat.swap_x(swap: bool = True) -> None`
 
     Swap x-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.swap_y(swap: bool = True) -> None -->
+### `JoystickHat.swap_y(swap: bool = True) -> None`
 
     Swap y-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: JoystickHat.get_button_status() -> bool -->
+### `JoystickHat.get_button_status() -> bool`
 
     Get the button status.
 
-    :return: True or False
-
-    UIFLOW2:
+    - Returns: True or False

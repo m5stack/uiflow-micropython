@@ -1,20 +1,12 @@
 # ENV Hat
 
-<!-- .. include:: ../refs/hat.env.ref -->
-
 The following products are supported:
 
-    ================== ==================
-    |ENV II|           |ENV III|
-    ================== ==================
+    ENV II           ENV III
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -57,50 +49,35 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_env_hat_example.m5f2|
 
 ## class ENVHat
 
 ## Constructors
 
-<!-- .. class:: ENVHat(i2c: Union[I2C, PAHUBHat], type: Literal[1, 2, 3]) -->
+### `class ENVHat(i2c: Union[I2C, PAHUBHat], type: Literal[1, 2, 3])`
 
     Create an ENVHat object.
 
     parameter is:
 
-        - ``i2c`` is an I2C object.
-        - ``type`` is the type of ENVHat
+        - `i2c` is an I2C object.
+        - `type` is the type of ENVHat
 
-            - ``1`` - ENV
-            - ``2`` - ENV II
-            - ``3`` - ENV III
-
-    UIFLOW2:
+            - `1` - ENV
+            - `2` - ENV II
+            - `3` - ENV III
 
 ## Methods
 
-<!-- .. method:: ENVHat.read_temperature() -->
+### `ENVHat.read_temperature()`
 
-    This method allows to read the temperature value collected by ENV and returns a floating point value. The hat of measurement is °C.
+    This method allows to read the temperature value collected by ENV and returns a floating point value. The unit of measurement is °C.
 
-    UIFLOW2:
+### `ENVHat.read_humidity()`
 
-<!-- .. method:: ENVHat.read_humidity() -->
+    This method allows to read the relative humidity value collected by ENV and returns a floating point value. The unit of measurement is %RH.
 
-    This method allows to read the relative humidity value collected by ENV and returns a floating point value. The hat of measurement is %RH.
+### `ENVHat.read_pressure()`
 
-    UIFLOW2:
-
-<!-- .. method:: ENVHat.read_pressure() -->
-
-    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The hat of measurement is Pa.
-
-    UIFLOW2:
+    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is hPa.

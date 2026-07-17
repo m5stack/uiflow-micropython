@@ -1,9 +1,4 @@
-# :py:mod:`umqtt` -- a simple MQTT client
-
-<!-- .. py:module:: umqtt -->
-    :synopsis: a simple MQTT client
-
-<!-- .. include:: ../refs/software.umqtt.ref -->
+# :py`umqtt` -- a simple MQTT client
 
 umqtt is a simple MQTT client for MicroPython. (Note that it uses some
 MicroPython shortcuts and doesn't work with CPython).
@@ -26,14 +21,14 @@ session" parameter is supported for connect as of now.
 
 There's a separate `umqtt.robust`_ module which builds on `umqtt.simple`_
 and adds automatic reconnect support in case of network errors.
-Please see its |umqtt.robust|_ for further details.
+Please see its umqtt.robust_ for further details.
 
 ## MQTT client with SSL file
 
 There is a separate `umqtt.default`_ module that builds on top of `umqtt.robust`_
 and supports SSL certificates passed in as files and callback delivery for each
 subscribed topic.
-Please see its |umqtt.default|_ for further details.
+Please see its umqtt.default_ for further details.
 
 ## API design
 
@@ -59,22 +54,17 @@ Based on the requirements above, there are following API traits:
   the most efficient. However, if in subscription callback, new
   messages of QoS>0 are published, this may lead to deep, or
   infinite recursion (the latter means an application will terminate
-  with ``RuntimeException``).
+  with `RuntimeException`).
 
-Usage Model::
+Usage Model:
+```
+# uiflow2 uses this class by default
+from umqtt import MQTTClient
 
-    # uiflow2 uses this class by default
-    from umqtt import MQTTClient
+# If you want to use the `umqtt.default` module, go this way.
+from umqtt.simple import MQTTClient
 
-    # If you want to use the `umqtt.default` module, go this way.
-    from umqtt.simple import MQTTClient
-
-    # If you want to use the `umqtt.robust` module, go this way.
-    from umqtt.robust import MQTTClient
-
+# If you want to use the `umqtt.robust` module, go this way.
+from umqtt.robust import MQTTClient
+```
 ## Classes
-
-<!-- .. toctree:: -->
-    :maxdepth: 1
-
-    umqtt.default.rst

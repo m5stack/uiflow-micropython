@@ -1,22 +1,16 @@
 # Grove2Grove Unit
 
-<!-- .. include:: ../refs/unit.grove2grove.ref -->
-
 UNIT-GROVE2GROVE is a Grove expansion Unit with On/Off Control + Current Meter
 functions. On/Off control adopts switch value, Current meter is 0 - 3.3V analog
 signal.
 
 Support the following products:
 
-    |Grove2GroveUnit|
+    Grove2GroveUnit
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -54,53 +48,36 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_grove2_grove_example.m5f2|
 
 ## class Grove2GroveUnit
 
 ## Constructors
 
-<!-- .. class:: Grove2GroveUnit(port: tuple) -->
+### `class Grove2GroveUnit(port: tuple)`
 
     Initialize the Grove2GroveUnit.
 
-    :param tuple port: The port to which the Grove2GroveUnit is connected. port[0]: adc pin, port[1]: grove pin.
-
-    UIFLOW2:
+    - Parameter `port` (`tuple`): The port to which the Grove2GroveUnit is connected. port[0]: adc pin, port[1]: grove pin.
 
 ## Methods
 
-<!-- .. method:: Grove2GroveUnit.get_current() -> float -->
+### `Grove2GroveUnit.get_current() -> float`
 
     Get the current of the sensor.
 
-    :return: The current of the sensor.
+    - Returns: The current of the sensor.
 
-    UIFLOW2:
-
-<!-- .. method:: Grove2GroveUnit.on() -> None -->
+### `Grove2GroveUnit.on() -> None`
 
     Turn on the grove.
 
-    UIFLOW2:
-
-<!-- .. method:: Grove2GroveUnit.off() -> None -->
+### `Grove2GroveUnit.off() -> None`
 
     Turn off the grove.
 
-    UIFLOW2:
-
-<!-- .. method:: Grove2GroveUnit.set_en(state: int) -> None -->
+### `Grove2GroveUnit.set_en(state: int) -> None`
 
     Set the state of the grove.
 
-    :param int state: The state of the grove.
-
-    UIFLOW2:
+    - Parameter `state` (`int`): The state of the grove.

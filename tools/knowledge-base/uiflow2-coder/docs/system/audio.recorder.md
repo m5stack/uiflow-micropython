@@ -1,8 +1,5 @@
-<!-- .. currentmodule:: audio -->
 
 # class Recorder
-
-<!-- .. include:: ../refs/system.audio.recorder.ref -->
 
 The recorder can record audio from the microphone and encode the audio into wav or amr format.
 
@@ -10,100 +7,78 @@ The recorder can record audio from the microphone and encode the audio into wav 
 
 ## Constructors
 
-<!-- .. class:: audio.Recorder(sample=8000, bits=16, stereo=False) -->
+### `class audio.Recorder(sample=8000, bits=16, stereo=False)`
 
     Create a Recorder object.
 
-    :param int sample: The sample rate of the audio data. The range is 8000-96000.
-    :param int bits: The bits of the audio data.
-    :param bool stereo: Whether the audio data is stereo.
-
-    UIFLOW2:
+    - Parameter `sample` (`int`): The sample rate of the audio data. The range is 8000-96000.
+    - Parameter `bits` (`int`): The bits of the audio data.
+    - Parameter `stereo` (`bool`): Whether the audio data is stereo.
 
 ## Methods
 
-<!-- .. method:: Recorder.record(uri: str, time: int, sync=True) -->
+### `Recorder.record(uri: str, time: int, sync=True)`
 
     Record audio from microphone to file.
 
-    :param str uri: The uri of the audio file. e.g. "file://flash/test.amr", "file://sd/test.wav".
-    :param int time: The duration of the recording, The unit is seconds.
-    :param bool sync: Whether to record synchronously.
+    - Parameter `uri` (`str`): The uri of the audio file. e.g. "file://flash/test.amr", "file://sd/test.wav".
+    - Parameter `time` (`int`): The duration of the recording, The unit is seconds.
+    - Parameter `sync` (`bool`): Whether to record synchronously.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.create_pcm_buf(time) -> bytearray -->
+### `Recorder.create_pcm_buf(time) -> bytearray`
 
     Create a buffer to store the audio data. The audio data is in PCM format.
 
     The length of the data buffer is :math:`sample * bits * time / 8`
 
-    :param int time: The duration of the recording, The unit is seconds.
+    - Parameter `time` (`int`): The duration of the recording, The unit is seconds.
 
-    :return: The buffer to store the audio data.
+    - Returns: The buffer to store the audio data.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.record_into(buf, sample=8000, bits=16, stereo=False, sync=True) -->
+### `Recorder.record_into(buf, sample=8000, bits=16, stereo=False, sync=True)`
 
     Play the raw audio data.
 
-    :param bytes buf: Read into buf from the microphone.
-    :param int sample: The sample rate of the audio data. The range is 8000-96000.
-    :param int bits: The bits of the audio data.
-    :param bool stereo: Whether the audio data is stereo.
-    :param bool sync: Whether to record synchronously.
+    - Parameter `buf` (`bytes`): Read into buf from the microphone.
+    - Parameter `sample` (`int`): The sample rate of the audio data. The range is 8000-96000.
+    - Parameter `bits` (`int`): The bits of the audio data.
+    - Parameter `stereo` (`bool`): Whether the audio data is stereo.
+    - Parameter `sync` (`bool`): Whether to record synchronously.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.pause() -->
+### `Recorder.pause()`
 
     Pause the Recorder.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.resume() -->
+### `Recorder.resume()`
 
     Resume the Recorder.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.stop() -->
+### `Recorder.stop()`
 
     Stop the Recorder.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.rms() -> float -->
+### `Recorder.rms() -> float`
 
     Get the root mean square of the audio data.
 
-    :return: The root mean square of the audio data. The unit is dB.
+    - Returns: The root mean square of the audio data. The unit is dB.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.volume() -> int -->
+### `Recorder.volume() -> int`
 
     Get the volume of the audio data.
 
-    :return: The volume of the audio data. The range is 0-100.
+    - Returns: The volume of the audio data. The range is 0-100.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.is_recording() -> bool -->
+### `Recorder.is_recording() -> bool`
 
     Check if the Recorder is recording.
 
-    :return: True if the Recorder is recording, False otherwise.
+    - Returns: True if the Recorder is recording, False otherwise.
 
-    UIFLOW2:
-
-<!-- .. method:: Recorder.config(sample=8000, bits=16, stereo=False) -> bool -->
+### `Recorder.config(sample=8000, bits=16, stereo=False) -> bool`
 
     Configure the Recorder.
 
-    :param int sample: The sample rate of the audio data. The range is 8000-96000.
-    :param int bits: The bits of the audio data.
-    :param bool stereo: Whether the audio data is stereo.
-
-    UIFLOW2:
+    - Parameter `sample` (`int`): The sample rate of the audio data. The range is 8000-96000.
+    - Parameter `bits` (`int`): The bits of the audio data.
+    - Parameter `stereo` (`bool`): Whether the audio data is stereo.

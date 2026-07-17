@@ -1,18 +1,12 @@
 # Encoder Unit
 
-<!-- .. include:: ../refs/unit.encoder.ref -->
-
 The following products are supported:
 
-    |Encoder|
+    Encoder
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -133,82 +127,57 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_encoder_example.m5f2|
 
 ## class EncoderUnit
 
 ## Constructors
 
-<!-- .. class:: EncoderUnit(i2c, address: int | list | tuple = 0x40) -->
+### `class EncoderUnit(i2c, address: int  list  tuple = 0x40)`
 
     Creates a Rotary object.
 
-    :param i2c: I2C object.
-    :param address: I2C address, Default is 0x40.
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C object.
+    - Parameter `address`: I2C address, Default is 0x40.
 
 ## Methods
 
-<!-- .. method:: EncoderUnit.get_rotary_status() -> bool -->
+### `EncoderUnit.get_rotary_status() -> bool`
 
     Gets the rotation status of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.get_rotary_value() -> int -->
+### `EncoderUnit.get_rotary_value() -> int`
 
     Gets the rotation value of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.get_rotary_increments() -> int -->
+### `EncoderUnit.get_rotary_increments() -> int`
 
     Gets the rotation increment of the Rotary object. Can be used to determine
     the direction of rotation.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.reset_rotary_value() -> None -->
+### `EncoderUnit.reset_rotary_value() -> None`
 
     Resets the rotation value of the Rotary object.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.set_rotary_value(new_value: int) -> None -->
+### `EncoderUnit.set_rotary_value(new_value: int) -> None`
 
     Sets the rotation value of the Rotary object.
 
-    :param int new_value: adjust the current value.
+    - Parameter `new_value` (`int`): adjust the current value.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.get_button_status() -> bool -->
+### `EncoderUnit.get_button_status() -> bool`
 
     Get the current status of the rotary encoder keys.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.set_color(index, rgb: int) -> None -->
+### `EncoderUnit.set_color(index, rgb: int) -> None`
 
     Set the color of the LED
 
-    :param int index: the index of the LED, 1 or 2.
-    :param int rgb: the color of the LED, 0x000000 - 0xFFFFFF.
+    - Parameter `index` (`int`): the index of the LED, 1 or 2.
+    - Parameter `rgb` (`int`): the color of the LED, 0x000000 - 0xFFFFFF.
 
-    UIFLOW2:
-
-<!-- .. method:: EncoderUnit.fill_color(rgb: int) -> None -->
+### `EncoderUnit.fill_color(rgb: int) -> None`
 
     Set the color of the LED
 
-    :param int rgb: the color of the LED, 0x000000 - 0xFFFFFF.
-
-    UIFLOW2:
+    - Parameter `rgb` (`int`): the color of the LED, 0x000000 - 0xFFFFFF.

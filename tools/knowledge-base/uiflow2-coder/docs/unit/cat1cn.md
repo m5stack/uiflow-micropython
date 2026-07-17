@@ -1,28 +1,10 @@
 # Cat1CN Unit
 
-<!-- .. sku: U204 -->
-
-<!-- .. include:: ../refs/unit.cat1cn.ref -->
-
 This is the driver library for the Cat1CN Unit to accept and send data.
 
 Support the following products:
 
-|Cat1CNUnit|
-
-## UiFlow2 Example
-
-#### HTTP Example
-
-Open the |cat1cn_core2_http_example.m5f2| project in UiFlow2.
-
-This example shows how to send HTTP request.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+Cat1CNUnit
 
 ## MicroPython Example
 
@@ -30,13 +12,7 @@ Example output:
 
 This example shows how to send HTTP request.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -127,24 +103,11 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 #### MQTT Example
 
-Open the |cat1cn_core2_mqtt_example.m5f2| project in UiFlow2.
-
 This example shows how to send MQTT message.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
 
 ## MicroPython Example
 
@@ -152,13 +115,7 @@ Example output:
 
 This example shows how to send MQTT message.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -232,33 +189,24 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### Cat1Unit
 
-## Cat1Unit
+## `Cat1Unit`
 Create an Cat1Unit object
 
-:param int id: The UART ID to use (0, 1, or 2). Default is 2.
-:param port: A list or tuple containing the TX and RX pin numbers.
-:type port: list | tuple
-:param verbose: Enable verbose output for debugging. Default is False.
+- Parameter `id` (`int`): The UART ID to use (0, 1, or 2). Default is 2.
+- Parameter `port`: A list or tuple containing the TX and RX pin numbers.
+- Type of `port`: list | tuple
+- Parameter `verbose`: Enable verbose output for debugging. Default is False.
 
-UiFlow2 Code Block:
+```python
+from base import Cat1Unit
 
-MicroPython Code Block:
+cat1cn_0 = Cat1Unit(2, port=(33, 32))
+```
 
-    .. code-block:: python
-
-        from base import Cat1Unit
-
-        cat1cn_0 = Cat1Unit(2, port=(33, 32))
-
-See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.
+See `NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.

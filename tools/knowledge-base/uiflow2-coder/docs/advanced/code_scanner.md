@@ -1,22 +1,14 @@
 # code_scanner
 
-<!-- .. include:: ../refs/advanced.code_scanner.ref -->
+> Note: This module is only applicable to the CoreS3 Controller
 
-<!-- .. note:: This module is only applicable to the CoreS3 Controller -->
-
-<!-- .. module:: code_scanner -->
-   :synopsis:
-
-``code_scanner`` module for qrcode scanning recognition
+`code_scanner` module for qrcode scanning recognition
 
 ## Micropython Example
 
-###### qrcode detect
+### qrcode detect
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -57,40 +49,31 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-## UIFlow2.0 Example
-
-###### qrcode detect
-
-<!-- .. only:: builder_html -->
-
-    |qrcode_detect_example.m5f2|
 
 ## Methods
 
-<!-- .. method:: find_qrcodes(img: image.Image) -> image.qrcode -->
+### `find_qrcodes(img: image.Image) -> image.qrcode`
 
     QR code recognition
 
-    - ``img`` Image to be recognized
+    - `img` Image to be recognized
 
-    Returns ``image.qrcode`` instance
+    Returns `image.qrcode` instance
 
     UIFlow2.0
 
 ## class image.QRCode
 
-``QRCode`` The QRCode object is returned by `code_scanner.find_qrcodes(img: image.Image)`.
+`QRCode` The QRCode object is returned by `code_scanner.find_qrcodes(img: image.Image)`.
 
-<!-- .. method:: payload() -> str -->
+### `payload() -> str`
 
     Return the payload string of the QR code
 
     UIFlow2.0
 
-<!-- .. method:: type_name() -> str -->
+### `type_name() -> str`
 
     Return the type of the QR code
 

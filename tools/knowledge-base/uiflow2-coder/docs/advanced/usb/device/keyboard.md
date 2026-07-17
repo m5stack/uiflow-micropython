@@ -1,24 +1,13 @@
 # keyboard
 
-<!-- .. currentmodule:: usb.device.keyboard -->
-
-<!-- .. module:: keyboard -->
-    :synopsis: bluetooth keyboard
-
 usb device keyboard
 
-<!-- .. include:: ../../../refs/advanced.usb.device.keyboard.ref -->
-
-<!-- .. note:: This module is only applicable to the CoreS3 Controller -->
-
+> Note: This module is only applicable to the CoreS3 Controller
 ## Micropython Example
 
-###### USB keyboard
+### USB keyboard
 
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -71,55 +60,40 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-## UIFlow2.0 Example
-
-###### USB keyboard
-
-<!-- .. only:: builder_html -->
-
-    |m5cores3_usbd_keyboard_example.m5f2|
 
 ## class Keyboard
 
-<!-- .. class:: usb.device.keyboard.Keyboard() -->
+### `class usb.device.keyboard.Keyboard()`
 
     Create Keyboard object
 
     UIFlow2.0
 
-<!-- .. method:: Keyboard.set_modifiers(right_gui: bool = False, right_alt: bool = False, right_shift: bool = False, right_ctrl: bool = False, \ -->
+### `Keyboard.set_modifiers(right_gui: bool = False, right_alt: bool = False, right_shift: bool = False, right_ctrl: bool = False, \`
                        left_gui: bool = False, left_alt: bool = False, left_shift: bool = False, left_ctrl: bool = False)
 
     Set modifier keys
 
-    - ``right_gui`` The state of the right-side GUI key. True indicates that the key is pressed.
-    - ``right_alt`` The state of the right-side Alt key. True indicates that the key is pressed.
-    - ``right_shift`` The state of the right-side Shift key. True indicates that the key is pressed.
-    - ``right_ctrl`` The state of the right-side Ctrl key. True indicates that the key is pressed.
-    - ``left_gui`` The state of the left-side GUI key. True indicates that the key is pressed.
-    - ``left_alt`` The state of the left-side Alt key. True indicates that the key is pressed.
-    - ``left_shift`` The state of the left-side Shift key. True indicates that the key is pressed.
-    - ``left_ctrl``  The state of the left-side Ctrl key. True indicates that the key is pressed.
-
-    :note: Changes will take effect after calling Keyboard.send_report().
+    - `right_gui` The state of the right-side GUI key. True indicates that the key is pressed.
+    - `right_alt` The state of the right-side Alt key. True indicates that the key is pressed.
+    - `right_shift` The state of the right-side Shift key. True indicates that the key is pressed.
+    - `right_ctrl` The state of the right-side Ctrl key. True indicates that the key is pressed.
+    - `left_gui` The state of the left-side GUI key. True indicates that the key is pressed.
+    - `left_alt` The state of the left-side Alt key. True indicates that the key is pressed.
+    - `left_shift` The state of the left-side Shift key. True indicates that the key is pressed.
+    - `left_ctrl`  The state of the left-side Ctrl key. True indicates that the key is pressed.
 
     UIFlow2.0
 
-<!-- .. method:: Keyboard.set_keys(k0: int = 0, k1: int = 0, k2: int = 0, k3: int = 0, k4: int = 0, k5: int = 0) -->
+### `Keyboard.set_keys(k0: int = 0, k1: int = 0, k2: int = 0, k3: int = 0, k4: int = 0, k5: int = 0)`
 
     Press specified keys (up to 6 key values at a time)
 
-    - ``k0~k5`` The input is a standard HID key value. For details, refer to the KeyCode() class.
-
-    :note: Changes will take effect after calling Keyboard.send_report().
+    - `k0~k5` The input is a standard HID key value. For details, refer to the KeyCode() class.
 
     example: Press the lowercase 'a'
 
-```
-```
         Keyboard.set_keys(k0=KeyCode.A)
         Keyboard.send_report()
         Keyboard.set_keys(k0=0)
@@ -127,8 +101,6 @@ if __name__ == "__main__":
 
     example: Press the uppercase 'A'
 
-```
-```
         Keyboard.set_modifiers(right_shift=True)
         Keyboard.set_keys(k0=KeyCode.A)
         Keyboard.send_report()
@@ -138,21 +110,21 @@ if __name__ == "__main__":
 
     UIFlow2.0
 
-<!-- .. method:: Keyboard.send_report() -->
+### `Keyboard.send_report()`
 
     Send keyboard status report
 
     UIFlow2.0
 
-<!-- .. method:: Keyboard.input(key) -->
+### `Keyboard.input(key)`
 
     input key
 
-    - ``key`` The input can be a string within the ASCII range or a value from KeyCode.
+    - `key` The input can be a string within the ASCII range or a value from KeyCode.
 
-    example::
-
-        Keyboard.input("Hello M5")
-        Keyboard.input(KeyCode.A)
-
+    example:
+```
+Keyboard.input("Hello M5")
+Keyboard.input(KeyCode.A)
+```
     UIFlow2.0

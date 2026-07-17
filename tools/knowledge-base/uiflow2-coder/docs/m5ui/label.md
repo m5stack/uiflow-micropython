@@ -1,49 +1,22 @@
-<!-- .. currentmodule:: m5ui -->
-<!-- .. _m5ui.M5Label: -->
 
 # M5Label
 
-<!-- .. include:: ../refs/m5ui.label.ref -->
-
 M5Label is a widget that can be used to create labels in the user interface. It can display text and can be styled with different fonts, colors, and sizes.
 
-<!-- .. important:: -->
-
-    **Available Fonts**: For ``m5ui`` widgets, use LVGL fonts such as
-    ``lv.font_montserrat_12``, ``14``, ``16``, ``18``, ``24``, ``40``, ``44``,
-    and ``48``. Some builds, such as Tab5, also include ``20``, ``22``, ``30``,
-    and ``36``. Check with ``hasattr(lv, "font_montserrat_20")`` before using
-    an optional size in cross-board examples. The Alibaba CJK fonts are
-    ``M5.Lcd.FONTS`` fonts for ``M5.Lcd`` / ``M5.Widgets`` drawing, not
-    ``lv.font_montserrat_*`` objects.
-
-## UiFlow2 Example
-
-#### scroll label
-
-Open the |cores3_scroll_label_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to create a label that scrolls text in a circular manner.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
-
+> Important: **Available Fonts**: For `m5ui` widgets, use LVGL fonts such as
+> `lv.font_montserrat_12`, `14`, `16`, `18`, `24`, `40`, `44`,
+> and `48`. Some builds, such as Tab5, also include `20`, `22`, `30`,
+> and `36`. Check with `hasattr(lv, "font_montserrat_20")` before using
+> an optional size in cross-board examples. The Alibaba CJK fonts are
+> `M5.Lcd.FONTS` fonts for `M5.Lcd` / `M5.Widgets` drawing, not
+> `lv.font_montserrat_*` objects.
 ## MicroPython Example
 
 #### scroll label
 
 This example demonstrates how to create a label that scrolls text in a circular manner.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -92,301 +65,212 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### M5Label
 
-<!-- .. note:: -->
-
-    Unlike ``M5Button`` and ``M5Chart``, the ``M5Label`` constructor does
-    **not** accept ``w`` or ``h`` parameters. Label size is determined
-    automatically by its text content. To explicitly set a label's width,
-    call ``label.set_width(150)`` after creation.
-
-## M5Label
+> Note: Unlike `M5Button` and `M5Chart`, the `M5Label` constructor does
+> **not** accept `w` or `h` parameters. Label size is determined
+> automatically by its text content. To explicitly set a label's width,
+> call `label.set_width(150)` after creation.
+## `M5Label`
 Create a label object.
 
-:param str text: The text to display on the label.
-:param int x: The x position of the label.
-:param int y: The y position of the label.
-:param int text_c: The text color of the label in hexadecimal format.
-:param int bg_c: The background color of the label in hexadecimal format.
-:param int bg_opa: The background opacity of the label (0-255).
-:param lv.lv_font_t font: The font to use for the button text.
-:param lv.obj parent: The parent object to attach the button to. If not specified, the button will be attached to the default screen.
-
-UiFlow2 Code Block:
+- Parameter `text` (`str`): The text to display on the label.
+- Parameter `x` (`int`): The x position of the label.
+- Parameter `y` (`int`): The y position of the label.
+- Parameter `text_c` (`int`): The text color of the label in hexadecimal format.
+- Parameter `bg_c` (`int`): The background color of the label in hexadecimal format.
+- Parameter `bg_opa` (`int`): The background opacity of the label (0-255).
+- Parameter `font` (`lv.lv_font_t`): The font to use for the button text.
+- Parameter `parent` (`lv.obj`): The parent object to attach the button to. If not specified, the button will be attached to the default screen.
 
     None
 
-MicroPython Code Block:
+```python
+from m5ui import M5Label
+import lvgl as lv
 
-    .. code-block:: python
-
-        from m5ui import M5Label
-        import lvgl as lv
-
-        m5ui.init()
-        label_0 = M5Label(text="Hello, World!", x=10, y=10, text_c=0x212121, bg_c=0xFFFFFF, bg_opa=0, font=lv.font_montserrat_14, parent=page0)
+m5ui.init()
+label_0 = M5Label(text="Hello, World!", x=10, y=10, text_c=0x212121, bg_c=0xFFFFFF, bg_opa=0, font=lv.font_montserrat_14, parent=page0)
+```
 
 ### `set_shadow`
 Set a shadow for the label.
 
-:param int color: The color of the shadow in hexadecimal format or an integer.
-:param int opa: The opacity of the shadow (0-255).
-:param int align: The alignment of the shadow relative to the label.
-:param int offset_x: The horizontal offset of the shadow.
-:param int offset_y: The vertical offset of the shadow.
-:return: None
+- Parameter `color` (`int`): The color of the shadow in hexadecimal format or an integer.
+- Parameter `opa` (`int`): The opacity of the shadow (0-255).
+- Parameter `align` (`int`): The alignment of the shadow relative to the label.
+- Parameter `offset_x` (`int`): The horizontal offset of the shadow.
+- Parameter `offset_y` (`int`): The vertical offset of the shadow.
+- Returns: None
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        label_0.set_shadow(color=0x000000, opa=128, align=lv.ALIGN.BOTTOM_RIGHT, offset_x=5, offset_y=5)
+```python
+label_0.set_shadow(color=0x000000, opa=128, align=lv.ALIGN.BOTTOM_RIGHT, offset_x=5, offset_y=5)
+```
 
 ### `unset_shadow`
 Remove the shadow from the label.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        label_0.unset_shadow()
+```python
+label_0.unset_shadow()
+```
 
 ### `set_style_radius`
 
 ### `set_size`
 
-<!-- .. py:method:: set_flag(flag, value) -->
+### `set_flag(flag, value)`
 
-        Set a flag on the object. If ``value`` is True, the flag is added; if False, the flag is removed.
+        Set a flag on the object. If `value` is True, the flag is added; if False, the flag is removed.
 
-        :param int flag: The flag to set.
-        :param bool value: If True, the flag is added; if False, the flag is removed.
-        :return: None
+        - Parameter `flag` (`int`): The flag to set.
+        - Parameter `value` (`bool`): If True, the flag is added; if False, the flag is removed.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_flag(lv.obj.FLAG.HIDDEN, True)
-
-<!-- .. py:method:: toggle_flag(flag) -->
+```python
+label_0.set_flag(lv.obj.FLAG.HIDDEN, True)
+```
+### `toggle_flag(flag)`
 
         Toggle a flag on the object. If the flag is set, it is removed; if not set, it is added.
 
-        :param int flag: The flag to toggle.
-        :return: None
+        - Parameter `flag` (`int`): The flag to toggle.
+        - Returns: None
 
-        UiFlow2 Code Block:
+```python
+label_0.toggle_flag(lv.obj.FLAG.HIDDEN)
+```
+### `set_state(state, value)`
 
-        MicroPython Code Block:
+        Set the state of the label. If `value` is True, the state is set; if False, the state is unset.
 
-<!-- .. code-block:: python -->
+        - Parameter `state` (`int`): The state to set.
+        - Parameter `value` (`bool`): If True, the state is set; if False, the state is unset.
+        - Returns: None
 
-                label_0.toggle_flag(lv.obj.FLAG.HIDDEN)
-
-<!-- .. py:method:: set_state(state, value) -->
-
-        Set the state of the label. If ``value`` is True, the state is set; if False, the state is unset.
-
-        :param int state: The state to set.
-        :param bool value: If True, the state is set; if False, the state is unset.
-        :return: None
-
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_state(lv.STATE.PRESSED, True)
-
-<!-- .. py:method:: toggle_state(state) -->
+```python
+label_0.set_state(lv.STATE.PRESSED, True)
+```
+### `toggle_state(state)`
 
         Toggle the state of the label. If the state is set, it is unset; if not set, it is set.
 
-        :param int state: The state to toggle.
-        :return: None
+        - Parameter `state` (`int`): The state to toggle.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.toggle_state(lv.STATE.PRESSED)
-
-<!-- .. py:method:: set_style_text_font(font, part) -->
+```python
+label_0.toggle_state(lv.STATE.PRESSED)
+```
+### `set_style_text_font(font, part)`
 
         Set the font of the label text.
 
-        :param lv.lv_font_t font: The font to set.
-        :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
-        :return: None
+        - Parameter `font` (`lv.lv_font_t`): The font to set.
+        - Parameter `part` (`int`): The part of the object to apply the style to (e.g., lv.PART.MAIN).
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-<!-- .. py:method:: set_text_color(color, opa, part) -->
+```python
+label_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
+```
+### `set_text_color(color, opa, part)`
 
         Set the color of the text.
 
-        :param int color: The color to set.
-        :param int opa: The opacity of the color.
-        :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
-        :return: None
+        - Parameter `color` (`int`): The color to set.
+        - Parameter `opa` (`int`): The opacity of the color.
+        - Parameter `part` (`int`): The part of the object to apply the style to (e.g., lv.PART.MAIN).
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-<!-- .. py:method:: set_bg_color(color, opa, part) -->
+```python
+label_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+```
+### `set_bg_color(color, opa, part)`
 
         Set the background color of the label.
 
-        :param int color: The color to set.
-        :param int opa: The opacity of the color.
-        :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
-        :return: None
+        - Parameter `color` (`int`): The color to set.
+        - Parameter `opa` (`int`): The opacity of the color.
+        - Parameter `part` (`int`): The part of the object to apply the style to (e.g., lv.PART.MAIN).
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-<!-- .. py:method:: set_pos(x, y) -->
+```python
+label_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+```
+### `set_pos(x, y)`
 
         Set the position of the label.
 
-        :param int x: The x-coordinate of the label.
-        :param int y: The y-coordinate of the label.
-        :return: None
+        - Parameter `x` (`int`): The x-coordinate of the label.
+        - Parameter `y` (`int`): The y-coordinate of the label.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_pos(100, 100)
-
-<!-- .. py:method:: set_x(x) -->
+```python
+label_0.set_pos(100, 100)
+```
+### `set_x(x)`
 
         Set the x-coordinate of the label.
 
-        :param int x: The x-coordinate of the label.
-        :return: None
+        - Parameter `x` (`int`): The x-coordinate of the label.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_x(100)
-
-<!-- .. py:method:: set_y(y) -->
+```python
+label_0.set_x(100)
+```
+### `set_y(y)`
 
         Set the y-coordinate of the label.
 
-        :param int y: The y-coordinate of the label.
-        :return: None
+        - Parameter `y` (`int`): The y-coordinate of the label.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_y(100)
-
-<!-- .. py:method:: set_size(width, height) -->
+```python
+label_0.set_y(100)
+```
+### `set_size(width, height)`
 
         Set the size of the label.
 
-        :param int width: The width of the label.
-        :param int height: The height of the label.
-        :return: None
+        - Parameter `width` (`int`): The width of the label.
+        - Parameter `height` (`int`): The height of the label.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_size(100, 50)
-
-<!-- .. py:method:: set_width(width) -->
+```python
+label_0.set_size(100, 50)
+```
+### `set_width(width)`
 
         Set the width of the label.
 
-        :param int width: The width of the label.
-        :return: None
+        - Parameter `width` (`int`): The width of the label.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.set_width(100)
-
-<!-- .. py::method:: get_width() -->
+```python
+label_0.set_width(100)
+```
+### `get_width()`
 
         Get the width of the label.
 
-        :return: The width of the label.
-        :rtype: int
+        - Returns: The width of the label.
+        - Return type: int
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.get_width()
-
-<!-- .. py:method:: align_to(obj, align, x, y) -->
+```python
+label_0.get_width()
+```
+### `align_to(obj, align, x, y)`
 
         Align the label to another object.
 
-        :param lv.obj obj: The object to align to.
-        :param int align: The alignment type.
-        :param int x: The x-offset from the aligned object.
-        :param int y: The y-offset from the aligned object.
-        :return: None
+        - Parameter `obj` (`lv.obj`): The object to align to.
+        - Parameter `align` (`int`): The alignment type.
+        - Parameter `x` (`int`): The x-offset from the aligned object.
+        - Parameter `y` (`int`): The y-offset from the aligned object.
+        - Returns: None
 
-        UiFlow2 Code Block:
-
-        MicroPython Code Block:
-
-<!-- .. code-block:: python -->
-
-                label_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+```python
+label_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+```

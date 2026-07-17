@@ -1,18 +1,12 @@
 # ACSSR Unit
 
-<!-- .. include:: ../refs/unit.acssr.ref -->
-
 Support the following products:
 
-    |ACSSR Unit|
+    ACSSR Unit
 
 Micropython I2C Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -132,16 +126,11 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
 
 Micropython Modbus Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -261,84 +250,55 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 I2C Example:
-
-UIFLOW2 Modbus Example:
-
-<!-- .. only:: builder_html -->
-
-    |cores3_acssr_i2c_example.m5f2|
-
-    |cores3_acssr_modbus_example.m5f2|
 
 ## class ACSSRUnit
 
 ## Constructors
 
-<!-- .. class:: ACSSRUnit(bus, address=None) -->
+### `class ACSSRUnit(bus, address=None)`
 
     Create an ACSSRUnit object.
 
-    :param bus: I2C bus or Modbus.
-    :param address: Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus mode.
-
-    UIFLOW2:
-
-<!-- .. _unit.ACSSRUnit.Methods: -->
+    - Parameter `bus`: I2C bus or Modbus.
+    - Parameter `address`: Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus mode.
 
 ## Methods
 
-<!-- .. method:: ACSSRUnit.on() -> None -->
+### `ACSSRUnit.on() -> None`
 
     Turn on the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.off() -> None -->
+### `ACSSRUnit.off() -> None`
 
     Turn off the relay.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.__call__([x]) -->
+### `ACSSRUnit.__call__([x])`
 
     Turn on the relay if x is True, otherwise turn off the relay.
 
-    :param x: True or False.
+    - Parameter `x`: True or False.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.value([x]) -->
+### `ACSSRUnit.value([x])`
 
     Turn on the relay if x is True, otherwise turn off the relay.
 
-    :param x: True or False.
+    - Parameter `x`: True or False.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.fill_color(rgb: int = 0) -> None -->
+### `ACSSRUnit.fill_color(rgb: int = 0) -> None`
 
     Set the color of the LED.
 
-    :param rgb: RGB color value. Default is 0.
+    - Parameter `rgb`: RGB color value. Default is 0.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.get_firmware_version() -> int -->
+### `ACSSRUnit.get_firmware_version() -> int`
 
     Get the firmware version of the unit.
 
-    :return: Firmware version.
+    - Returns: Firmware version.
 
-    UIFLOW2:
-
-<!-- .. method:: ACSSRUnit.set_address(new_address: int) -> None -->
+### `ACSSRUnit.set_address(new_address: int) -> None`
 
     Set the I2C address of the unit.
 
-    :param new_address: New I2C address. The range is 0x01-0x7f.
-
-    UIFLOW2:
+    - Parameter `new_address`: New I2C address. The range is 0x01-0x7f.

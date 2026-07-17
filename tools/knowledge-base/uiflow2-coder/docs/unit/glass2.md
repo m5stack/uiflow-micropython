@@ -1,26 +1,10 @@
 # Glass2 Unit
 
-<!-- .. include:: ../refs/unit.glass2.ref -->
-
 Glass2 Unit is a 1.51-inch transparent OLED display unit that adopts the SSD1309 driver solution.
 
 Support the following products:
 
-    |Glass2Unit|
-
-## UiFlow2 Example
-
-#### Draw Text
-
-Open the |cores3_glass2_example.m5f2| project in UiFlow2.
-
-This example displays the text "GLASS2" on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    Glass2Unit
 
 ## MicroPython Example
 
@@ -28,13 +12,7 @@ Example output:
 
 This example displays the text "GLASS2" on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -76,31 +54,22 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 ## class Glass2Unit
 
-## Glass2Unit
+## `Glass2Unit`
 Initialize the Glass2 Unit.
 
-:param i2c: The I2C bus the Glass2 Unit is connected to.
-:type i2c: I2C | PAHUBUnit
-:param int address: The I2C address of the Glass2 Unit, default is 0x3C.
+- Parameter `i2c`: The I2C bus the Glass2 Unit is connected to.
+- Type of `i2c`: I2C | PAHUBUnit
+- Parameter `address` (`int`): The I2C address of the Glass2 Unit, default is 0x3C.
 
-UiFlow2 Code Block:
+```python
+from unit import Glass2Unit
+glass2_0 = Glass2Unit(i2c0, 0x3c)
+```
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from unit import Glass2Unit
-        glass2_0 = Glass2Unit(i2c0, 0x3c)
-
-    Glass2Unit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.
+    Glass2Unit class inherits Display class, See `hardware.Display <hardware.Display>` for more details.

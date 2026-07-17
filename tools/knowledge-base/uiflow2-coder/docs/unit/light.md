@@ -1,18 +1,12 @@
 # Light Unit
 
-<!-- .. include:: ../refs/unit.light.ref -->
-
 Support the following products:
 
-    |Light|
+    Light
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -47,44 +41,29 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |light_core_example.m5f2|
 
 ## class Light
 
 ## Constructors
 
-<!-- .. class:: Light(IO1,IO2) -->
+### `class Light(IO1,IO2)`
 
     Create a Light object.
 
     The parameters are:
-        - ``IO1,IO2`` Define digital and analog output pins.
-
-    UIFLOW2:
+        - `IO1,IO2` Define digital and analog output pins.
 
 ## Methods
 
-<!-- .. method:: Light.get_digital_value() -->
+### `Light.get_digital_value()`
 
     Define digital and analog output pins.
 
-    UIFLOW2:
-
-<!-- .. method:: Light.get_analog_value() -->
+### `Light.get_analog_value()`
 
     Gets the analog (returns 0-65535).
 
-    UIFLOW2:
-
-<!-- .. method:: Light.get_ohm() -->
+### `Light.get_ohm()`
 
     Gets the resistance value (returns an integer).
-
-    UIFLOW2:

@@ -1,18 +1,12 @@
 # MiniJoyC Hat
 
-<!-- .. include:: ../refs/hat.mini_joy.ref -->
-
 The following products are supported:
 
-    |MiniJoyCHat|
+    MiniJoyCHat
 
 Micropython Example:
 
 ```python
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -131,98 +125,71 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-UIFLOW2 Example:
-
-<!-- .. only:: builder_html -->
-
-    |stickc_plus2_mini_joy_example.m5f2|
 
 ## class MiniJoyHat
 
 ## Constructors
 
-<!-- .. class:: MiniJoyHat(i2c, address: int | list | tuple = 0x38) -->
+### `class MiniJoyHat(i2c, address: int  list  tuple = 0x38)`
 
     Create a new instance of the MiniJoyHat class.
 
-    :param i2c: I2C bus
-    :param address: I2C address
-
-    UIFLOW2:
+    - Parameter `i2c`: I2C bus
+    - Parameter `address`: I2C address
 
 ## Methods
 
-<!-- .. method:: MiniJoyHat.get_x_raw() -> int -->
+### `MiniJoyHat.get_x_raw() -> int`
 
     Get the raw x-axis value.
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.get_y_raw() -> int -->
+### `MiniJoyHat.get_y_raw() -> int`
 
     Get the raw y-axis value.
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.get_x() -> int -->
+### `MiniJoyHat.get_x() -> int`
 
     Get the x-axis value.
 
-    :return: x-axis value
+    - Returns: x-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.get_y() -> int -->
+### `MiniJoyHat.get_y() -> int`
 
     Get the y-axis value.
 
-    :return: y-axis value
+    - Returns: y-axis value
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.swap_x(swap: bool = True) -> None -->
+### `MiniJoyHat.swap_x(swap: bool = True) -> None`
 
     Swap x-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.swap_y(swap: bool = True) -> None -->
+### `MiniJoyHat.swap_y(swap: bool = True) -> None`
 
     Swap y-axis direction
 
-    :param swap: True or False
+    - Parameter `swap`: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.get_button_status() -> bool -->
+### `MiniJoyHat.get_button_status() -> bool`
 
     Get the button status.
 
-    :return: True or False
+    - Returns: True or False
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.get_firmware_version() -> str -->
+### `MiniJoyHat.get_firmware_version() -> str`
 
     Get the firmware version.
 
-    :return: firmware version
+    - Returns: firmware version
 
-    UIFLOW2:
-
-<!-- .. method:: MiniJoyHat.set_i2c_address(address: int) -> None -->
+### `MiniJoyHat.set_i2c_address(address: int) -> None`
 
     Set the I2C address.
 
-    :param address: 0x01 ~ 0x7F
-
-    UIFLOW2:
+    - Parameter `address`: 0x01 ~ 0x7F

@@ -1,29 +1,11 @@
 # ToF4M Unit
 
-<!-- .. sku: U056 -->
-
-<!-- .. include:: ../refs/unit.tof4m.ref -->
-
 This is the driver library of ToF4M Unit, which is used to obtain distance data from the
 VL53L1CXV0FY sensor.
 
 Support the following products:
 
-    |ToF4M|
-
-## UiFlow2 Example
-
-#### get distance value
-
-Open the |tof4m_core_example.m5f2| project in UiFlow2.
-
-This example gets the distance value of the ToF4M Unit and displays it on the screen.
-
-UiFlow2 Code Block:
-
-Example output:
-
-    None
+    ToF4M
 
 ## MicroPython Example
 
@@ -31,13 +13,7 @@ Example output:
 
 This example gets the distance value of the ToF4M Unit and displays it on the screen.
 
-MicroPython Code Block:
-
 ```python
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
 import os, sys, io
 import M5
 from M5 import *
@@ -84,158 +60,212 @@ if __name__ == "__main__":
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
 ```
-
-Example output:
-
-    None
 
 ## **API**
 
 #### TOF4MUnit
 
-## TOF4MUnit
-<!-- Failed to find class TOF4MUnit in m5stack/libs/unit/tof4m.py -->
+## `TOF4MUnit`
+`TOF4MUnit` is an alias of `VL53L1X` in `m5stack/libs/driver/vl53l1x.py`.
 
-#### VL53L1CXV0FY
-
-## VL53L1X
 Create a VL53L1X object.
 
-:param I2C i2c: The I2C bus the ToF4M Unit is connected to.
-:param int address: The I2C address of the device. Default is 0x29.
+- Parameter `i2c` (`I2C`): The I2C bus the ToF4M Unit is connected to.
+- Parameter `address` (`int`): The I2C address of the device. Default is 0x29.
 
-UiFlow2 Code Block:
+```python
+from hardware import I2C
+from unit import TOFUnit
 
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        from hardware import I2C
-        from unit import TOFUnit
-
-        i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-        tof_0 = TOFUnit(i2c0)
+i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+tof_0 = TOFUnit(i2c0)
+```
 
 ### `get_model_info`
 
 ### `get_distance`
 The distance in units of millimeters.
 
-:returns: Distance in millimeters or None if measurement is invalid.
-:rtype: int or None
+- Returns: Distance in millimeters or None if measurement is invalid.
+- Return type: int or None
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        distance = tof_0.get_distance
+```python
+distance = tof_0.get_distance
+```
 
 ### `set_continuous_start_measurement`
 Starts continuous measure operation.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tof_0.set_continuous_start_measurement()
+```python
+tof_0.set_continuous_start_measurement()
+```
 
 ### `set_continuous_stop_measurement`
 Stops measure operation.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tof_0.set_continuous_stop_measurement()
+```python
+tof_0.set_continuous_stop_measurement()
+```
 
 ### `clear_interrupt`
 
 ### `get_data_ready`
 Returns true if new data is ready, otherwise false.
 
-:returns: True if new data is ready.
-:rtype: bool
+- Returns: True if new data is ready.
+- Return type: bool
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        if tof_0.get_data_ready:
-            distance = tof_0.get_distance
+```python
+if tof_0.get_data_ready:
+    distance = tof_0.get_distance
+```
 
 ### `get_measurement_timing_budget`
 Get measurement duration in milliseconds.
 
-:returns: The timing budget in milliseconds.
-:rtype: int
+- Returns: The timing budget in milliseconds.
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        budget = tof_0.get_measurement_timing_budget
+```python
+budget = tof_0.get_measurement_timing_budget
+```
 
 ### `set_measurement_timing_budget`
 Set the measurement timing budget in milliseconds.
 
-:param int val: Timing budget in milliseconds.
+- Parameter `val` (`int`): Timing budget in milliseconds.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tof_0.set_measurement_timing_budget(100)
+```python
+tof_0.set_measurement_timing_budget(100)
+```
 
 ### `get_distance_mode`
 Get the distance mode.
 
-:returns: distance mode(1=short, 2=long).
-:rtype: int
+- Returns: distance mode(1=short, 2=long).
+- Return type: int
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        mode = tof_0.get_distance_mode
+```python
+mode = tof_0.get_distance_mode
+```
 
 ### `set_distance_mode`
 Set the distance mode.
 
-:param int mode: 1=short, 2=long.
+- Parameter `mode` (`int`): 1=short, 2=long.
 
-UiFlow2 Code Block:
-
-MicroPython Code Block:
-
-    .. code-block:: python
-
-        tof_0.set_distance_mode(2)  # Long distance mode
+```python
+tof_0.set_distance_mode(2)  # Long distance mode
+```
 
 ### `set_i2c_address`
 Set a new I2C address to the instantiated object.
 
-:param int new_address: The new I2C address.
+- Parameter `new_address` (`int`): The new I2C address.
 
-UiFlow2 Code Block:
+```python
+tof_0.set_i2c_address(42)
+```
 
-MicroPython Code Block:
+#### VL53L1CXV0FY
 
-    .. code-block:: python
+## `VL53L1X`
+Create a VL53L1X object.
 
-        tof_0.set_i2c_address(42)
+- Parameter `i2c` (`I2C`): The I2C bus the ToF4M Unit is connected to.
+- Parameter `address` (`int`): The I2C address of the device. Default is 0x29.
+
+```python
+from hardware import I2C
+from unit import TOFUnit
+
+i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+tof_0 = TOFUnit(i2c0)
+```
+
+### `get_model_info`
+
+### `get_distance`
+The distance in units of millimeters.
+
+- Returns: Distance in millimeters or None if measurement is invalid.
+- Return type: int or None
+
+```python
+distance = tof_0.get_distance
+```
+
+### `set_continuous_start_measurement`
+Starts continuous measure operation.
+
+```python
+tof_0.set_continuous_start_measurement()
+```
+
+### `set_continuous_stop_measurement`
+Stops measure operation.
+
+```python
+tof_0.set_continuous_stop_measurement()
+```
+
+### `clear_interrupt`
+
+### `get_data_ready`
+Returns true if new data is ready, otherwise false.
+
+- Returns: True if new data is ready.
+- Return type: bool
+
+```python
+if tof_0.get_data_ready:
+    distance = tof_0.get_distance
+```
+
+### `get_measurement_timing_budget`
+Get measurement duration in milliseconds.
+
+- Returns: The timing budget in milliseconds.
+- Return type: int
+
+```python
+budget = tof_0.get_measurement_timing_budget
+```
+
+### `set_measurement_timing_budget`
+Set the measurement timing budget in milliseconds.
+
+- Parameter `val` (`int`): Timing budget in milliseconds.
+
+```python
+tof_0.set_measurement_timing_budget(100)
+```
+
+### `get_distance_mode`
+Get the distance mode.
+
+- Returns: distance mode(1=short, 2=long).
+- Return type: int
+
+```python
+mode = tof_0.get_distance_mode
+```
+
+### `set_distance_mode`
+Set the distance mode.
+
+- Parameter `mode` (`int`): 1=short, 2=long.
+
+```python
+tof_0.set_distance_mode(2)  # Long distance mode
+```
+
+### `set_i2c_address`
+Set a new I2C address to the instantiated object.
+
+- Parameter `new_address` (`int`): The new I2C address.
+
+```python
+tof_0.set_i2c_address(42)
+```
