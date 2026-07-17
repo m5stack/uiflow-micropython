@@ -118,6 +118,66 @@ Example output:
 
     None
 
+Flicker-free Animation with Canvas
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When an animation frame contains several drawing operations, do not erase and redraw
+the elements directly on ``M5.Lcd``. The display can expose the intermediate cleared
+or partially drawn state, which appears as flicker. Create an off-screen canvas once,
+draw the complete frame on the canvas, and call ``push()`` once after the frame is ready.
+
+The API name is ``M5.Lcd`` (case-sensitive). Create the canvas during setup and reuse it;
+creating a new canvas for every frame wastes memory and can cause allocation failures.
+
+.. code-block:: python
+
+    import time
+    import M5
+    from M5 import *
+
+
+    canvas = None
+    ball_x = 12
+    direction = 2
+
+
+    def setup():
+        global canvas
+        M5.begin()
+        # Only the animated region needs a canvas. PSRAM must be available when psram=True.
+        canvas = M5.Lcd.newCanvas(w=200, h=80, bpp=16, psram=True)
+
+
+    def loop():
+        global ball_x, direction
+        M5.update()
+
+        # Build the whole frame off-screen. Nothing below is visible yet.
+        canvas.fillRect(0, 0, 200, 80, 0x000000)
+        canvas.fillCircle(ball_x, 40, 12, 0x00FF00)
+        canvas.setTextColor(0xFFFFFF, 0x000000)
+        canvas.drawString("Canvas animation", 8, 8)
+
+        # Present the completed frame in one operation.
+        canvas.push(60, 80)
+
+        ball_x += direction
+        if ball_x <= 12 or ball_x >= 188:
+            direction = -direction
+        time.sleep_ms(16)
+
+
+    if __name__ == "__main__":
+        setup()
+        while True:
+            loop()
+
+Use a canvas sized only for the changing region when the rest of the screen is static.
+If memory is limited, reduce the canvas dimensions or color depth, or set ``psram=False``
+when the target device has no PSRAM. Direct drawing remains appropriate for a single
+small update that does not expose intermediate frame states. For multi-step graphics,
+sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pattern.
+
 **API**
 -------
 
@@ -1018,7 +1078,9 @@ Example output:
 
     .. method:: newCanvas(w, h, bpp, psram)
 
-        Create a canvas.
+        Create an off-screen canvas. Use it to compose a complete animation frame before
+        presenting the frame with a single ``push(x, y)`` call. Reuse the returned object
+        instead of creating it repeatedly in the main loop.
 
         :param int w: canvas width
         :param int h: canvas height
