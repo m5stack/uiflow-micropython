@@ -5,7 +5,7 @@ BaseX Module
 
 .. sku: M123
 
-.. include:: ../refs/module.baesx.ref
+.. include:: ../refs/module.basex.ref
 
 BaseX is an M5Stack stackable module with 4 DC motor channels and 2 servo
 channels. It communicates with the host via I2C address ``0x22``. The onboard

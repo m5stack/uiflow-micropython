@@ -9,7 +9,7 @@ Module
     ain4.rst
     asr.rst
     audio.rst
-    baesx.rst
+    basex.rst
     bala2.rst
     cc1101.rst
     commu.rst
