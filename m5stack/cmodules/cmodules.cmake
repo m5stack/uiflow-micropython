@@ -26,6 +26,10 @@ if (BOARD_TYPE STREQUAL "atoms3r_cam")
     include(${CMAKE_CURRENT_LIST_DIR}/omv/omv_atoms3r_cam.cmake)
 endif()
 
+if (BOARD_TYPE STREQUAL "unit_poep4")
+    include(${CMAKE_CURRENT_LIST_DIR}/lt6911/micropython.cmake)
+endif()
+
 # add m5can module
 if(NOT IDF_TARGET STREQUAL "esp32c5")
     include(${CMAKE_CURRENT_LIST_DIR}/m5can/m5can.cmake)

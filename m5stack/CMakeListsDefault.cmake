@@ -186,6 +186,12 @@ if (M5_CAMERA_MODULE_ENABLE)
     )
 endif()
 
+if (BOARD_TYPE STREQUAL "unit_poep4")
+    set(MICROPY_SOURCE_LT6911
+        ${PROJECT_DIR}/cmodules/lt6911/lt6911.c
+    )
+endif()
+
 list(APPEND MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PY}
     ${MICROPY_SOURCE_EXTMOD}
@@ -197,6 +203,7 @@ list(APPEND MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_TINYUSB}
     ${MICROPY_SOURCE_M5UNIFIED}
     ${MICROPY_SOURCE_M5CAMERA}
+    ${MICROPY_SOURCE_LT6911}
 )
 
 list(APPEND IDF_COMPONENTS
@@ -245,6 +252,13 @@ list(APPEND IDF_COMPONENTS
     esp_mm
     esp_driver_ppa
 )
+
+if (BOARD_TYPE STREQUAL "unit_poep4")
+    list(APPEND IDF_COMPONENTS
+        esp_driver_cam
+        esp_driver_isp
+    )
+endif()
 
 if(CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S2 OR CONFIG_IDF_TARGET_ESP32S3)
     list(APPEND IDF_COMPONENTS xtensa)
