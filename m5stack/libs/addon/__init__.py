@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "DisplayIn": "display_in",
     "DisplayOut": "display_out",
 }
 

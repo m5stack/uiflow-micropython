@@ -6,6 +6,7 @@ package(
     "addon",
     (
         "__init__.py",
+        "display_in.py",
         "display_out.py",
     ),
     base_path="..",
