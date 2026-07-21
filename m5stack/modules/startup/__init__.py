@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: MIT
 
 # startup script
-import os
 import M5
 import esp32
 import network
@@ -12,6 +11,10 @@ import time
 BOOT_OPT_NOTHING = 0  # Run main.py(after download code to device set to this)
 BOOT_OPT_MENU_NET = 1  # Startup menu + Network setup
 BOOT_OPT_NETWORK = 2  # Only Network setup
+_BOOT_OVERRIDE_WINDOW_MS = 200
+_BOOT_OVERRIDE_STABLE_MS = 30
+_BOOT_OVERRIDE_POLL_MS = 10
+_CARDPUTER_ADV_BOOT_KEYCODE = 0x60
 
 _WIFI_STATUS_MAP = {
     network.STAT_IDLE: "STAT_IDLE",  # 空闲 / 断开连接后
@@ -141,14 +144,48 @@ def _is_psram():
     return True if sum > 520 * 1024 else False
 
 
-def _apply_boot_button_override(boot_opt, nvs):
-    if boot_opt != BOOT_OPT_MENU_NET:
-        M5.update()
-        if M5.BtnA.isPressed():
-            boot_opt = BOOT_OPT_MENU_NET
-            nvs.set_u8("boot_option", boot_opt)
-            # FIXME: remove this file is temporary solution
-            os.remove("/flash/main.py")
+def _detect_boot_override(board_id):
+    keyboard = None
+    if board_id == M5.BOARD.M5CardputerADV:
+        from hardware import MatrixKeyboard
+
+        keyboard = MatrixKeyboard()
+    elif board_id not in (M5.BOARD.M5StickS3, M5.BOARD.M5StackChan):
+        return False
+
+    pressed_since = None
+    start = time.ticks_ms()
+    try:
+        while time.ticks_diff(time.ticks_ms(), start) < _BOOT_OVERRIDE_WINDOW_MS:
+            M5.update()
+            if board_id == M5.BOARD.M5CardputerADV:
+                pressed = keyboard.is_key_pressed(_CARDPUTER_ADV_BOOT_KEYCODE)
+            elif board_id == M5.BOARD.M5StickS3:
+                pressed = M5.BtnA.isPressed()
+            else:
+                pressed = M5.Touch.getCount() > 0
+
+            now = time.ticks_ms()
+            if pressed:
+                if pressed_since is None:
+                    pressed_since = now
+                elif time.ticks_diff(now, pressed_since) >= _BOOT_OVERRIDE_STABLE_MS:
+                    print("Startup override detected")
+                    return True
+            else:
+                pressed_since = None
+            time.sleep_ms(_BOOT_OVERRIDE_POLL_MS)
+    except Exception as error:
+        print("Startup override detection failed: %s" % error)
+    finally:
+        if keyboard is not None:
+            keyboard.deinit()
+    return False
+
+
+def _apply_boot_input_override(boot_opt, board_id):
+    if boot_opt != BOOT_OPT_MENU_NET and _detect_boot_override(board_id):
+        return BOOT_OPT_MENU_NET
     return boot_opt
 
 
@@ -194,8 +231,9 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
     startup.connect_network(ssid, pswd, lan_if)
 
 
-def startup(boot_opt, timeout: int = 60) -> None:
+def startup(boot_opt, timeout: int = 60) -> int:
     M5.begin()
+    board_id = M5.getBoard()
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
     net_mode = nvs.get_str("net_mode")
@@ -212,9 +250,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
     except:
         pass
 
-    boot_opt = _apply_boot_button_override(boot_opt, nvs)
-
-    board_id = M5.getBoard()
+    boot_opt = _apply_boot_input_override(boot_opt, board_id)
     _prepare_board(board_id)
 
     # Do nothing
@@ -400,3 +436,4 @@ def startup(boot_opt, timeout: int = 60) -> None:
         _connect_network_only(board_id, net_mode, ssid, pswd)
     else:
         print("Boot options not processed.")
+    return boot_opt

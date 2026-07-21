@@ -397,7 +397,6 @@ class KeyEvent:
 
 
 class HIDInputReport:
-
     """HID Input Report for keyboard events. only supports cardputer keyboard layout."""
 
     scancode = (
@@ -505,6 +504,11 @@ class HIDInputReport:
 class KeyboardI2C:
     ASCII_MODE = 0
     HID_MODE = 1
+    _KEYCODE_ESC = 0x1B
+    _FN_KEY_POSITION = (2, 0)
+    _ESC_KEY_POSITION = (0, 0)
+    _EVENT_COUNT_REGISTER = 0x03
+    _KEY_EVENT_REGISTER = 0x04
 
     def __init__(
         self, i2c: machine.I2C, address: int = 0x34, intr_pin=None, mode=ASCII_MODE
@@ -521,6 +525,7 @@ class KeyboardI2C:
         self._tick_handler = self._ascii_handler if mode == self.ASCII_MODE else self._hid_handler
         self._keyevents = []
         self._hid_reports = []
+        self._pressed_keys = {}
 
         self._hid_report_callback = None
         self._keyevent_callback = None
@@ -528,6 +533,7 @@ class KeyboardI2C:
         self._i2c = i2c
         self._address = address
         self._intr_pin = intr_pin
+        pending_events = self._read_pending_events(i2c, address)
         self._tca = tca8418.TCA8418(i2c, address)
 
         keypad_pins = (
@@ -564,12 +570,34 @@ class KeyboardI2C:
         self._tca.key_intenable = True
 
         # Magic Code
+        self._tick_handler(pending_events)
         self._irq_handler(self._intr_pin)
+
+    @classmethod
+    def _read_pending_events(cls, i2c: machine.I2C, address: int) -> bytearray:
+        value = bytearray(1)
+        events = bytearray()
+        i2c.readfrom_mem_into(address, cls._EVENT_COUNT_REGISTER, value)
+        for _ in range(value[0] & 0x0F):
+            i2c.readfrom_mem_into(address, cls._KEY_EVENT_REGISTER, value)
+            events.append(value[0])
+        return events
 
     def deinit(self):
         if self._intr_pin is not None:
             self._intr_pin.irq(None)
         self._tca.key_int = True  # clear the IRQ by writing 1 to it
+        self._keyevents.clear()
+        self._hid_reports.clear()
+        self._pressed_keys.clear()
+
+    def is_key_pressed(self, keycode: int) -> bool:
+        if keycode == self._KEYCODE_ESC:
+            return (
+                self._FN_KEY_POSITION in self._pressed_keys
+                and self._ESC_KEY_POSITION in self._pressed_keys
+            )
+        return keycode in self._pressed_keys.values()
 
     def set_hid_report_callback(self, callback):
         """
@@ -609,6 +637,11 @@ class KeyboardI2C:
             keyevent = KeyEvent(
                 self._keyevent_converter, self._modifier_mask, self._fn_state, self._is_caps_locked
             )
+            position = (keyevent.row, keyevent.col)
+            if keyevent.state:
+                self._pressed_keys[position] = keyevent.keycode
+            else:
+                self._pressed_keys.pop(position, None)
             if self._keyevent_callback and keyevent.state:
                 # append to the key events list
                 keyevent.state and self._keyevents.append(keyevent)

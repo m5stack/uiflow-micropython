@@ -93,6 +93,16 @@ static native_code_node_t *native_code_head = NULL;
 
 static void esp_native_code_free_all(void);
 
+static bool uiflow_should_run_main(void) {
+    mp_obj_dict_t *globals = mp_globals_get();
+    mp_map_elem_t *elem = mp_map_lookup(
+        &globals->map,
+        MP_OBJ_NEW_QSTR(MP_QSTR__uiflow_run_main),
+        MP_MAP_LOOKUP
+        );
+    return elem == NULL || mp_obj_is_true(elem->value);
+}
+
 int vprintf_null(const char *format, va_list ap) {
     // do nothing: this is used as a log target during raw repl mode
     return 0;
@@ -169,7 +179,7 @@ soft_reset:
     if (ret & PYEXEC_FORCED_EXIT) {
         goto soft_reset_exit;
     }
-    if (pyexec_mode_kind == PYEXEC_MODE_FRIENDLY_REPL && ret != 0) {
+    if (pyexec_mode_kind == PYEXEC_MODE_FRIENDLY_REPL && ret != 0 && uiflow_should_run_main()) {
         int ret = pyexec_file_if_exists("main.py");
         if (ret & PYEXEC_FORCED_EXIT) {
             goto soft_reset_exit;

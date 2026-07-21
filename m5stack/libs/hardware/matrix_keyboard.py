@@ -23,12 +23,13 @@ class MatrixKeyboard:
             return
 
         board_id = M5.getBoard()
+        self._i2c = None
         if M5.BOARD.M5Cardputer == board_id:
             self._keyboard = Keyboard()
         elif M5.BOARD.M5CardputerADV == board_id:
-            i2c1 = machine.I2C(1, scl=machine.Pin(9), sda=machine.Pin(8), freq=400000)
+            self._i2c = machine.I2C(1, scl=machine.Pin(9), sda=machine.Pin(8), freq=400000)
             self._keyboard = KeyboardI2C(
-                i2c1,
+                self._i2c,
                 intr_pin=machine.Pin(11, mode=machine.Pin.IN, pull=None),
                 mode=KeyboardI2C.ASCII_MODE,
             )
@@ -67,6 +68,24 @@ class MatrixKeyboard:
             return True
         else:
             return False
+
+    def is_key_pressed(self, keycode: int) -> bool:
+        if self._keyboard and hasattr(self._keyboard, "is_key_pressed"):
+            return self._keyboard.is_key_pressed(keycode)
+        return False
+
+    def deinit(self) -> None:
+        if not self._initialized:
+            return
+        if self._keyboard and hasattr(self._keyboard, "deinit"):
+            self._keyboard.deinit()
+        if self._i2c is not None and hasattr(self._i2c, "deinit"):
+            self._i2c.deinit()
+        self._keyboard = None
+        self._i2c = None
+        self._keys.clear()
+        self._handler = None
+        self._initialized = False
 
     def set_callback(self, handler) -> None:
         if isinstance(self._keyboard, KeyboardI2C):

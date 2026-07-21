@@ -17,21 +17,23 @@ Quick reference:
     download code done, device will auto reboot and won't show startup menu, 
     only do the network connect, but after network connect success, you can
     still download or run workspace code. If you don't want do anything after
-    boot, you can delete this whole file. If you want show startup menu again,
-    you can hold BtnA(most device) and click reset button or repower device
-    until show the startup menu(for those devices with screens, and this is a
-    temporary method and may change in the future), after that the boot_option
-    will change to 1, so next time still will show the startup menu.
+    boot, you can delete this whole file. Cardputer Adv, StickS3, and StackChan
+    provide a one-shot startup override. During the 200ms detection window,
+    hold the Cardputer Adv top-left ESC-labeled key, StickS3 BtnA, or touch the
+    StackChan screen for at least 30ms. The device enters the startup menu
+    without deleting main.py or changing the saved boot_option; the next boot
+    runs normally.
 
     BTW, the network connection time has a default timeout (60s), you can modify
     the following definition to change this default value.
 """
 
 NETWORK_TIMEOUT = 60
+_uiflow_run_main = True
 
 # Execute startup script, if not needed, delete the code below
 if __name__ == "__main__":
-    from startup import startup
+    from startup import BOOT_OPT_MENU_NET, startup
 
     nvs = esp32.NVS("uiflow")
     try:
@@ -39,4 +41,5 @@ if __name__ == "__main__":
     except:
         boot_option = 1  # default
 
-    startup(boot_option, NETWORK_TIMEOUT)
+    boot_option = startup(boot_option, NETWORK_TIMEOUT)
+    _uiflow_run_main = boot_option != BOOT_OPT_MENU_NET
