@@ -11,7 +11,7 @@ import time
 BOOT_OPT_NOTHING = 0  # Run main.py(after download code to device set to this)
 BOOT_OPT_MENU_NET = 1  # Startup menu + Network setup
 BOOT_OPT_NETWORK = 2  # Only Network setup
-_BOOT_OVERRIDE_WINDOW_MS = 200
+_BOOT_OVERRIDE_WINDOW_MS = 100
 _BOOT_OVERRIDE_STABLE_MS = 30
 _BOOT_OVERRIDE_POLL_MS = 10
 _CARDPUTER_ADV_BOOT_KEYCODE = 0x60
@@ -183,8 +183,13 @@ def _detect_boot_override(board_id):
     return False
 
 
-def _apply_boot_input_override(boot_opt, board_id):
+def _apply_boot_input_override(boot_opt, board_id, nvs):
     if boot_opt != BOOT_OPT_MENU_NET and _detect_boot_override(board_id):
+        try:
+            nvs.set_u8("boot_option", BOOT_OPT_MENU_NET)
+            nvs.commit()
+        except Exception as error:
+            print("Failed to save startup override: %s" % error)
         return BOOT_OPT_MENU_NET
     return boot_opt
 
@@ -250,7 +255,7 @@ def startup(boot_opt, timeout: int = 60) -> int:
     except:
         pass
 
-    boot_opt = _apply_boot_input_override(boot_opt, board_id)
+    boot_opt = _apply_boot_input_override(boot_opt, board_id, nvs)
     _prepare_board(board_id)
 
     # Do nothing
