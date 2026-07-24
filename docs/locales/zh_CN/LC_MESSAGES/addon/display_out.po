@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 17:30+0800\n"
+"POT-Creation-Date: 2026-07-24 16:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -19,11 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/addon/display_out.rst:2 33a8076030ee48cf913c9c8810f845f0
-msgid "AddOn DisplayOut"
+#: ../../source/addon/display_out.rst:2 fb84ffecca914587a65a3d33d5545e4b
+#, fuzzy
+msgid "addon DisplayOut"
 msgstr "AddOn DisplayOut"
 
-#: ../../source/addon/display_out.rst:8 ad56f82abd3c40a4a529b3dc452b3fa8
+#: ../../source/addon/display_out.rst:8 f6c3ad051923403b987464953a492528
 msgid ""
 "``DisplayOut`` enables HDMI display output on Unit PoE-P4 by registering "
 "the PoE-P4 HDMI interface as an M5 display. Use it when an external HDMI "
@@ -32,90 +33,102 @@ msgstr ""
 "``DisplayOut`` 用于在 Unit PoE-P4 上启用 HDMI 显示输出。它会将 PoE-P4 的 HDMI "
 "接口注册为显示器，连接外部 HDMI 显示器时即可用于画面输出。"
 
-#: ../../source/addon/display_out.rst:12 e4cdebd52de44fdbb36fe045f807085e
+#: ../../source/addon/display_out.rst:12 0f77e9b8be2a449b98fd94127939628f
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/addon/display_out.rst:14 9069e4ec7430466590e68531ddb1f7a8
-msgid "|UNIT_POEP4|"
-msgstr ""
+#: ../../source/addon/display_out.rst:14 7cce0660142f45b59f30237e5e87801e
+#, fuzzy
+msgid "|display_out|"
+msgstr "DisplayOut"
 
-#: ../../source/refs/addon.display_out.ref 60a7b33efd4347e5b5101daf5c501a57
-msgid "UNIT_POEP4"
-msgstr "UNIT_POEP4"
+#: ../../source/refs/addon.display_out.ref e1f28e1cbc9e4bc0af7da34c0efdb344
+#, fuzzy
+msgid "display_out"
+msgstr "DisplayOut"
 
-#: ../../source/addon/display_out.rst:17 6ba8cffa410843359e363a0d7b539447
+#: ../../source/addon/display_out.rst:17 a667f59b39244fb0801681100d13cded
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/addon/display_out.rst:20 ../../source/addon/display_out.rst:38
-#: 4a4e8266e4fb4f479ef5a115fd8e1aee 878c35a6bd2341cca1b0bf0cd2fd730f
+#: 3d30a7f3944e404ba95016be0f5ffa70 75861d7c67c747b08907ec712dc0f383
 msgid "HDMI output"
 msgstr "HDMI 输出"
 
-#: ../../source/addon/display_out.rst:22 dc04cd1cdceb41f1a1944e5203a85110
+#: ../../source/addon/display_out.rst:22 0112e3cf17e340b4be9c55b9cf3f358f
 msgid "Open the |display_out_poep4_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |display_out_poep4_example.m5f2| 项目。"
 
-#: ../../source/addon/display_out.rst:24 0eb287e429304b718079f1a4ea4899f5
+#: ../../source/addon/display_out.rst:24 7c64dbcbaea44a75a11ef958a5eb26f7
 msgid ""
 "This example initializes the HDMI output at ``1280x720@60Hz`` and draws "
 "basic widgets on the external display."
 msgstr "该示例将 HDMI 输出初始化为 ``1280x720@60Hz``，并在外部显示器上绘制基础控件。"
 
-#: ../../source/addon/display_out.rst:26 97c70d2a5cb6432a82f79b6e4d08f4f1
-#: addon.display_out.DisplayOut:18 ed9fb51776184239a39f23e44103a88b of
+#: ../../source/addon/display_out.rst:26 8d528b5705a5424a973dd18eefb5e139
+#: a4307ea52d1e4e59a998736a84cc2d1b addon.display_out.DisplayOut:18 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/addon/display_out.rst:28 045ac88145814f4a8a28b697f9a61a9c
-#: 519dca627a514e6ea90c198f15eb1678 addon.display_out.DisplayOut:20 of
+#: ../../source/addon/display_out.rst:28 2b7711f0d235428ba33afffcf6d5eb75
+#: 5a2c58d0539842c0a882d9bbc0cb966f addon.display_out.DisplayOut:20 of
 msgid "|init.png|"
 msgstr ""
 
+#: ../../source/refs/addon.display_out.ref:6 86a4c1661c5046b8a6d59be8efe58812
+#: d0899e5ae1e845d692076a6ab9319fb4
+msgid "init.png"
+msgstr ""
+
 #: ../../source/addon/display_out.rst:30 ../../source/addon/display_out.rst:48
-#: 636bbb4f1dbe458c91321899f031f628 9ae8fdb431e44db6b1c0f4aa202badf2
+#: 2238a691b04a4322a4c255e320d79890 aabddf9c82ff4dcab7752e419a48afb1
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../source/addon/display_out.rst:32 ../../source/addon/display_out.rst:50
-#: e39f3cdd384e4f3f84b5b8380268f8a5 45f69987bd764ea8a09f6ccf66be6b0d
+#: 4476d3dee9f0490a91b012975100f8ff 8a2f5f9b99b94a80b473dbdbf27dc4a6
 msgid "|example.png|"
 msgstr ""
 
-#: ../../source/addon/display_out.rst:35 dc29c83ee99348fc910fc5ecbdeba4f2
+#: ../../source/refs/addon.display_out.ref:8 365404b3d8ed417f9dc0d3edd7d4cf0d
+#: 69383c1599894bf0b138793180053e78
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
+
+#: ../../source/addon/display_out.rst:35 6cb660ab2b3240448cddcf787b43400b
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../source/addon/display_out.rst:40 dac840824c2a4a0d816e4811459ab48c
+#: ../../source/addon/display_out.rst:40 14760aabf6674a6a800ab42e061ba011
 msgid ""
 "This example initializes the HDMI output and draws basic widgets on the "
 "external display."
 msgstr "该示例初始化 HDMI 输出，并在外部显示器上绘制基础控件。"
 
-#: ../../source/addon/display_out.rst:42 4561eb838fa94d099df3dde59e938e7a
-#: 7bc6b7e6830b40d19025532415d518e9 addon.display_out.DisplayOut:22 of
+#: ../../source/addon/display_out.rst:42 1564793d28524593b0f9eeadef5c830e
+#: addon.display_out.DisplayOut:22 e866cd801fed4a92af4a0ca953eaf613 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-
-#: ../../source/addon/display_out.rst:54 bfe8dcf56ed54fb180bc17e2e8c41d5f
+#: ../../source/addon/display_out.rst:54 39fa3662cf2b4281b410eb4b7150641a
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../source/addon/display_out.rst:57 b3a8872410004a15bd5f69d7d950fda8
+#: ../../source/addon/display_out.rst:57 dc489ce9bc4a4536b7b8e7a5ad641074
 msgid "DisplayOut"
 msgstr "DisplayOut"
 
-#: 614f5cd09ca147e3b1c96f076742c01b addon.display_out.DisplayOut:1 of
+#: 42e4f28f17da4ccbb019d7f4e9f91139 addon.display_out.DisplayOut:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: addon.display_out.DisplayOut:1 d244f3767c9a4839a46690b2aad306a6 of
+#: 1914fe32fb6149a38d3e6a2f2bac53df addon.display_out.DisplayOut:1 of
 msgid "Create an HDMI display output for Unit PoE-P4."
 msgstr "为 Unit PoE-P4 创建 HDMI 显示输出。"
 
-#: 70f6818cc2de4f0bb5f2886b7d6ebc83 addon.display_out.DisplayOut:3 of
+#: 9af8940408b6431c9608ad987f9c0000 addon.display_out.DisplayOut:3 of
 msgid ""
 "``DisplayOut`` registers the Unit PoE-P4 HDMI output as an M5 display and"
 " returns the display object created by ``M5.addDisplay``. The display can"
@@ -124,35 +137,35 @@ msgstr ""
 "``DisplayOut`` 将 Unit PoE-P4 HDMI 输出注册为显示器，并返回由 ``M5.addDisplay`` "
 "创建的显示对象。随后可通过标准显示 API 使用该显示器。"
 
-#: 61dfb6f9ac604243b5095db929fd7f69 addon.display_out.DisplayOut of
+#: 2e4aaad76baf47248952697cff541fdc addon.display_out.DisplayOut of
 msgid "Parameters"
 msgstr ""
 
-#: 765e85e0d0064497bc5a5c6f5fc72743 addon.display_out.DisplayOut:7 of
+#: addon.display_out.DisplayOut:7 d9cffe2b5b304ca4acedd563a0cc727a of
 msgid "The logical width of the HDMI output. Default is ``1280``."
 msgstr "HDMI 输出的逻辑宽度。默认值为 ``1280``。"
 
-#: 205e860fc7d24410853a3b9227847323 addon.display_out.DisplayOut:8 of
+#: 35b8281494b947b1a5b3b946741e06aa addon.display_out.DisplayOut:8 of
 msgid "The logical height of the HDMI output. Default is ``720``."
 msgstr "HDMI 输出的逻辑高度。默认值为 ``720``。"
 
-#: 8bd182e0f7b843ff9975420c7a0f4687 addon.display_out.DisplayOut:9 of
+#: addon.display_out.DisplayOut:9 d95f2d98c3a547d394a4449f4e524414 of
 msgid "The refresh rate of the HDMI output in Hz. Default is ``60``."
 msgstr "HDMI 输出的刷新率，单位为 Hz。默认值为 ``60``。"
 
-#: 0594aacf1d17484a9fcd4bf790d37c8f addon.display_out.DisplayOut of
+#: addon.display_out.DisplayOut ded2b463a7d8426994a8a57cf2b54afc of
 msgid "Returns"
 msgstr ""
 
-#: aacaa57ec39d4d26bbac6e43e65235a0 addon.display_out.DisplayOut:10 of
+#: a5d75a6d5a034f7090f1e857fe25e67a addon.display_out.DisplayOut:10 of
 msgid "The display object registered by ``M5.addDisplay``."
 msgstr "由 ``M5.addDisplay`` 注册的显示对象。"
 
-#: 7a47d3d086aa4422b3aa9c9ad2d8d23b addon.display_out.DisplayOut of
+#: 0d0404e2faa84bac99a697dfeebac159 addon.display_out.DisplayOut of
 msgid "Return type"
 msgstr ""
 
-#: 1c899881e36743f3aa806a4e29b66fdc addon.display_out.DisplayOut:15 of
+#: ab0ff9fdd3304e08b63ee8d275301d8e addon.display_out.DisplayOut:15 of
 msgid ""
 "Unit PoE-P4 HDMI output supports ``1280x720@60Hz`` and ``1920x1080@30Hz``"
 " timings."
@@ -163,4 +176,10 @@ msgstr "Unit PoE-P4 HDMI 输出支持 ``1280x720@60Hz`` 和 ``1920x1080@30Hz`` �
 
 #~ msgid "init.png"
 #~ msgstr ""
+
+#~ msgid "|UNIT_POEP4|"
+#~ msgstr ""
+
+#~ msgid "UNIT_POEP4"
+#~ msgstr "UNIT_POEP4"
 

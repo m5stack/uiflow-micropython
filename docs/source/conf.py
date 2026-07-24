@@ -62,7 +62,8 @@ autodoc_mock_imports = [
     "lvgl",
     "_espnow",
     "lora",
-    "m5utils"
+    "m5utils",
+    "lt6911",
 ]
 
 autodoc_default_options = {

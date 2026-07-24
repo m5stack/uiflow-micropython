@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 16:39+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/addon/display_in.rst:2 daa0ad65c0f8478dbf20f1d17d69d394
+msgid "addon DisplayIn"
+msgstr "addon DisplayIn"
+
+#: ../../source/addon/display_in.rst:8 ea8f6790387d41bebb3f013ae5e19618
+msgid ""
+"``DisplayIn`` captures HDMI input from the Display In Add-on (U220) "
+"connected to Unit PoE-P4 and saves a frame as a JPEG file. It initializes"
+" the LT6911 HDMI receiver when created and releases the capture resources"
+" with :meth:`DisplayIn.deinit`."
+msgstr ""
+"``DisplayIn`` 用于捕获连接至 Unit PoE-P4 的 Display In Add-on (U220) 的 HDMI "
+"输入，并将单帧保存为 JPEG 文件。创建对象时会初始化 LT6911 HDMI 接收器，并通过 :meth:`DisplayIn.deinit`"
+" 释放采集资源。"
+
+#: ../../source/addon/display_in.rst:13 7c71749664544555947e4d025fdaf5b1
+msgid ""
+"The current capture format is ``1280x720``. Connect an HDMI source before"
+" calling :meth:`DisplayIn.capture`."
+msgstr "当前采集格式为 ``1280x720``。调用 :meth:`DisplayIn.capture` 前请连接 HDMI 信号源。"
+
+#: ../../source/addon/display_in.rst:16 f75a1878ac7a4854a020a5995abc41ee
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/addon/display_in.rst:18 3b1c78210c644c7790e44a6cf5516d39
+msgid "|display_in|"
+msgstr ""
+
+#: ../../source/refs/addon.display_in.ref 410ba4726cd64bb09dbe06e90d85deb0
+msgid "display_in"
+msgstr ""
+
+#: ../../source/addon/display_in.rst:21 36efae2c34024ab5a29d165b985b0041
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/addon/display_in.rst:24 ../../source/addon/display_in.rst:42
+#: fd1cb16af3c14d0c89959555113e05e5
+msgid "HDMI input"
+msgstr "HDMI 输入"
+
+#: ../../source/addon/display_in.rst:26 a74c4c794cc04e58bb0088e5b1de75fc
+msgid "Create a DisplayIn object and capture one frame to the selected file path."
+msgstr "创建 DisplayIn 对象，将单帧抓拍并保存到指定文件路径。"
+
+#: ../../source/addon/display_in.rst:28 65d50d813907411584e22e664fb35af7
+msgid "Open the |display_in_poep4_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |display_in_poep4_example.m5f2| 项目。"
+
+#: ../../source/addon/display_in.rst:30 4a48599a2e61417b801a25f81ab72796
+#: addon.display_in.DisplayIn:7 addon.display_in.DisplayIn.capture:9
+#: addon.display_in.DisplayIn.deinit:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/addon/display_in.rst:32 369346d63d194d028b39894323fca65f
+#: addon.display_in.DisplayIn:9 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/addon.display_in.ref:6 25586132ead64c6baa11c0afcd59a79f
+msgid "init.png"
+msgstr ""
+
+#: ../../source/addon/display_in.rst:34 2365481099ca41ea94ca1fc428b79305
+#: addon.display_in.DisplayIn.capture:11 of
+msgid "|capture.png|"
+msgstr ""
+
+#: ../../source/refs/addon.display_in.ref:8 417b64a9c2db445984741ff27cc4c6c6
+msgid "capture.png"
+msgstr ""
+
+#: ../../source/addon/display_in.rst:36 8ff64df9de27479183cc8be68e9dba8b
+#: addon.display_in.DisplayIn.deinit:5 of
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../source/refs/addon.display_in.ref:10 bdd427f4cde045518b0e1d84ae0e841d
+msgid "deinit.png"
+msgstr ""
+
+#: ../../source/addon/display_in.rst:39 9e74d823b3564b3aa5273656d5d7e1b0
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/addon/display_in.rst:44 f0ef236b01ae4642a4718b320225d860
+msgid ""
+"This example captures one frame from the HDMI input and saves it as a "
+"JPEG file in the device flash file system."
+msgstr "该示例从 HDMI 输入抓拍一帧，并将其作为 JPEG 文件保存到设备闪存文件系统中。"
+
+#: ../../source/addon/display_in.rst:47 addon.display_in.DisplayIn:11
+#: addon.display_in.DisplayIn.capture:13 addon.display_in.DisplayIn.deinit:7
+#: d90822de0dc2493e9c0573b47706f40b of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/addon/display_in.rst:54 6f383361478246659ddef67a4f0397f5
+msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/addon/display_in.rst:57 3b1c78210c644c7790e44a6cf5516d39
+msgid "DisplayIn"
+msgstr ""
+
+#: 0cbfea1a96d04bd0bdaf8b2f58355095 addon.display_in.DisplayIn:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 37b28a74303947cdaa607ebe4bd85506 addon.display_in.DisplayIn:1 of
+msgid "Capture HDMI input from the Display In Add-on (U220) as JPEG images."
+msgstr "将 Display In Add-on (U220) 的 HDMI 输入捕获为 JPEG 图像。"
+
+#: 26919664e69140dc9a57c003767cba32 addon.display_in.DisplayIn:3 of
+msgid ""
+"``DisplayIn`` initializes the LT6911 HDMI receiver. Call :meth:`capture` "
+"to save one captured frame, then call :meth:`deinit` when capture is no "
+"longer needed."
+msgstr ""
+"``DisplayIn`` 会初始化 LT6911 HDMI 接收器。调用 :meth:`capture` 保存单帧图像；不再需要采集时，调用 "
+":meth:`deinit`。"
+
+#: abfcc7b8f96d42dcafc87b3a74702dc5 addon.display_in.DisplayIn.capture:1 of
+msgid "Capture one HDMI frame and save it as a JPEG file."
+msgstr "捕获一帧 HDMI 图像并将其保存为 JPEG 文件。"
+
+#: ab8bfc7c5f824974b91a3ec104576e56 addon.display_in.DisplayIn.capture of
+msgid "Parameters"
+msgstr ""
+
+#: 296af2823706404da3a7b02417f4874b addon.display_in.DisplayIn.capture:3 of
+msgid "Destination JPEG file path."
+msgstr "目标 JPEG 文件路径。"
+
+#: 4d59ad2bfb744f70b9eeef60a91ca20f addon.display_in.DisplayIn.capture:4 of
+msgid "JPEG quality from ``1`` to ``100``. Default is ``75``."
+msgstr "JPEG 质量，范围为 ``1`` 至 ``100``。默认值为 ``75``。"
+
+#: addon.display_in.DisplayIn.capture:5 f2a4e5bbbb824a05b6aa526f1ff4497a of
+msgid "Maximum frame wait time in milliseconds. Default is ``1000``."
+msgstr "最大帧等待时间，单位为毫秒。默认值为 ``1000``。"
+
+#: 74a9bf932f304a08ad795b05825b7b71 addon.display_in.DisplayIn.capture of
+msgid "Returns"
+msgstr ""
+
+#: 1233d34782ba44adb2ed294d2d77e21d addon.display_in.DisplayIn.capture:6 of
+msgid "Number of bytes written to ``path``."
+msgstr "写入 ``path`` 的字节数。"
+
+#: 6338105f039f463881598c790d2dbbd7 addon.display_in.DisplayIn.capture
+#: addon.display_in.DisplayIn.deinit of
+msgid "Return type"
+msgstr ""
+
+#: 6d68dcc4af9945a6a24aadf5561afc45 addon.display_in.DisplayIn.deinit:1 of
+msgid "Release the Display In Add-on (U220) HDMI input resources."
+msgstr "释放 Display In Add-on (U220) 的 HDMI 输入资源。"
+
+#~ msgid "Support the following products:"
+#~ msgstr "支持以下产品："
+
+#~ msgid "|UNIT_POEP4|"
+#~ msgstr ""
+
+#~ msgid "UNIT_POEP4"
+#~ msgstr ""
+
+#~ msgid "Capture the Unit PoE-P4 HDMI input as JPEG images."
+#~ msgstr "将 Unit PoE-P4 的 HDMI 输入捕获为 JPEG 图像。"
+
+#~ msgid "Supported add-on:"
+#~ msgstr "支持的扩展："
+
+#~ msgid ""
+#~ "`Display In Add-on (U220) "
+#~ "<https://docs.m5stack.com/en/products/sku/u220>`_"
+#~ msgstr ""
+#~ "`Display In Add-on (U220) "
+#~ "<https://docs.m5stack.com/en/products/sku/u220>`_"
