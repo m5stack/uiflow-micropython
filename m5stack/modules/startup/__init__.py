@@ -197,8 +197,10 @@ def _apply_boot_input_override(boot_opt, board_id, nvs):
 def _prepare_board(board_id):
     if board_id == M5.BOARD.M5Tab5:
         M5.Lcd.clear(0xFFFFFF)
-    elif board_id != M5.BOARD.M5PaperColor:
+    elif board_id not in [M5.BOARD.M5PaperColor, M5.BOARD.M5PaperMono]:
+        # Refresh display
         M5.Lcd.clear()
+
     if board_id == M5.BOARD.M5StickCPlus2:
         from machine import Pin
 
@@ -236,9 +238,7 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
     startup.connect_network(ssid, pswd, lan_if)
 
 
-def startup(boot_opt, timeout: int = 60) -> int:
-    M5.begin()
-    board_id = M5.getBoard()
+def startup(boot_opt, timeout: int = 60) -> None:
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
     net_mode = nvs.get_str("net_mode")
@@ -255,6 +255,7 @@ def startup(boot_opt, timeout: int = 60) -> int:
     except:
         pass
 
+    board_id = M5.getBoard()
     boot_opt = _apply_boot_input_override(boot_opt, board_id, nvs)
     _prepare_board(board_id)
 
