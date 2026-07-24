@@ -2,20 +2,36 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import Pin, SPI
+import M5
+import machine
 from lora import SX1262
 from lora import RxPacket
 from micropython import const, schedule
-import machine
+
+
+_M5PM1_ADDR = const(0x6E)
+_M5PM1_REG_GPIO_MODE = const(0x10)
+_M5PM1_REG_GPIO_OUT = const(0x11)
+_M5PM1_REG_GPIO_DRV = const(0x13)
+_M5PM1_REG_GPIO_FUNC0 = const(0x16)
+_M5PM1_GPIO2_MASK = const(1 << 2)
+_M5PM1_GPIO2_FUNC_MASK = const(0x03 << 4)
+
+# SPI ID, SCK, MOSI, MISO, CS, BUSY, IRQ
+_PORT_TABLE = {
+    M5.BOARD.M5UnitC6L: (1, 20, 21, 22, 23, 19, 7),
+    M5.BOARD.ArduinoNessoN1: (1, 20, 21, 22, 23, 19, 15),
+    M5.BOARD.M5PaperMono: (2, 39, 38, 40, 41, 21, 5),
+}
 
 
 class LoRa:
     def __init__(
         self,
         pin_rst: int = -1,
-        pin_cs: int = 23,
-        pin_irq: int = 7,
-        pin_busy: int = 19,
+        pin_cs: int = None,
+        pin_irq: int = None,
+        pin_busy: int = None,
         freq_khz: int = 868000,
         bw: str = "250",
         sf: int = 8,
@@ -24,6 +40,17 @@ class LoRa:
         syncword: int = 0x12,
         output_power: int = 10,
     ):
+        board_id = M5.getBoard()
+        port = _PORT_TABLE.get(board_id, _PORT_TABLE[M5.BOARD.M5UnitC6L])
+
+        spi_id, spi_sck, spi_mosi, spi_miso, default_cs, default_busy, default_irq = port
+        pin_cs = default_cs if pin_cs is None else pin_cs
+        pin_busy = default_busy if pin_busy is None else pin_busy
+        pin_irq = default_irq if pin_irq is None else pin_irq
+
+        if board_id == M5.BOARD.M5PaperMono:
+            self._enable_papermono_lora()
+
         # Valid bandwidth
         self.BANDWIDTHS = (
             "7.8",
@@ -53,15 +80,33 @@ class LoRa:
         }
 
         self.modem = SX1262(
-            spi=machine.SPI(1, sck=machine.Pin(20), mosi=machine.Pin(21), miso=machine.Pin(22)),
+            spi=machine.SPI(
+                spi_id,
+                sck=machine.Pin(spi_sck),
+                mosi=machine.Pin(spi_mosi),
+                miso=machine.Pin(spi_miso),
+            ),
             reset=None,
-            cs=Pin(pin_cs),
-            busy=Pin(pin_busy),
-            dio1=Pin(pin_irq),
+            cs=machine.Pin(pin_cs),
+            busy=machine.Pin(pin_busy),
+            dio1=machine.Pin(pin_irq),
             dio3_tcxo_millivolts=3300,  # 3300mV
             lora_cfg=lora_cfg,
         )
         self.irq_callback = None
+
+    def _enable_papermono_lora(self) -> None:
+        i2c = machine.I2C(1, scl=machine.Pin(48), sda=machine.Pin(47), freq=100000)
+
+        def update_register(register, mask, enabled):
+            value = i2c.readfrom_mem(_M5PM1_ADDR, register, 1)[0]
+            value = value | mask if enabled else value & ~mask
+            i2c.writeto_mem(_M5PM1_ADDR, register, bytes((value,)))
+
+        update_register(_M5PM1_REG_GPIO_FUNC0, _M5PM1_GPIO2_FUNC_MASK, False)
+        update_register(_M5PM1_REG_GPIO_MODE, _M5PM1_GPIO2_MASK, True)
+        update_register(_M5PM1_REG_GPIO_DRV, _M5PM1_GPIO2_MASK, False)
+        update_register(_M5PM1_REG_GPIO_OUT, _M5PM1_GPIO2_MASK, True)
 
     def _validate_range(self, value, min, max):
         if value < min or value > max:
