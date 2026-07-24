@@ -11,7 +11,7 @@ from driver.m5ioe1 import M5ioe1, Pin, RGB
 from driver.si12t import Si12T, OUTPUT_NONE
 from driver.scs_servo import Scscl
 from driver.ina226 import INA226
-from unit.nfc import NFCUnit
+from driver.nfc import NFCReader
 
 
 # RGB LED
@@ -139,7 +139,7 @@ class StackChan:
         )
         self.power_monitor.calibrate(cal_value=0x0800)
         # NFC
-        self.nfc = NFCUnit(self.i2c)
+        self.nfc = NFCReader(self.i2c)
 
         StackChan._initialized = True
 

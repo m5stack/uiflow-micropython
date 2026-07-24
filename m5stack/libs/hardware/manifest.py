@@ -14,6 +14,7 @@ package(
         "ir.py",
         "lora.py",
         "matrix_keyboard.py",
+        "nfc.py",
         "pwr485.py",
         "rfid.py",
         "rgb.py",

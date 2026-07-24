@@ -88,6 +88,7 @@ package(
         "mifare_classic1.py",
         "mcp4725.py",
         "mlx90614.py",
+        "nfc.py",
         "pca9554.py",
         "pcf8563.py",
         "qmp6988.py",

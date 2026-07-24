@@ -11,6 +11,7 @@ _attrs = {
     "IR": "ir",
     "LoRa": "lora",
     "MatrixKeyboard": "matrix_keyboard",
+    "NFC": "nfc",
     "PWR485": "pwr485",
     "RFID": "rfid",
     "RGB": "rgb",
