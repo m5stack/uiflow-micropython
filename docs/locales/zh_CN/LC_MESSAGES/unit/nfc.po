@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-30 11:21+0800\n"
+"POT-Creation-Date: 2026-07-23 18:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,12 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/unit/nfc.rst:2
+#: ../../source/unit/nfc.rst:2 1ba705bf17fb48de8061c5c7bcf92228
 msgid "NFC Unit"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:8
-#, fuzzy
+#: ../../source/unit/nfc.rst:8 2720de5b5eed4708abc09b9bc574ad0b
 msgid ""
 "This library drives **Unit NFC** (ST25R3916 on I2C). It discovers "
 "ISO14443 Type A tags, resolves chip type (Classic, Ultralight / NTAG "
@@ -38,174 +37,183 @@ msgstr ""
 "标签，识别芯片类型（Classic、Ultralight / NTAG 系列、DESFire、Plus "
 "等），并为支持的标签类型提供高级读写辅助接口。"
 
-#: ../../source/unit/nfc.rst:13
+#: ../../source/unit/nfc.rst:11 a6b4391859e24551b58fa95ad66593da
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/unit/nfc.rst:15
+#: ../../source/unit/nfc.rst:13 27a4b142230644f59da1303b926e60a1
 msgid "|NFCUnit|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref ../../source/unit/nfc.rst:57
+#: ../../source/refs/unit.nfc.ref ../../source/unit/nfc.rst:55
+#: 00ecf282087440c7aa7e7bf26da45707 d8f0a3823fbb42dca4ce7c6d5e045794
 msgid "NFCUnit"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:18
+#: ../../source/unit/nfc.rst:16 74d25a852f7c46af9da0acb9e222de28
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
-#: ../../source/unit/nfc.rst:21 ../../source/unit/nfc.rst:39
+#: ../../source/unit/nfc.rst:19 ../../source/unit/nfc.rst:37
+#: 0e43ae916d2f4e9ea06dc05a4179245a ce827589080442a2b155afb2c970b167
 msgid "Detect card"
 msgstr "检测卡片"
 
-#: ../../source/unit/nfc.rst:23
+#: ../../source/unit/nfc.rst:21 4cd7300e15a642e287d22e0babb87299
 msgid "Open the |cores3_unit_nfc_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cores3_unit_nfc_example.m5f2| 项目。"
 
-#: ../../source/unit/nfc.rst:25 ../../source/unit/nfc.rst:41
+#: ../../source/unit/nfc.rst:23 ../../source/unit/nfc.rst:39
+#: 705ff8ad179043eca26f9c62e016a40d e8a3c77c623e483d9bd408859b61b710
 msgid ""
 "This example polls the reader, shows UID, type name, and user memory size"
 " on the screen, and plays a short tone when a tag is present."
 msgstr "该示例会轮询读卡器，在屏幕上显示 UID、类型名称和用户内存大小，并在检测到卡片时播放短提示音。"
 
-#: ../../source/unit/nfc.rst:27 ../../source/unit/nfc.rst:67
-#: ../../source/unit/nfc.rst:100 ../../source/unit/nfc.rst:127
-#: ../../source/unit/nfc.rst:149 ../../source/unit/nfc.rst:163
-#: ../../source/unit/nfc.rst:177 ../../source/unit/nfc.rst:191
-#: ../../source/unit/nfc.rst:210 ../../source/unit/nfc.rst:307
+#: ../../source/unit/nfc.rst:25 ../../source/unit/nfc.rst:63
+#: ../../source/unit/nfc.rst:83 ../../source/unit/nfc.rst:109
+#: ../../source/unit/nfc.rst:131 ../../source/unit/nfc.rst:145
+#: ../../source/unit/nfc.rst:159 ../../source/unit/nfc.rst:173
+#: ../../source/unit/nfc.rst:192 ../../source/unit/nfc.rst:289
+#: 189ec4fce95446eda370a73cdf92c42d 61c36feee899495386180e75579d06ec
+#: 6c0f5991d8394445a86efef4e590d8fe 6f6537b85db34d1e9359f696216baedc
+#: 75d1ee821c824cd7b8fbdff3fb1080c8 d3b1d086075b46038c099c11714b5f0a
+#: fd3f8ea2993341c5bf36ecc81cc0c086
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/unit/nfc.rst:29
+#: ../../source/unit/nfc.rst:27 e94ba126437c48999ddaf0e82074e887
 msgid "|cores3_unit_nfc_example.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:19
+#: ../../source/refs/unit.nfc.ref:19 afd2e0525c6e42b087e0e3fb5fa41b93
 msgid "cores3_unit_nfc_example.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:31 ../../source/unit/nfc.rst:49
+#: ../../source/unit/nfc.rst:29 ../../source/unit/nfc.rst:47
+#: 07a10027ce554f5c95d71b308c120721 d1739cb6029e4d5689f75e1814177b73
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../source/unit/nfc.rst:33 ../../source/unit/nfc.rst:51
+#: ../../source/unit/nfc.rst:31 ../../source/unit/nfc.rst:49
+#: 3e962d7a1e3e4d898cf20b6ce59e2e7f 4c413f1893d845748198bf7ec456c120
 msgid "None"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:36
+#: ../../source/unit/nfc.rst:34 5afe3f24eb35485593f8a044dfff5802
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../source/unit/nfc.rst:43 ../../source/unit/nfc.rst:71
-#: ../../source/unit/nfc.rst:83 ../../source/unit/nfc.rst:104
-#: ../../source/unit/nfc.rst:131 ../../source/unit/nfc.rst:153
-#: ../../source/unit/nfc.rst:167 ../../source/unit/nfc.rst:181
-#: ../../source/unit/nfc.rst:195 ../../source/unit/nfc.rst:311
+#: ../../source/unit/nfc.rst:41 ../../source/unit/nfc.rst:67
+#: ../../source/unit/nfc.rst:87 ../../source/unit/nfc.rst:113
+#: ../../source/unit/nfc.rst:135 ../../source/unit/nfc.rst:149
+#: ../../source/unit/nfc.rst:163 ../../source/unit/nfc.rst:177
+#: ../../source/unit/nfc.rst:293 36c3ee50329b4cdf89b2d939c7c2aaba
+#: 7abe2acfc7454fbe9fa2b92edc0d2dfa 95903b0082dc421b8e18cbae18581316
+#: 9baa7948ade34a13afce023f52a2aa74 a4c79037611a4d239c7b7a578f2dbfad
+#: c882ceb85d8447af8b7ad7d837ae1f1d d333916bfe7d4bd1bdfc57d1cea98262
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/unit/nfc.rst:54
+#: ../../source/unit/nfc.rst:52 04bd70b28267450d950c7c83a183211b
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../source/unit/nfc.rst:61
+#: ../../source/unit/nfc.rst:59 11ed3589233249cc91632f6535e07974
 msgid ""
 "Driver for Unit NFC. Pass a configured ``I2C`` bus instance (for example "
 "from ``hardware.I2C``)."
 msgstr "Unit NFC 的驱动程序。请传入已配置好的 ``I2C`` 总线实例（例如来自 ``hardware.I2C``）。"
 
-#: ../../source/unit/nfc.rst
+#: ../../source/unit/nfc.rst 68003040a1604ab2964a85bb43fbcfbe
+#: c8df8d04ffaa43c8a1e28290ab271327
 msgid "Parameters"
 msgstr "参数"
 
-#: ../../source/unit/nfc.rst:63
+#: ../../source/unit/nfc.rst:61 9551842126b54f1dab50734714b6f9c3
 msgid "I2C bus used to talk to the ST25R3916."
 msgstr "用于与 ST25R3916 通信的 I2C 总线。"
 
-#: ../../source/unit/nfc.rst:65
-msgid ""
-"``NFCUnit`` can also wrap a pre-built ``driver.st25r3916.ST25R3916`` "
-"object for SPI mode."
-msgstr ""
-
-#: ../../source/unit/nfc.rst:69
+#: ../../source/unit/nfc.rst:65 7b79da6afb484f009b4e9b268e68428d
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:8
+#: ../../source/refs/unit.nfc.ref:8 4c050e784dc847969e6689f602302130
 msgid "init.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:81
-msgid ""
-"SPI products create the ST25R3916 chip first, then wrap it with "
-"``NFCUnit``:"
-msgstr ""
-
-#: ../../source/unit/nfc.rst:96
+#: ../../source/unit/nfc.rst:79 9acd17c98148486ebf480909917fb8b4
 msgid "Poll for a Type A tag in the field."
 msgstr "轮询射频场内的 Type A 标签。"
 
-#: ../../source/unit/nfc.rst
+#: ../../source/unit/nfc.rst 3ed501716b9e4e4a895090a28aea1769
+#: 4c4df3e81e6e42298cb62b35270b421d cc724c623854468ab2aa65636a6a3b39
 msgid "Returns"
 msgstr "返回值"
 
-#: ../../source/unit/nfc.rst:98
+#: ../../source/unit/nfc.rst:81 3b5e6487e10f4d4cb371af93f122811f
 msgid ""
-"A :class:`unit.nfc.Card` instance if a tag was found and identified, "
+"A :class:`driver.nfc.Card` instance if a tag was found and identified, "
 "otherwise ``None``."
-msgstr "如果找到并识别到标签，则返回 :class:`unit.nfc.Card` 实例；否则返回 ``None``。"
+msgstr "如果找到并识别到标签，则返回 :class:`driver.nfc.Card` 实例；否则返回 ``None``。"
 
-#: ../../source/unit/nfc.rst:102
+#: ../../source/unit/nfc.rst:85 f3545f0a7cab4dde92d9b0cf8316c4e7
 msgid "|detect.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:9
+#: ../../source/refs/unit.nfc.ref:9 66b0eced682a4f88b7fae0b85b9c1215
 msgid "detect.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:114
+#: ../../source/unit/nfc.rst:97 cfb1fb08b7ff4d728475b21b61a9aa55
 msgid "Write one **address unit**."
 msgstr "写入一个**地址单元**。"
 
-#: ../../source/unit/nfc.rst:117
-msgid ""
-"Use writable test cards only. Do not write UID pages, lock bytes, sector "
-"trailers, access-control blocks, or cards used for "
-"access/payment/identity."
-msgstr ""
+#: ../../source/unit/nfc.rst:100 cf8801e4cc6b4e8b901e6a4f81ca8d06
+msgid "Only MIFARE Classic is supported for now."
+msgstr "当前仅支持 MIFARE Classic。"
 
-#: ../../source/unit/nfc.rst:119
+#: ../../source/unit/nfc.rst:102 4bdef116c92f4bd49d48b90dcc995d6e
 msgid ""
-"For **MIFARE Classic**, ``data`` must be **16** bytes and ``index`` is "
-"the global block number. For **Type 2** tags, ``data`` must be **4** "
-"bytes and ``index`` is the page number. Sector trailers, block ``0``, "
-"lock bytes, and configuration pages require valid card-specific access "
-"rules. :param unit.nfc.Card card: Tag from :meth:`detect`. :param int "
-"index: Block index for Classic, or page index for Type 2. :param bytes "
-"data: Exactly 16 bytes for Classic, or exactly 4 bytes for Type 2. "
-":returns: ``True`` on success, ``False`` otherwise."
-msgstr ""
+"``data`` must be **16** bytes; ``index`` is the block number. Sector "
+"trailers and block ``0`` require valid keys/access rules from the card."
+msgstr "``data`` 必须为 **16** 字节；``index`` 为块号。扇区尾块和 ``0`` 号块需要卡片提供有效的密钥/访问规则。"
 
-#: ../../source/unit/nfc.rst:129
+#: ../../source/unit/nfc.rst:104 e495f98b0aca45ee9edefb4e4ae13a1f
+msgid "Tag from :meth:`detect`."
+msgstr "由 :meth:`detect` 返回的标签。"
+
+#: ../../source/unit/nfc.rst:105 f609b3cd814145c2bd9db599a56f46c8
+msgid "Block index."
+msgstr "块索引。"
+
+#: ../../source/unit/nfc.rst:106 d976b8ffcbe9405ba9ecfc4015afd892
+msgid "Exactly 16 bytes for Classic."
+msgstr "Classic 卡必须为 16 字节。"
+
+#: ../../source/unit/nfc.rst:107 f8627d2ce5874f0cbeb5533ebe712957
+msgid "``True`` on success, ``False`` otherwise."
+msgstr "成功返回 ``True``，否则返回 ``False``。"
+
+#: ../../source/unit/nfc.rst:111 748624efad3b45d2ac68dfd4a460344e
 msgid "|write.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:11
+#: ../../source/refs/unit.nfc.ref:11 97cb6dd4757e4b64875bc65d125f52ba
 msgid "write.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:139
+#: ../../source/unit/nfc.rst:121 a0f14f87d1264b5cae8b13148ab96fda
 msgid "Read one **address unit** for the current tag."
 msgstr "读取当前标签的一个地址单元。"
 
-#: ../../source/unit/nfc.rst:141
+#: ../../source/unit/nfc.rst:123 947ef1f710e04db8a20238cbebfa7ec7
 msgid ""
 "**MIFARE Classic**: ``index`` is the **global block number** (0-based). "
 "Returns **16** bytes on success, or ``None``."
 msgstr "MIFARE Classic：index 为全局块号（从 0 开始）。成功时返回 16 字节，否则返回 None。"
 
-#: ../../source/unit/nfc.rst:142
+#: ../../source/unit/nfc.rst:124 5dee283a13854ab8aac46f56a3aede6c
 msgid ""
 "**Type 2 family** (Ultralight / NTAG / ST25TA / ISO18092 where "
 "applicable): ``index`` is the **page number**. Returns **4** bytes on "
@@ -214,71 +222,71 @@ msgstr ""
 "Type 2 系列（Ultralight / NTAG / ST25TA / 适用时 ISO18092）：index 为页号。成功时返回 4 "
 "字节，否则返回 None。"
 
-#: ../../source/unit/nfc.rst:143
+#: ../../source/unit/nfc.rst:125 575332ef888d4874b47e6b6ddbe6cd9d
 msgid "Other chip types: ``None`` (use chip-specific flows outside this helper)."
 msgstr "其他芯片类型：返回 None（请在该辅助接口之外使用芯片专用流程）。"
 
-#: ../../source/unit/nfc.rst:145
+#: ../../source/unit/nfc.rst:127 e495f98b0aca45ee9edefb4e4ae13a1f
 msgid "Tag returned by :meth:`detect`."
 msgstr "由 :meth:`detect` 返回的标签。"
 
-#: ../../source/unit/nfc.rst:146
+#: ../../source/unit/nfc.rst:128 f34f5a6119b44e279275482cc890eba7
 msgid "Block index (Classic) or page index (Type 2)."
 msgstr "块索引（Classic）或页索引（Type 2）。"
 
-#: ../../source/unit/nfc.rst:147
+#: ../../source/unit/nfc.rst:129 2c18c762172a4ee3899aad813cbd365d
 msgid "``bytes`` or ``None``."
 msgstr "``bytes`` 或 ``None``。"
 
-#: ../../source/unit/nfc.rst:151
+#: ../../source/unit/nfc.rst:133 ac721fd048b143bbb372fb16538400c2
 msgid "|read.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:10
+#: ../../source/refs/unit.nfc.ref:10 c88c3293a64c4d6a93095dd0eae0cc80
 msgid "read.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:161
+#: ../../source/unit/nfc.rst:143 9acd17c98148486ebf480909917fb8b4
 msgid "Send HLTA to put the Type A PICC into HALT state."
 msgstr "发送 HLTA 命令，将 Type A PICC 置于 HALT 状态。"
 
-#: ../../source/unit/nfc.rst:165
+#: ../../source/unit/nfc.rst:147 a8f54380943245878dd8dbabd75d18e7
 msgid "|halt.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:12
+#: ../../source/refs/unit.nfc.ref:12 1036aff69b364260a2b7e1660d44a0b8
 msgid "halt.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:175
+#: ../../source/unit/nfc.rst:157 3bdc25168cd0432faaafc050e941b0a7
 msgid "Turn the reader RF field off."
 msgstr "关闭读卡器 RF 场。"
 
-#: ../../source/unit/nfc.rst:179
+#: ../../source/unit/nfc.rst:161 455988006602478aa7f979b9ec5e2c13
 msgid "|rf_off.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:13
+#: ../../source/refs/unit.nfc.ref:13 1606b9f76a1044b2b1aafac501d8bb6b
 msgid "rf_off.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:189
+#: ../../source/unit/nfc.rst:171 3bdc25168cd0432faaafc050e941b0a7
 msgid "Turn the reader RF field on."
 msgstr "开启读卡器 RF 场。"
 
-#: ../../source/unit/nfc.rst:193
+#: ../../source/unit/nfc.rst:175 12d7a4bcf8f244f6a228f71b20171ac0
 msgid "|rf_on.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:14
+#: ../../source/refs/unit.nfc.ref:14 3ed2fa3c54fe454fa542a3e4212287f3
 msgid "rf_on.png"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:202
+#: ../../source/unit/nfc.rst:184 5ee64ad277a8404ea5990d1faf94fc95
 msgid "Card"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:206
+#: ../../source/unit/nfc.rst:188 31c6e6b8454140a294d7a33d8406ba39
 msgid ""
 "Object returned by :meth:`NFCUnit.detect` when a tag is present. Holds "
 "the anti-collision result and the resolved type metadata from the stack "
@@ -287,344 +295,322 @@ msgstr ""
 "当检测到标签时，由 :meth:`NFCUnit.detect` 返回的对象。包含防冲突结果及由协议栈解析出的类型元数据（固件实现中的 "
 "SAK/ATQA/version/ATS 路径）。"
 
-#: ../../source/unit/nfc.rst:208
+#: ../../source/unit/nfc.rst:190 e9f4b735b9164236827ab64af1d6efd2
 msgid "**Attributes**"
 msgstr "**属性**"
 
-#: ../../source/unit/nfc.rst:212
+#: ../../source/unit/nfc.rst:194 a93ac5b8afaf4ed2b782654261792e3b
 #, fuzzy
 msgid "|attribute.png|"
 msgstr "**属性**"
 
-#: ../../source/refs/unit.nfc.ref:16
+#: ../../source/refs/unit.nfc.ref:16 e6c97ed341824289b43ee960b1da3a2c
 #, fuzzy
 msgid "attribute.png"
 msgstr "**属性**"
 
-#: ../../source/unit/nfc.rst:216
+#: ../../source/unit/nfc.rst:198 2c18c762172a4ee3899aad813cbd365d
 msgid "``bytes`` — UID bytes (length ``uid_len``)."
 msgstr "``bytes`` — UID 字节串（长度为 ``uid_len``）。"
 
-#: ../../source/unit/nfc.rst:220
+#: ../../source/unit/nfc.rst:202 49f801a79f1a49799f875b917aa358ef
 msgid ""
 "``int`` — Internal type id used by this driver (aligned with the "
-"``TYPE_NAMES`` table in ``unit/nfc.py``)."
-msgstr "``int`` — 此驱动使用的内部类型 id（与 ``unit/nfc.py`` 中 ``TYPE_NAMES`` 表一致）。"
+"``TYPE_NAMES`` table in ``driver/nfc.py``)."
+msgstr "``int`` — 此驱动使用的内部类型 id（与 ``driver/nfc.py`` 中 ``TYPE_NAMES`` 表一致）。"
 
-#: ../../source/unit/nfc.rst:224
+#: ../../source/unit/nfc.rst:206 fb3270783709465494a8cd46b36600a2
 msgid ""
 "``str`` — Resolved chip label from the identification logic in firmware; "
-"same strings as ``TYPE_NAMES`` in ``unit/nfc.py``. ``type_id`` selects "
+"same strings as ``TYPE_NAMES`` in ``driver/nfc.py``. ``type_id`` selects "
 "the row below (unknown or unclassified tags use ``Unknown``)."
 msgstr ""
-"``str`` — 由固件识别逻辑解析出的芯片标签；字符串与 ``unit/nfc.py`` 中 ``TYPE_NAMES`` "
+"``str`` — 由固件识别逻辑解析出的芯片标签；字符串与 ``driver/nfc.py`` 中 ``TYPE_NAMES`` "
 "一致。``type_id`` 对应下表行（未知或未分类标签使用 ``Unknown``）。"
 
-#: ../../source/unit/nfc.rst:226
+#: ../../source/unit/nfc.rst:208 e332f28249bf4d93a91149e93e1b1c22
 msgid "``type_id`` and ``type_name`` (index into ``TYPE_NAMES``)"
 msgstr "``type_id`` 与 ``type_name``（在 ``TYPE_NAMES`` 中的索引）"
 
-#: ../../source/unit/nfc.rst:230
+#: ../../source/unit/nfc.rst:212 167e25b7f23d45f08876841c2b1dd287
 msgid "``type_id``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:231
+#: ../../source/unit/nfc.rst:213 1ed3fdd728274497bedb64c65de38d77
 msgid "``type_name``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:232
+#: ../../source/unit/nfc.rst:214 d702c0196efa4f008dc1abe43bae08dc
 msgid "0"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:233
+#: ../../source/unit/nfc.rst:215 e12857118c0442aa9b8e576f19af69d9
 msgid "``Unknown``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:234
+#: ../../source/unit/nfc.rst:216 742c273746244a248f88b1620555dfde
 msgid "1"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:235
+#: ../../source/unit/nfc.rst:217 ffaec05266d8439ba3e785abe0bd5a80
 msgid "``MIFARE_Classic_Mini``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:236
+#: ../../source/unit/nfc.rst:218 014481d2c6f84609a126293a5bebd6b1
 msgid "2"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:237
+#: ../../source/unit/nfc.rst:219 e6b2a8c2ef1f4198a7551611e6f42d73
 msgid "``MIFARE_Classic_1K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:238
+#: ../../source/unit/nfc.rst:220 699e282814cf4f7c95b08a00a94b9b6a
 msgid "3"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:239
+#: ../../source/unit/nfc.rst:221 8c3367949b1d4034b3fed14f8267be8d
 msgid "``MIFARE_Classic_2K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:240
+#: ../../source/unit/nfc.rst:222 c1a9bf30970d4fcca67d862c6382a0c1
 msgid "4"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:241
+#: ../../source/unit/nfc.rst:223 48bdd056106e445bb69b81c8b4cbb948
 msgid "``MIFARE_Classic_4K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:242
+#: ../../source/unit/nfc.rst:224 5efc1d0a97fa4995a6a4e48be488ae3b
 msgid "5"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:243
+#: ../../source/unit/nfc.rst:225 24ccfd3779af4dfd86396aa6b1d7d713
 msgid "``MIFARE_Ultralight``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:244
+#: ../../source/unit/nfc.rst:226 03fbf2ffa7954de2b29d02064793acc8
 msgid "6"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:245
+#: ../../source/unit/nfc.rst:227 3ae117a88cf046bc9066be66459e0bc9
 msgid "``MIFARE_Ultralight_EV1_1``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:246
+#: ../../source/unit/nfc.rst:228 515c3870fdd847e9aadd55dbfe637ae4
 msgid "7"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:247
+#: ../../source/unit/nfc.rst:229 11bf990a7df0438bbd1a0f975e284ca4
 msgid "``MIFARE_Ultralight_EV1_2``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:248
+#: ../../source/unit/nfc.rst:230 c6fcddf33f3a47bf9c4290b977c350b0
 msgid "8"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:249
+#: ../../source/unit/nfc.rst:231 035022da65d54ceb8f7835d7acf12f49
 msgid "``MIFARE_Ultralight_Nano``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:250
+#: ../../source/unit/nfc.rst:232 986597d2a70043038d9b516a460c91fd
 msgid "9"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:251
+#: ../../source/unit/nfc.rst:233 0783467ad26f45698b8a99b6bbd27ac2
 msgid "``MIFARE_UltralightC``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:252
+#: ../../source/unit/nfc.rst:234 5ed68da10171497d8de20f47e90d4687
 msgid "10"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:253
+#: ../../source/unit/nfc.rst:235 09786c4de18c4990b362bf8447bc2e17
 msgid "``NTAG_203``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:254
+#: ../../source/unit/nfc.rst:236 11ab5086b7da49ebad338d8aeee3dc50
 msgid "11"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:255
+#: ../../source/unit/nfc.rst:237 f496f0a8e5de4eb984cc2c9036596e11
 msgid "``NTAG_210u``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:256
+#: ../../source/unit/nfc.rst:238 aeda7f5565fe4a7ab276082f65bba1fe
 msgid "12"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:257
+#: ../../source/unit/nfc.rst:239 fb23a38605244fd9a225d15f380de738
 msgid "``NTAG_210``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:258
+#: ../../source/unit/nfc.rst:240 c1b751993489469ba7ae5718a6981608
 msgid "13"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:259
+#: ../../source/unit/nfc.rst:241 e53a19cc47a3420086ed599f642d0e2d
 msgid "``NTAG_212``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:260
+#: ../../source/unit/nfc.rst:242 d410a48e40b64338aad5611637ab17df
 msgid "14"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:261
+#: ../../source/unit/nfc.rst:243 20410280d67040a0b47bd30cb2933818
 msgid "``NTAG_213``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:262
+#: ../../source/unit/nfc.rst:244 78e5acf2adb242f1956b18b26b0c64ea
 msgid "15"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:263
+#: ../../source/unit/nfc.rst:245 8e53b7732c114dd3ae4400ce6816b826
 msgid "``NTAG_215``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:264
+#: ../../source/unit/nfc.rst:246 e38bfd11de2146bc8050b8ccd80d58ec
 msgid "16"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:265
+#: ../../source/unit/nfc.rst:247 0ffb5a46c29148ceb205b41195e1127f
 msgid "``NTAG_216``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:266
+#: ../../source/unit/nfc.rst:248 445b98e7e9f447b894b2159679e1b030
 msgid "17"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:267
+#: ../../source/unit/nfc.rst:249 548e4588eee34a018b77f036a8a518c4
 msgid "``ST25TA_512B``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:268
+#: ../../source/unit/nfc.rst:250 be7b05f59ed047bca72d306afa10d654
 msgid "18"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:269
+#: ../../source/unit/nfc.rst:251 2fd9e1260e87432188d716612eb46e7f
 msgid "``ST25TA_2K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:270
+#: ../../source/unit/nfc.rst:252 67f4adc4f7c345e0a8994a32cee8741d
 msgid "19"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:271
+#: ../../source/unit/nfc.rst:253 6b7d64dd6ae04d61873426d7fe06db39
 msgid "``ST25TA_16K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:272
+#: ../../source/unit/nfc.rst:254 e9fc1bf089c44c07abd97cb9e5a75721
 msgid "20"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:273
+#: ../../source/unit/nfc.rst:255 b10c0f1fd4e44acebc326d4342757059
 msgid "``ST25TA_64K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:274
+#: ../../source/unit/nfc.rst:256 20a335e0112f4af7a8b768c0a02dae9d
 msgid "21"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:275
+#: ../../source/unit/nfc.rst:257 0b2a4f3a1ad5429dae1b562ccd626037
 msgid "``ISO_14443_4``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:276
+#: ../../source/unit/nfc.rst:258 c4666125d69c4b11b24a73a7873c289e
 msgid "22"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:277
+#: ../../source/unit/nfc.rst:259 2a37decfc1a64468855b3a7c1c877fe8
 msgid "``MIFARE_Plus_2K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:278
+#: ../../source/unit/nfc.rst:260 c4339a9a6da74d82a622b8610b1fb88a
 msgid "23"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:279
+#: ../../source/unit/nfc.rst:261 ef54336a253e4846b4340e3afdea8e0f
 msgid "``MIFARE_Plus_4K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:280
+#: ../../source/unit/nfc.rst:262 59e5e5893278437593fed1563c5bf259
 msgid "24"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:281
+#: ../../source/unit/nfc.rst:263 34f7aad47cb14572a8cd662e10b33e83
 msgid "``MIFARE_Plus_SE``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:282
+#: ../../source/unit/nfc.rst:264 6fd869fc3cbc441eaa56e82013dd3080
 msgid "25"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:283
+#: ../../source/unit/nfc.rst:265 f60dc200c410473aab87b573c8236041
 msgid "``MIFARE_DESFire_2K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:284
+#: ../../source/unit/nfc.rst:266 fe6d517b44af45039a0868eecc765769
 msgid "26"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:285
+#: ../../source/unit/nfc.rst:267 dbd5191d771f44d983852167ca080435
 msgid "``MIFARE_DESFire_4K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:286
+#: ../../source/unit/nfc.rst:268 c357b07d33df428981f4b5e96f285628
 msgid "27"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:287
+#: ../../source/unit/nfc.rst:269 5ca9112c2b064999a767629fabd1244c
 msgid "``MIFARE_DESFire_8K``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:288
+#: ../../source/unit/nfc.rst:270 5e79101d147f419a8a3432dc5ed17abf
 msgid "28"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:289
+#: ../../source/unit/nfc.rst:271 39cf57930ef54bc38408ab7fcd999d3e
 msgid "``MIFARE_DESFire_Light``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:290
+#: ../../source/unit/nfc.rst:272 d19d9cd03c6447b5a88e31ae0c1254d8
 msgid "29"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:291
+#: ../../source/unit/nfc.rst:273 55bc3627af894d34a15466b4c978eb82
 msgid "``NTAG_4XX``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:292
+#: ../../source/unit/nfc.rst:274 7f640e7f72c849ff8f6ba66b149a9c10
 msgid "30"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:293
+#: ../../source/unit/nfc.rst:275 f8ae1aca86f94c1fa1485d25de0e95bb
 msgid "``ISO_18092``"
 msgstr ""
 
-#: ../../source/unit/nfc.rst:297
+#: ../../source/unit/nfc.rst:279 afd53ce37a924670a94bc95afdd98938
 msgid ""
 "``int`` — Advertised user memory size in **bytes** for known types (``0``"
 " if unknown; used for Type 2 dump heuristics)."
 msgstr ""
 
-#: ../../source/unit/nfc.rst:301
+#: ../../source/unit/nfc.rst:283 78f1801ca1af42ad8ad585c20d340090
 msgid "UID as upper-case hex string."
 msgstr ""
 
-#: ../../source/unit/nfc.rst:305
+#: ../../source/unit/nfc.rst:287 7b26ef80ac2f46cf81ae7681a3852411
 msgid ""
 "Return ``True`` if ``type_id`` is a MIFARE Classic family id (Mini / 1K /"
 " 2K / 4K)."
 msgstr "若 ``type_id`` 属于 MIFARE Classic 系列 id（Mini / 1K / 2K / 4K），则返回 ``True``。"
 
-#: ../../source/unit/nfc.rst:309
+#: ../../source/unit/nfc.rst:291 a3dab43def874528858e09546528fec3
 msgid "|is_classic.png|"
 msgstr ""
 
-#: ../../source/refs/unit.nfc.ref:17
+#: ../../source/refs/unit.nfc.ref:17 792fa65496e246a588b7c64feb4b7062
 msgid "is_classic.png"
 msgstr ""
-
-#~ msgid "Only MIFARE Classic is supported for now."
-#~ msgstr "当前仅支持 MIFARE Classic。"
-
-#~ msgid ""
-#~ "``data`` must be **16** bytes; ``index``"
-#~ " is the block number. Sector trailers"
-#~ " and block ``0`` require valid "
-#~ "keys/access rules from the card."
-#~ msgstr "``data`` 必须为 **16** 字节；``index`` 为块号。扇区尾块和 ``0`` 号块需要卡片提供有效的密钥/访问规则。"
-
-#~ msgid "Tag from :meth:`detect`."
-#~ msgstr "由 :meth:`detect` 返回的标签。"
-
-#~ msgid "Block index."
-#~ msgstr "块索引。"
-
-#~ msgid "Exactly 16 bytes for Classic."
-#~ msgstr "Classic 卡必须为 16 字节。"
-
-#~ msgid "``True`` on success, ``False`` otherwise."
-#~ msgstr "成功返回 ``True``，否则返回 ``False``。"
 
 #~ msgid "|card.png|"
 #~ msgstr ""

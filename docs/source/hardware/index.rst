@@ -14,6 +14,7 @@ Hardware
     ir.rst
     lora.rst
     mic.rst
+    nfc.rst
     pin.rst
     pwr485.rst
     pwrcan.rst

@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 09:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/hardware/nfc.rst:2 ../../source/hardware/nfc.rst:15
+#: ../../source/hardware/nfc.rst:45 2d4021ec33d24716ab628adecbf343be
+#: a4a4a2a37b94473c9bb78786d0cb1a93 ae95e1796981424f8e8ea469a8db683e
+msgid "NFC"
+msgstr ""
+
+#: ../../source/hardware/nfc.rst:4 036251cdc03f438f989d3e41a6312672
+msgid ""
+"The ``NFC`` class controls the onboard ST25R3916 NFC reader. It selects "
+"the I2C bus, pins, and frequency for the detected controller automatically "
+"and supports ISO14443 Type A tag detection, MIFARE Classic block access, "
+"and Type 2 page access."
+msgstr ""
+"``NFC`` 类用于控制板载 ST25R3916 NFC 读卡器。它会根据检测到的控制器自动选择 I2C 总线、引脚和频率，并支持 "
+"ISO14443 Type A 标签检测、MIFARE Classic 块访问和 Type 2 页访问。"
+
+#: ../../source/hardware/nfc.rst:8 1e4cc2860f56458687c0c2dcc5ed4c97
+msgid "The following controllers provide an onboard NFC reader:"
+msgstr "以下控制器提供板载 NFC 读卡器："
+
+#: ../../source/hardware/nfc.rst:15 ddcdcdf0a2eb441089f2df0f2e4838dd
+msgid "Controller"
+msgstr "控制器"
+
+#: ../../source/hardware/nfc.rst:17 1b13a5246e42479a99e5775955e87a66
+msgid "PaperMono"
+msgstr ""
+
+#: ../../source/hardware/nfc.rst:17 ../../source/hardware/nfc.rst:19
+#: d6111f886dcb46abaa05e192d4936218 dea98aa9499b460091d4080f990dd9b3
+msgid "|S|"
+msgstr ""
+
+#: ../../source/hardware/nfc.rst:19 7293e13cb503405cb8b98b97e48066ff
+msgid ":ref:`StackChan <stackchan-nfc>`"
+msgstr ""
+
+#: ../../source/hardware/nfc.rst:25 f0ea5c35c42a4c2dabb8d954ea692a06
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/hardware/nfc.rst:28 4ba9620a509e43fe9286b041a0552d96
+msgid "Detect a tag"
+msgstr "检测标签"
+
+#: ../../source/hardware/nfc.rst:30 88b036c4dcb245408a13bec973b049d6
+msgid "This example detects a tag and prints its UID and resolved type name."
+msgstr "该示例检测标签，并打印其 UID 和解析出的类型名称。"
+
+#: ../../source/hardware/nfc.rst:42 1ec4da4ddc814a8db60b42bcac3c674b
+msgid "API"
+msgstr "API参考"
+
+#: ../../source/hardware/nfc.rst:49 0e2057cb8e424f70b6de744c946087b8
+msgid ""
+"Create an NFC reader for the onboard ST25R3916. The reader selects the "
+"controller's onboard NFC I2C bus, pins, and frequency; no bus or pin "
+"configuration is required."
+msgstr "为板载 ST25R3916 创建 NFC 读卡器。读卡器会选择控制器的板载 NFC I2C 总线、引脚和频率；无需配置总线或引脚。"
+
+#: ../../source/hardware/nfc.rst:53 c7b443eeb7674bf1960ae12991419a66
+msgid ""
+"Except for initialization, this class provides the same reader API as "
+":class:`unit.nfc.NFCUnit`, which documents the shared methods and "
+"returned :class:`driver.nfc.Card` object."
+msgstr ""
+"除初始化方式外，此类提供与 :class:`unit.nfc.NFCUnit` 相同的读卡器 API；共享方法和返回的 "
+":class:`driver.nfc.Card` 对象均在该类文档中说明。"

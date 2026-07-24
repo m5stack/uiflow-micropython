@@ -109,6 +109,8 @@ Example output:
 
     None
 
+.. _stackchan-nfc:
+
 NFC
 ^^^
 

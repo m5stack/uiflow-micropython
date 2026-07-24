@@ -95,7 +95,7 @@ NFCUnit
 
         Poll for a Type A tag in the field.
 
-        :returns: A :class:`unit.nfc.Card` instance if a tag was found and identified, otherwise ``None``.
+        :returns: A :class:`driver.nfc.Card` instance if a tag was found and identified, otherwise ``None``.
 
         UiFlow2 Code Block:
 
@@ -116,12 +116,9 @@ NFCUnit
         .. note::
             Use writable test cards only. Do not write UID pages, lock bytes, sector trailers, access-control blocks, or cards used for access/payment/identity.
 
-        For **MIFARE Classic**, ``data`` must be **16** bytes and ``index`` is the global block number.
-        For **Type 2** tags, ``data`` must be **4** bytes and ``index`` is the page number.
-        Sector trailers, block ``0``, lock bytes, and configuration pages require valid card-specific access rules.
-        :param unit.nfc.Card card: Tag from :meth:`detect`.
-        :param int index: Block index for Classic, or page index for Type 2.
-        :param bytes data: Exactly 16 bytes for Classic, or exactly 4 bytes for Type 2.
+        :param driver.nfc.Card card: Tag from :meth:`detect`.
+        :param int index: Block index.
+        :param bytes data: Exactly 16 bytes for Classic.
         :returns: ``True`` on success, ``False`` otherwise.
 
         UiFlow2 Code Block:
@@ -142,7 +139,7 @@ NFCUnit
         - **Type 2 family** (Ultralight / NTAG / ST25TA / ISO18092 where applicable): ``index`` is the **page number**. Returns **4** bytes on success, or ``None``.
         - Other chip types: ``None`` (use chip-specific flows outside this helper).
 
-        :param unit.nfc.Card card: Tag returned by :meth:`detect`.
+        :param driver.nfc.Card card: Tag returned by :meth:`detect`.
         :param int index: Block index (Classic) or page index (Type 2).
         :returns: ``bytes`` or ``None``.
 
@@ -201,7 +198,7 @@ NFCUnit
 Card
 ^^^^
 
-.. class:: unit.nfc.Card
+.. class:: driver.nfc.Card
 
     Object returned by :meth:`NFCUnit.detect` when a tag is present. Holds the anti-collision result and the resolved type metadata from the stack (SAK/ATQA/version/ATS paths as implemented in firmware).
 
@@ -217,11 +214,11 @@ Card
 
     .. attribute:: type_id
 
-        ``int`` — Internal type id used by this driver (aligned with the ``TYPE_NAMES`` table in ``unit/nfc.py``).
+        ``int`` — Internal type id used by this driver (aligned with the ``TYPE_NAMES`` table in ``driver/nfc.py``).
 
     .. attribute:: type_name
 
-        ``str`` — Resolved chip label from the identification logic in firmware; same strings as ``TYPE_NAMES`` in ``unit/nfc.py``. ``type_id`` selects the row below (unknown or unclassified tags use ``Unknown``).
+        ``str`` — Resolved chip label from the identification logic in firmware; same strings as ``TYPE_NAMES`` in ``driver/nfc.py``. ``type_id`` selects the row below (unknown or unclassified tags use ``Unknown``).
 
         .. list-table:: ``type_id`` and ``type_name`` (index into ``TYPE_NAMES``)
             :header-rows: 1
