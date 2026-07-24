@@ -58,7 +58,8 @@ boards := \
 	M5STACK_StampS3Bat:stamps3bat    \
 	M5STACK_StampP4:stampp4          \
 	M5STACK_StackChan:stackchan      \
-	M5STACK_PaperColor:papercolor
+	M5STACK_PaperColor:papercolor    \
+	M5STACK_PaperMono:papermono      \
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -112,8 +113,9 @@ BOARD_TYPE_DEF := \
 	unit_poep4  \
 	stamps3bat  \
 	stampp4     \
-	stackchan	\
-	papercolor
+	stackchan   \
+	papercolor  \
+	papermono
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"

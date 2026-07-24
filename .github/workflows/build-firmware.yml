@@ -103,6 +103,7 @@ jobs:
           - M5STACK_StampS3Bat
           - M5STACK_StampP4
           - M5STACK_PaperColor
+          - M5STACK_PaperMono
           - Nesso_N1
           - ESPRESSIF_ESP32_S3_BOX_3
           - SEEED_STUDIO_XIAO_ESP32S3

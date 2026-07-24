@@ -137,6 +137,7 @@ build-firmware:
           M5STACK_StampC5
           M5STACK_PaperS3
           M5STACK_PaperColor
+          M5STACK_PaperMono
           Nesso_N1
         BOARD_LIST_THIRD_PARTY: >-
           ESPRESSIF_ESP32_S3_BOX_3

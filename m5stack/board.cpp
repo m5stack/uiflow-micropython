@@ -71,7 +71,8 @@ extern "C" {
     {
         auto cfg = M5.config();
         cfg.output_power = false;
-#if defined(BOARD_ID) && BOARD_ID == 28
+        // Refresh display
+#if defined(BOARD_ID) && (BOARD_ID == 28 || BOARD_ID == 29)
         cfg.clear_display = false;
 #endif
         M5.begin(cfg);
