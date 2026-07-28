@@ -37,6 +37,7 @@ class IR:
             M5.BOARD.M5StickS3: (42, 46),
             M5.BOARD.M5Unit_PoEP4: (None, 14),
             M5.BOARD.M5StackChan: (10, 5),
+            M5.BOARD.M5PaperColor: (None, 48),
         }
         (self._rx_pin, self._tx_pin) = _pin_map.get(M5.getBoard())
         self._receiver = None
