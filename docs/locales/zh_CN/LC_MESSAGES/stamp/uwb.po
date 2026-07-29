@@ -1,0 +1,836 @@
+# Chinese translations for UIFlow2 Programming Guide package.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 15:03+0800\n"
+"PO-Revision-Date: 2026-07-29 15:03+0800\n"
+"Last-Translator: Automatically generated\n"
+"Language: zh_CN\n"
+"Language-Team: none\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../docs/source/refs/stamp.uwb.ref ../../source/stamp/uwb.rst:2
+#: 3041b0513d274d8b8c87d54d521f98b1 e2aa8f452adf428bbac361a5f022dce7
+msgid "Stamp UWB"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:6 9e03d6def1724ceeaa7bccca1fc995b5
+msgid ""
+"Stamp UWB is a QM33120 ultra-wideband transceiver. The ``StampUWB`` class "
+"selects the pin mapping for the current Stamp host and provides the PHY, "
+"frame, status, and timestamp operations. The PHY channel is fixed to channel "
+"9, and only one active ``StampUWB`` instance is supported."
+msgstr ""
+"Stamp UWB 是一款 QM33120 超宽带收发器。``StampUWB`` 类会根据当前 Stamp 主机选择引脚映射，并提供 PHY、帧、状态和时间戳操作。"
+"PHY 固定使用通道 9，并且仅支持一个活动的 ``StampUWB`` 实例。"
+
+#: ../../source/stamp/uwb.rst:12 81a360c3e957460ab8bee99f3b3649cf
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/stamp/uwb.rst:14 5e92a1db83a34c6ea1634b3b75d3c9d5
+msgid "|Stamp UWB|"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:16 cad1d86eab834752827b22829cafbec2
+msgid "Supported hosts:"
+msgstr "支持的主机："
+
+#: ../../source/stamp/uwb.rst:18 2ac79e628c604e0b868f1c4e255c80aa
+msgid "StampS3Mini"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:19 aab3e60ff8c644d5911ae2f26ffa7bee
+msgid "StampC6"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:20 f7ab3510f5ff451d854e5e6e0d355ae9
+msgid "StampC5"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:23 fd14c4b061b746b293133fea4b7c9ec1
+msgid "DS-TWR Ranging Principle"
+msgstr "DS-TWR 测距原理"
+
+#: ../../source/stamp/uwb.rst:25 8e02ad2f90c74cc7b8299fd6357995b0
+msgid ""
+"The simple examples use a three-message double-sided two-way ranging "
+"exchange:"
+msgstr "简单示例使用由三条消息组成的双边双向测距交互："
+
+#: ../../source/stamp/uwb.rst:27 98510eb508384a548c07e1bf97ab5763
+msgid ""
+"The Tag transmits a Poll frame and records the Poll TX timestamp ``T1``. "
+"The Anchor receives it and records the Poll RX timestamp ``T2``."
+msgstr "Tag 发送 Poll 帧并记录 Poll 发送时间戳 ``T1``。Anchor 接收该帧并记录 Poll 接收时间戳 ``T2``。"
+
+#: ../../source/stamp/uwb.rst:29 9be4c956e5f34e989ce8c56b1406cf8c
+msgid ""
+"The Anchor transmits a Response frame and records the Response TX "
+"timestamp ``T3``. The Tag receives it and records the Response RX "
+"timestamp ``T4``."
+msgstr ""
+"Anchor 发送 Response 帧并记录 Response 发送时间戳 ``T3``。Tag 接收该帧并记录 Response 接收时间戳 "
+"``T4``。"
+
+#: ../../source/stamp/uwb.rst:31 98c757336afe40d089b73f0a8decdcfc
+msgid ""
+"The Tag schedules a delayed Final frame, records its TX timestamp ``T5``,"
+" and includes ``T1``, ``T4``, and ``T5`` in the frame. The Anchor "
+"receives the Final frame and records timestamp ``T6``."
+msgstr ""
+"Tag 延时发送 Final 帧，记录其发送时间戳 ``T5``，并在帧中携带 ``T1``、``T4`` 和 ``T5``。Anchor 接收 "
+"Final 帧并记录时间戳 ``T6``。"
+
+#: ../../source/stamp/uwb.rst:35 bdd03c8e4be643e79b1253b745b4451c
+msgid ""
+"The examples use the following compact frame format. Multi-byte values "
+"are little-endian, and the sequence number associates the three frames:"
+msgstr "示例使用以下简化帧格式。多字节数值采用小端序，序列号用于关联三种帧："
+
+#: ../../source/stamp/uwb.rst:38 47333e864dbe4f1b8c35314929a0f774
+msgid "Poll: ``[0x01, sequence]``"
+msgstr "Poll 帧：``[0x01, sequence]``"
+
+#: ../../source/stamp/uwb.rst:39 933eb439b11940e0bab745154ec98d82
+msgid "Response: ``[0x02, sequence]``"
+msgstr "Response 帧：``[0x02, sequence]``"
+
+#: ../../source/stamp/uwb.rst:40 0f07c72d586e47aebd212b18e62ad482
+msgid ""
+"Final: ``[0x03, sequence, T1, T4, T5]``, where each timestamp occupies "
+"the low 32 bits of a device timestamp"
+msgstr "Final 帧：``[0x03, sequence, T1, T4, T5]``，其中每个时间戳使用设备时间戳的低 32 位"
+
+#: ../../source/stamp/uwb.rst:43 02e8a621063e4075ae471393273e9e52
+msgid ""
+"The Anchor calculates the time of flight while handling 32-bit timestamp "
+"wraparound:"
+msgstr "Anchor 在处理 32 位时间戳回绕的同时计算飞行时间："
+
+#: ../../source/stamp/uwb.rst:56 700c8eb188914102abd9cca3e89b13ed
+msgid ""
+"``DWT_TIME_UNITS`` is ``1 / (499200000 * 128)`` seconds. The Anchor "
+"prints the calculated distance locally. This simplified protocol does not"
+" send the distance back to the Tag."
+msgstr ""
+"``DWT_TIME_UNITS`` 为 ``1 / (499200000 * 128)`` 秒。Anchor "
+"在本地打印计算得到的距离。该简化协议不会将距离回传给 Tag。"
+
+#: ../../source/stamp/uwb.rst:61 7c3ded11fbb24179bc18fbd19a25a9c2
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/stamp/uwb.rst:64 ../../source/stamp/uwb.rst:91
+#: 1d57cd93eb1f4982a3c6062da28622bb
+msgid "Simple DS-TWR Anchor"
+msgstr "简单 DS-TWR Anchor 示例"
+
+#: ../../source/stamp/uwb.rst:66 6d0253c776eb426281e2f9a1a87532a1
+msgid "Open the |stampc5_uwb_simple_anchor.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stampc5_uwb_simple_anchor.m5f2| 项目。"
+
+#: ../../source/stamp/uwb.rst:68 ../../source/stamp/uwb.rst:93
+#: eb45aa9511574940a960c092f74e5992
+msgid ""
+"The anchor receives Poll and Final frames, calculates the distance "
+"locally, and prints the non-negative ranging result."
+msgstr "Anchor 接收 Poll 帧和 Final 帧，在本地计算距离，并打印非负的测距结果。"
+
+#: ../../source/stamp/uwb.rst:71 ../../source/stamp/uwb.rst:83
+#: ../../source/stamp/uwb.rst:131 ../../source/stamp/uwb.rst:149
+#: ../../source/stamp/uwb.rst:233 ../../source/stamp/uwb.rst:263
+#: ../../source/stamp/uwb.rst:280 ../../source/stamp/uwb.rst:297
+#: ../../source/stamp/uwb.rst:313 ../../source/stamp/uwb.rst:329
+#: ../../source/stamp/uwb.rst:345 ../../source/stamp/uwb.rst:364
+#: ../../source/stamp/uwb.rst:380 ../../source/stamp/uwb.rst:398
+#: ../../source/stamp/uwb.rst:415 ../../source/stamp/uwb.rst:436
+#: ../../source/stamp/uwb.rst:453 ../../source/stamp/uwb.rst:469
+#: ../../source/stamp/uwb.rst:483 ../../source/stamp/uwb.rst:500
+#: ../../source/stamp/uwb.rst:518 ../../source/stamp/uwb.rst:535
+#: ../../source/stamp/uwb.rst:552 ../../source/stamp/uwb.rst:569
+#: ../../source/stamp/uwb.rst:586 ../../source/stamp/uwb.rst:614
+#: ../../source/stamp/uwb.rst:629 171fccbe370249fa8b523d9b4dd62915
+#: 9fa2dc2e4fee491bb4563c7c3cf316a7 a2e708ca00764d8baf781110764f1cb3
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/stamp/uwb.rst:73 f941aa42afa2466fb390809cb39b97d9
+msgid "|simple_anchor_example.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:32 41c51277efae4e56a6856bc400a7eac8
+msgid "simple_anchor_example.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:76 ../../source/stamp/uwb.rst:103
+#: 35ddd7293e054b4383d27b03320ed929
+msgid "Simple DS-TWR Tag"
+msgstr "简单 DS-TWR Tag 示例"
+
+#: ../../source/stamp/uwb.rst:78 f929238bce5146e1ac90a14bc31d7537
+msgid "Open the |stampc5_uwb_simple_tag.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stampc5_uwb_simple_tag.m5f2| 项目。"
+
+#: ../../source/stamp/uwb.rst:80 ../../source/stamp/uwb.rst:105
+#: 41cec8d4e5524cc28106a3550d560efd
+msgid ""
+"The tag sends Poll, waits for Response, and sends a delayed Final frame. "
+"This minimal protocol does not return the calculated distance to the tag."
+msgstr "Tag 发送 Poll 帧、等待 Response 帧，然后延时发送 Final 帧。该简化协议不会将计算得到的距离返回给 Tag。"
+
+#: ../../source/stamp/uwb.rst:85 db90d9d1bb664d6cb07e86a8f929119b
+msgid "|simple_tag_example.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:31 655e6179418a435d8dcda4417a4d11c6
+msgid "simple_tag_example.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:88 e0c45b771d4340d9b2659e282fcaee01
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/stamp/uwb.rst:96 ../../source/stamp/uwb.rst:108
+#: ../../source/stamp/uwb.rst:135 ../../source/stamp/uwb.rst:237
+#: ../../source/stamp/uwb.rst:267 ../../source/stamp/uwb.rst:284
+#: ../../source/stamp/uwb.rst:301 ../../source/stamp/uwb.rst:317
+#: ../../source/stamp/uwb.rst:333 ../../source/stamp/uwb.rst:349
+#: ../../source/stamp/uwb.rst:368 ../../source/stamp/uwb.rst:384
+#: ../../source/stamp/uwb.rst:402 ../../source/stamp/uwb.rst:419
+#: ../../source/stamp/uwb.rst:440 ../../source/stamp/uwb.rst:457
+#: ../../source/stamp/uwb.rst:473 ../../source/stamp/uwb.rst:487
+#: ../../source/stamp/uwb.rst:504 ../../source/stamp/uwb.rst:522
+#: ../../source/stamp/uwb.rst:539 ../../source/stamp/uwb.rst:556
+#: ../../source/stamp/uwb.rst:573 ../../source/stamp/uwb.rst:590
+#: ../../source/stamp/uwb.rst:618 ../../source/stamp/uwb.rst:633
+#: 02df7569d9ef4044b6061b0c82537a75 238505a23562482bb60727d64f0b6072
+#: 3fbe365e11494039a49761a4a1c232e9 a9446719d4204989bea89f30ba9357bf
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/stamp/uwb.rst:115 b05f23c1a77b4e9fa3ceb5a381ee4316
+msgid "**API**"
+msgstr "**API 参考**"
+
+#: ../../source/stamp/uwb.rst:118 cecc3d5b65794ec39d82c01e20537f3c
+msgid "class StampUWB"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:121 42a23332978245c2a5390788d69bb359
+msgid "Constructors"
+msgstr "构造函数"
+
+#: ../../source/stamp/uwb.rst:125 0f535c8a94a947d292ba906fbfacf654
+msgid ""
+"Create a Stamp UWB object using the pin mapping of the current Stamp "
+"host. Only one active instance is supported."
+msgstr "使用当前 Stamp 主机的引脚映射创建 Stamp UWB 对象。仅支持一个活动实例。"
+
+#: ../../source/stamp/uwb.rst 01606fbf07d4482c801aeece27e5604d
+#: 08bac7b832a74d2f87a6088850af0da6 1db8c04071ba4309b762536194bce1cc
+#: 5ff7b3a1e94d4d4e8458699c1118fd59 9f5459191aa1452a9830d393e724a9fa
+#: a88eee6d17084b23b92f32972a739925 f0312830ad344131a2a3bc9cc32125c1
+msgid "Raises"
+msgstr "异常"
+
+#: ../../source/stamp/uwb.rst:128 84323bf89d3246f28e2ebad00ce9d819
+msgid ""
+"If another instance is active, SPI initialization fails, or the UWB "
+"device cannot be probed or initialized."
+msgstr "当已有活动实例、SPI 初始化失败，或无法探测或初始化 UWB 设备时。"
+
+#: ../../source/stamp/uwb.rst:133 dd72038e47314a03a580821ac58ebe5d
+msgid "|init.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:6 2baa6a4d04b84183a98b2b45c0d7e898
+msgid "init.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:144 42a23332978245c2a5390788d69bb359
+msgid "Constants"
+msgstr "常量"
+
+#: ../../source/stamp/uwb.rst:146 19536538171e4267baea485c5791de05
+msgid ""
+"The option block supplies the PHY, TX/RX mode, and status-mask constants "
+"used by the methods below."
+msgstr "选项块提供以下方法使用的 PHY、TX/RX 模式和状态掩码常量。"
+
+#: ../../source/stamp/uwb.rst:151 46add277973745efb9ef2cb8a9f1ced9
+msgid "|constant_option.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:7 e96fd7b897c74f72ad1550fed784f923
+msgid "constant_option.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:155 ce0c06021ef7445eb6134758df97b5af
+msgid "Decawave 8-symbol SFD used by :meth:`StampUWB.configure`."
+msgstr ":meth:`StampUWB.configure` 使用的 Decawave 8 符号 SFD。"
+
+#: ../../source/stamp/uwb.rst:159 3b5296255b30408389e8d5cc5b348229
+msgid "6.8 Mbit/s PHY data rate used by :meth:`StampUWB.configure`."
+msgstr ":meth:`StampUWB.configure` 使用的 6.8 Mbit/s PHY 数据速率。"
+
+#: ../../source/stamp/uwb.rst:163 d3877a94fdb24d168db0916dccdfc8c2
+msgid "Standard PHY header mode used by :meth:`StampUWB.configure`."
+msgstr ":meth:`StampUWB.configure` 使用的标准 PHY 帧头模式。"
+
+#: ../../source/stamp/uwb.rst:167 a18bb2f914584d17a277f1a1d7e6422a
+msgid "Standard PHY header rate used by :meth:`StampUWB.configure`."
+msgstr ":meth:`StampUWB.configure` 使用的标准 PHY 帧头速率。"
+
+#: ../../source/stamp/uwb.rst:171 71e65ac9dd0049aea897af159f3bbd05
+msgid "Start transmission immediately."
+msgstr "立即开始发送。"
+
+#: ../../source/stamp/uwb.rst:175 1f8f78ef3cc9429c9a8864a1e5205e3a
+msgid ""
+"Start transmission at the time set by "
+":meth:`StampUWB.set_delayed_trx_time`."
+msgstr "在 :meth:`StampUWB.set_delayed_trx_time` 设置的时间开始发送。"
+
+#: ../../source/stamp/uwb.rst:180 83d948e0ba36494799c0f91630719400
+msgid ""
+"Automatically enable the receiver after transmission. Combine this flag "
+"with a TX start mode."
+msgstr "发送完成后自动启用接收器。此标志需与 TX 启动模式组合使用。"
+
+#: ../../source/stamp/uwb.rst:185 f44f172f388a4e66b9401d979c2f45d2
+msgid "Enable the receiver immediately."
+msgstr "立即启用接收器。"
+
+#: ../../source/stamp/uwb.rst:189 ce6035732a2e4912b23c1fb2892d13fa
+msgid "Enable the receiver at the configured delayed RX time."
+msgstr "在已配置的延时 RX 时间启用接收器。"
+
+#: ../../source/stamp/uwb.rst:193 6ec0a2c2bc954720b5089d5d7455945b
+msgid "Return to idle if a delayed RX operation is already too late."
+msgstr "如果延时 RX 操作已超时，则返回空闲状态。"
+
+#: ../../source/stamp/uwb.rst:197 3163437de68d44d3959ca5aff083df43
+msgid "Transmission-complete status bit."
+msgstr "发送完成状态位。"
+
+#: ../../source/stamp/uwb.rst:201 3163437de68d44d3959ca5aff083df43
+msgid "Good-frame-received status bit."
+msgstr "正确接收帧状态位。"
+
+#: ../../source/stamp/uwb.rst:205 33e6266d7b574e579684d56334e85e14
+msgid "Combined receive-timeout status mask."
+msgstr "接收超时组合状态掩码。"
+
+#: ../../source/stamp/uwb.rst:209 2cf9ce563bf449e7b3bbe06e120c1830
+msgid "Combined receive-error status mask."
+msgstr "接收错误组合状态掩码。"
+
+#: ../../source/stamp/uwb.rst:213 3c31ac5c37224e858d0962afed9d27a8
+msgid ""
+"Combined mask containing good-frame, receive-timeout, and receive-error "
+"status bits."
+msgstr "包含正确接收帧、接收超时和接收错误状态位的组合掩码。"
+
+#: ../../source/stamp/uwb.rst:217 72d0a095769548aaa266f241a4b0f4f8
+msgid "Methods"
+msgstr "方法"
+
+#: ../../source/stamp/uwb.rst:221 c3a3ec31a45e459c8eb2f54e9cbfafbc
+msgid "Configure the channel 9 UWB PHY."
+msgstr "配置通道 9 的 UWB PHY。"
+
+#: ../../source/stamp/uwb.rst 87519eb1c5d34984983e0e6d0455a09c
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/stamp/uwb.rst:223 e5f178cabf734810a658d69a49711c3c
+msgid ""
+"Preamble length in symbols. Allowed values are ``32``, ``64``, ``72``, "
+"``128``, ``256``, ``512``, ``1024``, ``1536``, ``2048``, and ``4096``. "
+"Default is ``128``."
+msgstr ""
+"前导码长度，单位为符号。可选值为 "
+"``32``、``64``、``72``、``128``、``256``、``512``、``1024``、``1536``、``2048`` 和"
+" ``4096``。默认值为 ``128``。"
+
+#: ../../source/stamp/uwb.rst:224 4b1bc89172cd4a6e81cb8695bd140a0f
+msgid ""
+"Preamble acquisition chunk size. Allowed values are ``4``, ``8``, ``16``,"
+" and ``32``. Default is ``8``."
+msgstr "前导码捕获块大小。可选值为 ``4``、``8``、``16`` 和 ``32``。默认值为 ``8``。"
+
+#: ../../source/stamp/uwb.rst:225 7d8bb7ebeb384182a479bfa13223a15c
+msgid "TX preamble code, range ``9`` to ``12``. Default is ``9``."
+msgstr "TX 前导码编码，范围为 ``9`` 到 ``12``。默认值为 ``9``。"
+
+#: ../../source/stamp/uwb.rst:226 aa5590cb9778415bbc29becdd1967917
+msgid "RX preamble code, range ``9`` to ``12``. Default is ``9``."
+msgstr "RX 前导码编码，范围为 ``9`` 到 ``12``。默认值为 ``9``。"
+
+#: ../../source/stamp/uwb.rst:227 4d6cbc9eac4c43c5a035efefbf686bf1
+msgid "SFD type. Use ``uwb.SFD_DW_8``."
+msgstr "SFD 类型。使用 ``uwb.SFD_DW_8``。"
+
+#: ../../source/stamp/uwb.rst:228 89fd21645bb1479382f448221f2873ad
+msgid "PHY data rate. Use ``uwb.BR_6M8``."
+msgstr "PHY 数据速率。使用 ``uwb.BR_6M8``。"
+
+#: ../../source/stamp/uwb.rst:229 b851dbf151d4408194755c9c26e59f8d
+msgid "PHR mode. Use ``uwb.PHR_STD``."
+msgstr "PHR 模式。使用 ``uwb.PHR_STD``。"
+
+#: ../../source/stamp/uwb.rst:230 ef05348c19524cd4836307bce5da1a2b
+msgid "PHR rate. Use ``uwb.PHR_RATE_STD``."
+msgstr "PHR 速率。使用 ``uwb.PHR_RATE_STD``。"
+
+#: ../../source/stamp/uwb.rst:231 7965e72c332c4076b082534b4886cc3b
+msgid "SFD timeout in symbols, range ``0`` to ``65535``. Default is ``129``."
+msgstr "SFD 超时时间，单位为符号，范围为 ``0`` 到 ``65535``。默认值为 ``129``。"
+
+#: ../../source/stamp/uwb.rst:235 c50217dc8f1540e8b7b88ee01d3142d9
+msgid "|configure.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:8 014d5d838f7e4b56a69c9e2bbabc207e
+msgid "configure.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:257 5f9e510b67fb4df38994857874aa232c
+msgid "Configure the channel 9 transmitter RF settings."
+msgstr "配置通道 9 的发射器 RF 参数。"
+
+#: ../../source/stamp/uwb.rst:259 d3397bff04b5450583ab339697485e30
+msgid "Pulse generator delay, range ``0x00`` to ``0xFF``. Default is ``0x34``."
+msgstr "脉冲发生器延时，范围为 ``0x00`` 到 ``0xFF``。默认值为 ``0x34``。"
+
+#: ../../source/stamp/uwb.rst:260 a9ac748e748a4a2c931654588919a989
+msgid ""
+"32-bit TX power value, range ``0x00000000`` to ``0xFFFFFFFF``. Default is"
+" ``0xFEFEFEFE``."
+msgstr "32 位 TX 功率值，范围为 ``0x00000000`` 到 ``0xFFFFFFFF``。默认值为 ``0xFEFEFEFE``。"
+
+#: ../../source/stamp/uwb.rst:261 27bdd877b3724abfab3255e0747c172d
+msgid "Pulse generator count, range ``0x00`` to ``0xFF``. Default is ``0``."
+msgstr "脉冲发生器计数，范围为 ``0x00`` 到 ``0xFF``。默认值为 ``0``。"
+
+#: ../../source/stamp/uwb.rst:265 46add277973745efb9ef2cb8a9f1ced9
+msgid "|configure_tx_rf.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:9 8d7a177e660f45c894457e845ff23cbf
+msgid "configure_tx_rf.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:275 ad3b82aabeca4c678cfb61962c89921e
+msgid "Set the TX and RX antenna delays."
+msgstr "设置 TX 和 RX 天线延时。"
+
+#: ../../source/stamp/uwb.rst:277 de315d546a6b4a889f94938c586d919d
+msgid ""
+"TX antenna delay in device time units, range ``0`` to ``65535``. Default "
+"is ``16385``."
+msgstr "TX 天线延时，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
+
+#: ../../source/stamp/uwb.rst:278 a4d3c7a872c04c51b4049e0337b9f331
+msgid ""
+"RX antenna delay in device time units, range ``0`` to ``65535``. Default "
+"is ``16385``."
+msgstr "RX 天线延时，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
+
+#: ../../source/stamp/uwb.rst:282 429357e79b4e41daaa2a45635d159908
+msgid "|set_antenna_delay.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:10 25e47563866c41abb7edc58044f6107a
+msgid "set_antenna_delay.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:292 52e9171adbd34526884632ae3b68fb61
+msgid "Enable or disable the low-noise amplifier and power amplifier controls."
+msgstr "启用或禁用低噪声放大器和功率放大器控制。"
+
+#: ../../source/stamp/uwb.rst:294 f44f172f388a4e66b9401d979c2f45d2
+msgid "Enable the LNA. Default is ``True``."
+msgstr "启用 LNA。默认值为 ``True``。"
+
+#: ../../source/stamp/uwb.rst:295 db1fde46ccce427a9b27ff048688e3f7
+msgid "Enable the PA. Default is ``True``."
+msgstr "启用 PA。默认值为 ``True``。"
+
+#: ../../source/stamp/uwb.rst:299 4920f976aba643b481754752ceba1e0e
+msgid "|set_lna_pa.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:11 dd6dbe2434f947ff80300b254fff76b6
+msgid "set_lna_pa.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:309 3caad9284ad64f23a67cc14d120647e2
+msgid "Set the delay from TX completion to automatic RX enable."
+msgstr "设置从 TX 完成到自动启用 RX 的延时。"
+
+#: ../../source/stamp/uwb.rst:311 d2dbe6bcc88843a09eca5494ed6f5703
+msgid ""
+"Delay in UWB microseconds, range ``0`` to ``4294967295``. Default is "
+"``0``."
+msgstr "延时，单位为 UWB 微秒，范围为 ``0`` 到 ``4294967295``。默认值为 ``0``。"
+
+#: ../../source/stamp/uwb.rst:315 5d48fc5f24e14cac9c10b3aba6a8cb0d
+msgid "|set_rx_after_tx_delay.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:12 2340101c76ed4d36b9878b3b26ad2c6e
+msgid "set_rx_after_tx_delay.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:325 6a10027530c14a86b899e22aeddbd402
+msgid "Set the RX frame timeout. A value of ``0`` disables the timeout."
+msgstr "设置 RX 帧超时时间。值为 ``0`` 时禁用超时。"
+
+#: ../../source/stamp/uwb.rst:327 da284e0cc3e44c0c8fabecfa23f5c2ef
+msgid ""
+"Timeout in UWB microseconds, range ``0`` to ``4294967295``. Default is "
+"``30000``."
+msgstr "超时时间，单位为 UWB 微秒，范围为 ``0`` 到 ``4294967295``。默认值为 ``30000``。"
+
+#: ../../source/stamp/uwb.rst:331 d8093d2a9f5f490faed028ae921e9c81
+msgid "|set_rx_timeout.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:13 873d2f9be8d74833abeee6e47df304b8
+msgid "set_rx_timeout.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:341 9dede9541ca14df69238005e68346c0b
+msgid "Set the preamble detection timeout. A value of ``0`` disables the timeout."
+msgstr "设置前导码检测超时时间。值为 ``0`` 时禁用超时。"
+
+#: ../../source/stamp/uwb.rst:343 94ba363d72394be693b47a9f39a2f788
+msgid "Timeout in PAC units, range ``0`` to ``65535``. Default is ``0``."
+msgstr "超时时间，单位为 PAC，范围为 ``0`` 到 ``65535``。默认值为 ``0``。"
+
+#: ../../source/stamp/uwb.rst:347 1c279d37811d4aa88012a6c1e371db2a
+msgid "|set_preamble_timeout.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:14 74d8b11d014b407bb9cb6e55ac64b736
+msgid "set_preamble_timeout.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:357 8b56a309f7304302b22de3184b2f14b9
+msgid "Write a payload to the TX buffer. Do not include the two-byte FCS."
+msgstr "将有效载荷写入 TX 缓冲区。数据中不要包含 2 字节 FCS。"
+
+#: ../../source/stamp/uwb.rst:359 c071847c04ef4245937a10698ef74d41
+msgid "Bytes-like payload, range ``0`` to ``125`` bytes."
+msgstr "类 bytes 有效载荷，长度范围为 ``0`` 到 ``125`` 字节。"
+
+#: ../../source/stamp/uwb.rst:360 0a360757792f482899cb5cf3221bee4f
+msgid "Set the ranging bit in TX frame control. Default is ``True``."
+msgstr "设置 TX 帧控制中的测距标志位。默认值为 ``True``。"
+
+#: ../../source/stamp/uwb.rst:361 969efe28571d49d9a2acf20bf1ad39dc
+msgid "If the payload exceeds 125 bytes."
+msgstr "当有效载荷超过 125 字节时。"
+
+#: ../../source/stamp/uwb.rst:362 387cbf0845be4f76a56f1c3f84d8dcc0
+msgid "If the payload cannot be written to the TX buffer."
+msgstr "当有效载荷无法写入 TX 缓冲区时。"
+
+#: ../../source/stamp/uwb.rst:366 dfd40b128e1b418eb6b93bb97922e831
+msgid "|write_tx_frame.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:15 ac1a41d67f0e40ce9048f569c55dd4f2
+msgid "write_tx_frame.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:376 3c054c798d2d435ab09f97f4895f6c5b
+msgid "Set the delayed TX/RX device time."
+msgstr "设置延时 TX/RX 的设备时间。"
+
+#: ../../source/stamp/uwb.rst:378 d5a13700d2664f09aaba5a95fc73fee0
+msgid ""
+"Low 32 bits of the 40-bit device timestamp shifted right by 8, range "
+"``0`` to ``4294967295``."
+msgstr "40 位设备时间戳右移 8 位后的低 32 位，范围为 ``0`` 到 ``4294967295``。"
+
+#: ../../source/stamp/uwb.rst:382 205cf762854b4f178549dbcff7105473
+msgid "|set_delayed_trx_time.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:16 1f8f78ef3cc9429c9a8864a1e5205e3a
+msgid "set_delayed_trx_time.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:393 19959eeb3f814d02b91a65e191036497
+msgid "Start an immediate or delayed transmission."
+msgstr "启动立即发送或延时发送。"
+
+#: ../../source/stamp/uwb.rst:395 047851a9c05d484684082ab1aab1c289
+msgid ""
+"TX mode composed from ``uwb.TX_IMMEDIATE`` or ``uwb.TX_DELAYED`` and "
+"optional ``uwb.RESPONSE_EXPECTED``."
+msgstr ""
+"TX 模式由 ``uwb.TX_IMMEDIATE`` 或 ``uwb.TX_DELAYED`` 与可选的 "
+"``uwb.RESPONSE_EXPECTED`` 组合而成。"
+
+#: ../../source/stamp/uwb.rst:396 57010f125b4b4f16a6f7d6d308b14363
+msgid "If a delayed transmission time has already passed."
+msgstr "当延时发送时间已经过去时。"
+
+#: ../../source/stamp/uwb.rst:400 b939fdd388d84f83a72730d0b0904338
+msgid "|start_tx.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:17 e96fd7b897c74f72ad1550fed784f923
+msgid "start_tx.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:410 0407e648c45243dbb3dc7cdf298ec41e
+msgid "Enable the receiver."
+msgstr "启用接收器。"
+
+#: ../../source/stamp/uwb.rst:412 dd537fb0dee94c42b96a79dc0698f7d5
+msgid ""
+"Use ``uwb.RX_IMMEDIATE`` or ``uwb.RX_DELAYED``. Delayed RX can be "
+"combined with ``uwb.IDLE_ON_DELAY_ERROR``. Default is "
+"``uwb.RX_IMMEDIATE``."
+msgstr ""
+"使用 ``uwb.RX_IMMEDIATE`` 或 ``uwb.RX_DELAYED``。延时 RX 可与 "
+"``uwb.IDLE_ON_DELAY_ERROR`` 组合使用。默认值为 ``uwb.RX_IMMEDIATE``。"
+
+#: ../../source/stamp/uwb.rst:413 4a7a4443a55e49db9047752d55c780c0
+msgid "If the receiver cannot be enabled."
+msgstr "当无法启用接收器时。"
+
+#: ../../source/stamp/uwb.rst:417 b5b7ae3297c94b9781ad7f87b1395cf9
+msgid "|rx_enable.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:18 cb0ac5aa151c4e5fa977e169b33b5178
+msgid "rx_enable.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:427 9c325f3ee462425f896780a0b147f327
+msgid "Wait until any requested system status bit is set."
+msgstr "等待任一指定的系统状态位置位。"
+
+#: ../../source/stamp/uwb.rst:429 6bb1f1be84434393aea79ebfb37f9c95
+msgid ""
+"Status mask composed from ``uwb.STATUS_*`` constants, range "
+"``0x00000000`` to ``0xFFFFFFFF``."
+msgstr "由 ``uwb.STATUS_*`` 常量组合而成的状态掩码，范围为 ``0x00000000`` 到 ``0xFFFFFFFF``。"
+
+#: ../../source/stamp/uwb.rst:430 a3f9a06d2ae140efb1b35266e1f60ce1
+msgid ""
+"Software timeout in milliseconds, range ``-1`` to ``1073741823``. ``-1`` "
+"waits indefinitely. Default is ``-1``."
+msgstr "软件超时时间，单位为毫秒，范围为 ``-1`` 到 ``1073741823``。``-1`` 表示无限等待。默认值为 ``-1``。"
+
+#: ../../source/stamp/uwb.rst 7305e24a3b0f4a7991bd7c798c6e755e
+msgid "Returns"
+msgstr "返回值"
+
+#: ../../source/stamp/uwb.rst:431 ../../source/stamp/uwb.rst:450
+#: 6a0431d8e5864c6cbe78047f07efdddb
+msgid "Raw 32-bit system status value."
+msgstr "原始 32 位系统状态值。"
+
+#: ../../source/stamp/uwb.rst ca3411af0935454980091ef6930f1911
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../source/stamp/uwb.rst:433 fe16d519f463464e8c1573aee5390832
+msgid ""
+"``ETIMEDOUT`` if no requested status bit is set before the software "
+"timeout."
+msgstr "如果在软件超时前没有指定状态位置位，则抛出 ``ETIMEDOUT``。"
+
+#: ../../source/stamp/uwb.rst:438 308238b15ebd4a1da314b8c71d50fb4e
+msgid "|wait_status.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:19 4ad7b7bd76344f07bddd5047a2e35bba
+msgid "wait_status.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:448 0f3f19bd94314a1d8908e8639f59ab71
+msgid "Read the low 32 bits of the system status register."
+msgstr "读取系统状态寄存器的低 32 位。"
+
+#: ../../source/stamp/uwb.rst:455 a0f5b9bada3a411da1a83b9248c861a7
+msgid "|read_status.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:20 38293a76b2ff435f86add1335d6cdf77
+msgid "read_status.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:465 3163437de68d44d3959ca5aff083df43
+msgid "Clear selected system status bits."
+msgstr "清除指定的系统状态位。"
+
+#: ../../source/stamp/uwb.rst:467 b898cb47c4fd4ca6b97d403385e1b199
+msgid "Status mask, range ``0x00000000`` to ``0xFFFFFFFF``."
+msgstr "状态掩码，范围为 ``0x00000000`` 到 ``0xFFFFFFFF``。"
+
+#: ../../source/stamp/uwb.rst:471 8a58f476503544f8977ca62e8f14b3e5
+msgid "|clear_status.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:21 51ff8166b6fd408eaee4e5d9d7e3a8f8
+msgid "clear_status.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:481 f3619dc03f414b69b634af33876ea674
+msgid "Force the transmitter and receiver to the idle state."
+msgstr "强制发射器和接收器进入空闲状态。"
+
+#: ../../source/stamp/uwb.rst:485 f989c4b608ab409fb038561ef503927c
+msgid "|force_trx_off.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:22 34f15bc903ee44ddb32a77e943169818
+msgid "force_trx_off.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:495 76fd227133ac4a0cae71fe9d04036dd3
+msgid "Get the last received frame length including the two-byte FCS."
+msgstr "获取最近接收帧的长度，包含 2 字节 FCS。"
+
+#: ../../source/stamp/uwb.rst:497 ea44be59db9046a39809730d9394b68e
+msgid "Received frame length in bytes, range ``2`` to ``127``."
+msgstr "接收帧长度，单位为字节，范围为 ``2`` 到 ``127``。"
+
+#: ../../source/stamp/uwb.rst:502 babfd055bd7944b19cd2275ac250da37
+msgid "|frame_length.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:23 f02951f9a54941029a36b5974c24f192
+msgid "frame_length.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:512 4a7a4443a55e49db9047752d55c780c0
+msgid "Read the last received payload without the two-byte FCS."
+msgstr "读取最近接收的有效载荷，不包含 2 字节 FCS。"
+
+#: ../../source/stamp/uwb.rst:514 969efe28571d49d9a2acf20bf1ad39dc
+msgid "Received payload, range ``0`` to ``125`` bytes."
+msgstr "接收的有效载荷，长度范围为 ``0`` 到 ``125`` 字节。"
+
+#: ../../source/stamp/uwb.rst:516 76fd227133ac4a0cae71fe9d04036dd3
+msgid "If the received frame length is outside the valid range."
+msgstr "当接收帧长度超出有效范围时。"
+
+#: ../../source/stamp/uwb.rst:520 1d09afe37d5f4365a33e02dda57e5f6d
+msgid "|read_rx_frame.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:24 bbac7a8de27e4693a64fd507a4b82eae
+msgid "read_rx_frame.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:530 3b5e20956153407da777956cac52d004
+msgid "Read the last TX timestamp."
+msgstr "读取最近一次 TX 时间戳。"
+
+#: ../../source/stamp/uwb.rst:532 9b1e96d66190433885082f7b5c67b626
+msgid "Full 40-bit TX timestamp in device time units."
+msgstr "完整的 40 位 TX 时间戳，单位为设备时间单位。"
+
+#: ../../source/stamp/uwb.rst:537 df66e38909344943bb1538c6d07c87f1
+msgid "|tx_timestamp.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:25 18c96a40da9c4d96b66dbcdd5d6e47de
+msgid "tx_timestamp.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:547 8068f192c9294b12aa97f0245847d057
+msgid "Read the last RX timestamp."
+msgstr "读取最近一次 RX 时间戳。"
+
+#: ../../source/stamp/uwb.rst:549 0ae6b6fa361241eaa28f82ee1aa42d31
+msgid "Full 40-bit RX timestamp in device time units."
+msgstr "完整的 40 位 RX 时间戳，单位为设备时间单位。"
+
+#: ../../source/stamp/uwb.rst:554 2f02f69df63e4e03b3fffa525f84038a
+msgid "|rx_timestamp.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:26 475af69a5a27476697dbd39b713f7ac4
+msgid "rx_timestamp.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:564 6ebdfbc029244a96b9002a857cdf5d82
+msgid "Read the current UWB system timestamp."
+msgstr "读取当前 UWB 系统时间戳。"
+
+#: ../../source/stamp/uwb.rst:566 e7b5a68c01b94e7ea8c9e5879c5ec3ce
+msgid "Full 40-bit system timestamp in device time units."
+msgstr "完整的 40 位系统时间戳，单位为设备时间单位。"
+
+#: ../../source/stamp/uwb.rst:571 6697163afcb242b187f8f69cb59410eb
+msgid "|system_timestamp.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:27 5af7b8d792ff4d72917117191dcf3dfd
+msgid "system_timestamp.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:581 666b32cffa0a480596ea4c7d6b22c228
+msgid ""
+"Reset, probe, and reinitialise the UWB device. Configure the PHY and RF "
+"settings again after reset."
+msgstr "复位、探测并重新初始化 UWB 设备。复位后需要重新配置 PHY 和 RF 参数。"
+
+#: ../../source/stamp/uwb.rst:584 53244496a6d141b091822df1903927b7
+msgid "If the device cannot be probed or initialized after reset."
+msgstr "当复位后无法探测或初始化设备时。"
+
+#: ../../source/stamp/uwb.rst:588 26e2d95e9dc741348617ba59a823ffb4
+msgid "|reset.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:28 db90ba2db75843caadf83a8575831794
+msgid "reset.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:612 2c024f67bea94c608befb112261b568e
+msgid "Pulse the WAKEUP pin to wake the UWB device."
+msgstr "通过 WAKEUP 引脚脉冲唤醒 UWB 设备。"
+
+#: ../../source/stamp/uwb.rst:616 63cd22b007514b2fa6636738fd515732
+msgid "|wakeup.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:29 bd5c39cc4cbf4f99bd2931c6423f1791
+msgid "wakeup.png"
+msgstr ""
+
+#: ../../source/stamp/uwb.rst:626 2374a21a48f64a518252c00fa9464a4e
+msgid ""
+"Stop TX/RX and release the SPI and GPIO resources. This method is "
+"idempotent. After deinitialization, other methods raise "
+"``OSError(ENODEV)``."
+msgstr "停止 TX/RX 并释放 SPI 和 GPIO 资源。该方法可重复调用。反初始化后，调用其他方法会抛出 ``OSError(ENODEV)``。"
+
+#: ../../source/stamp/uwb.rst:631 aa495df13de948f18f278b41e7e98f78
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../docs/source/refs/stamp.uwb.ref:30 435b00731ec44336b38cd536a212eb28
+msgid "deinit.png"
+msgstr ""

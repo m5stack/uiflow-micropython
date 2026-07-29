@@ -28,7 +28,7 @@ set(FONT_ALIBABASANS_KR24 0)
 set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.base
     ${SDKCONFIG_IDF_VERSION_SPECIFIC}
-    boards/sdkconfig.flash_4mb
+    boards/sdkconfig.flash_4mb_stampc5
     boards/sdkconfig.c5
     boards/sdkconfig.ble
     boards/sdkconfig.freertos

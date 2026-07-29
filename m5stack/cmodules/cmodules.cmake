@@ -44,6 +44,13 @@ include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
 # add rmt_ir module
 include(${CMAKE_CURRENT_LIST_DIR}/rmt_ir/micropython.cmake)
 
+# QM33120 UWB support for Stamp hosts.
+if(BOARD_TYPE STREQUAL "stamps3mini" OR
+   BOARD_TYPE STREQUAL "stampc6" OR
+   BOARD_TYPE STREQUAL "stampc5")
+    include(${CMAKE_CURRENT_LIST_DIR}/uwb/micropython.cmake)
+endif()
+
 # add esp_zigbee_host module
 include(${CMAKE_CURRENT_LIST_DIR}/esp_zigbee_host/micropython.cmake)
 
