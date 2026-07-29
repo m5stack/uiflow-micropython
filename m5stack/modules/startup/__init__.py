@@ -241,6 +241,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             M5.BOARD.M5StampS3,
             M5.BOARD.M5StampP4,
             M5.BOARD.M5StampC5,
+            M5.BOARD.M5StampC6,
             M5.BOARD.M5NanoC6,
             M5.BOARD.M5DualKey,
             M5.BOARD.M5PowerHub,

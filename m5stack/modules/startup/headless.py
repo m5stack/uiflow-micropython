@@ -24,6 +24,40 @@ class NullRGB:
         pass
 
 
+class StampStatusLED:
+    OFF = 1
+    ON = 0
+
+    def __init__(self, pin: int) -> None:
+        self._value = self.OFF
+        self._pin = machine.Pin(pin, machine.Pin.OUT, value=self._value)
+        self._timer = machine.Timer(0)
+
+    def _toggle(self, timer) -> None:
+        self._value ^= 1
+        self._pin.value(self._value)
+
+    def blink(self, period_ms: int) -> None:
+        self._timer.deinit()
+        self._value = self.OFF
+        self._pin.value(self._value)
+        self._timer.init(
+            period=period_ms,
+            mode=machine.Timer.PERIODIC,
+            callback=self._toggle,
+        )
+
+    def on(self) -> None:
+        self._timer.deinit()
+        self._value = self.ON
+        self._pin.value(self._value)
+
+
+STATUS_LED_PINS = {
+    M5.BOARD.M5StampC6: 9,
+}
+
+
 # Headless startup menu
 class Headless_Startup:
     COLOR_RED = 0xFF0000  # WiFi not connected
@@ -33,7 +67,13 @@ class Headless_Startup:
 
     def __init__(self) -> None:
         self._board = M5.getBoard()
-        has_rgb = self._board not in [M5.BOARD.M5AtomS3R_CAM, M5.BOARD.M5AtomEchoS3R]
+        led_pin = STATUS_LED_PINS.get(self._board)
+        self._wifi_led = StampStatusLED(led_pin) if led_pin is not None else None
+        no_rgb_boards = [
+            M5.BOARD.M5AtomS3R_CAM,
+            M5.BOARD.M5AtomEchoS3R,
+        ]
+        has_rgb = self._board not in no_rgb_boards
         rgb = RGB() if has_rgb else None
         self.rgb = rgb if rgb is not None else NullRGB()
         if self._board is not M5.BOARD.M5PowerHub:
@@ -91,12 +131,16 @@ class Headless_Startup:
             gateway=gateway,
             dns=dns,
         ):
+            if self._wifi_led is not None:
+                self._wifi_led.blink(500)
             print("Connecting to " + ssid + " ", end="")
             start = time.ticks_ms()
             success = False
             while time.ticks_diff(time.ticks_ms(), start) < timeout * 1000:
                 status = self._net_if.connect_status()
                 if status is network.STAT_GOT_IP:
+                    if self._wifi_led is not None:
+                        self._wifi_led.on()
                     access_code = M5Things.accesscode()
                     if access_code != "":
                         print(" ")
@@ -123,5 +167,7 @@ class Headless_Startup:
                     f"[MQTT]: {self._net_if.m5things_status_str(M5Things.status())}"
                 )
         else:
+            if self._wifi_led is not None:
+                self._wifi_led.blink(1000)
             self._set_status_color(self.COLOR_BLUE)
             self.show_error("Not Found", "Please use M5Burner setup :)")

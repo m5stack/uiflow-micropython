@@ -1,0 +1,17 @@
+{
+    "deploy": [],
+    "docs": "",
+    "features": [
+        "BLE",
+        "WiFi",
+        "USB",
+        "USB-C"
+    ],
+    "images": [
+        "m5stack_stampc6.jpg"
+    ],
+    "mcu": "esp32c6",
+    "product": "M5Stack StampC6",
+    "url": "https://shop.m5stack.com/",
+    "vendor": "M5Stack"
+}

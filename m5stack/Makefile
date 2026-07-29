@@ -24,6 +24,7 @@ boards := \
 	M5STACK_Fire:fire                \
 	M5STACK_NanoC6:nanoc6            \
 	M5STACK_StampC5:stampc5           \
+	M5STACK_StampC6:stampc6           \
 	M5STACK_Basic:basic              \
 	M5STACK_Basic_4MB:basic          \
 	M5STACK_Capsule:capsule          \
@@ -78,6 +79,7 @@ BOARD_TYPE_DEF := \
 	fire        \
 	nanoc6      \
 	stampc5     \
+	stampc6     \
 	basic       \
 	capsule     \
 	coreink     \
