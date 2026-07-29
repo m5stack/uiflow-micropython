@@ -54,6 +54,7 @@ class StampStatusLED:
 
 
 STATUS_LED_PINS = {
+    M5.BOARD.M5StampS3Mini: 0,
     M5.BOARD.M5StampC6: 9,
 }
 
@@ -72,6 +73,7 @@ class Headless_Startup:
         no_rgb_boards = [
             M5.BOARD.M5AtomS3R_CAM,
             M5.BOARD.M5AtomEchoS3R,
+            M5.BOARD.M5StampS3Mini,
         ]
         has_rgb = self._board not in no_rgb_boards
         rgb = RGB() if has_rgb else None

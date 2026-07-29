@@ -15,6 +15,7 @@ boards := \
 	M5STACK_AtomS3:atoms3            \
 	M5STACK_AtomS3_Lite:atoms3-lite  \
 	M5STACK_StampS3:stamps3          \
+	M5STACK_StampS3Mini:stamps3mini  \
 	M5STACK_CoreS3:cores3            \
 	M5STACK_AtomS3U:atoms3u          \
 	M5STACK_Core2:core2              \
@@ -70,6 +71,7 @@ BOARD_TYPE_DEF := \
 	atoms3      \
 	atoms3-lite \
 	stamps3     \
+	stamps3mini \
 	cores3      \
 	atoms3u     \
 	core2       \
