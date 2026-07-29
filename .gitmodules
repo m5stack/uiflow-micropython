@@ -12,7 +12,7 @@
 	url = https://github.com/m5stack/M5GFX.git
 [submodule "m5stack/components/M5Unified/M5Unified"]
 	path = m5stack/components/M5Unified/M5Unified
-	url = https://github.com/hlym123/M5Unified.git
+	url = https://github.com/m5stack/M5Unified.git
 [submodule "m5stack/components/lv_bindings"]
 	path = m5stack/components/lv_bindings
 	url = https://github.com/lvgl/lv_binding_micropython.git
