@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 16:16+0800\n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -19,44 +19,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/module/basex.rst:2 fdb9d6eca3034ba7a916d5ecf05cbe05
+#: ../../source/module/basex.rst:2
 msgid "BaseX Module"
 msgstr ""
 
-#: ../../source/module/basex.rst:10 492435aa70034bcd885da9883902e0bf
+#: ../../source/module/basex.rst:10
 msgid ""
 "BaseX is an M5Stack stackable module with 4 DC motor channels and 2 servo"
 " channels. It communicates with the host via I2C address ``0x22``. The "
 "onboard controller handles motor PWM output, motor encoder count, "
 "position/speed mode configuration, and servo output."
-msgstr "BaseX 是 M5Stack 可堆叠模块，提供 4 路直流电机通道和 2 路舵机通道。它通过 I2C 地址 ``0x22`` 与主机通信。板载控制器负责电机 PWM 输出、电机编码器计数、位置/速度模式配置以及舵机输出。"
+msgstr ""
+"BaseX 是 M5Stack 可堆叠模块，提供 4 路直流电机通道和 2 路舵机通道。它通过 I2C 地址 ``0x22`` "
+"与主机通信。板载控制器负责电机 PWM 输出、电机编码器计数、位置/速度模式配置以及舵机输出。"
 
-#: ../../source/module/basex.rst:15 3d93355aa0df44e79b5a53345280f39b
+#: ../../source/module/basex.rst:15
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/module/basex.rst:17 28c673c658214fecaf2ff76d2aff9c21
+#: ../../source/module/basex.rst:17
 msgid "|BaseXModule|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref 7cdf42b96dd6484e8005e4688f2c749d
+#: ../../source/refs/module.basex.ref
 msgid "BaseXModule"
 msgstr ""
 
-#: ../../source/module/basex.rst:20 a9edda59f75a4e71ac4f0201a9b1db00
+#: ../../source/module/basex.rst:20
 msgid "UiFlow2 Example"
 msgstr ""
 
 #: ../../source/module/basex.rst:23 ../../source/module/basex.rst:106
-#: 1ef6eec0a46e4919a954e3e958d0d04f 48d562de36a14fe5a881287419a5a628
 msgid "Servo control"
 msgstr ""
 
-#: ../../source/module/basex.rst:25 77acb174890148cfa9f42c870ccf58cf
+#: ../../source/module/basex.rst:25
 msgid "Open the |m5core_basex_servo_control_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5core_basex_servo_control_example.m5f2| 项目。"
 
-#: ../../source/module/basex.rst:27 9468bfbabf264d25b024f34e4a7dc417
+#: ../../source/module/basex.rst:27
 msgid ""
 "Control two servos by button. Button A changes Servo1 angle, Button B "
 "changes Servo2 angle, and Button C resets both servos to 0 degrees."
@@ -71,23 +72,14 @@ msgstr "通过按键控制两个舵机。按键 A 改变 Servo1 角度，按键 
 #: ../../source/module/basex.rst:333 ../../source/module/basex.rst:352
 #: ../../source/module/basex.rst:369 ../../source/module/basex.rst:388
 #: ../../source/module/basex.rst:407 ../../source/module/basex.rst:427
-#: 3758894dc8444bd5936ae27f542cadbb 3955f952df3c4db3929e3f53624cef91
-#: 3c48b0bb045743b9aaefac9ca4cc2279 4bceb2f30f174f5180528b113ffba53d
-#: 674330cd77e9416b89a7f8f43cbeafe4 70b3a8339e2746a5b70877cd990237e9
-#: 7b152d15cd3a4ef0ae2f63bec8ca8ed4 81ccabc95e3448a89055d0a9be935fce
-#: 8a03abccbcfd4146b9946e7c40d13a73 978bd30f0baf4829ab4e20f068e861ed
-#: ab1893eed80441958c8508ec8815ab29 b9d80f5ab34b4cc98bbd68e4c1c045ef
-#: d0c6416b964d43a884ed18b6d06cbf6e d894d419297d4537904b5cd8ad90c36c
-#: e1a5a6cff351495883853ea7ea1b30f2 e71e8b5d08ed4486b1c653a0bd04f1e6
-#: eda4bf0595344774955bd0608f6c59bf f830dc9847a340e9b5167fe53491db23
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/module/basex.rst:32 3a96d7c66ad44274b196e4205bfbcc78
+#: ../../source/module/basex.rst:32
 msgid "|servo_control_example.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:19 6fecd80497f44d19af55f90b85cea7b6
+#: ../../source/refs/module.basex.ref:20
 msgid "servo_control_example.png"
 msgstr ""
 
@@ -96,11 +88,6 @@ msgstr ""
 #: ../../source/module/basex.rst:98 ../../source/module/basex.rst:116
 #: ../../source/module/basex.rst:131 ../../source/module/basex.rst:146
 #: ../../source/module/basex.rst:161 ../../source/module/basex.rst:177
-#: 06893ab421904e889b338e62c6a9a148 11f24b08b9a944209facdacb46490b42
-#: 15e9494538d44dcd96b576ffd0d96eaa 2f2ef242c8054291a906e3703ac26603
-#: 3d9ed61cf8284fbca051b9eb39ba550b 4a57f50301f2453cb1a1428aebd961b8
-#: 8293bdec321746519187cb07c971dab8 94469a7677c44222baf80b7ca273f860
-#: c7bcf59c293e4638a7ca7a8719c7c996 cc47529a047f44ba8295fefdc0c9a486
 msgid "Example output:"
 msgstr "示例输出："
 
@@ -109,118 +96,106 @@ msgstr "示例输出："
 #: ../../source/module/basex.rst:100 ../../source/module/basex.rst:118
 #: ../../source/module/basex.rst:133 ../../source/module/basex.rst:148
 #: ../../source/module/basex.rst:163 ../../source/module/basex.rst:179
-#: ../../source/module/basex.rst:282 1127e1d7c17f48f1b33bca3c8832e89e
-#: 14b55e9d26564115ae5e2b5a340c8259 4826dc16f5874d54a832a9184f336d36
-#: 502d15ae1c504748ac4cb005adb26c98 695687b584c140fe89b7ba01247f4c63
-#: 6b2e6e5a6a154583a85522f9719396d8 7f7d96de7c9844d29189ef3393cec599
-#: 951b3e9e787c49a4a0e53030351d7274 aaa7832d689545a9a1e7c125812e2381
-#: b329e1178ab2470780686049641f34ac e76148145d414d0c853e1c3257bc5c73
 msgid "None"
 msgstr ""
 
 #: ../../source/module/basex.rst:39 ../../source/module/basex.rst:121
-#: 5c361964ba75458990a09456648009ca eeb9ee7ef6c2454b977b9a6a34ca50d6
 msgid "Motor normal control"
 msgstr ""
 
-#: ../../source/module/basex.rst:41 093da856091744e1abd4f20e34bc6736
+#: ../../source/module/basex.rst:41
 msgid ""
 "Open the |m5core_basex_motor_normal_control_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5core_basex_motor_normal_control_example.m5f2| 项目。"
 
 #: ../../source/module/basex.rst:43 ../../source/module/basex.rst:123
-#: 60558339fc074390a65627a4da5d0687 61a036ed7b644beb8b00f2c027824135
 msgid "Set all motors to Normal mode and control PWM duty by button."
 msgstr "将所有电机设置为普通模式，并通过按键控制 PWM 占空比。"
 
-#: ../../source/module/basex.rst:47 14f0ee0d8f8c46699f808ea201b03b03
+#: ../../source/module/basex.rst:47
 msgid "|motor_normal_control_example.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:20 2fd18de92341487b8c314848502e20c3
+#: ../../source/refs/module.basex.ref:19
 msgid "motor_normal_control_example.png"
 msgstr ""
 
 #: ../../source/module/basex.rst:54 ../../source/module/basex.rst:136
-#: 3df55f614e4442389919e82adcbb9e2f d64fa9c90bc24178a976359cc4e07a88
 msgid "Motor position control"
 msgstr ""
 
-#: ../../source/module/basex.rst:56 202fc9475a864a479c97bce9ca3b4e11
+#: ../../source/module/basex.rst:56
 msgid ""
 "Open the |m5basic_basex_motor_position_control_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5basic_basex_motor_position_control_example.m5f2| 项目。"
 
-#: ../../source/module/basex.rst:59 3517a7ed3d9f455abef6e3a089699cb7
+#: ../../source/module/basex.rst:59
 msgid ""
 "Button A sets position target to 720, Button B sets target to -720, and "
 "Button C sets target to 0."
 msgstr "按键 A 将位置目标设置为 720，按键 B 将目标设置为 -720，按键 C 将目标设置为 0。"
 
-#: ../../source/module/basex.rst:64 38767db42d594ad39e41e182185d12ae
+#: ../../source/module/basex.rst:64
 msgid "|motor_position_control_example.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:21 3c7a306eb9ba4a69b3a2c1016b600375
+#: ../../source/refs/module.basex.ref:22
 msgid "motor_position_control_example.png"
 msgstr ""
 
 #: ../../source/module/basex.rst:71 ../../source/module/basex.rst:151
-#: 27f1a2cb3e0f4ad29b40daeec98b7e6e da405706ecce4eb08b34482322209cb8
 msgid "Motor speed control"
 msgstr ""
 
-#: ../../source/module/basex.rst:73 bc33d95627014d4682d7be24195864ae
+#: ../../source/module/basex.rst:73
 msgid ""
 "Open the |m5basic_basex_motor_speed_control_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5basic_basex_motor_speed_control_example.m5f2| 项目。"
 
-#: ../../source/module/basex.rst:75 6000de07e9f54ac099b02f9b8b8db733
+#: ../../source/module/basex.rst:75
 msgid ""
 "Button A increases speed target, Button B decreases speed target, and "
 "Button C sets speed target to 0."
 msgstr "按键 A 增加速度目标，按键 B 减小速度目标，按键 C 将速度目标设置为 0。"
 
-#: ../../source/module/basex.rst:80 c3b34e8fcf644fca8f73880f2b25345e
+#: ../../source/module/basex.rst:80
 msgid "|motor_speed_control_example.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:22 2b45ea02f20640168daee9d3767c2842
+#: ../../source/refs/module.basex.ref:21
 msgid "motor_speed_control_example.png"
 msgstr ""
 
 #: ../../source/module/basex.rst:87 ../../source/module/basex.rst:166
-#: 6575aa84febb44d78386955be6246aaf a218c4967704434cb39088521c66dea6
 msgid "Read encoder"
 msgstr ""
 
-#: ../../source/module/basex.rst:89 1c7153cc0fc645cea413a6b95893bdf0
+#: ../../source/module/basex.rst:89
 msgid "Open the |m5basic_basex_encoder_display_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5basic_basex_encoder_display_example.m5f2| 项目。"
 
 #: ../../source/module/basex.rst:91 ../../source/module/basex.rst:168
-#: f1dfec22caf04dd082c7ab29e688cc80 f320742348c540fa88b13be7cfb7bbff
 msgid ""
 "Display encoder values for four motor channels. Button B clears all "
 "encoder values."
 msgstr "显示 4 路电机通道的编码器数值。按键 B 清零全部编码器数值。"
 
-#: ../../source/module/basex.rst:96 53cefa5530194404be9731e80a5ad6c2
+#: ../../source/module/basex.rst:96
 msgid "|encoder_display_example.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:23 95b46d0f0ff542c3b516e495867228f2
+#: ../../source/refs/module.basex.ref:23
 msgid "encoder_display_example.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:103 6d835a6526da43368c56e7dcd4edf9ae
+#: ../../source/module/basex.rst:103
 msgid "MicroPython Example"
 msgstr ""
 
-#: ../../source/module/basex.rst:108 2e8939b08b8b41cd8690841f9185b065
+#: ../../source/module/basex.rst:108
 msgid "Control two servos by button."
 msgstr "通过按键控制两个舵机。"
 
@@ -233,113 +208,97 @@ msgstr "通过按键控制两个舵机。"
 #: ../../source/module/basex.rst:337 ../../source/module/basex.rst:356
 #: ../../source/module/basex.rst:373 ../../source/module/basex.rst:392
 #: ../../source/module/basex.rst:411 ../../source/module/basex.rst:431
-#: 07ae3c0786014e1ca09f3462abd8bc12 10d681c46f7d44ae8440a2be464f2ef0
-#: 17149bde056f456e902709b456d2cbf0 18ded74d29c6449d9d53f30d3ca5950f
-#: 197594da9b2b44b5b3de2b050089f823 2c0ee226af4a4c6a8c58407e6d37b1fe
-#: 4198911eb29d48c78cb2c7cd83d36db3 50a99d944b7c43399b99f158cb9448cd
-#: 50cdbb1a21294192b5f32ea521871ce5 5f99f7c40a8c4bb59eeb10dce6f4c232
-#: 617d4f7ac1b544e79edd389934468fb2 8571ccf6f4f646aca7b0d98f95b26e12
-#: 9cf893eac0ed41d1bd3b3e1f831c50bb b9f4c61eb2e845c0bc06c1f22a1fda56
-#: bf9836453b704e578a80d7f74e2e9a11 c263726b653b4bae9761068c31315bed
-#: d7feef1680f545638c6dc4cf95b6b8b3 f3d642cdcf914a4da40abb7f41425047
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/module/basex.rst:138 5a3ef27e1d914e2f8a19b1b00d566acb
+#: ../../source/module/basex.rst:138
 msgid "Use position mode to move Motor1 between fixed target positions."
 msgstr "使用位置模式让电机 1 在固定目标位置之间移动。"
 
-#: ../../source/module/basex.rst:153 b2111ea3ab0a4a0e9599e2e678c9771a
+#: ../../source/module/basex.rst:153
 msgid "Use speed mode to set Motor1 speed target."
 msgstr "使用速度模式设置电机 1 的速度目标。"
 
-#: ../../source/module/basex.rst:182 5abfc070252f4ddb81e05f712830742e
+#: ../../source/module/basex.rst:182
 msgid "**API**"
 msgstr ""
 
-#: ../../source/module/basex.rst:185 bf23f948133948dc93a2e2485738fd5d
+#: ../../source/module/basex.rst:185
 msgid "ModuleBaseX"
 msgstr ""
 
-#: ../../source/module/basex.rst:189 02c45940ee644ec0b6ae6f545d53e1a3
+#: ../../source/module/basex.rst:189
 msgid "Create a BaseX module object."
 msgstr "创建 BaseX 模块对象。"
 
-#: ../../source/module/basex.rst:193 8c12c344b82a497bb72af2acd592f080
+#: ../../source/module/basex.rst:193
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:6 cf797fccfa8845bfaecd56943405df96
+#: ../../source/refs/module.basex.ref:6
 msgid "init.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:205 15b39dee8b2b4e70a751df158a01feae
+#: ../../source/module/basex.rst:205
 msgid "Normal PWM mode."
 msgstr "普通 PWM 模式。"
 
-#: ../../source/module/basex.rst:209 2912be6e5802406eaec0c8e166685a78
+#: ../../source/module/basex.rst:209
 msgid "Position control mode."
 msgstr "位置控制模式。"
 
-#: ../../source/module/basex.rst:213 085c118eb46142c7b4bb059459915440
+#: ../../source/module/basex.rst:213
 msgid "Speed target control mode."
 msgstr "速度目标控制模式。"
 
-#: ../../source/module/basex.rst:217 c8755f7434914fad96ef97f452b8bd92
+#: ../../source/module/basex.rst:217
 msgid "Set servo angle."
 msgstr "设置舵机角度。"
 
-#: ../../source/module/basex.rst 3d1143b7c338408883bffafc16b408c0
-#: 53c499da94d74c45bacf83aec55899d5 812e477f6b524647b0671d67d132a5e7
-#: 8b5de68dbb2040ac83bc665d950e2263 8c175b7f9f5640029215d0c367edfdb6
-#: 8d20547fd4ad4352aebb978882e544ea 8ec36aa7aa904d0f8e2883b974732022
-#: cb21ad3601244e29b05a8959357ff8a3 cd8a4370b0bd4d5093e561b54c3df589
-#: e16759ce397446818dc78f2ace7e1619 f099075e1d1d4631b47bac76487251bf
-#: f7f119b97fbd4bad90ff51c6cacd38a4
+#: ../../source/module/basex.rst
 msgid "Parameters"
 msgstr "参数"
 
 #: ../../source/module/basex.rst:219 ../../source/module/basex.rst:236
-#: 288b099674704e479d5ceca3db3cc38e 32cc2ad9a45241599bf69f7770a2a046
 msgid "Servo channel. Range: 1 ~ 2."
 msgstr "舵机通道。范围：1 ~ 2。"
 
-#: ../../source/module/basex.rst:220 db04bb0741324c57b74426604bcdf1ef
+#: ../../source/module/basex.rst:220
 msgid "Servo angle. Range: 0 ~ 180."
 msgstr "舵机角度。范围：0 ~ 180。"
 
-#: ../../source/module/basex.rst:224 02a32d57387a40c29261832e5b99b373
+#: ../../source/module/basex.rst:224
 msgid "|set_servo_angle.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:7 4496292c608f45668307ff100bf0309f
+#: ../../source/refs/module.basex.ref:7
 msgid "set_servo_angle.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:234 03def75f7a744b729260f95bf53c6580
+#: ../../source/module/basex.rst:234
 msgid "Set servo pulse width."
 msgstr "设置舵机脉宽。"
 
-#: ../../source/module/basex.rst:237 fadef33c9bcc40589670fdbc3278140c
+#: ../../source/module/basex.rst:237
 msgid "Pulse width in microseconds. Range: 500 ~ 2500."
 msgstr "脉宽，单位为微秒。范围：500 ~ 2500。"
 
-#: ../../source/module/basex.rst:239 5cca11247b544d0ba55630b46ba56627
+#: ../../source/module/basex.rst:239
 #, python-format
 msgid ""
 "The servo PWM frequency is 50Hz, with a period of 20ms. The pulse range "
 "500 ~ 2500us corresponds to about 2.5% ~ 12.5% duty."
 msgstr "舵机 PWM 频率为 50Hz，周期为 20ms。500 ~ 2500us 的脉宽范围约对应 2.5% ~ 12.5% 占空比。"
 
-#: ../../source/module/basex.rst:244 30912b77d5764492a920c1f9b0644e32
+#: ../../source/module/basex.rst:244
 msgid "|set_servo_pulse.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:8 f7ca717ce69e489eb8326c4d232e029c
+#: ../../source/refs/module.basex.ref:8
 msgid "set_servo_pulse.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:254 c67f176eaa19459ea5fc308690b79a07
+#: ../../source/module/basex.rst:254
 msgid "Set motor PWM duty."
 msgstr "设置电机 PWM 占空比。"
 
@@ -348,200 +307,204 @@ msgstr "设置电机 PWM 占空比。"
 #: ../../source/module/basex.rst:329 ../../source/module/basex.rst:347
 #: ../../source/module/basex.rst:366 ../../source/module/basex.rst:383
 #: ../../source/module/basex.rst:402 ../../source/module/basex.rst:421
-#: 0dc15046fa484d5399fbe694a2d072ec 477d93d4937c41848051800c1d7e9bec
-#: 52b78a7c3ddf42659eea4ced3c3cbfa6 5ce069f8fddb47ada773e3b7c90f2c01
-#: 6cd7fc76d0854260b796ad6271398cf4 9285e992afdb4a1e8d0fde61e8655602
-#: bbba5160b526469ca5d6f4bb114e79bc c1418b83f12846dd80e0e7870e6786d1
-#: decd726bff6d4bb3a6cac2fbe58a917b fc52139c014b4423b72aa8a48586598e
 msgid "Motor channel. Range: 1 ~ 4."
 msgstr "电机通道。范围：1 ~ 4。"
 
-#: ../../source/module/basex.rst:257 14aa1c41b403424e92f7a0bc0394f7a9
+#: ../../source/module/basex.rst:257
 msgid "PWM duty. Range: -127 ~ 127."
 msgstr "PWM 占空比。范围：-127 ~ 127。"
 
-#: ../../source/module/basex.rst:259 47fc1c9e64e445d3b8271a14df146ea3
+#: ../../source/module/basex.rst:259
 #, python-format
 msgid ""
 "The sign indicates direction. ``abs(duty)`` 0 ~ 127 maps to 0% ~ 100% "
 "duty."
 msgstr "符号表示方向。``abs(duty)`` 的 0 ~ 127 对应 0% ~ 100% 占空比。"
 
-#: ../../source/module/basex.rst:264 4b3505cdfe464b3abc19f0e346976622
+#: ../../source/module/basex.rst:264
 msgid "|set_motor_pwm.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:9 7f55f249052c48f8ae02d56e9d0caffc
+#: ../../source/refs/module.basex.ref:9
 msgid "set_motor_pwm.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:274 37cd401f90a946aabd02eb3d05d59347
+#: ../../source/module/basex.rst:274
 msgid "Get motor speed feedback over 20ms."
 msgstr "获取 20ms 内的电机速度反馈。"
 
-#: ../../source/module/basex.rst 53f39cbde7e64f27977049ca413c50eb
-#: 6756b45790684afe91e748d316686dbc
+#: ../../source/module/basex.rst
 msgid "Returns"
 msgstr "返回"
 
-#: ../../source/module/basex.rst:277 e38f12e91a9f4270a5bdba28b51fad9d
+#: ../../source/module/basex.rst:277
 msgid "Encoder delta over 20ms."
 msgstr "20ms 内的编码器增量。"
 
-#: ../../source/module/basex.rst 6ddc1153b9334ab69f011bb04328457a
-#: 7cc6483fbc0b419faa0912160c3d5a5e
+#: ../../source/module/basex.rst
 msgid "Return type"
 msgstr "返回类型"
 
-#: ../../source/module/basex.rst:292 7100640327f54a02a680bac7ba9323b4
+#: ../../source/module/basex.rst:282
+msgid "|get_motor_speed_20ms.png|"
+msgstr ""
+
+#: ../../source/refs/module.basex.ref:15
+#, fuzzy
+msgid "get_motor_speed_20ms.png"
+msgstr "获取 20ms 内的电机速度反馈。"
+
+#: ../../source/module/basex.rst:292
 msgid "Get motor encoder value."
 msgstr "获取电机编码器数值。"
 
 #: ../../source/module/basex.rst:295 ../../source/module/basex.rst:313
-#: 0978490269344db2bfeafeca6b906be3 353dbb081d2946a191a4994402f16271
 msgid "Encoder count as signed 32-bit integer."
 msgstr "编码器计数，类型为有符号 32 位整数。"
 
-#: ../../source/module/basex.rst:300 891f8cfca76d469189832f580033111c
+#: ../../source/module/basex.rst:300
 msgid "|get_motor_encoder.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:10 a8c3d629fcc64bcf8a4595a57656395c
+#: ../../source/refs/module.basex.ref:10
 msgid "get_motor_encoder.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:310 bf01fc4007ad4c93a82b2a461ac35362
+#: ../../source/module/basex.rst:310
 msgid "Set motor encoder value."
 msgstr "设置电机编码器数值。"
 
-#: ../../source/module/basex.rst:317 76d3bb2f7c1149cbb073e61f30ab1ea3
+#: ../../source/module/basex.rst:317
 msgid "|set_motor_encoder.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:11 6e36fec40cdc4764b35bd87794252c71
+#: ../../source/refs/module.basex.ref:11
 msgid "set_motor_encoder.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:327 19923f9c844e4dc287c29a75cbcf6311
+#: ../../source/module/basex.rst:327
 msgid "Set motor control mode."
 msgstr "设置电机控制模式。"
 
-#: ../../source/module/basex.rst:330 9ca1d62001ec4321b0cd48dbc7284ab7
+#: ../../source/module/basex.rst:330
 msgid ""
 "Motor mode. ``MOTOR_MODE_NORMAL``, ``MOTOR_MODE_POSITION`` or "
 "``MOTOR_MODE_SPEED``."
-msgstr "电机模式。可选 ``MOTOR_MODE_NORMAL``、``MOTOR_MODE_POSITION`` 或 ``MOTOR_MODE_SPEED``。"
+msgstr ""
+"电机模式。可选 ``MOTOR_MODE_NORMAL``、``MOTOR_MODE_POSITION`` 或 "
+"``MOTOR_MODE_SPEED``。"
 
-#: ../../source/module/basex.rst:335 af232112b926402cb6954f95bd77db83
+#: ../../source/module/basex.rst:335
 msgid "|set_motor_mode.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:12 e99c9458ea06442ba68ae0342cc9d818
+#: ../../source/refs/module.basex.ref:12
 msgid "set_motor_mode.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:345 56aa61805159425d913223d9b8e64dcd
+#: ../../source/module/basex.rst:345
 msgid "Set motor position mode PID parameters."
 msgstr "设置电机位置模式 PID 参数。"
 
-#: ../../source/module/basex.rst:348 4511cc6da37348cdb0c201cad2759c1c
+#: ../../source/module/basex.rst:348
 msgid "Position P parameter. Default is 3."
 msgstr "位置 P 参数。默认值为 3。"
 
-#: ../../source/module/basex.rst:349 e4f3697761984d0f8d8b288556978336
+#: ../../source/module/basex.rst:349
 msgid "Position I parameter. Default is 1."
 msgstr "位置 I 参数。默认值为 1。"
 
-#: ../../source/module/basex.rst:350 a1827c832a48433c9ebd20be2b02acb7
+#: ../../source/module/basex.rst:350
 msgid "Position D parameter. Default is 15."
 msgstr "位置 D 参数。默认值为 15。"
 
-#: ../../source/module/basex.rst:354 5355175c98d24330bc016b3d46a0297d
+#: ../../source/module/basex.rst:354
 msgid "|set_motor_position_pid.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:13 78289b23a309462c9189778ba90fb7cf
+#: ../../source/refs/module.basex.ref:13
 msgid "set_motor_position_pid.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:364 9be746a8a4204ec9b61650c2fff8fe40
+#: ../../source/module/basex.rst:364
 msgid "Set motor position mode target."
 msgstr "设置电机位置模式目标。"
 
-#: ../../source/module/basex.rst:367 83687e1fa0a54817895f1482d03ef9d7
+#: ../../source/module/basex.rst:367
 msgid "Position target as signed 32-bit integer."
 msgstr "位置目标，类型为有符号 32 位整数。"
 
-#: ../../source/module/basex.rst:371 f3c90cd98e014f8dba78883ea2c5002c
+#: ../../source/module/basex.rst:371
 msgid "|set_motor_position_target.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:14 858d639a9001406a9f13924a4463a8fd
+#: ../../source/refs/module.basex.ref:14
 msgid "set_motor_position_target.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:381 5372d86b0e4e426fb65b8bbb466ff51e
+#: ../../source/module/basex.rst:381
 msgid "Set motor position mode max speed."
 msgstr "设置电机位置模式最大速度。"
 
-#: ../../source/module/basex.rst:384 68dc5743943c4bff831e8fffedc062c2
+#: ../../source/module/basex.rst:384
 msgid "Max speed. Range: -127 ~ 127."
 msgstr "最大速度。范围：-127 ~ 127。"
 
-#: ../../source/module/basex.rst:386 1e36176d0430455d826148e3ab7f62dd
+#: ../../source/module/basex.rst:386
 msgid "The sign indicates direction."
 msgstr "符号表示方向。"
 
-#: ../../source/module/basex.rst:390 e4d1352a5b8f4dc8bff78a44c62c1cc2
+#: ../../source/module/basex.rst:390
 msgid "|set_motor_position_max_speed.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:15 42b922078aaf471e81f23dd6ccd12b0f
+#: ../../source/refs/module.basex.ref:16
 msgid "set_motor_position_max_speed.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:400 22f47077fb084a54ac8cdcbc562fd7f6
+#: ../../source/module/basex.rst:400
 msgid "Set motor speed mode PID parameters."
 msgstr "设置电机速度模式 PID 参数。"
 
-#: ../../source/module/basex.rst:403 db904d2c40b94e1298b9cbe10450bd83
+#: ../../source/module/basex.rst:403
 msgid "Speed P parameter. Default is 3."
 msgstr "速度 P 参数。默认值为 3。"
 
-#: ../../source/module/basex.rst:404 5c00f50850f64d32950ff3fac04b151c
+#: ../../source/module/basex.rst:404
 msgid "Speed I parameter. Default is 1."
 msgstr "速度 I 参数。默认值为 1。"
 
-#: ../../source/module/basex.rst:405 e166de3faeb8424981f11d91fa31d6c5
+#: ../../source/module/basex.rst:405
 msgid "Speed D parameter. Default is 15."
 msgstr "速度 D 参数。默认值为 15。"
 
-#: ../../source/module/basex.rst:409 ca659e7b3e1947c286c3441f2969a4cb
+#: ../../source/module/basex.rst:409
 msgid "|set_motor_speed_pid.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:16 a7d1a007bb0f4739bb0b986a36d177ca
+#: ../../source/refs/module.basex.ref:17
 msgid "set_motor_speed_pid.png"
 msgstr ""
 
-#: ../../source/module/basex.rst:419 78ced68649f14c0aa75f8ac07f44cfc0
+#: ../../source/module/basex.rst:419
 msgid "Set motor speed mode target."
 msgstr "设置电机速度模式目标。"
 
-#: ../../source/module/basex.rst:422 cf3f44a4420c4340ae4fd241d5ec3100
+#: ../../source/module/basex.rst:422
 msgid "Speed target. Range: -20 ~ 20."
 msgstr "速度目标。范围：-20 ~ 20。"
 
-#: ../../source/module/basex.rst:424 65cdd13379684d56b608b2c482c36369
+#: ../../source/module/basex.rst:424
 msgid ""
 "The sign indicates direction. The target controls the feedback value "
 "returned by :meth:`get_motor_speed_20ms`."
 msgstr "符号表示方向。该目标控制 :meth:`get_motor_speed_20ms` 返回的反馈值。"
 
-#: ../../source/module/basex.rst:429 85f6bdc093d94732af6f6d988be044d6
+#: ../../source/module/basex.rst:429
 msgid "|set_motor_speed_target.png|"
 msgstr ""
 
-#: ../../source/refs/module.basex.ref:17 ff1f3e6b418f466e850fbe76739fc9ff
+#: ../../source/refs/module.basex.ref:18
 msgid "set_motor_speed_target.png"
 msgstr ""
+

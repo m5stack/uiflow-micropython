@@ -109,7 +109,7 @@ exclude_patterns = []
 language = "en"
 locale_dirs = ["../locales/"]
 gettext_compact = False  # optional.
-gettext_uuid = True  # optional.
+gettext_uuid = False  # optional.
 
 # -- Options for HTML output -------------------------------------------------
 

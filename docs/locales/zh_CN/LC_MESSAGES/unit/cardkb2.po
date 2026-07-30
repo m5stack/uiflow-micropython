@@ -1,516 +1,473 @@
-# SOME DESCRIPTIVE TITLE.  
-# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd  
-# This file is distributed under the same license as the UIFlow2 Programming  
-# Guide package.  
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.  
-#  
-#, fuzzy  
-msgid ""  
-msgstr ""  
-"Project-Id-Version: UIFlow2 Programming Guide \n"  
-"Report-Msgid-Bugs-To: \n"  
-"POT-Creation-Date: 2026-03-31 17:15+0800\n"  
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"  
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"  
-"Language: zh_CN\n"  
-"Language-Team: zh_CN <LL@li.org>\n"  
-"Plural-Forms: nplurals=1; plural=0;\n"  
-"MIME-Version: 1.0\n"  
-"Content-Type: text/plain; charset=utf-8\n"  
-"Content-Transfer-Encoding: 8bit\n"  
-"Generated-By: Babel 2.16.0\n"  
-  
-#: ../../source/refs/unit.cardkb2.ref ../../source/unit/cardkb2.rst:2  
-#: 7313a6fbf72543f4a945b6bbbc3c5550 f65a9855ac95455a82316aea84e60d80  
-msgid "CardKB2 Unit"  
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
 msgstr ""
-  
-#: ../../source/unit/cardkb2.rst:6 a3b92057a010429f9b6db1a4d6b6cb37  
-msgid ""  
-"This is the driver library of CardKB2 Unit, which is used to obtain key "  
-"input data."  
-msgstr "这是 CardKB2 单元的驱动库，用于获取按键输入数据。"  
-  
-#: ../../source/unit/cardkb2.rst:8 4d5eda0e175649008e720a4c21beaee1  
-msgid "Support the following products:"  
-msgstr "支持以下产品："  
-  
-#: ../../source/unit/cardkb2.rst:10 dfd932bacb774530ada7474b233e6bb9  
-msgid "|CardKB2 Unit|"  
-msgstr ""
-  
-#: ../../source/unit/cardkb2.rst:13 3779fbde87c245b597b4310252e7e646  
-msgid "UiFlow2 Example"  
-msgstr "UiFlow2 示例"  
-  
-#: ../../source/unit/cardkb2.rst:16 ../../source/unit/cardkb2.rst:66  
-#: 5eae14b9673b4804aafb44fd5c6a2767 ac7a93eb83d141028ffcf5cc60650f65  
-msgid "CardKB2 I2C Mode"  
-msgstr "CardKB2 I2C 模式"  
-  
-#: ../../source/unit/cardkb2.rst:18 9b4c6160df2c496b8f1f9296cdc04ae4  
-msgid "Open the |cardkb2_i2c_core2_example.m5f2| project in UiFlow2."  
-msgstr "在 UiFlow2 中打开 |cardkb2_i2c_core2_example.m5f2| 项目。"  
-  
-#: ../../source/unit/cardkb2.rst:20 ../../source/unit/cardkb2.rst:35  
-#: ../../source/unit/cardkb2.rst:51 ../../source/unit/cardkb2.rst:68  
-#: ../../source/unit/cardkb2.rst:83 ../../source/unit/cardkb2.rst:98  
-#: 551220ad7f274f32a851a3f05c12d090 59babb494f374e329ecbc64e492c47da  
-#: 8cc93d63744f46e09c62fe91ac40500b 8f4fb1a6891742acbd012affc639e2c5  
-#: c903f68c993147d9bc74d216dacfc4ff dcb9bfe4a38e4ba08e1e3161a6d8dcc8  
-msgid "This example display the keyboard input on the screen and serial."  
-msgstr "此示例将在屏幕和串口上显示键盘输入内容。"  
-  
-#: ../../source/unit/cardkb2.rst:22 ../../source/unit/cardkb2.rst:37  
-#: ../../source/unit/cardkb2.rst:53 3f01d226f51b4897a5c3d177dad0cfe1  
-#: 4dc4cbf0fec1467382585167dcb59e8b 5661d03641a7406d99be3d387df3cc11  
-#: 708c01bfa6884e34bf1f1ca20ce15df4 758bd31447644612909111fbedc0f6ff  
-#: 87192066abff4b16bd0833fea6c9492c 98c9572906ea42369da129410ee2f22a  
-#: 9d6ab327d62446b4bc68cd71de8f16f6 a6fe4c9486264ef4a25540211b62e608  
-#: b8109741c8f24de0b2807338c78ef61b of unit.cardkb.CardKBBase.get_char:6  
-#: unit.cardkb.CardKBBase.get_key:5 unit.cardkb.CardKBBase.get_string:6  
-#: unit.cardkb.CardKBBase.is_pressed:6 unit.cardkb.CardKBBase.set_callback:6  
-#: unit.cardkb.CardKBBase.tick:5 unit.cardkb.CardKBUnit:15  
-msgid "UiFlow2 Code Block:"  
-msgstr "UiFlow2 代码块："  
-  
-#: ../../source/unit/cardkb2.rst:24 483545c7ff03431abfe4eb4d06bd705e  
-msgid "|i2c_example.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:17 114663cf728a47438e67c8f675b5e756  
-msgid "i2c_example.png"  
-msgstr ""  
-  
-#: ../../source/unit/cardkb2.rst:26 ../../source/unit/cardkb2.rst:41  
-#: ../../source/unit/cardkb2.rst:57 ../../source/unit/cardkb2.rst:75  
-#: ../../source/unit/cardkb2.rst:90 ../../source/unit/cardkb2.rst:105  
-#: 021000124b9849719321ac3553b5c96a 2104bbed6b044e6b95e372793c0596f4  
-#: 73bd3f8c37db4557b89d33aef5f3a691 98a08338d33c4aa3b778156618a87881  
-#: d4fa851a5ce84b76a86b5ba581335aba f157732d313c4ef4a1b7aab299894c2d  
-msgid "Example output:"  
-msgstr "示例输出："  
-  
-#: ../../source/unit/cardkb2.rst:28 ../../source/unit/cardkb2.rst:77  
-#: 18575f6e4d29424a98531c70471ad6b0 7c20b918e3a5487caa51ac30d59c0c7e  
-msgid "input key char"  
-msgstr "输入的按键字符"  
-  
-#: ../../source/unit/cardkb2.rst:31 ../../source/unit/cardkb2.rst:81  
-#: aa9dc190b38343ccb0c99beb22d68903 e0389df521064dfcb3e422e617de557e  
-msgid "CardKB2 UART Mode"  
-msgstr "CardKB2 UART 模式"  
-  
-#: ../../source/unit/cardkb2.rst:33 2eccf751c82d4d82a1af2e90f2d1fa6d  
-msgid "Open the |cardkb2_uart_core2_example.m5f2| project in UiFlow2."  
-msgstr "在 UiFlow2 中打开 |cardkb2_uart_core2_example.m5f2| 项目。"  
-  
-#: ../../source/unit/cardkb2.rst:39 2ffa918dd0d240b381623e0673ceb397  
-msgid "|uart_example.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:18 be28c1d1bfbb44d387b3d716e01f0653  
-msgid "uart_example.png"  
-msgstr ""  
-  
-#: ../../source/unit/cardkb2.rst:43 ../../source/unit/cardkb2.rst:59  
-#: ../../source/unit/cardkb2.rst:92 ../../source/unit/cardkb2.rst:107  
-#: 521344d35786410e9e2bc048d141b443 8e9319bfb1314653baeb1ee67a78f628  
-#: 9e0bd4539798418a951bfa42bb18af6e 9e44d7b4fcea4a14ab152858e9de6781  
-msgid "input key char and state"  
-msgstr "输入的按键字符及状态"  
-  
-#: ../../source/unit/cardkb2.rst:47 ../../source/unit/cardkb2.rst:96  
-#: 4cbe4953452a48ddb8ff18a7142690c2 9346cc3b75dc4708a279be58057bba01  
-msgid "CardKB2 ESP-NOW Mode"  
-msgstr "CardKB2 ESP-NOW 模式"  
-  
-#: ../../source/unit/cardkb2.rst:49 50adcef3e13241edb3eb5aebfcfdfe21  
-msgid "Open the |cardkb2_espnow_core2_example.m5f2| project in UiFlow2."  
-msgstr "在 UiFlow2 中打开 |cardkb2_espnow_core2_example.m5f2| 项目。"  
-  
-#: ../../source/unit/cardkb2.rst:55 9ed501065b474a50975b70aa75c03826  
-msgid "|espnow_example.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:19 4c1d381ffea043c9976a335271ba90f5  
-msgid "espnow_example.png"  
-msgstr ""  
-  
-#: ../../source/unit/cardkb2.rst:63 a3ad3ead6d364c139e99c20850cd0797  
-msgid "MicroPython Example"  
-msgstr "MicroPython 示例"  
-  
-#: ../../source/unit/cardkb2.rst:70 ../../source/unit/cardkb2.rst:85  
-#: ../../source/unit/cardkb2.rst:100 0efa0e8914384eb1acb59a329247fe3f  
-#: 0f843f08b9944ea19bad1cb8c73233ea 14fe69f3a1614e3dad23e49b34f86704  
-#: 2040dc6b43f947c19fb000a96cf457e0 2412901c528f4ef492c26883d96626c7  
-#: 4e83d0af44824406a690d82e2e6fee12 505f61fbb33f438ca09a846e5db8784d  
-#: 52bd732a424c4dc09c214abc06f1beda 74d4c67b0c7d4bddb08b340192f67d9e  
-#: 7a204e660d8c47dba7162a3274f6be43 a397516be3694fb6b75b3f3c714296c1  
-#: a617eefe159f4337b9f95b23da1ab25f b70fc98811644c4e9ed5b1f878e0925d  
-#: cb572e3b7c9944229367797405024f80 d306eb2bbf7e4b20886828e7baa1e130  
-#: d468d22379534c28bdbe3fcedc5a96a7 e106f06fed0149239997b62d8820a701  
-#: e4a6992f866e43c3817a1de34801f6f1 of unit.cardkb.CardKBBase.get_char:10  
-#: unit.cardkb.CardKBBase.get_key:9 unit.cardkb.CardKBBase.get_string:10  
-#: unit.cardkb.CardKBBase.is_pressed:10 unit.cardkb.CardKBBase.set_callback:13  
-#: unit.cardkb.CardKBBase.tick:9 unit.cardkb.CardKBESPNOW:15  
-#: unit.cardkb.CardKBESPNOW.get_key:6 unit.cardkb.CardKBESPNOW.is_pressed:6  
-#: unit.cardkb.CardKBESPNOW.tick:6 unit.cardkb.CardKBI2C:14  
-#: unit.cardkb.CardKBI2C.get_firmware_version:6 unit.cardkb.CardKBUART:12  
-#: unit.cardkb.CardKBUART.tick:6 unit.cardkb.CardKBUnit:19  
-msgid "MicroPython Code Block:"  
-msgstr "MicroPython 代码块："  
-  
-#: ../../source/unit/cardkb2.rst:111 ed4025e330cd4150a42ff5eb4a29abd2  
-msgid "**API**"  
-msgstr ""  
-  
-#: ../../source/unit/cardkb2.rst:114 31118b4a107f4d81b88dacbe7d8f3455  
-msgid "Class CardKB2Unit"  
-msgstr ""
-  
-#: 8482d961d34e46379efda96f196d5e5e ef5b2533c55741fcb6b054c635809c0f of  
-#: unit.cardkb.CardKBBase:1 unit.cardkb.CardKBUnit:1  
-msgid "Bases: :py:class:`object`"  
-msgstr ""
-  
-#: b3165ffa8c59410e84ee75c74ab66802 of unit.cardkb.CardKBUnit:1  
-msgid "Create a CardKBUnit object."  
-msgstr "创建一个 CardKBUnit 对象。"  
-  
-#: ../../source/unit/cardkb2.rst 334b93cfd0944c64aa44f6a156273a31  
-#: 5fd6e03ac5e144b89330b0d7af984cb7 620c1348fe754e79914d1cc74c84f16c  
-#: ad22acb4424844598d3be7bb1e1cd40e bbd269b3f4624ad6bf4d0d2bf4bd56bc  
-#: e29534890ae54d3e97283c127bc256ad of unit.cardkb.CardKBBase.set_callback  
-#: unit.cardkb.CardKBUnit  
-msgid "Parameters"  
-msgstr "参数"
-#: e22fb984707a499baedc91ed3079dfc7 of unit.cardkb.CardKBUnit:3  
-msgid "Positional arguments passed to the underlying communication class."  
-msgstr "传递给底层通信类的位置参数。"  
-  
-#: 797904ec27d545169b06dc390ff88a9b of unit.cardkb.CardKBUnit:4  
-msgid ""  
-"The communication mode. Default modes are:  - "  
-"``CardKBUnit.CardKB_I2C_MODE`` : I2C mode - "  
-"``CardKBUnit.CardKB_UART_MODE`` : UART mode - "  
-"``CardKBUnit.CardKB_ESP_NOW_MODE`` : ESP-NOW mode"  
-msgstr ""  
-"通信模式。默认模式包括：  - "  
-"``CardKBUnit.CardKB_I2C_MODE``：I2C 模式  - "  
-"``CardKBUnit.CardKB_UART_MODE``：UART 模式  - "  
-"``CardKBUnit.CardKB_ESP_NOW_MODE``：ESP-NOW 模式"  
-  
-#: c79cdc8871e946caa186faeef83cddba of unit.cardkb.CardKBUnit:4  
-msgid "The communication mode. Default modes are:"  
-msgstr "通信模式。默认模式包括："  
-  
-#: 0f9c166836f34e5b915eccb82cdd63b8 of unit.cardkb.CardKBUnit:6  
-msgid "``CardKBUnit.CardKB_I2C_MODE`` : I2C mode"  
-msgstr "``CardKBUnit.CardKB_I2C_MODE``：I2C 模式"  
-  
-#: f2d70c3781ed4ce6b91bb60bfcd5575d of unit.cardkb.CardKBUnit:7  
-msgid "``CardKBUnit.CardKB_UART_MODE`` : UART mode"  
-msgstr "``CardKBUnit.CardKB_UART_MODE``：UART 模式"  
-  
-#: 3804385d30a448228269d9a7f0a1be87 of unit.cardkb.CardKBUnit:8  
-msgid "``CardKBUnit.CardKB_ESP_NOW_MODE`` : ESP-NOW mode"  
-msgstr "``CardKBUnit.CardKB_ESP_NOW_MODE``：ESP-NOW 模式"  
-  
-#: cbadff017fb24bf1be3666a366b6119f of unit.cardkb.CardKBUnit:12  
-msgid ""  
-"This is a factory class. It returns an instance of the appropriate "  
-"subclass based on the specified mode."  
-msgstr "这是一个工厂类。它会根据指定的模式返回相应的子类实例。"  
-  
-#: d0aa3d3fe12d42588440dc273a9c02f0 of unit.cardkb.CardKBUnit:17  
-msgid "|init.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:11 e1bfe768ee6c411d81d71354328d4ce6  
-msgid "init.png"  
-msgstr ""  
-  
-#: 7bf770b39c054a5c97c606aeb2c9ff0e of unit.cardkb.CardKBBase:1  
-msgid "Base class for CardKB unit communication."  
-msgstr "CardKB 单元通信的基类。"  
-  
-#: a2e3bc6f0cfd47288ef4245417e4696e of unit.cardkb.CardKBBase:3  
-msgid ""  
-"This class provides the common interface and logic for all CardKB "  
-"communication modes."  
-msgstr "该类为所有 CardKB 通信模式提供通用接口和逻辑。"  
-  
-#: 100c84872ddd4a7ebdfa198b5dda44e0 of unit.cardkb.CardKBBase.get_key:1  
-msgid "Get the next key from the key buffer."  
-msgstr "从按键缓冲区获取下一个按键。"  
-  
-#: ../../source/unit/cardkb2.rst 47964b0c14f04cf2a6a2ab73789e1a9f  
-#: 617b05ed31e5438fb952ba653668208c 6dc1db65073c4f1bb55fedfe7b9e06ff  
-#: 8c0b399ca06445b6a5f605a446787091 92f6c2e3175b4f7ba50bad53e8d88cbc  
-#: 99b0e1c9f0f142a0b4ef92a2580ed062 caeddeed96f5417ba8ab49a2bef1080f  
-#: ecd7190fda3c41ca8993f4290e2f3288 of unit.cardkb.CardKBBase.get_char  
-#: unit.cardkb.CardKBBase.get_key unit.cardkb.CardKBBase.get_string  
-#: unit.cardkb.CardKBBase.is_pressed unit.cardkb.CardKBESPNOW.get_key  
-#: unit.cardkb.CardKBESPNOW.is_pressed  
-#: unit.cardkb.CardKBI2C.get_firmware_version  
-msgid "Returns"  
-msgstr "返回值"  
-  
-#: 095f8134d5234eacbf5a3d9ada933438 of unit.cardkb.CardKBBase.get_key:3  
-msgid "The key value (int or tuple depending on mode)"  
-msgstr "按键值（根据模式不同为 int 或 tuple）。"  
-  
-#: eedf1bff6815442db6262a2b52cfa398 of unit.cardkb.CardKBBase.get_key:7  
-msgid "|get_key.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:8 04bdcf4935f84310b2c45fd59465ebec  
-msgid "get_key.png"  
-msgstr ""  
-  
-#: b2d6f01b453c428bb2fb27f0571a0801 of unit.cardkb.CardKBBase.get_string:1  
-msgid "Get the next key as a string."  
-msgstr "将下一个按键以字符串形式获取。"  
-  
-#: 1f8d62e2d956484dba21f9692ebc0da9 of unit.cardkb.CardKBBase.get_string:3  
-msgid "The string representation of the next key."  
-msgstr "下一个按键的字符串表示。"  
-  
-#: ../../source/unit/cardkb2.rst 0f6cc4dbc2df4b3ea5eac2f60fb79fb7  
-#: 27416ff2045e44f99cd3e2b970a1d16e 42cd2c71bd7e491dbf65872e665d89ba  
-#: 5e53e6f4e37645f0829a4d582ce2527d 5ff457dcf57d4a799fde07cb350aac67  
-#: 6b5c88a0aa994b468e6702529aa6ef77 8603a445bf5e44d6a91d19351b06396e  
-#: bd2af38046294f80b4e4e508bb4a3d6b of unit.cardkb.CardKBBase.get_char  
-#: unit.cardkb.CardKBBase.get_string unit.cardkb.CardKBBase.is_pressed  
-#: unit.cardkb.CardKBBase.tick unit.cardkb.CardKBESPNOW.get_key  
-#: unit.cardkb.CardKBESPNOW.is_pressed  
-#: unit.cardkb.CardKBI2C.get_firmware_version  
-msgid "Return type"  
-msgstr "返回类型"  
-  
-#: b373e3e0c8984ce0bd73d15316fe5f7e of unit.cardkb.CardKBBase.get_string:8  
-msgid "|get_string.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:9 b9e84f54dccd4b4d8cbbaabf91068f8e  
-msgid "get_string.png"  
-msgstr ""  
-  
-#: f1c700c175604e76b9761f007b953961 of unit.cardkb.CardKBBase.get_char:1  
-msgid "Get the next key as a character."  
-msgstr "将下一个按键以字符形式获取。"  
-  
-#: ad733d2551c64cac986fa02a7b608bc9 of unit.cardkb.CardKBBase.get_char:3  
-msgid "The character corresponding to the next key code."  
-msgstr "与下一个按键码对应的字符。"  
-  
-#: 32272d25cfaf48c8a0bcebb3dbec9118 of unit.cardkb.CardKBBase.get_char:8  
-msgid "|get_char.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:7 bf91110532f24cc187ee661bb85ee3eb  
-msgid "get_char.png"  
-msgstr ""  
-  
-#: 81d715d4ae2149f6b1aaabbde6b4d88a of unit.cardkb.CardKBBase.is_pressed:1  
-msgid "Check whether any key is currently pressed."  
-msgstr "检查当前是否有按键被按下。"  
-  
-#: 63eaebe60ddf4fd696b59fc3a14037f8 of unit.cardkb.CardKBBase.is_pressed:3  
-msgid "``True`` if a key is pressed, ``False`` otherwise."  
-msgstr "若有按键被按下返回 ``True``，否则返回 ``False``。"  
-  
-#: 499ea8dc30434eddb394ff7db15bab87 of unit.cardkb.CardKBBase.is_pressed:8  
-msgid "|is_pressed.png|"  
-msgstr ""  
-  
-#: ../../source/refs/unit.cardkb2.ref:12 d27067a8acec4e06908687f4bc03e984  
-msgid "is_pressed.png"  
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/refs/unit.cardkb2.ref ../../source/unit/cardkb2.rst:2
+msgid "CardKB2 Unit"
 msgstr ""
 
-#: b2d730fc710b4a90aca912a9bd8fd6b4 of unit.cardkb.CardKBBase.set_callback:1  
-msgid "Set the callback function for key press events."  
-msgstr "设置按键按下事件的回调函数。"  
-  
-#: 2263d027ac064a4d8ad16c04b9f29ad4 of unit.cardkb.CardKBBase.set_callback:3  
-msgid ""  
-"The callback function to invoke when a key is pressed. The callback "  
-"receives the CardKB instance as its argument."  
-msgstr ""  
-"当按键被按下时调用的回调函数。该回调函数接收 CardKB 实例作为其参数。"  
-  
-#: 85634d8454ec4ced8c4970488d3cf71f of unit.cardkb.CardKBBase.set_callback:8  
-msgid "|i2c_callback.png|"  
+#: ../../source/unit/cardkb2.rst:6
+msgid ""
+"This is the driver library of CardKB2 Unit, which is used to obtain key "
+"input data."
+msgstr "这是 CardKB2 单元的驱动库，用于获取按键输入数据。"
+
+#: ../../source/unit/cardkb2.rst:8
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/unit/cardkb2.rst:10
+msgid "|CardKB2 Unit|"
 msgstr ""
-  
-#: ../../source/refs/unit.cardkb2.ref:10 3b20a15b107f4ca6972daf1fa6893623  
-msgid "i2c_callback.png"  
+
+#: ../../source/unit/cardkb2.rst:13
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../source/unit/cardkb2.rst:16 ../../source/unit/cardkb2.rst:66
+msgid "CardKB2 I2C Mode"
+msgstr "CardKB2 I2C 模式"
+
+#: ../../source/unit/cardkb2.rst:18
+msgid "Open the |cardkb2_i2c_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardkb2_i2c_core2_example.m5f2| 项目。"
+
+#: ../../source/unit/cardkb2.rst:20 ../../source/unit/cardkb2.rst:35
+#: ../../source/unit/cardkb2.rst:51 ../../source/unit/cardkb2.rst:68
+#: ../../source/unit/cardkb2.rst:83 ../../source/unit/cardkb2.rst:98
+msgid "This example display the keyboard input on the screen and serial."
+msgstr "此示例将在屏幕和串口上显示键盘输入内容。"
+
+#: ../../source/unit/cardkb2.rst:22 ../../source/unit/cardkb2.rst:37
+#: ../../source/unit/cardkb2.rst:53 of unit.cardkb.CardKBBase.get_char:6
+#: unit.cardkb.CardKBBase.get_key:5 unit.cardkb.CardKBBase.get_string:6
+#: unit.cardkb.CardKBBase.is_pressed:6 unit.cardkb.CardKBBase.set_callback:6
+#: unit.cardkb.CardKBBase.tick:5 unit.cardkb.CardKBUnit:15
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/unit/cardkb2.rst:24
+msgid "|i2c_example.png|"
 msgstr ""
-  
-#: 8ab16325071342489e806fce4f3c7705 of unit.cardkb.CardKBBase.set_callback:10  
-msgid "|callback.png|"  
+
+#: ../../source/refs/unit.cardkb2.ref:17
+msgid "i2c_example.png"
 msgstr ""
-  
-#: ../../source/refs/unit.cardkb2.ref:6 f1ef30f536134851a183dd18f7a64a47  
-msgid "callback.png"  
+
+#: ../../source/unit/cardkb2.rst:26 ../../source/unit/cardkb2.rst:41
+#: ../../source/unit/cardkb2.rst:57 ../../source/unit/cardkb2.rst:75
+#: ../../source/unit/cardkb2.rst:90 ../../source/unit/cardkb2.rst:105
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/unit/cardkb2.rst:28 ../../source/unit/cardkb2.rst:77
+msgid "input key char"
+msgstr "输入的按键字符"
+
+#: ../../source/unit/cardkb2.rst:31 ../../source/unit/cardkb2.rst:81
+msgid "CardKB2 UART Mode"
+msgstr "CardKB2 UART 模式"
+
+#: ../../source/unit/cardkb2.rst:33
+msgid "Open the |cardkb2_uart_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardkb2_uart_core2_example.m5f2| 项目。"
+
+#: ../../source/unit/cardkb2.rst:39
+msgid "|uart_example.png|"
 msgstr ""
-  
-#: 114a8bba6926449eb637e429ef4a2df3 of unit.cardkb.CardKBBase.tick:1  
-msgid "Poll for key events and trigger the callback if a key is pressed."  
-msgstr "轮询按键事件，并在按键被按下时触发回调函数。"  
-  
-#: 04a64c8d9d6f4190b8355d7f05537592 of unit.cardkb.CardKBBase.tick:3  
-msgid ""  
-"This method should be called periodically in the main loop to process key"  
-" events."  
-msgstr ""  
-"此方法应在主循环中定期调用，以处理按键事件。"  
-  
-#: b02f94254aed4f9181bbb5360da27a9c of unit.cardkb.CardKBBase.tick:7  
-msgid "|tick.png|"  
+
+#: ../../source/refs/unit.cardkb2.ref:18
+msgid "uart_example.png"
 msgstr ""
-  
-#: ../../source/refs/unit.cardkb2.ref:15 d271b782619542f89c0e4093e38237e7  
-msgid "tick.png"  
+
+#: ../../source/unit/cardkb2.rst:43 ../../source/unit/cardkb2.rst:59
+#: ../../source/unit/cardkb2.rst:92 ../../source/unit/cardkb2.rst:107
+msgid "input key char and state"
+msgstr "输入的按键字符及状态"
+
+#: ../../source/unit/cardkb2.rst:47 ../../source/unit/cardkb2.rst:96
+msgid "CardKB2 ESP-NOW Mode"
+msgstr "CardKB2 ESP-NOW 模式"
+
+#: ../../source/unit/cardkb2.rst:49
+msgid "Open the |cardkb2_espnow_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardkb2_espnow_core2_example.m5f2| 项目。"
+
+#: ../../source/unit/cardkb2.rst:55
+msgid "|espnow_example.png|"
 msgstr ""
-  
-#: 364dbdb50e27437b907a71042475ca95 7d26253d65cf4cc78374d226672e3620  
-#: 99f2b0bd2dce4f299bda5ad087f32380 of unit.cardkb.CardKBESPNOW:1  
-#: unit.cardkb.CardKBI2C:1 unit.cardkb.CardKBUART:1  
-msgid "Bases: :py:class:`~unit.cardkb.CardKBBase`"  
-msgstr ""  
-  
-#: 51109e10711f4afa952f903a9429acfb of unit.cardkb.CardKBI2C:1  
-msgid "CardKB unit driver over I2C communication."  
-msgstr "基于 I2C 通信的 CardKB 单元驱动程序。"  
-  
-#: ce17d3e221f04dd1a4ea3a036e4b086a of unit.cardkb.CardKBI2C:3  
-msgid "The I2C bus instance."  
-msgstr "I2C 总线实例。"  
-  
-#: aa31c8eb3b3b4df39cabf6f9eb5af6e6 of unit.cardkb.CardKBI2C:4  
-msgid "The I2C address of the CardKB unit. Defaults to ``0x5F``."  
-msgstr "CardKB 单元的 I2C 地址。默认值为 ``0x5F``。"  
-  
-#: 2f17c74628144b07aa4bf36eca7021b8 751f7625f7de4ab1ad8756f2a53a44dc  
-#: 9789dd7861bf4fd884ec691d920cd8f3 of unit.cardkb.CardKBESPNOW:3  
-#: unit.cardkb.CardKBI2C:5 unit.cardkb.CardKBUART:5  
-msgid "Ignored. Reserved for factory compatibility."  
-msgstr "已忽略。保留用于工厂兼容性。"  
-  
-#: ../../source/unit/cardkb2.rst b5a98fc92be84bcba3a567ead7ff09bd  
-msgid "Raises"  
-msgstr "引发"  
-  
-#: ba85ce9701ee46f599deb67dbed358a7 of unit.cardkb.CardKBI2C:7  
-msgid "If the CardKB unit is not found on the I2C bus."  
-msgstr "如果在 I2C 总线上未找到 CardKB 单元。"  
-  
-#: 3ae550da5ec14cad91d2993738e888de of unit.cardkb.CardKBI2C:11  
-msgid ""  
-"Do not instantiate this class directly. Use :class:`CardKBUnit` with "  
-"``mode=CardKBUnit.CardKB_I2C_MODE`` instead."  
-msgstr ""  
-"不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 ``mode=CardKBUnit.CardKB_I2C_MODE``。"  
-  
-#: bfd1a627570f458389688fd351cf72f6 of  
-#: unit.cardkb.CardKBI2C.get_firmware_version:1  
-msgid "Read the firmware version from the CardKB unit."  
-msgstr "从 CardKB 单元读取固件版本。"  
-  
-#: e783d178835f4a509cc867eb1514c018 of  
-#: unit.cardkb.CardKBI2C.get_firmware_version:3  
-msgid "The firmware version byte."  
-msgstr "固件版本字节。"  
-  
-#: db66e675ba154702a9a1b8d718dfbcac of unit.cardkb.CardKBUART:1  
-msgid "CardKB unit driver over UART communication."  
-msgstr "基于 UART 通信的 CardKB 单元驱动程序。"  
-  
-#: 643cc208432b4f9f9c4460b9c0e29020 of unit.cardkb.CardKBUART:3  
-msgid "The UART bus ID (0, 1, or 2). Defaults to ``1``."  
-msgstr "UART 总线 ID（0、1 或 2）。默认值为 ``1``。"  
-  
-#: e6942bb9cc354d67a601e826753e90a0 of unit.cardkb.CardKBUART:4  
-msgid "A list or tuple of ``(rx_pin, tx_pin)``."  
-msgstr "包含 ``(rx_pin, tx_pin)`` 的列表或元组。"  
-  
-#: 7b85cd86bddc4c5fa809dede8bddce79 of unit.cardkb.CardKBUART:9  
-msgid ""  
-"Do not instantiate this class directly. Use :class:`CardKBUnit` with "  
-"``mode=CardKBUnit.CardKB_UART_MODE`` instead."  
-msgstr ""  
-"不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 ``mode=CardKBUnit.CardKB_UART_MODE``。"  
-  
-#: 97d416bbdf544a0abe4a3d562d95df84 e79491e6762549fc8398c09e54ee162c of  
-#: unit.cardkb.CardKBESPNOW.tick:1 unit.cardkb.CardKBUART.tick:1  
-msgid "Poll the key buffer and trigger the callback if a key is available."  
-msgstr "轮询按键缓冲区，并在有可用按键时触发回调函数。"  
-  
-#: 16f40235e2ec4e76885d033fb619cbad of unit.cardkb.CardKBUART.tick:3  
-msgid ""  
-"This method should be called periodically in the main loop to process key"  
-" events received via UART."  
-msgstr ""  
-"此方法应在主循环中定期调用，以处理通过 UART 接收的按键事件。"  
-  
-#: 03c704895b924ed0a2258ba36d05c7d0 of unit.cardkb.CardKBESPNOW:1  
-msgid "CardKB unit driver over ESP-NOW wireless communication."  
-msgstr "基于 ESP-NOW 无线通信的 CardKB 单元驱动程序。"  
-  
-#: 09ed40b0093f44cfad8170bb69f9d6a4 of unit.cardkb.CardKBESPNOW:7  
-msgid ""  
-"Do not instantiate this class directly. Use :class:`CardKBUnit` with "  
-"``mode=CardKBUnit.CardKB_ESP_NOW_MODE`` instead."  
-msgstr ""  
-"不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 ``mode=CardKBUnit.CardKB_ESP_NOW_MODE``。"  
-  
-#: 3c598c3188f94ba3ab3aa62a3e9ffb3c of unit.cardkb.CardKBESPNOW:12  
-msgid ""  
-"This class uses a broadcast MAC address (``ffffffffffff``) and fixes the "  
-"Wi-Fi channel to 0. Key data is received asynchronously via IRQ callback."  
-msgstr ""  
-"此类使用广播 MAC 地址（``ffffffffffff``），并将 Wi-Fi 信道固定为 0。按键数据通过 IRQ 回调异步接收。"  
-  
-#: ea61ca47ef154a539b9ecc6afea32ddc of  
-#: unit.cardkb.CardKBESPNOW.espnow_recv_callback:1  
-msgid "Callback function invoked when an ESP-NOW packet is received."  
-msgstr "在接收到 ESP-NOW 数据包时调用的回调函数。"  
-  
-#: 13ec09a1c5534768bb04c2c303d2ff7f of  
-#: unit.cardkb.CardKBESPNOW.espnow_recv_callback:3  
-msgid "The ESP-NOW object containing the received data."  
-msgstr "包含接收数据的 ESP-NOW 对象。"  
-  
-#: 1ec32735d5134fd299dcb6c76bec011b of  
-#: unit.cardkb.CardKBESPNOW.espnow_recv_callback:4  
-msgid ""  
-"``True`` if the frame is valid and a key was appended, ``False`` "  
-"otherwise."  
-msgstr ""  
-"如果帧有效并且已追加按键数据，则为 ``True``，否则为 ``False``。"  
-  
-#: 6a48ba054c6f4f2889798da8ec4fc8b5 of unit.cardkb.CardKBESPNOW.get_key:1  
-msgid "Get the next key from the buffer received via ESP-NOW."  
-msgstr "从通过 ESP-NOW 接收的缓冲区中获取下一个按键。"  
-  
-#: 5527648c4367415bbbd60508a58325ca of unit.cardkb.CardKBESPNOW.get_key:3  
-msgid "The key tuple ``(key_id, key_state)``, or ``None`` if the buffer is empty."  
-msgstr "按键元组 ``(key_id, key_state)``，如果缓冲区为空则返回 ``None``。"  
-  
-#: 4962b205e5d24a49b3e08981ff2a5081 of unit.cardkb.CardKBESPNOW.is_pressed:1  
-msgid "Check whether any key data is buffered from ESP-NOW."  
-msgstr "检查是否存在来自 ESP-NOW 的按键数据缓冲。"  
-  
-#: c9313ac46dfd48909114b8263712be80 of unit.cardkb.CardKBESPNOW.is_pressed:3  
-msgid "``True`` if there is buffered key data, ``False`` otherwise."  
-msgstr "如果存在缓冲的按键数据则为 ``True``，否则为 ``False``。"  
-  
-#: f37ec8f6d4e0487db6c99ada6d30ddd2 of unit.cardkb.CardKBESPNOW.tick:3  
-msgid ""  
-"This method should be called periodically in the main loop to process key"  
-" events received via ESP-NOW."  
-msgstr ""  
-"此方法应在主循环中定期调用，以处理通过 ESP-NOW 接收的按键事件。"
+
+#: ../../source/refs/unit.cardkb2.ref:19
+msgid "espnow_example.png"
+msgstr ""
+
+#: ../../source/unit/cardkb2.rst:63
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../source/unit/cardkb2.rst:70 ../../source/unit/cardkb2.rst:85
+#: ../../source/unit/cardkb2.rst:100 of unit.cardkb.CardKBBase.get_char:10
+#: unit.cardkb.CardKBBase.get_key:9 unit.cardkb.CardKBBase.get_string:10
+#: unit.cardkb.CardKBBase.is_pressed:10 unit.cardkb.CardKBBase.set_callback:13
+#: unit.cardkb.CardKBBase.tick:9 unit.cardkb.CardKBESPNOW:15
+#: unit.cardkb.CardKBESPNOW.get_key:6 unit.cardkb.CardKBESPNOW.is_pressed:6
+#: unit.cardkb.CardKBESPNOW.tick:6 unit.cardkb.CardKBI2C:14
+#: unit.cardkb.CardKBI2C.get_firmware_version:6 unit.cardkb.CardKBUART:12
+#: unit.cardkb.CardKBUART.tick:6 unit.cardkb.CardKBUnit:19
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/cardkb2.rst:111
+msgid "**API**"
+msgstr ""
+
+#: ../../source/unit/cardkb2.rst:114
+msgid "Class CardKB2Unit"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase:1 unit.cardkb.CardKBUnit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: of unit.cardkb.CardKBUnit:1
+msgid "Create a CardKBUnit object."
+msgstr "创建一个 CardKBUnit 对象。"
+
+#: ../../source/unit/cardkb2.rst of unit.cardkb.CardKBBase.set_callback
+#: unit.cardkb.CardKBUnit
+msgid "Parameters"
+msgstr "参数"
+
+#: of unit.cardkb.CardKBUnit:3
+msgid "Positional arguments passed to the underlying communication class."
+msgstr "传递给底层通信类的位置参数。"
+
+#: of unit.cardkb.CardKBUnit:4
+msgid ""
+"The communication mode. Default modes are:  - "
+"``CardKBUnit.CardKB_I2C_MODE`` : I2C mode - "
+"``CardKBUnit.CardKB_UART_MODE`` : UART mode - "
+"``CardKBUnit.CardKB_ESP_NOW_MODE`` : ESP-NOW mode"
+msgstr ""
+"通信模式。默认模式包括：  - ``CardKBUnit.CardKB_I2C_MODE``：I2C 模式  - "
+"``CardKBUnit.CardKB_UART_MODE``：UART 模式  - "
+"``CardKBUnit.CardKB_ESP_NOW_MODE``：ESP-NOW 模式"
+
+#: of unit.cardkb.CardKBUnit:4
+msgid "The communication mode. Default modes are:"
+msgstr "通信模式。默认模式包括："
+
+#: of unit.cardkb.CardKBUnit:6
+msgid "``CardKBUnit.CardKB_I2C_MODE`` : I2C mode"
+msgstr "``CardKBUnit.CardKB_I2C_MODE``：I2C 模式"
+
+#: of unit.cardkb.CardKBUnit:7
+msgid "``CardKBUnit.CardKB_UART_MODE`` : UART mode"
+msgstr "``CardKBUnit.CardKB_UART_MODE``：UART 模式"
+
+#: of unit.cardkb.CardKBUnit:8
+msgid "``CardKBUnit.CardKB_ESP_NOW_MODE`` : ESP-NOW mode"
+msgstr "``CardKBUnit.CardKB_ESP_NOW_MODE``：ESP-NOW 模式"
+
+#: of unit.cardkb.CardKBUnit:12
+msgid ""
+"This is a factory class. It returns an instance of the appropriate "
+"subclass based on the specified mode."
+msgstr "这是一个工厂类。它会根据指定的模式返回相应的子类实例。"
+
+#: of unit.cardkb.CardKBUnit:17
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:11
+msgid "init.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase:1
+msgid "Base class for CardKB unit communication."
+msgstr "CardKB 单元通信的基类。"
+
+#: of unit.cardkb.CardKBBase:3
+msgid ""
+"This class provides the common interface and logic for all CardKB "
+"communication modes."
+msgstr "该类为所有 CardKB 通信模式提供通用接口和逻辑。"
+
+#: of unit.cardkb.CardKBBase.get_report:1
+msgid "Get the latest V2 keyboard report."
+msgstr ""
+
+#: ../../source/unit/cardkb2.rst of unit.cardkb.CardKBBase.get_char
+#: unit.cardkb.CardKBBase.get_key unit.cardkb.CardKBBase.get_string
+#: unit.cardkb.CardKBBase.is_pressed unit.cardkb.CardKBESPNOW.get_key
+#: unit.cardkb.CardKBESPNOW.is_pressed
+#: unit.cardkb.CardKBI2C.get_firmware_version
+msgid "Returns"
+msgstr "返回值"
+
+#: of unit.cardkb.CardKBBase.get_report:3
+msgid "The report ``(modifier, reserved, key1, ..., key6)``."
+msgstr ""
+
+#: ../../source/unit/cardkb2.rst of unit.cardkb.CardKBBase.get_char
+#: unit.cardkb.CardKBBase.get_string unit.cardkb.CardKBBase.is_pressed
+#: unit.cardkb.CardKBBase.tick unit.cardkb.CardKBESPNOW.get_key
+#: unit.cardkb.CardKBESPNOW.is_pressed
+#: unit.cardkb.CardKBI2C.get_firmware_version
+msgid "Return type"
+msgstr "返回类型"
+
+#: of unit.cardkb.CardKBBase.get_key:1
+msgid "Get the next key from the key buffer."
+msgstr "从按键缓冲区获取下一个按键。"
+
+#: of unit.cardkb.CardKBBase.get_key:3
+msgid "The key value (int or tuple depending on mode)"
+msgstr "按键值（根据模式不同为 int 或 tuple）。"
+
+#: of unit.cardkb.CardKBBase.get_key:7
+msgid "|get_key.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:8
+msgid "get_key.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.get_string:1
+msgid "Get the next key as a string."
+msgstr "将下一个按键以字符串形式获取。"
+
+#: of unit.cardkb.CardKBBase.get_string:3
+msgid "The string representation of the next key."
+msgstr "下一个按键的字符串表示。"
+
+#: of unit.cardkb.CardKBBase.get_string:8
+msgid "|get_string.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:9
+msgid "get_string.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.get_char:1
+msgid "Get the next key as a character."
+msgstr "将下一个按键以字符形式获取。"
+
+#: of unit.cardkb.CardKBBase.get_char:3
+msgid "The character corresponding to the next key code."
+msgstr "与下一个按键码对应的字符。"
+
+#: of unit.cardkb.CardKBBase.get_char:8
+msgid "|get_char.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:7
+msgid "get_char.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.is_pressed:1
+msgid "Check whether any key is currently pressed."
+msgstr "检查当前是否有按键被按下。"
+
+#: of unit.cardkb.CardKBBase.is_pressed:3
+msgid "``True`` if a key is pressed, ``False`` otherwise."
+msgstr "若有按键被按下返回 ``True``，否则返回 ``False``。"
+
+#: of unit.cardkb.CardKBBase.is_pressed:8
+msgid "|is_pressed.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:12
+msgid "is_pressed.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.set_callback:1
+msgid "Set the callback function for key press events."
+msgstr "设置按键按下事件的回调函数。"
+
+#: of unit.cardkb.CardKBBase.set_callback:3
+msgid ""
+"The callback function to invoke when a key is pressed. The callback "
+"receives the CardKB instance as its argument."
+msgstr "当按键被按下时调用的回调函数。该回调函数接收 CardKB 实例作为其参数。"
+
+#: of unit.cardkb.CardKBBase.set_callback:8
+msgid "|i2c_callback.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:10
+msgid "i2c_callback.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.set_callback:10
+msgid "|callback.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:6
+msgid "callback.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBBase.tick:1
+msgid "Poll for key events and trigger the callback if a key is pressed."
+msgstr "轮询按键事件，并在按键被按下时触发回调函数。"
+
+#: of unit.cardkb.CardKBBase.tick:3
+msgid ""
+"This method should be called periodically in the main loop to process key"
+" events."
+msgstr "此方法应在主循环中定期调用，以处理按键事件。"
+
+#: of unit.cardkb.CardKBBase.tick:7
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../source/refs/unit.cardkb2.ref:15
+msgid "tick.png"
+msgstr ""
+
+#: of unit.cardkb.CardKBESPNOW:1 unit.cardkb.CardKBI2C:1
+#: unit.cardkb.CardKBUART:1
+msgid "Bases: :py:class:`~unit.cardkb.CardKBBase`"
+msgstr ""
+
+#: of unit.cardkb.CardKBI2C:1
+msgid "CardKB unit driver over I2C communication."
+msgstr "基于 I2C 通信的 CardKB 单元驱动程序。"
+
+#: of unit.cardkb.CardKBI2C:3
+msgid "The I2C bus instance."
+msgstr "I2C 总线实例。"
+
+#: of unit.cardkb.CardKBI2C:4
+msgid "The I2C address of the CardKB unit. Defaults to ``0x5F``."
+msgstr "CardKB 单元的 I2C 地址。默认值为 ``0x5F``。"
+
+#: of unit.cardkb.CardKBESPNOW:3 unit.cardkb.CardKBI2C:5
+#: unit.cardkb.CardKBUART:5
+msgid "Ignored. Reserved for factory compatibility."
+msgstr "已忽略。保留用于工厂兼容性。"
+
+#: ../../source/unit/cardkb2.rst
+msgid "Raises"
+msgstr "引发"
+
+#: of unit.cardkb.CardKBI2C:7
+msgid "If the CardKB unit is not found on the I2C bus."
+msgstr "如果在 I2C 总线上未找到 CardKB 单元。"
+
+#: of unit.cardkb.CardKBI2C:11
+msgid ""
+"Do not instantiate this class directly. Use :class:`CardKBUnit` with "
+"``mode=CardKBUnit.CardKB_I2C_MODE`` instead."
+msgstr "不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 ``mode=CardKBUnit.CardKB_I2C_MODE``。"
+
+#: of unit.cardkb.CardKBI2C.get_firmware_version:1
+msgid "Read the firmware version from the CardKB unit."
+msgstr "从 CardKB 单元读取固件版本。"
+
+#: of unit.cardkb.CardKBI2C.get_firmware_version:3
+msgid "The firmware version byte."
+msgstr "固件版本字节。"
+
+#: of unit.cardkb.CardKBUART:1
+msgid "CardKB unit driver over UART communication."
+msgstr "基于 UART 通信的 CardKB 单元驱动程序。"
+
+#: of unit.cardkb.CardKBUART:3
+msgid "The UART bus ID (0, 1, or 2). Defaults to ``1``."
+msgstr "UART 总线 ID（0、1 或 2）。默认值为 ``1``。"
+
+#: of unit.cardkb.CardKBUART:4
+msgid "A list or tuple of ``(rx_pin, tx_pin)``."
+msgstr "包含 ``(rx_pin, tx_pin)`` 的列表或元组。"
+
+#: of unit.cardkb.CardKBUART:9
+msgid ""
+"Do not instantiate this class directly. Use :class:`CardKBUnit` with "
+"``mode=CardKBUnit.CardKB_UART_MODE`` instead."
+msgstr ""
+"不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 "
+"``mode=CardKBUnit.CardKB_UART_MODE``。"
+
+#: of unit.cardkb.CardKBESPNOW.tick:1 unit.cardkb.CardKBUART.tick:1
+msgid "Poll the key buffer and trigger the callback if a key is available."
+msgstr "轮询按键缓冲区，并在有可用按键时触发回调函数。"
+
+#: of unit.cardkb.CardKBUART.tick:3
+msgid ""
+"This method should be called periodically in the main loop to process key"
+" events received via UART."
+msgstr "此方法应在主循环中定期调用，以处理通过 UART 接收的按键事件。"
+
+#: of unit.cardkb.CardKBESPNOW:1
+msgid "CardKB unit driver over ESP-NOW wireless communication."
+msgstr "基于 ESP-NOW 无线通信的 CardKB 单元驱动程序。"
+
+#: of unit.cardkb.CardKBESPNOW:7
+msgid ""
+"Do not instantiate this class directly. Use :class:`CardKBUnit` with "
+"``mode=CardKBUnit.CardKB_ESP_NOW_MODE`` instead."
+msgstr ""
+"不要直接实例化此类。请改用 :class:`CardKBUnit` 并设置 "
+"``mode=CardKBUnit.CardKB_ESP_NOW_MODE``。"
+
+#: of unit.cardkb.CardKBESPNOW:12
+msgid ""
+"This class uses a broadcast MAC address (``ffffffffffff``) and fixes the "
+"Wi-Fi channel to 0. Key data is received asynchronously via IRQ callback."
+msgstr "此类使用广播 MAC 地址（``ffffffffffff``），并将 Wi-Fi 信道固定为 0。按键数据通过 IRQ 回调异步接收。"
+
+#: of unit.cardkb.CardKBESPNOW.espnow_recv_callback:1
+msgid "Callback function invoked when an ESP-NOW packet is received."
+msgstr "在接收到 ESP-NOW 数据包时调用的回调函数。"
+
+#: of unit.cardkb.CardKBESPNOW.espnow_recv_callback:3
+msgid "The ESP-NOW object containing the received data."
+msgstr "包含接收数据的 ESP-NOW 对象。"
+
+#: of unit.cardkb.CardKBESPNOW.espnow_recv_callback:4
+msgid ""
+"``True`` if the frame is valid and a key was appended, ``False`` "
+"otherwise."
+msgstr "如果帧有效并且已追加按键数据，则为 ``True``，否则为 ``False``。"
+
+#: of unit.cardkb.CardKBESPNOW.get_key:1
+msgid "Get the next key from the buffer received via ESP-NOW."
+msgstr "从通过 ESP-NOW 接收的缓冲区中获取下一个按键。"
+
+#: of unit.cardkb.CardKBESPNOW.get_key:3
+msgid "The key tuple ``(key_id, key_state)``, or ``None`` if the buffer is empty."
+msgstr "按键元组 ``(key_id, key_state)``，如果缓冲区为空则返回 ``None``。"
+
+#: of unit.cardkb.CardKBESPNOW.is_pressed:1
+msgid "Check whether any key data is buffered from ESP-NOW."
+msgstr "检查是否存在来自 ESP-NOW 的按键数据缓冲。"
+
+#: of unit.cardkb.CardKBESPNOW.is_pressed:3
+msgid "``True`` if there is buffered key data, ``False`` otherwise."
+msgstr "如果存在缓冲的按键数据则为 ``True``，否则为 ``False``。"
+
+#: of unit.cardkb.CardKBESPNOW.tick:3
+msgid ""
+"This method should be called periodically in the main loop to process key"
+" events received via ESP-NOW."
+msgstr "此方法应在主循环中定期调用，以处理通过 ESP-NOW 接收的按键事件。"
+

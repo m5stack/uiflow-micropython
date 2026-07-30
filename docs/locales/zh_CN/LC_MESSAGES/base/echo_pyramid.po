@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-03 14:42+0800\n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,101 +21,97 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../source/base/echo_pyramid.rst:4 ../../source/base/echo_pyramid.rst:21
-#: ../../source/refs/base.echo_pyramid.ref 368684bf08d24dec8276cd316cae11e0
-#: 4a8550788cfc4035a73ed1e8729ad0bf b90b9ac834ac4a8caaeb1706e0eff454
+#: ../../source/refs/base.echo_pyramid.ref
 msgid "Atomic Echo Pyramid Base"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:10 5542615e3adf47088f0262b3a6c8b5f6
+#: ../../source/base/echo_pyramid.rst:10
 msgid "The following products are supported:"
 msgstr "支持以下产品："
 
-#: ../../source/base/echo_pyramid.rst:12 06d51f66bb7d4decbb52e0ff2c2daec6
+#: ../../source/base/echo_pyramid.rst:12
 msgid "|Atomic Echo Pyramid Base|"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:14 3621abcf811343529990f6e036bf14f4
+#: ../../source/base/echo_pyramid.rst:14
 msgid "Below is the detailed support for Atomic Echo Pyramid Base on the host:"
 msgstr "以下是主机对 Atomic Echo Pyramid 底座的详细支持："
 
-#: ../../source/base/echo_pyramid.rst:21 fbde66ecd5c847f4bea1947560d3e1bf
+#: ../../source/base/echo_pyramid.rst:21
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/base/echo_pyramid.rst:23 aaf2820a5b4542d8a2cedf2edc4e4621
+#: ../../source/base/echo_pyramid.rst:23
 msgid "Atom Echo"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:23 ec62e0bac7e44fdeb10057407173407d
+#: ../../source/base/echo_pyramid.rst:23
 msgid "|O|"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:25 076c157143f44ad9a38b7495f28d5c3e
+#: ../../source/base/echo_pyramid.rst:25
 msgid "Atom Lite"
 msgstr ""
 
 #: ../../source/base/echo_pyramid.rst:25 ../../source/base/echo_pyramid.rst:27
 #: ../../source/base/echo_pyramid.rst:29 ../../source/base/echo_pyramid.rst:31
 #: ../../source/base/echo_pyramid.rst:33 ../../source/base/echo_pyramid.rst:35
-#: ../../source/base/echo_pyramid.rst:37 1f2e9cec610a48afa57121d520da355e
-#: 31c1f1c40b244223bca64812d73c15cb 3a629312da3444b590b3dd4b6c01f477
-#: 443ff377e1ce4fc48ffef4df61017feb 83de91ad2a6245fea23fa3489f1abed0
-#: 89a67ab1f8ab4b58a37765816fec43a3 e1ecc27bd68244b88485ea45a32d2d9a
+#: ../../source/base/echo_pyramid.rst:37
 msgid "|S|"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:27 bd3e5091e705414989c93f18e44d2089
+#: ../../source/base/echo_pyramid.rst:27
 msgid "Atom Matrix"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:29 6a531e455c2f4b0788781cb305fe5371
+#: ../../source/base/echo_pyramid.rst:29
 msgid "AtomS3"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:31 3b8cc4b56ceb4f37a85d1b0392da45fa
+#: ../../source/base/echo_pyramid.rst:31
 msgid "AtomS3 Lite"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:33 25fb63769ad947a0ad742ae0b5310037
+#: ../../source/base/echo_pyramid.rst:33
 msgid "AtomS3R"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:35 152e1dd18067499d83b21428e4a7f83f
+#: ../../source/base/echo_pyramid.rst:35
 msgid "AtomS3R-CAM"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:37 afc9f0e1fec446e3bbd497a4eb86997c
+#: ../../source/base/echo_pyramid.rst:37
 msgid "AtomS3R-Ext"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:44 56f92458ece5463bb26f5c5f9e3b6cde
+#: ../../source/base/echo_pyramid.rst:44
 msgid ""
 "The ``AtomicEchoPyramidBase`` class controls the Echo Pyramid base for "
 "Atom Series, providing audio playback/recording, touch input, and dual "
 "RGB LED strips."
-msgstr "``AtomicEchoPyramidBase`` 类用于控制 Atom 系列的 Echo Pyramid 底座，提供音频播放/录音、触摸输入及双路 RGB 灯带。"
+msgstr ""
+"``AtomicEchoPyramidBase`` 类用于控制 Atom 系列的 Echo Pyramid "
+"底座，提供音频播放/录音、触摸输入及双路 RGB 灯带。"
 
-#: ../../source/base/echo_pyramid.rst:48 c7fd7890fe5e47adba8b9a427ee66be7
+#: ../../source/base/echo_pyramid.rst:48
 msgid ""
 "Power must be supplied to both the EchoPyramid base and the Atom "
 "controller."
 msgstr "Echo Pyramid 底座与 Atom 控制器均需单独供电。"
 
-#: ../../source/base/echo_pyramid.rst:51 85abe915bd704d659c8ba346f2e0469a
+#: ../../source/base/echo_pyramid.rst:51
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/base/echo_pyramid.rst:54 ../../source/base/echo_pyramid.rst:137
-#: f7d2d7751d994420bfe032dae14cee42 fe3ea78aca584ef8bb3e4945d04bc28f
 msgid "LED Strip Effects"
 msgstr "灯带效果"
 
-#: ../../source/base/echo_pyramid.rst:56 bf9d266105ba4e21b768302f7ce57bd8
+#: ../../source/base/echo_pyramid.rst:56
 msgid "Open the |atoms3r_echopyramid_led_strip_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_echopyramid_led_strip_example.m5f2| 项目。"
 
 #: ../../source/base/echo_pyramid.rst:58 ../../source/base/echo_pyramid.rst:139
-#: 7f4d3116452145a0879f1fe78326fc26 aca6c0679c72463ba40a5fca596f089f
 msgid ""
 "This example demonstrates breathing and flowing effects on both RGB "
 "strips."
@@ -123,20 +119,8 @@ msgstr "本示例演示两条 RGB 灯带的呼吸与流水效果。"
 
 #: ../../source/base/echo_pyramid.rst:60 ../../source/base/echo_pyramid.rst:76
 #: ../../source/base/echo_pyramid.rst:92 ../../source/base/echo_pyramid.rst:108
-#: ../../source/base/echo_pyramid.rst:124 03bdf33c3bde42398b7504d5f49fb744
-#: 07536895749643388e5df411806650bc 2249779c07d6437fa8c251bf7dc59651
-#: 27e76412348945399f8281ef1fd0f741 348396ac61c2479aae52ed9b1d7dbc40
-#: 3767e132db9146bc9c09782077456f89 38d3bc5043404beea72de30a6b093e97
-#: 391338f46cc847cc929a4cf76e4ce306 3a02e8de4ca04b56932e6e66eb8abdfd
-#: 44092692231c4661a4b5cc615d14207a 46d1b2a924f444ee9c21c3352881b709
-#: 4beff62008814dcabf48fd3619553c04 5874adc7b1df4981b865e3028284fe0f
-#: 5fb83eec274e4464877b1f479f9ff878 6dddb5a5a55c4e09952fed40811cd95b
-#: 700dcb199484458b9ec00956983d8ef0 702516eb1f414bd3bd7ea684ea778eab
-#: 7326b124fe8c49f095c6a044f7c4621e 77939baf4a6e4f3893b30f49b0f30e73
-#: 7d78f4b3b0b64c118816780f31845951 80d860e88c464ac7a6a2e66133eb591f
-#: 843ed6c98ae2478083231bf9439d5994 9a385b53c931408a9bb26c2800c28127
-#: a83da8feb323475e868438c66b9a1998 b35eaa2ed3b94f0a90ae2ec846488933
-#: b60e8dfb29c44988ac829c82ce5ba7ff base.echo_pyramid.AtomicEchoPyramidBase:13
+#: ../../source/base/echo_pyramid.rst:124
+#: base.echo_pyramid.AtomicEchoPyramidBase:13
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr:5
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_firmware_version:5
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_input_voltage:5
@@ -158,16 +142,15 @@ msgstr "本示例演示两条 RGB 灯带的呼吸与流水效果。"
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:7
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:5
 #: base.echo_pyramid.AtomicEchoPyramidBase.stop:3
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone:6
-#: e26478417a4a46d8afb0a728caf59cdb ed833c454563488e8387069e8133367c of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone:6 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/base/echo_pyramid.rst:62 1fa44ee94bc2410dab8b10af860091cd
+#: ../../source/base/echo_pyramid.rst:62
 msgid "|led_strip_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:30 3bbfb66946a7427496d56fe0249e8291
+#: ../../source/refs/base.echo_pyramid.ref:31
 msgid "led_strip_example.png"
 msgstr ""
 
@@ -178,12 +161,7 @@ msgstr ""
 #: ../../source/base/echo_pyramid.rst:163
 #: ../../source/base/echo_pyramid.rst:179
 #: ../../source/base/echo_pyramid.rst:195
-#: ../../source/base/echo_pyramid.rst:211 07f790342b604dbdbf0519fb02eac79f
-#: 22eb569998ba40cf85a175d22001733b 2424dbfc22a84808b2f2317eddb5be87
-#: 4a6cb0ed45fc40998bced2f788862bcf 4eed1b9ed707430c88396c34ac414c45
-#: 52ccdf46ca9b4f58b0d76ab1802db7ff 785d68bdfedb46aeaec6fc14671a73c7
-#: 80bf4296803c4552972ae1e464d63263 d2f41f4258e84abb92991c5517b138c4
-#: f8579ef2807b486696e9b8b670823d15
+#: ../../source/base/echo_pyramid.rst:211
 msgid "Example output:"
 msgstr "示例输出："
 
@@ -194,112 +172,99 @@ msgstr "示例输出："
 #: ../../source/base/echo_pyramid.rst:165
 #: ../../source/base/echo_pyramid.rst:181
 #: ../../source/base/echo_pyramid.rst:197
-#: ../../source/base/echo_pyramid.rst:213 221ba262161845ec82c25e15d1b47b80
-#: 306a0ea39e3b424eba890b65c6e9abbf 309965586f8b48108edc3c2207348b72
-#: 5ac839cb4b8e40a08779b4c95aa56188 79d797cba5994af0a89793ce5ff5a929
-#: 8706e536bb5547c1ba1da9b69a434ed0 8d995a31e437400da78696a1cb2cbd15
-#: bf6db9fde54c4090ba6c06cc8a446a9f c978df549788459aab58a565e9858623
-#: ccbf1e1c765440be82b84671ee62ef41
+#: ../../source/base/echo_pyramid.rst:213
 msgid "None"
 msgstr "无"
 
 #: ../../source/base/echo_pyramid.rst:70 ../../source/base/echo_pyramid.rst:153
-#: 4a320660a17845459a9ab76c4ac4b078 a9c6b123aa6347d684b0935a2c091d5e
 msgid "Touch Control"
 msgstr "触摸控制"
 
-#: ../../source/base/echo_pyramid.rst:72 94f903ea0f324e00b8e02bc809030f85
+#: ../../source/base/echo_pyramid.rst:72
 msgid "Open the |atoms3r_echopyramid_touch_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_echopyramid_touch_example.m5f2| 项目。"
 
 #: ../../source/base/echo_pyramid.rst:74 ../../source/base/echo_pyramid.rst:155
-#: 28e64e624b984f4997f1d23de0218964 8d705f1b4870408984d23850e387c5c6
 msgid ""
 "This example uses the capacitive touch pads to light different LED "
 "segments."
 msgstr "本示例通过电容触摸键点亮不同侧 LED。"
 
-#: ../../source/base/echo_pyramid.rst:78 3cc2fcb5104c4010966aa276b7e2bd6d
+#: ../../source/base/echo_pyramid.rst:78
 msgid "|touch_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:29 0c64fbde5c3c40c080b2a99ccf2a3774
+#: ../../source/refs/base.echo_pyramid.ref:30
 msgid "touch_example.png"
 msgstr ""
 
 #: ../../source/base/echo_pyramid.rst:86 ../../source/base/echo_pyramid.rst:169
-#: 9e259e988fa445a9ad70d27aec61df60 e04005f16ad64072842080dd665f7ffe
 msgid "Audio Record And Playback"
 msgstr "录音与播放"
 
-#: ../../source/base/echo_pyramid.rst:88 f68c532101764b6ca5acdb57170924a5
+#: ../../source/base/echo_pyramid.rst:88
 msgid "Open the |atoms3r_echopyramid_audio_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_echopyramid_audio_example.m5f2| 项目。"
 
 #: ../../source/base/echo_pyramid.rst:90 ../../source/base/echo_pyramid.rst:171
-#: 7c42979d19c84e54a2111fbdeda37452 ae1f44b98e164a95a21a2a46b66cde68
 msgid "This example records a short WAV clip and then plays it back."
 msgstr "本示例录制一段短 WAV 后回放。"
 
-#: ../../source/base/echo_pyramid.rst:94 b1c90d034d4743c3a01fcbc6154370bf
+#: ../../source/base/echo_pyramid.rst:94
 msgid "|audio_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:27 8468fa3b96d84a0583e303145f781f3b
+#: ../../source/refs/base.echo_pyramid.ref:28
 msgid "audio_example.png"
 msgstr ""
 
 #: ../../source/base/echo_pyramid.rst:102
-#: ../../source/base/echo_pyramid.rst:185 2e84a0391c2440bdb076f66b348353da
-#: 5f5f401da177429da0241d99d05a1a42
+#: ../../source/base/echo_pyramid.rst:185
 msgid "Audio Beep"
 msgstr "蜂鸣音"
 
-#: ../../source/base/echo_pyramid.rst:104 84f570ed72bb499388c00252989c0818
+#: ../../source/base/echo_pyramid.rst:104
 msgid "Open the |atoms3r_echopyramid_audio_beep_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_echopyramid_audio_beep_example.m5f2| 项目。"
 
 #: ../../source/base/echo_pyramid.rst:106
-#: ../../source/base/echo_pyramid.rst:187 c60892e99f8e416895a68843e1d6e187
-#: f20e018ad33c4114bfe57fc0ed61a582
+#: ../../source/base/echo_pyramid.rst:187
 msgid "This example plays a random beep tone on each touch."
 msgstr "本示例在每次触摸时播放随机蜂鸣音。"
 
-#: ../../source/base/echo_pyramid.rst:110 a101775a522a43918caacab61e999d7a
+#: ../../source/base/echo_pyramid.rst:110
 msgid "|audio_beep_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:28 e2d3500a11e74d2abfd0d118d67648aa
+#: ../../source/refs/base.echo_pyramid.ref:29
 msgid "audio_beep_example.png"
 msgstr ""
 
 #: ../../source/base/echo_pyramid.rst:118
-#: ../../source/base/echo_pyramid.rst:201 6baea1ae8497472c9dc32496742f7da1
-#: 9ff3904329b14affb3c7b0d287f1f500
+#: ../../source/base/echo_pyramid.rst:201
 msgid "USB Voltage"
 msgstr "USB 电压"
 
-#: ../../source/base/echo_pyramid.rst:120 13806008c0374784a19c15dfc72a8d6d
+#: ../../source/base/echo_pyramid.rst:120
 msgid ""
 "Open the |atoms3r_echopyramid_usb_voltage_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_echopyramid_usb_voltage_example.m5f2| 项目。"
 
 #: ../../source/base/echo_pyramid.rst:122
-#: ../../source/base/echo_pyramid.rst:203 ce5b5470ddc947ec845d1b1eea26b046
-#: dc9f1d75ca3c4a818166a43ca1c083b5
+#: ../../source/base/echo_pyramid.rst:203
 msgid "This example reads USB input voltage (mV) from the base and displays it."
 msgstr "本示例从底座读取 USB 输入电压（毫伏）并显示。"
 
-#: ../../source/base/echo_pyramid.rst:126 28a76ecb7a1b4a78b99979feef328d81
-msgid "|atoms3r_echopyramid_usb_voltage_example.png|"
+#: ../../source/base/echo_pyramid.rst:126
+msgid "|usb_voltage_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:32 837ae5c8903444a5bae0ddbe8f65fd74
-msgid "atoms3r_echopyramid_usb_voltage_example.png"
+#: ../../source/refs/base.echo_pyramid.ref:32
+msgid "usb_voltage_example.png"
 msgstr ""
 
-#: ../../source/base/echo_pyramid.rst:134 029b268fb098454aa2bb0c3b4288d792
+#: ../../source/base/echo_pyramid.rst:134
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
@@ -307,19 +272,8 @@ msgstr "MicroPython 示例"
 #: ../../source/base/echo_pyramid.rst:157
 #: ../../source/base/echo_pyramid.rst:173
 #: ../../source/base/echo_pyramid.rst:189
-#: ../../source/base/echo_pyramid.rst:205 0c4081aabbf54fe4ab8fd41ae759d168
-#: 19649656ca9c490495406dbe9dca153e 2442b0d1b8f74eb09a17209f1e7e11d7
-#: 253e3aef5f184ede873c79015262eae9 29a2b677c1e546f298b7bc08beaf0916
-#: 2ef4afa4f59f4782a913c3418b13d80b 3b6a0fddc20d43b594e31c4e621cfced
-#: 531826cf11134d2a83571455d3144f80 5489fb0f0a034d7492b3c06d10f660f3
-#: 54d3d214d0be40dd83210d68261b315f 5e40ff3156d64e0189eb182b205a334a
-#: 65823132bb6d4c269f084d5887c3dd08 6e7235717a6742588b245fc48043541c
-#: 72685b90c7ca4d6b8bb4191d581b7041 82a280957bc04c0d909d19e225e88ae1
-#: 85a9277eb9c949e6b1b562ed9d430cba 8da29e58b6f44754b92c566ecc3f08de
-#: 93bc983f96144e86a93e9de41c9c2ece 93dc6f6409ac4a8f80c1fcbb6d6ce6ec
-#: 9452c4f33f6e452583399f82e1803423 94c54d591b69476882127169cf7ddead
-#: a3a165d9c95741f99d0b0b36f12248d8 b3aa91e93aae4acd95ee71ac40677ad8
-#: b733a9306c3f41de9dd7043ceacfffa8 base.echo_pyramid.AtomicEchoPyramidBase:17
+#: ../../source/base/echo_pyramid.rst:205
+#: base.echo_pyramid.AtomicEchoPyramidBase:17
 #: base.echo_pyramid.AtomicEchoPyramidBase.change_sample_rate:5
 #: base.echo_pyramid.AtomicEchoPyramidBase.deinit:3
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr:9
@@ -343,36 +297,27 @@ msgstr "MicroPython 示例"
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:11
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:9
 #: base.echo_pyramid.AtomicEchoPyramidBase.stop:7
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone:10
-#: c10b4189da63476ba6f911401ceca190 c791fa863eb44c59b74e8d1e7311edb0
-#: d54b52dcb05a44fdba2841ce763d46fc ee66cdf58448496690958372ca0abba7
-#: f0b6cf8b68ef47cc94ddde61d25d37d3 f4f74910e2d846dd9585bdc4bb471e48 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone:10 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/base/echo_pyramid.rst:217 8b3866d3a61c46f3b1e27887b027d8db
+#: ../../source/base/echo_pyramid.rst:217
 msgid "API"
 msgstr "API"
 
-#: ../../source/base/echo_pyramid.rst:220 31979952b01b49b390c75c9bc678ec01
+#: ../../source/base/echo_pyramid.rst:220
 msgid "AtomicEchoPyramidBase"
 msgstr ""
 
-#: 19ea2410315f4835a27707d6d155cf1b base.echo_pyramid.AtomicEchoPyramidBase:1
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: 206a7906e7704a0cb7d38753b5408896 base.echo_pyramid.AtomicEchoPyramidBase:1
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:1 of
 msgid "Echo Pyramid base for AtomS3R + Echo Pyramid."
 msgstr "适用于 AtomS3R 的 Echo Pyramid 底座。"
 
-#: ../../source/base/echo_pyramid.rst 027cecf44e5847b9a3c314136dfc6c4e
-#: 1bf703ac62ed45ae85d52c5a13c6d67f 4083bce223db4ec7a46d086033d2afeb
-#: 41c1088291dc48e3b2144e3ab92f9902 57cefc6e699f499a8f1698a1442ba248
-#: 80aa8c6c953d4c09ba485e1b6f8efef7 9ef001675a964b8b948bb6416ca51b94
-#: a9cc58174ce44e2e947d9d54022a39c6 aa95b5e954e94cf69f04487c4b67ecde
+#: ../../source/base/echo_pyramid.rst
 #: base.echo_pyramid.AtomicEchoPyramidBase.change_sample_rate
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color
@@ -386,85 +331,66 @@ msgstr "适用于 AtomS3R 的 Echo Pyramid 底座。"
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_volume
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone
-#: dc759a8b62ba4443a413a2a491dab4e2 de6157c8f88348708bb29ec7ad924036
-#: e493a24751ba425da9b6272ae4ff01e8 ee25632af3cc42828fa0cbeb2de327bc
-#: ef0254d1843c42b1b1f2c588d1c5f3cd fc6c77ccc0f0435d81970ca2e7dbd9eb of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone of
 msgid "Parameters"
 msgstr "参数"
 
-#: 28917faf41d34618809fc872f41d2a91 base.echo_pyramid.AtomicEchoPyramidBase:3
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:3 of
 msgid "I2C bus."
 msgstr "I2C 总线。"
 
-#: 7389aefbd11e4476a361fdf5379b5369 base.echo_pyramid.AtomicEchoPyramidBase:4
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:4 of
 msgid "STM32 I2C address. Default 0x1A."
 msgstr "STM32 I2C 地址，默认 0x1A。"
 
-#: 345af9c383cc42a58479726a7f68cd11 base.echo_pyramid.AtomicEchoPyramidBase:5
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:5 of
 msgid "ES8311 I2C address. Default 0x18."
 msgstr "ES8311 I2C 地址，默认 0x18。"
 
-#: b99b5fb46f59416f9edeaaa9dba2f7a0 base.echo_pyramid.AtomicEchoPyramidBase:6
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:6 of
 msgid "I2S port number. Default 1."
 msgstr "I2S 端口号，默认 1。"
 
-#: 5824eb3616bb4d75bf62167e62e2ac4f base.echo_pyramid.AtomicEchoPyramidBase:7
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:7 of
 msgid "Sample rate. Default 24000."
 msgstr "采样率，默认 24000。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase:8 f355650cf9b6435492b824024034b756
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:8 of
 msgid "I2S BCLK pin. Default 6."
 msgstr "I2S BCLK 引脚，默认 6。"
 
-#: 00103ab64c354370aaa23acef9567534 base.echo_pyramid.AtomicEchoPyramidBase:9
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:9 of
 msgid "I2S WS pin. Default 8."
 msgstr "I2S WS 引脚，默认 8。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase:10 d2ce5ef09baa4483bc9d9f299e6721c9
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:10 of
 msgid "I2S DIN (mic) pin. Default 5."
 msgstr "I2S DIN（麦克风）引脚，默认 5。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase:11 bb35c286e697458b83e1cc0b5116b441
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:11 of
 msgid "I2S DOUT (spk) pin. Default 7."
 msgstr "I2S DOUT（扬声器）引脚，默认 7。"
 
-#: 082c05569ef74f7d86b6a6259c15a7a3 base.echo_pyramid.AtomicEchoPyramidBase:15
-#: of
+#: base.echo_pyramid.AtomicEchoPyramidBase:15 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:4 e6c4120e6773468fbaee4a073ebb80d1
+#: ../../source/refs/base.echo_pyramid.ref:5
 msgid "init.png"
 msgstr ""
 
-#: ../../../docstring 7fa4e47a8d0247348a3d390cb329f46a
-#: base.echo_pyramid.AtomicEchoPyramidBase.MONO:1 of
+#: ../../docstring base.echo_pyramid.AtomicEchoPyramidBase.MONO:1 of
 msgid "Mono."
 msgstr "单声道。"
 
-#: ../../../docstring base.echo_pyramid.AtomicEchoPyramidBase.STEREO:1
-#: cd58774f71d14096a7d352f2bef0e833 of
+#: ../../docstring base.echo_pyramid.AtomicEchoPyramidBase.STEREO:1 of
 msgid "Stereo."
 msgstr "立体声。"
 
-#: ac914371f5774d9eab940e0f5756d147
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_touch:1 of
 msgid "Get touch status."
 msgstr "获取触摸状态。"
 
-#: 1b19643109a549319da13a4745ce5043 3951a800df1d4b19bd04c83ad243cade
-#: 580526b0bf5143498704e11a75bf33f7 5b85ae42e32c4e4d8203403015856af1
-#: 84f64e78c0004735b25a72e4b3ae1c50 88464469e1fb476d97e8435cbf0267aa
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_firmware_version
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_input_voltage
@@ -472,24 +398,14 @@ msgstr "获取触摸状态。"
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_touch
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_volume
-#: base.echo_pyramid.AtomicEchoPyramidBase.record
-#: c3f407c7d3314fc8a75fb010f5afdcd9 c9489eea936345e292ab959e93a74fe9 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.record of
 msgid "Returns"
 msgstr "返回"
 
-#: 43c14badcdf64883961ceaf8ee39c794
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_touch:3 of
 msgid "(tp1, tp2, tp3, tp4), True=pressed False=released."
 msgstr "(tp1, tp2, tp3, tp4)，True=按下，False=松开。"
 
-#: 0e5cb6ccefb54c69be468b0ac01c8228 11d8b1c3cede49ecbb7149767677e5cd
-#: 13b8357cb29b432cbe540ab059fc7e52 1699260ac8e7417b97b6f897cec0ec79
-#: 1b506eed118a4bcbb80ee2eb1a55f8e1 401baea3ad544ec29b76ef87aaad4ac5
-#: 4e1e77f5055c4a258ef024a4b1c27b47 4fc9988541154fcc9588c0435bcf5598
-#: 5ab1ef8a403940bf9eacd22d7d5f0215 5d137f2077c94e44a27f126500957483
-#: 91f8c635e99f4f23904b37d9d413a0aa 9414f9645e0f48eab219a0a9e3121cf5
-#: 948861c64bdc4d2bbc616e305cad3352 a745c75adff5453b8cdb15da22fac1ba
-#: a9146f5d2b8141a3a1e76667a5a6820b ac85b58d910f4abb9b06614c1ea36a22
 #: base.echo_pyramid.AtomicEchoPyramidBase.change_sample_rate
 #: base.echo_pyramid.AtomicEchoPyramidBase.deinit
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr
@@ -511,483 +427,407 @@ msgstr "(tp1, tp2, tp3, tp4)，True=按下，False=松开。"
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_volume
 #: base.echo_pyramid.AtomicEchoPyramidBase.stop
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone
-#: d206039ac66e4cd68d0895855f82953a e2578615e79043178f6d6876018ac9d8
-#: e3e7fa87161c4a31b77d15e70c025c9f edac73e1f4664c939a50108b0b777f11
-#: ee8683c0707248409d751df2583fface facf1535345d41b2b47846e7d3442353 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone of
 msgid "Return type"
 msgstr "返回类型"
 
-#: 14d889c33c394db68c5b4a4da4238fbd
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_touch:7 of
 msgid "|get_touch.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:5 3dd7d3f5ae6f48feb5688519504462c2
+#: ../../source/refs/base.echo_pyramid.ref:6
 msgid "get_touch.png"
 msgstr ""
 
-#: 35df298c397c45e5b7923e6463e1847f
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:1 of
 msgid "Set RGB strip brightness."
 msgstr "设置 RGB 灯带亮度。"
 
-#: 789c6e4ad8a6485db061ffa28a5d834e
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness:3
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color:3
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:3
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:3
-#: c13543b30f0843739b989179719297d6 c1415eccf35c44bc8bc7fcc36a61d020
-#: f4160df333e34d87bce8fd0d9b864243 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:3 of
 msgid "Strip index (1 or 2)."
 msgstr "灯带索引（1 或 2）。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:4
-#: e2577ac8a90c4eb88b3356c34f820bc2 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:4 of
 msgid "Brightness 0~100."
 msgstr "亮度 0~100。"
 
-#: 4085a927e9cd4cb299987ad8f9044f8a
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:5 of
 msgid "Save to flash."
 msgstr "保存到闪存。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:9
-#: f4f9b6f293624caba4b59560ec886eaa of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_brightness:9 of
 msgid "|set_rgb_brightness.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:7 f84d23f991894a95886955a221012632
+#: ../../source/refs/base.echo_pyramid.ref:8
 msgid "set_rgb_brightness.png"
 msgstr ""
 
-#: 1b555c12275746909e863bff307815fc
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness:1 of
 msgid "Get RGB strip brightness."
 msgstr "获取 RGB 灯带亮度。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness:4
-#: d96311aa959f4476bdafe3899eb391d0 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness:4 of
 msgid "Brightness 0~100, or 0 on error/invalid strip."
 msgstr "亮度 0~100，错误或无效灯带时返回 0。"
 
-#: a7db9199138c42b796707c94354a466a
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_brightness:8 of
 msgid "|get_rgb_brightness.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:6 6cc54b341e614220b0754f9fa9fd40df
+#: ../../source/refs/base.echo_pyramid.ref:7
 msgid "get_rgb_brightness.png"
 msgstr ""
 
-#: 47212c5d61b9448fa954cc375254bb0f
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:1 of
 msgid "Set single RGB LED color."
 msgstr "设置单颗 RGB LED 颜色。"
 
-#: 2d712e8f0c564797981453a15895044f 6ea1ef8de17646718c0d81eb4e258fbd
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color:4
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:4 of
 msgid "LED index 0~13."
 msgstr "LED 索引 0~13。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:5
-#: f62ceca768d74d988e1235ba2d1424be of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:5 of
 msgid "24-bit color (R << 16 | G << 8 | B)."
 msgstr "24 位颜色 (R << 16 | G << 8 | B)。"
 
-#: 2e05422ec68044278c4c92dfa0e298fb
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_rgb_color:9 of
 msgid "|set_rgb_color.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:9 90e8bdcf16d94de380d80deaa63f558b
+#: ../../source/refs/base.echo_pyramid.ref:10
 msgid "set_rgb_color.png"
 msgstr ""
 
-#: a5af77a72ce644c39a75f1cde9f6ae20
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color:1 of
 msgid "Get single RGB LED color."
 msgstr "获取单颗 RGB LED 颜色。"
 
-#: 78326311a0af44bd8cacc6e64b38ee17
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color:5 of
 msgid "24-bit color (R << 16 | G << 8 | B), or 0 on error."
 msgstr "24 位颜色 (R << 16 | G << 8 | B)，错误时返回 0。"
 
-#: 433001d3b178408fa9f42219cb7892c4
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_rgb_color:9 of
 msgid "|get_rgb_color.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:8 ef4a7e401211437fa5e88a1bb8e4db88
+#: ../../source/refs/base.echo_pyramid.ref:9
 msgid "get_rgb_color.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_addr:1
-#: c4ac7c561565439488f98470790d95f5 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_addr:1 of
 msgid "Set STM32 I2C address. Takes effect after a short delay."
 msgstr "设置 STM32 I2C 地址，短延时后生效。"
 
-#: b915ce34f0e14bffb973ae6f8cdac224
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_addr:3 of
 msgid "New address 0x08~0x77."
 msgstr "新地址 0x08~0x77。"
 
-#: 61117f3627dd42e4b66bb04a766c44f8
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_addr:7 of
 msgid "|set_addr.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:26 4ce9da4210cf4411ad76b1276134f851
+#: ../../source/refs/base.echo_pyramid.ref:27
 msgid "set_addr.png"
 msgstr ""
 
-#: 611aa77f55f5433da9e0c7011ec48552
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr:1 of
 msgid "Get current STM32 I2C address."
 msgstr "获取当前 STM32 I2C 地址。"
 
-#: 465c01631cbc45ef9329ae7f98df23ea
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr:3 of
 msgid "I2C address, or 0 on error."
 msgstr "I2C 地址，错误时返回 0。"
 
-#: 8ec31f8bdec341bf8c1ac1360dc23b28
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_addr:7 of
 msgid "|get_addr.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:25 aefd382085914a0a80cc82775ce85d7d
+#: ../../source/refs/base.echo_pyramid.ref:26
 msgid "get_addr.png"
 msgstr ""
 
-#: 65074ce82b4f4a5fbc4b5d2a3db780dd
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_firmware_version:1 of
 msgid "Get STM32 firmware version."
 msgstr "获取 STM32 固件版本。"
 
-#: 7e0cddb97bc34d309d1ff5228d073202
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_firmware_version:3 of
 msgid "Version number, or 0 on error."
 msgstr "版本号，错误时返回 0。"
 
-#: 702a6ffb7d4b45d3ac0e64c693113c1e
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_firmware_version:7 of
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:24 f12a29f69bc04520851e6ca4d540a448
+#: ../../source/refs/base.echo_pyramid.ref:25
 msgid "get_firmware_version.png"
 msgstr ""
 
-#: 4e78fd8842c04ccc8bd3bc3c8026ca68
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_input_voltage:1 of
 msgid "Get input voltage (from STM32 ADC)."
 msgstr "获取输入电压（来自 STM32 ADC）。"
 
-#: 13309743013b4f4c9fe4bf6646529ef3
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_input_voltage:3 of
 msgid "Voltage in mV, or 0 on error."
 msgstr "电压（毫伏），错误时返回 0。"
 
-#: 1ee688a3336d4008a74068867b4a03cc
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_input_voltage:7 of
 msgid "|get_input_voltage.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:23 8b18e86f1e434aa090438e755d6f63a1
+#: ../../source/refs/base.echo_pyramid.ref:24
 msgid "get_input_voltage.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_mute:1
-#: e5acb4fae2da4e52b7bdb69a9c808418 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_mute:1 of
 msgid "Mute or unmute speaker (AW87559)."
 msgstr "静音或取消静音扬声器（AW87559）。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_mute:3
-#: bf7c5d47f0904148828fdb951dc30ead of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_mute:3 of
 msgid "True to mute, False to unmute."
 msgstr "True 静音，False 取消静音。"
 
-#: b6d6c4d58d2f434b9ce8b85dfe788d87
 #: base.echo_pyramid.AtomicEchoPyramidBase.set_mute:7 of
 msgid "|set_mute.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:19 0e2d5df6725b4bd990cb2be7152585e0
+#: ../../source/refs/base.echo_pyramid.ref:20
 msgid "set_mute.png"
 msgstr ""
 
-#: 2c3287949aac4bae8df1af3807a50f12
 #: base.echo_pyramid.AtomicEchoPyramidBase.change_sample_rate:1 of
 msgid "Change audio sample rate. Affects playback and recording."
 msgstr "更改音频采样率，影响播放与录音。"
 
-#: 9e694113563846a8b7c153eb30a49595
 #: base.echo_pyramid.AtomicEchoPyramidBase.change_sample_rate:3 of
 msgid "Sample rate in Hz (e.g. 16000, 24000)."
 msgstr "采样率（Hz），如 16000、24000。"
 
-#: b4f94ed1210e4d93b1ab44a885c74bae
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_wav_file:1 of
 msgid "Play a WAV file from storage."
 msgstr "从存储播放 WAV 文件。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav_file:3
-#: f77f1f1dee3046029df758c35389a540 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav_file:3 of
 msgid "WAV file path."
 msgstr "WAV 文件路径。"
 
-#: 7c59ce5f5c33467ba5bbb16dd3874ed2
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_wav_file:7 of
 msgid "|play_wav_file.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:13 22bacb9bf7454751a4a04cd0e5b2bea6
+#: ../../source/refs/base.echo_pyramid.ref:14
 msgid "play_wav_file.png"
 msgstr ""
 
-#: 43f3b1487f0142e892db3446ec0fd468
 #: base.echo_pyramid.AtomicEchoPyramidBase.tone:1 of
 msgid "Play a beep tone."
 msgstr "播放蜂鸣音。"
 
-#: 1751b10e47d24b76908ff12091f341d3
 #: base.echo_pyramid.AtomicEchoPyramidBase.tone:3 of
 msgid "Frequency in Hz."
 msgstr "频率（Hz）。"
 
-#: 062eeea13bdc49fda92fb7a468def8fd
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:6
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:7
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone:4
-#: c442f7bc114c4fb3b9ddaff6a09b28b5 df271ece98f5456293454490b11c7afc of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone:4 of
 msgid "Duration in milliseconds."
 msgstr "持续时间（毫秒）。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.tone:8
-#: f8567d87a1824b51ac96034966b18f71 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.tone:8 of
 msgid "|tone.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:14 9d15a441bb1f499d8804cc58da599d64
+#: ../../source/refs/base.echo_pyramid.ref:15
 msgid "tone.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:1
-#: fca12d75d24c4a37805849522544ef93 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:1 of
 msgid "Play WAV data from buffer."
 msgstr "从缓冲区播放 WAV 数据。"
 
-#: 8a433416438d4c309e0a6e86f1e5ac6f
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:3 of
 msgid "WAV data."
 msgstr "WAV 数据。"
 
-#: 63a7e0cb9b204d95aec162b1b8b9dda4
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:7
-#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:4
-#: f4ec2d1c181c4f17afc5953e3055177a of
+#: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:4 of
 msgid "Duration in ms, or -1 for full buffer."
 msgstr "持续时间（毫秒），-1 表示整段缓冲区。"
 
-#: 82452dafd44d4945ba9c13bfad0d0d1a
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_wav:8 of
 msgid "|play_wav.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:15 2c868c6829e742a380ec2028e6a5ebd3
+#: ../../source/refs/base.echo_pyramid.ref:16
 msgid "play_wav.png"
 msgstr ""
 
-#: af2f9ca9a6e7476ab955a2e626bd0b61
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:1 of
 msgid "Play raw PCM data."
 msgstr "播放原始 PCM 数据。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:3
-#: f7b6f7f40bc4478599e0f4d0856fc73f of
+#: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:3 of
 msgid "Raw PCM data."
 msgstr "原始 PCM 数据。"
 
-#: 4ded2ce3bd8c4ce6829b067d60859331 902ba85e19204f659bc936fb63aec107
-#: a451586cb50a4f3aaf7e3c5e2b4d48d7
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:4
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:3
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:4 of
 msgid "Sample rate in Hz."
 msgstr "采样率（Hz）。"
 
-#: 10ad389fbfbc4f61af85d8ff91b36b6a
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:5 of
 msgid "Bit depth (e.g. 16)."
 msgstr "位深（如 16）。"
 
-#: 894896daa7614520ad37c848ced02d0c
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:6 of
 msgid "Number of channels (1 or 2)."
 msgstr "声道数（1 或 2）。"
 
-#: 12c9995bd11a47c4b83e9213277ac8ad
 #: base.echo_pyramid.AtomicEchoPyramidBase.play_raw:11 of
 msgid "|play_raw.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:16 4ac2efc7c9cd4931892095fa2c271573
+#: ../../source/refs/base.echo_pyramid.ref:17
 msgid "play_raw.png"
 msgstr ""
 
-#: 550d5bf4af4e43f6a495385dc2787955
 #: base.echo_pyramid.AtomicEchoPyramidBase.pause:1 of
 msgid "Pause playback."
 msgstr "暂停播放。"
 
-#: 0a61475d18814428b5a19c8b36660fcb
 #: base.echo_pyramid.AtomicEchoPyramidBase.pause:5 of
 msgid "|pause.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:10 7b3ac82d4fe54fd6bfd209fc6f37ba82
+#: ../../source/refs/base.echo_pyramid.ref:11
 msgid "pause.png"
 msgstr ""
 
-#: 7199c448d190491cb0d53effae5d9ffa
 #: base.echo_pyramid.AtomicEchoPyramidBase.resume:1 of
 msgid "Resume playback."
 msgstr "恢复播放。"
 
-#: 85dd406c76274eab9e256d3dedff812a
 #: base.echo_pyramid.AtomicEchoPyramidBase.resume:5 of
 msgid "|resume.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:11 a190715fc9e1425293788f994abd6537
+#: ../../source/refs/base.echo_pyramid.ref:12
 msgid "resume.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.stop:1
-#: bfbf3f4acc43429a8c9f7db89bb7b8db of
+#: base.echo_pyramid.AtomicEchoPyramidBase.stop:1 of
 msgid "Stop playback."
 msgstr "停止播放。"
 
-#: 31f351aae8094260bd2c84cf46152229
 #: base.echo_pyramid.AtomicEchoPyramidBase.stop:5 of
 msgid "|stop.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:12 c43d73c658944bb6bf52f37f858c82fb
+#: ../../source/refs/base.echo_pyramid.ref:13
 msgid "stop.png"
 msgstr ""
 
-#: 6924784f2eaf462f934f4ad2b2bd1475
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_volume:1 of
 msgid "Get speaker volume."
 msgstr "获取扬声器音量。"
 
-#: 5e71910fff4041c6b32b67186eaf7ea2
 #: base.echo_pyramid.AtomicEchoPyramidBase.get_volume:3 of
 msgid "Current volume value."
 msgstr "当前音量值。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.get_volume:7
-#: f6e9adc446654507b1ec8f0f30f01160 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.get_volume:7 of
 msgid "|get_volume.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:17 b9f9307d4b6445e9ae324fa85f276156
+#: ../../source/refs/base.echo_pyramid.ref:18
 msgid "get_volume.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:1
-#: dbcb9887ecb944c0b68e8e8cbbf93909 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:1 of
 msgid "Set speaker volume."
 msgstr "设置扬声器音量。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:3
-#: de79002219344c118ab66c226b8f2244 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:3 of
 msgid "Volume value."
 msgstr "音量值。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:7
-#: e99ccd6924a3495e987bea419b36720f of
+#: base.echo_pyramid.AtomicEchoPyramidBase.set_volume:7 of
 msgid "|set_volume.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:18 f89e5de4df4b4eb480343af4c662a90a
+#: ../../source/refs/base.echo_pyramid.ref:19
 msgid "set_volume.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:1
-#: beb681f5e30f4574b5deaec483f4f692 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:1 of
 msgid "Record audio to a WAV file."
 msgstr "将音频录制为 WAV 文件。"
 
-#: b66fba94452346c68cbd382a7cd3007e
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:3 of
 msgid "Output file path."
 msgstr "输出文件路径。"
 
-#: 53a43c7e801345dbb497679d63cfa10f 888306ee872a40b3b1972327b904954e
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:4
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:5 of
 msgid "Bit depth."
 msgstr "位深。"
 
-#: 071c3e5c4e6e44d8b034d7fc4202fafa
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:6 of
 msgid "Channel mode. Use ``MONO`` or ``STEREO``."
 msgstr "声道模式，使用 ``MONO`` 或 ``STEREO``。"
 
-#: b5b4d61de39d4ded99138e0713020c0e
 #: base.echo_pyramid.AtomicEchoPyramidBase.record_wav_file:11 of
 msgid "|record_wav_file.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:21 90eafa3d857b40209528db6dd6b26754
+#: ../../source/refs/base.echo_pyramid.ref:22
 msgid "record_wav_file.png"
 msgstr ""
 
-#: 95d2822d105f488ebc0421f31139c711
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:1 of
 msgid "Record audio to PCM buffer."
 msgstr "将音频录制到 PCM 缓冲区。"
 
-#: 1580a68fbb3e4241bfb1e5883de9f9d6
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:5 of
 msgid "Number of channels."
 msgstr "声道数。"
 
-#: 5e4e8cc82d8a44af849892ae574fa8ab
 #: base.echo_pyramid.AtomicEchoPyramidBase.record:7 of
 msgid "Record result (implementation-dependent)."
 msgstr "录制结果（与实现相关）。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.record:11
-#: fc4da990fbb74619a0b4b963f8df83a8 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.record:11 of
 msgid "|record.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:22 6500bcd97e0a4690aaeca2cd6fad1df9
+#: ../../source/refs/base.echo_pyramid.ref:23
 msgid "record.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.pcm_buffer:1
-#: e2e14a8367da486491639349755f5113 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.pcm_buffer:1 of
 msgid "PCM buffer from the microphone (read-only). Available after recording."
 msgstr "来自麦克风的 PCM 缓冲区（只读），录音后可用。"
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.pcm_buffer:5
-#: f111a673897d4f3bbc9fc6fb728f9e38 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.pcm_buffer:5 of
 msgid "|pcm_buffer.png|"
 msgstr ""
 
-#: ../../source/refs/base.echo_pyramid.ref:20 864224f625a5464a85d2434aa3ec7d5e
+#: ../../source/refs/base.echo_pyramid.ref:21
 msgid "pcm_buffer.png"
 msgstr ""
 
-#: base.echo_pyramid.AtomicEchoPyramidBase.deinit:1
-#: e9e27b384a144d11b5098cf3cda62a69 of
+#: base.echo_pyramid.AtomicEchoPyramidBase.deinit:1 of
 msgid "Deinitialize speaker and microphone, and mute output."
 msgstr "反初始化扬声器与麦克风，并静音输出。"
+
+#~ msgid "|atoms3r_echopyramid_usb_voltage_example.png|"
+#~ msgstr ""
+
+#~ msgid "atoms3r_echopyramid_usb_voltage_example.png"
+#~ msgstr ""
 

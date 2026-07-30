@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-31 18:27+0800\n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,153 +21,144 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../source/base/audio35.rst:2 ../../source/base/audio35.rst:19
-#: ../../source/refs/base.audio35.ref 7c4bdcaae60b4e829929b4b0a3d0151b
-#: d7991d6c58ef46f289ae0f78543b36d7
+#: ../../source/refs/base.audio35.ref
 msgid "Atomic Audio-3.5 Base"
 msgstr ""
 
-#: ../../source/base/audio35.rst:8 a71c2358907f4d4e90f0a1add4b42e49
+#: ../../source/base/audio35.rst:8
 msgid "The following products are supported:"
 msgstr "支持以下产品："
 
-#: ../../source/base/audio35.rst:10 5a659e43821442fb843192f437387661
+#: ../../source/base/audio35.rst:10
 msgid "|Atomic Audio-3.5 Base|"
 msgstr ""
 
-#: ../../source/base/audio35.rst:12 82048808ad8a403cb7dc784a97a50a5b
+#: ../../source/base/audio35.rst:12
 msgid "Below is the detailed support for Atomic Audio-3.5 Base on the host:"
 msgstr "以下是 Atomic Audio-3.5 Base 在主控端的详细支持情况："
 
-#: ../../source/base/audio35.rst:19 3ceff8b88c0846af9ae523ed9e3cd004
+#: ../../source/base/audio35.rst:19
 msgid "Controller"
 msgstr "控制器"
 
-#: ../../source/base/audio35.rst:21 7c4bdcaae60b4e829929b4b0a3d0151b
+#: ../../source/base/audio35.rst:21
 msgid "Atom Echo"
 msgstr ""
 
-#: ../../source/base/audio35.rst:21 06bc62dea1aa40f59e8d6c0c3583b394
+#: ../../source/base/audio35.rst:21
 msgid "|O|"
 msgstr ""
 
-#: ../../source/base/audio35.rst:23 7c4bdcaae60b4e829929b4b0a3d0151b
+#: ../../source/base/audio35.rst:23
 msgid "Atom Lite"
 msgstr ""
 
 #: ../../source/base/audio35.rst:23 ../../source/base/audio35.rst:25
 #: ../../source/base/audio35.rst:27 ../../source/base/audio35.rst:29
 #: ../../source/base/audio35.rst:31 ../../source/base/audio35.rst:33
-#: ../../source/base/audio35.rst:35 275c259c61c54e08ab2a9412028331f6
-#: 2eaabfda93e94e2e920312c097717dfb 72505242f3db4e9e97b210cc7bcd646c
-#: 94ed3effcf1a4fd9aac5a4864ca4c68c c9f2a72fb32745c8a4e8970882047449
-#: e2583db833cb42768e648022ee5cb221 f1808651f4d2474e8581bcea6f7fd270
+#: ../../source/base/audio35.rst:35
 msgid "|S|"
 msgstr ""
 
-#: ../../source/base/audio35.rst:25 48dcd0ca79444eaaaeab841735016221
+#: ../../source/base/audio35.rst:25
 msgid "Atom Matrix"
 msgstr ""
 
-#: ../../source/base/audio35.rst:27 ed5d3289b8aa47239a50ee01495a6182
+#: ../../source/base/audio35.rst:27
 msgid "AtomS3"
 msgstr ""
 
-#: ../../source/base/audio35.rst:29 7c4bdcaae60b4e829929b4b0a3d0151b
+#: ../../source/base/audio35.rst:29
 msgid "AtomS3 Lite"
 msgstr ""
 
-#: ../../source/base/audio35.rst:31 e33f456248c34bb4bfd579d2903058f3
+#: ../../source/base/audio35.rst:31
 msgid "AtomS3R"
 msgstr ""
 
-#: ../../source/base/audio35.rst:33 25207c5210234cf3bb056160a824bcb7
+#: ../../source/base/audio35.rst:33
 msgid "AtomS3R-CAM"
 msgstr ""
 
-#: ../../source/base/audio35.rst:35 f9cd7b7761534dd28242066af2428d35
+#: ../../source/base/audio35.rst:35
 msgid "AtomS3R-Ext"
 msgstr ""
 
-#: ../../source/base/audio35.rst:42 0caa39809caa4c84a904e23730a32036
+#: ../../source/base/audio35.rst:42
 msgid ""
 "Atomic Audio-3.5 Base uses the same Audio CODEC and pin connections as "
 "Atomic Echo Base. For detailed usage instructions, please refer to the "
 "`Atomic Echo Base <echo.html>`_ documentation."
 msgstr ""
-"Atomic Audio-3.5 Base 使用与 Atomic Echo Base 相同的音频 CODEC 与引脚连接。"
-"详细使用说明请参考 `Atomic Echo Base <echo.html>`_ 文档。"
+"Atomic Audio-3.5 Base 使用与 Atomic Echo Base 相同的音频 CODEC 与引脚连接。详细使用说明请参考 "
+"`Atomic Echo Base <echo.html>`_ 文档。"
 
-#: ../../source/base/audio35.rst:46 bdc27a2a6c8f4cb0a977e967f46c4098
+#: ../../source/base/audio35.rst:46
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
 #: ../../source/base/audio35.rst:49 ../../source/base/audio35.rst:67
-#: 8f64464f4f514da0892a5d185d49a3aa
 msgid "Record and play WAV file"
 msgstr "录制并播放 WAV 文件"
 
-#: ../../source/base/audio35.rst:51 029eb828dfa049a2ad156a73e816c182
+#: ../../source/base/audio35.rst:51
 msgid "Open the |atoms3r_aduio_record_play_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |atoms3r_aduio_record_play_example.m5f2| 项目。"
 
 #: ../../source/base/audio35.rst:53 ../../source/base/audio35.rst:69
-#: 826358b51ca24a66b0d27493b4d4a9a1
 msgid ""
 "This example initializes Atomic Audio-3.5 Base, records stereo audio to "
-"``/flash/res/audio/test.wav`` for 5 seconds after pressing BtnA, and then "
-"plays the recorded WAV file."
+"``/flash/res/audio/test.wav`` for 5 seconds after pressing BtnA, and then"
+" plays the recorded WAV file."
 msgstr ""
 "本示例初始化 Atomic Audio-3.5 Base，按下 BtnA 后录制 5 秒立体声音频到 "
 "``/flash/res/audio/test.wav``，随后播放录制的 WAV 文件。"
 
-#: ../../source/base/audio35.rst:55 a4761e68e3c24fe3a1e15ed7fd2b1d52
+#: ../../source/base/audio35.rst:55
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/base/audio35.rst:57 7bfec3db581643c6998d7aa72a0df128
+#: ../../source/base/audio35.rst:57
 msgid "|atoms3r_aduio_record_play_example.png|"
 msgstr ""
 
-#: ../../source/refs/base.audio35.ref:6 f2acb7d201d3413494171fbff68a6c06
+#: ../../source/refs/base.audio35.ref:6
 msgid "atoms3r_aduio_record_play_example.png"
 msgstr ""
 
 #: ../../source/base/audio35.rst:59 ../../source/base/audio35.rst:77
-#: 536486f7f4e54eb3be596b88c6ffefd0
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../source/base/audio35.rst:61 ../../source/base/audio35.rst:79
-#: e8228530cdc34e8b9a83b780b502ff54
 msgid "None"
 msgstr "无"
 
-#: ../../source/base/audio35.rst:64 49067c89718c4e7f879fe4dd531a5f5c
+#: ../../source/base/audio35.rst:64
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../source/base/audio35.rst:71 0e78f7f4bcc34ff0ae78473041fe0e5c
+#: ../../source/base/audio35.rst:71
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/base/audio35.rst:83 7c4bdcaae60b4e829929b4b0a3d0151b
-msgid "AtomicAudio35Base"
-msgstr ""
-
-#: ../../source/base/audio35.rst:91 84492d6a85f343929af7059687a98ab9
+#: ../../source/base/audio35.rst:82
 msgid "**API**"
 msgstr ""
 
-#: ../../source/base/audio35.rst:94 9885a2eed6cc4c969cdab4e267b35538
+#: ../../source/base/audio35.rst:85
 msgid "class AtomicAudio35Base"
 msgstr ""
 
-#: ../../source/base/audio35.rst:101 aa3edbd0d258494a8f1664eb79b9e084
+#: ../../source/base/audio35.rst:92
 msgid ""
 "``AtomicAudio35Base`` is an alias for ``AtomicEchoBase``. Please refer to"
 " the `AtomicEchoBase <echo.html#base.echo.AtomicEchoBase>`_ class for "
 "detailed documentation."
 msgstr ""
-"``AtomicAudio35Base`` 是 ``AtomicEchoBase`` 的别名。详细说明请参考 "
-"`AtomicEchoBase <echo.html#base.echo.AtomicEchoBase>`_ 类文档。"
+"``AtomicAudio35Base`` 是 ``AtomicEchoBase`` 的别名。详细说明请参考 `AtomicEchoBase "
+"<echo.html#base.echo.AtomicEchoBase>`_ 类文档。"
+
+#~ msgid "AtomicAudio35Base"
+#~ msgstr ""
 

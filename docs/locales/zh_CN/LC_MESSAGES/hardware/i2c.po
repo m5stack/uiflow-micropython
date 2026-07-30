@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/hardware/i2c.rst:2
+msgid "I2C"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:4
+msgid ""
+"I2C implements a two-wire serial bus using an SDA data line and an SCL "
+"clock line. Use it to communicate with Unit, Hat, and other I2C "
+"peripherals."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:8
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:10
+msgid "Scan PORT.A on a CoreS3 or most S3-based controllers."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:19
+msgid "Scan PORT.A on Tough."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:29
+msgid "**API**"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:32
+msgid "class I2C"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:38
+msgid "Construct an I2C bus object."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:40
+msgid "I2C peripheral id."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:41
+msgid "SCL clock pin."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:43
+msgid "SDA data pin."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:45
+msgid "I2C bus frequency in Hz."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:47 ../../source/hardware/i2c.rst:59
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:57
+msgid ""
+"Scan all I2C addresses between 0x08 and 0x77 and return a list of "
+"responding addresses."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:67
+msgid "Read ``nbytes`` from a device register."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:69 ../../source/hardware/i2c.rst:78
+msgid "I2C device address."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:70 ../../source/hardware/i2c.rst:79
+msgid "register address."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:71
+msgid "number of bytes to read."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:72 ../../source/hardware/i2c.rst:81
+msgid "register address size in bits."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:76
+msgid "Write ``buf`` to a device register."
+msgstr ""
+
+#: ../../source/hardware/i2c.rst:80
+msgid "bytes-like object to write."
+msgstr ""
+

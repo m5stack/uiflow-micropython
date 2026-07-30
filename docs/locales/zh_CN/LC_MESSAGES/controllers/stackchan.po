@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-28 16:40+0800\n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -22,53 +22,52 @@ msgstr ""
 
 #: ../../source/controllers/stackchan.rst:3
 #: ../../source/controllers/stackchan.rst:279
-#: ../../source/refs/controllers.stackchan.ref 0fda2d74c57d4b0fb627b7911bfe8561
-#: e20d2d39252f4fdbab39064c8e854801 f66cc90d147a43c89126300586a2e252
+#: ../../source/refs/controllers.stackchan.ref
 msgid "StackChan"
 msgstr "StackChan"
 
-#: ../../source/controllers/stackchan.rst:7 a483b3a1c02b4493b639dd3257332463
+#: ../../source/controllers/stackchan.rst:7
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/controllers/stackchan.rst:9 5dda8fd628f24d2b9c35956809635a4c
+#: ../../source/controllers/stackchan.rst:9
 msgid "|StackChan|"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:12 440e35517c5942599eabc45783e9483e
+#: ../../source/controllers/stackchan.rst:12
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/controllers/stackchan.rst:15
-#: ../../source/controllers/stackchan.rst:147 f1ece571888345c5a698ba7380b0c8d3
+#: ../../source/controllers/stackchan.rst:147
 msgid "Servo zero calibration"
 msgstr "舵机零点校准"
 
 #: ../../source/controllers/stackchan.rst:18
-#: ../../source/controllers/stackchan.rst:150 9b7cf291992d406b94570be88f57789b
+#: ../../source/controllers/stackchan.rst:150
 msgid ""
 "Mechanical assembly varies between units. After flashing new firmware, "
 "calibrate the servo zero reference manually."
 msgstr "不同设备之间的机械装配会有差异。刷入新固件后，需要手动校准舵机零点参考。"
 
-#: ../../source/controllers/stackchan.rst:20 2f237934590f4ee39a353f3804a9eb7d
+#: ../../source/controllers/stackchan.rst:20
 msgid "Open the |stackchan_servo_zero_calibrate.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_servo_zero_calibrate.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:22
-#: ../../source/controllers/stackchan.rst:152 567b822d5ede43e8ae8fb06f653f2336
+#: ../../source/controllers/stackchan.rst:152
 msgid "Run the program."
 msgstr "运行程序。"
 
 #: ../../source/controllers/stackchan.rst:23
-#: ../../source/controllers/stackchan.rst:153 510024f9211c466d903955d31238a369
+#: ../../source/controllers/stackchan.rst:153
 msgid ""
 "Move the head by hand: on **X**, align the display with the base "
 "orientation; on **Y**, set the display perpendicular to the base."
 msgstr "手动转动头部：在 **X** 方向上，使显示屏与底座朝向一致；在 **Y** 方向上，使显示屏与底座垂直。"
 
 #: ../../source/controllers/stackchan.rst:24
-#: ../../source/controllers/stackchan.rst:154 4217caa4e3004c49b3c784bcbd61b421
+#: ../../source/controllers/stackchan.rst:154
 msgid "Tap **Save** button."
 msgstr "点击 **Save** 按钮。"
 
@@ -82,26 +81,25 @@ msgstr "点击 **Save** 按钮。"
 #: ../../source/controllers/stackchan.rst:135
 #: ../../source/controllers/stackchan.rst:294
 #: ../../source/controllers/stackchan.rst:310
-#: ../../source/controllers/stackchan.rst:326
-#: ../../source/controllers/stackchan.rst:343
-#: ../../source/controllers/stackchan.rst:362
-#: ../../source/controllers/stackchan.rst:382
-#: ../../source/controllers/stackchan.rst:398
-#: ../../source/controllers/stackchan.rst:418
-#: ../../source/controllers/stackchan.rst:442
-#: ../../source/controllers/stackchan.rst:459
-#: ../../source/controllers/stackchan.rst:478
-#: ../../source/controllers/stackchan.rst:494
-#: ../../source/controllers/stackchan.rst:510 466125d34a8d4f1b9217bc2c081b1fde
+#: ../../source/controllers/stackchan.rst:328
+#: ../../source/controllers/stackchan.rst:345
+#: ../../source/controllers/stackchan.rst:364
+#: ../../source/controllers/stackchan.rst:384
+#: ../../source/controllers/stackchan.rst:400
+#: ../../source/controllers/stackchan.rst:420
+#: ../../source/controllers/stackchan.rst:444
+#: ../../source/controllers/stackchan.rst:462
+#: ../../source/controllers/stackchan.rst:481
+#: ../../source/controllers/stackchan.rst:497
+#: ../../source/controllers/stackchan.rst:513
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/controllers/stackchan.rst:28 7bf27a8733f440fb82d08e4b010fa8a7
+#: ../../source/controllers/stackchan.rst:28
 msgid "|stackchan_servo_zero_calibrate.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:9
-#: 67009e38152440de9e2ce1321bb6644c
 msgid "stackchan_servo_zero_calibrate.png"
 msgstr ""
 
@@ -120,7 +118,7 @@ msgstr ""
 #: ../../source/controllers/stackchan.rst:225
 #: ../../source/controllers/stackchan.rst:240
 #: ../../source/controllers/stackchan.rst:256
-#: ../../source/controllers/stackchan.rst:271 7514d82e7d664e078e450c7f7fed930c
+#: ../../source/controllers/stackchan.rst:271
 msgid "Example output:"
 msgstr "示例输出："
 
@@ -139,196 +137,186 @@ msgstr "示例输出："
 #: ../../source/controllers/stackchan.rst:227
 #: ../../source/controllers/stackchan.rst:242
 #: ../../source/controllers/stackchan.rst:258
-#: ../../source/controllers/stackchan.rst:273 0eb3ba8bf68249e88b882a77dee20ffb
+#: ../../source/controllers/stackchan.rst:273
 msgid "None"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:35
-#: ../../source/controllers/stackchan.rst:167 71079a92505d45ddb7e99ff4e8e9e563
+#: ../../source/controllers/stackchan.rst:167
 msgid "Servo angle read"
 msgstr "舵机角度读取"
 
-#: ../../source/controllers/stackchan.rst:37 2f237934590f4ee39a353f3804a9eb7d
+#: ../../source/controllers/stackchan.rst:37
 msgid "Open the |stackchan_servo_read_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_servo_read_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:39
-#: ../../source/controllers/stackchan.rst:169 c338b3f38247479f9a98f05a6ad57ba4
-#: c38557d3c8114ad196b7a2efc10925ed
+#: ../../source/controllers/stackchan.rst:169
 msgid ""
 "This example demonstrates reading X and Y servo angles in degrees with "
 "torque disabled so the head can move freely."
 msgstr "此示例演示在关闭力矩的情况下读取 X 和 Y 舵机角度（单位：度），使头部可以自由转动。"
 
 #: ../../source/controllers/stackchan.rst:42
-#: ../../source/controllers/stackchan.rst:172 5b809531f46448f58965e97126876f69
-#: f22cf7e300414ef5a864cab0e46e5182
+#: ../../source/controllers/stackchan.rst:172
 msgid ""
 "**Torque on** holds the last target and resists moving by hand. **Torque "
 "off** lets you pose the head freely while readings update—handy for "
 "checking calibration."
 msgstr "开启力矩控制时会保持上次目标位置，并阻碍手动转动。关闭力矩控制后可在角度实时更新时自由调整头部姿态，便于检查校准结果。"
 
-#: ../../source/controllers/stackchan.rst:46 7c37841dbab8400a993f1d720e5771ff
+#: ../../source/controllers/stackchan.rst:46
 msgid "|stackchan_servo_read_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:10
-#: 4c9d359c2c1f44f98e49bed01503a54f
 msgid "stackchan_servo_read_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:53
-#: ../../source/controllers/stackchan.rst:185 dcbf8ca4ca074a9ca3a4e25a1a9c35fe
+#: ../../source/controllers/stackchan.rst:185
 msgid "Servo control"
 msgstr "舵机控制"
 
-#: ../../source/controllers/stackchan.rst:55 ecc0817f5c744d8fa483c6af770d00e4
+#: ../../source/controllers/stackchan.rst:55
 msgid "Open the |stackchan_servo_control_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_servo_control_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:57
-#: ../../source/controllers/stackchan.rst:187 9c4898f27fcd450e8895301be511ae6e
-#: 9f236b6f78f74cab858fef0dbe89e30a
+#: ../../source/controllers/stackchan.rst:187
 msgid ""
 "This example demonstrates moving the servos to commanded positions and "
 "driving the X servo in PWM mode using ``set_servo_angle`` and "
 "``set_servo_x_pwm``."
-msgstr "此示例演示使用 ``set_servo_angle`` 和 ``set_servo_x_pwm`` 控制舵机移动到指定位置，并以 PWM 模式驱动 X 轴舵机。"
+msgstr ""
+"此示例演示使用 ``set_servo_angle`` 和 ``set_servo_x_pwm`` 控制舵机移动到指定位置，并以 PWM 模式驱动"
+" X 轴舵机。"
 
-#: ../../source/controllers/stackchan.rst:61 b4cb164a971142ec8c09912896859932
+#: ../../source/controllers/stackchan.rst:61
 msgid "|stackchan_servo_control_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:11
-#: 0c1e4832dddf480a8e49fd2c7f00fc3e
 msgid "stackchan_servo_control_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:68
-#: ../../source/controllers/stackchan.rst:200 7223aaf86acc4ca29e4ea15766d05813
-#: bd5258a8d4174f248a5c9c291fd212e8
+#: ../../source/controllers/stackchan.rst:200
 msgid "Face tracking"
 msgstr "人脸跟踪"
 
-#: ../../source/controllers/stackchan.rst:70 52e45f6f1eb64ccd8a7dc672cdbe03ff
+#: ../../source/controllers/stackchan.rst:70
 msgid "Open the |stackchan_face_tracking_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_face_tracking_example.m5f2| 项目。"
 
-#: ../../source/controllers/stackchan.rst:72 7571ac8969d346b5a0280aebd65305b7
+#: ../../source/controllers/stackchan.rst:72
 msgid "This demo implements face tracking."
 msgstr "此示例实现人脸跟踪。"
 
-#: ../../source/controllers/stackchan.rst:76 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:76
 msgid "|stackchan_face_tracking_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:12
-#: 1caa6fdce85446c7a29c43193476f063
 msgid "stackchan_face_tracking_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:83
-#: ../../source/controllers/stackchan.rst:215 71079a92505d45ddb7e99ff4e8e9e563
+#: ../../source/controllers/stackchan.rst:215
 msgid "Servo power info"
 msgstr "舵机电源信息"
 
-#: ../../source/controllers/stackchan.rst:85 ecc0817f5c744d8fa483c6af770d00e4
+#: ../../source/controllers/stackchan.rst:85
 msgid "Open the |stackchan_servo_power_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_servo_power_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:87
-#: ../../source/controllers/stackchan.rst:217 57b146fb1f3046359bc774a65933d4c3
-#: 61663fbd90724e3e9d3ae81a2aebe35f
+#: ../../source/controllers/stackchan.rst:217
 msgid "This example demonstrates read and display servo power information."
 msgstr "此示例演示读取并显示舵机电源信息。"
 
-#: ../../source/controllers/stackchan.rst:91 b4cb164a971142ec8c09912896859932
+#: ../../source/controllers/stackchan.rst:91
 msgid "|stackchan_servo_power_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:13
-#: 0c1e4832dddf480a8e49fd2c7f00fc3e
 msgid "stackchan_servo_power_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:98
-#: ../../source/controllers/stackchan.rst:230 124271b5126a4bedb1e2840cf1d4ea34
+#: ../../source/controllers/stackchan.rst:230
 msgid "Touch & RGB"
 msgstr "触摸与 RGB"
 
-#: ../../source/controllers/stackchan.rst:100 52c9efd8ae014fcabaf84f0bb07071b7
+#: ../../source/controllers/stackchan.rst:100
 msgid "Open the |stackchan_tp_rgb_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_tp_rgb_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:102
-#: ../../source/controllers/stackchan.rst:232 b304d7b4efe64a20ba99ad044caa8567
+#: ../../source/controllers/stackchan.rst:232
 msgid ""
 "This example demonstrates mapping touch zones to RGB strip colours (three"
 " logical touch points on two strips)."
 msgstr "此示例演示将触摸区域映射到 RGB 灯带颜色（两条灯带上的三个逻辑触摸点）。"
 
-#: ../../source/controllers/stackchan.rst:106 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:106
 msgid "|stackchan_tp_rgb_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:15
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_tp_rgb_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:113
-#: ../../source/controllers/stackchan.rst:245 8d65f4709fe14b458ce989d120d46c54
+#: ../../source/controllers/stackchan.rst:245
 msgid "NFC"
 msgstr "NFC"
 
-#: ../../source/controllers/stackchan.rst:115 52e45f6f1eb64ccd8a7dc672cdbe03ff
+#: ../../source/controllers/stackchan.rst:115
 msgid "Open the |stackchan_nfc_detect_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_nfc_detect_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:117
-#: ../../source/controllers/stackchan.rst:247 8dfa7ef2751940e2ae04b51d3365f231
-#: ffe49f1a35964ead9a335e3ecc4a6c73
+#: ../../source/controllers/stackchan.rst:247
 msgid ""
 "This example demonstrates detecting NFC tags and displaying UID and tag "
 "type on screen. For the full **NFC Unit** API reference (``detect``, "
 "read/write, tag types, etc.), see `NFC Unit <../unit/nfc.html>`__."
-msgstr "此示例演示检测 NFC 标签，并在屏幕上显示 UID 和标签类型。完整的 **NFC Unit** API 参考（``detect``、读写、标签类型等）请参见 `NFC Unit <../unit/nfc.html>`__。"
+msgstr ""
+"此示例演示检测 NFC 标签，并在屏幕上显示 UID 和标签类型。完整的 **NFC Unit** API "
+"参考（``detect``、读写、标签类型等）请参见 `NFC Unit <../unit/nfc.html>`__。"
 
-#: ../../source/controllers/stackchan.rst:122 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:122
 msgid "|stackchan_nfc_detect_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:16
-#: 1caa6fdce85446c7a29c43193476f063
 msgid "stackchan_nfc_detect_example.png"
 msgstr ""
 
 #: ../../source/controllers/stackchan.rst:129
-#: ../../source/controllers/stackchan.rst:261 18e7c93c2f81460a88ba69233965979e
+#: ../../source/controllers/stackchan.rst:261
 msgid "Infrared (IR)"
 msgstr "红外（IR）"
 
-#: ../../source/controllers/stackchan.rst:131 e6e7ef1c218843b1b339198037eba40a
+#: ../../source/controllers/stackchan.rst:131
 msgid "Open the |stackchan_ir_tx_rx_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stackchan_ir_tx_rx_example.m5f2| 项目。"
 
 #: ../../source/controllers/stackchan.rst:133
-#: ../../source/controllers/stackchan.rst:263 87885f6d063149c0a3310a7046ccbb02
-#: af11061e922640b7b253bd68f67272d5
+#: ../../source/controllers/stackchan.rst:263
 msgid "This example demonstrates infrared transmit and receive in NEC style."
 msgstr "此示例演示 NEC 风格的红外发送与接收。"
 
-#: ../../source/controllers/stackchan.rst:137 2f5d547eeb354938b1f92211c37daf39
+#: ../../source/controllers/stackchan.rst:137
 msgid "|stackchan_ir_tx_rx_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:17
-#: 75e1c725b66f4a3ea3e58f91c66c4e54
 msgid "stackchan_ir_tx_rx_example.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:144 f65fd54aa82b463b88226c41fba9709c
+#: ../../source/controllers/stackchan.rst:144
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
@@ -342,367 +330,370 @@ msgstr "MicroPython 应用示例"
 #: ../../source/controllers/stackchan.rst:265
 #: ../../source/controllers/stackchan.rst:298
 #: ../../source/controllers/stackchan.rst:314
-#: ../../source/controllers/stackchan.rst:330
-#: ../../source/controllers/stackchan.rst:347
-#: ../../source/controllers/stackchan.rst:368
-#: ../../source/controllers/stackchan.rst:386
-#: ../../source/controllers/stackchan.rst:402
-#: ../../source/controllers/stackchan.rst:426
-#: ../../source/controllers/stackchan.rst:446
-#: ../../source/controllers/stackchan.rst:465
-#: ../../source/controllers/stackchan.rst:482
-#: ../../source/controllers/stackchan.rst:498
-#: ../../source/controllers/stackchan.rst:514 54b3f378d716422e874ebfaf73ae3f6f
+#: ../../source/controllers/stackchan.rst:332
+#: ../../source/controllers/stackchan.rst:349
+#: ../../source/controllers/stackchan.rst:370
+#: ../../source/controllers/stackchan.rst:388
+#: ../../source/controllers/stackchan.rst:404
+#: ../../source/controllers/stackchan.rst:428
+#: ../../source/controllers/stackchan.rst:448
+#: ../../source/controllers/stackchan.rst:468
+#: ../../source/controllers/stackchan.rst:485
+#: ../../source/controllers/stackchan.rst:501
+#: ../../source/controllers/stackchan.rst:517
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/controllers/stackchan.rst:202 31f7f9010384478bb63d42af07526434
+#: ../../source/controllers/stackchan.rst:202
 msgid "This example implements face tracking."
 msgstr "案例实现人脸跟踪功能"
 
-#: ../../source/controllers/stackchan.rst:276 e9c299a7bf3842c6914974acf68ed239
+#: ../../source/controllers/stackchan.rst:276
 msgid "**API**"
 msgstr "API 参考"
 
-#: ../../source/controllers/stackchan.rst:283 8f8713703d5349d186d53448c78bdf01
+#: ../../source/controllers/stackchan.rst:283
 msgid ""
 "StackChan board driver: SCS serial servos on UART, RGB and servo power on"
 " M5IOE1, Si12T touch, INA226 (battery bus), and onboard NFC "
 "(``ST25R3916``) as :class:`unit.nfc.NFCUnit`."
-msgstr "StackChan 板级驱动：包括 UART 上的 SCS 串口舵机、M5IOE1 上的 RGB 和舵机供电、Si12T 触摸、INA226（电池总线），以及作为 :class:`unit.nfc.NFCUnit` 的板载 NFC（``ST25R3916``）。"
+msgstr ""
+"StackChan 板级驱动：包括 UART 上的 SCS 串口舵机、M5IOE1 上的 RGB 和舵机供电、Si12T "
+"触摸、INA226（电池总线），以及作为 :class:`unit.nfc.NFCUnit` 的板载 NFC（``ST25R3916``）。"
 
-#: ../../source/controllers/stackchan.rst:285 562ff4914b034e0ebdac315ba38b235e
+#: ../../source/controllers/stackchan.rst:285
 msgid ""
 "The class is a **singleton**; always construct with the same ``i2c`` and "
 "``uart`` ids."
 msgstr "该类是**单例**；请始终使用相同的 ``i2c`` 和 ``uart`` id 进行构造。"
 
-#: ../../source/controllers/stackchan.rst 575f817a695048ab87e15dcba3bc8a9a
+#: ../../source/controllers/stackchan.rst
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:287 d76b26713f3f4e11875b7cfbe4aa6dac
+#: ../../source/controllers/stackchan.rst:287
 msgid "``I2C`` peripheral id."
 msgstr "``I2C`` 外设 id。"
 
-#: ../../source/controllers/stackchan.rst:288 62c316b55fbc4577b5d2fd46c1d27bfa
+#: ../../source/controllers/stackchan.rst:288
 msgid "``UART`` id for the 1 Mbaud servo bus."
 msgstr "用于 1 Mbaud 舵机总线的 ``UART`` id。"
 
-#: ../../source/controllers/stackchan.rst:290 9934bc59fe9547558069d5d241755416
+#: ../../source/controllers/stackchan.rst:290
 msgid ""
 "After init, the instance exposes ``nfc`` (a :class:`unit.nfc.NFCUnit`—see"
 " `NFC Unit <../unit/nfc.html>`__ for the complete API), ``touch``, "
 "``i2c``, and low-level ``servo`` (``Scscl`` instance) for advanced use."
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:292 28cf812379f04909a01295e612f987c6
+#: ../../source/controllers/stackchan.rst:292
 msgid ""
 "Module constants include ``SERVO_ID_X`` (``1``), ``SERVO_ID_Y`` (``2``) "
 "and related limits—also available as class attributes on ``StackChan``."
-msgstr "模块常量包括 ``SERVO_ID_X``（``1``）、``SERVO_ID_Y``（``2``）及相关限制值；这些也可作为 ``StackChan`` 的类属性使用。"
+msgstr ""
+"模块常量包括 ``SERVO_ID_X``（``1``）、``SERVO_ID_Y``（``2``）及相关限制值；这些也可作为 "
+"``StackChan`` 的类属性使用。"
 
-#: ../../source/controllers/stackchan.rst:296 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:296
 msgid "|stackchan_api_init.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:19
-#: 75e1c725b66f4a3ea3e58f91c66c4e54
 msgid "stackchan_api_init.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:308 8938116a7df24df3b033c94adde95cab
+#: ../../source/controllers/stackchan.rst:308
 msgid ""
 "Save logical **zero** for both axes into NVS (namespace ``servo``, keys "
 "``zero_pos_1`` / ``zero_pos_2``)."
 msgstr "将两个轴的逻辑**零点**保存到 NVS 中（命名空间 ``servo``，键名 ``zero_pos_1`` / ``zero_pos_2``）。"
 
-#: ../../source/controllers/stackchan.rst:312 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:312
 msgid "|stackchan_api_set_servo_zero.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:32
-#: 67009e38152440de9e2ce1321bb6644c
 msgid "stackchan_api_set_servo_zero.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:322 c0d73220a7004e4db878c1eeefe74e82
+#: ../../source/controllers/stackchan.rst:322
 msgid "Enable or disable servo rail power via the IO expander."
 msgstr "通过 IO 扩展器启用或关闭舵机供电。"
 
-#: ../../source/controllers/stackchan.rst:324 21347cb30686492fb2e4a0fd59a9aba9
+#: ../../source/controllers/stackchan.rst:324
 msgid "Power on or off."
 msgstr "打开或关闭电源。"
 
-#: ../../source/controllers/stackchan.rst:328 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:325
+msgid ""
+"Optional power-on wait time in milliseconds. If omitted, the default is "
+"500 ms."
+msgstr ""
+
+#: ../../source/controllers/stackchan.rst:330
 msgid "|stackchan_api_set_servo_power.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:29
-#: 4c9d359c2c1f44f98e49bed01503a54f
 msgid "stackchan_api_set_servo_power.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:338 07a7c8521ce540338801ed20f63be4aa
+#: ../../source/controllers/stackchan.rst:340
 msgid "Enable or disable torque on one servo."
 msgstr "启用或禁用单个舵机的力矩。"
 
-#: ../../source/controllers/stackchan.rst:340
-#: ../../source/controllers/stackchan.rst:357
-#: ../../source/controllers/stackchan.rst:379 bee9ff4f1eb640aeb52a41ce437861cf
+#: ../../source/controllers/stackchan.rst:342
+#: ../../source/controllers/stackchan.rst:359
+#: ../../source/controllers/stackchan.rst:381
 msgid "``SERVO_ID_X`` or ``SERVO_ID_Y``."
 msgstr "``SERVO_ID_X`` 或 ``SERVO_ID_Y``。"
 
-#: ../../source/controllers/stackchan.rst:341 6dc670f00b7f4b2984675267e25282e5
+#: ../../source/controllers/stackchan.rst:343
 msgid "Torque on or off."
 msgstr "开启或关闭力矩。"
 
-#: ../../source/controllers/stackchan.rst:345 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:347
 msgid "|stackchan_api_set_servo_torque.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:30
-#: 67009e38152440de9e2ce1321bb6644c
 msgid "stackchan_api_set_servo_torque.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:355 a50d3ea00b01445b87ee98a9273c7c1e
+#: ../../source/controllers/stackchan.rst:357
 msgid ""
 "Move the given servo to ``angle_deg`` (degrees). Use about **-135°~135°**"
 " for the X axis (``SERVO_ID_X`` / pan) and **0°~90°** for the Y axis "
 "(``SERVO_ID_Y`` / tilt)."
-msgstr "将指定舵机移动到 ``angle_deg``（度）。X 轴（``SERVO_ID_X`` / 平移）建议范围约为 **-135°~135°**，Y 轴（``SERVO_ID_Y`` / 俯仰）建议范围为 **0°~90°**。"
+msgstr ""
+"将指定舵机移动到 ``angle_deg``（度）。X 轴（``SERVO_ID_X`` / 平移）建议范围约为 **-135°~135°**，Y"
+" 轴（``SERVO_ID_Y`` / 俯仰）建议范围为 **0°~90°**。"
 
-#: ../../source/controllers/stackchan.rst:358 40fa86d931c54b95a3060259b900a311
+#: ../../source/controllers/stackchan.rst:360
 msgid "Target angle in degrees (**-135~135** for X, **0~90** for Y)."
 msgstr "目标角度（X 为 **-135~135**，Y 为 **0~90**）。"
 
-#: ../../source/controllers/stackchan.rst:359 05bdc98beaba4900ae295517e19f2f5b
+#: ../../source/controllers/stackchan.rst:361
 msgid ""
 "Move time (ms) passed to the controller; ``0`` means the time parameter "
 "does not take effect."
 msgstr "传递给控制器的运动时间（毫秒）；``0`` 表示时间参数不生效。"
 
-#: ../../source/controllers/stackchan.rst:360 5245e9bc92b845dc80c14a00c49fef0f
+#: ../../source/controllers/stackchan.rst:362
 msgid ""
 "User speed **0~100** (mapped to the bus); ``0`` means the speed parameter"
 " does not take effect."
 msgstr "用户速度 0~100（映射到总线）；``0`` 表示速度参数不生效。"
 
-#: ../../source/controllers/stackchan.rst:364 7bf27a8733f440fb82d08e4b010fa8a7
+#: ../../source/controllers/stackchan.rst:366
 msgid "|stackchan_api_set_servo_angle_time.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:34
-#: 0c1e4832dddf480a8e49fd2c7f00fc3e
 msgid "stackchan_api_set_servo_angle_time.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:366 7bf27a8733f440fb82d08e4b010fa8a7
+#: ../../source/controllers/stackchan.rst:368
 msgid "|stackchan_api_set_servo_angle_speed.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:35
-#: 0c1e4832dddf480a8e49fd2c7f00fc3e
 msgid "stackchan_api_set_servo_angle_speed.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:377 541f6224caa64aedadc2ac0734a0e95f
+#: ../../source/controllers/stackchan.rst:379
 msgid "Read the servo angle in degrees."
 msgstr "读取舵机角度（单位：度）。"
 
-#: ../../source/controllers/stackchan.rst ca4553bc413140f3be8d2017977a1ba1
+#: ../../source/controllers/stackchan.rst
 msgid "Returns"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:380 a8c22e39589a4bc3b2445a7e66a79843
+#: ../../source/controllers/stackchan.rst:382
 msgid "Angle in degrees, or ``None`` if the read failed."
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:384 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:386
 msgid "|stackchan_api_get_servo_angle.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:33
-#: 4c9d359c2c1f44f98e49bed01503a54f
 msgid "stackchan_api_get_servo_angle.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:394 91ecf54cd1b24384a57d8c5146cd1ef0
+#: ../../source/controllers/stackchan.rst:396
 msgid ""
 "Run the **X** servo in PWM mode for continuous rotation. User range is "
 "**-100~100**; the sign selects rotation direction, and the magnitude sets"
 " drive strength."
 msgstr "以 PWM 模式驱动 **X** 轴舵机进行连续转动。用户范围为 **-100~100**；符号表示旋转方向，绝对值表示驱动力大小。"
 
-#: ../../source/controllers/stackchan.rst:396 a431254410ea4aad87960ab9fa5dd7a0
+#: ../../source/controllers/stackchan.rst:398
 msgid ""
 "Signed PWM strength (clamped). Positive and negative values rotate in "
 "opposite directions; ``0`` stops output."
 msgstr "带符号的 PWM 强度（会被限制在范围内）。正负值表示相反的旋转方向；``0`` 表示停止输出。"
 
-#: ../../source/controllers/stackchan.rst:400 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:402
 msgid "|stackchan_api_set_servo_x_pwm.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:31
-#: 4c9d359c2c1f44f98e49bed01503a54f
 msgid "stackchan_api_set_servo_x_pwm.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:410 89b927f6186c46d7be6f0467fc55b486
+#: ../../source/controllers/stackchan.rst:412
 msgid "Set RGB LEDs on the strip."
 msgstr "设置灯带上的 RGB LED。"
 
-#: ../../source/controllers/stackchan.rst:412 58038fb2c5d84919b60b002adf117864
+#: ../../source/controllers/stackchan.rst:414
 msgid "One argument: fill all LEDs with ``color``."
 msgstr "一个参数：将所有 LED 填充为 ``color``。"
 
-#: ../../source/controllers/stackchan.rst:413 912f7a1d39df4d3a8b625cacf044022c
+#: ../../source/controllers/stackchan.rst:415
 msgid ""
 "Two arguments: ``strip`` (``0`` or ``1``) and ``color`` for that logical "
 "strip."
 msgstr "两个参数：``strip``（``0`` 或 ``1``）和该逻辑灯带对应的 ``color``。"
 
-#: ../../source/controllers/stackchan.rst:414 e0cff089ca54439abad4caeb544ec657
+#: ../../source/controllers/stackchan.rst:416
 msgid ""
 "Three arguments: ``strip``, ``index``, ``color`` for a single LED (strip "
 "``1`` index order matches the driver)."
-msgstr "三个参数：``strip``、``index``、``color``，用于设置单颗 LED（``strip`` 为 ``1`` 时，``index`` 顺序与驱动一致）。"
+msgstr ""
+"三个参数：``strip``、``index``、``color``，用于设置单颗 LED（``strip`` 为 ``1`` "
+"时，``index`` 顺序与驱动一致）。"
 
-#: ../../source/controllers/stackchan.rst:416 a1d1aa1fdf5940e4a229110aa2628ce3
+#: ../../source/controllers/stackchan.rst:418
 msgid "``True`` on success where applicable."
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:420 7bf27a8733f440fb82d08e4b010fa8a7
+#: ../../source/controllers/stackchan.rst:422
 msgid "|stackchan_api_set_rgb_color_all.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:23
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_set_rgb_color_all.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:422 b4cb164a971142ec8c09912896859932
+#: ../../source/controllers/stackchan.rst:424
 msgid "|stackchan_api_set_rgb_color_strip.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:24
-#: 0c1e4832dddf480a8e49fd2c7f00fc3e
 msgid "stackchan_api_set_rgb_color_strip.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:424 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:426
 msgid "|stackchan_api_set_rgb_color.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:25
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_set_rgb_color.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:436 bd62baddac5b483b998d9fda0ed32bb5
+#: ../../source/controllers/stackchan.rst:438
 msgid "Get RGB color of a single LED."
 msgstr "获取单颗 LED 的 RGB 颜色。"
 
-#: ../../source/controllers/stackchan.rst:438 59980438435e498eb26474536e26e5a1
+#: ../../source/controllers/stackchan.rst:440
 msgid "``0`` or ``1``."
 msgstr "``0`` 或 ``1``。"
 
-#: ../../source/controllers/stackchan.rst:439 5550ba480dfd4252a2b4dc4aa7e80d49
+#: ../../source/controllers/stackchan.rst:441
 msgid "``0~5`` per logical strip."
 msgstr "每条逻辑灯带范围为 ``0~5``。"
 
-#: ../../source/controllers/stackchan.rst:440 a76cfe0cd7d045828bb1e5a86df5b203
+#: ../../source/controllers/stackchan.rst:442
 msgid "``tuple`` ``(r, g, b)``."
 msgstr "``tuple`` ``(r, g, b)``。"
 
-#: ../../source/controllers/stackchan.rst:444 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:446
 msgid "|stackchan_api_get_rgb_color.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:26
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_rgb_color.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:454 1d2fda75053a44ad9e2813468dc719fd
+#: ../../source/controllers/stackchan.rst:456
 msgid "Read touch state (three logical slots)."
 msgstr "读取触摸状态（三个逻辑槽位）。"
 
-#: ../../source/controllers/stackchan.rst:456 98f143626a3943c6abea28c9728a3c35
+#: ../../source/controllers/stackchan.rst:458
+#, fuzzy
 msgid ""
 "If ``None``, return a list of three levels; if ``0``, ``1``, or ``2``, "
-"return that slot’s level."
+"return that slot's level."
 msgstr "如果为 ``None``，返回包含三个电平值的列表；如果为 ``0``、``1`` 或 ``2``，则返回对应槽位的电平值。"
 
-#: ../../source/controllers/stackchan.rst:457 1c45cceb73d84c429ede59f5b0356316
-msgid "``OUTPUT_NONE``…``OUTPUT_HIGH`` style values, or ``None`` on failure."
-msgstr "返回 ``OUTPUT_NONE``…``OUTPUT_HIGH`` 这类值；失败时返回 ``None``。"
+#: ../../source/controllers/stackchan.rst:459
+msgid ""
+"``OUTPUT_NONE``...``OUTPUT_HIGH`` style values. A read failure returns "
+"``OUTPUT_NONE`` values so examples can safely index the result."
+msgstr ""
 
-#: ../../source/controllers/stackchan.rst:461 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:464
 msgid "|stackchan_api_get_touch_all.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:27
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_touch_all.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:463 6fad249394b640c08a893661762df342
+#: ../../source/controllers/stackchan.rst:466
 msgid "|stackchan_api_get_touch.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:28
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_touch.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:474 4c99443db51e4ccfafdb21d8fe337aa5
+#: ../../source/controllers/stackchan.rst:477
 msgid "Bus voltage from the INA226 (volts)."
 msgstr "来自 INA226 的总线电压（伏特）。"
 
-#: ../../source/controllers/stackchan.rst:476 dcba03cbef484540950d93d5fa04dac2
+#: ../../source/controllers/stackchan.rst:479
 msgid "``float`` or ``None`` if unavailable."
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:480 19eea897fdf6472cb17bab8acca12791
+#: ../../source/controllers/stackchan.rst:483
 msgid "|stackchan_api_get_battery_voltage.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:20
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_battery_voltage.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:490 49304be500ae4aa3a9c0d3669462096b
+#: ../../source/controllers/stackchan.rst:493
 msgid "Current from the INA226 (A)."
 msgstr "来自 INA226 的电流（安培）。"
 
-#: ../../source/controllers/stackchan.rst:492
-#: ../../source/controllers/stackchan.rst:508 59980438435e498eb26474536e26e5a1
+#: ../../source/controllers/stackchan.rst:495
+#: ../../source/controllers/stackchan.rst:511
 msgid "``float`` or ``None``."
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:496 19eea897fdf6472cb17bab8acca12791
+#: ../../source/controllers/stackchan.rst:499
 msgid "|stackchan_api_get_battery_current.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:21
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_battery_current.png"
 msgstr ""
 
-#: ../../source/controllers/stackchan.rst:506 fe92f3995fc245afbee4cfdd45b13241
+#: ../../source/controllers/stackchan.rst:509
 msgid "Power from the INA226 (W), when both voltage and current are valid."
 msgstr "当电压和电流都有效时，返回 INA226 的功率（瓦特）。"
 
-#: ../../source/controllers/stackchan.rst:512 a3f3593bab214c9d8d5cfe6232518fbb
+#: ../../source/controllers/stackchan.rst:515
 msgid "|stackchan_api_get_battery_power.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stackchan.ref:22
-#: 94df43d9045b47128871d78936d493c9
 msgid "stackchan_api_get_battery_power.png"
 msgstr ""
+
+#~ msgid "``OUTPUT_NONE``…``OUTPUT_HIGH`` style values, or ``None`` on failure."
+#~ msgstr "返回 ``OUTPUT_NONE``…``OUTPUT_HIGH`` 这类值；失败时返回 ``None``。"
 

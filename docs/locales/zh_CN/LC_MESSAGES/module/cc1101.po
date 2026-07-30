@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-13 17:41+0800\n"
+"POT-Creation-Date: 2026-07-30 11:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/module/cc1101.rst:2 fd61a54cbec2452b9a8e5f91ec1af0ec
+#: ../../source/module/cc1101.rst:2
 msgid "CC1101 Module"
 msgstr "CC1101 Module"
 
-#: ../../source/module/cc1101.rst:8 c1cac8ce25d1485e8db7dc4fa82c7ab9
+#: ../../source/module/cc1101.rst:8
 msgid ""
 "This library is the driver for Module CC1101, a low-cost sub-1 GHz "
 "transceiver designed for very low-power wireless applications. It "
@@ -31,7 +31,7 @@ msgstr ""
 "这个库是 CC1101 模块的驱动，CC1101 是一款专为超低功耗无线应用设计的低成本亚 1GHz 收发器。它工作在 855-928 MHz "
 "频段，在极低电流消耗下提供出色的性能。"
 
-#: ../../source/module/cc1101.rst:10 42025c8c1a9242c5a63280779de014a8
+#: ../../source/module/cc1101.rst:10
 msgid ""
 "The module features a highly configurable baseband modem supporting "
 "various modulation formats and has a flexible data rate from 0.6 to 6.0 "
@@ -42,32 +42,31 @@ msgstr ""
 "该模块具有高度可配置的基带调制解调器，支持各种调制格式，数据速率灵活，从 0.6 到 6.0 "
 "kbps。它内置支持数据包处理、数据缓冲、突发传输、空闲信道评估、链路质量指示和无线电唤醒功能。"
 
-#: ../../source/module/cc1101.rst:12 7de26513ba3749d5bbd46dba87324253
+#: ../../source/module/cc1101.rst:12
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/module/cc1101.rst:14 15f52f6d7ef3420fa113f654ead540d6
+#: ../../source/module/cc1101.rst:14
 msgid "|CC1101Module|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref 10830f1977704bacb6216667ea1f22be
+#: ../../source/refs/module.cc1101.ref
 msgid "CC1101Module"
 msgstr "CC1101Module"
 
-#: ../../source/module/cc1101.rst:17 2ab718763f2448af91ca7d37dc654789
+#: ../../source/module/cc1101.rst:17
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/module/cc1101.rst:20 ../../source/module/cc1101.rst:53
-#: 99d421fd454841d08d2c1cc10e27016d f2bb85dae12b42ae80eeb2f67dc5b5ae
 msgid "Transmit Data"
 msgstr "发送数据"
 
-#: ../../source/module/cc1101.rst:22 4a1b35e198b545b5b4afcd430b90ae38
+#: ../../source/module/cc1101.rst:22
 msgid "Open the |m5cores3_cc1101_tx_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5cores3_cc1101_tx_example.m5f2| 项目。"
 
-#: ../../source/module/cc1101.rst:24 3376a1d15fde4885b1d382a3072d58a9
+#: ../../source/module/cc1101.rst:24
 msgid ""
 "This example shows how to send data using the CC1101 module. The module "
 "will continuously send messages with incrementing counter values."
@@ -82,69 +81,54 @@ msgstr "此示例展示如何使用 CC1101 模块发送数据。模块将持续�
 #: ../../source/module/cc1101.rst:294 ../../source/module/cc1101.rst:311
 #: ../../source/module/cc1101.rst:331 ../../source/module/cc1101.rst:350
 #: ../../source/module/cc1101.rst:367 ../../source/module/cc1101.rst:384
-#: 2175bc2faeb4437f940706bba2bdbb03 2ac113090c1e42268a1080a631af7a8d
-#: 4b177eb35dea493d94eb4cef1764731b 71213f27438b45a990772c7747c95fb1
-#: 826162912bf84096b00d72db86ae250a 8293ef68259247368149f301319c41ae
-#: 867639ad4e6f4605aec42658a4f9da5b 89926edb66734edcbc454655be1d2ac4
-#: 973e07efdcc44b62bb0efe40d0f9dd33 a05f2104654940d295ad28a93071aed5
-#: bd3b163d8fcf4ef2b9015925632c971d c7ede58a915443abbd80a315ac25aaad
-#: d144c5b54cf9428b8113cf26887b0a37 dcea366d6a354e31b538996dba28d04a
-#: e986427563644924b713ae560ed5a9a0 ee3acc66a73d4d688985a5e491ae2cf9
-#: fb18d9742342440d93e001ed2734eaf2 fb2242bbf0e240828b006de6cb7dd9d8
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/module/cc1101.rst:28 236df7e909ed4c40abf05d9e1a5220c9
+#: ../../source/module/cc1101.rst:28
 msgid "|example_tx.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:28 fd5818c846144069b8819c24023c9e2b
+#: ../../source/refs/module.cc1101.ref:28
 msgid "example_tx.png"
 msgstr ""
 
 #: ../../source/module/cc1101.rst:30 ../../source/module/cc1101.rst:45
 #: ../../source/module/cc1101.rst:63 ../../source/module/cc1101.rst:78
-#: 2cdd65c1f07e4a94ac27eca6346a9c86 34adc6502200441c8a003214eb4e101f
-#: 6a0480cb199f4f7f93c8f9fa754e6f47 a39fc5982e0749488713402c1e34ee9f
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../source/module/cc1101.rst:32 ../../source/module/cc1101.rst:47
 #: ../../source/module/cc1101.rst:65 ../../source/module/cc1101.rst:80
-#: 3fd8d2c3161a4b679335c55ccbbffcdd b66de31363f24a8096d62f1efc5eb9aa
-#: b6f85e2ecdde4e04ba4106c2e51ff883 f7181384bce440d5a5e24293e17b2a52
 msgid "None"
 msgstr "无"
 
 #: ../../source/module/cc1101.rst:35 ../../source/module/cc1101.rst:68
-#: 5e40022e11fa44d8bc285276958fda04 e26b8fbce13b4ee0bcb7cc1275f83f85
 msgid "Receive Data with IRQ"
 msgstr "中断接收数据"
 
-#: ../../source/module/cc1101.rst:37 bca721bdd62f4993a8023974ab31b23f
+#: ../../source/module/cc1101.rst:37
 msgid "Open the |m5cores3_cc1101_rx_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5cores3_cc1101_rx_example.m5f2| 项目。"
 
 #: ../../source/module/cc1101.rst:39 ../../source/module/cc1101.rst:70
-#: 1282ad564fdf4dc9ac9cfc073ead65ca aa9dfff063524b458cabd590871cf529
 msgid ""
 "This example shows how to receive data using interrupt-based reception. "
 "The module will display received messages, RSSI values on the screen."
 msgstr "此示例展示如何使用基于中断的接收方式接收数据。模块将在屏幕上显示接收到的消息和 RSSI 值。"
 
-#: ../../source/module/cc1101.rst:43 f9379b1076f149fe942f714126b4794c
+#: ../../source/module/cc1101.rst:43
 msgid "|example_rx.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:29 d22c33808f32403fbce7c5da488e3669
+#: ../../source/refs/module.cc1101.ref:29
 msgid "example_rx.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:50 62e7861fa9c647ab884605ff627839e8
+#: ../../source/module/cc1101.rst:50
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../source/module/cc1101.rst:55 26754eb5835a4f2785cdd7a90994a295
+#: ../../source/module/cc1101.rst:55
 msgid ""
 "This example shows how to send data using the CC1101 module. The module "
 "continuously sends messages with incrementing counter values every "
@@ -160,404 +144,391 @@ msgstr "此示例展示如何使用 CC1101 模块发送数据。模块每秒持�
 #: ../../source/module/cc1101.rst:298 ../../source/module/cc1101.rst:315
 #: ../../source/module/cc1101.rst:335 ../../source/module/cc1101.rst:354
 #: ../../source/module/cc1101.rst:371 ../../source/module/cc1101.rst:388
-#: 02b5699ed423477fa8d86c7532b5e83f 02f45b3606044dd1aa6f6f2e25f2a35e
-#: 0320f794477046ea9cde4b662b00722b 0391171d2c3f4d09a54977a75cf29ff0
-#: 0d1bd0b930bf4955a7e44d4d8e25a304 295d69707ffa48abb25048393c1ace26
-#: 3ed5977364e04e9699a28ac90f22b5ac 51f2711a0cff432f97f6591a5791b1fb
-#: 5b3d5a20efe44a8da0876973ce87d308 61a0cc3dcb8d4057a997bb9981c5ca4a
-#: 6cf00e209538410cb5543a978080640b 72b767a7e59f4459b11e0a76a1a11536
-#: 9be719e691c84b4598d2a4c32420a22c aa6552be53694f00bb03529f75bc00dd
-#: b243b2d829114b7887c046436c922c26 cf85425775ab4aab890b0cd718aeabcc
-#: d07d9291811343d0a0a5996d37d723e9 e2fdc7ad48e64ce8a28a0d4ee6735836
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/module/cc1101.rst:84 3de9cab4f49a4d6cb008d00c52f4396e
+#: ../../source/module/cc1101.rst:84
 msgid "**API**"
 msgstr "**API**"
 
-#: ../../source/module/cc1101.rst:87 744c1673bdf74355aa05b9e467b760c0
+#: ../../source/module/cc1101.rst:87
 msgid "class CC1101Module"
 msgstr "class CC1101Module"
 
-#: ../../source/module/cc1101.rst:101 f08d7c9dcbc44b1d844bbd5d60270dfe
+#: ../../source/module/cc1101.rst:101
 msgid "Create a CC1101Module object."
 msgstr "创建 CC1101Module 对象。"
 
-#: ../../source/module/cc1101.rst 13a67d45bd754ea1b5bde6f136afcd70
-#: 26d784fc5ed44c4b8a35fc41915c8482 2a348f19aed54e3f88d302aff00e2844
-#: 625b88f5303648ec8dd3733a29f00185 75f951bb86094047abc472b42b6d4359
-#: 7d6360e77f0d40c49590cd772e544fe9 7f9fe83a82c743e695e106aa74166b12
-#: 8ee7aaf65e0445da8e9961901096c519 8fa68e72db07454688cac98967b727b2
-#: a6c4752459004671b7e1559054dee46a d2013d79f51c430d9b3c030aa7fa9148
-#: eff751787607463cbd9f5e6dbb076517
+#: ../../source/module/cc1101.rst
 msgid "Parameters"
 msgstr "参数"
 
-#: ../../source/module/cc1101.rst:103 b60324eadcf14d2c8c2577ee70cb00f3
+#: ../../source/module/cc1101.rst:103
 msgid "(CS) Chip select pin number."
 msgstr "（CS）片选引脚号。"
 
-#: ../../source/module/cc1101.rst:104 bb21cc04e98f45deb44450df4c9ebbd1
+#: ../../source/module/cc1101.rst:104
 msgid "(GDO0) Interrupt pin number."
 msgstr "（GDO0）中断引脚号。"
 
-#: ../../source/module/cc1101.rst:105 3c1d2faa28764d339adaca154397757b
+#: ../../source/module/cc1101.rst:105
 msgid "(GDO2) Optional interrupt pin number."
 msgstr "（GDO2）可选中断引脚号。"
 
-#: ../../source/module/cc1101.rst:106 0ed87569e80d4162b6bc851232a918ed
-msgid "CC1101 RF frequency in kHz, with a range of 855000 kHz to 928000 kHz."
+#: ../../source/module/cc1101.rst:106
+#, fuzzy
+msgid ""
+"CC1101 RF frequency in kHz. Valid ranges: 300000~348000 kHz, "
+"387000~464000 kHz, 779000~928000 kHz."
 msgstr "CC1101 射频频率（kHz），范围：855000 到 928000 kHz。"
 
-#: ../../source/module/cc1101.rst:107 9d0214a98a5e450aabca39594eb7af37
+#: ../../source/module/cc1101.rst:107
 msgid "Data rate in kbps, range from 0.6 to 6.0 kbps."
 msgstr "数据速率（kbps），范围：0.6 到 6.0 kbps。"
 
-#: ../../source/module/cc1101.rst:108 4f379bf8e6154acc94eee7997d2c5b0e
+#: ../../source/module/cc1101.rst:108
 msgid "Frequency deviation in kHz, range from 1.6 to 380 kHz."
 msgstr "频率偏差（kHz），范围：1.6 到 380 kHz。"
 
-#: ../../source/module/cc1101.rst:109 9cda13ea77f84e5caf163a20bff0fdcf
+#: ../../source/module/cc1101.rst:109
 msgid "Receiver bandwidth in kHz, range from 58 to 812 kHz."
 msgstr "接收带宽（kHz），范围：58 到 812 kHz。"
 
-#: ../../source/module/cc1101.rst:110 a3884caf1a224a28ac4cffe86afbab30
+#: ../../source/module/cc1101.rst:110
 msgid "Output power in dBm, range from -30 to 10 dBm."
 msgstr "输出功率（dBm），范围：-30 到 10 dBm。"
 
-#: ../../source/module/cc1101.rst:111 67e2a2ac322547f7998f050e0f7be8e7
+#: ../../source/module/cc1101.rst:111
 msgid "Preamble length in bits, options: 16, 24, 32, 48, 64, 96, 128, 192."
 msgstr "前导码长度（位），选项：16、24、32、48、64、96、128、192。"
 
-#: ../../source/module/cc1101.rst:112 b8f28c232c6e4708ac389b092d807f17
+#: ../../source/module/cc1101.rst:112
 msgid "High byte of sync word (0x00 to 0xFF)."
 msgstr "同步字高字节（0x00 到 0xFF）。"
 
-#: ../../source/module/cc1101.rst:113 53fac5d63c824452b4f1ee8fc0cc4e13
+#: ../../source/module/cc1101.rst:113
 msgid "Low byte of sync word (0x00 to 0xFF)."
 msgstr "同步字低字节（0x00 到 0xFF）。"
 
-#: ../../source/module/cc1101.rst:117 318b48d44a2c4d54ab41e52fb7c8adae
+#: ../../source/module/cc1101.rst:117
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:7 0da1b7364f954d3ba6227d8f781b633a
+#: ../../source/refs/module.cc1101.ref:7
 msgid "init.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:129 b73419860d534c81b60a19dfd4ecb97d
+#: ../../source/module/cc1101.rst:129
 msgid "Set frequency in kHz."
 msgstr "设置频率（kHz）。"
 
-#: ../../source/module/cc1101.rst:131 6309109ca1794733816bbbdd6c14a96d
-msgid "Frequency in kHz (855000 ~ 928000), default is 868000."
+#: ../../source/module/cc1101.rst:131
+#, fuzzy
+msgid ""
+"Frequency in kHz. Valid ranges: 300000~348000 kHz, 387000~464000 kHz, "
+"779000~928000 kHz. Default is 868000."
 msgstr "频率（kHz）（855000 ~ 928000），默认值为 868000。"
 
-#: ../../source/module/cc1101.rst:135 9e50dec4575a41cfbca3a3fa3930b213
+#: ../../source/module/cc1101.rst:135
 msgid "|set_freq.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:9 093ae75d2fca4f6ca099a266b030a3ff
+#: ../../source/refs/module.cc1101.ref:9
 msgid "set_freq.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:145 6d251f174637409e86eba28062b822e5
+#: ../../source/module/cc1101.rst:145
 msgid "Set data rate in kbps."
 msgstr "设置数据速率（kbps）。"
 
-#: ../../source/module/cc1101.rst:147 8ed7ab9d50c240fc86ddf06b9bc9de22
+#: ../../source/module/cc1101.rst:147
 msgid "Data rate in kbps (0.6 ~ 6.0)"
 msgstr "数据速率（kbps）（0.6 ~ 6.0）"
 
-#: ../../source/module/cc1101.rst:151 74493ddc58ee45978df12fbd706951a5
+#: ../../source/module/cc1101.rst:151
 msgid "|set_bitrate.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:10 addf414d4cde4401ad53d102ed712739
+#: ../../source/refs/module.cc1101.ref:10
 msgid "set_bitrate.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:161 30f9f8e4892c48bfb919c375fd25b32b
+#: ../../source/module/cc1101.rst:161
 msgid "Set frequency deviation in kHz."
 msgstr "设置频率偏差（kHz）。"
 
-#: ../../source/module/cc1101.rst:163 84c093af77a0477cb2f58e3807099ad7
+#: ../../source/module/cc1101.rst:163
 msgid "Frequency deviation in kHz (1.6 ~ 380)"
 msgstr "频率偏差（kHz）（1.6 ~ 380）"
 
-#: ../../source/module/cc1101.rst:167 1304a036fa2a495ebe74dbfdcd983119
+#: ../../source/module/cc1101.rst:167
 msgid "|set_freq_dev.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:11 8e24f06ced81453ea990463d95e466ca
+#: ../../source/refs/module.cc1101.ref:11
 msgid "set_freq_dev.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:177 13ba0dfb7d1748528221d678d5c982d9
+#: ../../source/module/cc1101.rst:177
 msgid "Set receiver bandwidth in kHz."
 msgstr "设置接收带宽（kHz）。"
 
-#: ../../source/module/cc1101.rst:179 7d162f2336c145bcbf6582983860073e
+#: ../../source/module/cc1101.rst:179
 msgid "Receiver bandwidth in kHz (58 ~ 812)"
 msgstr "接收带宽（kHz）（58 ~ 812）"
 
-#: ../../source/module/cc1101.rst:183 b6202446e9b6400a9229a663c9918316
+#: ../../source/module/cc1101.rst:183
 msgid "|set_rx_bw.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:12 359e727475814a06ae14dabe3088a5c9
+#: ../../source/refs/module.cc1101.ref:12
 msgid "set_rx_bw.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:193 862ea7f558be42eba72477d2deb5daec
+#: ../../source/module/cc1101.rst:193
 msgid "Set output power in dBm."
 msgstr "设置输出功率（dBm）。"
 
-#: ../../source/module/cc1101.rst:195 485c4a7b424d4f359e0c644864a3d873
+#: ../../source/module/cc1101.rst:195
 msgid "Output power in dBm (-30 ~ 10)"
 msgstr "输出功率（dBm）（-30 ~ 10）"
 
-#: ../../source/module/cc1101.rst:199 b694a2776c544bdeb2bd94899fa09dc9
+#: ../../source/module/cc1101.rst:199
 msgid "|set_output_power.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:13 d98751021b4e42368d93440e861b67eb
+#: ../../source/refs/module.cc1101.ref:13
 msgid "set_output_power.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:209 3e20d6944fc049a4a6a3053be13afdb5
+#: ../../source/module/cc1101.rst:209
 msgid "Set preamble length in bits."
 msgstr "设置前导码长度（位）。"
 
-#: ../../source/module/cc1101.rst:211 0c5750384214409aa0a96fd16ccaada3
+#: ../../source/module/cc1101.rst:211
 msgid "Preamble length in bits, must be one of: 16, 24, 32, 48, 64, 96, 128, 192."
 msgstr "前导码长度（位），必须是以下之一：16、24、32、48、64、96、128、192。"
 
-#: ../../source/module/cc1101.rst:216 f003b94a76544b4e836c135999601363
+#: ../../source/module/cc1101.rst:216
 msgid "|set_preamble_length.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:14 147520a5e7194aee99eea09712814c44
+#: ../../source/refs/module.cc1101.ref:14
 msgid "set_preamble_length.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:226 7a9744c724aa43b4ab5cd34e415750a0
+#: ../../source/module/cc1101.rst:226
 msgid "Set sync word."
 msgstr "设置同步字。"
 
-#: ../../source/module/cc1101.rst:228 77c852f1960048efb4abeccd9072acb5
+#: ../../source/module/cc1101.rst:228
 msgid "High byte of sync word (0 ~ 0xFF)"
 msgstr "同步字高字节（0 ~ 0xFF）"
 
-#: ../../source/module/cc1101.rst:229 adaf27cddc1f42fe87271f4e47f8aef8
+#: ../../source/module/cc1101.rst:229
 msgid "Low byte of sync word (0 ~ 0xFF)"
 msgstr "同步字低字节（0 ~ 0xFF）"
 
-#: ../../source/module/cc1101.rst:233 20f413cb16584e239d9a5e3ac78229aa
+#: ../../source/module/cc1101.rst:233
 msgid "|set_sync_word.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:15 9497458ee97a43f6b6d499d54590e0e8
+#: ../../source/refs/module.cc1101.ref:15
 msgid "set_sync_word.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:243 68ce0e5f165c439fb028ad3693b5e0f5
+#: ../../source/module/cc1101.rst:243
 msgid "Send data."
 msgstr "发送数据。"
 
-#: ../../source/module/cc1101.rst:245 943e8058a8f54cdbb3a6790b45625019
+#: ../../source/module/cc1101.rst:245
 msgid "The data to be sent."
 msgstr "要发送的数据。"
 
-#: ../../source/module/cc1101.rst 05b8187329d54f5db0109da8940e1c89
-#: 1a8a0958ad43429b9c2136ac8523347b 25480785f8bd4059870bd7247e7eae89
-#: 37141cad8a6e408d9491e518823b752c eb8ab77291a24d1597e57c42192500f9
+#: ../../source/module/cc1101.rst
 msgid "Returns"
 msgstr "返回值"
 
-#: ../../source/module/cc1101.rst:246 85e768ff0ab449bfb4a34605785387c4
+#: ../../source/module/cc1101.rst:246
 msgid "True if successful, False otherwise"
 msgstr "成功返回 True，否则返回 False"
 
-#: ../../source/module/cc1101.rst 111a437e8e544be68cec406232825e37
-#: 2a540da6c79a4748bccf35bff4bc0b01 9f0aa99ef7fb4a7595c26c0036989725
-#: c1f4d3db35de4705b2235e9f691c1fe6 eb851464c7bd4edd949dcc205b3a0580
+#: ../../source/module/cc1101.rst
 msgid "Return type"
 msgstr "返回类型"
 
-#: ../../source/module/cc1101.rst:249 3925ba4abcaf42359bc46ad36c76c015
+#: ../../source/module/cc1101.rst:249
 msgid "Send a data packet and return True if successful."
 msgstr "发送数据包，成功时返回 True。"
 
-#: ../../source/module/cc1101.rst:253 54b9fb1b16ba4fb382ef7a6e8b3b922e
+#: ../../source/module/cc1101.rst:253
 msgid "|send.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:16 0a069726a2f24661b81d68a446e471f9
+#: ../../source/refs/module.cc1101.ref:16
 msgid "send.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:263 ae8773e4c6cb4069840e6dbebe1ba064
+#: ../../source/module/cc1101.rst:263
 msgid "Receive data."
 msgstr "接收数据。"
 
-#: ../../source/module/cc1101.rst:265 1d38c00c24504fe7a618fbd313d1412b
+#: ../../source/module/cc1101.rst:265
 msgid "Timeout in milliseconds (optional). Default is None."
 msgstr "超时时间（毫秒）（可选）。默认为 None。"
 
-#: ../../source/module/cc1101.rst:266 b7a60daad5ae46cdbabcda2c3ff8f962
+#: ../../source/module/cc1101.rst:266
 msgid "Received packet instance or None if timeout"
 msgstr "接收到的数据包实例或超时时返回 None"
 
-#: ../../source/module/cc1101.rst:269 b02f60dee76d45479efa51c2c45d2d4e
+#: ../../source/module/cc1101.rst:269
 msgid ""
 "Attempt to receive a CC1101 packet. Returns `None` if timeout occurs, or "
 "returns the received packet instance."
 msgstr "尝试接收 CC1101 数据包。如果发生超时则返回 `None`，否则返回接收到的数据包实例。"
 
-#: ../../source/module/cc1101.rst:273 ca17590a6dc840338c601bb77e8bf699
+#: ../../source/module/cc1101.rst:273
 msgid "|recv.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:18 36a0c6b4569d4b1b8965b0e7cacb992b
+#: ../../source/refs/module.cc1101.ref:18
 msgid "recv.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:290 b6d0e496e94d4879a4c054c1bd97e8b9
+#: ../../source/module/cc1101.rst:290
 msgid "Start receive data."
 msgstr "开始接收数据。"
 
-#: ../../source/module/cc1101.rst:292 adf23e8759ac44b58be85adc5406622f
+#: ../../source/module/cc1101.rst:292
 msgid "This method initiates the process to begin receiving data."
 msgstr "此方法启动开始接收数据的过程。"
 
-#: ../../source/module/cc1101.rst:296 43ec62f5c1cb43adbd36abcff36d5af3
+#: ../../source/module/cc1101.rst:296
 msgid "|start_recv.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:20 b158006164c341d2bd3fa78f3556d627
+#: ../../source/refs/module.cc1101.ref:20
 msgid "start_recv.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:306 fd0322058dd24d788159fb690a66cc10
+#: ../../source/module/cc1101.rst:306
 msgid "Set the receive interrupt callback function to be executed on IRQ."
 msgstr "设置接收中断回调函数，在 IRQ 触发时执行。"
 
-#: ../../source/module/cc1101.rst:308 ed86184036d84c2abb9f6e88c07ed805
+#: ../../source/module/cc1101.rst:308
 msgid ""
 "The callback function to be invoked when the interrupt is triggered. The "
 "callback should take a CC1101Packet parameter and return nothing."
 msgstr "当中断触发时要调用的回调函数。回调函数应接受一个 CC1101Packet 参数且不返回任何值。"
 
-#: ../../source/module/cc1101.rst:313 636ac2fd421d48489312b17e499b9646
+#: ../../source/module/cc1101.rst:313
 msgid "|set_rx_irq_callback.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:21 512c5bace984436fb6513dc2cc106a40
+#: ../../source/refs/module.cc1101.ref:21
 msgid "set_rx_irq_callback.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:326 54f3358ec22e4b658a98cd049d149a12
+#: ../../source/module/cc1101.rst:326
 msgid "Set the transmit interrupt callback function to be executed on IRQ."
 msgstr "设置发送中断回调函数，在 IRQ 触发时执行。"
 
-#: ../../source/module/cc1101.rst:328 2fa4e0adf91d4673942b685693860b28
+#: ../../source/module/cc1101.rst:328
 msgid ""
 "The callback function to be invoked when the interrupt is triggered. The "
 "callback should take one parameter (pin object, can be ignored) and "
 "return nothing."
 msgstr "当中断触发时要调用的回调函数。回调函数应接受一个参数（引脚对象，可以忽略）且不返回任何值。"
 
-#: ../../source/module/cc1101.rst:333 c17c846cc4064cb887c0a4934442272f
+#: ../../source/module/cc1101.rst:333
 msgid "|set_tx_irq_callback.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:22 aaf40a310d7442f99f39ebfbe13b6ca7
+#: ../../source/refs/module.cc1101.ref:22
 msgid "set_tx_irq_callback.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:346 baff861059f04e07a2506889221d6445
+#: ../../source/module/cc1101.rst:346
 msgid "Set module to standby mode."
 msgstr "将模块设置为待机模式。"
 
-#: ../../source/module/cc1101.rst:348 ea85ec28dab74a3c9890686682d1469a
+#: ../../source/module/cc1101.rst:348
 msgid "Puts the CC1101 module into standby mode, consuming less power."
 msgstr "将 CC1101 模块置于待机模式，消耗更少的功率。"
 
-#: ../../source/module/cc1101.rst:352 bea9b675f4e347a3b0a6e733cec753d4
+#: ../../source/module/cc1101.rst:352
 msgid "|standby.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:23 623308b356294eb283b9bf5663de9faa
+#: ../../source/refs/module.cc1101.ref:23
 msgid "standby.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:362 e0ff63f1d44c4cb8b9b79b67b5969e0a
+#: ../../source/module/cc1101.rst:362
 msgid "Check RX IRQ trigger."
 msgstr "检查 RX IRQ 触发。"
 
-#: ../../source/module/cc1101.rst:364 7e0908cfabf04be393db6b94639ed3b8
+#: ../../source/module/cc1101.rst:364
 msgid ""
 "Returns `True` if an interrupt service routine (ISR) has been triggered "
 "since the last send or receive started."
 msgstr "如果自上次发送或接收开始以来已触发中断服务例程（ISR），则返回 `True`。"
 
-#: ../../source/module/cc1101.rst:369 e1a4c27272f646b69532133462860130
+#: ../../source/module/cc1101.rst:369
 msgid "|rx_irq_triggered.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:24 2e2b360744674d58b0ede3ec20fa74e6
+#: ../../source/refs/module.cc1101.ref:24
 msgid "rx_irq_triggered.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:379 f7ea04e5c986497e8dd943baab207b6f
+#: ../../source/module/cc1101.rst:379
 msgid "Check TX IRQ trigger."
 msgstr "检查 TX IRQ 触发。"
 
-#: ../../source/module/cc1101.rst:381 d7289eafba794753b6ec7434904c6444
+#: ../../source/module/cc1101.rst:381
 msgid ""
 "Returns `True` if an interrupt service routine (ISR) has been triggered "
 "since the last send or a receive started."
 msgstr "如果自上次发送或接收开始以来已触发中断服务例程（ISR），则返回 `True`。"
 
-#: ../../source/module/cc1101.rst:386 cf4d13156bff4221873e88e12910d56c
+#: ../../source/module/cc1101.rst:386
 msgid "|tx_irq_triggered.png|"
 msgstr ""
 
-#: ../../source/refs/module.cc1101.ref:25 b672d80074394d74bea8874e6cd7d14d
+#: ../../source/refs/module.cc1101.ref:25
 msgid "tx_irq_triggered.png"
 msgstr ""
 
-#: ../../source/module/cc1101.rst:398 d50082b933f04361811ed872d69bc233
+#: ../../source/module/cc1101.rst:398
 msgid "class CC1101Packet"
 msgstr "class CC1101Packet"
 
-#: ../../source/module/cc1101.rst:402 425d6afc0cca4be290fab8f045070ffb
+#: ../../source/module/cc1101.rst:402
 msgid "Create a CC1101Packet object."
 msgstr "创建 CC1101Packet 对象。"
 
-#: ../../source/module/cc1101.rst:406 2d38fcf24b29424ba40d4242de3d9112
+#: ../../source/module/cc1101.rst:406
 msgid "Decode the received data."
 msgstr "解码接收到的数据。"
 
-#: ../../source/module/cc1101.rst:408 859112ffb7b942f6b2445a857275158c
+#: ../../source/module/cc1101.rst:408
 msgid "Decoded data as string"
 msgstr "解码后的数据（字符串）"
 
-#: ../../source/module/cc1101.rst:413 da6cbe6ac93d468fab9140007c01d1ab
+#: ../../source/module/cc1101.rst:413
 msgid "Raw packet data."
 msgstr "原始数据包数据。"
 
-#: ../../source/module/cc1101.rst:417 39f00de48dda4445a38b0c6d09a5db72
+#: ../../source/module/cc1101.rst:417
 msgid "Received signal strength (units: dBm)."
 msgstr "接收信号强度（单位：dBm）。"
 
-#: ../../source/module/cc1101.rst:421 dfb39aa15b704a81bfce03ef5f5c7ca4
+#: ../../source/module/cc1101.rst:421
 msgid "Link Quality Indicator (0-127)."
 msgstr "链路质量指示器（0-127）。"
 
-#: ../../source/module/cc1101.rst:425 88088854ca5f4132b68fbef7ec89617d
+#: ../../source/module/cc1101.rst:425
 msgid "CRC validity check. Returns True if CRC is valid, False otherwise."
 msgstr "CRC 有效性检查。如果 CRC 有效则返回 True，否则返回 False。"
 
