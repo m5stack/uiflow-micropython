@@ -18,6 +18,7 @@ class IR:
     def __init__(self) -> None:
         _pin_map = {
             # rx_pin, tx_pin
+            M5.BOARD.M5AtomMatrix: (None, 12),
             M5.BOARD.M5AtomS3: (None, 4),
             M5.BOARD.M5AtomS3R: (None, 47),
             M5.BOARD.M5AtomS3Lite: (None, 4),
