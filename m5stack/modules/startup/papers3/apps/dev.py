@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from .. import layout
 import M5
 import widgets
 import asyncio
@@ -40,7 +41,14 @@ class DevApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        self.descriptor = app_base.Descriptor(x=493, y=1, w=48, h=181)
+        tab_x = 470 if layout.IS_PAPERMONO else 493
+        tab_w = 100 if layout.IS_PAPERMONO else 48
+        self.descriptor = app_base.Descriptor(
+            x=layout.x(tab_x),
+            y=layout.y(1),
+            w=layout.size(tab_w),
+            h=layout.size(181),
+        )
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -49,42 +57,45 @@ class DevApp(app_base.AppBase):
         self._access_code_text = self._get_access_code()
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/papers3/flow.png", 0, 0)
-        # self._lcd.drawImage("/system/papers3/flow.png", 0, 0)
+        layout.draw_background(layout.resource_path("flow.png"))
+        field_width = layout.size(349 if layout.IS_PAPERMONO else 360)
+        field_height = layout.size(46 if layout.IS_PAPERMONO else 50)
 
         self._state_label = widgets.Label(
             "------",
-            89,
-            452,
-            w=360,
+            layout.x(89),
+            layout.y(452),
+            w=field_width,
+            h=field_height,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat40,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.large_font(),
             parent=self._lcd,
         )
         self._state_label.set_text(self._state_text)
 
         self._mac_label = widgets.Label(
             "aabbcc112233",
-            89,
-            572,
-            w=360,
+            layout.x(89),
+            layout.y(572),
+            w=field_width,
+            h=field_height,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat40,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.large_font(),
             parent=self._lcd,
         )
         self._mac_label.set_text(self._mac_text)
 
         self._nick_name_label = widgets.Label(
             "XXABC",
-            89,
-            812,
-            w=360,
-            h=50,
+            layout.x(89),
+            layout.y(812),
+            w=field_width,
+            h=field_height,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat40,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.large_font(),
             parent=self._lcd,
         )
         self._nick_name_label.set_long_mode(self._nick_name_label.LONG_DOT)
@@ -92,49 +103,44 @@ class DevApp(app_base.AppBase):
 
         self._access_code_label = widgets.Label(
             "------",
-            89,
-            692,
-            w=360,
-            h=50,
+            layout.x(89),
+            layout.y(692),
+            w=field_width,
+            h=field_height,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat40,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.large_font(),
             parent=self._lcd,
         )
         self._access_code_label.set_long_mode(self._access_code_label.LONG_DOT)
         self._access_code_label.set_text(self._access_code_text)
 
-        # self._lcd.push(0, 0)
-
     async def on_run(self):
-        refresh = False
         while True:
-            t = self._get_state()
-            if t != self._state_text:
-                self._state_text = t
-                self._state_label.set_text(self._state_text)
-                refresh = True
+            state = self._get_state()
+            access_code = self._get_access_code()
+            nick_name = self._get_nick_name()
+            state_changed = state != self._state_text
+            access_code_changed = access_code != self._access_code_text
+            nick_name_changed = nick_name != self._nick_name_text
 
-            refresh and self._mac_label.set_text(self._mac_text)
+            if state_changed or access_code_changed or nick_name_changed:
+                layout.begin_full_refresh()
+                try:
+                    if state_changed:
+                        self._state_text = state
+                        self._state_label.set_text(state)
+                    if access_code_changed:
+                        self._access_code_text = access_code
+                        self._access_code_label.set_text(access_code)
+                    if nick_name_changed:
+                        self._nick_name_text = nick_name
+                        self._nick_name_label.set_text(nick_name)
+                finally:
+                    layout.end_full_refresh()
 
-            t = self._get_access_code()
-            if t != self._access_code_text or refresh:
-                self._access_code_text = t
-                self._access_code_label.set_text(self._access_code_text)
+            if access_code_changed or nick_name_changed:
                 print_access_info(self._nick_name_text, self._access_code_text)
-                refresh = True
-
-            t = self._get_nick_name()
-            if t != self._nick_name_text or refresh:
-                self._nick_name_text = t
-                self._nick_name_label.set_text(self._nick_name_text)
-                print_access_info(self._nick_name_text, self._access_code_text)
-                refresh = True
-
-            # if refresh:
-            #     self._lcd.push(0, 0)
-
-            refresh = False
             await asyncio.sleep_ms(1500)
 
     def on_hide(self):

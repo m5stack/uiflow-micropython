@@ -4,8 +4,23 @@
 
 from startup import Startup
 import M5
-from . import framework
 import time
+
+
+if M5.getBoard() == M5.BOARD.M5PaperMono:
+    from M5 import Widgets
+
+    M5.Display.setEpdMode(M5.Display.EPDMode.EPD_FASTEST)
+    Widgets.setRotation(0)
+    Widgets.fillScreen(0xFFFFFF)
+    print(
+        "PaperMono startup display: {}x{}, rotation={}".format(
+            M5.Display.width(), M5.Display.height(), M5.Display.getRotation()
+        )
+    )
+
+from . import framework
+from . import layout
 
 from .apps.status_bar import StatusBarApp
 from .apps.settings import SettingsApp
@@ -31,7 +46,8 @@ class PaperS3_Startup:
         self._wlan.connect_network(
             ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
         )
-        M5.Lcd.drawImage("/system/papers3/startup.png", 0, 0)
+        layout.set_full_refresh_mode()
+        layout.draw_background(layout.resource_path("startup.png"))
         time.sleep(1)
 
         # M5.Lcd.clear(0x000000)

@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from .. import layout
 import widgets
 import M5
 import network
@@ -32,16 +33,16 @@ class CloudStatus:
 
 _WIFI_STATUS_ICO = {
     NetworkStatus.INIT: "",
-    NetworkStatus.RSSI_GOOD: "/system/papers3/wifi_icon_ok_40@925.jpg",
-    NetworkStatus.RSSI_MID: "/system/papers3/wifi_icon_ok_40@925.jpg",
-    NetworkStatus.RSSI_WORSE: "/system/papers3/wifi_icon_ok_40@925.jpg",
-    NetworkStatus.DISCONNECTED: "/system/papers3/wifi_icon_error_40@925.jpg",
+    NetworkStatus.RSSI_GOOD: layout.resource_path("wifi_icon_ok_40@925.jpg"),
+    NetworkStatus.RSSI_MID: layout.resource_path("wifi_icon_ok_40@925.jpg"),
+    NetworkStatus.RSSI_WORSE: layout.resource_path("wifi_icon_ok_40@925.jpg"),
+    NetworkStatus.DISCONNECTED: layout.resource_path("wifi_icon_error_40@925.jpg"),
 }
 
 _CLOUD_STATUS_ICOS = {
     CloudStatus.INIT: "",
-    CloudStatus.CONNECTED: "/system/papers3/server_icon_ok_80@925.jpg",
-    CloudStatus.DISCONNECTED: "/system/papers3/server_icon_error_80@925.jpg",
+    CloudStatus.CONNECTED: layout.resource_path("server_icon_ok_80@925.jpg"),
+    CloudStatus.DISCONNECTED: layout.resource_path("server_icon_error_80@925.jpg"),
 }
 
 
@@ -55,26 +56,32 @@ class StatusBarApp(app_base.AppBase):
 
     def on_view(self):
         self._network_img = widgets.Image(use_sprite=False)
-        self._network_img.set_pos(40, 925)
-        self._network_img.set_size(32, 26)
-        # self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
+        self._network_img.set_pos(layout.x(40), layout.y(925))
+        self._network_img.set_size(layout.size(32), layout.size(26))
+        self._network_img.set_scale(1.0, 1.0)
 
         self._cloud_img = widgets.Image(use_sprite=False)
-        self._cloud_img.set_pos(80, 925)
-        self._cloud_img.set_size(32, 260)
-        # self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
+        self._cloud_img.set_pos(layout.x(80), layout.y(925))
+        self._cloud_img.set_size(layout.size(32), layout.size(26))
+        self._cloud_img.set_scale(1.0, 1.0)
+        self.refresh()
+
+    def refresh(self):
+        self._network_img.set_src(layout.image_source(_WIFI_STATUS_ICO[self._network_status]))
+        self._cloud_img.set_src(layout.image_source(_CLOUD_STATUS_ICOS[self._cloud_status]))
 
     async def on_run(self):
         await asyncio.sleep_ms(1000)
         while True:
             t = self._get_network_status()
             if t != self._network_status:
-                self._network_img.set_src(_WIFI_STATUS_ICO[t])
+                self._network_img.set_src(layout.image_source(_WIFI_STATUS_ICO[t]))
                 self._network_status = t
 
             t = self._get_cloud_status()
             if t != self._cloud_status:
-                self._cloud_img.set_src(_CLOUD_STATUS_ICOS[t])
+                self._cloud_img.set_src(layout.image_source(_CLOUD_STATUS_ICOS[t]))
+                self._cloud_status = t
 
             await asyncio.sleep_ms(5000)
 

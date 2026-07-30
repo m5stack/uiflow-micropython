@@ -3,6 +3,7 @@ package(
     (
         "__init__.py",
         "papers3/__init__.py",
+        "papers3/layout.py",
         "papers3/app_base.py",
         "papers3/framework.py",
         "papers3/apps/app_list.py",

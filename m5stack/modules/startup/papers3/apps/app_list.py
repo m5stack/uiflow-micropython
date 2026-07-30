@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from .. import layout
 import widgets
 import M5
 import os
@@ -129,7 +130,14 @@ class ListApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        self.descriptor = app_base.Descriptor(x=493, y=321, w=48, h=181)
+        tab_x = 470 if layout.IS_PAPERMONO else 493
+        tab_w = 100 if layout.IS_PAPERMONO else 48
+        self.descriptor = app_base.Descriptor(
+            x=layout.x(tab_x),
+            y=layout.y(321),
+            w=layout.size(tab_w),
+            h=layout.size(181),
+        )
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -137,27 +145,43 @@ class ListApp(app_base.AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/papers3/applist.png", 0, 0)
+        layout.draw_background(layout.resource_path("applist.png"))
 
-        self._run_btn = ImageButton(400, 435, 46, 46, parent=M5.Lcd, _id=0)
-        self._run_btn._image.set_src("/system/papers3/run.png")
+        self._run_btn = ImageButton(
+            layout.x(400),
+            layout.y(435),
+            layout.size(46),
+            layout.size(46),
+            parent=M5.Lcd,
+            _id=0,
+        )
+        self._run_btn._image.set_scale(layout.SCALE_X, layout.SCALE_Y)
+        self._run_btn._image.set_src(layout.image_source(layout.resource_path("run.png")))
         self._run_btn.add_event(self._btn_run_event_handler)
 
-        self._rect = Rectangle(65, 438, 10, 42, 0, 0xFFFFFF, parent=M5.Lcd)
+        self._rect = Rectangle(
+            layout.x(65),
+            layout.y(438),
+            layout.size(10),
+            layout.size(42),
+            0,
+            0xFFFFFF,
+            parent=M5.Lcd,
+        )
 
         self._btns = []
         for i in range(9):
             btn = TextButton(
                 text="",
-                x=80,
-                y=440 + 48 * i,
-                w=324,
-                h=32,
+                x=layout.x(80),
+                y=layout.y(440 + 48 * i),
+                w=layout.size(324),
+                h=layout.size(32),
                 size=1.0,
                 font_align=widgets.Label.LEFT_ALIGNED,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
-                font=M5.Lcd.FONTS.Montserrat40,
+                font=layout.app_list_font(),
                 parent=M5.Lcd,
                 _id=i,
             )
@@ -175,8 +199,8 @@ class ListApp(app_base.AppBase):
         if len(btn._label._text) == 0:
             return
         self._file_pos = btn.id
-        self._rect.set_pos(65, 438 + 48 * btn.id)
-        self._run_btn.set_pos(400, 435 + 48 * btn.id)
+        self._rect.set_pos(layout.x(65), layout.y(438 + 48 * btn.id))
+        self._run_btn.set_pos(layout.x(400), layout.y(435 + 48 * btn.id))
 
     def _btn_run_event_handler(self, btn):
         if self._max_file_num == 0:

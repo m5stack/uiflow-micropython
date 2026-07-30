@@ -389,6 +389,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             papers3 = PaperS3_Startup()
             papers3.startup(ssid, pswd, timeout=timeout)
 
+        elif board_id == M5.BOARD.M5PaperMono:
+            from .papers3 import PaperS3_Startup
+
+            papermono = PaperS3_Startup()
+            papermono.startup(ssid, pswd, timeout=timeout)
+
         elif board_id == M5.BOARD.M5StamPLC:
             from .stamplc import StampPLC_Startup
 

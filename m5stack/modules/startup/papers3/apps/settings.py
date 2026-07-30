@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from .. import layout
 import M5
 import widgets
 import esp32
@@ -15,23 +16,33 @@ class SettingsApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        self.descriptor = app_base.Descriptor(x=493, y=164, w=48, h=181)
+        tab_x = 470 if layout.IS_PAPERMONO else 493
+        tab_w = 100 if layout.IS_PAPERMONO else 48
+        self.descriptor = app_base.Descriptor(
+            x=layout.x(tab_x),
+            y=layout.y(164),
+            w=layout.size(tab_w),
+            h=layout.size(181),
+        )
 
     def on_launch(self):
         self.get_data()
 
     def on_view(self):
-        self._lcd.drawImage("/system/papers3/config.png", 0, 0)
+        layout.draw_background(layout.resource_path("config.png"))
+        ssid_y = 620 if layout.IS_PAPERMONO else 630
+        server_y = 737 if layout.IS_PAPERMONO else 747
 
         self._ssid_label = widgets.Label(
             "ssid",
-            87,
-            630,
-            w=333,
+            layout.x(87),
+            layout.y(ssid_y),
+            w=layout.size(333),
+            h=layout.size(30),
             font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat24,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.settings_font(),
             parent=self._lcd,
         )
         self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
@@ -39,13 +50,14 @@ class SettingsApp(app_base.AppBase):
 
         self._server_label = widgets.Label(
             "server",
-            87,
-            747,
-            w=333,
+            layout.x(87),
+            layout.y(server_y),
+            w=layout.size(333),
+            h=layout.size(30),
             font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xE3E3E3,
-            font=M5.Lcd.FONTS.Montserrat24,
+            bg_color=layout.DYNAMIC_BG_COLOR,
+            font=layout.settings_font(),
             parent=self._lcd,
         )
         self._server_label.set_long_mode(widgets.Label.LONG_DOT)
