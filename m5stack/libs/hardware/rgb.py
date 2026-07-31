@@ -65,7 +65,12 @@ class RGB:
             elif board_id == M5.BOARD.M5UnitC6L:
                 cls._instance = WS2812(io=2, n=1)
                 return cls._instance
-            elif board_id in [M5.BOARD.M5PowerHub, M5.BOARD.M5StampS3Bat, M5.BOARD.M5PaperColor]:
+            elif board_id in [
+                M5.BOARD.M5PowerHub,
+                M5.BOARD.M5StampS3Bat,
+                M5.BOARD.M5PaperColor,
+                M5.BOARD.M5PaperMono,
+            ]:
                 cls._instance = M5LED()
                 return cls._instance
             elif board_id == M5.BOARD.M5DualKey:

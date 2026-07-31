@@ -439,7 +439,8 @@ class NFCReader:
     def __init__(self, i2c, address=0x50):
         self._i2c = i2c
         self.chip = ST25R3916(self._i2c, address)
-        self.chip.begin()
+        if not self.chip.begin():
+            raise RuntimeError("ST25R3916 initialization failed")
 
     def read(self, card, index, key=FACTORY_KEY):
         """

@@ -4,6 +4,8 @@
 
 import M5
 import machine
+import time
+from driver.m5ioe1 import M5ioe1, Pin
 from driver.nfc import NFCReader
 
 
@@ -13,7 +15,7 @@ class NFC(NFCReader):
     def __init__(self) -> None:
         _i2c_map = {
             # i2c_id, scl_pin, sda_pin, freq
-            M5.BOARD.M5PaperMono: (0, 2, 3, 400000),
+            M5.BOARD.M5PaperMono: (1, 48, 47, 100000),
             M5.BOARD.M5StackChan: (1, 11, 12, 100000),
         }
         board_id = M5.getBoard()
@@ -26,4 +28,10 @@ class NFC(NFCReader):
             sda=machine.Pin(sda_pin),
             freq=freq,
         )
+        if board_id == M5.BOARD.M5PaperMono:
+            self._power_pin = Pin(M5ioe1(i2c, 0x4F), 4, Pin.OUT)
+            self._power_pin.on()
+        time.sleep(1)
+        if 0x50 not in i2c.scan():
+            raise RuntimeError("NFC device not found on I2C bus")
         super().__init__(i2c)
