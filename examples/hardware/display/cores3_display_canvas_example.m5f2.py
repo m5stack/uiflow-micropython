@@ -7,15 +7,20 @@ from M5 import *
 
 
 title0 = None
+canvas_rmy = None
 
 
 def setup():
-    global title0
+    global title0, canvas_rmy
+
     M5.begin()
     Widgets.setRotation(1)
     Widgets.fillScreen(0x222222)
-    title0 = Widgets.Title("Display canvas example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18)
-    canvas_rmy = M5.Lcd.newCanvas(100, 100, 2, True)
+    title0 = Widgets.Title(
+        "Display canvas example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18
+    )
+
+    canvas_rmy = M5.Display.newCanvas(100, 100, 2, True)
     canvas_rmy.drawCircle(30, 30, 20, 0xFFFFFF)
     canvas_rmy.drawCircle(30, 50, 20, 0xFFFFFF)
     canvas_rmy.drawCircle(50, 40, 20, 0xFFFFFF)
@@ -24,7 +29,7 @@ def setup():
 
 
 def loop():
-    global title0
+    global title0, canvas_rmy
     M5.update()
 
 
