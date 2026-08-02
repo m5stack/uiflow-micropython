@@ -138,7 +138,7 @@ def _run_servo_zero_calibration_if_needed():
 
         stackchan = StackChan(i2c=1, uart=1)
         stackchan.set_servo_power(enable=True)
-        time.delay_ms(500)
+        time.sleep_ms(500)
         stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
         stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
         Speaker.begin()
