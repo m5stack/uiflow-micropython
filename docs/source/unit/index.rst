@@ -90,6 +90,7 @@ Unit
     oled.rst
     op90.rst
     op180.rst
+    pahub.rst
     pdm.rst
     pir.rst
     puzzle.rst

@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-06 12:31+0800\n"
+"PO-Revision-Date: 2026-08-06 12:31+0800\n"
+"Last-Translator: M5Stack <support@m5stack.com>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/unit/pahub.rst:2
+msgid "PaHub Unit"
+msgstr "PaHub Unit"
+
+#: ../../source/unit/pahub.rst:7
+msgid "PaHub Unit is an I2C hub used to connect multiple I2C Units to one host I2C bus."
+msgstr "PaHub Unit 是一款 I2C 集线器，用于将多个 I2C Unit 连接到一个主机 I2C 总线。"
+
+#: ../../source/unit/pahub.rst:11
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/unit/pahub.rst:13
+msgid "|PaHubUnit|"
+msgstr ""
+
+#: ../../source/refs/unit.pahub.ref:0
+msgid "PaHubUnit"
+msgstr "PaHubUnit"
+
+#: ../../source/unit/pahub.rst:17
+msgid "Usage"
+msgstr "使用方法"
+
+#: ../../source/unit/pahub.rst:24
+msgid "Add **Unit PaHub**."
+msgstr "添加 **Unit PaHub**。"
+
+#: ../../source/unit/pahub.rst:26
+msgid "Set the PaHub address. The address must match the actual DIP switch setting on the PaHub hardware."
+msgstr "设置 PaHub 地址。地址需要与 PaHub 硬件上的实际拨码开关设置一致。"
+
+#: ../../source/unit/pahub.rst:29
+msgid "Add the other I2C Unit connected to Unit PaHub."
+msgstr "添加其他连接到 Unit PaHub 的 I2C Unit。"
+
+#: ../../source/unit/pahub.rst:31
+msgid "In the connected Unit configuration, select **Bus: PAHUB**, then select the PaHub port/channel number that the Unit is connected to."
+msgstr "在已连接 Unit 的配置中，选择 **Bus: PAHUB**，然后选择该 Unit 实际连接的 PaHub 端口/通道号。"
+
+#: ../../source/unit/pahub.rst:34
+msgid "The default PaHub address is ``0x70``. If the DIP switch changes the hardware address, update the address setting in UiFlow2 to the same value."
+msgstr "PaHub 默认地址为 ``0x70``。如果通过拨码开关修改了硬件地址，请在 UiFlow2 中将地址设置为相同的值。"
