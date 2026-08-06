@@ -72,7 +72,17 @@ namespace m5
         cfg.enable = args[ARG_output_enable].u_int;
         cfg.direction = args[ARG_direction].u_int;
 
-        getPower(pos_args[0])->setExtPortBusConfig(cfg);
+        auto power = getPower(pos_args[0]);
+        const auto bus_port = ext_port_mask_t::ext_PWRCAN;
+        const bool bus_output_enable = cfg.direction && cfg.enable;
+
+        if (bus_output_enable) {
+            power->setExtOutput(true, bus_port);
+        }
+        power->setExtPortBusConfig(cfg);
+        if (!bus_output_enable) {
+            power->setExtOutput(false, bus_port);
+        }
 
         return mp_const_none;
     }
