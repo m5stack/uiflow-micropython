@@ -14,8 +14,10 @@
 #include "esp_cam_ctlr_csi.h"
 #include "esp_err.h"
 #include "esp_heap_caps.h"
+#include "esp_ldo_regulator.h"
 #include "esp_log.h"
 #include "esp_rom_sys.h"
+#include "driver/i2c_master.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 #include "freertos/task.h"
@@ -35,12 +37,21 @@
 #define LT6911_FRAME_BYTES        (LT6911_WIDTH * LT6911_HEIGHT * 2)
 #define LT6911_BUFFER_COUNT       2
 #define LT6911_LANE_BIT_RATE_MBPS 714
-#define LT6911_PHY_WARMUP_MS      200
 #define LT6911_HS_FREQ_SEL        0x18
+#define LT6911_CSI_STARTUP_MS      200
+#define LT6911_CSI_RECOVERY_MS     500
+#define LT6911_I2C_ADDRESS        0x2B
+#define LT6911_I2C_PORT           I2C_NUM_1
+#define LT6911_I2C_FREQ_HZ        (100 * 1000)
+#define LT6911_I2C_TIMEOUT_MS     100
+#define LT6911_CSI_PHY_LDO_CHAN     3
+#define LT6911_CSI_PHY_LDO_MV    2500
 
 static esp_cam_ctlr_handle_t s_camera = NULL;
 static isp_proc_handle_t s_isp = NULL;
 static QueueHandle_t s_finished_frames = NULL;
+static i2c_master_dev_handle_t s_lt6911_i2c = NULL;
+static esp_ldo_channel_handle_t s_csi_phy_ldo = NULL;
 static uint8_t *s_frame_buffers[LT6911_BUFFER_COUNT] = {NULL};
 static volatile uint8_t s_next_buffer = 0;
 static bool s_capturing = false;
@@ -63,15 +74,128 @@ static void lt6911_deinit_internal(void) {
         (void)esp_isp_del_processor(s_isp);
         s_isp = NULL;
     }
+    if (s_csi_phy_ldo) {
+        (void)esp_ldo_release_channel(s_csi_phy_ldo);
+        s_csi_phy_ldo = NULL;
+    }
     if (s_finished_frames) {
         vQueueDelete(s_finished_frames);
         s_finished_frames = NULL;
+    }
+    if (s_lt6911_i2c) {
+        (void)i2c_master_bus_rm_device(s_lt6911_i2c);
+        s_lt6911_i2c = NULL;
     }
     for (size_t i = 0; i < LT6911_BUFFER_COUNT; ++i) {
         heap_caps_free(s_frame_buffers[i]);
         s_frame_buffers[i] = NULL;
     }
     s_next_buffer = 0;
+}
+
+static esp_err_t lt6911_i2c_init(void) {
+    if (s_lt6911_i2c) {
+        return ESP_OK;
+    }
+
+    i2c_master_bus_handle_t bus = NULL;
+    esp_err_t err = i2c_master_get_bus_handle(LT6911_I2C_PORT, &bus);
+    if (err != ESP_OK) {
+        return err;
+    }
+
+    const i2c_device_config_t config = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .device_address = LT6911_I2C_ADDRESS,
+        .scl_speed_hz = LT6911_I2C_FREQ_HZ,
+    };
+    return i2c_master_bus_add_device(bus, &config, &s_lt6911_i2c);
+}
+
+static esp_err_t lt6911_enable_csi_phy_power(void) {
+    if (s_csi_phy_ldo) {
+        return ESP_OK;
+    }
+
+    const esp_ldo_channel_config_t config = {
+        .chan_id = LT6911_CSI_PHY_LDO_CHAN,
+        .voltage_mv = LT6911_CSI_PHY_LDO_MV,
+    };
+    return esp_ldo_acquire_channel(&config, &s_csi_phy_ldo);
+}
+
+static esp_err_t lt6911_select_bank(uint8_t bank) {
+    const uint8_t command[] = {0xFF, bank};
+    return i2c_master_transmit(s_lt6911_i2c, command, sizeof(command), LT6911_I2C_TIMEOUT_MS);
+}
+
+static esp_err_t lt6911_read_register(uint8_t reg, uint8_t *value) {
+    esp_err_t err = lt6911_select_bank(0xE0);
+    if (err != ESP_OK) {
+        return err;
+    }
+    return i2c_master_transmit_receive(s_lt6911_i2c, &reg, 1, value, 1, LT6911_I2C_TIMEOUT_MS);
+}
+
+static esp_err_t lt6911_write_register(uint8_t reg, uint8_t value) {
+    const uint8_t command[] = {reg, value};
+    esp_err_t err = lt6911_select_bank(0xE0);
+    if (err != ESP_OK) {
+        return err;
+    }
+    return i2c_master_transmit(s_lt6911_i2c, command, sizeof(command), LT6911_I2C_TIMEOUT_MS);
+}
+
+static void lt6911_report_mipi_stream(void) {
+    esp_err_t err = lt6911_i2c_init();
+    if (err != ESP_OK) {
+        mp_printf(&mp_plat_print, "lt6911: cannot access bridge I2C: %s\n", esp_err_to_name(err));
+        return;
+    }
+
+    uint8_t lanes = 0;
+    uint8_t tx = 0;
+    uint8_t format = 0;
+    uint8_t video_ready = 0;
+    err = lt6911_read_register(0x95, &lanes);
+    if (err == ESP_OK) {
+        err = lt6911_read_register(0xB0, &tx);
+    }
+    if (err == ESP_OK) {
+        err = lt6911_read_register(0x96, &format);
+    }
+    if (err == ESP_OK) {
+        err = lt6911_read_register(0x84, &video_ready);
+    }
+    if (err != ESP_OK) {
+        mp_printf(&mp_plat_print, "lt6911: bridge I2C read failed: %s\n", esp_err_to_name(err));
+        return;
+    }
+
+    mp_printf(&mp_plat_print,
+        "lt6911: bridge tx=0x%02x lanes=%u format=0x%02x video=0x%02x\n",
+        tx, lanes & 0x0F, format, video_ready);
+}
+
+static esp_err_t lt6911_enable_mipi_stream(void) {
+    esp_err_t err = lt6911_i2c_init();
+    if (err != ESP_OK) {
+        return err;
+    }
+
+    uint8_t tx = 0;
+    err = lt6911_read_register(0xB0, &tx);
+    if (err != ESP_OK || tx == 0x01) {
+        return err;
+    }
+
+    err = lt6911_write_register(0xB0, 0x01);
+    if (err != ESP_OK) {
+        return err;
+    }
+    vTaskDelay(pdMS_TO_TICKS(200));
+    err = lt6911_read_register(0xB0, &tx);
+    return err == ESP_OK && tx == 0x01 ? ESP_OK : ESP_FAIL;
 }
 
 static bool IRAM_ATTR lt6911_get_new_transaction(esp_cam_ctlr_handle_t handle, esp_cam_ctlr_trans_t *trans,
@@ -95,7 +219,18 @@ static mp_obj_t lt6911_init(void) {
         return mp_const_none;
     }
 
-    esp_err_t err;
+    esp_err_t err = lt6911_enable_mipi_stream();
+    if (err != ESP_OK) {
+        lt6911_deinit_internal();
+        lt6911_raise_esp_error(err, "enable bridge MIPI TX");
+    }
+
+    err = lt6911_enable_csi_phy_power();
+    if (err != ESP_OK) {
+        lt6911_deinit_internal();
+        lt6911_raise_esp_error(err, "power CSI PHY");
+    }
+
     size_t alignment = 0;
     err = esp_cache_get_alignment(MALLOC_CAP_SPIRAM | MALLOC_CAP_DMA, &alignment);
     if (err != ESP_OK) {
@@ -131,8 +266,7 @@ static mp_obj_t lt6911_init(void) {
         .output_data_color_type = CAM_CTLR_COLOR_YUV422,
         .data_lane_num = 2,
         .byte_swap_en = false,
-        .queue_items = 1,
-        .bk_buffer_dis = true,
+        .queue_items = 4,
     };
     err = esp_cam_new_csi_ctlr(&csi_config, &s_camera);
     if (err != ESP_OK) {
@@ -175,6 +309,7 @@ static mp_obj_t lt6911_init(void) {
         lt6911_raise_esp_error(err, "create ISP bypass");
     }
 
+    lt6911_report_mipi_stream();
     mp_printf(&mp_plat_print, "lt6911: ready for 1280x720 YUYV HDMI input\n");
     return mp_const_none;
 }
@@ -216,9 +351,7 @@ static void lt6911_phy_write_register(uint8_t address, uint8_t value) {
     MIPI_CSI_HOST.phy_test_ctrl0.val = 0;
 }
 
-static void lt6911_resync_csi_phy(void) {
-    // LT6911 can already be streaming when the P4 CSI PHY starts. Reset the
-    // host and PHY in the required order so the receiver can reacquire it.
+static void lt6911_reinit_csi_host(void) {
     MIPI_CSI_HOST.csi2_resetn.csi2_resetn = 0;
     MIPI_CSI_HOST.phy_shutdownz.phy_shutdownz = 0;
     MIPI_CSI_HOST.dphy_rstz.dphy_rstz = 0;
@@ -233,7 +366,7 @@ static void lt6911_resync_csi_phy(void) {
     esp_rom_delay_us(100);
     MIPI_CSI_HOST.dphy_rstz.dphy_rstz = 1;
 
-    for (uint32_t ms = 0; ms < LT6911_PHY_WARMUP_MS; ++ms) {
+    for (uint32_t ms = 0; ms < LT6911_CSI_RECOVERY_MS; ++ms) {
         if ((MIPI_CSI_HOST.phy_stopstate.val & 0x00010003U) == 0x00010003U) {
             break;
         }
@@ -245,8 +378,6 @@ static void lt6911_resync_csi_phy(void) {
     MIPI_CSI_HOST.vc_extension.vcx = 1;
     MIPI_CSI_HOST.scrambling.scramble_enable = 0;
     MIPI_CSI_BRIDGE.frame_cfg.has_hsync_e = 0;
-    mp_printf(&mp_plat_print, "lt6911: CSI PHY reset complete, stop state=0x%08" PRIx32 "\n",
-        MIPI_CSI_HOST.phy_stopstate.val);
 }
 
 static mp_obj_t lt6911_capture(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
@@ -274,7 +405,6 @@ static mp_obj_t lt6911_capture(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     if (s_capturing) {
         mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("lt6911 capture is already running"));
     }
-
     uint8_t completed_index;
     while (xQueueReceive(s_finished_frames, &completed_index, 0) == pdTRUE) {
     }
@@ -285,35 +415,37 @@ static mp_obj_t lt6911_capture(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     }
     s_capturing = true;
 
-    int warmup_ms = args[ARG_timeout_ms].u_int < LT6911_PHY_WARMUP_MS ? args[ARG_timeout_ms].u_int
-                                                                       : LT6911_PHY_WARMUP_MS;
-    TickType_t timeout = pdMS_TO_TICKS(args[ARG_timeout_ms].u_int);
-    TickType_t warmup = pdMS_TO_TICKS(warmup_ms);
-    bool frame_ready = xQueueReceive(s_finished_frames, &completed_index, warmup) == pdTRUE;
+    int startup_ms = args[ARG_timeout_ms].u_int < LT6911_CSI_STARTUP_MS ? args[ARG_timeout_ms].u_int
+                                                                         : LT6911_CSI_STARTUP_MS;
+    bool frame_ready = xQueueReceive(s_finished_frames, &completed_index, pdMS_TO_TICKS(startup_ms)) == pdTRUE;
+    if (!frame_ready && args[ARG_timeout_ms].u_int > startup_ms) {
+        mp_printf(&mp_plat_print,
+            "lt6911: no completed frame after %d ms (host=0x%08" PRIx32 ", bridge=0x%08" PRIx32
+            ", depth=%" PRIu32 ", phy_rx=0x%08" PRIx32 ", stop=0x%08" PRIx32 ")\n",
+            startup_ms, MIPI_CSI_HOST.int_st_main.val, MIPI_CSI_BRIDGE.int_raw.val,
+            MIPI_CSI_BRIDGE.buf_flow_ctl.csi_buf_depth, MIPI_CSI_HOST.phy_rx.val, MIPI_CSI_HOST.phy_stopstate.val);
+        mp_printf(&mp_plat_print, "lt6911: reinitializing CSI host while bridge TX remains enabled\n");
+        lt6911_reinit_csi_host();
+        err = lt6911_write_register(0xB0, 0x01);
+        if (err != ESP_OK) {
+            (void)esp_cam_ctlr_stop(s_camera);
+            s_capturing = false;
+            lt6911_raise_esp_error(err, "restore bridge MIPI TX");
+        }
+        vTaskDelay(pdMS_TO_TICKS(LT6911_CSI_RECOVERY_MS));
+    }
+
     if (!frame_ready) {
-        mp_printf(&mp_plat_print, "lt6911: no frame after %d ms; restarting CSI PHY and host\n", warmup_ms);
-        err = esp_cam_ctlr_stop(s_camera);
-        if (err != ESP_OK) {
-            lt6911_raise_esp_error(err, "stop CSI controller for recovery");
+        int remaining_ms = args[ARG_timeout_ms].u_int - startup_ms;
+        if (remaining_ms > 0) {
+            frame_ready = xQueueReceive(s_finished_frames, &completed_index, pdMS_TO_TICKS(remaining_ms)) == pdTRUE;
         }
-        s_capturing = false;
-        while (xQueueReceive(s_finished_frames, &completed_index, 0) == pdTRUE) {
-        }
-        lt6911_resync_csi_phy();
-        err = esp_cam_ctlr_start(s_camera);
-        if (err != ESP_OK) {
-            lt6911_raise_esp_error(err, "restart CSI controller");
-        }
-        s_capturing = true;
-        timeout = timeout > warmup ? timeout - warmup : 0;
-        frame_ready = timeout && xQueueReceive(s_finished_frames, &completed_index, timeout) == pdTRUE;
     }
 
     if (!frame_ready) {
         (void)esp_cam_ctlr_stop(s_camera);
         s_capturing = false;
-        mp_printf(&mp_plat_print, "lt6911: CSI recovery timed out, stop=0x%08" PRIx32 ", bridge depth=%" PRIu32 "\n",
-            MIPI_CSI_HOST.phy_stopstate.val, MIPI_CSI_BRIDGE.buf_flow_ctl.csi_buf_depth);
+        mp_printf(&mp_plat_print, "lt6911: capture timed out waiting for a CSI frame\n");
         mp_raise_OSError(MP_ETIMEDOUT);
     }
 
