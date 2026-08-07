@@ -265,6 +265,8 @@ static mp_obj_t lt6911_init(void) {
         .input_data_color_type = CAM_CTLR_COLOR_YUV422,
         .output_data_color_type = CAM_CTLR_COLOR_YUV422,
         .data_lane_num = 2,
+        // Normalize the ECO2 DMA order in software before JPEG encoding; the
+        // required component permutation is not a global byte swap.
         .byte_swap_en = false,
         .queue_items = 4,
     };
@@ -332,12 +334,16 @@ static size_t lt6911_write_jpeg(void *arg, size_t index, const void *data, size_
     return len;
 }
 
-static void lt6911_yvyu_to_yuyv(uint8_t *frame) {
-    // The LT6911 delivers Y0 V Y1 U while esp32-camera's JPEG path expects Y0 U Y1 V.
+static void lt6911_fix_eco2_yuv422_order(uint8_t *frame) {
+    // This LT6911/ESP32-P4 ECO2 path produces Y1 V Y0 U, while esp32-camera's
+    // JPEG path expects Y0 U Y1 V.
     for (size_t i = 0; i < LT6911_FRAME_BYTES; i += 4) {
-        uint8_t u = frame[i + 3];
-        frame[i + 3] = frame[i + 1];
-        frame[i + 1] = u;
+        uint8_t y1 = frame[i];
+        uint8_t v = frame[i + 1];
+        frame[i] = frame[i + 2];
+        frame[i + 1] = frame[i + 3];
+        frame[i + 2] = y1;
+        frame[i + 3] = v;
     }
 }
 
@@ -458,7 +464,7 @@ static mp_obj_t lt6911_capture(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     if (err != ESP_OK) {
         lt6911_raise_esp_error(err, "synchronize captured frame");
     }
-    lt6911_yvyu_to_yuyv(s_frame_buffers[completed_index]);
+    lt6911_fix_eco2_yuv422_order(s_frame_buffers[completed_index]);
 
     mp_obj_t open_args[2] = {
         args[ARG_path].u_obj,
