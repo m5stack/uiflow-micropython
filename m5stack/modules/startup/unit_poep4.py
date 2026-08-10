@@ -74,12 +74,15 @@ class Unit_PoEP4_Startup:
         ):
             success = False
             self._unit_poep4_rgb_show("yellow")
-            for _ in range(10):
-                time.sleep(1)
+            print("Connecting to Ethernet ", end="")
+            timeout_ms = timeout * 1000
+            start = time.ticks_ms()
+            while True:
                 eth_status = self._net_if.connect_status()
-                if eth_status is network.ETH_GOT_IP:
+                if eth_status == network.ETH_GOT_IP:
                     access_code = M5Things.accesscode()
                     if access_code != "":
+                        print()
                         print("Local IP: " + self._net_if.local_ip())
                         print("=======================")
                         print("Nickname: " + M5Things.nick_name())
@@ -88,7 +91,13 @@ class Unit_PoEP4_Startup:
                         self._unit_poep4_rgb_show("green")
                         success = True
                         break
+                elapsed_ms = time.ticks_diff(time.ticks_ms(), start)
+                if elapsed_ms >= timeout_ms:
+                    break
+                print(".", end="")
+                time.sleep_ms(min(1000, timeout_ms - elapsed_ms))
             if not success:
+                print()
                 print(
                     f"[NET] ETH: {self.eth_status_str(eth_status)} | "
                     f"MQTT: {self.m5things_status_str(M5Things.status())}"
