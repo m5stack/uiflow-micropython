@@ -22,6 +22,8 @@
 #include "driver/gpio.h"
 #include "esp_codec_dev.h"
 #include "esp_codec_dev_defaults.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 #if (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0))
 #include "driver/i2c_master.h"
@@ -41,6 +43,9 @@ static void *audio_hal = NULL;
 #define AUDIO_CODEC_I2C_SCL_PIN  GPIO_NUM_11
 #define AUDIO_CODEC_I2C_SDA_PIN  GPIO_NUM_12
 #define AUDIO_CODEC_GPIO_PA      GPIO_NUM_NC
+#define AUDIO_IO_EXPANDER_I2C_ADDR (0x58 << 1)
+#define AUDIO_CODEC_RESET_REG      0x02
+#define AUDIO_CODEC_RESET_MASK     (1U << 2)
 
 
 #if USE_IDF5
@@ -64,6 +69,7 @@ static bool first_i2c_init = false;
 
 static int ut_i2c_init(uint8_t port);
 static int ut_i2c_deinit(uint8_t port);
+static int release_audio_codec_reset(void);
 
 static int ut_i2s_init(uint8_t port);
 static int ut_i2s_deinit(uint8_t port);
@@ -94,6 +100,11 @@ void * board_codec_init(void)
     ESP_LOGI(TAG, "init");
 
     int ret = ut_i2c_init(1);
+    if (ret != ESP_OK || release_audio_codec_reset() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to release audio codec reset");
+        return NULL;
+    }
+    vTaskDelay(pdMS_TO_TICKS(10));
     ret |= ut_i2s_init(1);
 
     audio_codec_i2s_cfg_t i2s_cfg = {
@@ -157,13 +168,37 @@ void * board_codec_init(void)
     esp_codec_dev_set_in_gain(record_dev, 30.0);
 
     fs.channel = 2;
-    fs.channel_mask = ESP_CODEC_DEV_MAKE_CHANNEL_MASK(0) | ESP_CODEC_DEV_MAKE_CHANNEL_MASK(3);
+    fs.channel_mask = 0;
     ret = esp_codec_dev_open(record_dev, &fs);
 
     // i2s_stream_init 会实例化 i2s。初始化 codec 之后，需要将 i2s 释放。
     ut_i2s_deinit(1);
 
     return audio_hal;
+}
+
+static int release_audio_codec_reset(void)
+{
+    audio_codec_i2c_cfg_t cfg = {
+        .port = 1,
+        .addr = AUDIO_IO_EXPANDER_I2C_ADDR,
+    };
+#ifdef USE_IDF_I2C_MASTER
+    cfg.bus_handle = i2c_bus_handle;
+#endif
+    const audio_codec_ctrl_if_t *ctrl = audio_codec_new_i2c_ctrl(&cfg);
+    if (ctrl == NULL) {
+        return ESP_FAIL;
+    }
+
+    uint8_t value = 0;
+    int ret = ctrl->read_reg(ctrl, AUDIO_CODEC_RESET_REG, 1, &value, 1);
+    if (ret == ESP_OK) {
+        value |= AUDIO_CODEC_RESET_MASK;
+        ret = ctrl->write_reg(ctrl, AUDIO_CODEC_RESET_REG, 1, &value, 1);
+    }
+    audio_codec_delete_ctrl_if(ctrl);
+    return ret;
 }
 
 // NOTE: 使用内联函数???
