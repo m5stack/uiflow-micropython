@@ -1,0 +1,120 @@
+Index: micropython/ports/esp32/machine_adc.c
+===================================================================
+--- micropython.orig/ports/esp32/machine_adc.c
++++ micropython/ports/esp32/machine_adc.c
+@@ -115,6 +115,11 @@ static const machine_adc_obj_t madc_obj[
+     {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_4, GPIO_NUM_4},
+     {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_5, GPIO_NUM_5},
+     {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_6, GPIO_NUM_6},
++    #elif CONFIG_IDF_TARGET_ESP32C61
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_0, GPIO_NUM_1},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_1, GPIO_NUM_3},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_2, GPIO_NUM_4},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_3, GPIO_NUM_5},
+     #elif CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3
+     {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_0, GPIO_NUM_1},
+     {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_1, GPIO_NUM_2},
+Index: micropython/ports/esp32/machine_pin.c
+===================================================================
+--- micropython.orig/ports/esp32/machine_pin.c
++++ micropython/ports/esp32/machine_pin.c
+@@ -154,7 +154,7 @@ static mp_obj_t machine_pin_obj_init_hel
+     // reset the pin to digital if this is a mode-setting init (grab it back from ADC)
+     if (args[ARG_mode].u_obj != mp_const_none) {
+         if (rtc_gpio_is_valid_gpio(index)) {
+-            #if !(CONFIG_IDF_TARGET_ESP32C2 || CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C6)
++            #if !(CONFIG_IDF_TARGET_ESP32C2 || CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32C61)
+             rtc_gpio_deinit(index);
+             #endif
+         }
+@@ -170,7 +170,7 @@ static mp_obj_t machine_pin_obj_init_hel
+         CLEAR_PERI_REG_MASK(USB_SERIAL_JTAG_CONF0_REG, USB_SERIAL_JTAG_USB_PAD_ENABLE);
+     }
+     #endif
+-    #if CONFIG_IDF_TARGET_ESP32C6 && !MICROPY_HW_ESP_USB_SERIAL_JTAG
++    #if (CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32C61) && !MICROPY_HW_ESP_USB_SERIAL_JTAG
+     if (index == 12 || index == 13) {
+         CLEAR_PERI_REG_MASK(USB_SERIAL_JTAG_CONF0_REG, USB_SERIAL_JTAG_USB_PAD_ENABLE);
+     }
+@@ -457,7 +457,11 @@ static mp_obj_t machine_pin_irq_call(mp_
+ static mp_obj_t machine_pin_irq_trigger(size_t n_args, const mp_obj_t *args) {
+     machine_pin_irq_obj_t *self = args[0];
+     gpio_num_t index = PIN_OBJ_PTR_INDEX(PIN_OBJ_PTR_FROM_IRQ_OBJ_PTR(self));
++    #if CONFIG_IDF_TARGET_ESP32C61
++    uint32_t orig_trig = GPIO.pinn[index].pinn_int_type;
++    #else
+     uint32_t orig_trig = GPIO.pin[index].int_type;
++    #endif
+     if (n_args == 2) {
+         // set trigger
+         gpio_set_intr_type(index, mp_obj_get_int(args[1]));
+Index: micropython/ports/esp32/machine_pin.h
+===================================================================
+--- micropython.orig/ports/esp32/machine_pin.h
++++ micropython/ports/esp32/machine_pin.h
+@@ -167,6 +167,34 @@
+ #define MICROPY_HW_ENABLE_GPIO23 (1)
+ // GPIO 24-30 are used for spi/sip flash.
+ 
++#elif CONFIG_IDF_TARGET_ESP32C61
++
++#define MICROPY_HW_ENABLE_GPIO0 (1)
++#define MICROPY_HW_ENABLE_GPIO1 (1)
++#define MICROPY_HW_ENABLE_GPIO2 (1)
++#define MICROPY_HW_ENABLE_GPIO3 (1)
++#define MICROPY_HW_ENABLE_GPIO4 (1)
++#define MICROPY_HW_ENABLE_GPIO5 (1)
++#define MICROPY_HW_ENABLE_GPIO6 (1)
++#define MICROPY_HW_ENABLE_GPIO7 (1)
++#define MICROPY_HW_ENABLE_GPIO8 (1)
++#define MICROPY_HW_ENABLE_GPIO9 (1)
++#define MICROPY_HW_ENABLE_GPIO10 (1)
++#define MICROPY_HW_ENABLE_GPIO11 (1)
++#if !MICROPY_HW_ESP_USB_SERIAL_JTAG
++#define MICROPY_HW_ENABLE_GPIO12 (1)
++#define MICROPY_HW_ENABLE_GPIO13 (1)
++#endif
++// GPIO 14-21 are used for flash/PSRAM.
++#define MICROPY_HW_ENABLE_GPIO22 (1)
++#define MICROPY_HW_ENABLE_GPIO23 (1)
++#define MICROPY_HW_ENABLE_GPIO24 (1)
++#define MICROPY_HW_ENABLE_GPIO25 (1)
++#define MICROPY_HW_ENABLE_GPIO26 (1)
++#define MICROPY_HW_ENABLE_GPIO27 (1)
++#define MICROPY_HW_ENABLE_GPIO28 (1)
++#define MICROPY_HW_ENABLE_GPIO29 (1)
++
+ #elif CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3
+ 
+ #define MICROPY_HW_ENABLE_GPIO0 (1)
+Index: micropython/ports/esp32/modmachine.c
+===================================================================
+--- micropython.orig/ports/esp32/modmachine.c
++++ micropython/ports/esp32/modmachine.c
+@@ -105,11 +105,11 @@ static void mp_machine_set_freq(size_t n
+     }
+     #else
+     if (freq != 20 && freq != 40 && freq != 80 && freq != 160
+-        #if !(CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C6)
++        #if !(CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32C61)
+         && freq != 240
+         #endif
+         ) {
+-        #if CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C6
++        #if CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32C61
+         mp_raise_ValueError(MP_ERROR_TEXT("frequency must be 20MHz, 40MHz, 80Mhz or 160MHz"));
+         #else
+         mp_raise_ValueError(MP_ERROR_TEXT("frequency must be 20MHz, 40MHz, 80Mhz, 160MHz or 240MHz"));
+Index: micropython/ports/esp32/mpconfigport.h
+===================================================================
+--- micropython.orig/ports/esp32/mpconfigport.h
++++ micropython/ports/esp32/mpconfigport.h
+@@ -181,6 +181,8 @@
+ #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32c5"
+ #elif CONFIG_IDF_TARGET_ESP32C6
+ #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32c6"
++#elif CONFIG_IDF_TARGET_ESP32C61
++#define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32c61"
+ #elif CONFIG_IDF_TARGET_ESP32P4
+ #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32p4"
+ #endif

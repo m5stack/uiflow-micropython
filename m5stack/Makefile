@@ -17,6 +17,7 @@ boards := \
 	M5STACK_StampS3:stamps3          \
 	M5STACK_StampS3Mini:stamps3mini  \
 	M5STACK_CoreS3:cores3            \
+	M5STACK_CoreMatrix:corematrix    \
 	M5STACK_AtomS3U:atoms3u          \
 	M5STACK_Core2:core2              \
 	M5STACK_Tough:tough              \
@@ -75,6 +76,7 @@ BOARD_TYPE_DEF := \
 	stamps3     \
 	stamps3mini \
 	cores3      \
+	corematrix  \
 	atoms3u     \
 	core2       \
 	tough       \
@@ -359,7 +361,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0027-micropython-1.27.0-fix-mpnimbleport.patch \
 	0028-micropython-1.27.0-fix-mpy-cross-clang-on-macos.patch \
 	0029-micropython-1.27.0-select-esp32p4-usb-phy.patch \
-	0030-micropython-1.27.0-fix-nimble-dynamic-gatt.patch
+	0030-micropython-1.27.0-fix-nimble-dynamic-gatt.patch \
+	0031-micropython-1.27.0-support-esp32c61.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch
