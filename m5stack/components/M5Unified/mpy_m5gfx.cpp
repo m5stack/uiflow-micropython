@@ -426,6 +426,53 @@ mp_obj_t gfx_drawPixel(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     return mp_const_none;
 }
 
+mp_obj_t gfx_drawPixels(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_points, ARG_color, ARG_clear, ARG_background};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_points,     MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_color,      MP_ARG_INT                  , {.u_int = 0xFFFFFF      } },
+        { MP_QSTR_clear,      MP_ARG_BOOL                 , {.u_bool = false        } },
+        { MP_QSTR_background, MP_ARG_INT                  , {.u_int = 0x000000      } },
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    size_t point_count;
+    mp_obj_t *points;
+    mp_obj_get_array(args[ARG_points].u_obj, &point_count, &points);
+
+    // Validate every point before opening the display transaction. MicroPython
+    // exceptions use non-local jumps and would otherwise skip endWrite().
+    for (size_t i = 0; i < point_count; ++i) {
+        size_t coordinate_count;
+        mp_obj_t *coordinates;
+        mp_obj_get_array(points[i], &coordinate_count, &coordinates);
+        if (coordinate_count != 2) {
+            mp_raise_ValueError(MP_ERROR_TEXT("point must contain x and y"));
+        }
+        mp_obj_get_int(coordinates[0]);
+        mp_obj_get_int(coordinates[1]);
+    }
+
+    auto gfx = getGfx(&pos_args[0]);
+    gfx->startWrite();
+    if (args[ARG_clear].u_bool) {
+        gfx->fillScreen((uint32_t)args[ARG_background].u_int);
+    }
+    gfx->setColor((uint32_t)args[ARG_color].u_int);
+    for (size_t i = 0; i < point_count; ++i) {
+        size_t coordinate_count;
+        mp_obj_t *coordinates;
+        mp_obj_get_array(points[i], &coordinate_count, &coordinates);
+        gfx->writePixel(mp_obj_get_int(coordinates[0]), mp_obj_get_int(coordinates[1]));
+    }
+    gfx->endWrite();
+    return mp_const_none;
+}
+
 mp_obj_t gfx_drawCircle(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_x, ARG_y, ARG_r, ARG_color};
     /* *FORMAT-OFF* */

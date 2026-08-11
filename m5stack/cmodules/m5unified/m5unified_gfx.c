@@ -52,6 +52,7 @@ MAKE_METHOD_KW(gfx, setBrightness, 1);
 MAKE_METHOD_KW(gfx, clear, 1);
 MAKE_METHOD_KW(gfx, fillScreen, 1);
 MAKE_METHOD_KW(gfx, drawPixel, 1);
+MAKE_METHOD_KW(gfx, drawPixels, 1);
 MAKE_METHOD_KW(gfx, drawCircle, 1);
 MAKE_METHOD_KW(gfx, fillCircle, 1);
 MAKE_METHOD_KW(gfx, drawEllipse, 1);
@@ -123,6 +124,7 @@ MAKE_METHOD_0(gfx, lvgl_benchmark);
     MAKE_TABLE(gfx, clear), \
     MAKE_TABLE(gfx, fillScreen), \
     MAKE_TABLE(gfx, drawPixel), \
+    MAKE_TABLE(gfx, drawPixels), \
     MAKE_TABLE(gfx, drawCircle), \
     MAKE_TABLE(gfx, fillCircle), \
     MAKE_TABLE(gfx, drawEllipse), \

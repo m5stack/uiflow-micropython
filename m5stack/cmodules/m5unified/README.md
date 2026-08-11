@@ -57,6 +57,7 @@
   - clear -- \<function\>
   - fillScreen -- \<function\>
   - drawPixel -- \<function\>
+  - drawPixels -- \<function\>
   - drawCircle -- \<function\>
   - fillCircle -- \<function\>
   - drawEllipse -- \<function\>
