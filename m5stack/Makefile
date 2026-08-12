@@ -373,7 +373,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2009-fix-SoftI2C.patch \
 	2010-Support-Nesso-N1.patch \
 	2019-fix-touch-sensor.patch \
-	2021-Fix-Tab5-charge-status-detection.patch
+	2021-Fix-Tab5-charge-status-detection.patch \
+	2023-Add-CoreMatrix-PWM-speaker-support.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch
