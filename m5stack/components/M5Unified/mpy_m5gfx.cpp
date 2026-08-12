@@ -1364,7 +1364,7 @@ const font_obj_t gfx_font_efontCN_24_obj = {{ &mp_type_object }, &m5gfx::fonts::
 const font_obj_t gfx_font_efontJA_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontJA_24 };
 const font_obj_t gfx_font_efontKR_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontKR_24 };
 #else
-#ifndef TINY_FONT
+#if !defined(TINY_FONT) && !defined(MONOCHROME_FONT)
 // FONT_MONTSERRAT_12
 const font_obj_t gfx_font_montserrat_12_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat12 };
 
@@ -1401,21 +1401,7 @@ const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &m5gfx::font
 // FONT_MONTSERRAT_48
 const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat48 };
 
-// FONT_ALIBABAPUHUITI_CN24
-extern const lv_font_t AlibabaPuHuiTi_CN24;
-const M5LvglFont AlibabaPuHuiTi_CN24_obj(&AlibabaPuHuiTi_CN24);
-const font_obj_t gfx_font_AlibabaPuHuiTi_CN24_obj = {{ &mp_type_object }, &AlibabaPuHuiTi_CN24_obj };
-
-// FONT_ALIBABASANS_JA24
-extern const lv_font_t AlibabaSans_JP24;
-const M5LvglFont AlibabaSans_JP24_obj(&AlibabaSans_JP24);
-const font_obj_t gfx_font_AlibabaSans_JP24_obj = {{ &mp_type_object }, &AlibabaSans_JP24_obj };
-
-// FONT_ALIBABASANS_KR24
-extern const lv_font_t AlibabaSans_KR24;
-const M5LvglFont AlibabaSans_KR24_obj(&AlibabaSans_KR24);
-const font_obj_t gfx_font_AlibabaSans_KR24_obj = {{ &mp_type_object }, &AlibabaSans_KR24_obj };
-#else // TINY_FONT
+#else // TINY_FONT || MONOCHROME_FONT
 // FONT_MONTSERRAT_12
 extern const lv_font_t Montserrat_1BPP_12;
 const M5LvglFont lv_font_montserrat_12_obj(&Montserrat_1BPP_12);
@@ -1467,6 +1453,23 @@ const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &lv_font_mon
 extern const lv_font_t Montserrat_1BPP_48;
 const M5LvglFont lv_font_montserrat_48_obj(&Montserrat_1BPP_48);
 const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &lv_font_montserrat_48_obj };
+#endif // TINY_FONT || MONOCHROME_FONT
+
+#ifndef TINY_FONT
+// FONT_ALIBABAPUHUITI_CN24
+extern const lv_font_t AlibabaPuHuiTi_CN24;
+const M5LvglFont AlibabaPuHuiTi_CN24_obj(&AlibabaPuHuiTi_CN24);
+const font_obj_t gfx_font_AlibabaPuHuiTi_CN24_obj = {{ &mp_type_object }, &AlibabaPuHuiTi_CN24_obj };
+
+// FONT_ALIBABASANS_JA24
+extern const lv_font_t AlibabaSans_JP24;
+const M5LvglFont AlibabaSans_JP24_obj(&AlibabaSans_JP24);
+const font_obj_t gfx_font_AlibabaSans_JP24_obj = {{ &mp_type_object }, &AlibabaSans_JP24_obj };
+
+// FONT_ALIBABASANS_KR24
+extern const lv_font_t AlibabaSans_KR24;
+const M5LvglFont AlibabaSans_KR24_obj(&AlibabaSans_KR24);
+const font_obj_t gfx_font_AlibabaSans_KR24_obj = {{ &mp_type_object }, &AlibabaSans_KR24_obj };
 #endif // TINY_FONT
 #endif // BOARD_ID == 25
 }
