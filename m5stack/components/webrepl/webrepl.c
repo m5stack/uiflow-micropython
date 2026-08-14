@@ -10,9 +10,7 @@
 #include "esp_log.h"
 #include "esp_system.h"
 #include "esp_timer.h"
-#include "esp_wifi.h"
 #include "esp_websocket_client.h"
-#include "nvs.h"
 #include "cJSON.h"
 
 #include "py/mperrno.h"
@@ -24,11 +22,7 @@
 #include "shared/runtime/interrupt_char.h"
 
 #define WEBREPL_TAG "webrepl"
-#define WEBREPL_URI_TEMPLATE "ws://%s/ws/realtime?role=device&mac=%s"
-#define WEBREPL_NVS_NAMESPACE "uiflow"
-#define WEBREPL_NVS_SERVER_KEY "server"
-#define WEBREPL_ENABLED_SERVER "aiflow.m5stack.com"
-#define WEBREPL_SERVER_MAX_LEN 96
+#define WEBREPL_URI "ws://uiflow2.m5stack.com/ws/realtime?role=device&mac=14c19fd50528"
 
 #define WEBREPL_RX_BUF_SIZE 4096
 #define WEBREPL_TX_BUF_SIZE 8192
@@ -111,57 +105,8 @@ static inline void webrepl_wake_main_task(void) {
     mp_hal_wake_main_task();
 }
 
-static bool webrepl_read_nvs_server_key(nvs_handle_t nvs_handle, const char *key, char *server, size_t server_len) {
-    size_t len = server_len;
-    server[0] = '\0';
-    esp_err_t err = nvs_get_str(nvs_handle, key, server, &len);
-    if (err == ESP_ERR_NVS_NOT_FOUND) {
-        return false;
-    }
-    if (err != ESP_OK) {
-        ESP_LOGW(WEBREPL_TAG, "read nvs %s failed: %s", key, esp_err_to_name(err));
-        return false;
-    }
-    return server[0] != '\0';
-}
-
-static bool webrepl_read_server(char *server, size_t server_len) {
-    nvs_handle_t nvs_handle;
-    esp_err_t err = nvs_open(WEBREPL_NVS_NAMESPACE, NVS_READONLY, &nvs_handle);
-    if (err != ESP_OK) {
-        ESP_LOGW(WEBREPL_TAG, "open nvs %s failed: %s", WEBREPL_NVS_NAMESPACE, esp_err_to_name(err));
-        return false;
-    }
-
-    bool ok = webrepl_read_nvs_server_key(nvs_handle, WEBREPL_NVS_SERVER_KEY, server, server_len);
-    nvs_close(nvs_handle);
-    if (!ok) {
-        ESP_LOGW(WEBREPL_TAG, "nvs %s not configured", WEBREPL_NVS_SERVER_KEY);
-    }
-    return ok;
-}
-
-bool webrepl_should_start(void) {
-    char server[WEBREPL_SERVER_MAX_LEN] = {0};
-    return webrepl_read_server(server, sizeof(server)) && strcmp(server, WEBREPL_ENABLED_SERVER) == 0;
-}
-
-static bool webrepl_build_uri(void) {
-    uint8_t mac[6] = {0};
-    char mac_str[13] = {0};
-    char server[WEBREPL_SERVER_MAX_LEN] = {0};
-    esp_err_t err = esp_wifi_get_mac(WIFI_IF_STA, mac);
-    if (err != ESP_OK) {
-        ESP_LOGW(WEBREPL_TAG, "read mac failed: %s, fallback 000000000000", esp_err_to_name(err));
-    }
-
-    snprintf(mac_str, sizeof(mac_str), "%02x%02x%02x%02x%02x%02x",
-        mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-    if (!webrepl_read_server(server, sizeof(server))) {
-        return false;
-    }
-    snprintf(webrepl_uri, sizeof(webrepl_uri), WEBREPL_URI_TEMPLATE, server, mac_str);
-    return true;
+static void webrepl_build_uri(void) {
+    snprintf(webrepl_uri, sizeof(webrepl_uri), "%s", WEBREPL_URI);
 }
 
 static void webrepl_rx_clear_locked(void) {
@@ -614,12 +559,7 @@ static void webrepl_install_dupterm_if_needed(void) {
 void webrepl_task(void *pvParameter) {
     (void)pvParameter;
     webrepl_wait_network();
-    if (!webrepl_build_uri()) {
-        ESP_LOGE(WEBREPL_TAG, "task stop: server is not configured");
-        webrepl_task_handle = NULL;
-        vTaskDelete(NULL);
-        return;
-    }
+    webrepl_build_uri();
     ESP_LOGD(WEBREPL_TAG, "task start: %s", webrepl_uri);
 
     if (webrepl_start_client() != ESP_OK) {

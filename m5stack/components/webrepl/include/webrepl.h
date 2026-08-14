@@ -12,7 +12,6 @@ extern "C" {
 #endif
 
 extern TaskHandle_t webrepl_task_handle;
-bool webrepl_should_start(void);
 void webrepl_task(void *pvParameter);
 
 #ifdef __cplusplus
