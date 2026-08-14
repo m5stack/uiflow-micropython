@@ -10,6 +10,7 @@
 #include "esp_log.h"
 #include "esp_system.h"
 #include "esp_timer.h"
+#include "esp_wifi.h"
 #include "esp_websocket_client.h"
 #include "cJSON.h"
 
@@ -22,7 +23,7 @@
 #include "shared/runtime/interrupt_char.h"
 
 #define WEBREPL_TAG "webrepl"
-#define WEBREPL_URI "ws://uiflow2.m5stack.com/ws/realtime?role=device&mac=14c19fd50528"
+#define WEBREPL_URI_TEMPLATE "ws://uiflow2.m5stack.com/ws/realtime?role=device&mac=%s"
 
 #define WEBREPL_RX_BUF_SIZE 4096
 #define WEBREPL_TX_BUF_SIZE 8192
@@ -106,7 +107,16 @@ static inline void webrepl_wake_main_task(void) {
 }
 
 static void webrepl_build_uri(void) {
-    snprintf(webrepl_uri, sizeof(webrepl_uri), "%s", WEBREPL_URI);
+    uint8_t mac[6] = {0};
+    char mac_str[13] = {0};
+    esp_err_t err = esp_wifi_get_mac(WIFI_IF_STA, mac);
+    if (err != ESP_OK) {
+        ESP_LOGW(WEBREPL_TAG, "read mac failed: %s, fallback 000000000000", esp_err_to_name(err));
+    }
+
+    snprintf(mac_str, sizeof(mac_str), "%02x%02x%02x%02x%02x%02x",
+        mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+    snprintf(webrepl_uri, sizeof(webrepl_uri), WEBREPL_URI_TEMPLATE, mac_str);
 }
 
 static void webrepl_rx_clear_locked(void) {
