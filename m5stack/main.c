@@ -68,7 +68,7 @@
 
 // Start of modification section, by M5Stack
 #include "board.h"
-#if M5STACK_WEBREPL_ENABLE
+#if WEB_REPL_ENABLE
 #include "webrepl.h"
 #endif
 // End of modification section, by M5Stack
@@ -308,7 +308,7 @@ void MICROPY_ESP_IDF_ENTRY(void) {
 
     // Create and transfer control to the MicroPython task.
     xTaskCreatePinnedToCore(mp_task, "mp_task", MICROPY_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);
-    #if M5STACK_WEBREPL_ENABLE
+    #if WEB_REPL_ENABLE
     xTaskCreatePinnedToCore(webrepl_task, "webrepl_task", 6000, NULL, MP_TASK_PRIORITY + 1, &webrepl_task_handle, MP_TASK_COREID);
     #endif
 }

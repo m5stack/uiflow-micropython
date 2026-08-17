@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 set(IDF_TARGET esp32s3)
+set(WEB_REPL_ENABLE 1)
 
 # sticks3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L28
 set(BOARD_ID 26)

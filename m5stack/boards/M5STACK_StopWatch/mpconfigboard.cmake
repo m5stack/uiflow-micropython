@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 set(IDF_TARGET esp32s3)
+set(WEB_REPL_ENABLE 1)
 
 # stopwatch board id 30
 set(BOARD_ID 30)
