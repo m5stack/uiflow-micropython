@@ -51,7 +51,12 @@ class RGB:
             elif board_id in (M5.BOARD.M5AtomS3Lite, M5.BOARD.M5AtomS3U):
                 cls._instance = WS2812(io=35, n=1)
                 return cls._instance
-            elif board_id in (M5.BOARD.M5StampS3, M5.BOARD.M5Capsule):
+            elif board_id in (
+                M5.BOARD.M5StampS3,
+                M5.BOARD.M5StamPLC,
+                M5.BOARD.M5Capsule,
+                M5.BOARD.M5CardputerADV,
+            ):
                 cls._instance = WS2812(io=21, n=1)
                 return cls._instance
             elif M5.BOARD.M5Station == board_id:
