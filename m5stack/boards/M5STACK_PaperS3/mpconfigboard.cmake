@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 set(IDF_TARGET esp32s3)
+set(WEB_REPL_ENABLE 1)
 set(BOARD_ID 19)
 set(MICROPY_PY_LVGL 0)
 
