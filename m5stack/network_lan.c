@@ -46,6 +46,8 @@
 #include "modnetwork.h"
 #include "extmod/modnetwork.h"
 
+bool lan_connected = false;
+
 #define ETH_MAC_CUSTOM_CONFIG()                           \
     {                                                     \
         .sw_reset_timeout_ms = 100,                       \
@@ -83,6 +85,7 @@ static void eth_event_handler(void *arg, esp_event_base_t event_base,
             break;
         case ETHERNET_EVENT_DISCONNECTED:
             eth_status = ETH_DISCONNECTED;
+            lan_connected = false;
             ESP_LOGI("ethernet", "Ethernet Link Down");
             break;
         case ETHERNET_EVENT_START:
@@ -95,6 +98,7 @@ static void eth_event_handler(void *arg, esp_event_base_t event_base,
             break;
         case IP_EVENT_ETH_GOT_IP:
             eth_status = ETH_GOT_IP;
+            lan_connected = true;
             ESP_LOGI("ethernet", "Ethernet Got IP");
             break;
         default:

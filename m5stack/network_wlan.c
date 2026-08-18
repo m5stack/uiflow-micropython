@@ -66,7 +66,7 @@ static bool wifi_started = false;
 static bool wifi_sta_connect_requested = false;
 
 // Set to "true" if the STA interface is connected to wifi and has IP address.
-static bool wifi_sta_connected = false;
+bool wifi_sta_connected = false;
 
 // Store the current status. 0 means None here, safe to do so as first enum value is WIFI_REASON_UNSPECIFIED=1.
 static uint8_t wifi_sta_disconn_reason = 0;
