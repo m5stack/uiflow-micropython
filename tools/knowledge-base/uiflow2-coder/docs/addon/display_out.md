@@ -6,7 +6,7 @@ connected to the Unit PoE-P4 display output.
 
 Support the following products:
 
-    UNIT_POEP4
+    display_out
 
 ## MicroPython Example
 

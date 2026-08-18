@@ -2,6 +2,7 @@
 
 This library drives **Unit NFC** (ST25R3916 on I2C). It discovers ISO14443 Type A tags, resolves chip type (Classic, Ultralight / NTAG family, DESFire, Plus, etc.),
 and exposes high-level read/write helpers for supported tag kinds.
+The lower-level `driver.st25r3916.ST25R3916` transport supports both I2C and SPI. Unit NFC uses I2C; NFCCap and other combo products can pass a pre-built SPI chip object into `NFCUnit`.
 
 Support the following products:
 
@@ -179,6 +180,8 @@ if __name__ == "__main__":
 
     - Parameter `i2c`: I2C bus used to talk to the ST25R3916.
 
+    `NFCUnit` can also wrap a pre-built `driver.st25r3916.ST25R3916` object for SPI mode.
+
 ```python
 from hardware import Pin, I2C
 from unit import NFCUnit
@@ -186,11 +189,21 @@ from unit import NFCUnit
 i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
 nfc = NFCUnit(i2c0)
 ```
+    SPI products create the ST25R3916 chip first, then wrap it with `NFCUnit`:
+
+```python
+import machine
+from driver.st25r3916 import ST25R3916
+from unit import NFCUnit
+
+spi = machine.SPI(1, baudrate=2000000, polarity=0, phase=1)
+nfc = NFCUnit(chip=ST25R3916(spi=spi, cs=6, irq=4))
+```
 ### `detect()`
 
         Poll for a Type A tag in the field.
 
-        - Returns: A `unit.nfc.Card` instance if a tag was found and identified, otherwise `None`.
+        - Returns: A `driver.nfc.Card` instance if a tag was found and identified, otherwise `None`.
 
 ```python
 card = nfc.detect()
@@ -201,10 +214,8 @@ if card:
 
         Write one **address unit**.
 
-> Note: Only MIFARE Classic is supported for now.
-        `data` must be **16** bytes; `index` is the block number. Sector trailers and block `0` require valid keys/access rules from the card.
-
-        - Parameter `card` (`unit.nfc.Card`): Tag from `detect`.
+> Note: Use writable test cards only. Do not write UID pages, lock bytes, sector trailers, access-control blocks, or cards used for access/payment/identity.
+        - Parameter `card` (`driver.nfc.Card`): Tag from `detect`.
         - Parameter `index` (`int`): Block index.
         - Parameter `data` (`bytes`): Exactly 16 bytes for Classic.
         - Returns: `True` on success, `False` otherwise.
@@ -220,7 +231,7 @@ ok = nfc.write(card, index, data)
         - **Type 2 family** (Ultralight / NTAG / ST25TA / ISO18092 where applicable): `index` is the **page number**. Returns **4** bytes on success, or `None`.
         - Other chip types: `None` (use chip-specific flows outside this helper).
 
-        - Parameter `card` (`unit.nfc.Card`): Tag returned by `detect`.
+        - Parameter `card` (`driver.nfc.Card`): Tag returned by `detect`.
         - Parameter `index` (`int`): Block index (Classic) or page index (Type 2).
         - Returns: `bytes` or `None`.
 
@@ -250,7 +261,7 @@ nfc.rf_on()
 ```
 #### Card
 
-### `class unit.nfc.Card`
+### `class driver.nfc.Card`
 
     Object returned by `NFCUnit.detect` when a tag is present. Holds the anti-collision result and the resolved type metadata from the stack (SAK/ATQA/version/ATS paths as implemented in firmware).
 
@@ -262,11 +273,11 @@ nfc.rf_on()
 
 ### `type_id`
 
-        `int` — Internal type id used by this driver (aligned with the `TYPE_NAMES` table in `unit/nfc.py`).
+        `int` — Internal type id used by this driver (aligned with the `TYPE_NAMES` table in `driver/nfc.py`).
 
 ### `type_name`
 
-        `str` — Resolved chip label from the identification logic in firmware; same strings as `TYPE_NAMES` in `unit/nfc.py`. `type_id` selects the row below (unknown or unclassified tags use `Unknown`).
+        `str` — Resolved chip label from the identification logic in firmware; same strings as `TYPE_NAMES` in `driver/nfc.py`. `type_id` selects the row below (unknown or unclassified tags use `Unknown`).
 
             - - `type_id`
               - `type_name`

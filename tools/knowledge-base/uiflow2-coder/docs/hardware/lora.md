@@ -5,6 +5,12 @@ LoRa is used to control the built-in long-range wireless communication module in
      Controllers      LoRa    |
      UnitC6L          S     |
      Nesso N1         S     |
+     PaperMono        S     |
+
+On supported controllers, `LoRa` automatically selects the board-specific
+SPI bus and the default CS, BUSY, and IRQ pins. PaperMono also enables the
+built-in LoRa module automatically during initialization. The CS, BUSY, and
+IRQ pins can still be overridden with constructor arguments when required.
 
 ## MicroPython Example
 
@@ -143,16 +149,16 @@ if __name__ == "__main__":
 
 #### class LoRa
 
-### `class hardware.LoRa(freq_khz = 868000, \`
-                        bw = "250", \
-                        sf = 8, \
-                        coding_rate = 8, \
-                        reamble_len = 12, \
-                        syncword = 0x12, \
-                        output_power = 10)
+### `class hardware.LoRa(pin_rst=-1, pin_cs=None, pin_irq=None, pin_busy=None, \`
+                        freq_khz=868000, bw="250", sf=8, coding_rate=8, \
+                        preamble_len=12, syncword=0x12, output_power=10)
 
     Create an LoRa object.
 
+    - Parameter `pin_rst` (`int`): Reserved for compatibility. The current driver does not use a reset pin.
+    - Parameter `pin_cs` (`int`): Chip-select pin. `None` selects the board-specific default.
+    - Parameter `pin_irq` (`int`): Interrupt pin. `None` selects the board-specific default.
+    - Parameter `pin_busy` (`int`): Busy pin. `None` selects the board-specific default.
     - Parameter `freq_khz` (`int`): LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
     - Parameter `bw` (`str`): Bandwidth, options include:
 
@@ -166,16 +172,24 @@ if __name__ == "__main__":
         - `"125"`: 125 KHz
         - `"250"`: 250 KHz
         - `"500"`: 500 KHz
-    - Parameter `sf` (`int`): Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
+    - Parameter `sf` (`int`): Spreading factor, range from 6 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
     - Parameter `coding_rate` (`int`): Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
-    - Parameter `preamble_len` (`int`): Length of the preamble sequence in symbols, range from 0 to 255.
+    - Parameter `preamble_len` (`int`): Length of the preamble sequence in symbols, range from 5 to 255.
     - Parameter `syncword` (`int`): Sync word to mark the start of the data frame, default is 0x12.
     - Parameter `output_power` (`int`): Output power in dBm, range from -9 to 22.
 
 ```python
 from hardware import LoRa
 
-lora_0 = LoRa(868000, '250', 8, 8, 12, 0x12, 10)
+lora_0 = LoRa(
+    freq_khz=868000,
+    bw="250",
+    sf=8,
+    coding_rate=8,
+    preamble_len=12,
+    syncword=0x12,
+    output_power=10,
+)
 ```
 ### `set_freq(freq_khz)`
 
@@ -190,7 +204,7 @@ lora_0.set_freq(freq_khz)
 
         Set spreading factor (SF).
 
-        - Parameter `sf` (`int`): Spreading factor (7 ~ 12)
+        - Parameter `sf` (`int`): Spreading factor (6 ~ 12)
 
 ```python
 lora_0.set_sf(sf)
@@ -219,7 +233,7 @@ lora_0.set_coding_rate(coding_rate)
 
         Set syncword.
 
-        - Parameter `syncword` (`int`): Sync word (0 ~ 0xFF)
+        - Parameter `syncword` (`int`): Sync word (1 ~ 0xFF)
 
 ```python
 lora_0.set_syncword(syncword)
@@ -228,7 +242,7 @@ lora_0.set_syncword(syncword)
 
         Set preamble length.
 
-        - Parameter `preamble_len` (`int`): Preamble length, range: 0~255.
+        - Parameter `preamble_len` (`int`): Preamble length, range: 5~255.
 
 ```python
 lora_0.set_preamble_len(preamble_len)
@@ -247,12 +261,17 @@ lora_0.set_output_power(output_power)
         Set the interrupt callback function to be executed on IRQ.
 
         - Parameter `callback`: The callback function to be invoked when the interrupt is triggered.
-                          The callback should not take any arguments and should return nothing.
+                          The callback receives the result of polling the receive operation.
+                          For a valid received packet, the result is an `RxPacket`.
 
         Call `start_recv()` to begin receiving data.
 
 ```python
-lora_0.set_irq_callback()
+def lora_receive_event(received_data):
+    print(received_data)
+
+lora_0.set_irq_callback(lora_receive_event)
+lora_0.start_recv()
 ```
 ### `start_recv()`
 
@@ -263,7 +282,7 @@ lora_0.set_irq_callback()
 ```python
 lora_0.start_recv()
 ```
-### `recv(self, timeout_ms, rx_length, rx_packet)`
+### `recv(timeout_ms=None, rx_length=0xFF, rx_packet=None)`
 
         Receive data.
 
@@ -278,7 +297,7 @@ lora_0.start_recv()
 ```python
 data = lora_0.recv()
 ```
-### `send(buf, tx_at_ms=None)`
+### `send(packet, tx_at_ms=None)`
 
         Send data.
 
@@ -290,7 +309,7 @@ data = lora_0.recv()
         Send a data packet and return the timestamp after the packet is sent.
 
 ```python
-lora_0.send()
+lora_0.send("Hello LoRa")
 ```
 ### `standby()`
 

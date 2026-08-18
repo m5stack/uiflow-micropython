@@ -28,36 +28,37 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (343 Markdown files, 21 directories; .md suffix omitted)
+docs/  (350 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
-  - addon/: display_out
+  - addon/: display_in, display_out
   - advanced/: camera, code_scanner, dl, image, jpg
     - usb/: _overview
       - device/: keyboard, mouse
   - base/: atom_can, atom_gps, atom_socket, audio35, display, dtu_lorawan, dtu_lorawan_rui3, dtu_nbiot, dtu_nbiot2
            dtu_nbiot2v11, echo, echo_pyramid, gpsv2, hdriver, motion, pwm, qrcode, qrcode2, rs232, rs485, speaker
            stepmotor, tfcard
-  - cap/: lora1262, lora868
+  - cap/: cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, switch, tof, unit_bus
   - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, dinmeter, dualkey, nesso-n1, paper, stackchan
                   stamplc, sticks3, stopwatch
   - get-started/: _overview
-  - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, pin, pwr485, pwrcan, rotary, scd40, sen55
-               sht30, speaker, touch, uart, wdt
-  - hat/: adc, cardkb, dac, dac2, dlight, env, finger, heart, joyc, joystick, mini_encoder, mini_joy, ncir, neoflash
-          pir, servo, servo8, speaker, speaker2, thermal, tof, vibrator
+  - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
+               sht30, sht4x, speaker, touch, uart, wdt
+  - hat/: adc, cardkb, dac, dac2, dlight, env, finger, hat18650c, heart, joyc, joystick, mini_encoder, mini_joy, ncir
+          neoflash, pir, servo, servo8, speaker, speaker2, thermal, tof, vibrator
   - iot-devices/: _overview, switchc6
   - m5ui/: _overview, arc, bar, button, buttonmatrix, calendar, canvas, chart, checkbox, dropdown, image, keyboard
            label, led, line, list, menu, msgbox, page, roller, scale, slider, spinbox, spinner, switch, table, tabview
            textarea, win
-  - module/: 4in8out, ain4, asr, audio, baesx, bala2, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
+  - module/: 4in8out, ain4, asr, audio, bala2, basex, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
              encoder4_motor, fan, gateway_h2, gnss, goplus2, gps, gpsv2, grbl, hmi, lan, llm, lora, lora868_v12
              lorawan868, lorawan_rui3, lte, module16340, nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2
              rs232, servo2, step_motor_driver, usb, zigbee
   - quick-reference/: get-started, usb-mode
   - software/: easysocket, modbus, modbus.rtu.master, modbus.rtu.slave, modbus.tcp.client, modbus.tcp.server
                requests2, tcp.client, tcp.server, udp.client, udp.server, umqtt.default, umqtt
+  - stamp/: uwb
   - stamplc/: ac, io, poe
   - system/: audio, audio.player, audio.recorder, bleuart.client, bleuart, bleuart.server, m5ble, m5espnow, power
              time, wlan.ap, wlan.sta
@@ -68,7 +69,7 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            fader, finger, fingerprint2, flash_light, gateway_h2, glass, glass2, gps_v11, grove2grove, hall_effect
            hbridge, heart, id, imu, imupro, ina226, ir, joystick, joystick2, key, kmeter, kmeter_iso, laser_rx
            laser_tx, lcd, light, limit, lora_e220, lora_e220_433, lorawan_rui3, midi, minioled, miniscale, mq, mqtt
-           mqttpoe, nbiot, nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pdm, pir, puzzle, qrcode, rca
+           mqttpoe, nbiot, nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pahub, pdm, pir, puzzle, qrcode, rca
            reflective_ir, relay, relay2, relay4, rf433r, rf433t, rfid, rgb, roller485, rollercan, rtc, scales, scroll
            servo180, servo360, servos8, ssr, step16, synth, thermal, timerpwr, tmos, tof, tof4m, tof90, tube_pressure
            tvoc, uhf_rfid, ultrasonic, ultrasonic_io, uwb, vibrator, watering, weight, weight_i2c, zigbee
