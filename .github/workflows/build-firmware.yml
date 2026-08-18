@@ -20,7 +20,7 @@ jobs:
     outputs:
       cache-hit: ${{ steps.cache-esp-idf.outputs.cache-hit }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -29,7 +29,7 @@ jobs:
           python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
       - name: Cache esp-idf
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-esp-idf
         with:
           path: |
@@ -109,7 +109,7 @@ jobs:
           - SEEED_STUDIO_XIAO_ESP32S3
       max-parallel: 4
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -118,7 +118,7 @@ jobs:
           python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
       - name: Restore ESP-IDF cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.espressif
@@ -151,20 +151,20 @@ jobs:
 
       - name: Upload M5Stack firmware artifact
         if: inputs.upload_artifacts && (startsWith(matrix.board, 'M5STACK') || matrix.board == 'Nesso_N1')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: firmware-${{ matrix.board }}
           path: m5stack/build-${{ matrix.board }}/uiflow-*-*.bin
 
       - name: Upload third-party firmware artifact
         if: inputs.upload_artifacts && !(startsWith(matrix.board, 'M5STACK') || matrix.board == 'Nesso_N1')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: firmware-${{ matrix.board }}
           path: third-party/build-${{ matrix.board }}/uiflow-*-*.bin
 
       - name: Upload firmware to release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         if: inputs.upload_release && startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
