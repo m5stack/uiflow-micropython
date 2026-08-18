@@ -204,7 +204,7 @@ else:
 
 uiflow_version = ""
 with open("./version.txt", "r") as f:
-    uiflow_version = f.readline() + "-"
+    uiflow_version = f.readline().strip() + "-"
 
 release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
     file_out_complete.split(".bin")[0],
