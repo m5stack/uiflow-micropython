@@ -172,7 +172,7 @@ int machine_hw_i2c_transfer(mp_obj_base_t *self_in, uint16_t addr, size_t n, mp_
     err = i2c_master_bus_add_device(self->bus_handle, &dev_cfg, &dev_handle);
     #else
     #define dev_handle self->dev_handle
-        err = i2c_master_device_change_address(dev_handle, addr, self->timeout_us / 1000);
+    err = i2c_master_device_change_address(dev_handle, addr, self->timeout_us / 1000);
     #endif
     if (err != ESP_OK) {
         return -MP_ENODEV;
