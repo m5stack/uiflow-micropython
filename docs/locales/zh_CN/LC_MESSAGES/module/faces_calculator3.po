@@ -1,0 +1,393 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-18 18:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/module/faces_calculator3.rst:2
+msgid "Faces Calculator3 Module"
+msgstr "Faces Calculator3 模块"
+
+#: ../../source/module/faces_calculator3.rst:8
+msgid ""
+"Faces Calculator3 is a calculator keypad module. It reports released key "
+"codes through a callback and uses I2C address ``0x08`` by default."
+msgstr ""
+"Faces Calculator3 是一个计算器键盘模块。它通过回调报告释放的按键编码，"
+"默认使用 I2C 地址 ``0x08``。"
+
+#: ../../source/module/faces_calculator3.rst:11
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/module/faces_calculator3.rst:13
+msgid "|FacesCalculator3Module|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:1
+msgid "FacesCalculator3Module"
+msgstr "FacesCalculator3Module"
+
+#: ../../source/module/faces_calculator3.rst:16
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/module/faces_calculator3.rst:19
+#: ../../source/module/faces_calculator3.rst:32
+msgid "Key event display"
+msgstr "按键事件显示"
+
+#: ../../source/module/faces_calculator3.rst:21
+msgid ""
+"This example reports the key released on the CoreS3 display. The callback"
+" receives the released key code, converts it to a character, and displays"
+" it."
+msgstr ""
+"该示例在 CoreS3 显示屏上报告释放的按键。回调函数会收到释放的按键编码，"
+"将其转换为字符并显示。"
+
+#: ../../source/module/faces_calculator3.rst:26
+msgid "Open the |faces_calculator3_cores3_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |faces_calculator3_cores3_example.m5f2| 项目。"
+
+#: ../../source/module/faces_calculator3.rst:29
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/module/faces_calculator3.rst:34
+msgid ""
+"Call :meth:`FacesCalculator3Module.tick` regularly from the main loop to "
+"poll for new key events."
+msgstr "在主循环中定期调用 :meth:`FacesCalculator3Module.tick`，轮询新的按键事件。"
+
+#: ../../source/module/faces_calculator3.rst:42
+msgid "API"
+msgstr "API参考"
+
+#: module.faces.FacesCalculator3Module:1 of
+msgid "Bases: :py:class:`~module.faces._FacesModule`"
+msgstr "基类：:py:class:`~module.faces._FacesModule`"
+
+#: module.faces.FacesCalculator3Module:1 of
+msgid "Create a Faces Calculator3 Module object."
+msgstr "创建 Faces Calculator3 Module 对象。"
+
+#: ../../source/module/faces_calculator3.rst
+#: module.faces._FacesModule.set_i2c_address of
+msgid "Parameters"
+msgstr ""
+
+#: module.faces.FacesCalculator3Module:3 of
+msgid "I2C address. Default is ``0x08``."
+msgstr "I2C 地址，默认为 ``0x08``。"
+
+#: module.faces.FacesCalculator3Module:5
+#: module.faces.FacesCalculator3Module.tick:3
+#: module.faces._FacesModule.get_device_id:6
+#: module.faces._FacesModule.get_firmware_version:6
+#: module.faces._FacesModule.get_i2c_address:6
+#: module.faces._FacesModule.get_uid:6
+#: module.faces._FacesModule.set_i2c_address:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: module.faces.FacesCalculator3Module:7 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:5
+msgid "init.png"
+msgstr ""
+
+#: module.faces.FacesCalculator3Module:9
+#: module.faces.FacesCalculator3Module.tick:7
+#: module.faces._FacesModule.get_device_id:10
+#: module.faces._FacesModule.get_firmware_version:10
+#: module.faces._FacesModule.get_i2c_address:10
+#: module.faces._FacesModule.get_uid:10
+#: module.faces._FacesModule.set_i2c_address:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: module.faces.FacesCalculator3Module.set_callback:1 of
+msgid "Set the callback for key events."
+msgstr "设置按键事件回调。"
+
+#: module.faces.FacesCalculator3Module.set_callback:3 of
+msgid "The callback receives the released key code. Pass ``None`` to disable it."
+msgstr "回调函数会收到释放的按键编码。传入 ``None`` 可禁用回调。"
+
+#: module.faces.FacesCalculator3Module.set_callback:5 of
+msgid "Callable accepting one key code, or ``None``."
+msgstr "接收一个按键编码或 ``None`` 的可调用对象。"
+
+#: ../../source/module/faces_calculator3.rst
+#: module.faces.FacesCalculator3Module.tick
+#: module.faces._FacesModule.get_device_id
+#: module.faces._FacesModule.get_firmware_version
+#: module.faces._FacesModule.get_i2c_address module.faces._FacesModule.get_uid
+#: module.faces._FacesModule.set_i2c_address of
+msgid "Return type"
+msgstr ""
+
+#: module.faces.FacesCalculator3Module.tick:1 of
+msgid "Poll once and invoke the callback when a key event is available."
+msgstr "轮询一次；有按键事件时调用回调。"
+
+#: module.faces.FacesCalculator3Module.tick:5 of
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:11
+msgid "tick.png"
+msgstr ""
+
+#: module.faces._FacesModule.get_device_id:1 of
+msgid "Get the Faces module device type ID."
+msgstr "获取 Faces 模块的设备类型 ID。"
+
+#: module.faces._FacesModule.get_device_id
+#: module.faces._FacesModule.get_firmware_version
+#: module.faces._FacesModule.get_i2c_address module.faces._FacesModule.get_uid
+#: of
+msgid "Returns"
+msgstr ""
+
+#: module.faces._FacesModule.get_device_id:3 of
+msgid "The device type ID."
+msgstr "设备类型 ID。"
+
+#: module.faces._FacesModule.get_device_id:8 of
+msgid "|get_device_id.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:6
+msgid "get_device_id.png"
+msgstr ""
+
+#: module.faces._FacesModule.get_firmware_version:1 of
+msgid "Get the firmware version."
+msgstr "获取固件版本。"
+
+#: module.faces._FacesModule.get_firmware_version:3 of
+msgid "The firmware version."
+msgstr "固件版本。"
+
+#: module.faces._FacesModule.get_firmware_version:8 of
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:8
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: module.faces._FacesModule.get_i2c_address:1 of
+msgid "Get the current 7-bit I2C address."
+msgstr "获取当前 7 位 I2C 地址。"
+
+#: module.faces._FacesModule.get_i2c_address:3 of
+msgid "The current I2C address."
+msgstr "当前 I2C 地址。"
+
+#: module.faces._FacesModule.get_i2c_address:8 of
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:9
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: module.faces._FacesModule.get_uid:1 of
+msgid "Get the 96-bit MCU unique identifier."
+msgstr "获取 MCU 的 96 位唯一标识符。"
+
+#: module.faces._FacesModule.get_uid:3 of
+msgid "The 12-byte unique identifier."
+msgstr "12 字节的唯一标识符。"
+
+#: module.faces._FacesModule.get_uid:8 of
+msgid "|get_uid.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:7
+msgid "get_uid.png"
+msgstr ""
+
+#: module.faces._FacesModule.set_i2c_address:1 of
+msgid "Set and persist a new 7-bit I2C address."
+msgstr "设置并保存新的 7 位 I2C 地址。"
+
+#: module.faces._FacesModule.set_i2c_address:3 of
+msgid "New address in the range ``0x08`` to ``0x77``."
+msgstr "新地址范围为 ``0x08`` 到 ``0x77``。"
+
+#: module.faces._FacesModule.set_i2c_address:7 of
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_calculator3.ref:10
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:49
+msgid "Calculator key constants:"
+msgstr "计算器按键常量："
+
+#: ../../source/module/faces_calculator3.rst:55
+msgid "Constant"
+msgstr "常量"
+
+#: ../../source/module/faces_calculator3.rst:56
+msgid "Value"
+msgstr "值"
+
+#: ../../source/module/faces_calculator3.rst:57
+msgid "Key"
+msgstr "按键"
+
+#: ../../source/module/faces_calculator3.rst:58
+msgid "``KEY_BACKSPACE``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:59
+msgid "``0x08``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:60
+msgid "Backspace"
+msgstr "退格"
+
+#: ../../source/module/faces_calculator3.rst:61
+msgid "``KEY_ENTER``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:62
+msgid "``0x0D``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:63
+msgid "Enter"
+msgstr "回车"
+
+#: ../../source/module/faces_calculator3.rst:64
+msgid "``KEY_AC``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:65
+msgid "``0x41``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:66
+msgid "All clear"
+msgstr "全部清除"
+
+#: ../../source/module/faces_calculator3.rst:67
+msgid "``KEY_MEMORY``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:68
+msgid "``0x4D``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:69
+msgid "Memory"
+msgstr "存储器"
+
+#: ../../source/module/faces_calculator3.rst:70
+msgid "``KEY_PERCENT``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:71
+msgid "``0x25``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:72
+msgid "Percent"
+msgstr "百分比"
+
+#: ../../source/module/faces_calculator3.rst:73
+msgid "``KEY_DIVIDE``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:74
+msgid "``0x2F``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:75
+msgid "Divide"
+msgstr "除法"
+
+#: ../../source/module/faces_calculator3.rst:76
+msgid "``KEY_MULTIPLY``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:77
+msgid "``0x2A``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:78
+msgid "Multiply"
+msgstr "乘法"
+
+#: ../../source/module/faces_calculator3.rst:79
+msgid "``KEY_MINUS``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:80
+msgid "``0x2D``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:81
+msgid "Minus"
+msgstr "减法"
+
+#: ../../source/module/faces_calculator3.rst:82
+msgid "``KEY_PLUS``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:83
+msgid "``0x2B``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:84
+msgid "Plus"
+msgstr "加法"
+
+#: ../../source/module/faces_calculator3.rst:85
+msgid "``KEY_SIGN``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:86
+msgid "``0x60``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:87
+msgid "Sign"
+msgstr "正负号"
+
+#: ../../source/module/faces_calculator3.rst:88
+msgid "``KEY_EQUAL``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:89
+msgid "``0x3D``"
+msgstr ""
+
+#: ../../source/module/faces_calculator3.rst:90
+msgid "Equal"
+msgstr "等号"

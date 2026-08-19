@@ -20,6 +20,9 @@ Module
     ecg.rst
     encoder4_motor.rst
     fan.rst
+    faces_calculator3.rst
+    faces_gamepad3.rst
+    faces_keyboard3.rst
     gateway_h2.rst
     gnss.rst
     gps.rst

@@ -1,0 +1,556 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 16:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/module/baesx.rst:2 9f4b2cc6a8f04bbda7caa9ff83f44797
+msgid "BaseX Module"
+msgstr ""
+
+#: ../../source/module/baesx.rst:10 6420fd9196324614898b8a0ab0684841
+msgid ""
+"BaseX is an M5Stack stackable module with 4 DC motor channels and 2 servo"
+" channels. It communicates with the host via I2C address ``0x22``. The "
+"onboard controller handles motor PWM output, motor encoder count, "
+"position/speed mode configuration, and servo output."
+msgstr ""
+
+#: ../../source/module/baesx.rst:15 3f74da0c30ad4eb4a4b8b885d9c748a7
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../source/module/baesx.rst:17 bfc265bb49fc419b801dd10974441222
+msgid "|BaseXModule|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref 40eaff65149347fa9b0c08a8470cdf2d
+msgid "BaseXModule"
+msgstr ""
+
+#: ../../source/module/baesx.rst:20 bd2082f471c8414dbce3ad3ddd79930e
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../source/module/baesx.rst:23 ../../source/module/baesx.rst:106
+#: 46860b4daa484ca8a3bb4027ab6664a1 aeab7cb0333448aa95858997692121a8
+msgid "Servo control"
+msgstr ""
+
+#: ../../source/module/baesx.rst:25 38ccf4df6fef429ba126612fc04da56c
+msgid "Open the |m5core_basex_servo_control_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:27 6e9838f3390b42bf8f250c980b1ebb53
+msgid ""
+"Control two servos by button. Button A changes Servo1 angle, Button B "
+"changes Servo2 angle, and Button C resets both servos to 0 degrees."
+msgstr ""
+
+#: ../../source/module/baesx.rst:30 ../../source/module/baesx.rst:45
+#: ../../source/module/baesx.rst:62 ../../source/module/baesx.rst:78
+#: ../../source/module/baesx.rst:94 ../../source/module/baesx.rst:191
+#: ../../source/module/baesx.rst:222 ../../source/module/baesx.rst:242
+#: ../../source/module/baesx.rst:262 ../../source/module/baesx.rst:280
+#: ../../source/module/baesx.rst:298 ../../source/module/baesx.rst:315
+#: ../../source/module/baesx.rst:333 ../../source/module/baesx.rst:352
+#: ../../source/module/baesx.rst:369 ../../source/module/baesx.rst:388
+#: ../../source/module/baesx.rst:407 ../../source/module/baesx.rst:427
+#: 2b35fc5924ea4838a7169d6ddecc6b1e 39c4c4e511ce4c73a1f613dbf04d5fa8
+#: 51ae8c5f9ede4f7abee8e61a0363ec27 533e803bf8ff42af9a095ac64a433d60
+#: 57ef2fe17fcd40ecb5e23fd242a06b53 592adaa5fd504f509e157e68d8c67b1e
+#: 5cd4fcf108474e289d757dad291fbdbb 6f2de43d92c24c6f9b85da2d8d36d26b
+#: 71f1e6e1b4de42fcba446c4ecd97b5c8 7331cb2bf0b94c72aa7c4740d98aca0d
+#: 7f916886b44149ad8015fff74337c947 a744fd55c34444c39bb5e76ac3930d09
+#: a92a79fdfb114d74b23746dfa519e62b ab2305982efa4ebe92c0b57c85146dd7
+#: b123cb5799b846819260f10abd0ba0d7 b349b35dc00940b6ac5a9fad0cdfbdfd
+#: c9f9ac090a2341e789af2b3a0d09e6cf e1b72f85737646969634d5a41ec43ae7
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../source/module/baesx.rst:32 c17523ba3e844a369fe93859b8ebbcfe
+msgid "|servo_control_example.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:20 a3e8250ec43546c981da4da5e60ff67b
+msgid "servo_control_example.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:34 ../../source/module/baesx.rst:49
+#: ../../source/module/baesx.rst:66 ../../source/module/baesx.rst:82
+#: ../../source/module/baesx.rst:98 ../../source/module/baesx.rst:116
+#: ../../source/module/baesx.rst:131 ../../source/module/baesx.rst:146
+#: ../../source/module/baesx.rst:161 ../../source/module/baesx.rst:177
+#: 348bb04e99744783ad6ea156c710d81d 389da7a2a451467583d71e595c9139d6
+#: 4da44bc5b6de41e38d3a517de76f5419 5b8b836649814a22bee9bd0dbc5316cc
+#: 5f9182846bd149f4a672f1188eb6aecf 680d07ee40d147c68e2bc32db834fa65
+#: db89406f0a5d495e86a7ff3d406236e6 e8d3400269ec42fc9a233575112a9a39
+#: eedb21851e6e406ca226b1523871a79c f8ffbaa820d7485999c13fc8ec0a1b8f
+msgid "Example output:"
+msgstr ""
+
+#: ../../source/module/baesx.rst:36 ../../source/module/baesx.rst:51
+#: ../../source/module/baesx.rst:68 ../../source/module/baesx.rst:84
+#: ../../source/module/baesx.rst:100 ../../source/module/baesx.rst:118
+#: ../../source/module/baesx.rst:133 ../../source/module/baesx.rst:148
+#: ../../source/module/baesx.rst:163 ../../source/module/baesx.rst:179
+#: 00344d5ba018412284d292a693e965d5 0a204dbea7484e82aa864924bb11651c
+#: 68195bffe68e428d93cb23a008964a15 815e9fb5e62e40a285b796e79803b97d
+#: 81a0a73e266b433dbaa8a01df60520e1 9ec30b320f244d78a7f4a1be800e12f6
+#: be964851cc3e4f39a6d4ba618788c7ae ce6406df1cbe45b4bba85866e5774f99
+#: db3f0f06e7e146c593c49f93fe1c1190 e1acfc888a2146edb259fc036418f90b
+msgid "None"
+msgstr ""
+
+#: ../../source/module/baesx.rst:39 ../../source/module/baesx.rst:121
+#: 9630e7784faf41c6b7f907526a40a4ee de84dce2bb8f4d78ab5bff14763816e0
+msgid "Motor normal control"
+msgstr ""
+
+#: ../../source/module/baesx.rst:41 13eb676428274e34965a9fa15558d324
+msgid ""
+"Open the |m5core_basex_motor_normal_control_example.m5f2| project in "
+"UiFlow2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:43 ../../source/module/baesx.rst:123
+#: 47f380ebc3854641a8c5bc866913cd30 ee7749e4baba4c5ebcca392d170d31db
+msgid "Set all motors to Normal mode and control PWM duty by button."
+msgstr ""
+
+#: ../../source/module/baesx.rst:47 943bd2a724dd40bda5c121d88b507bb0
+msgid "|motor_normal_control_example.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:19 68162524d6224576ba46d5db473ee5b4
+msgid "motor_normal_control_example.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:54 ../../source/module/baesx.rst:136
+#: 6d403d0d72d94e73b68c008aac2ab02a 81922f1fbf0c426d825cf3dadeb984c9
+msgid "Motor position control"
+msgstr ""
+
+#: ../../source/module/baesx.rst:56 6fcb4112f1224dddbbc6b09a01f2553a
+msgid ""
+"Open the |m5basic_basex_motor_position_control_example.m5f2| project in "
+"UiFlow2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:59 3561df0df86b40a0bb59625abca3ccb7
+msgid ""
+"Button A sets position target to 720, Button B sets target to -720, and "
+"Button C sets target to 0."
+msgstr ""
+
+#: ../../source/module/baesx.rst:64 bfb1dd06333a4a4dbf7b056ec2099238
+msgid "|motor_position_control_example.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:22 7b9e921109d64390b6c3efa4bb3b692c
+msgid "motor_position_control_example.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:71 ../../source/module/baesx.rst:151
+#: 0061ed5a1a044dedbd7b4cb4bcb84cb1 9cca9ab0f49c4a19a9742a46cdb71863
+msgid "Motor speed control"
+msgstr ""
+
+#: ../../source/module/baesx.rst:73 a2b653183e1441c2b7d827bdc3f5e6f8
+msgid ""
+"Open the |m5basic_basex_motor_speed_control_example.m5f2| project in "
+"UiFlow2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:75 2377b37ced57428f8deac06cb2a0359d
+msgid ""
+"Button A increases speed target, Button B decreases speed target, and "
+"Button C sets speed target to 0."
+msgstr ""
+
+#: ../../source/module/baesx.rst:80 15212d5743f5428891c93386069936dc
+msgid "|motor_speed_control_example.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:21 e19cfaa26acd4b11920e3929baf163f5
+msgid "motor_speed_control_example.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:87 ../../source/module/baesx.rst:166
+#: 36bc2fb009bc4cb5891d8ff387b36f73 66101335eb83459fbc0a61a7b245cf27
+msgid "Read encoder"
+msgstr ""
+
+#: ../../source/module/baesx.rst:89 bbc7d412a25b43efa2fbc415b14dba1c
+msgid "Open the |m5basic_basex_encoder_display_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:91 ../../source/module/baesx.rst:168
+#: 203d69fed35f4d319ac06d738cdff48c a7179e09e6b24b24b0035bfe60ff2037
+msgid ""
+"Display encoder values for four motor channels. Button B clears all "
+"encoder values."
+msgstr ""
+
+#: ../../source/module/baesx.rst:96 3e1a353379a549f2bd13656445627263
+msgid "|encoder_display_example.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:23 2c11a0337da8484b82cc7a74ca381411
+msgid "encoder_display_example.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:103 c18d0f6815e24aa89205809810e75480
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../source/module/baesx.rst:108 44378f63a7384b529fcd876b7e041037
+msgid "Control two servos by button."
+msgstr ""
+
+#: ../../source/module/baesx.rst:110 ../../source/module/baesx.rst:125
+#: ../../source/module/baesx.rst:140 ../../source/module/baesx.rst:155
+#: ../../source/module/baesx.rst:171 ../../source/module/baesx.rst:195
+#: ../../source/module/baesx.rst:226 ../../source/module/baesx.rst:246
+#: ../../source/module/baesx.rst:266 ../../source/module/baesx.rst:284
+#: ../../source/module/baesx.rst:302 ../../source/module/baesx.rst:319
+#: ../../source/module/baesx.rst:337 ../../source/module/baesx.rst:356
+#: ../../source/module/baesx.rst:373 ../../source/module/baesx.rst:392
+#: ../../source/module/baesx.rst:411 ../../source/module/baesx.rst:431
+#: 180d239b49e04515b5ebc246782d4a11 1efe0eff18064eb3801558f27f5be8df
+#: 2edf3eee281c4dc6a443fa6a709aa31d 45e5e51b21f24667bb0d7676ae6bbaa9
+#: 582ea1a7864e458dba53e35c066fb479 6a6c1b44e600477a95d913b935c9804f
+#: 6d395783927f46939ec68de91c27b66d 6f863f6fc1f34929b0ad70536eb1b81c
+#: 7a40e8f7c4ec4e5cabb47540c17f3c89 7dd24d82501b480f8c1f1d30e3c2f1d4
+#: 85d813bba7dd451b8df0a175f5e2f705 94894160258444849015313f9e1d0ca1
+#: aa890a2a076c44c98c41258306f20bfe afaaa9eacc3243a4a1f4ff2b6b41694c
+#: bdae7685a19f4a4eabafeaeeb9c6ffc3 d46796ca0d2445ceb341e790831f9c12
+#: e62a31575e044e87b083793eab55b659 fd301b1729e34318b17590443211dfe1
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../source/module/baesx.rst:138 3ffae1e0a82e40ccb5903af6b0dbf2a0
+msgid "Use position mode to move Motor1 between fixed target positions."
+msgstr ""
+
+#: ../../source/module/baesx.rst:153 70352a98dc28450b9c5913f47b0e6c60
+msgid "Use speed mode to set Motor1 speed target."
+msgstr ""
+
+#: ../../source/module/baesx.rst:182 61d07759198042588e397a579ddeee74
+msgid "**API**"
+msgstr ""
+
+#: ../../source/module/baesx.rst:185 1fac33f9d70e4a9db648e3aea05a8717
+msgid "ModuleBaseX"
+msgstr ""
+
+#: ../../source/module/baesx.rst:189 01adc9cf64494863b982ea9151a121de
+msgid "Create a BaseX module object."
+msgstr ""
+
+#: ../../source/module/baesx.rst:193 a22b370d551c42b89c48f127a92f9a06
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:6 3a0bc3689d034d58939e96c5f50c6d7a
+msgid "init.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:205 fcdd82dc73d24b658de82a7b696a5ac8
+msgid "Normal PWM mode."
+msgstr ""
+
+#: ../../source/module/baesx.rst:209 1fcc6c2d5d234d5c86d00dd7cea17c59
+msgid "Position control mode."
+msgstr ""
+
+#: ../../source/module/baesx.rst:213 227d6898392d45afa33c0d988c86bc81
+msgid "Speed target control mode."
+msgstr ""
+
+#: ../../source/module/baesx.rst:217 698fa9f043f14e3f845915397cd6c714
+msgid "Set servo angle."
+msgstr ""
+
+#: ../../source/module/baesx.rst 0d0303e6e91947968e4e0bf9c7c1b705
+#: 1e9bb107faf94eb0a37efcac2f06f158 30db2beca64b4b4ab56c820861954c87
+#: 32cbcc81441f4c56a95d811db0571080 5aa10fb1c53947b8996a8a72bea7942e
+#: 67d6f391e00f4c34aeba03ed1fda10ff 810c44471a9841b0b7c59f4b049db9bf
+#: a3901e6779f54e30b9c3186c21cd6a78 bfc2dc02c5fb4e338f619af8539653e8
+#: cbc7e2de1f4e40bcb19efcac30fe222a dcec5bcfe51c4f0da159ddab05336565
+#: ea0a04df7da04084b2683e6e11826b2d
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/module/baesx.rst:219 ../../source/module/baesx.rst:236
+#: 49411694bf5f454986826ac192d81840 bb00452f86364ef4a16f74c090d4d477
+msgid "Servo channel. Range: 1 ~ 2."
+msgstr ""
+
+#: ../../source/module/baesx.rst:220 ae4e9e1eb6a6409ca64ae8b35cbbd79f
+msgid "Servo angle. Range: 0 ~ 180."
+msgstr ""
+
+#: ../../source/module/baesx.rst:224 f7eeafdb9d674053b07491a097ed5991
+msgid "|set_servo_angle.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:7 f505b32083ed40c98bde75e573a65e9b
+msgid "set_servo_angle.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:234 9460e7506da142b9b4ead8a78e4688ba
+msgid "Set servo pulse width."
+msgstr ""
+
+#: ../../source/module/baesx.rst:237 d729179227be4b71980f633b14f5f464
+msgid "Pulse width in microseconds. Range: 500 ~ 2500."
+msgstr ""
+
+#: ../../source/module/baesx.rst:239 9c696447edcf437491fcac21f2dfd5d0
+#, python-format
+msgid ""
+"The servo PWM frequency is 50Hz, with a period of 20ms. The pulse range "
+"500 ~ 2500us corresponds to about 2.5% ~ 12.5% duty."
+msgstr ""
+
+#: ../../source/module/baesx.rst:244 7078b6278de049468d5ff9e10a8c3e65
+msgid "|set_servo_pulse.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:8 9fd53923b7264c258bbfad4591db32a2
+msgid "set_servo_pulse.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:254 84db2c804629416dabc65473409de6ab
+msgid "Set motor PWM duty."
+msgstr ""
+
+#: ../../source/module/baesx.rst:256 ../../source/module/baesx.rst:276
+#: ../../source/module/baesx.rst:294 ../../source/module/baesx.rst:312
+#: ../../source/module/baesx.rst:329 ../../source/module/baesx.rst:347
+#: ../../source/module/baesx.rst:366 ../../source/module/baesx.rst:383
+#: ../../source/module/baesx.rst:402 ../../source/module/baesx.rst:421
+#: 16c11acb3cef438cb17bcfc9b53ffbde 175a669bf4af4162a2bc2831489ea826
+#: 3cb4442178eb434ca48bd6f0d5f5d683 482c7eee9eab4f40a0b1550de6e2040d
+#: 7cabb1937ca74e7db36f8a5fe834b042 9a3d29cf899c4ad7bb072946dc057696
+#: ab8964234a514b429bb1914b4a22c018 ae5a1938c1784ec7850b3320f7c1f95d
+#: b034a4945c0b418a97f0c6608336cae0 fdb98ddc48f64217988675f09eab55b3
+msgid "Motor channel. Range: 1 ~ 4."
+msgstr ""
+
+#: ../../source/module/baesx.rst:257 d85d53098ec94b4dbbc0bb58e80ffcb7
+msgid "PWM duty. Range: -127 ~ 127."
+msgstr ""
+
+#: ../../source/module/baesx.rst:259 8e9c08b610184a398793637016f90c61
+#, python-format
+msgid ""
+"The sign indicates direction. ``abs(duty)`` 0 ~ 127 maps to 0% ~ 100% "
+"duty."
+msgstr ""
+
+#: ../../source/module/baesx.rst:264 2a0e4b344cb6448bbde6459e86b3061b
+msgid "|set_motor_pwm.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:9 04a48d0205014592a5e1f8ec4fe4b0c9
+msgid "set_motor_pwm.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:274 6b75ad6b56994ec6bc98e2cc1f73c56e
+msgid "Get motor speed feedback over 20ms."
+msgstr ""
+
+#: ../../source/module/baesx.rst 324803d110734990a3bb0c54443f04e6
+#: a44b797b5a6d4b96b00be07ffbfaa9fc
+msgid "Returns"
+msgstr ""
+
+#: ../../source/module/baesx.rst:277 12117df7c79246a786eb0310dcc45b9f
+msgid "Encoder delta over 20ms."
+msgstr ""
+
+#: ../../source/module/baesx.rst 254b2b8e0bd0493f994653398c81b644
+#: 8fe59a9a28f2470e9d02e516bafde06b
+msgid "Return type"
+msgstr ""
+
+#: ../../source/module/baesx.rst:282 84600a2396cb4d03a88c9bada30dd66b
+msgid "|get_motor_speed_20ms.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:15 df829553220f47b3bd137b0dda17bf97
+msgid "get_motor_speed_20ms.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:292 b5ba264c3b8e4e26981aefb9d70c81b5
+msgid "Get motor encoder value."
+msgstr ""
+
+#: ../../source/module/baesx.rst:295 ../../source/module/baesx.rst:313
+#: 6d7a6cafc71842009339d54d7da12ee5 f6208e8bffa54974b577d8ee87229e44
+msgid "Encoder count as signed 32-bit integer."
+msgstr ""
+
+#: ../../source/module/baesx.rst:300 3c804401ac3946929315601c9269faff
+msgid "|get_motor_encoder.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:10 f702685d45ca4dfba393fdea4e8f1dc8
+msgid "get_motor_encoder.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:310 cce1af9d9e2e4d928652a69a06909200
+msgid "Set motor encoder value."
+msgstr ""
+
+#: ../../source/module/baesx.rst:317 39fcd7fed48142fab8420c7bd91547ac
+msgid "|set_motor_encoder.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:11 d697e9b9329f4e7c97e0065907348664
+msgid "set_motor_encoder.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:327 fcf7475956fb4a1eac867db6a30aa530
+msgid "Set motor control mode."
+msgstr ""
+
+#: ../../source/module/baesx.rst:330 4985235afc2f473499e3841b36941bd5
+msgid ""
+"Motor mode. ``MOTOR_MODE_NORMAL``, ``MOTOR_MODE_POSITION`` or "
+"``MOTOR_MODE_SPEED``."
+msgstr ""
+
+#: ../../source/module/baesx.rst:335 8c4dd9c41ea1473ab92572c656c6db8f
+msgid "|set_motor_mode.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:12 1f0f6c943c4449d6af2cf0b160688fc5
+msgid "set_motor_mode.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:345 0ea523515b6a4e8ca73b5783659acd6c
+msgid "Set motor position mode PID parameters."
+msgstr ""
+
+#: ../../source/module/baesx.rst:348 684761c87b1c4dcebb6e7f4f4dcc8687
+msgid "Position P parameter. Default is 3."
+msgstr ""
+
+#: ../../source/module/baesx.rst:349 88a7c262ac4c4944ae53a7d20d0cd779
+msgid "Position I parameter. Default is 1."
+msgstr ""
+
+#: ../../source/module/baesx.rst:350 37b8b4b130614e17935f4481a1c47ed1
+msgid "Position D parameter. Default is 15."
+msgstr ""
+
+#: ../../source/module/baesx.rst:354 5e2d22cfa76b428a910cd7e20fe2e690
+msgid "|set_motor_position_pid.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:13 5ff155aa1111496d91ac525dd946d558
+msgid "set_motor_position_pid.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:364 fe973150450d483090a6f4555644adfe
+msgid "Set motor position mode target."
+msgstr ""
+
+#: ../../source/module/baesx.rst:367 b0ab0998dde14b1fac15aa22052da8ac
+msgid "Position target as signed 32-bit integer."
+msgstr ""
+
+#: ../../source/module/baesx.rst:371 22265a0918e64c069bc5b187e3752e80
+msgid "|set_motor_position_target.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:14 e0f79f5101ab4afe86f0eeab29c4d15c
+msgid "set_motor_position_target.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:381 2045e9ecb69f41d0918b5659e5024290
+msgid "Set motor position mode max speed."
+msgstr ""
+
+#: ../../source/module/baesx.rst:384 859ed06edc9346fb99c69f2697d84549
+msgid "Max speed. Range: -127 ~ 127."
+msgstr ""
+
+#: ../../source/module/baesx.rst:386 a085dd5ec99042bfb29e6c311ca8c266
+msgid "The sign indicates direction."
+msgstr ""
+
+#: ../../source/module/baesx.rst:390 4826579397724df4bf2ba39f3b3f0cce
+msgid "|set_motor_position_max_speed.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:16 2b5ae33f47994cec95207c95f1874cb3
+msgid "set_motor_position_max_speed.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:400 ab9b42e15ce54b588ba63b311e183a85
+msgid "Set motor speed mode PID parameters."
+msgstr ""
+
+#: ../../source/module/baesx.rst:403 197738e687f2466aaa6cdebaaccffe41
+msgid "Speed P parameter. Default is 3."
+msgstr ""
+
+#: ../../source/module/baesx.rst:404 5ad85dab73f1435ab8262ec1039b7e51
+msgid "Speed I parameter. Default is 1."
+msgstr ""
+
+#: ../../source/module/baesx.rst:405 86ed9eba4df64fb0921d35b059146a55
+msgid "Speed D parameter. Default is 15."
+msgstr ""
+
+#: ../../source/module/baesx.rst:409 2a57cc68d2a14937a272435cba63bbf7
+msgid "|set_motor_speed_pid.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:17 39fd80ee77884ad78af5cf4c3b34ff6b
+msgid "set_motor_speed_pid.png"
+msgstr ""
+
+#: ../../source/module/baesx.rst:419 06fd4cb6266a4c95939109f813b4b37c
+msgid "Set motor speed mode target."
+msgstr ""
+
+#: ../../source/module/baesx.rst:422 38e383d6fec74d38ad9bf62985dbfaed
+msgid "Speed target. Range: -20 ~ 20."
+msgstr ""
+
+#: ../../source/module/baesx.rst:424 f532bc8c558e40128cad99c594b70315
+msgid ""
+"The sign indicates direction. The target controls the feedback value "
+"returned by :meth:`get_motor_speed_20ms`."
+msgstr ""
+
+#: ../../source/module/baesx.rst:429 d0bd46961ebb4c94939d86320aa8acea
+msgid "|set_motor_speed_target.png|"
+msgstr ""
+
+#: ../../source/refs/module.baesx.ref:18 7a502d3a4727430ea3f713e34081fc40
+msgid "set_motor_speed_target.png"
+msgstr ""
+
