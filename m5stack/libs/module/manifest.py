@@ -20,6 +20,7 @@ package(
         "ecg.py",
         "encoder4_motor.py",
         "fan.py",
+        "faces.py",
         "gateway_h2.py",
         "gnss.py",
         "gps.py",
