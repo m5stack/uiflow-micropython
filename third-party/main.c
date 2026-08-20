@@ -77,7 +77,11 @@
 // MicroPython runs as a task under FreeRTOS
 #define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN + 1)
 
-#if BOARD_ID == 2 || BOARD_ID == 136
+#ifndef UIFLOW_ENABLE_M5THINGS
+#define UIFLOW_ENABLE_M5THINGS (0)
+#endif
+
+#if UIFLOW_ENABLE_M5THINGS && (BOARD_ID == 2 || BOARD_ID == 136)
 extern void m5thing_task(void *pvParameter);
 extern TaskHandle_t m5thing_task_handle;
 #endif
@@ -288,7 +292,7 @@ void MICROPY_ESP_IDF_ENTRY(void) {
 
     // Create and transfer control to the MicroPython task.
     xTaskCreatePinnedToCore(mp_task, "mp_task", MICROPY_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);
-    #if BOARD_ID == 2 || BOARD_ID == 136
+    #if UIFLOW_ENABLE_M5THINGS && (BOARD_ID == 2 || BOARD_ID == 136)
     // Start the M5Things service for third-party boards that expose access code.
     xTaskCreatePinnedToCore(m5thing_task, "m5thing_task", 6000, NULL, MP_TASK_PRIORITY + 1, &m5thing_task_handle, MP_TASK_COREID);
     #endif
