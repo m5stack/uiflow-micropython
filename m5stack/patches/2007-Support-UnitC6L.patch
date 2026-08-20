@@ -30,11 +30,11 @@ index 6c79ee8..2ba4e31 100644
          _io_expander[0].reset(ioexp);
 +        // user button(P0) input pullup 
 +        _io_expander[0]->setDirection(0, false);
-+        _io_expander[0]->setPullMode(0, true);
++        _io_expander[0]->setPullMode(0, IOExpander_Base::pull_up);
 +        _io_expander[0]->setHighImpedance(0, false);
 +        // sx1262 reset(P7)
 +        _io_expander[0]->setDirection(7, true);
-+        _io_expander[0]->setPullMode(7, false);
++        _io_expander[0]->setPullMode(7, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(7, false);
 +        _io_expander[0]->digitalWrite(7, false);
 +        delay(10);
@@ -42,12 +42,12 @@ index 6c79ee8..2ba4e31 100644
 +        delay(10);
 +        // LAN EN
 +        _io_expander[0]->setDirection(5, true);
-+        _io_expander[0]->setPullMode(5, false);
++        _io_expander[0]->setPullMode(5, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(5, false);
 +        _io_expander[0]->digitalWrite(5, true);
 +        // SW EN
 +        _io_expander[0]->setDirection(6, true);
-+        _io_expander[0]->setPullMode(6, false);
++        _io_expander[0]->setPullMode(6, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(6, false);
 +        _io_expander[0]->digitalWrite(6, true);
        }

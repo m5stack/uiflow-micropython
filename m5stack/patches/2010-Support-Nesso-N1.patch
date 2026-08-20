@@ -8,7 +8,7 @@ Index: M5Unified/src/M5Unified.cpp
        }
 +        // sx1262 reset(P7)
 +        _io_expander[0]->setDirection(7, true);
-+        _io_expander[0]->setPullMode(7, false);
++        _io_expander[0]->setPullMode(7, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(7, false);
 +        _io_expander[0]->digitalWrite(7, false);
 +        delay(10);
@@ -16,12 +16,12 @@ Index: M5Unified/src/M5Unified.cpp
 +        delay(10);
 +        // LAN EN
 +        _io_expander[0]->setDirection(5, true);
-+        _io_expander[0]->setPullMode(5, false);
++        _io_expander[0]->setPullMode(5, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(5, false);
 +        _io_expander[0]->digitalWrite(5, true);
 +        // SW EN
 +        _io_expander[0]->setDirection(6, true);
-+        _io_expander[0]->setPullMode(6, false);
++        _io_expander[0]->setPullMode(6, IOExpander_Base::pull_none);
 +        _io_expander[0]->setHighImpedance(6, false);
 +        _io_expander[0]->digitalWrite(6, true);
        break;
