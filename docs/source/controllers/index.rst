@@ -21,4 +21,5 @@ Controllers
     stamplc.rst
     sticks3.rst
     stopwatch.rst
+    tab5x.rst
     unit_c6l.rst

@@ -1,0 +1,218 @@
+# Chinese translations for UIFlow2 Programming Guide package.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-20 17:26+0800\n"
+"PO-Revision-Date: 2026-08-20 17:26+0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+
+#: ../../source/controllers/tab5x.rst:3
+#: ../../source/refs/controllers.tab5x.ref:0
+msgid "Tab5X"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/controllers/tab5x.rst:9
+msgid "|Tab5X|"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:12
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../source/controllers/tab5x.rst:14
+msgid ""
+"Tab5X inherits the Tab5 manifest and includes these user-facing packages:"
+msgstr "Tab5X 继承 Tab5 manifest，并包含以下面向用户的软件包："
+
+#: ../../source/controllers/tab5x.rst:16
+msgid ""
+"**M5UI**: The ``m5ui`` LVGL component library, including ``m5ui.M5Keyboard``."
+msgstr "**M5UI**：``m5ui`` LVGL 组件库，包含 ``m5ui.M5Keyboard``。"
+
+#: ../../source/controllers/tab5x.rst:17
+msgid "**Module**: The ``module`` package for M-BUS expansion modules."
+msgstr "**Module**：用于 M-BUS 扩展模块的 ``module`` 软件包。"
+
+#: ../../source/controllers/tab5x.rst:18
+msgid "**Unit**: The ``unit`` package for Unit drivers."
+msgstr "**Unit**：包含 Unit 驱动的 ``unit`` 软件包。"
+
+#: ../../source/controllers/tab5x.rst:19
+msgid ""
+"**USB**: The ``usb.device`` package, including HID, mouse, and keyboard "
+"support."
+msgstr "**USB**：``usb.device`` 软件包，支持 HID、鼠标和键盘。"
+
+#: ../../source/controllers/tab5x.rst:20
+msgid "**Chain**: The ``chain`` package for Chain devices."
+msgstr "**Chain**：用于 Chain 设备的 ``chain`` 软件包。"
+
+#: ../../source/controllers/tab5x.rst:21
+msgid "**Tab5**: The ``tab5`` package for Tab5 and Tab5X keyboard support."
+msgstr "**Tab5**：为 Tab5 和 Tab5X 提供键盘支持的 ``tab5`` 软件包。"
+
+#: ../../source/controllers/tab5x.rst:24
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+#: ../../source/controllers/tab5x.rst:26
+msgid ""
+"The Tab5X firmware includes the following Montserrat fonts for LVGL and "
+"M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv."
+"font_montserrat_16``, ``lv.font_montserrat_18``, ``lv.font_montserrat_20``, "
+"``lv.font_montserrat_22``, ``lv.font_montserrat_24``, ``lv."
+"font_montserrat_30``, ``lv.font_montserrat_36``, ``lv.font_montserrat_40``, "
+"``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
+msgstr "Tab5X 固件为 LVGL 和 M5UI 提供以下 Montserrat 字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_20``、``lv.font_montserrat_22``、``lv.font_montserrat_24``、``lv.font_montserrat_30``、``lv.font_montserrat_36``、``lv.font_montserrat_40``、``lv.font_montserrat_44`` 和 ``lv.font_montserrat_48``。"
+
+#: ../../source/controllers/tab5x.rst:33
+msgid ""
+"For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, "
+"``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and "
+"Korean text respectively."
+msgstr "对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 ``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+
+#: ../../source/controllers/tab5x.rst:38
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../source/controllers/tab5x.rst:41 ../../source/controllers/tab5x.rst:92
+msgid "Power Management"
+msgstr "电源管理"
+
+#: ../../source/controllers/tab5x.rst:43
+msgid "Open the |tab5x_power_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tab5x_power_example.m5f2| 项目。"
+
+#: ../../source/controllers/tab5x.rst:45
+msgid ""
+"This example controls the PORT.A output, USB Type-A output, and battery "
+"charging. It also displays the battery level, voltage, current, and charging "
+"state."
+msgstr "此示例用于控制 PORT.A 输出、USB Type-A 输出和电池充电，同时显示电池电量、电压、电流和充电状态。"
+
+#: ../../source/controllers/tab5x.rst:48 ../../source/controllers/tab5x.rst:60
+#: ../../source/controllers/tab5x.rst:72 ../../source/controllers/tab5x.rst:84
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/controllers/tab5x.rst:50
+msgid "|tab5x_power_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.tab5x.ref:4
+msgid "tab5x_power_example.png"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:53 ../../source/controllers/tab5x.rst:104
+msgid "Audio Recording and Playback"
+msgstr "音频录制与播放"
+
+#: ../../source/controllers/tab5x.rst:55
+msgid "Open the |tab5x_audio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tab5x_audio_example.m5f2| 项目。"
+
+#: ../../source/controllers/tab5x.rst:57
+msgid ""
+"This example records up to 10 seconds of 16 kHz, 16-bit mono PCM audio and "
+"plays the recording back. The controls update as recording and playback "
+"state changes."
+msgstr "此示例最长可录制 10 秒的 16 kHz、16 位单声道 PCM 音频，并可播放录音；控制按钮会随录制和播放状态更新。"
+
+#: ../../source/controllers/tab5x.rst:62
+msgid "|tab5x_audio_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.tab5x.ref:5
+msgid "tab5x_audio_example.png"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:65 ../../source/controllers/tab5x.rst:115
+msgid "IMU Sensor"
+msgstr "IMU 传感器"
+
+#: ../../source/controllers/tab5x.rst:67
+msgid "Open the |tab5x_imu_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tab5x_imu_example.m5f2| 项目。"
+
+#: ../../source/controllers/tab5x.rst:69
+msgid ""
+"This example displays the three-axis accelerometer data in ``g`` and the "
+"three-axis gyroscope data in ``dps``."
+msgstr "此示例显示三轴加速度计和三轴陀螺仪数据，单位分别为 ``g`` 和 ``dps``。"
+
+#: ../../source/controllers/tab5x.rst:74
+msgid "|tab5x_imu_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.tab5x.ref:6
+msgid "tab5x_imu_example.png"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:77 ../../source/controllers/tab5x.rst:126
+msgid "RTC"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:79
+msgid "Open the |tab5x_rtc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tab5x_rtc_example.m5f2| 项目。"
+
+#: ../../source/controllers/tab5x.rst:81
+msgid ""
+"This example displays the date and time from the hardware RTC. The hour, "
+"minute, and second controls update the RTC immediately."
+msgstr "此示例显示硬件 RTC 的日期和时间；调整时、分、秒后会立即更新 RTC。"
+
+#: ../../source/controllers/tab5x.rst:86
+msgid "|tab5x_rtc_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.tab5x.ref:7
+msgid "tab5x_rtc_example.png"
+msgstr ""
+
+#: ../../source/controllers/tab5x.rst:89
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../source/controllers/tab5x.rst:94
+msgid ""
+"This example controls PORT.A, USB Type-A, and battery charging while "
+"displaying battery level, voltage, current, and charging state."
+msgstr "此示例用于控制 PORT.A、USB Type-A 和电池充电，同时显示电池电量、电压、电流和充电状态。"
+
+#: ../../source/controllers/tab5x.rst:97 ../../source/controllers/tab5x.rst:108
+#: ../../source/controllers/tab5x.rst:119
+#: ../../source/controllers/tab5x.rst:130
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/controllers/tab5x.rst:106
+msgid ""
+"This example records up to 10 seconds of PCM audio and plays the recorded "
+"buffer."
+msgstr "此示例最长可录制 10 秒 PCM 音频，并播放已录制的音频缓冲区。"
+
+#: ../../source/controllers/tab5x.rst:117
+msgid ""
+"This example reads and displays the three accelerometer and three gyroscope "
+"axes."
+msgstr "此示例读取并显示加速度计和陀螺仪的三个轴向数据。"
+
+#: ../../source/controllers/tab5x.rst:128
+msgid "This example displays and updates the hardware RTC date and time."
+msgstr "此示例显示并更新硬件 RTC 的日期和时间。"
