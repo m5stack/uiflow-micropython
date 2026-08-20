@@ -18,6 +18,7 @@ static const mp_rom_map_elem_t power_port_masks_table[] = {
     { MP_ROM_QSTR(MP_QSTR_USB),    MP_ROM_INT(1 << 5 ) },
     { MP_ROM_QSTR(MP_QSTR_PWR485), MP_ROM_INT(1 << 6 ) },
     { MP_ROM_QSTR(MP_QSTR_PWRCAN), MP_ROM_INT(1 << 7 ) },
+    { MP_ROM_QSTR(MP_QSTR_EXT),    MP_ROM_INT(1 << 8 ) },
     { MP_ROM_QSTR(MP_QSTR_MAIN),   MP_ROM_INT(1 << 15) },
     /* *FORMAT-ON* */
 };

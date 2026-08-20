@@ -195,7 +195,7 @@ def _apply_boot_input_override(boot_opt, board_id, nvs):
 
 
 def _prepare_board(board_id):
-    if board_id == M5.BOARD.M5Tab5:
+    if board_id in (M5.BOARD.M5Tab5, M5.BOARD.M5Tab5X):
         M5.Lcd.clear(0xFFFFFF)
     elif board_id not in [M5.BOARD.M5PaperColor, M5.BOARD.M5PaperMono]:
         # Refresh display
@@ -401,7 +401,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             plc = StampPLC_Startup()
             plc.startup(net_mode, ssid, pswd, protocol, ip, netmask, gateway, dns, timeout)
 
-        elif board_id == M5.BOARD.M5Tab5:
+        elif board_id in (M5.BOARD.M5Tab5, M5.BOARD.M5Tab5X):
             from .tab5 import Tab5_Startup
 
             tab5 = Tab5_Startup()

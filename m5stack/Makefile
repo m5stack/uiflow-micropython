@@ -48,6 +48,7 @@ boards := \
 	M5STACK_Atom_EchoS3R:atom_echos3r\
 	M5STACK_StamPLC:stamplc          \
 	M5STACK_Tab5:tab5                \
+	M5STACK_Tab5X:tab5x              \
 	M5STACK_CardputerADV:cardputeradv\
 	M5STACK_Unit_C6L:unit_c6l        \
 	M5STACK_PowerHub:powerhub        \
@@ -104,6 +105,7 @@ BOARD_TYPE_DEF := \
 	atom_echos3r\
 	stamplc     \
 	tab5        \
+	tab5x       \
 	cardputeradv\
 	unit_c6l    \
 	powerhub    \
@@ -356,7 +358,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0026-micropython-1.27.0-add-getsockname.patch \
 	0027-micropython-1.27.0-fix-mpnimbleport.patch \
 	0028-micropython-1.27.0-fix-mpy-cross-clang-on-macos.patch \
-	0029-micropython-1.27.0-select-esp32p4-usb-phy.patch
+	0029-micropython-1.27.0-select-esp32p4-usb-phy.patch \
+	0030-micropython-1.27.0-fix-nimble-dynamic-gatt.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch
@@ -366,7 +369,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2007-Support-UnitC6L.patch \
 	2009-fix-SoftI2C.patch \
 	2010-Support-Nesso-N1.patch \
-	2019-fix-touch-sensor.patch
+	2019-fix-touch-sensor.patch \
+	2021-Fix-Tab5-charge-status-detection.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch

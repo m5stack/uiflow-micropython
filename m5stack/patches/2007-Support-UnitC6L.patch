@@ -70,42 +70,32 @@ index 6c79ee8..2ba4e31 100644
      default:
        break;
 diff --git a/src/utility/IOExpander_Base.hpp b/src/utility/IOExpander_Base.hpp
-index 93bade7..e7b6039 100644
+index 32f901a..523ca1d 100644
 --- a/src/utility/IOExpander_Base.hpp
 +++ b/src/utility/IOExpander_Base.hpp
-@@ -3,18 +3,31 @@
- 
- #ifndef __M5_IOEXPANDER_BASE_H__
- #define __M5_IOEXPANDER_BASE_H__
--
+@@ -7,2 +7,5 @@
  #include <stdint.h>
  #include "I2C_Class.hpp"
- 
 +#if CONFIG_IDF_TARGET_ESP32C6
 +#include "SoftI2C_Class.hpp"
 +#endif
-+
+@@ -10,3 +13,7 @@ namespace m5
  namespace m5
  {
-+
 +#if CONFIG_IDF_TARGET_ESP32C6
 +  class IOExpander_Base : public SoftI2C_Device
-+  {
-+  public:
-+    IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
-+      : SoftI2C_Device(i2c_addr, freq, i2c)
-+    {}
 +#else
    class IOExpander_Base : public I2C_Device
-   {
-   public:
++#endif
+@@ -26,3 +33,8 @@ namespace m5
++#if CONFIG_IDF_TARGET_ESP32C6
++    IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
++      : SoftI2C_Device(i2c_addr, freq, i2c)
++#else
      IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::I2C_Class* i2c = &m5::In_I2C)
        : I2C_Device(i2c_addr, freq, i2c)
-     {}
 +#endif
-     IOExpander_Base(const IOExpander_Base&) = delete;
- 
-     // false input, true output
+     {}
 diff --git a/src/utility/PI4IOE5V6408_Class.hpp b/src/utility/PI4IOE5V6408_Class.hpp
 index 97e1a95..cd74b71 100644
 --- a/src/utility/PI4IOE5V6408_Class.hpp

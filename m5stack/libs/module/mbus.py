@@ -9,6 +9,9 @@ from collections import namedtuple
 MBusIO = namedtuple(
     "MBusIO", ["sda0", "scl0", "sda1", "scl1", "spi_host", "spi_sck", "spi_mosi", "spi_miso"]
 )
+board_id = M5.getBoard()
+if board_id == M5.BOARD.M5Tab5X:
+    board_id = M5.BOARD.M5Tab5
 
 iomap = {
     M5.BOARD.M5Stack: MBusIO(
@@ -61,7 +64,7 @@ iomap = {
         spi_mosi=18,
         spi_miso=19,  # SPI2_HOST
     ),
-}.get(M5.getBoard())
+}.get(board_id)
 
 
 def _i2c0_init():

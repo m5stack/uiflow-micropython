@@ -2,29 +2,25 @@ Index: M5Unified/src/utility/IOExpander_Base.hpp
 ===================================================================
 --- M5Unified.orig/src/utility/IOExpander_Base.hpp
 +++ M5Unified/src/utility/IOExpander_Base.hpp
-@@ -12,22 +12,12 @@
- 
+@@ -13,9 +13,5 @@ namespace m5
  namespace m5
  {
--
 -#if CONFIG_IDF_TARGET_ESP32C6
 -  class IOExpander_Base : public SoftI2C_Device
--  {
--  public:
--    IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
--      : SoftI2C_Device(i2c_addr, freq, i2c)
--    {}
 -#else
    class IOExpander_Base : public I2C_Device
+-#endif
    {
    public:
+@@ -32,8 +28,3 @@ namespace m5
+-#if CONFIG_IDF_TARGET_ESP32C6
+-    IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
+-      : SoftI2C_Device(i2c_addr, freq, i2c)
+-#else
      IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::I2C_Class* i2c = &m5::In_I2C)
        : I2C_Device(i2c_addr, freq, i2c)
-     {}
 -#endif
-     IOExpander_Base(const IOExpander_Base&) = delete;
- 
-     // false input, true output
+     {}
 Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
 ===================================================================
 --- M5Unified.orig/src/utility/PI4IOE5V6408_Class.hpp

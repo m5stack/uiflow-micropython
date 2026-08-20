@@ -10,7 +10,7 @@
 
 #if CONFIG_CORES3
 #include "../M5STACK_CoreS3/audioconfigboard.h"
-#elif CONFIG_TAB5
+#elif CONFIG_TAB5 || CONFIG_TAB5X
 #include "../M5STACK_Tab5/audioconfigboard.h"
 #elif CONFIG_ATOM_ECHOS3R
 #include "../M5STACK_Atom_EchoS3R/audioconfigboard.h"

@@ -12,6 +12,9 @@ import time
 
 AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
 MBusIO = namedtuple("MBusIO", ["modem_tx", "modem_rx", "rs485_tx", "rs485_rx", "pwr_ctrl"])
+board_id = M5.getBoard()
+if board_id == M5.BOARD.M5Tab5X:
+    board_id = M5.BOARD.M5Tab5
 
 iomap = {
     M5.BOARD.M5Stack: MBusIO(0, 35, 15, 13, 12),
@@ -19,7 +22,7 @@ iomap = {
     M5.BOARD.M5StackCoreS3: MBusIO(0, 10, 13, 7, 6),
     M5.BOARD.M5Tough: MBusIO(0, 35, 2, 19, 27),
     M5.BOARD.M5Tab5: MBusIO(35, 16, 47, 48, 2),
-}.get(M5.getBoard())
+}.get(board_id)
 
 
 class IotBaseCatmModule(SIM7080, uSerial):

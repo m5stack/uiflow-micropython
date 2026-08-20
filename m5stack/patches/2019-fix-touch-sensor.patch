@@ -34,12 +34,10 @@ Index: M5Unified/src/M5Unified.cpp
  #endif
  
  #if __has_include (<driver/i2s_type.h>)
-@@ -826,7 +839,7 @@ static constexpr const uint8_t _pin_tabl
- #if defined (CONFIG_IDF_TARGET_ESP32) && SOC_TOUCH_SENSOR_SUPPORTED
-   static void _read_touch_pad(uint32_t* results, const touch_pad_t* channel, const size_t channel_count)
+@@ -1215,5 +1228,5 @@ static bool _read_touch_pad(uint32_t* re
+   static bool _read_touch_pad(uint32_t* results, const int* channel, const size_t channel_count)
    {
+     for (size_t i = 0; i < channel_count; ++i) { results[i] = 0; }
 -#if defined ( TOUCH_SENSOR_DEFAULT_FILTER_CONFIG )
 +#if SOC_TOUCH_SENSOR_VERSION == 3
-     /* Handles of touch sensor */
-     touch_sensor_handle_t sens_handle = nullptr;
-     touch_channel_handle_t chan_handle[TOUCH_TOTAL_CHAN_NUM];
+     if (channel_count > TOUCH_TOTAL_CHAN_NUM) { return false; }

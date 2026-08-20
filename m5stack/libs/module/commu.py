@@ -21,13 +21,16 @@ import M5
 from collections import namedtuple
 
 MBusIO = namedtuple("MBusIO", ["cs", "int", "sck", "mosi", "miso"])
+board_id = M5.getBoard()
+if board_id == M5.BOARD.M5Tab5X:
+    board_id = M5.BOARD.M5Tab5
 iomap = {
     M5.BOARD.M5Stack: MBusIO(12, 15, 18, 23, 19),
     M5.BOARD.M5StackCore2: MBusIO(27, 2, 18, 23, 38),
     M5.BOARD.M5StackCoreS3: MBusIO(6, 13, 36, 37, 35),
     M5.BOARD.M5Tough: MBusIO(27, 2, 18, 23, 38),
     M5.BOARD.M5Tab5: MBusIO(2, 47, 5, 18, 19),
-}.get(M5.getBoard())
+}.get(board_id)
 
 
 class CommuModuleCAN(MCP2515_CAN):

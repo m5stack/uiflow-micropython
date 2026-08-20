@@ -50,7 +50,8 @@ class HALTab5(HALBase):
         nvs.commit()
 
     def get_asset_path(self, asset_path: str) -> str:
-        return "S:/system/tab5/" + asset_path
+        asset_root = "tab5x" if M5.getBoard() == M5.BOARD.M5Tab5X else "tab5"
+        return "S:/system/" + asset_root + "/" + asset_path
 
     def create_temp_dir(self):
         try:

@@ -7,6 +7,9 @@ from collections import namedtuple
 from driver.dmx512 import DMX512
 
 MBusIO = namedtuple("MBusIO", ["bus_tx", "bus_rx", "en"])
+board_id = M5.getBoard()
+if board_id == M5.BOARD.M5Tab5X:
+    board_id = M5.BOARD.M5Tab5
 
 iomap = {
     M5.BOARD.M5Stack: MBusIO(13, 35, 12),
@@ -14,7 +17,7 @@ iomap = {
     M5.BOARD.M5StackCoreS3: MBusIO(7, 10, 6),
     M5.BOARD.M5Tough: MBusIO(19, 35, 27),
     M5.BOARD.M5Tab5: MBusIO(48, 16, 2),
-}.get(M5.getBoard())
+}.get(board_id)
 
 
 class DMX512Module(DMX512):
