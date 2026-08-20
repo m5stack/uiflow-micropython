@@ -1,3 +1,5 @@
+#pragma once
+
 // Tab5X shares all hardware definitions with Tab5.
 #include "../M5STACK_Tab5/mpconfigboard.h"
 
