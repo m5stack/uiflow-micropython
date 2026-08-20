@@ -35,7 +35,7 @@ jobs:
           path: |
             ~/.espressif
             ${{ github.workspace }}/esp-idf
-          key: ${{ runner.os }}-idf-v5.5.1
+          key: ${{ runner.os }}-idf-v5.5.4
 
       - name: Install ESP-IDF
         if: steps.cache-esp-idf.outputs.cache-hit != 'true'
@@ -43,11 +43,11 @@ jobs:
           git clone --depth=1 -b $IDF_VERSION https://github.com/espressif/esp-idf.git
           ./esp-idf/install.sh
         env:
-          IDF_VERSION: "v5.5.1"
+          IDF_VERSION: "v5.5.4"
 
       - name: Setup environment
         run: |
-          source tools/ci.sh && ci_esp32_idf551_setup
+          source tools/ci.sh && ci_esp32_idf554_setup
           source esp-idf/export.sh
           pip install future
           make -C m5stack submodules
@@ -97,6 +97,7 @@ jobs:
           - M5STACK_StickC_PLUS2
           - M5STACK_StickS3
           - M5STACK_Tab5
+          - M5STACK_Tab5X
           - M5STACK_Tough
           - M5STACK_Unit_C6L
           - M5STACK_Unit_PoEP4
@@ -123,7 +124,7 @@ jobs:
           path: |
             ~/.espressif
             ${{ github.workspace }}/esp-idf
-          key: ${{ runner.os }}-idf-v5.5.1
+          key: ${{ runner.os }}-idf-v5.5.4
 
       - name: Prepare environment
         run: |

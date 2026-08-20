@@ -209,6 +209,10 @@ function ci_esp32_idf551_setup {
     ci_esp32_idf_tag_setup v5.5.1
 }
 
+function ci_esp32_idf554_setup {
+    ci_esp32_idf_tag_setup v5.5.4
+}
+
 function ci_esp32_build {
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
@@ -280,6 +284,7 @@ function ci_unit_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5X pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PowerHub pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickS3 pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
@@ -299,6 +304,7 @@ function ci_module_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5X pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
 }
 
@@ -370,6 +376,7 @@ M5STACK_StickC
 M5STACK_StickC_PLUS
 M5STACK_StickC_PLUS2
 M5STACK_Tab5
+M5STACK_Tab5X
 M5STACK_Tough
 M5STACK_Unit_C6L
 Nesso_N1
