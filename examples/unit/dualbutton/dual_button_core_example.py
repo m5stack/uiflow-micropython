@@ -1,35 +1,44 @@
 import os, sys, io
 import M5
 from M5 import *
-from unit import DualButtonUnit
+from unit import SimpleDualButtonUnit
+import time
 
 
-dual_button_0_blue = None
-dual_button_0_red = None
-
-
-def dual_button_0_blue_wasClicked_event(state):  # noqa: N802
-    global dual_button_0_blue, dual_button_0_red
-    print(dual_button_0_blue.isHolding())
+blue = None
+red = None
 
 
 def setup():
-    global dual_button_0_blue, dual_button_0_red
+    global blue, red
 
     M5.begin()
     Widgets.fillScreen(0x222222)
 
-    dual_button_0_blue, dual_button_0_red = DualButtonUnit((36, 26))
-    dual_button_0_blue.setCallback(
-        type=dual_button_0_blue.CB_TYPE.WAS_CLICKED, cb=dual_button_0_blue_wasClicked_event
-    )
-    print(dual_button_0_blue.isHolding())
+    blue, red = SimpleDualButtonUnit((36, 26))
 
 
 def loop():
-    global dual_button_0_blue, dual_button_0_red
+    global blue, red
     M5.update()
-    dual_button_0_blue.tick(None)
+    blue.update()
+    red.update()
+
+    if blue.is_active():
+        print("blue held down")
+    if blue.was_pressed():
+        print("blue just pressed")
+    if blue.was_released():
+        print("blue just released")
+
+    if red.is_active():
+        print("red held down")
+    if red.was_pressed():
+        print("red just pressed")
+    if red.was_released():
+        print("red just released")
+
+    time.sleep(0.05)
 
 
 if __name__ == "__main__":

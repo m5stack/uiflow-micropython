@@ -39,6 +39,7 @@ _attrs = {
     "DLightUnit": "dlight",
     "DMX512Unit": "dmx",
     "DualButtonUnit": "dual_button",
+    "SimpleDualButtonUnit": "dual_button",
     "EarthUnit": "earth",
     "EncoderUnit": "encoder",
     "Encoder8Unit": "encoder8",
