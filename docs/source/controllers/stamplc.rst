@@ -274,3 +274,13 @@ StamPLC
                 plc.led.green.on()
                 plc.led.blue.off()
                 plc.led.blue.toggle()
+
+StamPLC Extensions
+------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    StamPLC AC <../stamplc/ac.rst>
+    StamPLC IO <../stamplc/io.rst>
+    StamPLC PoE <../stamplc/poe.rst>

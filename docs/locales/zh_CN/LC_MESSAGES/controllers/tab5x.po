@@ -40,30 +40,35 @@ msgstr "Tab5X 继承 Tab5 manifest，并包含以下面向用户的软件包："
 
 #: ../../source/controllers/tab5x.rst:16
 msgid ""
-"**M5UI**: The ``m5ui`` LVGL component library, including ``m5ui.M5Keyboard``."
-msgstr "**M5UI**：``m5ui`` LVGL 组件库，包含 ``m5ui.M5Keyboard``。"
+"`M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library, "
+"including ``m5ui.M5Keyboard``."
+msgstr ""
+"`M5UI <../m5ui/index.html>`_：``m5ui`` LVGL 组件库，包含 "
+"``m5ui.M5Keyboard``。"
 
 #: ../../source/controllers/tab5x.rst:17
-msgid "**Module**: The ``module`` package for M-BUS expansion modules."
-msgstr "**Module**：用于 M-BUS 扩展模块的 ``module`` 软件包。"
+msgid "`Module <../module/index.html>`_: The ``module`` package for M-BUS expansion modules."
+msgstr "`Module <../module/index.html>`_：用于 M-BUS 扩展模块的 ``module`` 软件包。"
 
 #: ../../source/controllers/tab5x.rst:18
-msgid "**Unit**: The ``unit`` package for Unit drivers."
-msgstr "**Unit**：包含 Unit 驱动的 ``unit`` 软件包。"
+msgid "`Unit <../unit/index.html>`_: The ``unit`` package for Unit drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
 
 #: ../../source/controllers/tab5x.rst:19
 msgid ""
-"**USB**: The ``usb.device`` package, including HID, mouse, and keyboard "
-"support."
-msgstr "**USB**：``usb.device`` 软件包，支持 HID、鼠标和键盘。"
+"`USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package, "
+"including HID, mouse, and keyboard support."
+msgstr ""
+"`USB <../advanced/usb/device/index.html>`_：``usb.device`` 软件包，支持 "
+"HID、鼠标和键盘。"
 
 #: ../../source/controllers/tab5x.rst:20
-msgid "**Chain**: The ``chain`` package for Chain devices."
-msgstr "**Chain**：用于 Chain 设备的 ``chain`` 软件包。"
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
 
 #: ../../source/controllers/tab5x.rst:21
-msgid "**Tab5**: The ``tab5`` package for Tab5 and Tab5X keyboard support."
-msgstr "**Tab5**：为 Tab5 和 Tab5X 提供键盘支持的 ``tab5`` 软件包。"
+msgid "`Tab5 <../tab5/index.html>`_: The ``tab5`` package for Tab5 and Tab5X keyboard support."
+msgstr "`Tab5 <../tab5/index.html>`_：为 Tab5 和 Tab5X 提供键盘支持的 ``tab5`` 软件包。"
 
 #: ../../source/controllers/tab5x.rst:24
 msgid "Supported Display Fonts"

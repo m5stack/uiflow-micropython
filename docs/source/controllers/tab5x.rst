@@ -13,12 +13,12 @@ Supported Components
 
 Tab5X inherits the Tab5 manifest and includes these user-facing packages:
 
-* **M5UI**: The ``m5ui`` LVGL component library, including ``m5ui.M5Keyboard``.
-* **Module**: The ``module`` package for M-BUS expansion modules.
-* **Unit**: The ``unit`` package for Unit drivers.
-* **USB**: The ``usb.device`` package, including HID, mouse, and keyboard support.
-* **Chain**: The ``chain`` package for Chain devices.
-* **Tab5**: The ``tab5`` package for Tab5 and Tab5X keyboard support.
+* `M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library, including ``m5ui.M5Keyboard``.
+* `Module <../module/index.html>`_: The ``module`` package for M-BUS expansion modules.
+* `Unit <../unit/index.html>`_: The ``unit`` package for Unit drivers.
+* `USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package, including HID, mouse, and keyboard support.
+* `Chain <../chain/index.html>`_: The ``chain`` package for Chain devices.
+* `Tab5 <../tab5/index.html>`_: The ``tab5`` package for Tab5 and Tab5X keyboard support.
 
 Supported Display Fonts
 -----------------------

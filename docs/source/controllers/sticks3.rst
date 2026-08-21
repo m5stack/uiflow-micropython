@@ -8,6 +8,40 @@ Support the following products:
 
     |StickS3|
 
+Supported Components
+--------------------
+
+StickS3 supports the following components:
+
+* `Unit <../unit/index.html>`_: The ``unit`` package containing Unit drivers.
+* `Chain <../chain/index.html>`_: The ``chain`` package for Chain devices.
+* `HAT <../hat/index.html>`_: The ``hat`` package for HAT devices.
+* `USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package for HID devices.
+
+Supported Display Fonts
+-----------------------
+
+The StickS3 firmware includes the following Montserrat fonts for LVGL and M5UI:
+``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv.font_montserrat_16``,
+``lv.font_montserrat_18``, ``lv.font_montserrat_24``, ``lv.font_montserrat_40``,
+``lv.font_montserrat_44``, and ``lv.font_montserrat_48``.
+
+For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``,
+``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and Korean
+text respectively.
+
+Board Features
+--------------
+
+StickS3 supports the following built-in functions and connected peripherals:
+
+* Button input and display output.
+* `IMU <../hardware/imu.html>`_ accelerometer and gyroscope readings.
+* Battery, VBUS, charging, and external output power management.
+* `Infrared <../hardware/ir.html>`_ transmit and receive.
+* `Audio <../system/audio.html>`_ recording and playback.
+* `ToF HAT <../hat/tof.html>`_ distance measurement.
+
 UiFlow2 Example 
 ---------------
 

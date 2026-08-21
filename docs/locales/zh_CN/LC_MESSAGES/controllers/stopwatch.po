@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-21 12:29+0800\n"
+"POT-Creation-Date: 2026-08-21 11:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,36 +21,94 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../source/controllers/stopwatch.rst:3
-#: ../../source/refs/controllers.stopwatch.ref be6480c8cbf640829e56db77a4ad592c
-#: c0bc466c062248f7a32ae46025dffeb0
+#: ../../source/refs/controllers.stopwatch.ref
 msgid "StopWatch"
 msgstr "StopWatch"
 
-#: ../../source/controllers/stopwatch.rst:7 358dfabf73da4a2c9a71308392c6bf6c
+#: ../../source/controllers/stopwatch.rst:7
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/controllers/stopwatch.rst:9 3bb2371b1d1c4b05858aca4b2af3a592
+#: ../../source/controllers/stopwatch.rst:9
 msgid "|StopWatch|"
 msgstr ""
 
-#: ../../source/controllers/stopwatch.rst:12 bc97d233757743f9a2e4bf99be93a76a
+#: ../../source/controllers/stopwatch.rst:12
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../source/controllers/stopwatch.rst:14
+msgid "StopWatch supports the following components:"
+msgstr "StopWatch 支持以下组件："
+
+#: ../../source/controllers/stopwatch.rst:16
+msgid "`M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library."
+msgstr "`M5UI <../m5ui/index.html>`_：``m5ui`` LVGL 组件库。"
+
+#: ../../source/controllers/stopwatch.rst:17
+msgid ""
+"`Unit <../unit/index.html>`_: The ``unit`` package containing Unit "
+"drivers."
+msgstr ""
+"`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+
+#: ../../source/controllers/stopwatch.rst:18
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
+
+#: ../../source/controllers/stopwatch.rst:21
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+#: ../../source/controllers/stopwatch.rst:23
+msgid "The StopWatch firmware includes the following Montserrat fonts for LVGL and M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv.font_montserrat_16``, ``lv.font_montserrat_18``, ``lv.font_montserrat_24``, ``lv.font_montserrat_40``, ``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
+msgstr "StopWatch 固件为 LVGL 和 M5UI 提供以下 Montserrat 字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_24``、``lv.font_montserrat_40``、``lv.font_montserrat_44`` 和 ``lv.font_montserrat_48``。"
+
+#: ../../source/controllers/stopwatch.rst:30
+msgid "For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, ``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and Korean text respectively."
+msgstr "对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 ``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+
+#: ../../source/controllers/stopwatch.rst:35
+msgid "Board Features"
+msgstr "板载功能"
+
+#: ../../source/controllers/stopwatch.rst:23
+msgid "StopWatch supports the following built-in functions and peripherals:"
+msgstr "StopWatch 支持以下内置功能和外设："
+
+#: ../../source/controllers/stopwatch.rst:25
+msgid "`RTC <../unit/rtc.html>`_ date and time display and adjustment."
+msgstr "`RTC <../unit/rtc.html>`_ 日期和时间显示与调整。"
+
+#: ../../source/controllers/stopwatch.rst:26
+msgid "Button input and round-display output."
+msgstr "按键输入和圆形屏幕输出。"
+
+#: ../../source/controllers/stopwatch.rst:27
+msgid ""
+"USB, battery, and Grove voltage monitoring with charging and external-"
+"output control."
+msgstr "USB、电池和 Grove 电压监测，以及充电和外部输出控制。"
+
+#: ../../source/controllers/stopwatch.rst:28
+msgid "`Audio <../system/audio.html>`_ recording and playback."
+msgstr "`音频 <../system/audio.html>`_ 录制与播放。"
+
+#: ../../source/controllers/stopwatch.rst:31
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
-#: ../../source/controllers/stopwatch.rst:15
-#: ../../source/controllers/stopwatch.rst:63 89de5ae64db74b55827815b5fb194d7a
-#: f80e3b9a617243038d3d5ee7f4a23277
+#: ../../source/controllers/stopwatch.rst:34
+#: ../../source/controllers/stopwatch.rst:82
 msgid "RTC Clock"
 msgstr "RTC 时钟"
 
-#: ../../source/controllers/stopwatch.rst:17 222204b1d3cd4c86860e51e25d68f73a
+#: ../../source/controllers/stopwatch.rst:36
 msgid "Open the |stopwatch_rtc_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stopwatch_rtc_example.m5f2| 项目。"
 
-#: ../../source/controllers/stopwatch.rst:19
-#: ../../source/controllers/stopwatch.rst:65 8fd19d70ee034993abe6ad2c9648e84e
-#: d88ec1f6e8c34521a0623a8002de97a2
+#: ../../source/controllers/stopwatch.rst:38
+#: ../../source/controllers/stopwatch.rst:84
 msgid ""
 "This example displays a digital clock (HH:MM:SS) on the round screen, "
 "reading time from the built-in RTC. Press **BtnA** to cycle through hour,"
@@ -58,115 +116,104 @@ msgid ""
 "red). Press **BtnB** to increment the selected field. After adjusting "
 "seconds, press **BtnA** again to write the new time to the RTC."
 msgstr ""
-"此示例在圆形屏幕上显示数字时钟（HH:MM:SS），时间来自内置 RTC。按 **BtnA** 可循环切换时、分、"
-"秒的调节模式（当前字段以红色高亮）。按 **BtnB** 可增加所选字段的数值。调节完秒后，再次按 "
-"**BtnA** 将新时间写入 RTC。"
+"此示例在圆形屏幕上显示数字时钟（HH:MM:SS），时间来自内置 RTC。按 **BtnA** "
+"可循环切换时、分、秒的调节模式（当前字段以红色高亮）。按 **BtnB** 可增加所选字段的数值。调节完秒后，再次按 **BtnA** "
+"将新时间写入 RTC。"
 
-#: ../../source/controllers/stopwatch.rst:21
-#: ../../source/controllers/stopwatch.rst:36
-#: ../../source/controllers/stopwatch.rst:51 3778e4514f4549bb8bb6b5dba76cb760
-#: 572e34ccda814589b41fcca52d9023a4 c0ae83f7ae4e48c5ad4dd0137854a6c3
+#: ../../source/controllers/stopwatch.rst:40
+#: ../../source/controllers/stopwatch.rst:55
+#: ../../source/controllers/stopwatch.rst:70
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/controllers/stopwatch.rst:23 af1c526184a5498fb3e81e9ffc1ac1af
+#: ../../source/controllers/stopwatch.rst:42
 msgid "|stopwatch_rtc_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stopwatch.ref:4
-#: a62b309a29874bf99fa4e8dac3f6ea11
 msgid "stopwatch_rtc_example.png"
 msgstr ""
 
-#: ../../source/controllers/stopwatch.rst:25
-#: ../../source/controllers/stopwatch.rst:40
-#: ../../source/controllers/stopwatch.rst:55
-#: ../../source/controllers/stopwatch.rst:73
-#: ../../source/controllers/stopwatch.rst:88
-#: ../../source/controllers/stopwatch.rst:103 2b2f96a606794ebb81309c7dbac8983b
-#: 33054c83e7414325a1c794a749f929ff 46e8af2a13194450b1f8f06357676faf
-#: 71e00ad5a47948f79646ad8716f270d3 bf50c44c32574ec3a61c601ca3bd992a
-#: f97b5e03d7364a58ada394bf2714dfd1
+#: ../../source/controllers/stopwatch.rst:44
+#: ../../source/controllers/stopwatch.rst:59
+#: ../../source/controllers/stopwatch.rst:74
+#: ../../source/controllers/stopwatch.rst:92
+#: ../../source/controllers/stopwatch.rst:107
+#: ../../source/controllers/stopwatch.rst:122
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../source/controllers/stopwatch.rst:27
-#: ../../source/controllers/stopwatch.rst:42
-#: ../../source/controllers/stopwatch.rst:57
-#: ../../source/controllers/stopwatch.rst:75
-#: ../../source/controllers/stopwatch.rst:90
-#: ../../source/controllers/stopwatch.rst:105 075df1b9fbe5433584392ade62b117d2
-#: 1cf4ba47b0c64995b249fd20eb2ae0af 942a7172c82b4232aae6f5573eea648d
-#: f7d88b85c0ed4a8d8fe1cab5e4ec8fce fc4480d6c7fd41458230555df564f1b9
-#: fe7c79f118984272a4ff24c0dfe6488a
+#: ../../source/controllers/stopwatch.rst:46
+#: ../../source/controllers/stopwatch.rst:61
+#: ../../source/controllers/stopwatch.rst:76
+#: ../../source/controllers/stopwatch.rst:94
+#: ../../source/controllers/stopwatch.rst:109
+#: ../../source/controllers/stopwatch.rst:124
 msgid "None"
 msgstr "无"
 
-#: ../../source/controllers/stopwatch.rst:30
-#: ../../source/controllers/stopwatch.rst:78 81ddb31e3522419a98f14df4ef71c7a0
+#: ../../source/controllers/stopwatch.rst:49
+#: ../../source/controllers/stopwatch.rst:97
 msgid "Power Management"
 msgstr "电源管理"
 
-#: ../../source/controllers/stopwatch.rst:32 3254868f149a4a99b6cc1f78cab5d88c
+#: ../../source/controllers/stopwatch.rst:51
 msgid "Open the |stopwatch_power_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stopwatch_power_example.m5f2| 项目。"
 
-#: ../../source/controllers/stopwatch.rst:34
-#: ../../source/controllers/stopwatch.rst:80 adf32e82df1e4aa1bb36d14ff6fb3337
+#: ../../source/controllers/stopwatch.rst:53
+#: ../../source/controllers/stopwatch.rst:99
 msgid ""
 "This example monitors USB, battery, and Grove port voltages, and shows "
 "charging status (battery text turns green while charging). Press **BtnA**"
 " to toggle Grove external output (5V OUT). Press **BtnB** to toggle "
 "battery charging."
 msgstr ""
-"此示例监测 USB、电池和 Grove 端口的电压，并显示充电状态（充电时电池文字变为绿色）。按 "
-"**BtnA** 可开关 Grove 外部输出（5V OUT）。按 **BtnB** 可开关电池充电。"
+"此示例监测 USB、电池和 Grove 端口的电压，并显示充电状态（充电时电池文字变为绿色）。按 **BtnA** 可开关 Grove "
+"外部输出（5V OUT）。按 **BtnB** 可开关电池充电。"
 
-#: ../../source/controllers/stopwatch.rst:38 00baf206538c4745b69fd9b166c69f99
+#: ../../source/controllers/stopwatch.rst:57
 msgid "|stopwatch_power_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stopwatch.ref:5
-#: 05dc7352a545491881d0cbe51a40663a
 msgid "stopwatch_power_example.png"
 msgstr ""
 
-#: ../../source/controllers/stopwatch.rst:45
-#: ../../source/controllers/stopwatch.rst:93 991b8ae5d9784454a1a80637407a0399
+#: ../../source/controllers/stopwatch.rst:64
+#: ../../source/controllers/stopwatch.rst:112
 msgid "Audio Recording and Playback"
 msgstr "录音与播放"
 
-#: ../../source/controllers/stopwatch.rst:47 2d0a5dfa878a48b88210119ae644d87f
+#: ../../source/controllers/stopwatch.rst:66
 msgid "Open the |stopwatch_aduio_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |stopwatch_aduio_example.m5f2| 项目。"
 
-#: ../../source/controllers/stopwatch.rst:49
-#: ../../source/controllers/stopwatch.rst:95 6271fe804e994251a187e0076e8125ea
+#: ../../source/controllers/stopwatch.rst:68
+#: ../../source/controllers/stopwatch.rst:114
 msgid ""
 "This example demonstrates audio recording and playback. Press **BtnA** to"
 " start a 5-second recording (countdown shown on screen). Press **BtnB** "
 "to play back the recorded file when not recording. The UI shows **Idle**,"
 " **Recording...**, or **Playing...** status."
 msgstr ""
-"此示例演示录音与播放。按 **BtnA** 开始录制 5 秒（屏幕显示倒计时）。未在录制时按 **BtnB** "
-"播放已录制的文件。界面显示 **Idle**、**Recording...** 或 **Playing...** 状态。"
+"此示例演示录音与播放。按 **BtnA** 开始录制 5 秒（屏幕显示倒计时）。未在录制时按 **BtnB** 播放已录制的文件。界面显示 "
+"**Idle**、**Recording...** 或 **Playing...** 状态。"
 
-#: ../../source/controllers/stopwatch.rst:53 759d7e1a685946f5b199207caca468b2
+#: ../../source/controllers/stopwatch.rst:72
 msgid "|stopwatch_aduio_example.png|"
 msgstr ""
 
 #: ../../source/refs/controllers.stopwatch.ref:6
-#: f1364338bfe3488e959626183f41f800
 msgid "stopwatch_aduio_example.png"
 msgstr ""
 
-#: ../../source/controllers/stopwatch.rst:60 fdf1666d30064ea0a92ca55cb39b71f4
+#: ../../source/controllers/stopwatch.rst:79
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../source/controllers/stopwatch.rst:67
-#: ../../source/controllers/stopwatch.rst:82
-#: ../../source/controllers/stopwatch.rst:97 2e968721973c4a7f89d319cd78456cb7
-#: 8257af14b002495aa35d347f67ed2e35 b2efad9276e4474f8b5a3ad231e23933
+#: ../../source/controllers/stopwatch.rst:86
+#: ../../source/controllers/stopwatch.rst:101
+#: ../../source/controllers/stopwatch.rst:116
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
