@@ -9,21 +9,29 @@ def print_error_msg(e: Exception, lcd=M5.Lcd) -> None:
     sys.print_exception(e, e_msg)
     e_msg.seek(0)
     error_str = e_msg.read()
-    # print error message to lcd
-    lcd.setCursor(0, 0)
     board_id = M5.getBoard()
-    if board_id is not M5.BOARD.M5PaperColor:
-        lcd.setTextColor(0xFF0000, 0x000000)
+
+    # CoreMatrix has a 16x16 LED matrix; reuse the startup error indicator
+    # instead of trying to render a full traceback with a large LCD font.
+    if board_id == M5.BOARD.M5CoreMatrix:
+        from startup.corematrix import MatrixStatusDisplay
+
+        MatrixStatusDisplay().set_color(0, 0xFF0000)
     else:
-        lcd.setTextColor(0x000000, 0xFFFFFF)
-    if board_id is M5.BOARD.M5StopWatch:
-        lcd.setFont(lcd.FONTS.Montserrat16)
-        lcd.clear()
-        _print_wrapped(lcd, error_str, 68, 68, 330, 330)
-    else:
-        lcd.setFont(lcd.FONTS.Montserrat12)
-        lcd.clear()
-        lcd.print(error_str)
+        # print error message to lcd
+        lcd.setCursor(0, 0)
+        if board_id != M5.BOARD.M5PaperColor:
+            lcd.setTextColor(0xFF0000, 0x000000)
+        else:
+            lcd.setTextColor(0x000000, 0xFFFFFF)
+        if board_id == M5.BOARD.M5StopWatch:
+            lcd.setFont(lcd.FONTS.Montserrat16)
+            lcd.clear()
+            _print_wrapped(lcd, error_str, 68, 68, 330, 330)
+        else:
+            lcd.setFont(lcd.FONTS.Montserrat12)
+            lcd.clear()
+            lcd.print(error_str)
     # print error message to repl
     print(error_str)
     e_msg.close()

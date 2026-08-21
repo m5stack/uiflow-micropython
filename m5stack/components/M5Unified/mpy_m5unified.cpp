@@ -649,12 +649,22 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
 
     if (cfg.clear_display) {
         M5.Display.clear();
+        M5.Display.setCursor(0, 0);
     }
 
     // default display
     m5_display.gfx = (void *)(&(M5.Display));
-    // set default font to Montserrat 12, keep same style with UIFlow website UI design.
+    // Reset persistent CoreMatrix display state after a MicroPython soft reset.
+    #if BOARD_ID == 152
+    M5.Display.setRotation(1);
+    M5.Display.setTextSize(1);
+    M5.Display.setTextScroll(false);
+    M5.Display.unloadFont();
+    M5.Display.setCursor(0, 0);
+    #else
+    // Set the default font to Montserrat 12, keeping the UIFlow website style.
     M5.Display.setFont(&m5gfx::fonts::lvFontMontserrat12);
+    #endif
 
     // get local time and sync to RTC IC
     rtc_sync(nullptr);
