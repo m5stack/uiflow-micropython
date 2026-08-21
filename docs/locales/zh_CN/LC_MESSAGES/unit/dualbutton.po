@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 18:05+0800\n"
+"POT-Creation-Date: 2026-08-21 14:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,113 +20,310 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/unit/dualbutton.rst:2 afa3a4f4188943f183263e6a847cb3aa
-msgid "Dual_Button Unit"
+#: ../../source/unit/dualbutton.rst:2
+msgid "Dual Button Unit"
 msgstr "双按键 Unit"
 
-#: ../../source/unit/dualbutton.rst:6 e732df3f7b4943ab80718cee2b65e7a2
+#: ../../source/unit/dualbutton.rst:6
+msgid ""
+"The Dual Button Unit provides two independent buttons. Use "
+"``DualButtonUnit`` for click, double-click, hold, and callback handling, "
+"or ``SimpleDualButtonUnit`` for direct pin reads and debounced edge "
+"polling."
+msgstr ""
+"Dual Button Unit 提供两个独立按键。使用 ``DualButtonUnit`` 可处理单击、"
+"双击、长按和回调；使用 ``SimpleDualButtonUnit`` 可直接读取引脚并轮询消抖后的"
+"边沿事件。"
+
+#: ../../source/unit/dualbutton.rst:10
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/unit/dualbutton.rst:8 a8ad70f78531425d810b166c427b203d
+#: ../../source/unit/dualbutton.rst:12
 msgid "|Dual_Button|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref e6967b332adf471a91e2d36d2ccb2f5c
+#: ../../source/refs/unit.dual_button.ref
 msgid "Dual_Button"
 msgstr "Dual_Button"
 
-#: ../../source/unit/dualbutton.rst:11 ccd7d9fa100542f39372b6bd2a42895a
-msgid "Micropython Example:"
-msgstr "MicroPython 应用示例"
-
-#: ../../source/unit/dualbutton.rst:18 2535460e4df24c52bdfb93a8c76ac190
-msgid "UIFLOW2 Example:"
+#: ../../source/unit/dualbutton.rst:15
+msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
-#: ../../source/unit/dualbutton.rst:20 7f1dd29495a843ab98c8b713dd0ea602
+#: ../../source/unit/dualbutton.rst:18
+msgid "Button events"
+msgstr "按键事件"
+
+#: ../../source/unit/dualbutton.rst:20
+msgid "Open the |dual_button_core_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |dual_button_core_example.m5f2| 项目。"
+
+#: ../../source/unit/dualbutton.rst:22
+msgid ""
+"This example demonstrates how to read the button state and handle button "
+"events in UiFlow2."
+msgstr "本示例演示如何在 UiFlow2 中读取按键状态并处理按键事件。"
+
+#: ../../source/unit/dualbutton.rst:25 ../../source/unit/dualbutton.rst:83
+#: ../../source/unit/dualbutton.rst:91 ../../source/unit/dualbutton.rst:102
+#: ../../source/unit/dualbutton.rst:113
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/unit/dualbutton.rst:27
 msgid "|example.png|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref:6 70573ffaef754c14b4ae9ccf6fd0d84d
+#: ../../source/refs/unit.dual_button.ref:6
 msgid "example.png"
 msgstr ""
 
-#: ../../source/unit/dualbutton.rst:25 30b098ce2f8e4266807df6d4c6b568be
-msgid "|dual_button_core_example.m5f2|"
+#: ../../source/unit/dualbutton.rst:29 ../../source/unit/dualbutton.rst:48
+#: ../../source/unit/dualbutton.rst:65
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/unit/dualbutton.rst:31
+msgid "The button state is shown when a button event occurs."
+msgstr "按键事件发生时显示按键状态。"
+
+#: ../../source/unit/dualbutton.rst:34
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/unit/dualbutton.rst:37
+msgid "Button events and callbacks"
+msgstr "按键事件与回调"
+
+#: ../../source/unit/dualbutton.rst:39
+msgid ""
+"This example demonstrates how to use ``DualButtonUnit`` for button state,"
+" click, hold, and callback handling."
+msgstr "本示例演示如何使用 ``DualButtonUnit`` 处理按键状态、单击、长按和回调。"
+
+#: ../../source/unit/dualbutton.rst:42 ../../source/unit/dualbutton.rst:59
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/dualbutton.rst:50
+msgid "The button state is printed when the blue button event occurs."
+msgstr "蓝色按键事件发生时打印按键状态。"
+
+#: ../../source/unit/dualbutton.rst:53
+msgid "Simple polling"
+msgstr "简单轮询"
+
+#: ../../source/unit/dualbutton.rst:55
+msgid ""
+"This example demonstrates how to use ``SimpleDualButtonUnit`` to read the"
+" pins directly and poll debounced press and release edges without "
+"``tick()`` or callbacks."
 msgstr ""
+"本示例演示如何使用 ``SimpleDualButtonUnit`` 直接读取引脚，并在无需 "
+"``tick()`` 或回调的情况下轮询消抖后的按下和释放边沿。"
 
-#: ../../source/unit/dualbutton.rst:29 83aad7e1ede744fb9bed33325f057d3d
-msgid "class DualButton"
-msgstr "class DualButton"
+#: ../../source/unit/dualbutton.rst:67
+msgid "Press and release events for the blue and red buttons are printed."
+msgstr "打印蓝色和红色按键的按下与释放事件。"
 
-#: ../../source/unit/dualbutton.rst:32 3fa1ce26926047c496cebf9b098e8888
-msgid "Constructors"
-msgstr ""
+#: ../../source/unit/dualbutton.rst:70
+msgid "**API**"
+msgstr "**API**"
 
-#: ../../source/unit/dualbutton.rst:36 b5e33e5dd5dc4aec8029e597e93b55f2
-msgid "Create a DualButton object."
-msgstr "创建一个 DualButton 对象。"
+#: ../../source/unit/dualbutton.rst:73
+msgid "DualButtonUnit"
+msgstr "DualButtonUnit"
 
-#: ../../source/unit/dualbutton.rst:39 ../../source/unit/dualbutton.rst:51
-#: 2812e94733484b8ba4a64f6159e44af9 2f455409a5484f8a9b6233bae1e6617c
-msgid "The parameters are:"
-msgstr "参数为："
+#: ../../source/unit/dualbutton.rst:77
+msgid "Create two full-featured button objects."
+msgstr "创建两个功能完整的按键对象。"
 
-#: ../../source/unit/dualbutton.rst:39 8f04b975133243d985b8def660c2dda7
-msgid "``IO1,IO2`` Define two key pins."
-msgstr "``IO1,IO2`` 定义两个按键引脚。"
+#: ../../source/unit/dualbutton.rst
+msgid "Parameters"
+msgstr "参数"
 
-#: ../../source/unit/dualbutton.rst:41 ../../source/unit/dualbutton.rst:53
-#: ../../source/unit/dualbutton.rst:62 ../../source/unit/dualbutton.rst:71
-#: 535410cab4a64eed9ea580707c2d6111 9dd1b574bbac48959c9314c06ee120c7
-#: afd7ecc56c80465cb047998a3f490a61 d5da378bf45a4018a6108668b530f331
-msgid "UIFLOW2:"
-msgstr "UiFlow2"
+#: ../../source/unit/dualbutton.rst:79 ../../source/unit/dualbutton.rst:124
+msgid "Two button pin numbers."
+msgstr "两个按键的引脚号。"
 
-#: ../../source/unit/dualbutton.rst:43 9646a80afb9c426dbb23e9d220cec887
+#: ../../source/unit/dualbutton.rst
+msgid "Returns"
+msgstr "返回"
+
+#: ../../source/unit/dualbutton.rst:80
+msgid "The blue and red :class:`hardware.Button` objects."
+msgstr "蓝色和红色 :class:`hardware.Button` 按键对象。"
+
+#: ../../source/unit/dualbutton.rst
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../source/unit/dualbutton.rst:85
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref:8 4ebcb69655e74a6c97738241d49b6a27
+#: ../../source/refs/unit.dual_button.ref:8
 msgid "init.png"
 msgstr ""
 
-#: ../../source/unit/dualbutton.rst:47 eb6a103b271344ceb745634c28997b08
-msgid "Methods"
-msgstr ""
+#: ../../source/unit/dualbutton.rst:89
+msgid "Return whether the button is currently being held."
+msgstr "返回按键当前是否处于长按状态。"
 
-#: ../../source/unit/dualbutton.rst:55 7b0d9205428644fe970f7aa758b90ddf
+#: ../../source/unit/dualbutton.rst:93
 msgid "|get_status.png|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref:10 d3f954dc4b444a4d99191d2bc44747cf
+#: ../../source/refs/unit.dual_button.ref:10
 msgid "get_status.png"
 msgstr ""
 
-#: ../../source/unit/dualbutton.rst:60 34839fd41d6c4147888851706e0eb272
-msgid "Execute the program when the key is pressed."
-msgstr "当按键被按下时执行程序。"
+#: ../../source/unit/dualbutton.rst:97
+msgid "Register a callback for the specified button event."
+msgstr "为指定的按键事件注册回调函数。"
 
-#: ../../source/unit/dualbutton.rst:64 48fae677686e4b2abe4d4060ac1a886d
+#: ../../source/unit/dualbutton.rst:99
+msgid "Button event type."
+msgstr "按键事件类型。"
+
+#: ../../source/unit/dualbutton.rst:100
+msgid "Function called when the event occurs."
+msgstr "事件发生时调用的函数。"
+
+#: ../../source/unit/dualbutton.rst:104
 msgid "|setCallback.png|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref:12 5ccd4b3752bc4bb5ac0b87f9cf0d2264
+#: ../../source/refs/unit.dual_button.ref:12
 msgid "setCallback.png"
 msgstr ""
 
-#: ../../source/unit/dualbutton.rst:69 1026a2891e3d4bc79d658720073828f3
-msgid ""
-"The polling method, placed in the loop function, constantly detects the "
-"state of the key."
-msgstr "轮询方法放置在 loop 函数中，持续检测按键的状态。"
+#: ../../source/unit/dualbutton.rst:108
+msgid "Poll the button state machine. Call this method regularly in the loop."
+msgstr "轮询按键状态机。请在循环中定期调用此方法。"
 
-#: ../../source/unit/dualbutton.rst:73 6c83fa2343d94f77940e8dce85af4add
+#: ../../source/unit/dualbutton.rst:110
+msgid ""
+"Optional pin argument passed by an interrupt handler. Use ``None`` when "
+"polling from the loop."
+msgstr "中断处理程序传入的可选引脚参数。从循环中轮询时使用 ``None``。"
+
+#: ../../source/unit/dualbutton.rst:115
 msgid "|tick.png|"
 msgstr ""
 
-#: ../../source/refs/unit.dual_button.ref:14 8c63aa1305ae4464a3804e08ed7accf1
+#: ../../source/refs/unit.dual_button.ref:14
 msgid "tick.png"
 msgstr ""
 
+#: ../../source/unit/dualbutton.rst:118
+msgid "SimpleDualButtonUnit"
+msgstr "SimpleDualButtonUnit"
+
+#: ../../source/unit/dualbutton.rst:122
+msgid "Create two :class:`SimpleButton` objects for direct polling."
+msgstr "创建两个用于直接轮询的 :class:`SimpleButton` 对象。"
+
+#: ../../source/unit/dualbutton.rst:125
+msgid ""
+"Use low level as the active state when ``True``. Active-low inputs use an"
+" internal pull-up and active-high inputs use an internal pull-down."
+msgstr "为 ``True`` 时使用低电平作为有效状态。低电平有效输入使用内部上拉，高电平有效输入使用内部下拉。"
+
+#: ../../source/unit/dualbutton.rst:128
+msgid ""
+"Time in milliseconds that an input must remain stable before generating "
+"an edge event. Set to ``0`` to disable debounce."
+msgstr "输入在生成边沿事件前必须保持稳定的时间，单位为毫秒。设为 ``0`` 可禁用消抖。"
+
+#: ../../source/unit/dualbutton.rst:131
+msgid "The blue and red button objects."
+msgstr "蓝色和红色按键对象。"
+
+#: ../../source/unit/dualbutton.rst:135
+msgid "SimpleButton"
+msgstr "SimpleButton"
+
+#: ../../source/unit/dualbutton.rst:139
+msgid "Provide direct pin reads and debounced edge polling without callbacks."
+msgstr "提供无需回调的直接引脚读取和消抖边沿轮询。"
+
+#: ../../source/unit/dualbutton.rst:141
+msgid ""
+"Call :meth:`SimpleButton.update` regularly before reading edge events. "
+"The :meth:`SimpleButton.value` and :meth:`SimpleButton.is_active` methods"
+" read the pin directly and do not require ``update()``."
+msgstr ""
+"读取边沿事件前需定期调用 :meth:`SimpleButton.update`。:meth:`SimpleButton.value` 和 "
+":meth:`SimpleButton.is_active` 方法会直接读取引脚，无需调用 ``update()``。"
+
+#: ../../source/unit/dualbutton.rst:147
+msgid "Return the raw pin value."
+msgstr "返回原始引脚值。"
+
+#: ../../source/unit/dualbutton.rst:149
+msgid "``0`` or ``1``."
+msgstr "``0`` 或 ``1``。"
+
+#: ../../source/unit/dualbutton.rst:154
+msgid "Return whether the button is currently active according to ``active_low``."
+msgstr "根据 ``active_low`` 返回按键当前是否处于有效状态。"
+
+#: ../../source/unit/dualbutton.rst:157
+msgid "``True`` when the button is active."
+msgstr "按键处于有效状态时返回 ``True``。"
+
+#: ../../source/unit/dualbutton.rst:162
+msgid ""
+"Sample the pin and update the debounced edge state. Call this method once"
+" per loop iteration."
+msgstr "采样引脚并更新消抖后的边沿状态。每次循环迭代调用一次此方法。"
+
+#: ../../source/unit/dualbutton.rst:167
+msgid ""
+"Return whether a debounced press was detected by the latest call to "
+":meth:`SimpleButton.update`."
+msgstr "返回最近一次调用 :meth:`SimpleButton.update` 是否检测到消抖后的按下事件。"
+
+#: ../../source/unit/dualbutton.rst:174
+msgid ""
+"Return whether a debounced release was detected by the latest call to "
+":meth:`SimpleButton.update`."
+msgstr "返回最近一次调用 :meth:`SimpleButton.update` 是否检测到消抖后的释放事件。"
+
+#~ msgid ""
+#~ "Use ``DualButtonUnit`` when click, double-"
+#~ "click, and hold detection or callbacks"
+#~ " are required."
+#~ msgstr "需要检测单击、双击、长按或使用回调时，请使用 ``DualButtonUnit``。"
+
+#~ msgid "|dual_button_core_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "class DualButton"
+#~ msgstr "class DualButton"
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "The parameters are:"
+#~ msgstr "参数为："
+
+#~ msgid "``IO1,IO2`` Define two key pins."
+#~ msgstr "``IO1,IO2`` 定义两个按键引脚。"
+
+#~ msgid "UIFLOW2:"
+#~ msgstr "UiFlow2"
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "Execute the program when the key is pressed."
+#~ msgstr "当按键被按下时执行程序。"
+
+#~ msgid ""
+#~ "The polling method, placed in the "
+#~ "loop function, constantly detects the "
+#~ "state of the key."
+#~ msgstr "轮询方法放置在 loop 函数中，持续检测按键的状态。"
