@@ -32,6 +32,7 @@ package(
         "lan.py",
         "llm.py",
         "lora.py",
+        "lora1262.py",
         "lora868_v12.py",
         "lorawan.py",
         "lorawan868.py",

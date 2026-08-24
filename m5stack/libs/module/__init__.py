@@ -34,6 +34,7 @@ _attrs = {
     "LANModule": "lan",
     "LlmModule": "llm",
     "LoraModule": "lora",
+    "LoRa1262Module": "lora1262",
     "LoRa868V12Module": "lora868_v12",
     "LoRaWANModule": "lorawan",
     "LoRaWAN868Module": "lorawan868",
