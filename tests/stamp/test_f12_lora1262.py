@@ -260,6 +260,26 @@ class StampSupportTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             radio.set_output_power(23)
 
+    def test_uwb_resolves_defaults_by_f12_position(self):
+        fake_m5.current_board = FakeBoard.M5StampC5
+        f12_module = importlib.import_module("stamp.f12")
+        positions = []
+        original_pin = f12_module.StampF12.pin
+
+        def record_position(f12, position):
+            positions.append(position)
+            return original_pin(f12, position)
+
+        f12_module.StampF12.pin = record_position
+        try:
+            uwb_module = importlib.import_module("stamp.uwb")
+        finally:
+            f12_module.StampF12.pin = original_pin
+
+        self.assertEqual(positions, [4, 5, 6, 9, 8, 12, 10, 3])
+        self.assertFalse(hasattr(uwb_module, "_F12_POSITIONS"))
+        self.assertFalse(hasattr(uwb_module, "_f12"))
+
     def test_uwb_compatibility_iomap_comes_from_f12(self):
         expected = {
             FakeBoard.M5StampC5: (0, 24, 25, 27, 26, 12, 11, 23),
@@ -285,6 +305,11 @@ class StampSupportTest(unittest.TestCase):
                 },
             )
 
+        fake_m5.current_board = 99
+        sys.modules.pop("stamp.uwb", None)
+        uwb_module = importlib.import_module("stamp.uwb")
+        self.assertIsNone(uwb_module.iomap)
+
         custom_pins = {
             "irq": 1,
             "wakeup": 2,
@@ -296,6 +321,21 @@ class StampSupportTest(unittest.TestCase):
         }
         custom_radio = uwb_module.StampUWB(**custom_pins)
         self.assertEqual(custom_radio._device.kwargs, custom_pins)
+        with self.assertRaises(ValueError):
+            uwb_module.StampUWB(irq=1)
+
+    def test_uwb_compatibility_exports_remain_available(self):
+        fake_m5.current_board = FakeBoard.M5StampC5
+        stamp_module = importlib.import_module("stamp")
+        uwb_module = importlib.import_module("stamp.uwb")
+
+        self.assertEqual(stamp_module._attrs["UWBIO"], "uwb")
+        self.assertEqual(stamp_module._attrs["iomap"], "uwb")
+        self.assertEqual(
+            uwb_module.UWBIO._fields,
+            ("irq", "wakeup", "reset", "mosi", "miso", "clock", "cs", "sync"),
+        )
+        self.assertEqual(tuple(uwb_module.iomap), (0, 24, 25, 27, 26, 12, 11, 23))
 
 
 if __name__ == "__main__":
