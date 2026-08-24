@@ -26,6 +26,78 @@ The supported RF frequency range is 868-923 MHz. Attach a suitable antenna
 before transmitting. The module's ``SHUT_DOWN`` signal is not part of the
 Stamp Series FPC12 interface and is not controlled by this driver.
 
+Pin Mapping
+-----------
+
+.. list-table:: Stamp LoRa-1262 FPC12 mapping
+    :header-rows: 1
+
+    * - Position
+      - Signal
+      - StampC5
+      - StampC6
+      - StampS3Mini
+    * - 1
+      - 3V3
+      - 3V3
+      - 3V3
+      - 3V3
+    * - 2
+      - 3V3
+      - 3V3
+      - 3V3
+      - 3V3
+    * - 3
+      - SW
+      - G23
+      - G8
+      - G38
+    * - 4
+      - IRQ
+      - G0
+      - G0
+      - G21
+    * - 5
+      - BUSY
+      - G24
+      - G18
+      - G39
+    * - 6
+      - RST
+      - G25
+      - G19
+      - G40
+    * - 7
+      - GND
+      - GND
+      - GND
+      - GND
+    * - 8
+      - MISO
+      - G26
+      - G20
+      - G41
+    * - 9
+      - MOSI
+      - G27
+      - G21
+      - G42
+    * - 10
+      - CS
+      - G11
+      - G22
+      - G43
+    * - 11
+      - GND
+      - GND
+      - GND
+      - GND
+    * - 12
+      - CLK
+      - G12
+      - G23
+      - G44
+
 MicroPython Example
 -------------------
 

@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-import M5
 import math
 import uwb as _uwb
 from collections import namedtuple
@@ -13,20 +12,31 @@ from .f12 import StampF12
 
 UWBIO = namedtuple("UWBIO", ["irq", "wakeup", "reset", "mosi", "miso", "clock", "cs", "sync"])
 
+_F12_POSITIONS = {
+    "irq": 4,
+    "wakeup": 5,
+    "reset": 6,
+    "mosi": 9,
+    "miso": 8,
+    "clock": 12,
+    "cs": 10,
+    "sync": 3,
+}
+
 try:
     _f12 = StampF12()
 except NotImplementedError:
     iomap = None
 else:
     iomap = UWBIO(
-        irq=_f12.pin(StampF12.IRQ),
-        wakeup=_f12.pin(StampF12.BUSY),
-        reset=_f12.pin(StampF12.RST),
-        mosi=_f12.pin(StampF12.MOSI),
-        miso=_f12.pin(StampF12.MISO),
-        clock=_f12.pin(StampF12.CLK),
-        cs=_f12.pin(StampF12.CS),
-        sync=_f12.pin(StampF12.SW),  # QM33120 GP7/SYNC; unused by DS-TWR.
+        irq=_f12.pin(_F12_POSITIONS["irq"]),
+        wakeup=_f12.pin(_F12_POSITIONS["wakeup"]),
+        reset=_f12.pin(_F12_POSITIONS["reset"]),
+        mosi=_f12.pin(_F12_POSITIONS["mosi"]),
+        miso=_f12.pin(_F12_POSITIONS["miso"]),
+        clock=_f12.pin(_F12_POSITIONS["clock"]),
+        cs=_f12.pin(_F12_POSITIONS["cs"]),
+        sync=_f12.pin(_F12_POSITIONS["sync"]),  # QM33120 GP7/SYNC; unused by DS-TWR.
     )
 
 

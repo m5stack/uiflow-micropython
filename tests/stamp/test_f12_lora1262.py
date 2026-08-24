@@ -146,28 +146,22 @@ class StampSupportTest(unittest.TestCase):
         for name in ("stamp.uwb", "stamp.lora1262", "stamp.f12", "stamp"):
             sys.modules.pop(name, None)
 
-    def test_f12_maps_signal_positions_for_all_supported_hosts(self):
+    def test_f12_maps_connector_positions_for_all_supported_hosts(self):
         f12_module = importlib.import_module("stamp.f12")
         expected = {
             FakeBoard.M5StampC5: (23, 0, 24, 25, 26, 27, 11, 12),
             FakeBoard.M5StampC6: (8, 0, 18, 19, 20, 21, 22, 23),
             FakeBoard.M5StampS3Mini: (38, 21, 39, 40, 41, 42, 43, 44),
         }
-        positions = (
-            f12_module.StampF12.SW,
-            f12_module.StampF12.IRQ,
-            f12_module.StampF12.BUSY,
-            f12_module.StampF12.RST,
-            f12_module.StampF12.MISO,
-            f12_module.StampF12.MOSI,
-            f12_module.StampF12.CS,
-            f12_module.StampF12.CLK,
-        )
+        positions = (3, 4, 5, 6, 8, 9, 10, 12)
 
         for board, pins in expected.items():
             fake_m5.current_board = board
             f12 = f12_module.StampF12()
             self.assertEqual(tuple(f12.pin(position) for position in positions), pins)
+
+        for signal in ("SW", "IRQ", "BUSY", "RST", "MISO", "MOSI", "CS", "CLK"):
+            self.assertFalse(hasattr(f12_module.StampF12, signal))
 
     def test_f12_rejects_non_gpio_positions_and_unsupported_hosts(self):
         f12_module = importlib.import_module("stamp.f12")

@@ -6,16 +6,7 @@ import M5
 
 
 class StampF12:
-    """Resolve Stamp FPC12 signal positions for the current Stamp host."""
-
-    SW = 3
-    IRQ = 4
-    BUSY = 5
-    RST = 6
-    MISO = 8
-    MOSI = 9
-    CS = 10
-    CLK = 12
+    """Resolve Stamp FPC12 connector positions for the current Stamp host."""
 
     _PIN_MAPS = {
         M5.BOARD.M5StampC5: (None, None, 23, 0, 24, 25, None, 26, 27, 11, None, 12),
@@ -42,7 +33,7 @@ class StampF12:
             raise NotImplementedError("Stamp FPC12 is not supported on this board")
 
     def pin(self, position):
-        """Return the GPIO number at a one-based FPC12 signal position."""
+        """Return the GPIO number at a one-based FPC12 connector position."""
         if not 1 <= position <= len(self._pins):
             raise ValueError("position must be in range 1-12")
         pin = self._pins[position - 1]

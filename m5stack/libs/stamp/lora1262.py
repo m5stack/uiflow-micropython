@@ -9,6 +9,18 @@ from micropython import schedule
 from .f12 import StampF12
 
 
+_F12_POSITIONS = {
+    "sw": 3,
+    "irq": 4,
+    "busy": 5,
+    "reset": 6,
+    "miso": 8,
+    "mosi": 9,
+    "cs": 10,
+    "clock": 12,
+}
+
+
 class StampLoRa1262:
     """SX1262 LoRa radio connected through the Stamp FPC12 interface.
 
@@ -67,17 +79,7 @@ class StampLoRa1262:
             except NotImplementedError:
                 missing = ", ".join(name for name, pin in pins.items() if pin is None)
                 raise ValueError("%s are required for this Stamp host" % missing)
-            positions = {
-                "sw": StampF12.SW,
-                "irq": StampF12.IRQ,
-                "busy": StampF12.BUSY,
-                "reset": StampF12.RST,
-                "miso": StampF12.MISO,
-                "mosi": StampF12.MOSI,
-                "cs": StampF12.CS,
-                "clock": StampF12.CLK,
-            }
-            for name, position in positions.items():
+            for name, position in _F12_POSITIONS.items():
                 if pins[name] is None:
                     pins[name] = f12.pin(position)
 
