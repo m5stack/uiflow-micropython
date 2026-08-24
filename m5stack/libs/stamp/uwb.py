@@ -8,41 +8,26 @@ import uwb as _uwb
 from collections import namedtuple
 from uwb import UWB as _UWB
 
+from .f12 import StampF12
+
 
 UWBIO = namedtuple("UWBIO", ["irq", "wakeup", "reset", "mosi", "miso", "clock", "cs", "sync"])
 
-iomap = {
-    M5.BOARD.M5StampS3Mini: UWBIO(
-        irq=21,
-        wakeup=39,
-        reset=40,
-        mosi=42,
-        miso=41,
-        clock=44,
-        cs=43,
-        sync=38,  # QM33120 GP7/SYNC; unused by DS-TWR.
-    ),
-    M5.BOARD.M5StampC6: UWBIO(
-        irq=0,
-        wakeup=18,
-        reset=19,
-        mosi=21,
-        miso=20,
-        clock=23,
-        cs=22,
-        sync=8,  # QM33120 GP7/SYNC; unused by DS-TWR.
-    ),
-    M5.BOARD.M5StampC5: UWBIO(
-        irq=0,
-        wakeup=24,
-        reset=25,
-        mosi=27,
-        miso=26,
-        clock=12,
-        cs=11,
-        sync=23,  # QM33120 GP7/SYNC; unused by DS-TWR.
-    ),
-}.get(M5.getBoard())
+try:
+    _f12 = StampF12()
+except NotImplementedError:
+    iomap = None
+else:
+    iomap = UWBIO(
+        irq=_f12.pin(StampF12.IRQ),
+        wakeup=_f12.pin(StampF12.BUSY),
+        reset=_f12.pin(StampF12.RST),
+        mosi=_f12.pin(StampF12.MOSI),
+        miso=_f12.pin(StampF12.MISO),
+        clock=_f12.pin(StampF12.CLK),
+        cs=_f12.pin(StampF12.CS),
+        sync=_f12.pin(StampF12.SW),  # QM33120 GP7/SYNC; unused by DS-TWR.
+    )
 
 
 class StampUWB:

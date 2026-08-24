@@ -6,6 +6,8 @@ package(
     "stamp",
     (
         "__init__.py",
+        "f12.py",
+        "lora1262.py",
         "uwb.py",
     ),
     base_path="..",

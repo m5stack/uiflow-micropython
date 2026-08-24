@@ -1,0 +1,122 @@
+Stamp FPC12
+===========
+
+.. py:currentmodule:: stamp
+
+``StampF12`` maps the one-based signal positions of the Stamp Series FPC12
+connector to GPIO numbers on the current Stamp host. It supports StampC5,
+StampC6, and StampS3Mini.
+
+Pin Mapping
+-----------
+
+.. list-table:: Stamp Series FPC12 signal mapping
+    :header-rows: 1
+
+    * - Position
+      - Signal
+      - StampC5
+      - StampC6
+      - StampS3Mini
+    * - 3
+      - SW
+      - G23
+      - G8
+      - G38
+    * - 4
+      - IRQ
+      - G0
+      - G0
+      - G21
+    * - 5
+      - BUSY
+      - G24
+      - G18
+      - G39
+    * - 6
+      - RST
+      - G25
+      - G19
+      - G40
+    * - 8
+      - MISO
+      - G26
+      - G20
+      - G41
+    * - 9
+      - MOSI
+      - G27
+      - G21
+      - G42
+    * - 10
+      - CS
+      - G11
+      - G22
+      - G43
+    * - 12
+      - CLK
+      - G12
+      - G23
+      - G44
+
+Positions 1 and 2 are 3.3 V. Positions 7 and 11 are ground. They are not
+returned as GPIO signals.
+
+MicroPython Example
+-------------------
+
+The following example obtains the GPIO used for the FPC12 IRQ signal on the
+current Stamp host.
+
+MicroPython Code Block:
+
+    .. code-block:: python
+
+        from stamp import StampF12
+
+        f12 = StampF12()
+        irq_pin = f12.pin(StampF12.IRQ)
+        print(irq_pin)
+
+**API**
+-------
+
+class StampF12
+--------------
+
+Constructors
+------------
+
+.. class:: StampF12()
+
+    Create an FPC12 position mapper for the current Stamp host.
+
+    :raises NotImplementedError: If the current board is not StampC5,
+        StampC6, or StampS3Mini.
+
+Constants
+---------
+
+.. data:: StampF12.SW
+          StampF12.IRQ
+          StampF12.BUSY
+          StampF12.RST
+          StampF12.MISO
+          StampF12.MOSI
+          StampF12.CS
+          StampF12.CLK
+
+    One-based FPC12 positions for the available GPIO signals.
+
+Methods
+-------
+
+.. method:: StampF12.pin(position)
+
+    Return the GPIO number assigned to a signal position.
+
+    :param int position: One-based FPC12 position.
+    :returns: GPIO number for the current Stamp host.
+    :rtype: int
+    :raises ValueError: If the position is outside 1-12 or is a power or
+        ground position.

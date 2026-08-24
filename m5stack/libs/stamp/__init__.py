@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "StampF12": "f12",
+    "StampLoRa1262": "lora1262",
     "StampUWB": "uwb",
     "StampUWBAngle": "uwb",
     "UWBIO": "uwb",

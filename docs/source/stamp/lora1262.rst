@@ -1,0 +1,172 @@
+Stamp LoRa-1262
+===============
+
+.. sku: S014
+
+.. py:currentmodule:: stamp
+
+.. include:: ../refs/stamp.lora1262.ref
+
+Stamp LoRa-1262 is an SX1262 LoRa transceiver for the Stamp Series FPC12
+interface. ``StampLoRa1262`` selects the current host's FPC12 GPIO mapping,
+enables the RF switch, and provides synchronous send, receive, and radio
+configuration operations.
+
+Support the following products:
+
+    |Stamp LoRa-1262|
+
+Supported hosts:
+
+- StampC5
+- StampC6
+- StampS3Mini
+
+The supported RF frequency range is 868-923 MHz. Attach a suitable antenna
+before transmitting. The module's ``SHUT_DOWN`` signal is not part of the
+Stamp Series FPC12 interface and is not controlled by this driver.
+
+MicroPython Example
+-------------------
+
+Sender
+^^^^^^
+
+The sender transmits a sequence message once per second.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/stamp/lora1262/stamp_lora1262_sender_example.py
+        :language: python
+        :linenos:
+
+Receiver
+^^^^^^^^
+
+The receiver prints each packet with its RSSI and SNR values.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/stamp/lora1262/stamp_lora1262_receiver_example.py
+        :language: python
+        :linenos:
+
+**API**
+-------
+
+class StampLoRa1262
+-------------------
+
+Constructors
+------------
+
+.. class:: StampLoRa1262(freq_khz=868000, bw="250", sf=8, coding_rate=8, preamble_len=12, syncword=0x12, output_power=10, sw=None, irq=None, busy=None, reset=None, miso=None, mosi=None, cs=None, clock=None, spi_id=1)
+
+    Create and configure a Stamp LoRa-1262 radio.
+
+    Pins set to ``None`` use the current host's :class:`StampF12` mapping. All
+    eight signal pins must be supplied when using another host.
+
+    :param int freq_khz: Carrier frequency in kHz, range 868000-923000.
+    :param str bw: Bandwidth in kHz. Valid values are ``"7.8"``, ``"10.4"``,
+        ``"15.6"``, ``"20.8"``, ``"31.25"``, ``"41.7"``, ``"62.5"``,
+        ``"125"``, ``"250"``, and ``"500"``.
+    :param int sf: Spreading factor, range 6-12.
+    :param int coding_rate: Coding rate denominator, range 5-8 for 4/N coding.
+    :param int preamble_len: Preamble length in symbols, range 5-255.
+    :param int syncword: LoRa sync word, range 1-255.
+    :param int output_power: Output power in dBm, range -9 to 22.
+    :param int sw: RF switch-enable pin.
+    :param int irq: SX1262 DIO1 interrupt pin.
+    :param int busy: SX1262 BUSY pin.
+    :param int reset: SX1262 reset pin.
+    :param int miso: SPI MISO pin.
+    :param int mosi: SPI MOSI pin.
+    :param int cs: SPI chip-select pin.
+    :param int clock: SPI clock pin.
+    :param int spi_id: Machine SPI controller ID. Default is 1.
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from stamp import StampLoRa1262
+
+            radio = StampLoRa1262()
+
+Methods
+-------
+
+.. method:: StampLoRa1262.set_freq(freq_khz=868000)
+
+    Set the carrier frequency in kHz, range 868000-923000.
+
+.. method:: StampLoRa1262.set_sf(sf)
+
+    Set the spreading factor, range 6-12.
+
+.. method:: StampLoRa1262.set_bw(bw)
+
+    Set the bandwidth in kHz using one of the constructor bandwidth values.
+
+.. method:: StampLoRa1262.set_coding_rate(coding_rate)
+
+    Set the coding rate denominator, range 5-8 for 4/N coding.
+
+.. method:: StampLoRa1262.set_syncword(syncword)
+
+    Set the LoRa sync word, range 1-255.
+
+.. method:: StampLoRa1262.set_preamble_len(preamble_len)
+
+    Set the preamble length in symbols, range 5-255.
+
+.. method:: StampLoRa1262.set_output_power(output_power)
+
+    Set the output power in dBm, range -9 to 22.
+
+.. method:: StampLoRa1262.send(packet, tx_at_ms=None)
+
+    Send a packet.
+
+    :param packet: String, bytes-like object, list, tuple, or integer payload.
+    :param int tx_at_ms: Optional scheduled transmission timestamp.
+    :returns: Transmission timestamp in milliseconds.
+    :rtype: int
+
+.. method:: StampLoRa1262.recv(timeout_ms=None, rx_length=255, rx_packet=None)
+
+    Receive one packet.
+
+    :param int timeout_ms: Optional receive timeout in milliseconds.
+    :param int rx_length: Maximum receive length.
+    :param rx_packet: Optional packet object to reuse.
+    :returns: Received ``RxPacket``, or ``None`` on timeout.
+
+.. method:: StampLoRa1262.start_recv()
+
+    Start continuous packet reception.
+
+.. method:: StampLoRa1262.set_irq_callback(callback)
+
+    Register a callback that receives the next ``RxPacket``. Call
+    :meth:`start_recv` after registering the callback.
+
+.. method:: StampLoRa1262.standby()
+
+    Put the radio in standby mode.
+
+.. method:: StampLoRa1262.sleep()
+
+    Put the radio in sleep mode.
+
+.. method:: StampLoRa1262.irq_triggered()
+
+    Return whether the radio IRQ has been triggered.
+
+    :returns: IRQ state.
+    :rtype: bool
+
+.. method:: StampLoRa1262.deinit()
+
+    Put the radio in sleep mode.
