@@ -12,6 +12,7 @@ Controllers
     stamps3.rst
     cardputer.rst
     coreink.rst
+    corematrix.rst
     cores3.rst
     dinmeter.rst
     dualkey.rst

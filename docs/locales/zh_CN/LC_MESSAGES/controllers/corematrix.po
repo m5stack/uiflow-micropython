@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 15:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/controllers/corematrix.rst:3
+#: ../../source/refs/controllers.corematrix.ref
+msgid "CoreMatrix"
+msgstr ""
+
+#: ../../source/controllers/corematrix.rst:7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/controllers/corematrix.rst:9
+msgid "|CoreMatrix|"
+msgstr ""
+
+#: ../../source/controllers/corematrix.rst:12
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../source/controllers/corematrix.rst:14
+msgid "The CoreMatrix firmware includes the following user-facing packages:"
+msgstr "CoreMatrix 固件包含以下面向用户的软件包："
+
+#: ../../source/controllers/corematrix.rst:16
+msgid ""
+"`Module <../module/index.html>`_: The ``module`` package for M-BUS "
+"expansion modules."
+msgstr "`Module <../module/index.html>`_：用于 M-BUS 扩展模块的 ``module`` 软件包。"
+
+#: ../../source/controllers/corematrix.rst:17
+msgid ""
+"`Unit <../unit/index.html>`_: The ``unit`` package containing Unit "
+"drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+
+#: ../../source/controllers/corematrix.rst:18
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
+
+#: ../../source/controllers/corematrix.rst:21
+msgid "Board Features"
+msgstr "板载功能"
+
+#: ../../source/controllers/corematrix.rst:23
+msgid "CoreMatrix supports the following built-in functions and peripherals:"
+msgstr "CoreMatrix 支持以下内置功能和外设："
+
+#: ../../source/controllers/corematrix.rst:25
+msgid "16 x 16 LED matrix output through ``M5.Display``."
+msgstr "通过 ``M5.Display`` 控制 16 x 16 LED 矩阵输出。"
+
+#: ../../source/controllers/corematrix.rst:26
+msgid "Three button inputs through ``M5.BtnA``, ``M5.BtnB``, and ``M5.BtnC``."
+msgstr "通过 ``M5.BtnA``、``M5.BtnB`` 和 ``M5.BtnC`` 读取三个按键输入。"
+
+#: ../../source/controllers/corematrix.rst:27
+msgid "BMI270 accelerometer and gyroscope readings through ``M5.Imu``."
+msgstr "通过 ``M5.Imu`` 读取 BMI270 加速度计和陀螺仪数据。"
+
+#: ../../source/controllers/corematrix.rst:28
+msgid "Buzzer tone output through ``M5.Speaker``."
+msgstr "通过 ``M5.Speaker`` 控制蜂鸣器音调输出。"
+
+#: ../../source/controllers/corematrix.rst:29
+msgid ""
+"Battery, VBUS, charging, and external output power management through "
+"``M5.Power``."
+msgstr "通过 ``M5.Power`` 管理电池、VBUS、充电和外部电源输出。"
+
+#~ msgid "M5Stack CoreMatrix"
+#~ msgstr ""
+
