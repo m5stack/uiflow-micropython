@@ -5,8 +5,9 @@
 """Module13.2 LoRa-1262 support."""
 
 import machine
-from driver.m5ioe1 import M5IOE1, Pin, RGB
+from driver.m5ioe1 import M5IOE1, Pin
 from lora import RxPacket, SX1262
+from micropython import schedule
 
 from . import mbus
 from .lora868_v12 import LoRa868V12Module
@@ -14,25 +15,24 @@ from .lora868_v12 import LoRa868V12Module
 
 _IOE_ADDR_MIN = 0x71
 _IOE_ADDR_MAX = 0x74
-_RGB_POWER_PIN = 1
 _LORA_RESET_PIN = 2
 _LORA_SWITCH_PIN = 3
 _LORA_POWER_PIN = 5
-_RGB_DATA_PIN = 14
-_RGB_LED_COUNT = 3
 
 
 class LoRa1262Module(LoRa868V12Module):
     """Create a Module13.2 LoRa-1262 object.
 
-    The module uses the M-Bus SPI and I2C buses. M5IOE1 controls RGB power on
-    G1, SX1262 reset on G2, antenna-switch enable on G3, LoRa power on G5, and
-    three NeoPixels on G14.
+    The module uses the M-Bus SPI bus and a caller-supplied I2C bus. M5IOE1
+    controls SX1262 reset on G2, antenna-switch enable on G3, and LoRa power
+    on G5.
 
+    :param i2c: Initialized I2C bus used to access the M5IOE1.
+    :type i2c: machine.I2C
     :param int pin_cs: SX1262 chip-select MCU pin. Default is 1 for CoreS3.
     :param int pin_irq: SX1262 DIO1 MCU pin. Default is 10 for CoreS3.
     :param int pin_busy: SX1262 BUSY MCU pin. Default is 2 for CoreS3.
-    :param int ioe_addr: M5IOE1 I2C address, from 0x71 through 0x74.
+    :param int address: M5IOE1 I2C address, from 0x71 through 0x74.
     :param int freq_khz: RF frequency in kHz, from 850000 through 930000.
     :param str bw: LoRa bandwidth in kHz.
     :param int sf: Spreading factor, from 6 through 12.
@@ -45,9 +45,11 @@ class LoRa1262Module(LoRa868V12Module):
 
         .. code-block:: python
 
-            from module import LoRa1262Module
+            import M5
+            from module import LoRa1262Module, mbus
 
-            lora1262 = LoRa1262Module(ioe_addr=0x71)
+            M5.begin()
+            lora1262 = LoRa1262Module(mbus.i2c1, address=0x71)
     """
 
     BANDWIDTHS = (
@@ -65,10 +67,11 @@ class LoRa1262Module(LoRa868V12Module):
 
     def __init__(
         self,
+        i2c,
         pin_cs: int = 1,
         pin_irq: int = 10,
         pin_busy: int = 2,
-        ioe_addr: int = 0x71,
+        address: int = 0x71,
         freq_khz: int = 868000,
         bw: str = "250",
         sf: int = 8,
@@ -77,9 +80,9 @@ class LoRa1262Module(LoRa868V12Module):
         syncword: int = 0x12,
         output_power: int = 10,
     ) -> None:
-        ioe_addr = int(ioe_addr)
-        if not _IOE_ADDR_MIN <= ioe_addr <= _IOE_ADDR_MAX:
-            raise ValueError("ioe_addr must be 0x71..0x74")
+        address = int(address)
+        if not _IOE_ADDR_MIN <= address <= _IOE_ADDR_MAX:
+            raise ValueError("address must be 0x71..0x74")
         self._validate_range(freq_khz, 850000, 930000)
         self._validate_range(sf, 6, 12)
         self._validate_range(coding_rate, 5, 8)
@@ -89,18 +92,20 @@ class LoRa1262Module(LoRa868V12Module):
         if bw not in self.BANDWIDTHS:
             raise ValueError("Invalid bandwidth %s" % bw)
 
-        self.ioe1 = M5IOE1(mbus.i2c1, ioe_addr)
-        self.rgb_power = Pin(self.ioe1, _RGB_POWER_PIN, Pin.OUT, value=1)
+        self.i2c = i2c
+        self.ioe1 = M5IOE1(i2c, address)
         self.lora_power = Pin(self.ioe1, _LORA_POWER_PIN, Pin.OUT, value=1)
         self.lora_switch = Pin(self.ioe1, _LORA_SWITCH_PIN, Pin.OUT, value=1)
         self.lora_reset = Pin(self.ioe1, _LORA_RESET_PIN, Pin.OUT, value=1)
-        self.rgb = None
         self.modem = None
-        self.irq_callback = None
+        self.tx_callback = None
+        self.rx_callback = None
+        self._tx_active = False
+        self._continuous_rx = False
+        self._scheduled_tx = self._dispatch_tx
+        self._scheduled_rx = self._dispatch_rx
 
         try:
-            self.rgb = RGB(self.ioe1, io=_RGB_DATA_PIN, n=_RGB_LED_COUNT)
-            self.rgb.clear()
             self.modem = SX1262(
                 spi=mbus.spi,
                 reset=self.lora_reset,
@@ -124,35 +129,8 @@ class LoRa1262Module(LoRa868V12Module):
             raise
 
     def _power_off(self):
-        if self.rgb is not None:
-            try:
-                self.rgb.clear()
-            except OSError:
-                pass
         self.lora_switch.off()
         self.lora_power.off()
-        self.rgb_power.off()
-
-    def set_rgb_color(self, index: int, color: int) -> bool:
-        """Set one of the three RGB LEDs.
-
-        :param int index: LED index, from 0 through 2.
-        :param int color: RGB888 color, from 0x000000 through 0xFFFFFF.
-        :returns: True when the color is written.
-        :rtype: bool
-        """
-        index = int(index)
-        if not 0 <= index < _RGB_LED_COUNT:
-            raise ValueError("index must be 0..2")
-        return self.rgb.set_color(index, color, refresh=True)
-
-    def fill_rgb(self, color: int) -> bool:
-        """Set all three RGB LEDs to one RGB888 color."""
-        return self.rgb.fill_color(color, refresh=True)
-
-    def clear_rgb(self) -> bool:
-        """Turn off all three RGB LEDs."""
-        return self.rgb.clear(refresh=True)
 
     def set_freq(self, freq_khz: int = 868000) -> None:
         """Set RF frequency in kHz, from 850000 through 930000."""
@@ -184,28 +162,65 @@ class LoRa1262Module(LoRa868V12Module):
 
     def send(self, packet: str | list | tuple | int | bytearray, tx_at_ms: int = None) -> int:
         """Send a LoRa packet and return its timestamp."""
-        return super().send(packet, tx_at_ms)
+        self._tx_active = True
+        try:
+            return super().send(packet, tx_at_ms)
+        finally:
+            self._tx_active = False
 
     def recv(
         self, timeout_ms: int = None, rx_length: int = 0xFF, rx_packet: RxPacket = None
     ) -> RxPacket:
         """Receive one LoRa packet, or return None on timeout."""
+        self._continuous_rx = False
         return super().recv(timeout_ms, rx_length, rx_packet)
 
     def start_recv(self) -> None:
         """Start continuous LoRa reception."""
+        self._continuous_rx = True
         return super().start_recv()
 
-    def set_irq_callback(self, callback) -> None:
-        """Register a callback for received LoRa packets."""
-        return super().set_irq_callback(callback)
+    def set_tx_callback(self, callback) -> None:
+        """Register a no-argument callback for completed transmissions."""
+        self.tx_callback = callback
+        self._configure_irq_callback()
+
+    def set_rx_callback(self, callback) -> None:
+        """Register a callback receiving an ``RxPacket`` for valid packets."""
+        self.rx_callback = callback
+        self._configure_irq_callback()
+
+    def _configure_irq_callback(self):
+        if self.tx_callback is None and self.rx_callback is None:
+            self.modem.set_irq_callback(None)
+            return
+
+        def _irq_callback():
+            if self._tx_active:
+                if self.tx_callback:
+                    schedule(self._scheduled_tx, None)
+            elif self._continuous_rx:
+                schedule(self._scheduled_rx, None)
+
+        self.modem.set_irq_callback(_irq_callback)
+
+    def _dispatch_tx(self, _):
+        if self.tx_callback:
+            self.tx_callback()
+
+    def _dispatch_rx(self, _):
+        packet = self.modem.poll_recv()
+        if self.rx_callback and isinstance(packet, RxPacket):
+            self.rx_callback(packet)
 
     def standby(self) -> None:
         """Put the SX1262 in standby mode."""
+        self._continuous_rx = False
         return super().standby()
 
     def sleep(self) -> None:
         """Put the SX1262 in sleep mode."""
+        self._continuous_rx = False
         return super().sleep()
 
     def irq_triggered(self) -> bool:
@@ -213,7 +228,7 @@ class LoRa1262Module(LoRa868V12Module):
         return super().irq_triggered()
 
     def deinit(self) -> None:
-        """Clear LEDs, sleep the radio, and disable all module power controls."""
+        """Put the radio to sleep and disable its module power controls."""
         if self.modem is not None:
-            self.modem.sleep()
+            self.sleep()
         self._power_off()
