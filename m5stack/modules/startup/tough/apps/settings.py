@@ -250,11 +250,16 @@ class WiFiSetting(app_base.AppBase):
             self._wifi.connect_network(self.ssid, self.psk)
 
 
-_current_options = {
+_CURRENT_OPTIONS = {
     100: resource("/Setting/charge100.png"),
     500: resource("/Setting/charge500.png"),
     900: resource("/Setting/charge900.png"),
     1000: resource("/Setting/charge1000.png"),
+}
+
+_TOUGHC5_CURRENT_OPTIONS = {
+    180: resource("/Setting/charge180.png"),
+    830: resource("/Setting/charge830.png"),
 }
 
 
@@ -269,8 +274,19 @@ class BatteryChargeSetting(app_base.AppBase):
         self.on_hide()
 
     def on_launch(self):
+        self._current_options = (
+            _TOUGHC5_CURRENT_OPTIONS if M5.getBoard() == M5.BOARD.M5ToughC5 else _CURRENT_OPTIONS
+        )
         self._current = self._get_charge_current()
-        self._options = app_base.generator(_current_options)
+        normalized = min(
+            self._current_options,
+            key=lambda value: abs(value - self._current),
+        )
+        if normalized != self._current:
+            self._current = normalized
+            self._set_charge_current(self._current)
+
+        self._options = app_base.generator(self._current_options)
         while True:
             t = next(self._options)
             if t == self._current:
@@ -284,7 +300,7 @@ class BatteryChargeSetting(app_base.AppBase):
             self._option_img = widgets.Image(use_sprite=False, parent=self._lcd)
             self._option_img.set_pos(self._origin_x, self._origin_y)
             self._option_img.set_size(60, 44)
-            self._option_img.set_src(_current_options.get(self._current))
+            self._option_img.set_src(self._current_options.get(self._current))
 
         self._button = widgets.Button(None)
         self._button.set_pos(4, 20 + 4 + 56 + 4 + 108 + 4)
@@ -306,7 +322,7 @@ class BatteryChargeSetting(app_base.AppBase):
     def _handle_charge_current(self, fw):
         self._current = next(self._options)
         self._set_charge_current(self._current)
-        self._option_img.set_src(_current_options.get(self._current))
+        self._option_img.set_src(self._current_options.get(self._current))
         self._lcd.push(0, 80)
 
     def _get_charge_current(self):
@@ -314,7 +330,7 @@ class BatteryChargeSetting(app_base.AppBase):
         try:
             return self.nvs.get_i32("charge_current")
         except OSError:
-            return 500
+            return 180 if M5.getBoard() == M5.BOARD.M5ToughC5 else 500
 
     def _set_charge_current(self, current):
         M5.Power.setBatteryCharge(True)
