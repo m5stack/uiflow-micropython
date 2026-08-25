@@ -60,11 +60,121 @@ typedef struct _machine_hw_i2c_obj_t {
     gpio_num_t sda : 8;
     uint32_t freq;
     uint32_t timeout_us;
+    #if defined(CONFIG_IDF_TARGET_ESP32C5)
+    bool toughc5_transaction_active;
+    #endif
 } machine_hw_i2c_obj_t;
 
 static machine_hw_i2c_obj_t machine_hw_i2c_obj[I2C_NUM_MAX];
 
+#if defined(CONFIG_IDF_TARGET_ESP32C5)
+extern bool toughc5_i2c_is_shared(void);
+extern bool toughc5_i2c_start(uint8_t address, bool read, uint32_t freq);
+extern bool toughc5_i2c_restart(uint8_t address, bool read, uint32_t freq);
+extern bool toughc5_i2c_stop(void);
+extern bool toughc5_i2c_write(const uint8_t *data, size_t length);
+extern bool toughc5_i2c_read(uint8_t *data, size_t length, bool last_nack);
+
+static bool machine_hw_i2c_is_toughc5_shared(const machine_hw_i2c_obj_t *self) {
+    #if defined(BOARD_ID)
+    // BOARD_ID is available before M5.begin(), so construction order cannot
+    // accidentally create a second HP-I2C bus for ToughC5.
+    const bool board_is_toughc5 = BOARD_ID == 33;
+    #else
+    const bool board_is_toughc5 = toughc5_i2c_is_shared();
+    #endif
+    return board_is_toughc5 && self->port == I2C_NUM_0 && self->scl == 3 && self->sda == 2;
+}
+
+// A stop=False transfer can outlive the Python code that started it. Release
+// the shared mutex before the next soft reboot or M5.begin() call.
+void toughc5_i2c_recover(void) {
+    machine_hw_i2c_obj_t *self = &machine_hw_i2c_obj[I2C_NUM_0];
+    if (self->toughc5_transaction_active) {
+        (void)toughc5_i2c_stop();
+        self->toughc5_transaction_active = false;
+    }
+}
+
+static int machine_hw_i2c_toughc5_transfer(machine_hw_i2c_obj_t *self, uint16_t addr,
+    size_t n, mp_machine_i2c_buf_t *bufs, unsigned int flags) {
+    const bool read = (flags & MP_MACHINE_I2C_FLAG_READ) != 0;
+    const bool stop = (flags & MP_MACHINE_I2C_FLAG_STOP) != 0;
+    int total = 0;
+    bool ok = false;
+    bool started = false;
+
+    // M5.In_I2C exposes an 8-bit address API. Validate before it acquires the
+    // M5GFX mutex so invalid input cannot leave the shared bus locked.
+    if (addr < 0x08 || addr > 0x77) {
+        return -MP_EINVAL;
+    }
+
+    if (flags & MP_MACHINE_I2C_FLAG_WRITE1) {
+        started = self->toughc5_transaction_active
+            ? toughc5_i2c_restart(addr, false, self->freq)
+            : toughc5_i2c_start(addr, false, self->freq);
+        ok = started;
+        if (ok) {
+            ok = toughc5_i2c_write(bufs[0].buf, bufs[0].len);
+            total += bufs[0].len;
+            ++bufs;
+            --n;
+        }
+        if (ok) {
+            ok = toughc5_i2c_restart(addr, true, self->freq);
+        }
+        for (size_t i = 0; ok && i < n; ++i) {
+            ok = toughc5_i2c_read(bufs[i].buf, bufs[i].len, i + 1 == n);
+            total += bufs[i].len;
+        }
+    } else {
+        started = self->toughc5_transaction_active
+            ? toughc5_i2c_restart(addr, read, self->freq)
+            : toughc5_i2c_start(addr, read, self->freq);
+        ok = started;
+        for (size_t i = 0; ok && i < n; ++i) {
+            if (read) {
+                ok = toughc5_i2c_read(bufs[i].buf, bufs[i].len, i + 1 == n);
+            } else {
+                ok = toughc5_i2c_write(bufs[i].buf, bufs[i].len);
+            }
+            total += bufs[i].len;
+        }
+    }
+
+    if (!started) {
+        // beginTransaction() may have acquired the M5GFX mutex before a
+        // lower-level error is reported. STOP is the recovery path for both
+        // a failed new transaction and a failed repeated-start transaction.
+        (void)toughc5_i2c_stop();
+        self->toughc5_transaction_active = false;
+        return -MP_ENODEV;
+    }
+
+    // Keep the transaction open only when the MicroPython caller explicitly
+    // requested stop=False. Any transfer error must force a STOP to release
+    // the shared LP-I2C mutex before returning to Python.
+    if (ok && !stop) {
+        self->toughc5_transaction_active = true;
+        return total;
+    }
+
+    bool stopped = toughc5_i2c_stop();
+    self->toughc5_transaction_active = false;
+    return (ok && stopped) ? total : -MP_ENODEV;
+}
+#endif
+
 static void machine_hw_i2c_init(machine_hw_i2c_obj_t *self, bool first_init) {
+
+    #if defined(CONFIG_IDF_TARGET_ESP32C5)
+    // The pin arguments may have changed since the previous construction. Use
+    // the transaction state itself rather than the new pins to recover first.
+    if (!first_init && self->toughc5_transaction_active) {
+        toughc5_i2c_recover();
+    }
+    #endif
 
     #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 5, 0)
     if (!first_init && self->dev_handle) {
@@ -77,6 +187,14 @@ static void machine_hw_i2c_init(machine_hw_i2c_obj_t *self, bool first_init) {
         i2c_del_master_bus(self->bus_handle);
         self->bus_handle = NULL;
     }
+
+    #if defined(CONFIG_IDF_TARGET_ESP32C5)
+    if (machine_hw_i2c_is_toughc5_shared(self)) {
+        // The LP-I2C bus belongs to M5Unified; machine.I2C uses the forwarding
+        // functions above instead of creating a second ESP-IDF bus.
+        return;
+    }
+    #endif
 
     // Start of modification section, by M5Stack
     if (i2c_master_get_bus_handle(self->port, &self->bus_handle) == ESP_OK) {
@@ -125,6 +243,12 @@ static uint8_t *create_transfer_buffer(size_t n, mp_machine_i2c_buf_t *bufs, siz
 
 int machine_hw_i2c_transfer(mp_obj_base_t *self_in, uint16_t addr, size_t n, mp_machine_i2c_buf_t *bufs, unsigned int flags) {
     machine_hw_i2c_obj_t *self = MP_OBJ_TO_PTR(self_in);
+
+    #if defined(CONFIG_IDF_TARGET_ESP32C5)
+    if (machine_hw_i2c_is_toughc5_shared(self)) {
+        return machine_hw_i2c_toughc5_transfer(self, addr, n, bufs, flags);
+    }
+    #endif
 
     esp_err_t err;
 

@@ -67,6 +67,41 @@ extern "C" {
         }
     }
 
+#if defined(CONFIG_IDF_TARGET_ESP32C5)
+    // ToughC5's internal LP-I2C bus is shared by the touch controller and Port A.
+    // Keep machine.I2C on the same M5Unified transaction path so it cannot tear down
+    // the bus or race the touch driver with a second controller implementation.
+    bool toughc5_i2c_is_shared(void)
+    {
+        return M5.getBoard() == m5::board_t::board_M5ToughC5;
+    }
+
+    bool toughc5_i2c_start(uint8_t address, bool read, uint32_t freq)
+    {
+        return M5.In_I2C.start(address, read, freq);
+    }
+
+    bool toughc5_i2c_restart(uint8_t address, bool read, uint32_t freq)
+    {
+        return M5.In_I2C.restart(address, read, freq);
+    }
+
+    bool toughc5_i2c_stop(void)
+    {
+        return M5.In_I2C.stop();
+    }
+
+    bool toughc5_i2c_write(const uint8_t *data, size_t length)
+    {
+        return M5.In_I2C.write(data, length);
+    }
+
+    bool toughc5_i2c_read(uint8_t *data, size_t length, bool last_nack)
+    {
+        return M5.In_I2C.read(data, length, last_nack);
+    }
+#endif
+
     void board_init()
     {
         auto cfg = M5.config();
@@ -76,8 +111,10 @@ extern "C" {
         cfg.clear_display = false;
 #endif
         M5.begin(cfg);
-        M5.In_I2C.release();
-        in_i2c_init();
+        if (M5.getBoard() != m5::board_t::board_M5ToughC5) {
+            M5.In_I2C.release();
+            in_i2c_init();
+        }
     }
 
     void power_init()
@@ -91,7 +128,8 @@ extern "C" {
             || board_id == m5::board_t::board_M5Station
             || board_id == m5::board_t::board_M5StickC
             || board_id == m5::board_t::board_M5StickCPlus
-            || board_id == m5::board_t::board_M5Tough)
+            || board_id == m5::board_t::board_M5Tough
+            || board_id == m5::board_t::board_M5ToughC5)
         ) {
             ESP_LOGW("BOARD", "Power init skipped");
             return;

@@ -78,6 +78,10 @@ typedef struct _machine_hw_i2c_obj_t {
     uint32_t timeout_us;
 } machine_hw_i2c_obj_t;
 
+#if defined(CONFIG_IDF_TARGET_ESP32C5)
+void toughc5_i2c_recover(void);
+#endif
+
 static void m5_btns_callbacks_check(void);
 static void m5_btns_callbacks_deinit(void);
 mp_obj_t m5_getDisplay(mp_obj_t index);
@@ -627,11 +631,22 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
         m5_config_helper(args[0], cfg);
     }
 
+    #if defined(CONFIG_IDF_TARGET_ESP32C5)
+    // Interrupting Python while stop=False is active leaves the shared LP-I2C
+    // mutex held. Recover before M5.begin() can touch the controller again.
+    toughc5_i2c_recover();
+    #endif
+
     // initial
     M5.begin(cfg);
     M5.Power.setExtOutput(cfg.output_power);
-    M5.In_I2C.release();
-    in_i2c_init();
+    // ToughC5 maps its internal bus (GPIO2/GPIO3) to LP-I2C, which is shared
+    // by the touch controller and Port A. Do not tear it down when user code
+    // calls M5.begin() again after a soft reboot or script interruption.
+    if (M5.getBoard() != m5::board_t::board_M5ToughC5) {
+        M5.In_I2C.release();
+        in_i2c_init();
+    }
     // if (M5.getBoard() != m5::board_t::board_M5StackCoreS3
     //     && M5.getBoard() != m5::board_t::board_M5StackCoreS3SE
     //     && M5.getBoard() != m5::board_t::board_M5StackCore2
