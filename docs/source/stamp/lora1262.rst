@@ -123,8 +123,8 @@ MicroPython Code Block:
         :language: python
         :linenos:
 
-**API**
--------
+API
+---
 
 class StampLoRa1262
 -------------------
@@ -219,10 +219,17 @@ Methods
 
     Start continuous packet reception.
 
-.. method:: StampLoRa1262.set_irq_callback(callback)
+.. method:: StampLoRa1262.set_tx_callback(callback)
 
-    Register a callback that receives the next ``RxPacket``. Call
-    :meth:`start_recv` after registering the callback.
+    Register a no-argument callback for transmission completion. Pass ``None``
+    to clear the callback.
+
+.. method:: StampLoRa1262.set_rx_callback(callback)
+
+    Register a callback receiving one ``RxPacket`` argument for valid packets
+    received during continuous reception. Call :meth:`start_recv` to enable
+    continuous reception. Receive timeouts, CRC errors, and other invalid
+    packets do not call this callback. Pass ``None`` to clear the callback.
 
 .. method:: StampLoRa1262.standby()
 

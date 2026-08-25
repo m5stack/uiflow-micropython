@@ -62,6 +62,7 @@ class FakeSX1262:
         self.kwargs = kwargs
         self.calls = []
         self.callback = None
+        self.poll_recv_result = None
         self.instances.append(self)
 
     def configure(self, config):
@@ -69,6 +70,8 @@ class FakeSX1262:
 
     def send(self, packet, tx_at_ms):
         self.calls.append(("send", packet, tx_at_ms))
+        if self.callback:
+            self.callback()
         return 123
 
     def recv(self, timeout_ms, rx_length, rx_packet):
@@ -82,7 +85,8 @@ class FakeSX1262:
         self.callback = callback
 
     def poll_recv(self):
-        return "packet"
+        self.calls.append(("poll_recv",))
+        return self.poll_recv_result
 
     def standby(self):
         self.calls.append(("standby",))
@@ -100,6 +104,7 @@ fake_lora.SX1262 = FakeSX1262
 
 fake_micropython = types.ModuleType("micropython")
 fake_micropython.scheduled = []
+fake_micropython.const = lambda value: value
 fake_micropython.schedule = lambda callback, arg: fake_micropython.scheduled.append(
     (callback, arg)
 )
@@ -248,17 +253,66 @@ class StampSupportTest(unittest.TestCase):
         radio.standby()
         radio.deinit()
 
-        callback = lambda received: received
-        radio.set_irq_callback(callback)
-        radio.modem.callback()
-        self.assertEqual(fake_micropython.scheduled, [(callback, "packet")])
-
         with self.assertRaises(ValueError):
             radio.set_freq(923001)
         with self.assertRaises(ValueError):
             radio.set_bw("100")
         with self.assertRaises(ValueError):
             radio.set_output_power(23)
+
+    def test_lora_irq_callbacks_are_configured_independently(self):
+        fake_m5.current_board = FakeBoard.M5StampS3Mini
+        lora_module = importlib.import_module("stamp.lora1262")
+        radio = lora_module.StampLoRa1262()
+        tx_events = []
+        rx_events = []
+
+        def tx_callback():
+            tx_events.append(True)
+
+        def rx_callback(packet):
+            rx_events.append(packet)
+
+        radio.set_tx_callback(tx_callback)
+        radio.set_rx_callback(rx_callback)
+        radio.start_recv()
+
+        self.assertEqual(radio.send("ping"), 123)
+        scheduled_callback, argument = fake_micropython.scheduled.pop(0)
+        self.assertIsNone(argument)
+        scheduled_callback(argument)
+        self.assertEqual(tx_events, [True])
+        self.assertEqual(rx_events, [])
+        self.assertNotIn(("poll_recv",), radio.modem.calls)
+
+        packet = FakeRxPacket()
+        poll_recv_count = radio.modem.calls.count(("poll_recv",))
+        radio.modem.poll_recv_result = packet
+        radio.modem.callback()
+        scheduled_callback, argument = fake_micropython.scheduled.pop(0)
+        scheduled_callback(argument)
+        self.assertEqual(rx_events, [packet])
+        self.assertEqual(radio.modem.calls.count(("poll_recv",)), poll_recv_count + 1)
+
+        radio.modem.poll_recv_result = True
+        radio.modem.callback()
+        scheduled_callback, argument = fake_micropython.scheduled.pop(0)
+        scheduled_callback(argument)
+        self.assertEqual(rx_events, [packet])
+
+        radio.set_tx_callback(None)
+        self.assertIsNotNone(radio.modem.callback)
+        radio.set_rx_callback(None)
+        self.assertIsNone(radio.modem.callback)
+
+    def test_lora_irq_ignores_rx_when_continuous_receive_is_inactive(self):
+        fake_m5.current_board = FakeBoard.M5StampC5
+        lora_module = importlib.import_module("stamp.lora1262")
+        radio = lora_module.StampLoRa1262()
+        radio.set_rx_callback(lambda packet: None)
+
+        radio.modem.callback()
+        self.assertEqual(fake_micropython.scheduled, [])
 
     def test_uwb_resolves_defaults_by_f12_position(self):
         fake_m5.current_board = FakeBoard.M5StampC5

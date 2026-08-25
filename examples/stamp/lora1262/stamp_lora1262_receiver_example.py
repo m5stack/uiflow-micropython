@@ -19,7 +19,7 @@ def setup():
 
     M5.begin()
     radio = StampLoRa1262()
-    radio.set_irq_callback(receive_event)
+    radio.set_rx_callback(receive_event)
     radio.start_recv()
 
 

@@ -97,6 +97,24 @@ if packet is not None:
     print(packet.decode())
 ```
 
+DIO1 的发送完成和接收完成中断使用两个独立回调。发送回调不接收参数，接收回调接收
+`RxPacket`：
+
+```python
+def send_event():
+    print("tx done")
+
+def receive_event(packet):
+    print("received:", packet.decode())
+
+radio.set_tx_callback(send_event)
+radio.set_rx_callback(receive_event)
+radio.start_recv()
+```
+
+底层 DIO1 同时用于 TX、RX 和接收超时中断。驱动根据当前收发状态分发 TX 或 RX 回调，
+接收超时、CRC 错误或无有效数据时不会调用接收回调。
+
 构造函数允许覆盖 `sw`、`irq`、`busy`、`reset`、`miso`、`mosi`、`cs`、`clock` 和
 `spi_id`。在其他主机上使用时必须提供全部八个信号引脚。
 
@@ -104,7 +122,7 @@ if packet is not None:
 
 - 配置：`set_freq`、`set_sf`、`set_bw`、`set_coding_rate`、`set_syncword`、
   `set_preamble_len`、`set_output_power`
-- 收发：`send`、`recv`、`start_recv`、`set_irq_callback`
+- 收发：`send`、`recv`、`start_recv`、`set_tx_callback`、`set_rx_callback`
 - 状态与生命周期：`standby`、`sleep`、`irq_triggered`、`deinit`
 
 示例：

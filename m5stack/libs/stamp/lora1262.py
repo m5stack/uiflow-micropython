@@ -120,7 +120,12 @@ class StampLoRa1262:
                 "output_power": output_power,
             },
         )
-        self.irq_callback = None
+        self.tx_callback = None
+        self.rx_callback = None
+        self._tx_active = False
+        self._continuous_rx = False
+        self._scheduled_tx = self._dispatch_tx
+        self._scheduled_rx = self._dispatch_rx
 
     @staticmethod
     def _validate_range(name, value, minimum, maximum):
@@ -190,32 +195,64 @@ class StampLoRa1262:
             packet = bytes(packet)
         elif isinstance(packet, int):
             packet = bytes((packet,))
-        return self.modem.send(packet, tx_at_ms)
+
+        self._tx_active = True
+        try:
+            return self.modem.send(packet, tx_at_ms)
+        finally:
+            self._tx_active = False
 
     def recv(self, timeout_ms=None, rx_length=0xFF, rx_packet: RxPacket = None):
         """Receive a packet, returning ``None`` on timeout."""
+        self._continuous_rx = False
         return self.modem.recv(timeout_ms, rx_length, rx_packet)
 
     def start_recv(self):
         """Start continuous reception."""
+        self._continuous_rx = True
         self.modem.start_recv(continuous=True)
 
-    def set_irq_callback(self, callback):
-        """Schedule ``callback`` with the received packet after an IRQ."""
-        self.irq_callback = callback
+    def set_tx_callback(self, callback):
+        """Register a no-argument callback for completed transmissions."""
+        self.tx_callback = callback
+        self._configure_irq_callback()
+
+    def set_rx_callback(self, callback):
+        """Register a callback receiving an ``RxPacket`` for valid packets."""
+        self.rx_callback = callback
+        self._configure_irq_callback()
+
+    def _configure_irq_callback(self):
+        if self.tx_callback is None and self.rx_callback is None:
+            self.modem.set_irq_callback(None)
+            return
 
         def _irq_callback():
-            if self.irq_callback:
-                schedule(self.irq_callback, self.modem.poll_recv())
+            if self._tx_active:
+                if self.tx_callback:
+                    schedule(self._scheduled_tx, None)
+            elif self._continuous_rx:
+                schedule(self._scheduled_rx, None)
 
         self.modem.set_irq_callback(_irq_callback)
 
+    def _dispatch_tx(self, _):
+        if self.tx_callback:
+            self.tx_callback()
+
+    def _dispatch_rx(self, _):
+        packet = self.modem.poll_recv()
+        if self.rx_callback and isinstance(packet, RxPacket):
+            self.rx_callback(packet)
+
     def standby(self):
         """Put the radio in standby mode."""
+        self._continuous_rx = False
         self.modem.standby()
 
     def sleep(self):
         """Put the radio in sleep mode."""
+        self._continuous_rx = False
         self.modem.sleep()
 
     def irq_triggered(self):
