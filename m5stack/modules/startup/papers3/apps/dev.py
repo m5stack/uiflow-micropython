@@ -35,6 +35,8 @@ class CloudStatus:
 
 
 class DevApp(app_base.AppBase):
+    BACKGROUND = "flow.png"
+
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -57,7 +59,7 @@ class DevApp(app_base.AppBase):
         self._access_code_text = self._get_access_code()
 
     def on_view(self):
-        layout.draw_background(layout.resource_path("flow.png"))
+        layout.draw_background(layout.resource_path(self.BACKGROUND))
         field_width = layout.size(349 if layout.IS_PAPERMONO else 360)
         field_height = layout.size(46 if layout.IS_PAPERMONO else 50)
 

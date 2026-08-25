@@ -126,6 +126,8 @@ class FileList:
 
 
 class ListApp(app_base.AppBase):
+    BACKGROUND = "applist.png"
+
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
@@ -145,7 +147,7 @@ class ListApp(app_base.AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        layout.draw_background(layout.resource_path("applist.png"))
+        layout.draw_background(layout.resource_path(self.BACKGROUND))
 
         self._run_btn = ImageButton(
             layout.x(400),

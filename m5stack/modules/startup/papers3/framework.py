@@ -24,9 +24,15 @@ class Framework:
         self._launcher = None
         self._bar = None
         self._last_app = None
+        self._overlay = None
 
     def install_bar(self, bar: app_base.AppBase):
         self._bar = bar
+
+    def install_overlay(self, overlay):
+        # A widget that stays on screen across all apps, e.g. the power off
+        # button. It is redrawn after every app switch.
+        self._overlay = overlay
 
     def install_launcher(self, launcher: app_base.AppBase):
         self._launcher = launcher
@@ -50,11 +56,11 @@ class Framework:
         app.stop()
         self._start_app(app)
 
-    @staticmethod
-    def _start_app(app: app_base.AppBase):
+    def _start_app(self, app: app_base.AppBase):
         layout.begin_full_refresh()
         try:
             app.start()
+            self._overlay and self._overlay.show(app)
         finally:
             layout.end_full_refresh()
 
@@ -107,11 +113,15 @@ class Framework:
                     self._event.status = False
                     await self.handle_input(self._event)
 
+            self._overlay and self._overlay.tick()
+
             await asyncio.sleep_ms(10)
 
     async def _handle_touch(self, x, y):
         M5.Speaker.playWavFile("/system/common/wav/click.wav")
         x, y = layout.touch_point(x, y)
+        if self._overlay and self._overlay.handle(x, y):
+            return
         select_app = None
         for app in self._apps:
             if self._is_select(app, x, y):

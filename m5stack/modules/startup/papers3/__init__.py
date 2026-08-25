@@ -62,4 +62,8 @@ class PaperS3_Startup:
         fw.install(settings_app)
         fw.install(dev_app)
         fw.install(list_app)
+        if layout.IS_PAPERMONO:
+            from .apps.power_off import PowerOffButton
+
+            fw.install_overlay(PowerOffButton(M5.Lcd))
         fw.start()

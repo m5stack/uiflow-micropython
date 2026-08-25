@@ -10,6 +10,8 @@ import esp32
 
 
 class SettingsApp(app_base.AppBase):
+    BACKGROUND = "config.png"
+
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -29,7 +31,7 @@ class SettingsApp(app_base.AppBase):
         self.get_data()
 
     def on_view(self):
-        layout.draw_background(layout.resource_path("config.png"))
+        layout.draw_background(layout.resource_path(self.BACKGROUND))
         ssid_y = 620 if layout.IS_PAPERMONO else 630
         server_y = 737 if layout.IS_PAPERMONO else 747
 
