@@ -1,0 +1,15 @@
+{
+    "deploy": [],
+    "docs": "",
+    "features": [
+        "BLE",
+        "WiFi",
+        "USB",
+        "USB-C"
+    ],
+    "images": [],
+    "mcu": "esp32c5",
+    "product": "M5Stack ToughC5",
+    "url": "https://shop.m5stack.com/",
+    "vendor": "M5Stack"
+}
