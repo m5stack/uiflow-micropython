@@ -176,16 +176,6 @@ class M5IOE1:
     :param int addr: 7-bit I2C address. Default is 0x6F.
     """
 
-    GPIO_MODE_IN = GPIO_MODE_IN
-    GPIO_MODE_OUT = GPIO_MODE_OUT
-    GPIO_PULL_NONE = GPIO_PULL_NONE
-    GPIO_PULL_UP = GPIO_PULL_UP
-    GPIO_PULL_DOWN = GPIO_PULL_DOWN
-    GPIO_DRIVE_PUSH_PULL = GPIO_DRIVE_PUSH_PULL
-    GPIO_DRIVE_OPEN_DRAIN = GPIO_DRIVE_OPEN_DRAIN
-    IRQ_FALLING = IRQ_FALLING
-    IRQ_RISING = IRQ_RISING
-
     def __init__(self, i2c, addr=DEFAULT_ADDR):
         addr = int(addr)
         if not 0 <= addr <= 0x7F:
@@ -681,16 +671,6 @@ class M5IOE1:
 class Pin(_PinBase):
     """MicroPython Pin-compatible wrapper for M5IOE1 G1..G14."""
 
-    IN = _machine_pin_in
-    OUT = _machine_pin_out
-    OPEN_DRAIN = _machine_pin_open_drain
-    PULL_UP = _machine_pin_pull_up
-    PULL_DOWN = _machine_pin_pull_down
-    LOW = LOW
-    HIGH = HIGH
-    IRQ_FALLING = IRQ_FALLING
-    IRQ_RISING = IRQ_RISING
-
     def __init__(self, ioe1, pin, mode=None, pull=_PIN_PULL_KEEP, *, value=None, drive=None):
         self.ioe1 = ioe1
         self.pin = ioe1._check_pin(pin)
@@ -1004,5 +984,25 @@ class RGB(NeoPixel):
         """Set all pixels to black."""
         return self.fill_color(0, refresh)
 
+
+M5IOE1.GPIO_MODE_IN = GPIO_MODE_IN
+M5IOE1.GPIO_MODE_OUT = GPIO_MODE_OUT
+M5IOE1.GPIO_PULL_NONE = GPIO_PULL_NONE
+M5IOE1.GPIO_PULL_UP = GPIO_PULL_UP
+M5IOE1.GPIO_PULL_DOWN = GPIO_PULL_DOWN
+M5IOE1.GPIO_DRIVE_PUSH_PULL = GPIO_DRIVE_PUSH_PULL
+M5IOE1.GPIO_DRIVE_OPEN_DRAIN = GPIO_DRIVE_OPEN_DRAIN
+M5IOE1.IRQ_FALLING = IRQ_FALLING
+M5IOE1.IRQ_RISING = IRQ_RISING
+
+Pin.IN = _machine_pin_in
+Pin.OUT = _machine_pin_out
+Pin.OPEN_DRAIN = _machine_pin_open_drain
+Pin.PULL_UP = _machine_pin_pull_up
+Pin.PULL_DOWN = _machine_pin_pull_down
+Pin.LOW = LOW
+Pin.HIGH = HIGH
+Pin.IRQ_FALLING = IRQ_FALLING
+Pin.IRQ_RISING = IRQ_RISING
 
 M5ioe1 = M5IOE1
