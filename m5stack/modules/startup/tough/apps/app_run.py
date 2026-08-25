@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from ..resource import resource
 import M5
 import widgets
 import esp32
@@ -17,15 +18,15 @@ class RunApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appRun_unselected.png", 5 + 62 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appRun_unselected.png"), 5 + 62 + 62, 20 + 4)
         self.descriptor = app_base.Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._mtime_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appRun_selected.png", 5 + 62 + 62, 20 + 4)
-        M5.Lcd.drawImage("/system/tough/Run/run.png", 4, 20 + 4 + 56 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appRun_selected.png"), 5 + 62 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Run/run.png"), 4, 20 + 4 + 56 + 4)
 
         self._name_label = widgets.Label(
             "name",
@@ -78,7 +79,7 @@ class RunApp(app_base.AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appRun_unselected.png", 5 + 62 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appRun_unselected.png"), 5 + 62 + 62, 20 + 4)
         del self._name_label, self._mtime_label, self._ver_label
 
     async def _click_event_handler(self, x, y, fw):

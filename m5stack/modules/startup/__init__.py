@@ -388,7 +388,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             station = Station_Startup()
             station.startup(ssid, pswd, timeout=timeout)
 
-        elif board_id == M5.BOARD.M5Tough:
+        elif board_id in (M5.BOARD.M5Tough, M5.BOARD.M5ToughC5):
             from .tough import Tough_Startup
 
             tough = Tough_Startup()

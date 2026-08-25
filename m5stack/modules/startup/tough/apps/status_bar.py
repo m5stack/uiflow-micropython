@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from ..resource import resource
 import widgets
 import time
 import M5
@@ -32,17 +33,17 @@ class CloudStatus:
 
 
 _WIFI_STATUS_ICO = {
-    NetworkStatus.INIT: "/system/tough/WiFi/wifi_empty.png",
-    NetworkStatus.RSSI_GOOD: "/system/tough/WiFi/wifi_good.png",
-    NetworkStatus.RSSI_MID: "/system/tough/WiFi/wifi_mid.png",
-    NetworkStatus.RSSI_WORSE: "/system/tough/WiFi/wifi_worse.png",
-    NetworkStatus.DISCONNECTED: "/system/tough/WiFi/wifi_disconnected.png",
+    NetworkStatus.INIT: resource("/WiFi/wifi_empty.png"),
+    NetworkStatus.RSSI_GOOD: resource("/WiFi/wifi_good.png"),
+    NetworkStatus.RSSI_MID: resource("/WiFi/wifi_mid.png"),
+    NetworkStatus.RSSI_WORSE: resource("/WiFi/wifi_worse.png"),
+    NetworkStatus.DISCONNECTED: resource("/WiFi/wifi_disconnected.png"),
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: "/system/tough/Server/server_empty.png",
-    CloudStatus.CONNECTED: "/system/tough/Server/Server_Green.png",
-    CloudStatus.DISCONNECTED: "/system/tough/Server/server_error.png",
+    CloudStatus.INIT: resource("/Server/server_empty.png"),
+    CloudStatus.CONNECTED: resource("/Server/Server_Green.png"),
+    CloudStatus.DISCONNECTED: resource("/Server/server_error.png"),
 }
 
 
@@ -60,7 +61,7 @@ class StatusBarApp(app_base.AppBase):
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/tough/Title/title_blue.png", 0, 0)
+        M5.Lcd.drawImage(resource("/Title/title_blue.png"), 0, 0)
 
         self._time_label = widgets.Label(
             "12:23",
@@ -183,21 +184,21 @@ class StatusBarApp(app_base.AppBase):
         if battery > 0 and battery <= 100:
             if battery < 20:
                 src = (
-                    "/system/tough/Battery/battery_Red_Charge.png"
+                    resource("/Battery/battery_Red_Charge.png")
                     if charging
-                    else "/system/tough/Battery/battery_Red.png"
+                    else resource("/Battery/battery_Red.png")
                 )
             elif battery <= 100:
                 src = (
-                    "/system/tough/Battery/battery_Green_Charge.png"
+                    resource("/Battery/battery_Green_Charge.png")
                     if charging
-                    else "/system/tough/Battery/battery_Green.png"
+                    else resource("/Battery/battery_Green.png")
                 )
         else:
             src = (
-                "/system/tough/Battery/battery_Black_Charge.png"
+                resource("/Battery/battery_Black_Charge.png")
                 if charging
-                else "/system/tough/Battery/battery_Black.png"
+                else resource("/Battery/battery_Black.png")
             )
         return src
 

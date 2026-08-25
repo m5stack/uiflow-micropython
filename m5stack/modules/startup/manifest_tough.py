@@ -9,6 +9,7 @@ package(
         "tough/__init__.py",
         "tough/app_base.py",
         "tough/framework.py",
+        "tough/resource.py",
         "tough/apps/app_list.py",
         "tough/apps/app_run.py",
         "tough/apps/dev.py",

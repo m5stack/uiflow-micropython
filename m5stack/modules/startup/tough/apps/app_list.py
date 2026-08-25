@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from ..resource import resource
 import widgets
 import M5
 import os
@@ -65,7 +66,7 @@ class ListApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appList_unselected.png", 5 + 62 * 3, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appList_unselected.png"), 5 + 62 * 3, 20 + 4)
         self.descriptor = app_base.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
@@ -75,12 +76,12 @@ class ListApp(app_base.AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appList_selected.png", 5 + 62 * 3, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appList_selected.png"), 5 + 62 * 3, 20 + 4)
 
         self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(4, 20 + 4 + 56 + 4)
         self._bg_img.set_size(312, 156)
-        self._bg_img.set_src("/system/tough/List/main.png")
+        self._bg_img.set_src(resource("/List/main.png"))
 
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = 4 + 2 + 30
@@ -93,7 +94,7 @@ class ListApp(app_base.AppBase):
         self._left_img = widgets.Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
-        self._left_img.set_src("/system/tough/List/left_cursor.png")
+        self._left_img.set_src(resource("/List/left_cursor.png"))
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (20 + 4 + 56 + 4) + 2
@@ -105,7 +106,7 @@ class ListApp(app_base.AppBase):
         self._right_img = widgets.Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
-        self._right_img.set_src("/system/tough/List/right_cursor.png")
+        self._right_img.set_src(resource("/List/right_cursor.png"))
 
         self._label0 = widgets.Label(
             "",
@@ -182,7 +183,7 @@ class ListApp(app_base.AppBase):
         self._buttons = (self._btn_up, self._btn_down, self._btn_once, self._btn_always)
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/tough/Selection/appList_unselected.png", 5 + 62 * 3, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/appList_unselected.png"), 5 + 62 * 3, 20 + 4)
         del self._bg_img, self._left_img, self._right_img
         del self._label0, self._label1, self._label2, self._label3, self._labels
         del self._files

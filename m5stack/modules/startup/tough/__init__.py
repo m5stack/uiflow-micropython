@@ -12,6 +12,7 @@ from .apps.app_run import RunApp
 from .apps.app_list import ListApp
 from .apps.ezdata import EzDataApp
 import M5
+from .resource import resource
 
 import time
 
@@ -35,7 +36,7 @@ class Tough_Startup:
         self._wlan.connect_network(
             ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
         )
-        M5.Lcd.drawImage("/system/tough/boot.png", 0, 0)
+        M5.Lcd.drawImage(resource("/boot.png"), 0, 0)
         time.sleep(0.2)
 
         M5.Lcd.clear(0x000000)

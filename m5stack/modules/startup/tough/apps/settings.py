@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from ..resource import resource
 import M5
 import widgets
 import esp32
@@ -27,7 +28,7 @@ class WiFiSetting(app_base.AppBase):
         self._bg_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(origin_x, origin_y)
         self._bg_img.set_size(312, 108)
-        self._bg_img.set_src("/system/tough/Setting/wifiServer.png")
+        self._bg_img.set_src(resource("/Setting/wifiServer.png"))
 
         self._ssid_label = widgets.Label(
             "ssid",
@@ -159,7 +160,7 @@ class WiFiSetting(app_base.AppBase):
             event.status = True
 
     def _select_default_option(self):
-        self._bg_img.set_src("/system/tough/Setting/wifiServer.png")
+        self._bg_img.set_src(resource("/Setting/wifiServer.png"))
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -171,7 +172,7 @@ class WiFiSetting(app_base.AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
-        self._bg_img.set_src("/system/tough/Setting/ssid.png")
+        self._bg_img.set_src(resource("/Setting/ssid.png"))
         self._ssid_label.set_text_color(0x000000, 0xDCDDDD)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -183,7 +184,7 @@ class WiFiSetting(app_base.AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_psk_option(self):
-        self._bg_img.set_src("/system/tough/Setting/pass.png")
+        self._bg_img.set_src(resource("/Setting/pass.png"))
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xDCDDDD)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -195,7 +196,7 @@ class WiFiSetting(app_base.AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
-        self._bg_img.set_src("/system/tough/Setting/server.png")
+        self._bg_img.set_src(resource("/Setting/server.png"))
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xDCDDDD)
@@ -250,10 +251,10 @@ class WiFiSetting(app_base.AppBase):
 
 
 _current_options = {
-    100: "/system/tough/Setting/charge100.png",
-    500: "/system/tough/Setting/charge500.png",
-    900: "/system/tough/Setting/charge900.png",
-    1000: "/system/tough/Setting/charge1000.png",
+    100: resource("/Setting/charge100.png"),
+    500: resource("/Setting/charge500.png"),
+    900: resource("/Setting/charge900.png"),
+    1000: resource("/Setting/charge1000.png"),
 }
 
 
@@ -323,8 +324,8 @@ class BatteryChargeSetting(app_base.AppBase):
 
 
 _boot_options = {
-    1: "/system/tough/Setting/bootYes.png",
-    2: "/system/tough/Setting/bootNo.png",
+    1: resource("/Setting/bootYes.png"),
+    2: resource("/Setting/bootNo.png"),
 }
 
 
@@ -393,8 +394,8 @@ class BootScreenSetting(app_base.AppBase):
 
 
 _comlink_options = {
-    False: "/system/tough/Setting/comxDisable.png",
-    True: "/system/tough/Setting/comxEnable.png",
+    False: resource("/Setting/comxDisable.png"),
+    True: resource("/Setting/comxEnable.png"),
 }
 
 
@@ -452,10 +453,10 @@ class ComLinkSetting(app_base.AppBase):
 
 
 _brightness_options = {
-    64: "/system/tough/Setting/screen25.png",
-    128: "/system/tough/Setting/screen50.png",
-    192: "/system/tough/Setting/screen75.png",
-    255: "/system/tough/Setting/screen100.png",
+    64: resource("/Setting/screen25.png"),
+    128: resource("/Setting/screen50.png"),
+    192: resource("/Setting/screen75.png"),
+    255: resource("/Setting/screen100.png"),
 }
 
 
@@ -520,8 +521,8 @@ class BrightnessSetting(app_base.AppBase):
 
 
 _buspower_options = {
-    False: "/system/tough/Setting/busInput.png",
-    True: "/system/tough/Setting/busOutput.png",
+    False: resource("/Setting/busInput.png"),
+    True: resource("/Setting/busOutput.png"),
 }
 
 
@@ -590,7 +591,7 @@ class SettingsApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/tough/Selection/setting_unselected.png", 5 + 62 * 0, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/setting_unselected.png"), 5 + 62 * 0, 20 + 4)
         self.descriptor = app_base.Descriptor(x=5, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
@@ -599,7 +600,7 @@ class SettingsApp(app_base.AppBase):
     def on_view(self):
         self._origin_x = 0
         self._origin_y = 80
-        M5.Lcd.drawImage("/system/tough/Selection/setting_selected.png", 5 + 62 * 0, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/setting_selected.png"), 5 + 62 * 0, 20 + 4)
         self._lcd.clear()
 
     def on_ready(self):
@@ -609,7 +610,7 @@ class SettingsApp(app_base.AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/tough/Selection/setting_unselected.png", 5 + 62 * 0, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/setting_unselected.png"), 5 + 62 * 0, 20 + 4)
 
     async def _click_event_handler(self, x, y, fw):
         for menu in self._menus:

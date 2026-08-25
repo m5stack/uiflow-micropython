@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .. import app_base
+from ..resource import resource
 import M5
 import widgets
 import asyncio
@@ -38,7 +39,7 @@ _LABEL_COLOR = 0x008FD7
 _VALUE_COLOR = 0x000000
 _LABEL_FONT = "/system/common/font/Montserrat-Medium-14.vlw"
 _VALUE_FONT = "/system/common/font/Montserrat-Medium-18.vlw"
-_BG_SRC = "/system/tough/Develop/bg.png"
+_BG_SRC = resource("/Develop/bg.png")
 _TEXT_PANEL_W = 181
 
 
@@ -49,14 +50,14 @@ class DevApp(app_base.AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/tough/Selection/develop_unselected.png", 5 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/develop_unselected.png"), 5 + 62, 20 + 4)
         self.descriptor = app_base.Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._state = self._collect_state()
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/tough/Selection/develop_selected.png", 5 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/develop_selected.png"), 5 + 62, 20 + 4)
         self._origin_x = 0
         self._origin_y = 80
         self._lcd.clear(_BG_COLOR)
@@ -104,7 +105,7 @@ class DevApp(app_base.AppBase):
         self._task.cancel()
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/tough/Selection/develop_unselected.png", 5 + 62, 20 + 4)
+        M5.Lcd.drawImage(resource("/Selection/develop_unselected.png"), 5 + 62, 20 + 4)
         del (
             self._bg_img,
             self._mac_label,

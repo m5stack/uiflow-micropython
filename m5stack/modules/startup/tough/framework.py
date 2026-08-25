@@ -56,12 +56,15 @@ class Framework:
             self._launcher.start()
             self._last_app = self._launcher
 
-        self.i2c0 = machine.I2C(0, scl=machine.Pin(33), sda=machine.Pin(32), freq=100000)
         self._kb_status = False
-        if 0x5F in self.i2c0.scan():
-            self._kb = CardKBUnit(self.i2c0)
-            self._event = KeyEvent()
-            self._kb_status = True
+        # ToughC5 has no CardKB connector on GPIO32/GPIO33 (and those GPIOs
+        # do not exist on ESP32-C5). Keep the legacy CardKB probe for Tough.
+        if M5.getBoard() != M5.BOARD.M5ToughC5:
+            self.i2c0 = machine.I2C(0, scl=machine.Pin(33), sda=machine.Pin(32), freq=100000)
+            if 0x5F in self.i2c0.scan():
+                self._kb = CardKBUnit(self.i2c0)
+                self._event = KeyEvent()
+                self._kb_status = True
 
         last_touch_time = time.ticks_ms()
         while True:
