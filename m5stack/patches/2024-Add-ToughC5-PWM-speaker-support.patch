@@ -1,0 +1,347 @@
+Index: M5Unified/src/M5Unified.cpp
+===================================================================
+--- M5Unified.orig/src/M5Unified.cpp
++++ M5Unified/src/M5Unified.cpp
+@@ -583,6 +583,30 @@ static constexpr const uint8_t _pin_tabl
+ #endif
+   }
+ 
++  void M5Unified::_speaker_tone_cb_toughc5(void* args, float frequency, uint8_t volume)
++  {
++#if defined (CONFIG_IDF_TARGET_ESP32C5)
++    auto self = (M5Unified*)args;
++    auto& pm1 = self->Power.M5pm1;
++    if (frequency > 0 && volume)
++    {
++      pm1.setGPIOMode(M5PM1_Class::gpio4, M5PM1_Class::output);
++      pm1.setGPIOFunction(M5PM1_Class::gpio4, M5PM1_Class::special);
++      pm1.setPwmDuty12bit(M5PM1_Class::pwm_ch1, 0, pwm_polarity_t::normal, false);
++      pm1.setPwmFrequency(lroundf(frequency));
++      pm1.setPwmDuty12bit(M5PM1_Class::pwm_ch1, ((uint16_t)volume * 2048 + 127) / 255);
++    }
++    else
++    {
++      pm1.setPwmDuty12bit(M5PM1_Class::pwm_ch1, 0, pwm_polarity_t::normal, false);
++    }
++#else
++    (void)args;
++    (void)frequency;
++    (void)volume;
++#endif
++  }
++
+   bool M5Unified::_speaker_enabled_cb_cores3(void* args, bool enabled)
+   {
+     (void)args;
+@@ -2680,6 +2704,14 @@ static constexpr const uint8_t _pin_tabl
+         }
+         break;
+ 
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++      case board_t::board_M5ToughC5:
++        if (cfg.internal_spk)
++        {
++          spk_tone_cb = _speaker_tone_cb_toughc5;
++        }
++        break;
++
+ #elif defined (CONFIG_IDF_TARGET_ESP32P4)
+       case board_t::board_M5Tab5:
+       case board_t::board_M5Tab5X:
+Index: M5Unified/src/M5Unified.hpp
+===================================================================
+--- M5Unified.orig/src/M5Unified.hpp
++++ M5Unified/src/M5Unified.hpp
+@@ -699,6 +699,7 @@ namespace m5
+     static bool _speaker_enabled_cb_atomic_echo(void* args, bool enabled);
+     static bool _speaker_enabled_cb_hat_spk(void* args, bool enabled);
+     static void _speaker_tone_cb_corematrix(void* args, float frequency, uint8_t volume);
++    static void _speaker_tone_cb_toughc5(void* args, float frequency, uint8_t volume);
+     static bool _microphone_enabled_cb_cores3(void* args, bool enabled);
+     static bool _microphone_enabled_cb_stickc(void* args, bool enabled);
+     static bool _microphone_enabled_cb_sticks3(void* args, bool enabled);
+Index: M5Unified/src/utility/Speaker_Class.cpp
+===================================================================
+--- M5Unified.orig/src/utility/Speaker_Class.cpp
++++ M5Unified/src/utility/Speaker_Class.cpp
+@@ -1059,6 +1059,57 @@ label_continue_sample:
+   }
+ #endif
+ 
++#if defined (CONFIG_IDF_TARGET_ESP32C5)
++  void Speaker_Class::external_tone_task(void* args)
++  {
++    auto self = (Speaker_Class*)args;
++    bool notified = false;
++
++    while (self->_task_running)
++    {
++      if (!notified) { ulTaskNotifyTake(pdTRUE, portMAX_DELAY); }
++      notified = false;
++      if (!self->_task_running) { break; }
++
++      self->_lock_external_tone();
++      const uint32_t generation = self->_external_tone_generation.load(std::memory_order_relaxed);
++      const uint32_t duration_ms = self->_external_tone_duration_ms;
++      const bool playing = self->_play_channel_bits.load() != 0;
++      self->_cb_set_tone(self->_cb_set_tone_args
++                       , playing ? self->_external_tone_frequency : 0
++                       , playing ? self->_external_tone_volume : 0);
++      self->_external_tone_lock.clear(std::memory_order_release);
++
++      if (!playing || duration_ms == UINT32_MAX) { continue; }
++
++      TickType_t wait_ticks = pdMS_TO_TICKS(duration_ms);
++      if (wait_ticks == 0) { wait_ticks = 1; }
++      notified = ulTaskNotifyTake(pdTRUE, wait_ticks) != 0;
++      if (notified) { continue; }
++
++      self->_lock_external_tone();
++      if (generation == self->_external_tone_generation.load(std::memory_order_relaxed))
++      {
++        self->_external_tone_duration_ms = 0;
++        self->_cb_set_tone(self->_cb_set_tone_args, 0, 0);
++        self->_play_channel_bits.store(0, std::memory_order_release);
++      }
++      self->_external_tone_lock.clear(std::memory_order_release);
++    }
++
++    self->_task_handle = nullptr;
++    vTaskDelete(nullptr);
++  }
++
++  void Speaker_Class::_lock_external_tone(void)
++  {
++    while (_external_tone_lock.test_and_set(std::memory_order_acquire))
++    {
++      vTaskDelay(1);
++    }
++  }
++#endif
++
+   bool Speaker_Class::begin(void)
+   {
+     if (_begun.load(std::memory_order_acquire)) { return true; }
+@@ -1089,6 +1140,9 @@ label_continue_sample:
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+     const bool external_tone = _cb_set_tone != nullptr;
+     res = (external_tone || ESP_OK == _setup_i2s()) && res;
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    const bool external_tone = _cb_set_tone != nullptr;
++    res = (external_tone || ESP_OK == _setup_i2s()) && res;
+ #else
+     res = (ESP_OK == _setup_i2s()) && res;
+ #endif
+@@ -1115,6 +1169,23 @@ label_continue_sample:
+         res = (pdPASS == xTaskCreate(task_func, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle));
+       }
+       _external_tone_lock.clear(std::memory_order_release);
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++      _lock_external_tone();
++      _external_tone_stopping = false;
++      size_t stack_size = external_tone ? 2048 : 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
++      auto task_func = external_tone ? external_tone_task : spk_task;
++
++#if portNUM_PROCESSORS > 1
++      if (_cfg.task_pinned_core < portNUM_PROCESSORS)
++      {
++        res = (pdPASS == xTaskCreatePinnedToCore(task_func, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle, _cfg.task_pinned_core));
++      }
++      else
++#endif
++      {
++        res = (pdPASS == xTaskCreate(task_func, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle));
++      }
++      _external_tone_lock.clear(std::memory_order_release);
+ #else
+       size_t stack_size = 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
+ 
+@@ -1149,6 +1220,14 @@ label_continue_sample:
+       _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
+       _external_tone_lock.clear(std::memory_order_release);
+     }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone)
++    {
++      _lock_external_tone();
++      _external_tone_stopping = true;
++      _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
++      _external_tone_lock.clear(std::memory_order_release);
++    }
+ #endif
+     _begun.store(false, std::memory_order_release);
+     if (_cb_set_enabled) { _cb_set_enabled(_cb_set_enabled_args, false); }
+@@ -1179,6 +1258,16 @@ label_continue_sample:
+       _play_channel_bits.store(0, std::memory_order_release);
+       _external_tone_lock.clear(std::memory_order_release);
+     }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone)
++    {
++      _lock_external_tone();
++      _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
++      _external_tone_duration_ms = 0;
++      _cb_set_tone(_cb_set_tone_args, 0, 0);
++      _play_channel_bits.store(0, std::memory_order_release);
++      _external_tone_lock.clear(std::memory_order_release);
++    }
+ #endif
+     _play_channel_bits.store(0);
+     for (size_t ch = 0; ch < sound_channel_max; ++ch)
+@@ -1193,6 +1282,8 @@ label_continue_sample:
+ #if !defined (SDL_h_)
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+     if (_cb_set_tone == nullptr) { _i2s_driver_uninstall(_cfg.i2s_port); }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone == nullptr) { _i2s_driver_uninstall(_cfg.i2s_port); }
+ #else
+     _i2s_driver_uninstall(_cfg.i2s_port);
+ #endif
+@@ -1218,6 +1309,23 @@ label_continue_sample:
+       _external_tone_lock.clear(std::memory_order_release);
+       return;
+     }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone)
++    {
++      _lock_external_tone();
++      if (_external_tone_stopping || _task_handle == nullptr)
++      {
++        _external_tone_lock.clear(std::memory_order_release);
++        return;
++      }
++      _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
++      _external_tone_duration_ms = 0;
++      _cb_set_tone(_cb_set_tone_args, 0, 0);
++      _play_channel_bits.store(0, std::memory_order_release);
++      xTaskNotifyGive(_task_handle);
++      _external_tone_lock.clear(std::memory_order_release);
++      return;
++    }
+ #endif
+     wav_info_t tmp;
+     tmp.stop_current = 1;
+@@ -1236,6 +1344,12 @@ label_continue_sample:
+       if (ch >= sound_channel_max || (_play_channel_bits.load() & (1 << ch))) { stop(); }
+       return;
+     }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone)
++    {
++      if (ch >= sound_channel_max || (_play_channel_bits.load() & (1 << ch))) { stop(); }
++      return;
++    }
+ #endif
+     if ((size_t)ch >= sound_channel_max)
+     {
+@@ -1319,6 +1433,46 @@ label_continue_sample:
+     if (_cb_set_tone)
+     {
+       if (!no_clear_index) { return false; }
++      if (!begin() || (_task_handle == nullptr)) { return false; }
++      if (array_len == 0 || data == nullptr) { return true; }
++      size_t ch = (size_t)channel;
++      if (ch >= sound_channel_max) { ch = 0; }
++
++      _lock_external_tone();
++      if (_external_tone_stopping || _task_handle == nullptr)
++      {
++        _external_tone_lock.clear(std::memory_order_release);
++        return false;
++      }
++      if (_play_channel_bits.load() && !stop_current_sound)
++      {
++        _external_tone_lock.clear(std::memory_order_release);
++        return false;
++      }
++
++      const size_t sample_count = array_len >> flg_stereo;
++      const float frequency = sample_count ? sample_rate / sample_count : 0;
++      if (!(frequency > 0) || frequency > UINT16_MAX)
++      {
++        _external_tone_lock.clear(std::memory_order_release);
++        return false;
++      }
++
++      _external_tone_frequency = lroundf(frequency);
++      _external_tone_volume = ((uint16_t)_master_volume * _ch_info[ch].volume) / 255;
++      _external_tone_duration_ms = repeat_count == UINT32_MAX
++                                 ? UINT32_MAX
++                                 : std::max<uint32_t>(1, lroundf(std::max<uint32_t>(1, repeat_count) * 1000.0f / frequency));
++      _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
++      _play_channel_bits.store(1 << ch);
++      xTaskNotifyGive(_task_handle);
++      _external_tone_lock.clear(std::memory_order_release);
++      return true;
++    }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    if (_cb_set_tone)
++    {
++      if (!no_clear_index) { return false; }
+       if (!begin() || (_task_handle == nullptr)) { return false; }
+       if (array_len == 0 || data == nullptr) { return true; }
+       size_t ch = (size_t)channel;
+Index: M5Unified/src/utility/Speaker_Class.hpp
+===================================================================
+--- M5Unified.orig/src/utility/Speaker_Class.hpp
++++ M5Unified/src/utility/Speaker_Class.hpp
+@@ -99,6 +99,8 @@ namespace m5
+ #if defined (ESP_PLATFORM)
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+       return _cfg.pin_data_out >= 0 || _cb_set_tone != nullptr;
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++      return _cfg.pin_data_out >= 0 || _cb_set_tone != nullptr;
+ #else
+       return _cfg.pin_data_out >= 0;
+ #endif
+@@ -119,6 +121,8 @@ namespace m5
+       if (channel >= sound_channel_max) { return 0; }
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+       if (_cb_set_tone) { return (_play_channel_bits.load() >> channel) & 1; }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++      if (_cb_set_tone) { return (_play_channel_bits.load() >> channel) & 1; }
+ #endif
+       return _slot_occupied(_ch_info[channel].wavinfo[0]) + _slot_occupied(_ch_info[channel].wavinfo[1]);
+     }
+@@ -254,6 +258,9 @@ namespace m5
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+     // A board-provided PWM tone backend. It supports tone(), but not PCM playback.
+     void setToneCallback(void* args, void(*func)(void*, float, uint8_t)) { _cb_set_tone = func; _cb_set_tone_args = args; }
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    // A board-provided PWM tone backend. It supports tone(), but not PCM playback.
++    void setToneCallback(void* args, void(*func)(void*, float, uint8_t)) { _cb_set_tone = func; _cb_set_tone_args = args; }
+ #else
+     void setToneCallback(void*, void(*)(void*, float, uint8_t)) {}
+ #endif
+@@ -325,11 +332,15 @@ namespace m5
+     static void spk_task(void* args);
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+     static void external_tone_task(void* args);
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    static void external_tone_task(void* args);
+ #endif
+ 
+     esp_err_t _setup_i2s(void);
+ #if defined (CONFIG_IDF_TARGET_ESP32C61)
+     void _lock_external_tone(void);
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    void _lock_external_tone(void);
+ #endif
+     bool _play_raw(const void* wav, size_t array_len, bool flg_16bit, bool flg_signed, float sample_rate, bool flg_stereo, uint32_t repeat_count, int channel, bool stop_current_sound, bool no_clear_index);
+     bool _set_next_wav(size_t ch, const wav_info_t& wav);
+@@ -343,6 +354,15 @@ namespace m5
+     void (*_cb_set_tone)(void* args, float frequency, uint8_t volume) = nullptr;
+     void* _cb_set_tone_args = nullptr;
+     std::atomic_flag _external_tone_lock = ATOMIC_FLAG_INIT;
++    std::atomic<uint32_t> _external_tone_generation { 0 };
++    uint32_t _external_tone_frequency = 0;
++    uint32_t _external_tone_duration_ms = 0;
++    uint8_t _external_tone_volume = 0;
++    bool _external_tone_stopping = true;
++#elif defined (CONFIG_IDF_TARGET_ESP32C5)
++    void (*_cb_set_tone)(void* args, float frequency, uint8_t volume) = nullptr;
++    void* _cb_set_tone_args = nullptr;
++    std::atomic_flag _external_tone_lock = ATOMIC_FLAG_INIT;
+     std::atomic<uint32_t> _external_tone_generation { 0 };
+     uint32_t _external_tone_frequency = 0;
+     uint32_t _external_tone_duration_ms = 0;
