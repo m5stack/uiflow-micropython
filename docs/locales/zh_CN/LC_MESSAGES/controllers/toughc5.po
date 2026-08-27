@@ -149,4 +149,3 @@ msgstr "Port B GPIO 使用 GPIO1 和 GPIO6，Port C GPIO 使用 GPIO12 和 GPIO1
 
 #~ msgid "Power button input through ``M5.BtnPWR``."
 #~ msgstr "通过 ``M5.BtnPWR`` 读取电源按键输入。"
-
