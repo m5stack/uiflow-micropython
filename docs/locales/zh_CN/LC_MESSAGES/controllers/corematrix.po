@@ -88,4 +88,3 @@ msgstr "通过 ``M5.Power`` 管理电池、VBUS、充电和外部电源输出。
 
 #~ msgid "M5Stack CoreMatrix"
 #~ msgstr ""
-

@@ -23,4 +23,3 @@ msgstr ""
 #: ../../source/stamp/index.rst:2
 msgid "Stamp"
 msgstr ""
-
