@@ -10,8 +10,13 @@ target_sources(usermod_DRIVER INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/max30100/driver_max30100.c
     ${CMAKE_CURRENT_LIST_DIR}/max30102/max30102.c
     ${CMAKE_CURRENT_LIST_DIR}/max30102/driver_max30102.c
-    ${CMAKE_CURRENT_LIST_DIR}/esp_dmx/driver_esp_dmx.c
 )
+
+if(NOT IDF_TARGET STREQUAL "esp32c61")
+    target_sources(usermod_DRIVER INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}/esp_dmx/driver_esp_dmx.c
+    )
+endif()
 
 target_include_directories(usermod_DRIVER INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}

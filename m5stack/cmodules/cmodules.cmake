@@ -31,18 +31,20 @@ if (BOARD_TYPE STREQUAL "unit_poep4")
 endif()
 
 # add m5can module
-if(NOT IDF_TARGET STREQUAL "esp32c5")
+if(NOT IDF_TARGET STREQUAL "esp32c5" AND NOT IDF_TARGET STREQUAL "esp32c61")
     include(${CMAKE_CURRENT_LIST_DIR}/m5can/m5can.cmake)
 endif()
 
 # add m5unified module
 include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 
-# add rf433 module
-include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
+if(NOT IDF_TARGET STREQUAL "esp32c61")
+    # add rf433 module
+    include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
 
-# add rmt_ir module
-include(${CMAKE_CURRENT_LIST_DIR}/rmt_ir/micropython.cmake)
+    # add rmt_ir module
+    include(${CMAKE_CURRENT_LIST_DIR}/rmt_ir/micropython.cmake)
+endif()
 
 # QM33120 UWB support for Stamp hosts.
 if(BOARD_TYPE STREQUAL "stamps3mini" OR

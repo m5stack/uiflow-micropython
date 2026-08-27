@@ -102,6 +102,12 @@ class Headless_Startup:
     def show_ssid(self, ssid: str) -> None:
         pass
 
+    def show_access_code(self, access_code: str) -> None:
+        pass
+
+    def show_connecting(self, frame: int) -> None:
+        pass
+
     def show_mac(self) -> None:
         mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
         print("MAC: " + mac[0:6] + "_" + mac[6:])
@@ -138,6 +144,7 @@ class Headless_Startup:
             print("Connecting to " + ssid + " ", end="")
             start = time.ticks_ms()
             success = False
+            animation_frame = 0
             while time.ticks_diff(time.ticks_ms(), start) < timeout * 1000:
                 status = self._net_if.connect_status()
                 if status is network.STAT_GOT_IP:
@@ -152,13 +159,17 @@ class Headless_Startup:
                         print("Access Code: " + access_code)
                         print("=======================")
                         self._set_status_color(self.COLOR_GREEN)
+                        self.show_access_code(access_code)
                         success = True
                         break
                     else:
                         print(".", end="")
                 else:
                     print(".", end="")
-                time.sleep(1)
+                for _ in range(2):
+                    self.show_connecting(animation_frame)
+                    animation_frame += 1
+                    time.sleep_ms(500)
 
             if not success:
                 print(" ")

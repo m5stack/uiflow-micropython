@@ -1,0 +1,16 @@
+{
+    "deploy": [],
+    "docs": "",
+    "features": [
+        "BLE",
+        "WiFi",
+        "USB",
+        "USB-C",
+        "Display"
+    ],
+    "images": [],
+    "mcu": "esp32c61",
+    "product": "M5Stack CoreMatrix",
+    "url": "https://shop.m5stack.com/",
+    "vendor": "M5Stack"
+}

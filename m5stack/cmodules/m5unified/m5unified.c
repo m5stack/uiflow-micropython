@@ -62,6 +62,7 @@ static const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5Unit_PoEP4),    MP_ROM_INT(148) },
     { MP_ROM_QSTR(MP_QSTR_M5StampS3Bat),    MP_ROM_INT(149) },
     { MP_ROM_QSTR(MP_QSTR_M5StampP4),       MP_ROM_INT(150) },
+    { MP_ROM_QSTR(MP_QSTR_M5CoreMatrix),    MP_ROM_INT(152) },
     { MP_ROM_QSTR(MP_QSTR_M5StampC5),       MP_ROM_INT(153) },
     { MP_ROM_QSTR(MP_QSTR_M5StampC6),       MP_ROM_INT(154) },
     { MP_ROM_QSTR(MP_QSTR_M5StampS3Mini),   MP_ROM_INT(155) },

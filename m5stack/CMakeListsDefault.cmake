@@ -256,10 +256,13 @@ list(APPEND IDF_COMPONENTS
     M5Unified
     esp32-camera
     uiflow_utility
-    esp_dmx
     esp_mm
     esp_driver_ppa
 )
+
+if(NOT IDF_TARGET STREQUAL "esp32c61")
+    list(APPEND IDF_COMPONENTS esp_dmx)
+endif()
 
 if (BOARD_TYPE STREQUAL "unit_poep4")
     list(APPEND IDF_COMPONENTS

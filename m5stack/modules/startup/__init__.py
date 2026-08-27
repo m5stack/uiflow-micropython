@@ -150,7 +150,11 @@ def _detect_boot_override(board_id):
         from hardware import MatrixKeyboard
 
         keyboard = MatrixKeyboard()
-    elif board_id not in (M5.BOARD.M5StickS3, M5.BOARD.M5StackChan):
+    elif board_id not in (
+        M5.BOARD.M5StickS3,
+        M5.BOARD.M5StackChan,
+        M5.BOARD.M5CoreMatrix,
+    ):
         return False
 
     pressed_since = None
@@ -162,6 +166,8 @@ def _detect_boot_override(board_id):
                 pressed = keyboard.is_key_pressed(_CARDPUTER_ADV_BOOT_KEYCODE)
             elif board_id == M5.BOARD.M5StickS3:
                 pressed = M5.BtnA.isPressed()
+            elif board_id == M5.BOARD.M5CoreMatrix:
+                pressed = M5.BtnA.isPressed() or M5.BtnB.isPressed() or M5.BtnC.isPressed()
             else:
                 pressed = M5.Touch.getCount() > 0
 
@@ -298,6 +304,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cores3 = CoreS3_Startup()
             cores3.startup(ssid, pswd, timeout=timeout)
+        elif board_id == M5.BOARD.M5CoreMatrix:
+            from .corematrix import CoreMatrix_Startup
+
+            corematrix = CoreMatrix_Startup()
+            corematrix.startup(net_mode, ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StackCore2:
             from .core2 import Core2_Startup
 
