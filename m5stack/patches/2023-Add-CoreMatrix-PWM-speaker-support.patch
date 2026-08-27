@@ -18,7 +18,7 @@ index 0fcdc3b..51b6e43 100644
 @@ -7,6 +7,8 @@
  #include "utility/PI4IOE5V6408_Class.hpp"
  #include "utility/M5IOE1_Class.hpp"
- 
+
 +#include <math.h>
 +
  #if !defined (M5UNIFIED_PC_BUILD)
@@ -27,7 +27,7 @@ index 0fcdc3b..51b6e43 100644
 @@ -503,6 +505,35 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
      return true;
    }
- 
+
 +  void M5Unified::_speaker_tone_cb_corematrix(void* args, float frequency, uint8_t volume)
 +  {
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -62,11 +62,11 @@ index 0fcdc3b..51b6e43 100644
      (void)args;
 @@ -2232,6 +2263,7 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
      auto mic_cfg = Mic.config();
- 
+
      bool(*spk_enable_cb)(void*, bool) = nullptr;
 +    void(*spk_tone_cb)(void*, float, uint8_t) = nullptr;
      auto spk_cfg = Speaker.config();
- 
+
      if (cfg.internal_mic)
 @@ -2436,6 +2468,13 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
        switch (_board)
@@ -113,7 +113,7 @@ index d611abb..af8899b 100644
 @@ -946,6 +946,57 @@ label_continue_sample:
  #endif
    }
- 
+
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
 +  void Speaker_Class::external_tone_task(void* args)
 +  {
@@ -171,7 +171,7 @@ index d611abb..af8899b 100644
 @@ -973,13 +1024,35 @@ label_continue_sample:
      bool res = true;
      if (_cb_set_enabled) { res = _cb_set_enabled(_cb_set_enabled_args, true); }
- 
+
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
 +    const bool external_tone = _cb_set_tone != nullptr;
 +    res = (external_tone || ESP_OK == _setup_i2s()) && res;
@@ -203,9 +203,9 @@ index d611abb..af8899b 100644
 +      _external_tone_lock.clear(std::memory_order_release);
  #else
        size_t stack_size = 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
- 
+
 @@ -1006,6 +1079,15 @@ label_continue_sample:
- 
+
    void Speaker_Class::end(void)
    {
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -249,7 +249,7 @@ index d611abb..af8899b 100644
 +#endif
  #endif
    }
- 
+
    void Speaker_Class::stop(void)
    {
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -274,7 +274,7 @@ index d611abb..af8899b 100644
      tmp.stop_current = 1;
      uint8_t bits = _play_channel_bits.load();
 @@ -1053,6 +1168,13 @@ label_continue_sample:
- 
+
    void Speaker_Class::stop(uint8_t ch)
    {
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -288,7 +288,7 @@ index d611abb..af8899b 100644
      {
        stop();
 @@ -1131,6 +1253,48 @@ label_continue_sample:
- 
+
    bool Speaker_Class::_play_raw(const void* data, size_t array_len, bool flg_16bit, bool flg_signed, float sample_rate, bool flg_stereo, uint32_t repeat_count, int channel, bool stop_current_sound, bool no_clear_index)
    {
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -365,12 +365,12 @@ index aa48a5a..376c305 100644
 +#endif
 +      return _slot_occupied(_ch_info[channel].wavinfo[0]) + _slot_occupied(_ch_info[channel].wavinfo[1]);
 +    }
- 
+
      /// Get the number of channels that are playing.
      /// @return number of channels that are playing.
 @@ -240,6 +251,12 @@ namespace m5
      static const uint8_t _default_tone_wav[16];
- 
+
      void setCallback(void* args, bool(*func)(void*, bool)) { _cb_set_enabled = func; _cb_set_enabled_args = args; }
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
 +    // A board-provided PWM tone backend. It supports tone(), but not PCM playback.
@@ -378,26 +378,26 @@ index aa48a5a..376c305 100644
 +#else
 +    void setToneCallback(void*, void(*)(void*, float, uint8_t)) {}
 +#endif
- 
+
      struct wav_info_t
      {
 @@ -306,8 +323,14 @@ namespace m5
      channel_info_t _ch_info[sound_channel_max];
- 
+
      static void spk_task(void* args);
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
 +    static void external_tone_task(void* args);
 +#endif
- 
+
      esp_err_t _setup_i2s(void);
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
 +    void _lock_external_tone(void);
 +#endif
      bool _play_raw(const void* wav, size_t array_len, bool flg_16bit, bool flg_signed, float sample_rate, bool flg_stereo, uint32_t repeat_count, int channel, bool stop_current_sound, bool no_clear_index);
      bool _set_next_wav(size_t ch, const wav_info_t& wav);
- 
+
 @@ -316,6 +339,16 @@ namespace m5
- 
+
      bool (*_cb_set_enabled)(void* args, bool enabled) = nullptr;
      void* _cb_set_enabled_args = nullptr;
 +#if defined (CONFIG_IDF_TARGET_ESP32C61)
@@ -410,6 +410,6 @@ index aa48a5a..376c305 100644
 +    uint8_t _external_tone_volume = 0;
 +    bool _external_tone_stopping = true;
 +#endif
- 
+
      volatile bool _task_running = false;
      std::atomic<uint16_t> _play_channel_bits = { 0 };
