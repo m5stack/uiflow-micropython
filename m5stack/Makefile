@@ -377,7 +377,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2019-fix-touch-sensor.patch \
 	2021-Fix-Tab5-charge-status-detection.patch \
 	2023-Add-CoreMatrix-PWM-speaker-support.patch \
-	2024-Add-ToughC5-PWM-speaker-support.patch
+	2024-Add-ToughC5-PWM-speaker-support.patch \
+	2025-Enable-ToughC5-SD-power.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch

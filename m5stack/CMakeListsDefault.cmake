@@ -156,6 +156,7 @@ if (
     OR BOARD_TYPE STREQUAL "fire"
     OR BOARD_TYPE STREQUAL "capsule"
     OR BOARD_TYPE STREQUAL "tough"
+    OR BOARD_TYPE STREQUAL "toughc5"
     OR BOARD_TYPE STREQUAL "stamplc"
     OR BOARD_TYPE STREQUAL "unit_c6l"
     OR BOARD_TYPE STREQUAL "nesso-n1"
