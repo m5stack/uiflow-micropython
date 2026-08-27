@@ -5,7 +5,8 @@
         "BLE",
         "WiFi",
         "USB",
-        "USB-C"
+        "USB-C",
+        "Display"
     ],
     "images": [],
     "mcu": "esp32c5",

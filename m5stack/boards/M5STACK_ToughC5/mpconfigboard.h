@@ -11,4 +11,3 @@
 #define MICROPY_HW_I2C0_SDA (2)
 
 #include "./../mpconfiglvgl.h"
-
