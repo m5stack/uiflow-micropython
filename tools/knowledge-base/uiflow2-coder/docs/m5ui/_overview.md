@@ -4,6 +4,20 @@ M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and functi
 
 It has been adapted for M5Stack devices and you only need to call `m5ui.init()` to start using it.
 
+## Supported Controllers
+
+The current UiFlow2 firmware enables both LVGL and M5UI on the following 9 controllers:
+
+- Core2 (`M5STACK_Core2`)
+- CoreS3 (`M5STACK_CoreS3`)
+- M5Dial (`M5STACK_Dial`)
+- StackChan (`M5STACK_StackChan`)
+- StopWatch (`M5STACK_StopWatch`)
+- Tab5 (`M5STACK_Tab5`)
+- Tab5X (`M5STACK_Tab5X`; inherits the Tab5 LVGL and M5UI configuration)
+- Tough (`M5STACK_Tough`)
+- ToughC5 (`M5STACK_ToughC5`)
+
 ## M5 Series Display Libraries
 
 #### 1. Display (M5.Lcd)
@@ -19,11 +33,13 @@ It has been adapted for M5Stack devices and you only need to call `m5ui.init()` 
 - Suitable for simple interactive UI elements.
 - **Access via**: `M5.Widgets.Label()`, `M5.Widgets.Image()`, `M5.Widgets.Rectangle()`, etc.
 - **Important**: `M5.Widgets` provides UI component **classes**, not drawing methods.
+- **Recommendation**: For new interactive UI projects, prefer M5UI/LVGL. Use M5.Widgets for simple or legacy UI components.
 
 #### 3. M5UI
 
 - A high-level UI framework based on LVGL.
 - Provides page management, multi-widget layouts, and unified event handling.
+- **Recommendation**: Prefer M5UI/LVGL for new interactive UI projects.
 - **Access via**: `m5ui.M5Label()`, `m5ui.M5Button()`, `m5ui.M5Page()`, etc.
 
 #### Usage Tips
@@ -31,7 +47,7 @@ It has been adapted for M5Stack devices and you only need to call `m5ui.init()` 
 - ⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause rendering issues or event conflicts.
 - For graphics-only drawing → use M5GFX (M5.Lcd).
 - For simple interactive widgets → use M5Widgets.
-- For multi-page UI → use M5UI.
+- For multi-page UI → use M5UI/LVGL (recommended for new projects).
 
 #### Common Mistakes to Avoid
 

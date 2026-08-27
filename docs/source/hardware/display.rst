@@ -27,18 +27,20 @@ M5 Series Display Libraries
 - Suitable for simple interactive UI elements.
 - **Access via**: ``M5.Widgets.Label()``, ``M5.Widgets.Image()``, ``M5.Widgets.Rectangle()``, etc.
 - **Important**: ``M5.Widgets`` provides UI component **classes**, not drawing methods.
+- **Recommendation**: For new interactive UI projects, prefer M5UI/LVGL. Use M5.Widgets for simple or legacy UI components.
 
 3. M5UI
 ^^^^^^^^
 - A high-level UI framework based on LVGL.
 - Provides page management, multi-widget layouts, and unified event handling.
+- **Recommendation**: Prefer M5UI/LVGL for new interactive UI projects.
 
 Usage Tips
 ^^^^^^^^^^
 - ⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause rendering issues or event conflicts.
 - For graphics-only drawing → use M5GFX.
 - For simple interactive widgets → use M5Widgets.
-- For multi-page UI → use M5UI.
+- For multi-page UI → use M5UI/LVGL (recommended for new projects).
 
 Common Mistakes to Avoid
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,10 +228,10 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
         Rotation values:
 
-        - 1: 0° rotation
-        - 2: 90° rotation
-        - 3: 180° rotation
-        - 4: 270° rotation
+        - 0: 0° rotation
+        - 1: 90° rotation
+        - 2: 180° rotation
+        - 3: 270° rotation
 
         UiFlow2 Code Block:
 
@@ -279,11 +281,11 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
         Set the rotation of the display.
 
-        :param int r: rotation value (1~4)
-            - 1: 0° rotation
-            - 2: 90° rotation
-            - 3: 180° rotation
-            - 4: 270° rotation
+        :param int r: rotation value (0~3)
+            - 0: 0° rotation
+            - 1: 90° rotation
+            - 2: 180° rotation
+            - 3: 270° rotation
 
         UiFlow2 Code Block:
 

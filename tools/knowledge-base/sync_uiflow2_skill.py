@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -14,6 +15,8 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent.parent
 LOCAL_SKILL_DIR = SCRIPT_DIR / "uiflow2-coder"
 DEFAULT_SKILL_DIR = Path.home() / ".agents" / "skills" / "uiflow2-coder"
+COMPLEX_EXAMPLES_MANIFEST = SCRIPT_DIR / "complex_examples.json"
+COMPLEX_EXAMPLES_REFERENCE = LOCAL_SKILL_DIR / "references" / "complex-examples.md"
 DOC_TREE_BEGIN = "<!-- BEGIN_DOC_TREE -->"
 DOC_TREE_END = "<!-- END_DOC_TREE -->"
 
@@ -95,6 +98,88 @@ def render_doc_tree_block(docs_dir: Path) -> str:
 
 def generate_docs(output_dir: Path) -> None:
     run([sys.executable, str(SCRIPT_DIR / "rst2md_en.py"), "--dst", str(output_dir)])
+
+
+def load_complex_examples() -> list[dict[str, object]]:
+    data = json.loads(COMPLEX_EXAMPLES_MANIFEST.read_text(encoding="utf-8"))
+    examples = data.get("examples")
+    if not isinstance(examples, list):
+        raise RuntimeError(f"Expected an examples list in {COMPLEX_EXAMPLES_MANIFEST}")
+
+    required = {"path", "title", "ui", "resolution", "capabilities", "validation", "use_when"}
+    seen_paths: set[str] = set()
+    for example in examples:
+        if not isinstance(example, dict) or not required <= example.keys():
+            raise RuntimeError(f"Invalid complex example entry: {example!r}")
+        rel_path = example["path"]
+        capabilities = example["capabilities"]
+        if not isinstance(rel_path, str) or not rel_path.startswith("examples/"):
+            raise RuntimeError(f"Complex example path must start with examples/: {rel_path!r}")
+        if rel_path in seen_paths:
+            raise RuntimeError(f"Duplicate complex example path: {rel_path}")
+        if not isinstance(capabilities, list) or not capabilities or not all(
+            isinstance(item, str) and item for item in capabilities
+        ):
+            raise RuntimeError(f"Invalid capabilities for complex example: {rel_path}")
+        source = (REPO_ROOT / rel_path).resolve()
+        if REPO_ROOT.resolve() not in source.parents or not source.is_file():
+            raise FileNotFoundError(f"Complex example source does not exist: {source}")
+        seen_paths.add(rel_path)
+    return examples
+
+
+def render_complex_examples_reference(examples: list[dict[str, object]]) -> str:
+    lines = [
+        "# Curated Complex Examples",
+        "",
+        "这些示例是人工精选的复杂 UIFlow2 程序，用于复用整体结构、状态管理和性能策略。",
+        "示例按 UI 体系和屏幕分辨率组织，不以某一款主机作为唯一适用范围。",
+        "每个条目单独记录验证状态；未标明硬件验证时，不要声称已经过真机测试。",
+        "API 名称、参数和兼容性仍以 `docs/` 为准；不要仅凭示例推断未记录的 API。",
+        "",
+    ]
+    for example in examples:
+        rel_path = str(example["path"])
+        asset_rel_path = "assets/examples/" + rel_path.removeprefix("examples/")
+        asset_path = "../" + asset_rel_path
+        capabilities = "、".join(str(item) for item in example["capabilities"])
+        lines.extend(
+            [
+                f"## {example['title']} ({example['ui']}, {example['resolution']})",
+                "",
+                f"- 仓库源路径：`{rel_path}`",
+                f"- Skill 镜像：[{asset_rel_path}]({asset_path})",
+                f"- 能力点：{capabilities}",
+                f"- 验证状态：{example['validation']}",
+                f"- 适用场景：{example['use_when']}",
+                "",
+            ]
+        )
+    return "\n".join(lines)
+
+
+def sync_complex_examples_to_repo_skill() -> None:
+    examples = load_complex_examples()
+    with tempfile.TemporaryDirectory(prefix="uiflow2-complex-examples-") as tmp:
+        generated_assets = Path(tmp) / "examples"
+        for example in examples:
+            rel_path = Path(str(example["path"]))
+            asset_rel_path = Path(*rel_path.parts[1:])
+            destination = generated_assets / asset_rel_path
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(REPO_ROOT / rel_path, destination)
+
+        assets_dir = LOCAL_SKILL_DIR / "assets"
+        assets_dir.mkdir(parents=True, exist_ok=True)
+        replace_dir(generated_assets, assets_dir / "examples", assets_dir)
+
+    COMPLEX_EXAMPLES_REFERENCE.parent.mkdir(parents=True, exist_ok=True)
+    COMPLEX_EXAMPLES_REFERENCE.write_text(
+        render_complex_examples_reference(examples),
+        encoding="utf-8",
+        newline="\n",
+    )
+    print(f"Synced {len(examples)} curated complex example(s) into the repo skill.")
 
 
 def copy_current_skill_to_repo(skill_dir: Path) -> None:
@@ -213,6 +298,7 @@ def report_doc_quality(target: Path) -> None:
 
 
 def validate(skill_dir: Path) -> None:
+    manifest_examples = load_complex_examples()
     for target in (LOCAL_SKILL_DIR, skill_dir):
         docs_dir = target / "docs"
         md_files = list(docs_dir.rglob("*.md"))
@@ -224,6 +310,30 @@ def validate(skill_dir: Path) -> None:
                 raise RuntimeError(f"Local absolute path leaked into {path}")
         for path in (target / "file_tree.txt", target / "SKILL.md"):
             read_utf8_checked(path)
+        complex_reference = target / "references" / "complex-examples.md"
+        read_utf8_checked(complex_reference)
+        assets_root = target / "assets" / "examples"
+        expected_assets: set[Path] = set()
+        for example in manifest_examples:
+            source_rel = Path(str(example["path"]))
+            asset_rel = Path(*source_rel.parts[1:])
+            source = REPO_ROOT / source_rel
+            asset = assets_root / asset_rel
+            expected_assets.add(asset_rel)
+            compile(read_utf8_checked(asset), str(asset), "exec")
+            if source.read_bytes() != asset.read_bytes():
+                raise RuntimeError(f"Curated example mirror differs from source: {asset}")
+        actual_assets = {
+            path.relative_to(assets_root)
+            for path in assets_root.rglob("*.py")
+            if path.is_file()
+        }
+        if actual_assets != expected_assets:
+            raise RuntimeError(
+                f"Curated example set mismatch in {target}: "
+                f"missing={sorted(expected_assets - actual_assets)}, "
+                f"extra={sorted(actual_assets - expected_assets)}"
+            )
         if (target / "SKILL.md").read_bytes()[:3] != b"---":
             raise RuntimeError(f"SKILL.md frontmatter does not start at byte 0: {target / 'SKILL.md'}")
         print(
@@ -254,6 +364,7 @@ def main() -> None:
         print(f"Keeping repo skill shell: {LOCAL_SKILL_DIR}")
     else:
         copy_current_skill_to_repo(skill_dir)
+    sync_complex_examples_to_repo_skill()
     if args.source_docs:
         source_docs = args.source_docs.resolve()
         if not source_docs.is_dir():

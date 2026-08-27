@@ -14,6 +14,7 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 - 如果目录下存在 `_overview.md`，先读 `_overview.md` 了解该模块整体规则，再读具体 API 文件。
 - 不确定路径时先查 `file_tree.txt`，再用 `scripts/find_doc.ps1` 或 `scripts/find_doc.sh` 搜索。
 - 生成代码前检查官方示例里的 import、初始化顺序、主循环和返回值用法。
+- 遇到多功能组合、动画、状态机、传感器交互、物理模拟或性能敏感任务时，先读 `references/complex-examples.md`；有相近示例时复用其整体结构，不要从空白重新设计。
 - 给出代码后附上最小验证方法；不能硬件验证时说明需要在哪块板或哪个 Unit 上验证。
 
 ## 文档定位
@@ -21,6 +22,15 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 本 skill 的官方资料在 `docs/`。下方已内嵌完整文件树；先按树定位文件，再读取对应原文。常用入口：`docs/get-started/_overview.md`、`docs/m5ui/_overview.md`、`docs/widgets/_overview.md`、`docs/hardware/`、`docs/unit/`、`docs/module/`、`docs/base/`、`docs/hat/`、`docs/system/`、`docs/advanced/`。只有包含实质性整体指导的 `index.rst` 会生成 `_overview.md`；纯目录型 overview 已由文件树替代。
 
 不确定时搜索：PowerShell `./scripts/find_doc.ps1 env temperature`；bash `./scripts/find_doc.sh env temperature`。
+
+## 精选复杂示例
+
+`assets/examples/` 保存人工精选的复杂示例镜像，入口清单见 `references/complex-examples.md`。普通单 API 任务不必加载这些大文件；仅当任务涉及多组件协作、持续动画、状态管理、传感器驱动交互或资源优化时，读取最接近的一个示例。
+
+- 示例用于复用程序架构、事件组织、刷新策略和资源管理，不替代 `docs/` 的 API 约束。
+- 先按 UI 体系、屏幕分辨率和功能选择示例，再确认目标板卡具备示例使用的 IMU、按键或触摸等硬件；不要无关地复制整个示例。
+- 示例与需求冲突时以用户需求和当前官方文档为准，并明确需要重新硬件验证的部分。
+- 只有经开发者确认适合作为标准参考的示例才会进入该目录；硬件验证状态以清单为准，未标明时不得声称已经过真机测试。
 
 ## 文档文件树
 
@@ -82,9 +92,10 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
 1. 提取需求里的目标板卡、Unit/Module/Base/HAT、UI 组件、通信总线和约束。
 2. 用 `file_tree.txt` 或搜索脚本定位文档；若有 `_overview.md`，先读 overview。
 3. 读取具体 API 文档，确认构造函数、参数、返回值、示例 import 和必要初始化。
-4. 生成代码；优先保持结构简单，避免无用封装。
-5. 自查主循环、资源占用、显示刷新、错误处理和硬件兼容。
-6. 给出验证步骤，例如串口运行、按钮/触摸操作、I2C 地址扫描或屏幕现象。
+4. 如果属于复杂任务，读取 `references/complex-examples.md` 并选择最接近的精选示例作为结构参考。
+5. 生成代码；优先保持结构简单，避免无用封装。
+6. 自查主循环、资源占用、显示刷新、错误处理和硬件兼容。
+7. 给出验证步骤，例如串口运行、按钮/触摸操作、I2C 地址扫描或屏幕现象。
 
 ## UIFlow2 基础模板
 
@@ -126,6 +137,14 @@ if __name__ == "__main__":
 - Unit/HAT/Module/Base 外设按对应目录文档创建对象，不要把内置硬件当外接 I2C/SPI 设备重新初始化。
 - 遇到 `I2C.scan()` 为空、SDIO 报错、`ETIMEDOUT` 或总线异常时，先判断是否误用了系统占用的总线或目标设备类型。
 - 需要摄像头时先确认目标板支持；不要给非摄像头设备生成 camera 示例。
+
+## 网络连接策略
+
+- UIFlow2 设备通常已由系统使用保存的网络配置完成联网。网络应用先获取 STA 接口并检查 `isconnected()`，已连接时直接复用，不要重复设置 Wi-Fi。
+- 不要在普通网络示例中无条件执行 `disconnect()`、重置网络接口、覆盖系统配置，也不要嵌入或编造 SSID 和密码。
+- 只有确认 `isconnected()` 为假且任务必须联网时，才进入备用连接流程；凭据必须来自用户明确提供的配置。没有凭据时保留离线状态并给出可理解的提示。
+- 备用连接使用有限超时，等待期间继续调用 `M5.update()`；失败后允许重试，但不要在主循环中持续高频重连。
+- 网络请求失败不等于 Wi-Fi 未连接。分别处理未联网、DNS/超时、HTTP 状态错误和响应解析错误；有缓存数据时优先保留并标记为离线数据。
 
 ## m5ui 和 Widgets 规则
 

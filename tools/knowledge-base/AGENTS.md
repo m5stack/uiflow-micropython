@@ -24,7 +24,8 @@ python tools\knowledge-base\sync_uiflow2_skill.py
 3. 批量同步到系统 skill 和本地副本的 `docs` 目录。
 4. 生成 skill 根目录的紧凑 `file_tree.txt`。
 5. 刷新 `SKILL.md` 内的 `BEGIN_DOC_TREE` / `END_DOC_TREE` 紧凑索引。
-6. 最后把本地 skill 副本整体复制到系统 skill，确保脚本、`SKILL.md`、`file_tree.txt` 和 `docs` 字节一致。
+6. 按 `complex_examples.json` 精选清单，将仓库中的复杂示例同步到 skill 的 `assets\examples`，并生成 `references\complex-examples.md` 索引。
+7. 最后把本地 skill 副本整体复制到系统 skill，确保脚本、`SKILL.md`、`file_tree.txt`、`docs`、`references` 和 `assets` 字节一致。
 
 如果正在修改本目录中的 `SKILL.md`、`scripts` 或生成脚本，不要让旧系统 skill 反向覆盖仓库副本，改用：
 
@@ -41,6 +42,7 @@ python tools\knowledge-base\sync_uiflow2_skill.py --source-docs C:\path\to\docs
 ## 维护规则
 
 - 不要手动编辑 skill 的 `docs` 目录；要改内容，优先改 `docs\source` 或转换脚本。
+- 复杂示例的唯一源码放在仓库 `examples\` 对应 UI 体系或功能目录；不要手动维护 `assets\examples` 镜像。通用 UI 示例优先按 UI 体系和屏幕分辨率分类，不要无必要地绑定主机名称。只有经开发者确认适合作为标准参考的示例才能登记到 `complex_examples.json`，并且要如实填写硬件验证状态。
 - 只有包含实质性整体指导的 `index.rst` 会转换为 `_overview.md`；纯 `toctree` 目录页不要生成 overview，因为文件树已经覆盖导航信息。
 - `SKILL.md` 内嵌索引统一省略 `.md` 后缀，例如 `unit/env` 表示 `docs/unit/env.md`。
 - `file_tree.txt` 保留在 skill 根目录，只作为外部工具、人工 diff 和脚本验证的冗余索引。

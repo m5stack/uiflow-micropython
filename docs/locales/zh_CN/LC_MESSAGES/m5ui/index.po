@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-18 13:57+0800\n"
+"POT-Creation-Date: 2026-08-27 10:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,152 +20,208 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/m5ui/index.rst:2 5d82079bc6b14c2f8075d9b3b8ed4509
+#: ../../source/m5ui/index.rst:2
 msgid "M5UI"
 msgstr "M5UI"
 
-#: ../../source/m5ui/index.rst:7 fb32a43371644f3b947ff36893ab6c26
+#: ../../source/m5ui/index.rst:7
 msgid ""
 "M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and"
 " functions to create user interfaces for M5Stack devices."
 msgstr "M5UI 是一个基于 LVGL v9.3 的 UI 库。它提供了一组用于创建 M5Stack 设备用户界面的小部件和函数。"
 
-#: ../../source/m5ui/index.rst:9 c9d117566a6e4809bbd3cbaaa0496675
+#: ../../source/m5ui/index.rst:9
 msgid ""
 "It has been adapted for M5Stack devices and you only need to call "
 "``m5ui.init()`` to start using it."
 msgstr "它已适用于 M5Stack 设备，您只需调用 ``m5ui.init()`` 即可开始使用它。"
 
-#: ../../source/m5ui/index.rst:12 defd0685ca05486f8a4820c7825d221c
+#: ../../source/m5ui/index.rst:12
+msgid "Supported Controllers"
+msgstr "支持的主机"
+
+#: ../../source/m5ui/index.rst:14
+msgid ""
+"The current UiFlow2 firmware enables both LVGL and M5UI on the following "
+"9 controllers:"
+msgstr "当前 UiFlow2 固件在以下 9 款主机上同时启用了 LVGL 和 M5UI："
+
+#: ../../source/m5ui/index.rst:16
+msgid "Core2 (``M5STACK_Core2``)"
+msgstr "Core2 (``M5STACK_Core2``)"
+
+#: ../../source/m5ui/index.rst:17
+msgid "CoreS3 (``M5STACK_CoreS3``)"
+msgstr "CoreS3 (``M5STACK_CoreS3``)"
+
+#: ../../source/m5ui/index.rst:18
+msgid "M5Dial (``M5STACK_Dial``)"
+msgstr "M5Dial (``M5STACK_Dial``)"
+
+#: ../../source/m5ui/index.rst:19
+msgid "StackChan (``M5STACK_StackChan``)"
+msgstr "StackChan (``M5STACK_StackChan``)"
+
+#: ../../source/m5ui/index.rst:20
+msgid "StopWatch (``M5STACK_StopWatch``)"
+msgstr "StopWatch (``M5STACK_StopWatch``)"
+
+#: ../../source/m5ui/index.rst:21
+msgid "Tab5 (``M5STACK_Tab5``)"
+msgstr "Tab5 (``M5STACK_Tab5``)"
+
+#: ../../source/m5ui/index.rst:22
+msgid "Tab5X (``M5STACK_Tab5X``; inherits the Tab5 LVGL and M5UI configuration)"
+msgstr "Tab5X (``M5STACK_Tab5X``；继承 Tab5 的 LVGL 和 M5UI 配置)"
+
+#: ../../source/m5ui/index.rst:23
+msgid "Tough (``M5STACK_Tough``)"
+msgstr "Tough (``M5STACK_Tough``)"
+
+#: ../../source/m5ui/index.rst:24
+msgid "ToughC5 (``M5STACK_ToughC5``)"
+msgstr "ToughC5 (``M5STACK_ToughC5``)"
+
+#: ../../source/m5ui/index.rst:27
 msgid "M5 Series Display Libraries"
 msgstr "M5 系列显示库说明"
 
-#: ../../source/m5ui/index.rst:15 73f56f479c3c4ca0be68f6ab5634649c
+#: ../../source/m5ui/index.rst:30
 #, fuzzy
 msgid "1. Display (M5.Lcd)"
 msgstr "显示"
 
-#: ../../source/m5ui/index.rst:16 a471f7acadf74cc997ba59b23ddeab07
+#: ../../source/m5ui/index.rst:31
 msgid ""
 "A low-level graphics library providing basic screen drawing, text, lines,"
 " and color management."
 msgstr "底层图形库，提供屏幕绘制、文字、线条、颜色管理等基础功能。"
 
-#: ../../source/m5ui/index.rst:17 5044ae14710840a180a091ef63509bec
+#: ../../source/m5ui/index.rst:32
 msgid ""
 "Can be used independently, suitable for scenarios that only require "
 "drawing graphics or text."
 msgstr "可独立使用，适合只需要绘制图形或文字的场景。"
 
-#: ../../source/m5ui/index.rst:18 6b7327413a7147ba95ccbceb9bd362b8
+#: ../../source/m5ui/index.rst:33
 msgid ""
 "**Access via**: ``M5.Lcd.fillRect()``, ``M5.Lcd.drawRect()``, "
 "``M5.Lcd.drawString()``, etc."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:21 699934bf5bef44d9a51c6c0d0405d265
+#: ../../source/m5ui/index.rst:36
 #, fuzzy
 msgid "2. Widgets (M5.Widgets)"
 msgstr "2. 控件"
 
-#: ../../source/m5ui/index.rst:22 6e28083fa1064537880f9846d34fbf82
+#: ../../source/m5ui/index.rst:37
 msgid ""
 "A basic UI widget library providing labels, image displays, and other UI "
 "controls."
 msgstr "基础控件库，提供标签、图片显示等 UI 控件。"
 
-#: ../../source/m5ui/index.rst:23 08f2007ddaab4a81806e84af51524890
+#: ../../source/m5ui/index.rst:38
 msgid "Built on top of M5GFX."
 msgstr "底层依赖 M5GFX。"
 
-#: ../../source/m5ui/index.rst:24 ccaa93465d0443be83923985d7a80a36
+#: ../../source/m5ui/index.rst:39
 msgid "Suitable for simple interactive UI elements."
 msgstr "适合需要简单交互控件的界面。"
 
-#: ../../source/m5ui/index.rst:25 64fe79967cdf4e40acc4b99724a7c945
+#: ../../source/m5ui/index.rst:40
 msgid ""
 "**Access via**: ``M5.Widgets.Label()``, ``M5.Widgets.Image()``, "
 "``M5.Widgets.Rectangle()``, etc."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:26 22e76dc27819415da6c900a70a88d2a8
+#: ../../source/m5ui/index.rst:41
 msgid ""
 "**Important**: ``M5.Widgets`` provides UI component **classes**, not "
 "drawing methods."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:29 6f72bbc6090e4b6390c0f1dddbd90e4a
+#: ../../source/m5ui/index.rst:42
+msgid ""
+"**Recommendation**: For new interactive UI projects, prefer M5UI/LVGL. "
+"Use M5.Widgets for simple or legacy UI components."
+msgstr "**建议**：新建交互式 UI 项目时优先使用 M5UI/LVGL。M5.Widgets 适用于简单或旧版 UI 组件。"
+
+#: ../../source/m5ui/index.rst:45
 msgid "3. M5UI"
 msgstr "3. M5UI"
 
-#: ../../source/m5ui/index.rst:30 eb217851d5cb4a9d8bf33bd13babb8a1
+#: ../../source/m5ui/index.rst:46
 msgid "A high-level UI framework based on LVGL."
 msgstr "高层 UI 框架，基于 LVGL 封装。"
 
-#: ../../source/m5ui/index.rst:31 6dbdbbeb472d4c7aa6a1595e1d9c22ee
+#: ../../source/m5ui/index.rst:47
 msgid ""
 "Provides page management, multi-widget layouts, and unified event "
 "handling."
 msgstr "提供页面管理、多控件布局和统一事件处理。"
 
-#: ../../source/m5ui/index.rst:32 6626d2c4abbe47c0963e1ffd024a67bd
+#: ../../source/m5ui/index.rst:48
+msgid "**Recommendation**: Prefer M5UI/LVGL for new interactive UI projects."
+msgstr "**建议**：新建交互式 UI 项目优先使用 M5UI/LVGL。"
+
+#: ../../source/m5ui/index.rst:49
 msgid ""
 "**Access via**: ``m5ui.M5Label()``, ``m5ui.M5Button()``, "
 "``m5ui.M5Page()``, etc."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:35 b1d3c2ed64d142a6bf9d13d9886669b2
+#: ../../source/m5ui/index.rst:52
 msgid "Usage Tips"
 msgstr "使用提示"
 
-#: ../../source/m5ui/index.rst:36 f8a359c0b8e6498496ef3f96ae84bde5
+#: ../../source/m5ui/index.rst:53
 msgid ""
 "⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause "
 "rendering issues or event conflicts."
 msgstr "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
 
-#: ../../source/m5ui/index.rst:37 8c839e1ae88f4067bdcb000cecae02b1
+#: ../../source/m5ui/index.rst:54
 #, fuzzy
 msgid "For graphics-only drawing → use M5GFX (M5.Lcd)."
 msgstr "单独绘图 → 使用 M5GFX。"
 
-#: ../../source/m5ui/index.rst:38 bfaa19ad316b480e92a810226babf69a
+#: ../../source/m5ui/index.rst:55
 msgid "For simple interactive widgets → use M5Widgets."
 msgstr "简单控件交互 → 使用 M5Widgets。"
 
-#: ../../source/m5ui/index.rst:39 fdfb721395a648909e708a7b673087a3
-msgid "For multi-page UI → use M5UI."
-msgstr "多页面 UI → 使用 M5UI。"
+#: ../../source/m5ui/index.rst:56
+msgid "For multi-page UI → use M5UI/LVGL (recommended for new projects)."
+msgstr "多页面 UI → 使用 M5UI/LVGL（新项目推荐）。"
 
-#: ../../source/m5ui/index.rst:42 3ddbbfbc7484424b988afe5489f3b6a4
+#: ../../source/m5ui/index.rst:59
 msgid "Common Mistakes to Avoid"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:43 b236050a18804cc6b83d86bfdc7e6231
+#: ../../source/m5ui/index.rst:60
 msgid ""
 "❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These "
 "methods do not exist in Widgets module"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:44 a34a0fc7e19d4615a65efc72f22e9f7d
+#: ../../source/m5ui/index.rst:61
 msgid ""
 "✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use "
 "M5.Lcd for drawing methods"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:45 808173fb8c524d68ba8666f0eba5416d
+#: ../../source/m5ui/index.rst:62
 msgid ""
 "❌ **WRONG**: Mixing ``M5.Widgets.Rectangle()`` with ``m5ui.M5Page()`` - "
 "Different UI systems, don't mix"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:46 70788de32cf0426c8efdd52397121668
+#: ../../source/m5ui/index.rst:63
 msgid ""
 "✅ **CORRECT**: Use either M5.Widgets OR m5ui consistently, not both "
 "together"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:48 3011c644b812463c81b4c2a2d0fabfce
+#: ../../source/m5ui/index.rst:65
 msgid ""
 "**Key Distinction**: - ``M5.Lcd`` = Drawing methods (fillRect, drawRect, "
 "drawCircle, drawString, etc.) - ``M5.Widgets`` = Simple UI component "
@@ -173,97 +229,97 @@ msgid ""
 "UI framework (M5Label, M5Button, M5Page, M5Chart, etc.)"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:55 b685e354035749d8a16039f9aa820e6d
+#: ../../source/m5ui/index.rst:72
 msgid "Available Fonts"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:57 bb4f70ade78849899c8d5ff28e7f7d46
+#: ../../source/m5ui/index.rst:74
 msgid ""
 "Font availability depends on the board firmware build and the UI API you "
 "use."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:59 1fbe71c20e734b6996627fca82fcbc67
+#: ../../source/m5ui/index.rst:76
 msgid "**LVGL / m5ui widget fonts**"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:61 bb4f70ade78849899c8d5ff28e7f7d46
+#: ../../source/m5ui/index.rst:78
 msgid ""
 "For ``m5ui`` widgets, use LVGL font objects such as "
 "``lv.font_montserrat_*``. Most M5Stack firmware builds include these "
 "Montserrat fonts:"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:64 2c7212e77a36446f93438f3452338e41
+#: ../../source/m5ui/index.rst:81
 msgid "``lv.font_montserrat_12`` - Extra small text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:65 f048e35f303d4a9f9c0fb26e84b07254
+#: ../../source/m5ui/index.rst:82
 msgid "``lv.font_montserrat_14`` - Default font"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:66 f048e35f303d4a9f9c0fb26e84b07254
+#: ../../source/m5ui/index.rst:83
 msgid "``lv.font_montserrat_16`` - Medium text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:67 f048e35f303d4a9f9c0fb26e84b07254
+#: ../../source/m5ui/index.rst:84
 msgid "``lv.font_montserrat_18`` - Medium-large text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:68 3b1eb71d451b429681cb3391c2dfb933
+#: ../../source/m5ui/index.rst:85
 msgid "``lv.font_montserrat_24`` - Large text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:69 3b1eb71d451b429681cb3391c2dfb933
+#: ../../source/m5ui/index.rst:86
 msgid "``lv.font_montserrat_40`` - Extra-large text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:70 3b1eb71d451b429681cb3391c2dfb933
+#: ../../source/m5ui/index.rst:87
 msgid "``lv.font_montserrat_44`` - Extra-large text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:71 3b1eb71d451b429681cb3391c2dfb933
+#: ../../source/m5ui/index.rst:88
 msgid "``lv.font_montserrat_48`` - Extra-large text"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:73 5a4d320e9157434cbac0e20652ceb58f
+#: ../../source/m5ui/index.rst:90
 msgid ""
 "Some builds, such as Tab5, also include ``lv.font_montserrat_20``, "
 "``lv.font_montserrat_22``, ``lv.font_montserrat_30``, and "
 "``lv.font_montserrat_36``."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:77 a4d0fd1aeb1741bbad4a73cdd7475e3e
+#: ../../source/m5ui/index.rst:94
 msgid "**M5.Lcd / Widgets CJK fonts**"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:79 a1b279159c7148ed8e66ec76beadc661
+#: ../../source/m5ui/index.rst:96
 msgid ""
 "For drawing text with ``M5.Lcd`` or widgets based on ``M5.Widgets``, use "
 "``M5.Lcd.FONTS``. Most firmware builds also include these 24 px CJK "
 "fonts:"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:82 a455d0b73aff4f15abbb0b2f28cbf27a
+#: ../../source/m5ui/index.rst:99
 msgid "``M5.Lcd.FONTS.AlibabaPuHuiTiCN24`` - Simplified Chinese"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:83 7092f0cd501b41a1a4a508906c55e5ef
+#: ../../source/m5ui/index.rst:100
 msgid "``M5.Lcd.FONTS.AlibabaSansJA24`` - Japanese"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:84 b21a60555e5f44d08ccba3694b2ab50d
+#: ../../source/m5ui/index.rst:101
 msgid "``M5.Lcd.FONTS.AlibabaSansKR24`` - Korean"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:86 d2df9a6c5ef8419ea1ca495a547b8033
+#: ../../source/m5ui/index.rst:103
 msgid ""
 "The older ``EFontCN24``, ``EFontJA24``, and ``EFontKR24`` names are "
 "deprecated aliases; prefer the ``Alibaba*`` names above. These CJK fonts "
 "may be disabled on small-flash or resource-constrained firmware builds."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:92 e4ab5525b2d1499fa807e323ad73b416
+#: ../../source/m5ui/index.rst:109
 msgid ""
 "Do not assume every font is available on every device. If your code may "
 "run on multiple boards, use common fonts or check availability before "
@@ -271,56 +327,55 @@ msgid ""
 "\"font_montserrat_20\")`` for LVGL fonts."
 msgstr ""
 
-#: ../../source/m5ui/index.rst:97 171bfbfa6a684127bd13c5a67ba6d5b3
+#: ../../source/m5ui/index.rst:114
 msgid "**Font Selection Guide**:"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:99 ce222d7cfdb747a78abe2b4dc0f54aa1
+#: ../../source/m5ui/index.rst:116
 msgid "``m5ui`` labels/buttons/dropdowns -> ``lv.font_montserrat_*``"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:100 77453b8907264cbea9357aee64228673
+#: ../../source/m5ui/index.rst:117
 msgid ""
 "``M5.Lcd.drawString()`` / ``M5.Widgets`` English text -> "
 "``M5.Lcd.FONTS.Montserrat*``"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:101 229c91494e3c4a70970a1c17d148b66f
+#: ../../source/m5ui/index.rst:118
 msgid ""
 "``M5.Lcd.drawString()`` / ``M5.Widgets`` Chinese/Japanese/Korean text -> "
 "``M5.Lcd.FONTS.Alibaba*24``"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:103 b0ed9c1bad2b48629270f68a739316b7
+#: ../../source/m5ui/index.rst:120
 msgid "**Example**:"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:121 1131013a79f64e65bb5c0321a0597c09
+#: ../../source/m5ui/index.rst:138
 msgid "Functions"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:125 ed2a9d2752da4426b2eacd86df9a28dd
+#: ../../source/m5ui/index.rst:142
 msgid ""
 "Initialize the M5UI library. This function must be called before using "
 "any other M5UI functions."
 msgstr "初始化 M5UI 库。使用任何其他 M5UI 函数之前必须调用此函数"
 
-#: ../../source/m5ui/index.rst 696ea72ac53c4a16bfc6f34e02a188be
+#: ../../source/m5ui/index.rst
 msgid "Returns"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:127 ../../source/m5ui/index.rst:134
-#: b9c443ce622b4a90a5e76424919d3dd3
+#: ../../source/m5ui/index.rst:144 ../../source/m5ui/index.rst:151
 msgid "None"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:132 342b8f43387b413a8581d57c1d72d92b
+#: ../../source/m5ui/index.rst:149
 msgid ""
 "Deinitialize the M5UI library. This function should be called when you no"
 " longer need to use M5UI."
 msgstr "取消初始化 M5UI 库。当您不再需要使用 M5UI 时，应调用此函数。"
 
-#: ../../source/m5ui/index.rst:138 cb130401db424154993468220029c4b0
+#: ../../source/m5ui/index.rst:155
 msgid "Classes"
 msgstr "Classes"
 
