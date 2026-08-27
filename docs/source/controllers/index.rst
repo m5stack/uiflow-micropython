@@ -23,4 +23,5 @@ Controllers
     sticks3.rst
     stopwatch.rst
     tab5x.rst
+    toughc5.rst
     unit_c6l.rst

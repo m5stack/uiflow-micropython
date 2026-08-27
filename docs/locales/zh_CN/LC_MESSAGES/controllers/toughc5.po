@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-27 17:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/controllers/toughc5.rst:3
+#: ../../source/refs/controllers.toughc5.ref:1
+msgid "ToughC5"
+msgstr "ToughC5"
+
+#: ../../source/controllers/toughc5.rst:7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/controllers/toughc5.rst:9
+msgid "|ToughC5|"
+msgstr ""
+
+#: ../../source/controllers/toughc5.rst:12
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../source/controllers/toughc5.rst:14
+msgid "The ToughC5 firmware includes the following user-facing packages:"
+msgstr "ToughC5 固件包含以下面向用户的软件包："
+
+#: ../../source/controllers/toughc5.rst:16
+msgid "`M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library."
+msgstr "`M5UI <../m5ui/index.html>`_：``m5ui`` LVGL 组件库。"
+
+#: ../../source/controllers/toughc5.rst:17
+msgid ""
+"`Module <../module/index.html>`_: The ``module`` package for M-BUS "
+"expansion modules."
+msgstr "`Module <../module/index.html>`_：用于 M-BUS 扩展模块的 ``module`` 软件包。"
+
+#: ../../source/controllers/toughc5.rst:18
+msgid ""
+"`Unit <../unit/index.html>`_: The ``unit`` package containing Unit "
+"drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+
+#: ../../source/controllers/toughc5.rst:19
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
+
+#: ../../source/controllers/toughc5.rst:20
+msgid "`Hardware <../hardware/index.html>`_: The ``hardware`` package for "
+"``Speaker``, ``Touch``, ``SDCard``, and ``PWR485``."
+msgstr "`Hardware <../hardware/index.html>`_：用于 ``Speaker``、``Touch``、``SDCard`` 和 ``PWR485`` 的 ``hardware`` 软件包。"
+
+#: ../../source/controllers/toughc5.rst:24
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+#: ../../source/controllers/toughc5.rst:26
+msgid ""
+"The ToughC5 firmware includes the following Montserrat fonts for LVGL and"
+" M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, "
+"``lv.font_montserrat_16``, ``lv.font_montserrat_18``, "
+"``lv.font_montserrat_24``, ``lv.font_montserrat_40``, "
+"``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
+msgstr ""
+"ToughC5 固件为 LVGL 和 M5UI 提供以下 Montserrat "
+"字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_24``、``lv.font_montserrat_40``、``lv.font_montserrat_44``"
+" 和 ``lv.font_montserrat_48``。"
+
+#: ../../source/controllers/toughc5.rst:31
+msgid ""
+"For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, "
+"``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and "
+"Korean text respectively."
+msgstr ""
+"对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 "
+"``AlibabaSansKR24``，分别用于中文、日文和韩文文本。"
+
+#: ../../source/controllers/toughc5.rst:36
+msgid "Board Features"
+msgstr "板载功能"
+
+#: ../../source/controllers/toughc5.rst:38
+msgid "ToughC5 supports the following built-in functions and peripherals:"
+msgstr "ToughC5 支持以下内置功能和外设："
+
+#: ../../source/controllers/toughc5.rst:40
+msgid "ESP32-C5 microcontroller."
+msgstr "ESP32-C5 微控制器。"
+
+#: ../../source/controllers/toughc5.rst:41
+msgid "320 x 240 ILI9342 color LCD output through ``M5.Display``."
+msgstr "通过 ``M5.Display`` 控制 320 x 240 ILI9342 彩色 LCD 输出。"
+
+#: ../../source/controllers/toughc5.rst:42
+msgid "CHSC6540 capacitive touch input through ``M5.Touch``."
+msgstr "通过 ``M5.Touch`` 使用 CHSC6540 电容式触摸输入。"
+
+#: ../../source/controllers/toughc5.rst:43
+msgid "Buzzer tone output through ``M5.Speaker``."
+msgstr "通过 ``M5.Speaker`` 控制蜂鸣器音调输出。"
+
+#: ../../source/controllers/toughc5.rst:44
+msgid "RX8130 real-time clock through ``M5.Rtc``."
+msgstr "通过 ``M5.Rtc`` 使用 RX8130 实时时钟。"
+
+#: ../../source/controllers/toughc5.rst:45
+msgid ""
+"Battery, VBUS, charging, and external output power management through "
+"``M5.Power``."
+msgstr "通过 ``M5.Power`` 管理电池、VBUS、充电和外部输出电源。"
+
+#: ../../source/controllers/toughc5.rst:46
+msgid ""
+"microSD card access through ``hardware.SDCard``. The SD interface uses "
+"SPI pins GPIO9 (SCK), GPIO7 (MOSI), GPIO8 (MISO), and GPIO10 (CS)."
+msgstr ""
+"通过 ``hardware.SDCard`` 访问 microSD 卡。SD 接口使用 SPI 引脚 "
+"GPIO9（SCK）、GPIO7（MOSI）、GPIO8（MISO）和 GPIO10（CS）。"
+
+#: ../../source/controllers/toughc5.rst:48
+msgid ""
+"Port A I2C through ``M5.Ex_I2C``. Port A uses GPIO3 (SCL) and GPIO2 (SDA)"
+" and shares the internal I2C bus."
+msgstr ""
+"通过 ``M5.Ex_I2C`` 使用 Port A I2C。Port A 使用 GPIO3（SCL）和 GPIO2（SDA），并与内部 I2C "
+"总线共享。"
+
+#: ../../source/controllers/toughc5.rst:50
+msgid "Port B GPIO on GPIO1 and GPIO6, and Port C GPIO on GPIO12 and GPIO11."
+msgstr "Port B GPIO 使用 GPIO1 和 GPIO6，Port C GPIO 使用 GPIO12 和 GPIO11。"
+
+#~ msgid "M5Stack ToughC5"
+#~ msgstr "M5Stack ToughC5"
+
+#~ msgid "Power button input through ``M5.BtnPWR``."
+#~ msgstr "通过 ``M5.BtnPWR`` 读取电源按键输入。"
+
