@@ -5,7 +5,7 @@ Index: M5Unified/src/M5Unified.cpp
 @@ -583,6 +583,30 @@ static constexpr const uint8_t _pin_tabl
  #endif
    }
- 
+
 +  void M5Unified::_speaker_tone_cb_toughc5(void* args, float frequency, uint8_t volume)
 +  {
 +#if defined (CONFIG_IDF_TARGET_ESP32C5)
@@ -36,7 +36,7 @@ Index: M5Unified/src/M5Unified.cpp
 @@ -2680,6 +2704,14 @@ static constexpr const uint8_t _pin_tabl
          }
          break;
- 
+
 +#elif defined (CONFIG_IDF_TARGET_ESP32C5)
 +      case board_t::board_M5ToughC5:
 +        if (cfg.internal_spk)
@@ -67,7 +67,7 @@ Index: M5Unified/src/utility/Speaker_Class.cpp
 @@ -1059,6 +1059,57 @@ label_continue_sample:
    }
  #endif
- 
+
 +#if defined (CONFIG_IDF_TARGET_ESP32C5)
 +  void Speaker_Class::external_tone_task(void* args)
 +  {
@@ -155,7 +155,7 @@ Index: M5Unified/src/utility/Speaker_Class.cpp
 +      _external_tone_lock.clear(std::memory_order_release);
  #else
        size_t stack_size = 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
- 
+
 @@ -1149,6 +1220,14 @@ label_continue_sample:
        _external_tone_generation.fetch_add(1, std::memory_order_relaxed);
        _external_tone_lock.clear(std::memory_order_release);
@@ -320,7 +320,7 @@ Index: M5Unified/src/utility/Speaker_Class.hpp
 +#elif defined (CONFIG_IDF_TARGET_ESP32C5)
 +    static void external_tone_task(void* args);
  #endif
- 
+
      esp_err_t _setup_i2s(void);
  #if defined (CONFIG_IDF_TARGET_ESP32C61)
      void _lock_external_tone(void);
