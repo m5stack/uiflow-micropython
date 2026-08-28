@@ -1,13 +1,48 @@
 # AGENTS.md
 
-本目录只负责维护 `uiflow2-coder` skill：生成/同步 skill 的 `docs`、`SKILL.md` 内嵌索引和辅助描述文件。
+本目录负责维护 `uiflow2-coder` 和 `uiflow2-ui-designer` 两个 UIFlow2 skill：
+前者生成/同步官方 API `docs`、`SKILL.md` 内嵌索引和辅助描述文件，后者维护
+面向 UI 设计、动效和视觉审查的规则与参考资料。
 
 ## 目标
 
 - 源头：`D:\git\uiflow_micropython\docs\source` 和 `D:\git\uiflow_micropython\m5stack\libs`。
 - 本地 skill 副本：`D:\git\uiflow_micropython\tools\knowledge-base\uiflow2-coder`。
 - 实际生效 skill：`C:\Users\15515\.agents\skills\uiflow2-coder`。
+- UI 设计 skill 源：`D:\git\uiflow_micropython\tools\knowledge-base\uiflow2-ui-designer`。
+- UI 设计 skill 实际生效目录：`C:\Users\15515\.agents\skills\uiflow2-ui-designer`。
 - 不再保留独立的 `tools\knowledge-base\uiflow2-docs` 中间产物；脚本用临时目录生成后直接同步到 skill。
+
+## UIFlow2 UI Designer 更新
+
+`uiflow2-ui-designer` 是 `uiflow2-coder` 的独立伴生 skill。它不复制官方
+API 文档，不修改 coder 的行为；API 事实继续以 coder 的 `docs/` 和当前仓库
+`m5stack/libs` 为准。设计资料按渐进式参考维护在 `references/`：
+
+- `display-profiles.md`：LCD、小屏、圆屏、EPD、16 x 16 LED Matrix 的分流约束。
+- `visual-system.md`：视觉 token、字体、层级、文本和交互状态。
+- `api-patterns.md`：`m5ui`、`M5.Widgets`、`M5.Lcd` 和 Canvas 的选择。
+- `rendering-strategy.md`：m5ui → m5ui Canvas → Widgets → M5.Lcd Canvas 的能力探测和降级决策。
+- `motion-and-effects.md`：帧率、状态机、局部重绘、双缓冲和内存预算。
+- `layout-recipes.md`：仪表盘、列表、状态页、圆屏、EPD 和 Matrix 版式。
+- `review-checklist.md`：设备、视觉、交互、性能和验证审查清单。
+
+在仓库根目录同步并校验 UI 设计 skill：
+
+```powershell
+python tools\knowledge-base\sync_uiflow2_ui_designer.py
+```
+
+只读验证已安装副本和仓库副本：
+
+```powershell
+python tools\knowledge-base\sync_uiflow2_ui_designer.py --check-only
+```
+
+脚本会先校验仓库副本，再同步到系统目录，检查 UTF-8 无 BOM、Markdown
+相对链接、Python fenced code、官方 `quick_validate.py` 和逐文件字节一致性。
+若已安装副本与仓库副本存在差异，默认拒绝覆盖；确认差异来自旧版本后才使用
+`--force`。同步和校验均不执行烧录、擦除、推送或其他设备操作。
 
 ## 标准更新流程
 
@@ -58,6 +93,8 @@ python -m py_compile tools\knowledge-base\rst2md_en.py tools\knowledge-base\gene
 git diff --check -- tools\knowledge-base
 python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\15515\.agents\skills\uiflow2-coder
 python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_validate.py tools\knowledge-base\uiflow2-coder
+python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_validate.py tools\knowledge-base\uiflow2-ui-designer
+python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\15515\.agents\skills\uiflow2-ui-designer
 ```
 
 还要用 Python 检查：
@@ -66,6 +103,8 @@ python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_
 - 没有 `U+FFFD` replacement character。
 - skill 文档中没有本机绝对路径残留。
 - 系统 skill 和本地副本内容一致。
+- `uiflow2-ui-designer` 仓库副本和系统副本逐文件字节一致。
+- 两个 skill 之间的官方文档相对链接可解析，设计 skill 的 Python fenced code 可解析。
 - 生成质量计数应为 0：`Failed to find`、`<!-- ..`、裸 `:param`/`:returns:`/`:rtype:`、裸 `.. code-block::`、RST 显式链接和裸 `:meth:`/`:class:`/`:ref:` 角色。
 - 低价值 UIFlow/Blockly 残留计数应为 0：`UiFlow2 Code Block:`、`MicroPython Code Block:`、`UiFlow2 Example:`、`.m5f2`。
 
