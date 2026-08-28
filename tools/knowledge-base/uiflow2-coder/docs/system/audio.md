@@ -51,5 +51,3 @@ if __name__ == "__main__":
         except ImportError:
             print("please update to latest firmware")
 ```
-
-## Classes

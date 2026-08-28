@@ -109,9 +109,7 @@ def glass_outline_half_width(y):
 
     if y < neck_top:
         return neck_outline_half_width + (
-            (neck_top - y)
-            * (outer_half_width - neck_outline_half_width)
-            // (neck_top - TOP_Y)
+            (neck_top - y) * (outer_half_width - neck_outline_half_width) // (neck_top - TOP_Y)
         )
     if y <= neck_bottom:
         return neck_outline_half_width

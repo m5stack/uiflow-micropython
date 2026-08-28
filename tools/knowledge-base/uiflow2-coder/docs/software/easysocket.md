@@ -18,5 +18,3 @@ easysocket is a lightweight, non-blocking, event-driven network library designed
 
 - **Robustness**:
   Handles non-blocking errors (like `EAGAIN`) and ensures proper resource cleanup (socket closing, poll unregistering) on disconnection.
-
-## Classes

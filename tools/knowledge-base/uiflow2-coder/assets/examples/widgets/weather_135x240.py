@@ -436,8 +436,7 @@ def loop():
     M5.update()
     now_ms = time.ticks_ms()
     refresh_due = (
-        last_refresh_ms is None
-        or time.ticks_diff(now_ms, last_refresh_ms) >= REFRESH_INTERVAL_MS
+        last_refresh_ms is None or time.ticks_diff(now_ms, last_refresh_ms) >= REFRESH_INTERVAL_MS
     )
     if refresh_requested or refresh_due:
         refresh_requested = False

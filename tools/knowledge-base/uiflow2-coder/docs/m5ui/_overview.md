@@ -134,5 +134,3 @@ value = m5ui.M5Label("123", x=10, y=80, font=optional_font, parent=page0)
     Deinitialize the M5UI library. This function should be called when you no longer need to use M5UI.
 
     - Returns: None
-
-## Classes

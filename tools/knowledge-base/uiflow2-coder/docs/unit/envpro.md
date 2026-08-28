@@ -119,9 +119,3 @@ if __name__ == "__main__":
     Retrieve the calculated altitude based on pressure readings.
 
     `Note`: Altitude is calculated based on the difference between barometric pressure and sea level pressure
-
-## Constants
-
-### `ENVPROUnit.TEMPERATURE`
-### `ENVPROUnit.PRESSURE`
-### `ENVPROUnit.HUMIDITY`

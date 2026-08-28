@@ -4,6 +4,37 @@ Support the following products:
 
     StickS3
 
+## Supported Components
+
+StickS3 supports the following components:
+
+- `Unit`: The `unit` package containing Unit drivers.
+- `Chain`: The `chain` package for Chain devices.
+- `HAT`: The `hat` package for HAT devices.
+- `USB`: The `usb.device` package for HID devices.
+
+## Supported Display Fonts
+
+The StickS3 firmware includes the following Montserrat fonts for LVGL and M5UI:
+`lv.font_montserrat_12`, `lv.font_montserrat_14`, `lv.font_montserrat_16`,
+`lv.font_montserrat_18`, `lv.font_montserrat_24`, `lv.font_montserrat_40`,
+`lv.font_montserrat_44`, and `lv.font_montserrat_48`.
+
+For `M5.Lcd.FONTS`, the firmware also provides `AlibabaPuHuiTiCN24`,
+`AlibabaSansJA24`, and `AlibabaSansKR24` for Chinese, Japanese, and Korean
+text respectively.
+
+## Board Features
+
+StickS3 supports the following built-in functions and connected peripherals:
+
+- Button input and display output.
+- [IMU](../hardware/imu.md) accelerometer and gyroscope readings.
+- Battery, VBUS, charging, and external output power management.
+- [Infrared](../hardware/ir.md) transmit and receive.
+- [Audio](../system/audio.md) recording and playback.
+- [ToF HAT](../hat/tof.md) distance measurement.
+
 ## MicroPython Example
 
 #### Button Control

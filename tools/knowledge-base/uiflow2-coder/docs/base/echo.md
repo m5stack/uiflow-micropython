@@ -333,5 +333,3 @@ Get the PCM buffer.
 ```python
 base_echo.pcm_buffer
 ```
-
-### `deinit`

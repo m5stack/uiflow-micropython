@@ -4,6 +4,37 @@ Support the following products:
 
     StackChan
 
+## Supported Components
+
+StackChan supports the following components:
+
+- `M5UI`: The `m5ui` LVGL component library.
+- `Module`: The `module` package for expansion modules.
+- `Unit`: The `unit` package containing Unit drivers.
+- `USB`: The `usb.device` package for HID devices.
+- [M5Camera](../advanced/camera.md): The frozen `m5camera.py` camera helper.
+- `Chain`: The `chain` package for Chain devices.
+
+## Supported Display Fonts
+
+The StackChan firmware includes the following Montserrat fonts for LVGL and M5UI:
+`lv.font_montserrat_12`, `lv.font_montserrat_14`, `lv.font_montserrat_16`,
+`lv.font_montserrat_18`, `lv.font_montserrat_24`, `lv.font_montserrat_40`,
+`lv.font_montserrat_44`, and `lv.font_montserrat_48`.
+
+For `M5.Lcd.FONTS`, the firmware also provides `AlibabaPuHuiTiCN24`,
+`AlibabaSansJA24`, and `AlibabaSansKR24` for Chinese, Japanese, and Korean
+text respectively.
+
+## Board Features
+
+StackChan supports the following built-in functions and board peripherals:
+
+- Servo head calibration, angle, torque, PWM, and servo power control.
+- RGB strip output, touch input, and battery voltage, current, and power monitoring.
+- [NFC](../unit/nfc.md) tag detection and read/write operations.
+- [Infrared](../hardware/ir.md) transmit and receive.
+
 ## MicroPython Example
 
 #### Servo zero calibration
@@ -795,7 +826,7 @@ if __name__ == "__main__":
 #### NFC
 
 This example demonstrates detecting NFC tags and displaying UID and tag type on screen.
-For the full **NFC Unit** API reference (`detect`, read/write, tag types, etc.), see `NFC Unit <../unit/nfc.html>`__.
+For the full **NFC Unit** API reference (`detect`, read/write, tag types, etc.), see [NFC Unit](../unit/nfc.md)_.
 
 ```python
 import os, sys, io
@@ -1087,7 +1118,7 @@ if __name__ == "__main__":
     - Parameter `i2c` (`int`): `I2C` peripheral id.
     - Parameter `uart` (`int`): `UART` id for the 1 Mbaud servo bus.
 
-    After init, the instance exposes `nfc` (a `unit.nfc.NFCUnit`—see `NFC Unit <../unit/nfc.html>`__ for the complete API), `touch`, `i2c`, and low-level `servo` (`Scscl` instance) for advanced use.
+    After init, the instance exposes `nfc` (a `unit.nfc.NFCUnit`—see [NFC Unit](../unit/nfc.md)_ for the complete API), `touch`, `i2c`, and low-level `servo` (`Scscl` instance) for advanced use.
 
     Module constants include `SERVO_ID_X` (`1`), `SERVO_ID_Y` (`2`) and related limits—also available as class attributes on `StackChan`.
 

@@ -179,9 +179,15 @@ def draw_weather_icon(code, cx, cy, scale, is_day=True, background=COLOR_BACKGRO
             canvas.draw_line(snow_x - 2 * scale, snow_y, snow_x + 2 * scale, snow_y, COLOR_SNOW)
             canvas.draw_line(snow_x, snow_y - 2 * scale, snow_x, snow_y + 2 * scale, COLOR_SNOW)
     elif 95 <= code <= 99:
-        canvas.draw_line(cx + 3 * scale, cy + 4 * scale, cx - 3 * scale, cy + 12 * scale, COLOR_SUN, width=2)
-        canvas.draw_line(cx - 3 * scale, cy + 12 * scale, cx + scale, cy + 12 * scale, COLOR_SUN, width=2)
-        canvas.draw_line(cx + scale, cy + 12 * scale, cx - 4 * scale, cy + 19 * scale, COLOR_SUN, width=2)
+        canvas.draw_line(
+            cx + 3 * scale, cy + 4 * scale, cx - 3 * scale, cy + 12 * scale, COLOR_SUN, width=2
+        )
+        canvas.draw_line(
+            cx - 3 * scale, cy + 12 * scale, cx + scale, cy + 12 * scale, COLOR_SUN, width=2
+        )
+        canvas.draw_line(
+            cx + scale, cy + 12 * scale, cx - 4 * scale, cy + 19 * scale, COLOR_SUN, width=2
+        )
     else:
         for offset in (-8, 0, 8):
             canvas.draw_line(
@@ -299,7 +305,9 @@ def draw_weather(data, offline=False):
             int(round(forecast["low"])),
         )
         text_x = 302 - text_width(temperatures, lv.font_montserrat_14)
-        canvas.draw_label(temperatures, text_x, y + 10, font=lv.font_montserrat_14, color=COLOR_TEXT)
+        canvas.draw_label(
+            temperatures, text_x, y + 10, font=lv.font_montserrat_14, color=COLOR_TEXT
+        )
 
     canvas.end_draw()
 
@@ -481,8 +489,7 @@ def loop():
     M5.update()
     now_ms = time.ticks_ms()
     refresh_due = (
-        last_refresh_ms is None
-        or time.ticks_diff(now_ms, last_refresh_ms) >= REFRESH_INTERVAL_MS
+        last_refresh_ms is None or time.ticks_diff(now_ms, last_refresh_ms) >= REFRESH_INTERVAL_MS
     )
     if refresh_requested or refresh_due:
         refresh_requested = False

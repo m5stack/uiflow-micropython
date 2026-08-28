@@ -79,5 +79,3 @@ if __name__ == "__main__":
         - `1`: Landscape (90°C)
         - `2`: Inverse Portrait (180°C)
         - `3`: Inverse Landscape (270°C)
-
-## Classes

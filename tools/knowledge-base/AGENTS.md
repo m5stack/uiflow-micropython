@@ -66,7 +66,7 @@ python -X utf8 C:\Users\15515\.codex\skills\.system\skill-creator\scripts\quick_
 - 没有 `U+FFFD` replacement character。
 - skill 文档中没有本机绝对路径残留。
 - 系统 skill 和本地副本内容一致。
-- 生成质量计数应为 0：`Failed to find`、`<!-- ..`、裸 `:param`/`:returns:`/`:rtype:`、裸 `.. code-block::`。
+- 生成质量计数应为 0：`Failed to find`、`<!-- ..`、裸 `:param`/`:returns:`/`:rtype:`、裸 `.. code-block::`、RST 显式链接和裸 `:meth:`/`:class:`/`:ref:` 角色。
 - 低价值 UIFlow/Blockly 残留计数应为 0：`UiFlow2 Code Block:`、`MicroPython Code Block:`、`UiFlow2 Example:`、`.m5f2`。
 
 ## Windows 编码注意

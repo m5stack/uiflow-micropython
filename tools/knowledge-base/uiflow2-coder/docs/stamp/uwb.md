@@ -422,6 +422,7 @@ by the methods below.
 ### `uwb.TX_DELAYED`
 
     Start transmission at the time set by
+    `StampUWB.set_delayed_trx_time`.
 
 ### `uwb.RESPONSE_EXPECTED`
 

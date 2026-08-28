@@ -356,6 +356,7 @@ The raw y value.
 The raw z value.
 
 ### `events`
+`events` will return a dictionary with a key for each event type
 that has been enabled.
 
 The possible keys are:
@@ -454,5 +455,3 @@ The measurement range of the sensor.
 The x, y, z offsets as a tuple of raw count values.
 
 See offset_calibration example for usage.
-
-### `offset`

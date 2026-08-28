@@ -1,4 +1,4 @@
-docs/  (350 Markdown files, 22 directories; .md suffix omitted)
+docs/  (356 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -10,8 +10,8 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            stepmotor, tfcard
   - cap/: cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, switch, tof, unit_bus
-  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, dinmeter, dualkey, nesso-n1, paper, stackchan
-                  stamplc, sticks3, stopwatch
+  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, dinmeter, dualkey, nesso-n1, paper
+                  stackchan, stamplc, sticks3, stopwatch, tab5x, toughc5
   - get-started/: _overview
   - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
                sht30, sht4x, speaker, touch, uart, wdt
@@ -22,9 +22,9 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            label, led, line, list, menu, msgbox, page, roller, scale, slider, spinbox, spinner, switch, table, tabview
            textarea, win
   - module/: 4in8out, ain4, asr, audio, bala2, basex, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
-             encoder4_motor, fan, gateway_h2, gnss, goplus2, gps, gpsv2, grbl, hmi, lan, llm, lora, lora868_v12
-             lorawan868, lorawan_rui3, lte, module16340, nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2
-             rs232, servo2, step_motor_driver, usb, zigbee
+             encoder4_motor, faces_calculator3, faces_gamepad3, faces_keyboard3, fan, gateway_h2, gnss, goplus2, gps
+             gpsv2, grbl, hmi, lan, llm, lora, lora868_v12, lorawan868, lorawan_rui3, lte, module16340, nbiot, odrive
+             plus, pm25, pps, pwrcan, qrcode, rca, relay_2, rs232, servo2, step_motor_driver, usb, zigbee
   - quick-reference/: get-started, usb-mode
   - software/: easysocket, modbus, modbus.rtu.master, modbus.rtu.slave, modbus.tcp.client, modbus.tcp.server
                requests2, tcp.client, tcp.server, udp.client, udp.server, umqtt.default, umqtt

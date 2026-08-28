@@ -36,3 +36,5 @@ if card:
     configuration is required.
 
     Except for initialization, this class provides the same reader API as
+    `unit.nfc.NFCUnit`, which documents the shared methods and returned
+    `driver.nfc.Card` object.

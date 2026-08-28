@@ -93,18 +93,22 @@ def rst_heading_to_md(lines: Sequence[str]) -> List[str]:
     return md_lines
 
 
-def parse_ref_file(ref_filename: str) -> Dict[str, str]:
+def parse_ref_file(ref_filename: str) -> Tuple[Dict[str, str], Dict[str, str]]:
     image_map: Dict[str, str] = {}
+    link_map: Dict[str, str] = {}
     ref_path = os.path.join(REFS_DIR, ref_filename)
     if not os.path.exists(ref_path):
-        return image_map
+        return image_map, link_map
 
     with open(ref_path, encoding="utf-8") as f:
         ref_content = f.read()
     pattern = re.compile(r"\.\. \|([^|]+)\| image::\s*([^\n]+)")
     for name, url in pattern.findall(ref_content):
         image_map[name.strip()] = url.strip()
-    return image_map
+    link_pattern = re.compile(r"^\.\. _([^:\s]+):\s*(\S+)\s*$", re.MULTILINE)
+    for name, url in link_pattern.findall(ref_content):
+        link_map[name.strip()] = url.strip()
+    return image_map, link_map
 
 
 def find_python_file(module_path: str) -> Optional[str]:
@@ -377,6 +381,18 @@ def convert_field_list_line(line: str) -> Optional[str]:
 
 
 def convert_inline_rst(text: str) -> str:
+    def replace_explicit_link(match: re.Match[str]) -> str:
+        label = match.group(1).strip()
+        target = match.group(2).strip()
+        target_path, separator, fragment = target.partition("#")
+        if target_path.endswith("/index.html"):
+            return f"`{label}`"
+        if target_path.endswith(".html"):
+            target_path = target_path[:-5] + ".md"
+            target = target_path + (separator + fragment if separator else "")
+        return f"[{label}]({target})"
+
+    text = re.sub(r"`([^`<>]+?)\s*<([^<>]+)>`_", replace_explicit_link, text)
     text = re.sub(r":(?:mod|class|func|meth|attr|data|ref):`([^`]+)`", r"`\1`", text)
     text = re.sub(r"``([^`]+)``", r"`\1`", text)
     return text
@@ -454,7 +470,7 @@ def should_skip_index_rst(rst_text: str) -> bool:
     return len(substantive) < INDEX_MIN_SUBSTANTIVE_CHARS
 
 
-def cleanup_md_text(md_text: str, image_map: Dict[str, str]) -> str:
+def cleanup_md_text(md_text: str, image_map: Dict[str, str], link_map: Dict[str, str]) -> str:
     md_text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", md_text)
     md_text = re.sub(
         r"[\[\]]\s*[^\n\[\]]+\." + IMAGE_EXT_PATTERN + r"\s*[\[\]|]?",
@@ -473,6 +489,8 @@ def cleanup_md_text(md_text: str, image_map: Dict[str, str]) -> str:
         md_text = md_text.replace(f"[{name}]", "")
         md_text = md_text.replace(f"]{name}[", "")
         md_text = md_text.replace(f"]{name}|", "")
+    for name, url in link_map.items():
+        md_text = md_text.replace(f"]({name}_)", f"]({url})")
     md_text = re.sub(r"\|([A-Za-z0-9 _+\-./]+)\|", r"\1", md_text)
     md_text = "".join(ch for ch in md_text if ch in "\n\r\t" or ord(ch) >= 32)
     md_text = remove_non_programming_noise(md_text)
@@ -481,6 +499,10 @@ def cleanup_md_text(md_text: str, image_map: Dict[str, str]) -> str:
     lines = [line.rstrip() for line in md_text.splitlines()]
     while lines and not lines[-1].strip():
         lines.pop()
+    while lines and parse_md_heading(lines[-1]) is not None:
+        lines.pop()
+        while lines and not lines[-1].strip():
+            lines.pop()
     return "\n".join(lines) + "\n"
 
 
@@ -658,6 +680,7 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
     lines = rst_heading_to_md(rst_text.splitlines())
     md: List[str] = []
     image_map: Dict[str, str] = {}
+    link_map: Dict[str, str] = {}
     i = 0
 
     while i < len(lines):
@@ -677,7 +700,9 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
         if stripped.startswith(".. include::"):
             match = re.match(r"\.\. include::\s*([^\s]+)", stripped)
             if match:
-                image_map.update(parse_ref_file(os.path.basename(match.group(1))))
+                included_images, included_links = parse_ref_file(os.path.basename(match.group(1)))
+                image_map.update(included_images)
+                link_map.update(included_links)
             i += 1
             continue
 
@@ -790,6 +815,11 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
             i += 1
             continue
 
+        if re.match(r"^:(?:mod|class|func|meth|attr|data|ref):`", stripped):
+            md.append(convert_inline_rst(line))
+            i += 1
+            continue
+
         if stripped.startswith(":"):
             i += 1
             continue
@@ -818,7 +848,7 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
         md.append(convert_inline_rst(line))
         i += 1
 
-    return cleanup_md_text("\n".join(md), image_map)
+    return cleanup_md_text("\n".join(md), image_map, link_map)
 
 
 def convert_rst_to_md(src_path: str, dst_path: str) -> None:

@@ -16,7 +16,7 @@ Below is the detailed support for Atomic Audio-3.5 Base on the host:
      AtomS3R-CAM      S                    |
      AtomS3R-Ext      S                    |
 
-> Note: Atomic Audio-3.5 Base uses the same Audio CODEC and pin connections as Atomic Echo Base. For detailed usage instructions, please refer to the `Atomic Echo Base <echo.html>`_ documentation.
+> Note: Atomic Audio-3.5 Base uses the same Audio CODEC and pin connections as Atomic Echo Base. For detailed usage instructions, please refer to the [Atomic Echo Base](echo.md) documentation.
 ## MicroPython Example
 
 #### Record and play WAV file
@@ -300,4 +300,4 @@ base_echo.pcm_buffer
 
 ### `deinit`
 
-`AtomicAudio35Base` is an alias for `AtomicEchoBase`. Please refer to the `AtomicEchoBase <echo.html#base.echo.AtomicEchoBase>`_ class for detailed documentation.
+`AtomicAudio35Base` is an alias for `AtomicEchoBase`. Please refer to the [AtomicEchoBase](echo.md#base.echo.AtomicEchoBase) class for detailed documentation.

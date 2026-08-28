@@ -67,4 +67,3 @@ from umqtt.simple import MQTTClient
 # If you want to use the `umqtt.robust` module, go this way.
 from umqtt.robust import MQTTClient
 ```
-## Classes

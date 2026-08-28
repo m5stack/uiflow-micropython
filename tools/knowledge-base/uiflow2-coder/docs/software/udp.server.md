@@ -151,5 +151,3 @@ Send data to the remote server.
 ```python
 udp_server.sendto(b"Hello", ("192.168.1.100", 8080))
 ```
-
-### `setsockopt`

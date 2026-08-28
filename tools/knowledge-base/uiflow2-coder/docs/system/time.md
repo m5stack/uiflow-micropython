@@ -80,7 +80,7 @@ if __name__ == "__main__":
     string of the time zone.
 
     Pass in a time zone string to set the time zone. The value of `tz` can be
-    found at this `link <tz_database_>`_.
+    found at this [link](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### `gmtime([secs])`
               localtime([secs])

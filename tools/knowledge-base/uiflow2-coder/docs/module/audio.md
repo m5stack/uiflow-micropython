@@ -358,5 +358,3 @@ Set the RGB LED brightness.
 ```python
 audio_0.set_brightness(50)
 ```
-
-### `deinit`

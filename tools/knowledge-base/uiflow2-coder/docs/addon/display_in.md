@@ -3,6 +3,7 @@
 `DisplayIn` captures HDMI input from the Display In Add-on (U220) connected
 to Unit PoE-P4 and saves a frame as a JPEG file. It initializes the LT6911
 HDMI receiver when created and releases the capture resources with
+`DisplayIn.deinit`.
 
 The current capture format is `1280x720`. Connect an HDMI source before
 calling `DisplayIn.capture`.

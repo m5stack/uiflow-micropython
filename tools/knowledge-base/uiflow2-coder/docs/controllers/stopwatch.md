@@ -4,6 +4,34 @@ Support the following products:
 
     StopWatch
 
+## Supported Components
+
+StopWatch supports the following components:
+
+- `M5UI`: The `m5ui` LVGL component library.
+- `Unit`: The `unit` package containing Unit drivers.
+- `Chain`: The `chain` package for Chain devices.
+
+## Supported Display Fonts
+
+The StopWatch firmware includes the following Montserrat fonts for LVGL and M5UI:
+`lv.font_montserrat_12`, `lv.font_montserrat_14`, `lv.font_montserrat_16`,
+`lv.font_montserrat_18`, `lv.font_montserrat_24`, `lv.font_montserrat_40`,
+`lv.font_montserrat_44`, and `lv.font_montserrat_48`.
+
+For `M5.Lcd.FONTS`, the firmware also provides `AlibabaPuHuiTiCN24`,
+`AlibabaSansJA24`, and `AlibabaSansKR24` for Chinese, Japanese, and Korean
+text respectively.
+
+## Board Features
+
+StopWatch supports the following built-in functions and peripherals:
+
+- [RTC](../unit/rtc.md) date and time display and adjustment.
+- Button input and round-display output.
+- USB, battery, and Grove voltage monitoring with charging and external-output control.
+- [Audio](../system/audio.md) recording and playback.
+
 ## MicroPython Example
 
 #### RTC Clock

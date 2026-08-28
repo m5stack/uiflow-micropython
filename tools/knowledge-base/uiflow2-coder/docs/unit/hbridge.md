@@ -195,11 +195,3 @@ get firmware version and i2c address.
 ```python
 unit_hbridge_0.get_device_status(mode)
 ```
-
-### `write_mem_list`
-
-### `read_reg`
-
-### `map`
-
-### `deinit`
