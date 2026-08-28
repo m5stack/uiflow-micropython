@@ -33,10 +33,15 @@ Index: M5Unified/src/M5Unified.cpp
    bool M5Unified::_speaker_enabled_cb_cores3(void* args, bool enabled)
    {
      (void)args;
-@@ -2680,6 +2704,14 @@ static constexpr const uint8_t _pin_tabl
+@@ -2843,16 +2867,23 @@ static constexpr const uint8_t _pin_tabl
+ #if defined (M5UNIFIED_PC_BUILD)
+ #elif defined (CONFIG_IDF_TARGET_ESP32C61)
+       case board_t::board_M5CoreMatrix:
+         if (cfg.internal_spk)
+         {
+           spk_tone_cb = _speaker_tone_cb_corematrix;
          }
          break;
-
 +#elif defined (CONFIG_IDF_TARGET_ESP32C5)
 +      case board_t::board_M5ToughC5:
 +        if (cfg.internal_spk)
@@ -44,10 +49,14 @@ Index: M5Unified/src/M5Unified.cpp
 +          spk_tone_cb = _speaker_tone_cb_toughc5;
 +        }
 +        break;
-+
- #elif defined (CONFIG_IDF_TARGET_ESP32P4)
-       case board_t::board_M5Tab5:
-       case board_t::board_M5Tab5X:
+ #elif defined (CONFIG_IDF_TARGET_ESP32C6)
+       case board_t::board_M5UnitC6L:
+       case board_t::board_ArduinoNessoN1:
+         if (cfg.internal_spk)
+         {
+           spk_cfg.pin_data_out = GPIO_NUM_11;
+           spk_cfg.buzzer = true;
+           spk_cfg.magnification = 48;
 Index: M5Unified/src/M5Unified.hpp
 ===================================================================
 --- M5Unified.orig/src/M5Unified.hpp
