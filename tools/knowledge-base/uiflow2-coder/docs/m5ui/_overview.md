@@ -83,6 +83,16 @@ Some builds, such as Tab5, also include `lv.font_montserrat_20`,
 `lv.font_montserrat_22`, `lv.font_montserrat_30`, and
 `lv.font_montserrat_36`.
 
+Most firmware builds with CJK font support also expose these 24 px LVGL font
+objects for `m5ui` widgets:
+
+- `lv.AlibabaPuHuiTi_CN24` - Simplified Chinese
+- `lv.AlibabaSans_JP24` - Japanese
+- `lv.AlibabaSans_KR24` - Korean
+
+The LVGL and `M5.Lcd.FONTS` object names are different. Use the spelling
+shown for the UI API you are using.
+
 **M5.Lcd / Widgets CJK fonts**
 
 For drawing text with `M5.Lcd` or widgets based on `M5.Widgets`, use
@@ -92,17 +102,14 @@ For drawing text with `M5.Lcd` or widgets based on `M5.Widgets`, use
 - `M5.Lcd.FONTS.AlibabaSansJA24` - Japanese
 - `M5.Lcd.FONTS.AlibabaSansKR24` - Korean
 
-The older `EFontCN24`, `EFontJA24`, and `EFontKR24` names are deprecated
-aliases; prefer the `Alibaba*` names above. These CJK fonts may be disabled on
-small-flash or resource-constrained firmware builds.
-
-> Important: Do not assume every font is available on every device. If your code may run
-> on multiple boards, use common fonts or check availability before using an
-> optional size/font, for example `hasattr(lv, "font_montserrat_20")` for
-> LVGL fonts.
+> Important: Check the target controller's documentation for its supported fonts before
+> selecting a font. If the documentation does not provide this information,
+> check availability at runtime, for example with
+> `hasattr(lv, "font_montserrat_20")`.
 **Font Selection Guide**:
 
 - `m5ui` labels/buttons/dropdowns -> `lv.font_montserrat_*`
+- `m5ui` widgets with CJK text -> `lv.Alibaba*24`
 - `M5.Lcd.drawString()` / `M5.Widgets` English text -> `M5.Lcd.FONTS.Montserrat*`
 - `M5.Lcd.drawString()` / `M5.Widgets` Chinese/Japanese/Korean text -> `M5.Lcd.FONTS.Alibaba*24`
 

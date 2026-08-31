@@ -50,9 +50,13 @@ COLOR_ERROR = 0xE9675A
 字体能力见 [m5ui overview](../../uiflow2-coder/docs/m5ui/_overview.md)。
 
 - 一屏使用 2 到 3 个字号层级：主值、标题/操作、正文/辅助。不要让每段文字都有独立字号。
-- m5ui 使用 `lv.font_montserrat_*`；`M5.Lcd` 和 Widgets 使用 `M5.Lcd.FONTS`。两类字体对象不能互换。
-- 可选 LVGL 字体用 `hasattr(lv, "font_montserrat_20")` 等方式检查，并提供常见字号回退。
-- CJK 文本使用文档确认存在的 `M5.Lcd.FONTS.Alibaba*24`，并考虑小 flash 固件不包含这些字体。
+- m5ui 的拉丁文字使用 `lv.font_montserrat_*`；m5ui 的 CJK 文字分别使用
+  `lv.AlibabaPuHuiTi_CN24`、`lv.AlibabaSans_JP24`、`lv.AlibabaSans_KR24`。
+- `M5.Lcd` 和 `M5.Widgets` 使用 `M5.Lcd.FONTS`，对应 CJK 名称是
+  `AlibabaPuHuiTiCN24`、`AlibabaSansJA24`、`AlibabaSansKR24`。LVGL 与
+  `M5.Lcd.FONTS` 的对象名和类型不同，不能互换。
+- 先查目标控制器文档；文档未说明时，用 `hasattr()` 检查完整且精确的字体名，
+  例如 `hasattr(lv, "AlibabaPuHuiTi_CN24")`，并提供已确认存在的字体回退。
 - 数字与单位分层：数字更大，单位更小且靠近基线；先测量数字宽度再定位单位。
 - 动态文本区域预留最长合理值。超出时使用换行、省略、裁切或滚动，不缩放整个页面。
 
