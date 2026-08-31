@@ -21,11 +21,13 @@ API 文档，不修改 coder 的行为；API 事实继续以 coder 的 `docs/` �
 
 - `display-profiles.md`：LCD、小屏、圆屏、EPD、16 x 16 LED Matrix 的分流约束。
 - `visual-system.md`：视觉 token、字体、层级、文本和交互状态。
+- `design-directions.md`：六类 UIFlow2 风格方向、布局变体和 anti-sameness 规则。
 - `api-patterns.md`：`m5ui`、`M5.Widgets`、`M5.Lcd` 和 Canvas 的选择。
 - `rendering-strategy.md`：m5ui → m5ui Canvas → Widgets → M5.Lcd Canvas 的能力探测和降级决策。
 - `motion-and-effects.md`：帧率、状态机、局部重绘、双缓冲和内存预算。
 - `layout-recipes.md`：仪表盘、列表、状态页、圆屏、EPD 和 Matrix 版式。
 - `review-checklist.md`：设备、视觉、交互、性能和验证审查清单。
+- `visual-quality-gate.md`：渲染证据等级、产品级视觉完成度和拒绝条件。
 
 在仓库根目录同步并校验 UI 设计 skill：
 
@@ -43,6 +45,10 @@ python tools\knowledge-base\sync_uiflow2_ui_designer.py --check-only
 相对链接、Python fenced code、官方 `quick_validate.py` 和逐文件字节一致性。
 若已安装副本与仓库副本存在差异，默认拒绝覆盖；确认差异来自旧版本后才使用
 `--force`。同步和校验均不执行烧录、擦除、推送或其他设备操作。
+
+维护设计 skill 时只吸收与 UIFlow2 相容的设计原则。不得复制其他 Designer 的
+MCP 工作流、项目格式、组件 schema、demo 或未在当前 `m5ui` 文档/源码中存在的
+组件。风格参考必须改写为 UIFlow2 的控件、显示 profile、字体和资源边界。
 
 ## 标准更新流程
 

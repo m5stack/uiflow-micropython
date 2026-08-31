@@ -13,6 +13,43 @@
 
 具体控件先读 [m5ui overview](../../uiflow2-coder/docs/m5ui/_overview.md) 和对应文档，例如 [button](../../uiflow2-coder/docs/m5ui/button.md)、[label](../../uiflow2-coder/docs/m5ui/label.md)、[canvas](../../uiflow2-coder/docs/m5ui/canvas.md)、[chart](../../uiflow2-coder/docs/m5ui/chart.md)。
 
+## 语义组件优先
+
+不要用标签和 Canvas 仿造已有控件。先按意图选择当前 m5ui 实际提供的组件，再读
+对应文档确认构造参数、事件和样式。
+
+| 意图 | 首选组件 |
+| --- | --- |
+| 标题、说明、只读短文字 | `M5Label` |
+| 点击动作 | `M5Button` |
+| 开/关 | `M5Switch` |
+| 带勾选的布尔项 | `M5Checkbox` |
+| 线性进度或非交互水平值 | `M5Bar` |
+| 连续数值调节 | `M5Slider` |
+| 精确步进数值 | `M5Spinbox` |
+| 折叠选项或滚轮选项 | `M5Dropdown` / `M5Roller` |
+| 无刻度环形值 | `M5Arc` |
+| 带刻度、标签的仪表 | `M5Scale` |
+| 趋势和序列数据 | `M5Chart` |
+| 简单状态灯或加载 | `M5LED` / `M5Spinner` |
+| 简单统一行、表格、日期 | `M5List` / `M5Table` / `M5Calendar` |
+| 页面导航和分区 | `M5TabView` / `M5Menu` / `M5Win` |
+| 对话与错误确认 | `M5Msgbox` |
+| 编辑文字 | `M5TextArea` + 需要时的 `M5Keyboard` |
+| 图片 | `M5Image` |
+| 自定义图形或专用控件无法表达的动画 | `M5Canvas` |
+
+- `M5Label` 是静态/只读文字和数值的兜底，不是默认的“万能组件”。按钮使用 `M5Button` 的
+  `text`/`set_btn_text()`，不要再叠一个 label 模拟按钮标题。
+- 带刻度速度表、温度表和压力表优先 `M5Scale`；只有不需要刻度/标签的环形进度才
+  使用 `M5Arc`。
+- `M5List` 适合 `add_text()`/`add_button()` 能表达的简单统一行。需要副标题、
+  右侧开关、多个字段或不同行高时，不要假设存在 `M5Obj`：先查当前源码能否安全
+  使用原生 `lv.obj`，否则改用已文档化的 table/menu/tab/page 结构，或用 Canvas
+  画背景并把实际可交互控件放在上层。
+- 自定义外观不能牺牲语义。Canvas 画出的“按钮”若需要点击，必须配合真实可点击
+  控件或经过官方文档确认的触摸处理，不能只有视觉形状。
+
 ## M5.Widgets 的真实边界
 
 `M5.Widgets` 不是另一套高级布局引擎。当前仓库的 `M5.Widgets` C 绑定
@@ -66,6 +103,19 @@ button.set_style_text_color(lv.color_hex(COLOR_TEXT), lv.PART.MAIN)
 - 圆角和边框在同一页面保持少量档位，避免每个控件一个半径。
 - 过渡用于 pressed/selected 等离散状态，不用于每帧写入动画属性。
 - 控件需要 `parent=page0` 时必须显式传递；否则页面切换后可能不可见。
+
+## Part、State 与默认样式
+
+- 先设置页面背景，再检查每个可见控件的构造默认色。当前源码中 button/bar/list/
+  chart/checkbox/canvas 等带有蓝、白或浅灰默认值，主题页不能只改 page。
+- 样式只能作用于当前控件文档或源码确认的 part/state。`lv.PART.MAIN`、
+  `INDICATOR`、`KNOB`、`ITEMS`、`TICKS` 不是所有组件都支持的通用集合。
+- normal、pressed、checked、selected、focused、disabled 分别核对。不要为了按压
+  反馈改变组件宽高并引发布局位移。
+- `M5Arc`、`M5Scale`、`M5Spinner` 和透明 label/canvas 等叠加元素要检查背板是否
+  与父级协调；透明度和背景 API 必须来自当前版本事实。
+- 普通 page、dashboard、header、footer 和静态分组不应意外滚动。只有在当前源码/
+  文档确认 `SCROLLABLE` flag 或 scrollbar part 的情况下修改滚动行为。
 
 ## M5Canvas 图形组合
 

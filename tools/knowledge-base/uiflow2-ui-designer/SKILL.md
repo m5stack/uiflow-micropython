@@ -15,38 +15,49 @@ description: Design, generate, beautify, optimize, or review UIFlow2 interfaces,
 - 一个界面只选一个主要渲染体系。默认按能力阶梯选择：`m5ui` 原生控件 → 同一 LVGL 页上的 `m5ui.M5Canvas` → `M5.Widgets` → `M5.Lcd`/`M5.Display` + M5GFX Canvas。不要因为熟悉底层接口就跳过上层方案。
 - 写代码前读取相邻 coder skill 的官方资料。常用入口是 [m5ui overview](../uiflow2-coder/docs/m5ui/_overview.md)、[display](../uiflow2-coder/docs/hardware/display.md) 和 [Widgets overview](../uiflow2-coder/docs/widgets/_overview.md)。
 - API、字体、控件参数或板卡支持范围无法从官方资料确认时，不要猜测。若相邻 coder skill 不存在，在仓库环境读取 `docs/source` 和 `m5stack/libs`；否则报告缺少依赖。
+- 新建、重设计或美化可见界面时，先选择一个主视觉方向；风格用于指导层级、布局、色彩和控件状态，不是固定模板。
+- 优先使用能表达交互语义的 m5ui 控件。`M5Label` 只用于没有专用组件的静态/
+  只读文字或数值，`M5Canvas` 只用于专用控件不能表达的自定义图形，不能用松散
+  标签和图元仿造已有控件。
 - `M5.update()` 必须持续执行。动画和传感器更新使用有界帧率、`time.ticks_ms()` 和 `time.ticks_diff()`，不阻塞事件处理。
-- 不能仅凭代码或串口结果声称视觉 PASS。没有新鲜相机画面或人工实机观察时，视觉结果标记为 `NOT RUN` 或 `PARTIAL`。
+- 可见 UI 不能因为代码能运行就视为完成；如果仍像默认控件拼装、存在不协调背景、溢出或弱层级，继续优化。
+- 不能仅凭代码或串口结果声称视觉 PASS。没有模拟器截图、新鲜相机画面或人工实机观察时，视觉结果标记为 `NOT RUN` 或 `PARTIAL`。
 
 ## 工作流
 
-1. 建立显示档案：板卡、旋转后尺寸、矩形/圆形、LCD/EPD/LED matrix、触摸/按键、可用 RAM/PSRAM 和语言字体。
-2. 按 [rendering-strategy.md](references/rendering-strategy.md) 探测并选择渲染体系：
+1. 建立显示和内容档案：板卡、旋转后尺寸、屏幕形状/类型、输入方式、RAM/PSRAM、语言字体、主任务、信息优先级和最长动态内容。
+2. 新建、重设计或美化界面时，按 [design-directions.md](references/design-directions.md) 选择一个主视觉方向和布局变体；只有确有帮助时再加一个次要影响。
+3. 按 [api-patterns.md](references/api-patterns.md) 选择语义组件，再按 [rendering-strategy.md](references/rendering-strategy.md) 探测渲染体系：
    - 有 `lvgl`、`m5ui.M5Page` 和所需控件时，优先用 m5ui 原生控件。
    - 需要自定义图形、图标、仪表或动画时，先在 m5ui 页面上使用 `m5ui.M5Canvas`；用 `begin_draw()`/`end_draw()` 或双 Canvas 组织整帧。
    - m5ui 缺失、目标固件未冻结 LVGL 或资源预算不允许时，再用 `M5.Widgets` 的轻量组件；它没有 LVGL 的布局、样式和事件体系。
    - 只有上述方案不可用，或目标是极简/像素级绘图时才使用 `M5.Lcd`/`M5.Display`。多步绘制必须使用复用的 `M5.Lcd.newCanvas()`，不能直接逐笔画到屏幕。
-3. 定义一个清晰的视觉方向和最小 token 集：背景、表面、主色、文本、弱文本、状态色、间距、圆角、边框和字体层级。
-4. 先规划静态布局、文本溢出和 normal/pressed/disabled/loading/empty/error/offline 状态，再添加有意义的动效。
-5. 读取所需参考资料和官方 API 文档，生成或优化代码。优先复用对象、buffer 和布局计算，不在循环中创建页面或大对象。
-6. 自查 API、刷新范围、帧率、内存、输入反馈和退化路径，并给出可观察的设备验收步骤。
+4. 定义最小 token 集和页面结构：背景、表面、主/辅强调色、文本、状态色、间距、圆角、边框、字体层级、主视觉中心和操作区。
+5. 在写代码前规划最长文字、normal/pressed/focused/selected/disabled 状态，以及 loading/empty/error/offline/success 页面状态。
+6. 读取所需官方 API 文档后生成或优化代码；显式协调页面与可见控件背景、已验证的 part/state、滚动行为和触摸命中区。
+7. 审计交互与动效：每个看起来可操作的控件必须有回调或明确禁用；每个动画必须有触发条件、目标、持续时间、结束条件和性能预算。
+8. 按 [visual-quality-gate.md](references/visual-quality-gate.md) 检查渲染结果并迭代；没有渲染证据时完成静态审查，但保持 `NOT RUN`/`PARTIAL`。
 
 ## 参考资料路由
 
 - 每个任务先读 [display-profiles.md](references/display-profiles.md) 和 [visual-system.md](references/visual-system.md)。
+- 新建页面、整页重设计、美化或明显改风格时读 [design-directions.md](references/design-directions.md)。
 - 选择控件和图形能力时读 [api-patterns.md](references/api-patterns.md)。
 - 涉及动画、转场、粒子、传感器驱动效果或闪烁时读 [motion-and-effects.md](references/motion-and-effects.md)。
 - 需要常见页面结构或特殊显示形态时读 [layout-recipes.md](references/layout-recipes.md)。
 - 审查或重写现有界面，以及交付前终检时读 [review-checklist.md](references/review-checklist.md)。
+- 任何可见 UI 交付前读 [visual-quality-gate.md](references/visual-quality-gate.md)；有渲染画面时必须按门禁检查并修正。
 
 ## 设计结果要求
 
 - 层级一眼可辨：每屏一个主任务、一个主视觉焦点，次要信息明显降级。
 - 坐标来自屏幕尺寸、边距、网格和文本测量，不靠大量无规律 magic numbers。
 - 文本在真实字体下测量；长内容有换行、裁切、省略或滚动策略，不能覆盖相邻元素。
+- 专用控件优先于标签或 Canvas 仿造；控件外观、状态和行为必须一致。
 - 颜色不作为唯一状态信号；关键状态同时使用文字、图形、亮度、轮廓或运动变化。
 - 交互控件有稳定尺寸和按压反馈；动画只解释状态变化，不持续抢占注意力。
 - 静态元素只绘制一次；动态区域优先使用 LVGL 局部刷新或复用的离屏 Canvas。直接调用底层绘图时要证明不会暴露中间帧。
+- 页面、控件及其可见 part/state 背景协调；不得遗留默认白块、默认蓝色或意外滚动条。
 - 界面要有一个与用途匹配的设计概念，但装饰不能牺牲信息密度、可读性、功耗或帧率。
 
 ## 禁止清单

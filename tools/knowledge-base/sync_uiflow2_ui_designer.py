@@ -22,11 +22,13 @@ SKILL_NAME = "uiflow2-ui-designer"
 REQUIRED_REFERENCES = (
     "display-profiles.md",
     "visual-system.md",
+    "design-directions.md",
     "api-patterns.md",
     "rendering-strategy.md",
     "motion-and-effects.md",
     "layout-recipes.md",
     "review-checklist.md",
+    "visual-quality-gate.md",
 )
 BACKTICKS = chr(96) * 3
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
