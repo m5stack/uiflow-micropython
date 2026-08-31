@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-27 10:38+0800\n"
+"POT-Creation-Date: 2026-08-31 11:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -231,17 +231,17 @@ msgstr ""
 
 #: ../../source/m5ui/index.rst:72
 msgid "Available Fonts"
-msgstr ""
+msgstr "可用字体"
 
 #: ../../source/m5ui/index.rst:74
 msgid ""
 "Font availability depends on the board firmware build and the UI API you "
 "use."
-msgstr ""
+msgstr "字体是否可用取决于开发板固件构建以及所使用的 UI API。"
 
 #: ../../source/m5ui/index.rst:76
 msgid "**LVGL / m5ui widget fonts**"
-msgstr ""
+msgstr "**LVGL / m5ui 控件字体**"
 
 #: ../../source/m5ui/index.rst:78
 msgid ""
@@ -249,38 +249,40 @@ msgid ""
 "``lv.font_montserrat_*``. Most M5Stack firmware builds include these "
 "Montserrat fonts:"
 msgstr ""
+"对于 ``m5ui`` 控件，请使用 ``lv.font_montserrat_*`` 等 LVGL 字体对象。"
+"大多数 M5Stack 固件构建都包含以下 Montserrat 字体："
 
 #: ../../source/m5ui/index.rst:81
 msgid "``lv.font_montserrat_12`` - Extra small text"
-msgstr ""
+msgstr "``lv.font_montserrat_12`` - 超小文本"
 
 #: ../../source/m5ui/index.rst:82
 msgid "``lv.font_montserrat_14`` - Default font"
-msgstr ""
+msgstr "``lv.font_montserrat_14`` - 默认字体"
 
 #: ../../source/m5ui/index.rst:83
 msgid "``lv.font_montserrat_16`` - Medium text"
-msgstr ""
+msgstr "``lv.font_montserrat_16`` - 中等文本"
 
 #: ../../source/m5ui/index.rst:84
 msgid "``lv.font_montserrat_18`` - Medium-large text"
-msgstr ""
+msgstr "``lv.font_montserrat_18`` - 中大文本"
 
 #: ../../source/m5ui/index.rst:85
 msgid "``lv.font_montserrat_24`` - Large text"
-msgstr ""
+msgstr "``lv.font_montserrat_24`` - 大文本"
 
 #: ../../source/m5ui/index.rst:86
 msgid "``lv.font_montserrat_40`` - Extra-large text"
-msgstr ""
+msgstr "``lv.font_montserrat_40`` - 超大文本"
 
 #: ../../source/m5ui/index.rst:87
 msgid "``lv.font_montserrat_44`` - Extra-large text"
-msgstr ""
+msgstr "``lv.font_montserrat_44`` - 超大文本"
 
 #: ../../source/m5ui/index.rst:88
 msgid "``lv.font_montserrat_48`` - Extra-large text"
-msgstr ""
+msgstr "``lv.font_montserrat_48`` - 超大文本"
 
 #: ../../source/m5ui/index.rst:90
 msgid ""
@@ -288,74 +290,110 @@ msgid ""
 "``lv.font_montserrat_22``, ``lv.font_montserrat_30``, and "
 "``lv.font_montserrat_36``."
 msgstr ""
+"部分固件构建（例如 Tab5）还包含 ``lv.font_montserrat_20``、"
+"``lv.font_montserrat_22``、``lv.font_montserrat_30`` 和 "
+"``lv.font_montserrat_36``。"
 
 #: ../../source/m5ui/index.rst:94
-msgid "**M5.Lcd / Widgets CJK fonts**"
+msgid ""
+"Most firmware builds with CJK font support also expose these 24 px LVGL "
+"font objects for ``m5ui`` widgets:"
 msgstr ""
+"大多数启用 CJK 字体支持的固件构建还会为 ``m5ui`` 控件提供以下 24 px "
+"LVGL 字体对象："
 
-#: ../../source/m5ui/index.rst:96
+#: ../../source/m5ui/index.rst:97
+msgid "``lv.AlibabaPuHuiTi_CN24`` - Simplified Chinese"
+msgstr "``lv.AlibabaPuHuiTi_CN24`` - 简体中文"
+
+#: ../../source/m5ui/index.rst:98
+msgid "``lv.AlibabaSans_JP24`` - Japanese"
+msgstr "``lv.AlibabaSans_JP24`` - 日文"
+
+#: ../../source/m5ui/index.rst:99
+msgid "``lv.AlibabaSans_KR24`` - Korean"
+msgstr "``lv.AlibabaSans_KR24`` - 韩文"
+
+#: ../../source/m5ui/index.rst:101
+msgid ""
+"The LVGL and ``M5.Lcd.FONTS`` object names are different. Use the "
+"spelling shown for the UI API you are using."
+msgstr ""
+"LVGL 与 ``M5.Lcd.FONTS`` 使用不同的对象名称。请根据所使用的 UI API "
+"采用上面对应的拼写。"
+
+#: ../../source/m5ui/index.rst:104
+msgid "**M5.Lcd / Widgets CJK fonts**"
+msgstr "**M5.Lcd / Widgets CJK 字体**"
+
+#: ../../source/m5ui/index.rst:106
 msgid ""
 "For drawing text with ``M5.Lcd`` or widgets based on ``M5.Widgets``, use "
 "``M5.Lcd.FONTS``. Most firmware builds also include these 24 px CJK "
 "fonts:"
 msgstr ""
-
-#: ../../source/m5ui/index.rst:99
-msgid "``M5.Lcd.FONTS.AlibabaPuHuiTiCN24`` - Simplified Chinese"
-msgstr ""
-
-#: ../../source/m5ui/index.rst:100
-msgid "``M5.Lcd.FONTS.AlibabaSansJA24`` - Japanese"
-msgstr ""
-
-#: ../../source/m5ui/index.rst:101
-msgid "``M5.Lcd.FONTS.AlibabaSansKR24`` - Korean"
-msgstr ""
-
-#: ../../source/m5ui/index.rst:103
-msgid ""
-"The older ``EFontCN24``, ``EFontJA24``, and ``EFontKR24`` names are "
-"deprecated aliases; prefer the ``Alibaba*`` names above. These CJK fonts "
-"may be disabled on small-flash or resource-constrained firmware builds."
-msgstr ""
+"使用 ``M5.Lcd`` 绘制文本或使用基于 ``M5.Widgets`` 的控件时，请使用 "
+"``M5.Lcd.FONTS``。大多数固件构建还包含以下 24 px CJK 字体："
 
 #: ../../source/m5ui/index.rst:109
+msgid "``M5.Lcd.FONTS.AlibabaPuHuiTiCN24`` - Simplified Chinese"
+msgstr "``M5.Lcd.FONTS.AlibabaPuHuiTiCN24`` - 简体中文"
+
+#: ../../source/m5ui/index.rst:110
+msgid "``M5.Lcd.FONTS.AlibabaSansJA24`` - Japanese"
+msgstr "``M5.Lcd.FONTS.AlibabaSansJA24`` - 日文"
+
+#: ../../source/m5ui/index.rst:111
+msgid "``M5.Lcd.FONTS.AlibabaSansKR24`` - Korean"
+msgstr "``M5.Lcd.FONTS.AlibabaSansKR24`` - 韩文"
+
+#: ../../source/m5ui/index.rst:119
 msgid ""
-"Do not assume every font is available on every device. If your code may "
-"run on multiple boards, use common fonts or check availability before "
-"using an optional size/font, for example ``hasattr(lv, "
-"\"font_montserrat_20\")`` for LVGL fonts."
+"Check the target controller's documentation for its supported fonts before "
+"selecting a font. If the documentation does not provide this information, "
+"check availability at runtime, for example with ``hasattr(lv, "
+"\"font_montserrat_20\")``."
 msgstr ""
+"选择字体前，请先查阅目标主机文档中的支持字体列表。如果文档未提供相关信息，可在"
+"运行时检查字体是否可用，例如使用 ``hasattr(lv, \"font_montserrat_20\")``。"
 
-#: ../../source/m5ui/index.rst:114
+#: ../../source/m5ui/index.rst:124
 msgid "**Font Selection Guide**:"
-msgstr ""
+msgstr "**字体选择指南**："
 
-#: ../../source/m5ui/index.rst:116
+#: ../../source/m5ui/index.rst:126
 msgid "``m5ui`` labels/buttons/dropdowns -> ``lv.font_montserrat_*``"
-msgstr ""
+msgstr "``m5ui`` 标签/按钮/下拉列表 -> ``lv.font_montserrat_*``"
 
-#: ../../source/m5ui/index.rst:117
+#: ../../source/m5ui/index.rst:127
+msgid "``m5ui`` widgets with CJK text -> ``lv.Alibaba*24``"
+msgstr "``m5ui`` 中显示 CJK 文本的控件 -> ``lv.Alibaba*24``"
+
+#: ../../source/m5ui/index.rst:128
 msgid ""
 "``M5.Lcd.drawString()`` / ``M5.Widgets`` English text -> "
 "``M5.Lcd.FONTS.Montserrat*``"
 msgstr ""
+"``M5.Lcd.drawString()`` / ``M5.Widgets`` 英文文本 -> "
+"``M5.Lcd.FONTS.Montserrat*``"
 
-#: ../../source/m5ui/index.rst:118
+#: ../../source/m5ui/index.rst:129
 msgid ""
 "``M5.Lcd.drawString()`` / ``M5.Widgets`` Chinese/Japanese/Korean text -> "
 "``M5.Lcd.FONTS.Alibaba*24``"
 msgstr ""
+"``M5.Lcd.drawString()`` / ``M5.Widgets`` 中文/日文/韩文文本 -> "
+"``M5.Lcd.FONTS.Alibaba*24``"
 
-#: ../../source/m5ui/index.rst:120
+#: ../../source/m5ui/index.rst:131
 msgid "**Example**:"
-msgstr ""
+msgstr "**示例**："
 
-#: ../../source/m5ui/index.rst:138
+#: ../../source/m5ui/index.rst:149
 msgid "Functions"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:142
+#: ../../source/m5ui/index.rst:153
 msgid ""
 "Initialize the M5UI library. This function must be called before using "
 "any other M5UI functions."
@@ -365,17 +403,17 @@ msgstr "初始化 M5UI 库。使用任何其他 M5UI 函数之前必须调用此
 msgid "Returns"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:144 ../../source/m5ui/index.rst:151
+#: ../../source/m5ui/index.rst:155 ../../source/m5ui/index.rst:162
 msgid "None"
 msgstr ""
 
-#: ../../source/m5ui/index.rst:149
+#: ../../source/m5ui/index.rst:160
 msgid ""
 "Deinitialize the M5UI library. This function should be called when you no"
 " longer need to use M5UI."
 msgstr "取消初始化 M5UI 库。当您不再需要使用 M5UI 时，应调用此函数。"
 
-#: ../../source/m5ui/index.rst:155
+#: ../../source/m5ui/index.rst:166
 msgid "Classes"
 msgstr "Classes"
 
