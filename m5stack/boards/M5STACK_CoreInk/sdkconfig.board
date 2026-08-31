@@ -12,3 +12,12 @@ CONFIG_ESPTOOLPY_FLASHFREQ="80m"
 CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
 
 CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
+
+# CoreInk holds its power rail on with GPIO12, asserted at the top of app_main
+# (board_init.c). Validating the ~3.4MB app image costs ~900ms before app_main
+# is reached on every power-on reset, and on battery the rail does not survive
+# that long: the board switches off instead of restarting. Deep-sleep wakes
+# already skip validation; skip it on power-on too. This board has a single
+# factory partition, so there is no second image to fall back to if validation
+# were to fail.
+CONFIG_BOOTLOADER_SKIP_VALIDATE_ON_POWER_ON=y
