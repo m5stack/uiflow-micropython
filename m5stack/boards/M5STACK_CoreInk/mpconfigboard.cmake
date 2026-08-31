@@ -4,6 +4,10 @@
 
 # coreink https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L8
 set(BOARD_ID 6)
+
+set(MICROPY_SOURCE_BOARD
+    ${MICROPY_BOARD_DIR}/board_init.c
+)
 set(MICROPY_PY_LVGL 0)
 
 # Font Support
