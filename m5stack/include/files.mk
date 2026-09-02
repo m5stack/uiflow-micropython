@@ -34,7 +34,7 @@ endef
 ## $(2): PATCH_SERIES (space-separated list)
 ##
 define abs_path
-	$(abspath $(CURDIR)/patches/$(1))
+	$(abspath $(MAKEFILE_DIR)patches/$(1))
 endef
 
 ##
@@ -44,8 +44,9 @@ endef
 define Patch/prepare
 	$(if $(strip $(2)),\
 	@echo "Preparing $(1) ..."
-	@(cd $(1) && [ -e patches ] || mkdir patches)
-	@(cd $(1) && \
+	@test -n "$(strip $(1))" && test -d "$(1)" || { echo "Patch/prepare: target directory not found: $(1)" >&2; exit 1; }
+	@(cd "$(1)" && { [ -e patches ] || mkdir patches; })
+	@(cd "$(1)" && \
 		quilt import $(foreach patch,$(2),$(call abs_path,$(patch))) && \
 		cd - >/dev/null)
 	@echo "Applying all patches in $(1) ..."
@@ -62,8 +63,9 @@ endef
 ##
 define Patch/update
 	@echo "Exporting patches from $(1) to $(2) ..."
+	@test -n "$(strip $(1))" && test -d "$(1)" || { echo "Patch/update: target directory not found: $(1)" >&2; exit 1; }
 	@mkdir -p $(2)
-	@cd $(1) && \
+	@cd "$(1)" && \
 	for p in `quilt series`; do \
 		echo "Exporting $$p to $(2) ..." ; \
 		cp $$p $(2) ; \
@@ -76,7 +78,8 @@ endef
 ##
 define Patch/clean
 	@echo "Cleaning patch state in $(1) ..."
-	@cd $(1) && \
+	@test -n "$(strip $(1))" && test -d "$(1)" || { echo "Patch/clean: target directory not found: $(1)" >&2; exit 1; }
+	@cd "$(1)" && \
 		(quilt pop -a || true) && \
 		rm -rf .pc patches
 endef

@@ -431,7 +431,7 @@ prepare:
 
 .PHONY: $(PACKAGES) update
 update:
-	$(call Patch/update,$(abspath $(PKG_PATH)),$(abspath ./patches))
+	$(call Patch/update,$(abspath $(PKG_PATH)),$(abspath $(MAKEFILE_DIR)patches))
 
 .PHONY: $(PACKAGES) unprepare
 unprepare:
