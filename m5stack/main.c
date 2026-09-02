@@ -302,6 +302,7 @@ void boardctrl_startup(void) {
 }
 
 void MICROPY_ESP_IDF_ENTRY(void) {
+    // esp_log_level_set("intr_alloc", ESP_LOG_NONE);
     // Hook for a board to run code at start up.
     // This defaults to initialising NVS and detecting the flash size.
     MICROPY_BOARD_STARTUP();

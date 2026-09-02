@@ -32,6 +32,8 @@ set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.flash_8mb
     boards/sdkconfig.flash_qio
     boards/sdkconfig.freertos
+    boards/sdkconfig.spiram
+    boards/sdkconfig.spiram_oct
     boards/M5STACK_StampS3Bat/sdkconfig.board
 )
 

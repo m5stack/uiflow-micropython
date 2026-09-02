@@ -124,7 +124,54 @@ camera_config_t camera_config = {
     .fb_location = CAMERA_FB_IN_PSRAM,
     .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
 };
+#elif BOARD_ID == 149  // StampS3Bat
 
+#define CAM_PIN_PWDN  39
+#define CAM_PIN_RESET 41
+#define CAM_PIN_HREF  17  // 水平
+#define CAM_PIN_VSYNC 42  // 垂直同步
+#define CAM_PIN_XCLK  46  // 像素时钟
+#define CAM_PIN_PCLK  13  // 时钟
+#define CAM_PIN_SIOC  47  // 串行时钟
+#define CAM_PIN_SIOD  48  // 串行数据
+#define CAM_PIN_D0    21  // 数据0
+#define CAM_PIN_D1    18  // 数据1
+#define CAM_PIN_D2    16  // 数据2
+#define CAM_PIN_D3    15  // 数据3
+#define CAM_PIN_D4    14  // 数据4
+#define CAM_PIN_D5    12  // 数据5
+#define CAM_PIN_D6    38  // 数据6
+#define CAM_PIN_D7    40  // 数据7
+#define CAM_PIN_EN    -1  // 电源控制
+
+camera_config_t camera_config = {
+    .pin_pwdn = CAM_PIN_PWDN,
+    .pin_reset = CAM_PIN_RESET,
+    .pin_sscb_sda = -1,   // CAM_PIN_SIOC, // 共用 I2C1 在其他地方初始化
+    .pin_sscb_scl = -1,   // CAM_PIN_SIOD,
+    .pin_d0 = CAM_PIN_D0,
+    .pin_d1 = CAM_PIN_D1,
+    .pin_d2 = CAM_PIN_D2,
+    .pin_d3 = CAM_PIN_D3,
+    .pin_d4 = CAM_PIN_D4,
+    .pin_d5 = CAM_PIN_D5,
+    .pin_d6 = CAM_PIN_D6,
+    .pin_d7 = CAM_PIN_D7,
+    .pin_vsync = CAM_PIN_VSYNC,
+    .pin_href = CAM_PIN_HREF,
+    .pin_pclk = CAM_PIN_PCLK,
+    .pin_xclk = CAM_PIN_XCLK,
+    .xclk_freq_hz = 20000000,
+    .ledc_timer = LEDC_TIMER_0,
+    .ledc_channel = LEDC_CHANNEL_0,
+    .pixel_format = PIXFORMAT_RGB565,
+    .frame_size = FRAMESIZE_QVGA,
+    .jpeg_quality = 6,
+    .fb_count = 2,
+    .fb_location = CAMERA_FB_IN_PSRAM,
+    .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
+    .sccb_i2c_port = 1,  // use I2C1
+};
 #endif
 
 typedef struct {
@@ -134,6 +181,18 @@ typedef struct {
 cam_config_t g_cam_config;
 
 static enum { E_CAMERA_INIT, E_CAMERA_DEINIT } status = E_CAMERA_DEINIT;
+
+// OpenMV images borrow the camera frame buffer until the next snapshot.
+// Release that buffer before rebuilding the camera pipeline so it cannot
+// become a dangling pointer after esp_camera_deinit().
+static camera_fb_t *g_frame = NULL;
+
+static void camera_release_frame(void) {
+    if (g_frame != NULL) {
+        esp_camera_fb_return(g_frame);
+        g_frame = NULL;
+    }
+}
 
 static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_pixformat, ARG_framesize, ARG_fb_count, ARG_fb_location };
@@ -181,6 +240,7 @@ static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     camera_config.fb_location = fb_location;
 
     if (status == E_CAMERA_INIT) {
+        camera_release_frame();
         esp_camera_deinit();
     }
     esp_err_t err = esp_camera_init(&camera_config);
@@ -206,6 +266,7 @@ static mp_obj_t camera_init(size_t n_pos_args, const mp_obj_t *pos_args, mp_map_
 static MP_DEFINE_CONST_FUN_OBJ_KW(camera_init_obj, 0, camera_init);
 
 static mp_obj_t camera_deinit() {
+    camera_release_frame();
     esp_err_t err = esp_camera_deinit();
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Camera deinit Failed");
@@ -336,22 +397,29 @@ static MP_DEFINE_CONST_FUN_OBJ_1(camera_pixformat_obj, camera_pixformat);
 
 static mp_obj_t camera_framesize(mp_obj_t framesize) {
     int size = mp_obj_get_int(framesize);
-    if ((size < 0) || (size > 8)) {
+    // Same bound as camera_init_helper(); the sensor driver clamps anything it
+    // cannot reach down to its own maximum.
+    if ((size < 0) || (size > FRAMESIZE_QXGA)) {
         mp_raise_ValueError(MP_ERROR_TEXT("Image framesize is not valid"));
     }
 
-    sensor_t *s = esp_camera_sensor_get();
-    if (!s) {
+    // The frame size decides recv_size/fb_size and the DMA descriptor layout, so
+    // the whole cam_hal pipeline has to be rebuilt.  Writing only the sensor
+    // register leaves the receiver configured for the previous geometry, which
+    // hands back frames of the old length holding the new resolution's data.
+    camera_config.frame_size = size;
+
+    if (status == E_CAMERA_INIT) {
+        camera_release_frame();
+        esp_camera_deinit();
+        status = E_CAMERA_DEINIT;
+    }
+    if (esp_camera_init(&camera_config) != ESP_OK) {
         ESP_LOGE(TAG, "Framesize Failed");
         return mp_const_false;
     }
-
-    int ret = s->set_framesize(s, size);
-    if (ret == 0) {
-        return mp_const_true;
-    } else {
-        return mp_const_false;
-    }
+    status = E_CAMERA_INIT;
+    return mp_const_true;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_framesize_obj, camera_framesize);
 
@@ -444,8 +512,6 @@ static MP_DEFINE_CONST_FUN_OBJ_1(camera_colorbar_obj, camera_colorbar);
 #include "imlib.h"
 #include "utils.h"
 
-static camera_fb_t *g_frame = NULL;
-
 void swap_rgb565(uint16_t *pixel) {
     *pixel = (*pixel >> 8) | (*pixel << 8);
 }
@@ -458,11 +524,13 @@ void image_endian_swap(image_t *img) {
 }
 
 static mp_obj_t py_camera_snapshot() {
-    if (g_frame != NULL) {
-        esp_camera_fb_return(g_frame);
-        g_frame = NULL;
-    }
+    camera_release_frame();
     g_frame = esp_camera_fb_get();
+
+    if (g_frame == NULL) {
+        ESP_LOGW(TAG, "Camera snapshot timed out");
+        return mp_const_none;
+    }
 
     image_t img;
     img.size = g_frame->len;
@@ -532,19 +600,23 @@ static const mp_rom_map_elem_t camera_globals_dict_table[] = {
     // resolution
     {MP_ROM_QSTR(MP_QSTR_FRAME_96X96), MP_ROM_INT(FRAMESIZE_96X96)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_QQVGA), MP_ROM_INT(FRAMESIZE_QQVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_128X128), MP_ROM_INT(FRAMESIZE_128X128)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_QCIF), MP_ROM_INT(FRAMESIZE_QCIF)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_HQVGA), MP_ROM_INT(FRAMESIZE_HQVGA)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_240X240), MP_ROM_INT(FRAMESIZE_240X240)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_QVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_320X320), MP_ROM_INT(FRAMESIZE_320X320)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_CIF)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_HVGA), MP_ROM_INT(FRAMESIZE_HVGA)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_VGA), MP_ROM_INT(FRAMESIZE_VGA)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_SVGA)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_XGA)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_HVGA), MP_ROM_INT(FRAMESIZE_HD)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_VGA), MP_ROM_INT(FRAMESIZE_SXGA)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_UXGA)},
-    {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_FHD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_SVGA), MP_ROM_INT(FRAMESIZE_SVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_XGA), MP_ROM_INT(FRAMESIZE_XGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_HD), MP_ROM_INT(FRAMESIZE_HD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_SXGA), MP_ROM_INT(FRAMESIZE_SXGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_UXGA), MP_ROM_INT(FRAMESIZE_UXGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_FHD), MP_ROM_INT(FRAMESIZE_FHD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_P_HD), MP_ROM_INT(FRAMESIZE_P_HD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_P_3MP), MP_ROM_INT(FRAMESIZE_P_3MP)},
     {MP_ROM_QSTR(MP_QSTR_FRAME_QXGA), MP_ROM_INT(FRAMESIZE_QXGA)},
     //
     {MP_ROM_QSTR(MP_QSTR_DRAM), MP_ROM_INT(CAMERA_FB_IN_DRAM)},
@@ -560,6 +632,8 @@ static const mp_rom_map_elem_t camera_globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR_HQVGA), MP_ROM_INT(FRAMESIZE_HQVGA)},      // 240x176
     {MP_ROM_QSTR(MP_QSTR_240X240), MP_ROM_INT(FRAMESIZE_240X240)},  // 240x240
     {MP_ROM_QSTR(MP_QSTR_QVGA), MP_ROM_INT(FRAMESIZE_QVGA)},        // 320x240
+    {MP_ROM_QSTR(MP_QSTR_CIF), MP_ROM_INT(FRAMESIZE_CIF)},          // 400x296
+    {MP_ROM_QSTR(MP_QSTR_HVGA), MP_ROM_INT(FRAMESIZE_HVGA)},        // 480x320
     {MP_ROM_QSTR(MP_QSTR_VGA), MP_ROM_INT(FRAMESIZE_VGA)},          // 640x480
     {MP_ROM_QSTR(MP_QSTR_SVGA), MP_ROM_INT(FRAMESIZE_SVGA)},        // 800x600
     {MP_ROM_QSTR(MP_QSTR_XGA), MP_ROM_INT(FRAMESIZE_XGA)},          // 1024x768
@@ -567,6 +641,8 @@ static const mp_rom_map_elem_t camera_globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR_SXGA), MP_ROM_INT(FRAMESIZE_SXGA)},        // 1280x1024
     {MP_ROM_QSTR(MP_QSTR_UXGA), MP_ROM_INT(FRAMESIZE_UXGA)},        // 1600x1200
     {MP_ROM_QSTR(MP_QSTR_FHD), MP_ROM_INT(FRAMESIZE_FHD)},          // 1920x1080
+    {MP_ROM_QSTR(MP_QSTR_P_HD), MP_ROM_INT(FRAMESIZE_P_HD)},        // 720x1280
+    {MP_ROM_QSTR(MP_QSTR_P_3MP), MP_ROM_INT(FRAMESIZE_P_3MP)},      // 864x1536
     {MP_ROM_QSTR(MP_QSTR_QXGA), MP_ROM_INT(FRAMESIZE_QXGA)},        // 2048x1536
 };
 

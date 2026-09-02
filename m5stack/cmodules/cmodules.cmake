@@ -22,7 +22,7 @@ if (M5_CAMERA_MODULE_ENABLE)
     endif()
 endif()
 
-if (BOARD_TYPE STREQUAL "atoms3r_cam")
+if (BOARD_TYPE STREQUAL "atoms3r_cam" OR BOARD_TYPE STREQUAL "stamps3bat")
     include(${CMAKE_CURRENT_LIST_DIR}/omv/omv_atoms3r_cam.cmake)
 endif()
 

@@ -5,4 +5,6 @@
 CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
 
 # for component/esp32-camera
+# Bit-bang SCCB instead of using the I2C peripheral;
+# needs real pin_sccb_sda/scl in py_camera.c.
 CONFIG_SCCB_SOFTWARE_SUPPORT=y
