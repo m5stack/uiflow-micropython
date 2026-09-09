@@ -182,6 +182,8 @@ class M5IOE1:
             raise ValueError("addr must be 0..127")
         self.i2c = i2c
         self.addr = addr
+        if self.addr not in self.i2c.scan():
+            raise Exception("M5IOE1 not found at I2C address 0x%02X" % self.addr)
         self._led_count = 0
 
     def _check_reg(self, reg):

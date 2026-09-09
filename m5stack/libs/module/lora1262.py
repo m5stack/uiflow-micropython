@@ -67,7 +67,7 @@ class LoRa1262Module(LoRa868V12Module):
 
     def __init__(
         self,
-        i2c,
+        i2c=None,
         pin_cs: int = 1,
         pin_irq: int = 10,
         pin_busy: int = 2,
@@ -92,8 +92,11 @@ class LoRa1262Module(LoRa868V12Module):
         if bw not in self.BANDWIDTHS:
             raise ValueError("Invalid bandwidth %s" % bw)
 
-        self.i2c = i2c
-        self.ioe1 = M5IOE1(i2c, address)
+        if i2c is None:
+            self.i2c = mbus.i2c1
+        else:
+            self.i2c = i2c
+        self.ioe1 = M5IOE1(self.i2c, address)
         self.lora_power = Pin(self.ioe1, _LORA_POWER_PIN, Pin.OUT, value=1)
         self.lora_switch = Pin(self.ioe1, _LORA_SWITCH_PIN, Pin.OUT, value=1)
         self.lora_reset = Pin(self.ioe1, _LORA_RESET_PIN, Pin.OUT, value=1)
