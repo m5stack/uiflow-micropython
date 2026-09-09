@@ -1,0 +1,713 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-09 09:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/refs/stamp.lora1262.ref ../../source/stamp/lora1262.rst:2
+msgid "Stamp LoRa-1262"
+msgstr "Stamp LoRa-1262"
+
+#: ../../source/stamp/lora1262.rst:8
+msgid ""
+"Stamp LoRa-1262 is an SX1262 LoRa transceiver for the Stamp Series FPC12 "
+"interface. ``StampLoRa1262`` selects the current host's FPC12 GPIO "
+"mapping, enables the RF switch, and provides synchronous send, receive, "
+"and radio configuration operations."
+msgstr "Stamp LoRa-1262 是一款用于 Stamp 系列 FPC12 接口的 SX1262 LoRa 收发器。``StampLoRa1262`` 会选择当前主机的 FPC12 GPIO 映射，启用射频开关，并提供同步发送、接收和无线电配置操作。"
+
+#: ../../source/stamp/lora1262.rst:13
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/stamp/lora1262.rst:15
+msgid "|Stamp LoRa-1262|"
+msgstr "|Stamp LoRa-1262|"
+
+#: ../../source/stamp/lora1262.rst:18
+msgid "The following are the host's support for Stamp LoRa-1262:"
+msgstr "以下是 Stamp LoRa-1262 支持的主机："
+
+#: ../../source/stamp/lora1262.rst:20
+msgid "Stamp LoRa-1262 host support"
+msgstr "Stamp LoRa-1262 主机支持"
+
+#: ../../source/stamp/lora1262.rst:23
+msgid "Controller"
+msgstr "主机"
+
+#: ../../source/stamp/lora1262.rst:24
+msgid "Status"
+msgstr "状态"
+
+#: ../../source/stamp/lora1262.rst:25 ../../source/stamp/lora1262.rst:47
+msgid "StampC5"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:26 ../../source/stamp/lora1262.rst:28
+#: ../../source/stamp/lora1262.rst:30
+msgid "|S|"
+msgstr "|S|"
+
+#: ../../source/stamp/lora1262.rst:27 ../../source/stamp/lora1262.rst:48
+msgid "StampC6"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:29 ../../source/stamp/lora1262.rst:49
+msgid "StampS3Mini"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:35
+msgid ""
+"The supported RF frequency range is 868-923 MHz. Attach a suitable "
+"antenna before transmitting. The module's ``SHUT_DOWN`` signal is not "
+"part of the Stamp Series FPC12 interface and is not controlled by this "
+"driver."
+msgstr "支持的射频范围为 868-923 MHz。发送前请连接合适的天线。模块的 ``SHUT_DOWN`` 信号不属于 Stamp 系列 FPC12 接口，驱动不会控制该信号。"
+
+#: ../../source/stamp/lora1262.rst:40
+msgid "Pin Mapping"
+msgstr "引脚映射"
+
+#: ../../source/stamp/lora1262.rst:42
+msgid "Stamp LoRa-1262 FPC12 mapping"
+msgstr "Stamp LoRa-1262 FPC12 引脚映射"
+
+#: ../../source/stamp/lora1262.rst:45
+msgid "Position"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:46
+msgid "Signal"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:50
+msgid "1"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:51 ../../source/stamp/lora1262.rst:52
+#: ../../source/stamp/lora1262.rst:53 ../../source/stamp/lora1262.rst:54
+#: ../../source/stamp/lora1262.rst:56 ../../source/stamp/lora1262.rst:57
+#: ../../source/stamp/lora1262.rst:58 ../../source/stamp/lora1262.rst:59
+msgid "3V3"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:55
+msgid "2"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:60
+msgid "3"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:61
+msgid "SW"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:62 ../../source/stamp/lora1262.rst:108
+msgid "G23"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:63
+msgid "G8"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:64
+msgid "G38"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:65
+msgid "4"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:66
+msgid "IRQ"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:67 ../../source/stamp/lora1262.rst:68
+msgid "G0"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:69 ../../source/stamp/lora1262.rst:93
+msgid "G21"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:70
+msgid "5"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:71
+msgid "BUSY"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:72
+msgid "G24"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:73
+msgid "G18"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:74
+msgid "G39"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:75
+msgid "6"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:76
+msgid "RST"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:77
+msgid "G25"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:78
+msgid "G19"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:79
+msgid "G40"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:80
+msgid "7"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:81 ../../source/stamp/lora1262.rst:82
+#: ../../source/stamp/lora1262.rst:83 ../../source/stamp/lora1262.rst:84
+#: ../../source/stamp/lora1262.rst:101 ../../source/stamp/lora1262.rst:102
+#: ../../source/stamp/lora1262.rst:103 ../../source/stamp/lora1262.rst:104
+msgid "GND"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:85
+msgid "8"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:86
+msgid "MISO"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:87
+msgid "G26"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:88
+msgid "G20"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:89
+msgid "G41"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:90
+msgid "9"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:91
+msgid "MOSI"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:92
+msgid "G27"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:94
+msgid "G42"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:95
+msgid "10"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:96
+msgid "CS"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:97
+msgid "G11"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:98
+msgid "G22"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:99
+msgid "G43"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:100
+msgid "11"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:105
+msgid "12"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:106
+msgid "CLK"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:107
+msgid "G12"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:109
+msgid "G44"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:112
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/stamp/lora1262.rst:115 ../../source/stamp/lora1262.rst:138
+msgid "Sender"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:117
+msgid ""
+"Open the |stamp_lora1262_sender_example.m5f2| project in UiFlow2. It "
+"sends a sequence message once per second."
+msgstr "在 UiFlow2 中打开 |stamp_lora1262_sender_example.m5f2| 项目。该项目每秒发送一条序列消息。"
+
+#: ../../source/stamp/lora1262.rst:120 ../../source/stamp/lora1262.rst:130 of
+#: stamp.lora1262.StampLoRa1262.deinit:3
+#: stamp.lora1262.StampLoRa1262.irq_triggered:6
+#: stamp.lora1262.StampLoRa1262.recv:9 stamp.lora1262.StampLoRa1262.send:10
+#: stamp.lora1262.StampLoRa1262.set_bw:6
+#: stamp.lora1262.StampLoRa1262.set_coding_rate:6
+#: stamp.lora1262.StampLoRa1262.set_freq:6
+#: stamp.lora1262.StampLoRa1262.set_output_power:6
+#: stamp.lora1262.StampLoRa1262.set_preamble_len:6
+#: stamp.lora1262.StampLoRa1262.set_rx_callback:7
+#: stamp.lora1262.StampLoRa1262.set_sf:6
+#: stamp.lora1262.StampLoRa1262.set_syncword:6
+#: stamp.lora1262.StampLoRa1262.set_tx_callback:5
+#: stamp.lora1262.StampLoRa1262.sleep:3 stamp.lora1262.StampLoRa1262.standby:3
+#: stamp.lora1262.StampLoRa1262.start_recv:3
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/stamp/lora1262.rst:122
+msgid "|stamp_lora1262_sender_example.png|"
+msgstr "|stamp_lora1262_sender_example.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:27
+msgid "stamp_lora1262_sender_example.png"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:125 ../../source/stamp/lora1262.rst:145
+msgid "Receiver"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:127
+msgid ""
+"Open the |stamp_lora1262_receiver_example.m5f2| project in UiFlow2. It "
+"starts continuous reception and prints each packet with RSSI and SNR."
+msgstr ""
+"在 UiFlow2 中打开 |stamp_lora1262_receiver_example.m5f2| "
+"项目。该项目启动连续接收，并打印每个数据包的 RSSI 和 SNR。"
+
+#: ../../source/stamp/lora1262.rst:132
+msgid "|stamp_lora1262_receiver_example.png|"
+msgstr "|stamp_lora1262_receiver_example.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:29
+msgid "stamp_lora1262_receiver_example.png"
+msgstr ""
+
+#: ../../source/stamp/lora1262.rst:135
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/stamp/lora1262.rst:152
+msgid "API"
+msgstr "API参考"
+
+#: of stamp.lora1262.StampLoRa1262:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262:1
+msgid "SX1262 LoRa radio connected through the Stamp FPC12 interface."
+msgstr "通过 Stamp FPC12 接口连接的 SX1262 LoRa 收发器。"
+
+#: of stamp.lora1262.StampLoRa1262:3
+msgid ""
+"Passing ``None`` for a pin uses the current Stamp host's FPC12 mapping. "
+"StampC5, StampC6, and StampS3Mini are supported by default. Other hosts "
+"can be used when every signal pin is provided explicitly."
+msgstr ""
+"引脚传入 ``None`` 时使用当前 Stamp 主机的 FPC12 映射。默认支持 StampC5、StampC6 和 "
+"StampS3Mini。为其他主机明确提供所有信号引脚后也可以使用。"
+
+#: of stamp.lora1262.StampLoRa1262.set_freq:1
+msgid "Set the LoRa carrier frequency."
+msgstr "设置 LoRa 载波频率。"
+
+#: of stamp.lora1262.StampLoRa1262.recv stamp.lora1262.StampLoRa1262.send
+#: stamp.lora1262.StampLoRa1262.set_bw
+#: stamp.lora1262.StampLoRa1262.set_coding_rate
+#: stamp.lora1262.StampLoRa1262.set_freq
+#: stamp.lora1262.StampLoRa1262.set_output_power
+#: stamp.lora1262.StampLoRa1262.set_preamble_len
+#: stamp.lora1262.StampLoRa1262.set_rx_callback
+#: stamp.lora1262.StampLoRa1262.set_sf
+#: stamp.lora1262.StampLoRa1262.set_syncword
+#: stamp.lora1262.StampLoRa1262.set_tx_callback
+msgid "Parameters"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_freq:3
+msgid "Carrier frequency in kHz, from 868000 to 923000."
+msgstr "载波频率，单位为 kHz，范围为 868000 至 923000。"
+
+#: of stamp.lora1262.StampLoRa1262.set_bw
+#: stamp.lora1262.StampLoRa1262.set_coding_rate
+#: stamp.lora1262.StampLoRa1262.set_freq
+#: stamp.lora1262.StampLoRa1262.set_output_power
+#: stamp.lora1262.StampLoRa1262.set_preamble_len
+#: stamp.lora1262.StampLoRa1262.set_sf
+#: stamp.lora1262.StampLoRa1262.set_syncword
+msgid "Raises"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_freq:4
+msgid "If ``freq_khz`` is outside the supported range."
+msgstr "如果 ``freq_khz`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_freq:8
+msgid "|set_freq.png|"
+msgstr "|set_freq.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:18
+msgid "set_freq.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.deinit:7
+#: stamp.lora1262.StampLoRa1262.irq_triggered:10
+#: stamp.lora1262.StampLoRa1262.recv:13 stamp.lora1262.StampLoRa1262.send:14
+#: stamp.lora1262.StampLoRa1262.set_bw:10
+#: stamp.lora1262.StampLoRa1262.set_coding_rate:10
+#: stamp.lora1262.StampLoRa1262.set_freq:10
+#: stamp.lora1262.StampLoRa1262.set_output_power:10
+#: stamp.lora1262.StampLoRa1262.set_preamble_len:10
+#: stamp.lora1262.StampLoRa1262.set_rx_callback:11
+#: stamp.lora1262.StampLoRa1262.set_sf:10
+#: stamp.lora1262.StampLoRa1262.set_syncword:10
+#: stamp.lora1262.StampLoRa1262.set_tx_callback:9
+#: stamp.lora1262.StampLoRa1262.sleep:7 stamp.lora1262.StampLoRa1262.standby:7
+#: stamp.lora1262.StampLoRa1262.start_recv:7
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: of stamp.lora1262.StampLoRa1262.set_sf:1
+msgid "Set the LoRa spreading factor."
+msgstr "设置 LoRa 扩频因子。"
+
+#: of stamp.lora1262.StampLoRa1262.set_sf:3
+msgid "Spreading factor, from 6 to 12."
+msgstr "扩频因子，范围为 6 至 12。"
+
+#: of stamp.lora1262.StampLoRa1262.set_sf:4
+msgid "If ``sf`` is outside the supported range."
+msgstr "如果 ``sf`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_sf:8
+msgid "|set_sf.png|"
+msgstr "|set_sf.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:21
+msgid "set_sf.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_bw:1
+msgid "Set the LoRa bandwidth."
+msgstr "设置 LoRa 带宽。"
+
+#: of stamp.lora1262.StampLoRa1262.set_bw:3
+msgid "Bandwidth in kHz. Use one of :attr:`BANDWIDTHS`."
+msgstr "带宽，单位为 kHz。使用 :attr:`BANDWIDTHS` 中的值。"
+
+#: of stamp.lora1262.StampLoRa1262.set_bw:4
+msgid "If ``bw`` is not supported."
+msgstr "如果 ``bw`` 不受支持。"
+
+#: of stamp.lora1262.StampLoRa1262.set_bw:8
+msgid "|set_bw.png|"
+msgstr "|set_bw.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:16
+msgid "set_bw.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_coding_rate:1
+msgid "Set the coding-rate denominator for 4/N coding."
+msgstr "设置 4/N 编码的编码率分母。"
+
+#: of stamp.lora1262.StampLoRa1262.set_coding_rate:3
+msgid "Coding-rate denominator, from 5 to 8."
+msgstr "编码率分母，范围为 5 至 8。"
+
+#: of stamp.lora1262.StampLoRa1262.set_coding_rate:4
+msgid "If ``coding_rate`` is outside the supported range."
+msgstr "如果 ``coding_rate`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_coding_rate:8
+msgid "|set_coding_rate.png|"
+msgstr "|set_coding_rate.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:17
+msgid "set_coding_rate.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_syncword:1
+msgid "Set the LoRa sync word."
+msgstr "设置 LoRa 同步字。"
+
+#: of stamp.lora1262.StampLoRa1262.set_syncword:3
+msgid "Sync word value, from 1 to 255."
+msgstr "同步字值，范围为 1 至 255。"
+
+#: of stamp.lora1262.StampLoRa1262.set_syncword:4
+msgid "If ``syncword`` is outside the supported range."
+msgstr "如果 ``syncword`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_syncword:8
+msgid "|set_syncword.png|"
+msgstr "|set_syncword.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:22
+msgid "set_syncword.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_preamble_len:1
+msgid "Set the LoRa preamble length."
+msgstr "设置 LoRa 前导码长度。"
+
+#: of stamp.lora1262.StampLoRa1262.set_preamble_len:3
+msgid "Preamble length in symbols, from 5 to 255."
+msgstr "前导码长度（符号数），范围为 5 至 255。"
+
+#: of stamp.lora1262.StampLoRa1262.set_preamble_len:4
+msgid "If ``preamble_len`` is outside the supported range."
+msgstr "如果 ``preamble_len`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_preamble_len:8
+msgid "|set_preamble_len.png|"
+msgstr "|set_preamble_len.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:20
+msgid "set_preamble_len.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_output_power:1
+msgid "Set the LoRa output power."
+msgstr "设置 LoRa 输出功率。"
+
+#: of stamp.lora1262.StampLoRa1262.set_output_power:3
+msgid "Output power in dBm, from -9 to 22."
+msgstr "输出功率，单位为 dBm，范围为 -9 至 22。"
+
+#: of stamp.lora1262.StampLoRa1262.set_output_power:4
+msgid "If ``output_power`` is outside the supported range."
+msgstr "如果 ``output_power`` 超出支持范围。"
+
+#: of stamp.lora1262.StampLoRa1262.set_output_power:8
+msgid "|set_output_power.png|"
+msgstr "|set_output_power.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:19
+msgid "set_output_power.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.send:1
+msgid "Send a packet and return its transmission timestamp."
+msgstr "发送数据包并返回发送时间戳。"
+
+#: of stamp.lora1262.StampLoRa1262.send:3
+msgid ""
+"String, bytes-like object, list, tuple, or integer payload. Strings are "
+"encoded as UTF-8 and integers are sent as one-byte payloads."
+msgstr "字符串会编码为 UTF-8，整数会作为单字节数据发送。"
+
+#: of stamp.lora1262.StampLoRa1262.send:6
+msgid "Optional scheduled transmission timestamp."
+msgstr "可选的计划发送时间戳。"
+
+#: of stamp.lora1262.StampLoRa1262.irq_triggered
+#: stamp.lora1262.StampLoRa1262.recv stamp.lora1262.StampLoRa1262.send
+msgid "Returns"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.send:7
+msgid "Transmission timestamp in milliseconds."
+msgstr "发送时间戳，单位为毫秒。"
+
+#: of stamp.lora1262.StampLoRa1262.irq_triggered
+#: stamp.lora1262.StampLoRa1262.recv stamp.lora1262.StampLoRa1262.send
+msgid "Return type"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.send:12
+msgid "|send.png| |send_return.png| |send_with_time_return.png|"
+msgstr "|send.png| |send_return.png| |send_with_time_return.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:12
+msgid "send.png"
+msgstr ""
+
+#: ../../source/refs/stamp.lora1262.ref:14
+msgid "send_return.png"
+msgstr ""
+
+#: ../../source/refs/stamp.lora1262.ref:15
+msgid "send_with_time_return.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.recv:1
+msgid "Receive one packet."
+msgstr "接收一个数据包。"
+
+#: of stamp.lora1262.StampLoRa1262.recv:3
+msgid "Optional receive timeout in milliseconds."
+msgstr "可选的接收超时时间，单位为毫秒。"
+
+#: of stamp.lora1262.StampLoRa1262.recv:4
+msgid "Maximum receive length in bytes."
+msgstr "最大接收长度，单位为字节。"
+
+#: of stamp.lora1262.StampLoRa1262.recv:5
+msgid "Optional packet object to reuse."
+msgstr "可选的用于复用的数据包对象。"
+
+#: of stamp.lora1262.StampLoRa1262.recv:6
+msgid "Received packet, or ``None`` on timeout."
+msgstr "接收到的数据包；超时时返回 ``None``。"
+
+#: of stamp.lora1262.StampLoRa1262.recv:11
+msgid "|recv.png| |recv_data_param.png|"
+msgstr "|recv.png| |recv_data_param.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:10
+msgid "recv.png"
+msgstr ""
+
+#: ../../source/refs/stamp.lora1262.ref:11
+msgid "recv_data_param.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.start_recv:1
+msgid "Start continuous packet reception."
+msgstr "开始连续接收数据包。"
+
+#: of stamp.lora1262.StampLoRa1262.start_recv:5
+msgid "|start_recv.png|"
+msgstr "|start_recv.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:25
+msgid "start_recv.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_tx_callback:1
+msgid "Register a callback for completed transmissions."
+msgstr "注册发送完成回调。"
+
+#: of stamp.lora1262.StampLoRa1262.set_tx_callback:3
+msgid "A no-argument callable, or ``None`` to clear it."
+msgstr "不带参数的可调用对象；传入 ``None`` 可清除回调。"
+
+#: of stamp.lora1262.StampLoRa1262.set_tx_callback:7
+msgid "|send_event.png|"
+msgstr "|send_event.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:13
+msgid "send_event.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.set_rx_callback:1
+msgid "Register a callback for valid packets in continuous reception."
+msgstr "为连续接收的有效数据包注册回调。"
+
+#: of stamp.lora1262.StampLoRa1262.set_rx_callback:3
+msgid ""
+"A callable accepting one :class:`lora.RxPacket`, or ``None`` to clear it."
+" Call :meth:`start_recv` to enable continuous reception."
+msgstr ""
+"接受一个 :class:`lora.RxPacket` 参数的可调用对象；传入 ``None`` 可清除回调。调用 "
+":meth:`start_recv` 启用连续接收。"
+
+#: of stamp.lora1262.StampLoRa1262.set_rx_callback:9
+msgid "|receive_event.png|"
+msgstr "|receive_event.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:9
+msgid "receive_event.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.standby:1
+msgid "Put the radio in standby mode and stop continuous reception."
+msgstr "将无线电置于待机模式并停止连续接收。"
+
+#: of stamp.lora1262.StampLoRa1262.standby:5
+msgid "|standby.png|"
+msgstr "|standby.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:24
+msgid "standby.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.sleep:1
+msgid "Put the radio in sleep mode and stop continuous reception."
+msgstr "将无线电置于睡眠模式并停止连续接收。"
+
+#: of stamp.lora1262.StampLoRa1262.sleep:5
+msgid "|sleep.png|"
+msgstr "|sleep.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:23
+msgid "sleep.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.irq_triggered:1
+msgid "Return whether a radio IRQ has been triggered."
+msgstr "返回无线电 IRQ 是否已触发。"
+
+#: of stamp.lora1262.StampLoRa1262.irq_triggered:3
+msgid "``True`` if an IRQ is pending; otherwise ``False``."
+msgstr "如果有待处理的 IRQ，则返回 ``True``；否则返回 ``False``。"
+
+#: of stamp.lora1262.StampLoRa1262.irq_triggered:8
+msgid "|irq_triggered.png|"
+msgstr "|irq_triggered.png|"
+
+#: ../../source/refs/stamp.lora1262.ref:8
+msgid "irq_triggered.png"
+msgstr ""
+
+#: of stamp.lora1262.StampLoRa1262.deinit:1
+msgid "Stop reception and put the radio in sleep mode."
+msgstr "停止接收并将无线电置于睡眠模式。"
+
+#: of stamp.lora1262.StampLoRa1262.deinit:5
+msgid "Use the deinit block in UiFlow2."
+msgstr "在 UiFlow2 中使用 deinit 功能块。"
+
