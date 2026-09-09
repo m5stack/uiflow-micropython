@@ -33,6 +33,7 @@ Module
     lan.rst
     llm.rst
     lora.rst
+    lora1262.rst
     lora868_v12.rst
     lorawan_rui3.rst
     lorawan868.rst

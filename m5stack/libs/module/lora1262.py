@@ -29,9 +29,9 @@ class LoRa1262Module(LoRa868V12Module):
 
     :param i2c: Initialized I2C bus used to access the M5IOE1.
     :type i2c: machine.I2C
-    :param int pin_cs: SX1262 chip-select MCU pin. Default is 1 for CoreS3.
-    :param int pin_irq: SX1262 DIO1 MCU pin. Default is 10 for CoreS3.
-    :param int pin_busy: SX1262 BUSY MCU pin. Default is 2 for CoreS3.
+    :param int pin_cs: SX1262 chip-select MCU pin.
+    :param int pin_irq: SX1262 DIO1 MCU pin.
+    :param int pin_busy: SX1262 BUSY MCU pin.
     :param int address: M5IOE1 I2C address, from 0x71 through 0x74.
     :param int freq_khz: RF frequency in kHz, from 850000 through 930000.
     :param str bw: LoRa bandwidth in kHz.
@@ -40,6 +40,10 @@ class LoRa1262Module(LoRa868V12Module):
     :param int preamble_len: Preamble length, from 5 through 255 symbols.
     :param int syncword: Sync word, from 1 through 255.
     :param int output_power: Output power in dBm, from -9 through 22.
+
+    UiFlow2 Code Block:
+
+        |init.png|
 
     MicroPython Code Block:
 
@@ -136,35 +140,148 @@ class LoRa1262Module(LoRa868V12Module):
         self.lora_power.off()
 
     def set_freq(self, freq_khz: int = 868000) -> None:
-        """Set RF frequency in kHz, from 850000 through 930000."""
+        """Set the RF frequency.
+
+        :param int freq_khz: RF frequency in kHz, from 850000 through 930000.
+
+        UiFlow2 Code Block:
+
+            |set_freq.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_freq(868000)
+        """
         return super().set_freq(freq_khz)
 
     def set_sf(self, sf: int) -> None:
-        """Set the spreading factor from 6 through 12."""
+        """Set the LoRa spreading factor.
+
+        :param int sf: Spreading factor, from 6 through 12.
+
+        UiFlow2 Code Block:
+
+            |set_sf.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_sf(8)
+        """
         return super().set_sf(sf)
 
     def set_bw(self, bw: str) -> None:
-        """Set bandwidth to a supported kHz string."""
+        """Set the LoRa bandwidth.
+
+        :param str bw: Bandwidth in kHz. Supported values are ``"7.8"``,
+            ``"10.4"``, ``"15.6"``, ``"20.8"``, ``"31.25"``, ``"41.7"``,
+            ``"62.5"``, ``"125"``, ``"250"``, and ``"500"``.
+
+        UiFlow2 Code Block:
+
+            |set_bw.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_bw("250")
+        """
         return super().set_bw(bw)
 
     def set_coding_rate(self, coding_rate: int) -> None:
-        """Set the coding-rate denominator from 5 through 8."""
+        """Set the forward-error-correction coding rate.
+
+        :param int coding_rate: Coding-rate denominator, from 5 through 8.
+
+        UiFlow2 Code Block:
+
+            |set_coding_rate.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_coding_rate(8)
+        """
         return super().set_coding_rate(coding_rate)
 
     def set_syncword(self, syncword: int) -> None:
-        """Set the sync word from 1 through 255."""
+        """Set the LoRa sync word.
+
+        :param int syncword: Sync word, from 1 through 255.
+
+        UiFlow2 Code Block:
+
+            |set_syncword.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_syncword(0x12)
+        """
         return super().set_syncword(syncword)
 
     def set_preamble_len(self, preamble_len: int) -> None:
-        """Set preamble length from 5 through 255 symbols."""
+        """Set the LoRa preamble length.
+
+        :param int preamble_len: Preamble length, from 5 through 255 symbols.
+
+        UiFlow2 Code Block:
+
+            |set_preamble_len.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_preamble_len(12)
+        """
         return super().set_preamble_len(preamble_len)
 
     def set_output_power(self, output_power: int) -> None:
-        """Set output power from -9 through 22 dBm."""
+        """Set the LoRa output power.
+
+        :param int output_power: Output power in dBm, from -9 through 22.
+
+        UiFlow2 Code Block:
+
+            |set_output_power.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.set_output_power(10)
+        """
         return super().set_output_power(output_power)
 
     def send(self, packet: str | list | tuple | int | bytearray, tx_at_ms: int = None) -> int:
-        """Send a LoRa packet and return its timestamp."""
+        """Send a LoRa packet.
+
+        :param str | list | tuple | int | bytearray packet: Data to send.
+        :param int tx_at_ms: Optional send timestamp in milliseconds.
+        :returns: Send timestamp in milliseconds.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |send.png|
+
+            |send_return.png|
+
+            |send_with_time_return.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                timestamp = lora1262_0.send("Hello LoRa1262")
+        """
         self._tx_active = True
         try:
             return super().send(packet, tx_at_ms)
@@ -174,22 +291,87 @@ class LoRa1262Module(LoRa868V12Module):
     def recv(
         self, timeout_ms: int = None, rx_length: int = 0xFF, rx_packet: RxPacket = None
     ) -> RxPacket:
-        """Receive one LoRa packet, or return None on timeout."""
+        """Receive one LoRa packet.
+
+        :param int timeout_ms: Optional receive timeout in milliseconds.
+        :param int rx_length: Maximum number of bytes to receive. Default is
+            ``0xFF``.
+        :param RxPacket rx_packet: Optional packet object to reuse.
+        :returns: Received packet, or ``None`` when the receive times out.
+        :rtype: RxPacket | None
+
+        UiFlow2 Code Block:
+
+            |recv.png|
+
+            |recv_data_param.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                packet = lora1262_0.recv()
+        """
         self._continuous_rx = False
         return super().recv(timeout_ms, rx_length, rx_packet)
 
     def start_recv(self) -> None:
-        """Start continuous LoRa reception."""
+        """Start continuous LoRa reception.
+
+        UiFlow2 Code Block:
+
+            |start_recv.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.start_recv()
+        """
         self._continuous_rx = True
         return super().start_recv()
 
     def set_tx_callback(self, callback) -> None:
-        """Register a no-argument callback for completed transmissions."""
+        """Register a callback for completed transmissions.
+
+        :param callable callback: Function called without arguments after a
+            packet has been transmitted.
+
+        UiFlow2 Code Block:
+
+            |send_event.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def on_transmit():
+                    print("transmitted")
+
+                lora1262_0.set_tx_callback(on_transmit)
+        """
         self.tx_callback = callback
         self._configure_irq_callback()
 
     def set_rx_callback(self, callback) -> None:
-        """Register a callback receiving an ``RxPacket`` for valid packets."""
+        """Register a callback for received packets.
+
+        :param callable callback: Function receiving an ``RxPacket`` after a
+            valid packet is received.
+
+        UiFlow2 Code Block:
+
+            |receive_event.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def on_receive(packet):
+                    print(packet.decode(), packet.rssi, packet.snr / 4)
+
+                lora1262_0.set_rx_callback(on_receive)
+        """
         self.rx_callback = callback
         self._configure_irq_callback()
 
@@ -217,21 +399,65 @@ class LoRa1262Module(LoRa868V12Module):
             self.rx_callback(packet)
 
     def standby(self) -> None:
-        """Put the SX1262 in standby mode."""
+        """Put the SX1262 in standby mode.
+
+        UiFlow2 Code Block:
+
+            |standby.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.standby()
+        """
         self._continuous_rx = False
         return super().standby()
 
     def sleep(self) -> None:
-        """Put the SX1262 in sleep mode."""
+        """Put the SX1262 in sleep mode.
+
+        UiFlow2 Code Block:
+
+            |sleep.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.sleep()
+        """
         self._continuous_rx = False
         return super().sleep()
 
     def irq_triggered(self) -> bool:
-        """Return whether the SX1262 IRQ has triggered."""
+        """Return whether an SX1262 IRQ has triggered.
+
+        :returns: ``True`` when an interrupt has triggered since the last
+            send or receive operation started.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |irq_triggered.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                interrupted = lora1262_0.irq_triggered()
+        """
         return super().irq_triggered()
 
     def deinit(self) -> None:
-        """Put the radio to sleep and disable its module power controls."""
+        """Put the radio to sleep and disable module power controls.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora1262_0.deinit()
+        """
         if self.modem is not None:
             self.sleep()
         self._power_off()

@@ -1,0 +1,77 @@
+LoRa-1262 Module
+====================
+
+.. py:currentmodule:: module.lora1262
+
+.. include:: ../refs/module.lora1262.ref
+
+``LoRa1262Module`` provides LoRa communication through the Module13.2
+LoRa-1262 radio. The radio uses the module M-Bus SPI bus and an M5IOE1
+controller on I2C for reset, antenna-switch, and power control.
+
+Support the following product:
+
+    |LoRa-1262 Module|
+
+The constructor accepts an initialized ``machine.I2C`` bus. When ``i2c`` is
+omitted, the module uses ``module.mbus.i2c1``. The M5IOE1 address must be in
+the range ``0x71`` through ``0x74``.
+
+.. note::
+
+   Attach a suitable antenna before transmitting. The supported RF frequency
+   range is 850000--930000 kHz.
+
+UiFlow2 Example
+---------------
+
+Sender
+^^^^^^
+
+Open the |cores3_lora1262_tx_example.m5f2| project in UiFlow2. The example
+sends a message once per second and displays the message and send timestamp.
+
+UiFlow2 Code Block:
+
+    |tx_example.png|
+
+Receiver
+^^^^^^^^
+
+Open the |cores3_lora1262_rx_example.m5f2| project in UiFlow2. The example
+starts continuous reception and displays the decoded payload, RSSI, SNR, and
+receive timestamp.
+
+UiFlow2 Code Block:
+
+    |rx_example.png|
+
+MicroPython Example
+-------------------
+
+Sender
+^^^^^^
+
+This example initializes ``LoRa1262Module`` with the default M-Bus I2C bus,
+sends a message once per second, and displays the send timestamp.
+
+.. literalinclude:: ../../../examples/module/lora1262/cores3_lora1262_tx_example.py
+    :language: python
+    :linenos:
+
+Receiver
+^^^^^^^^
+
+This example registers a receive callback, starts continuous reception, and
+displays the decoded payload, RSSI, and SNR.
+
+.. literalinclude:: ../../../examples/module/lora1262/cores3_lora1262_rx_example.py
+    :language: python
+    :linenos:
+
+API
+---
+
+.. autoclass:: module.lora1262.LoRa1262Module
+    :members:
+    :member-order: bysource
