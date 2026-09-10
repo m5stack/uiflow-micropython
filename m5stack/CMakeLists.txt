@@ -103,3 +103,8 @@ endif()
 
 # Define the project.
 project(micropython)
+
+# Serialize Hosted HCI RX against NimBLE pool teardown on P4.
+if(CONFIG_IDF_TARGET_ESP32P4 AND CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE)
+    target_link_options(${CMAKE_PROJECT_NAME}.elf PRIVATE "-Wl,--wrap=hci_rx_handler")
+endif()

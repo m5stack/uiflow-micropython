@@ -1,4 +1,5 @@
 # Select the minimum chip revision to cover all possible boards.
+CONFIG_ESP32P4_SELECTS_REV_LESS_V3=y
 CONFIG_ESP32P4_REV_MIN_0=y
 
 # Flash

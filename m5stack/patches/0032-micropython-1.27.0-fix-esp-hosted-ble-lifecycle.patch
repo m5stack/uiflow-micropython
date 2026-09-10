@@ -1,0 +1,222 @@
+Index: micropython/extmod/nimble/modbluetooth_nimble.c
+===================================================================
+--- micropython.orig/extmod/nimble/modbluetooth_nimble.c
++++ micropython/extmod/nimble/modbluetooth_nimble.c
+@@ -602,8 +602,14 @@ void nimble_reset_gatts_bss(void) {
+ 
+ int mp_bluetooth_init(void) {
+     DEBUG_printf("mp_bluetooth_init\n");
+-    // Clean up if necessary.
+-    mp_bluetooth_deinit();
++    if (mp_bluetooth_is_active()) {
++        return 0;
++    }
++    // A failed shutdown must not be followed by another initialization.
++    int ret = mp_bluetooth_deinit();
++    if (ret != 0) {
++        return ret;
++    }
+ 
+     nimble_reset_gatts_bss();
+ 
+@@ -619,14 +625,28 @@ int mp_bluetooth_init(void) {
+ 
+     // Allow port (ESP32) to override NimBLE's HCI init.
+     // Otherwise default implementation above calls ble_hci_uart_init().
++    #if CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE
++    extern int mp_bluetooth_nimble_port_init(void);
++    ret = mp_bluetooth_nimble_port_init();
++    if (ret != 0) {
++        if (mp_bluetooth_nimble_ble_state == MP_BLUETOOTH_NIMBLE_BLE_STATE_STARTING) {
++            mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_OFF;
++            MP_STATE_PORT(bluetooth_nimble_root_pointers) = NULL;
++        }
++        return ret;
++    }
++    #else
+     mp_bluetooth_nimble_port_hci_init();
++    #endif
+ 
+     // Static initialization is complete, can start processing events.
+     mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_WAITING_FOR_SYNC;
+ 
+     // Initialise NimBLE memory and data structures.
+     DEBUG_printf("mp_bluetooth_init: nimble_port_init\n");
++    #if !(CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE)
+     nimble_port_init();
++    #endif
+ 
+     ble_hs_cfg.reset_cb = reset_cb;
+     ble_hs_cfg.sync_cb = sync_cb;
+@@ -691,10 +711,24 @@ int mp_bluetooth_deinit(void) {
+         mp_bluetooth_gap_scan_stop();
+         #endif
+ 
++    }
++
++    if (mp_bluetooth_nimble_ble_state == MP_BLUETOOTH_NIMBLE_BLE_STATE_ACTIVE
++        #if CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE
++        || mp_bluetooth_nimble_ble_state == MP_BLUETOOTH_NIMBLE_BLE_STATE_WAITING_FOR_SYNC
++        #endif
++        ) {
++        // Prevent a late sync callback from reactivating a stopping host.
++        mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_STOPPING;
+         DEBUG_printf("mp_bluetooth_deinit: starting port shutdown\n");
+ 
+         ret = mp_bluetooth_nimble_port_shutdown();
++        if (ret != 0) {
++            return ret;
++        }
+         assert(mp_bluetooth_nimble_ble_state == MP_BLUETOOTH_NIMBLE_BLE_STATE_OFF);
++    } else if (mp_bluetooth_nimble_ble_state == MP_BLUETOOTH_NIMBLE_BLE_STATE_STOPPING) {
++        return MP_EBUSY;
+     } else {
+         mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_OFF;
+     }
+Index: micropython/ports/esp32/mpnimbleport.c
+===================================================================
+--- micropython.orig/ports/esp32/mpnimbleport.c
++++ micropython/ports/esp32/mpnimbleport.c
+@@ -37,10 +37,89 @@
+ 
+ #include "extmod/nimble/modbluetooth_nimble.h"
+ 
++#if CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE
++#include "esp_hosted.h"
++#include "freertos/semphr.h"
++
++static SemaphoreHandle_t hosted_rx_mutex;
++static SemaphoreHandle_t hosted_host_exited;
++static bool hosted_rx_enabled;
++static bool hosted_controller_initialized;
++static bool hosted_controller_enabled;
++static bool hosted_host_stopped;
++
++// Linked with --wrap=hci_rx_handler. ESP-Hosted otherwise delivers packets
++// even after NimBLE's pools have been freed.
++int __real_hci_rx_handler(uint8_t *buf, size_t len);
++int __wrap_hci_rx_handler(uint8_t *buf, size_t len) {
++    if (hosted_rx_mutex == NULL) {
++        return ESP_OK;
++    }
++    xSemaphoreTake(hosted_rx_mutex, portMAX_DELAY);
++    int ret = hosted_rx_enabled ? __real_hci_rx_handler(buf, len) : ESP_OK;
++    xSemaphoreGive(hosted_rx_mutex);
++    return ret;
++}
++
++static int hosted_set_rx(bool enabled) {
++    if (xSemaphoreTake(hosted_rx_mutex, pdMS_TO_TICKS(2000)) != pdTRUE) {
++        return MP_ETIMEDOUT;
++    }
++    hosted_rx_enabled = enabled;
++    xSemaphoreGive(hosted_rx_mutex);
++    return 0;
++}
++
++int mp_bluetooth_nimble_port_init(void) {
++    if (hosted_rx_mutex == NULL) {
++        hosted_rx_mutex = xSemaphoreCreateMutex();
++    }
++    if (hosted_host_exited == NULL) {
++        hosted_host_exited = xSemaphoreCreateBinary();
++    }
++    if (hosted_rx_mutex == NULL || hosted_host_exited == NULL) {
++        return MP_ENOMEM;
++    }
++    if (esp_hosted_connect_to_slave() != ESP_OK) {
++        return MP_ETIMEDOUT;
++    }
++    if (!hosted_controller_initialized) {
++        if (esp_hosted_bt_controller_init() != ESP_OK) {
++            return MP_EIO;
++        }
++        hosted_controller_initialized = true;
++    }
++    if (!hosted_controller_enabled) {
++        if (esp_hosted_bt_controller_enable() != ESP_OK) {
++            return MP_EIO;
++        }
++        hosted_controller_enabled = true;
++    }
++    // No host task exists yet and RX is gated until all pools are ready.
++    if (nimble_port_init() != ESP_OK) {
++        // Do not permit a retry over a partially initialized host.
++        mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_STOPPING;
++        return MP_EIO;
++    }
++    hosted_host_stopped = false;
++    int ret = hosted_set_rx(true);
++    if (ret != 0) {
++        mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_STOPPING;
++    }
++    return ret;
++}
++#endif
++
+ static void ble_host_task(void *param) {
+     DEBUG_printf("ble_host_task\n");
+     nimble_port_run(); // This function will return only when nimble_port_stop() is executed.
++    #if CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE
++    xSemaphoreGive(hosted_host_exited);
++    // The caller deletes this task after the exit handshake.
++    vTaskSuspend(NULL);
++    #else
+     nimble_port_freertos_deinit();
++    #endif
+ }
+ 
+ void mp_bluetooth_nimble_port_hci_init(void) {
+@@ -66,6 +145,44 @@ int mp_bluetooth_nimble_port_shutdown(vo
+     MP_THREAD_GIL_EXIT();
+     #endif
+ 
++    #if CONFIG_IDF_TARGET_ESP32P4 && CONFIG_ESP_HOSTED_ENABLE_BT_NIMBLE
++    int ret = 0;
++    if (!hosted_host_stopped) {
++        if (nimble_port_stop() != 0) {
++            ret = MP_EIO;
++            goto done;
++        }
++        if (xSemaphoreTake(hosted_host_exited, pdMS_TO_TICKS(2000)) != pdTRUE) {
++            ret = MP_ETIMEDOUT;
++            goto done;
++        }
++        nimble_port_freertos_deinit();
++        hosted_host_stopped = true;
++    }
++    ret = hosted_set_rx(false);
++    if (ret != 0) {
++        goto done;
++    }
++    if (hosted_controller_enabled) {
++        if (esp_hosted_bt_controller_disable() != ESP_OK) {
++            ret = MP_EIO;
++            goto done;
++        }
++        hosted_controller_enabled = false;
++    }
++    // IDF 5.5 skips this queue when the local controller is disabled.
++    ble_npl_eventq_deinit(nimble_port_get_dflt_eventq());
++    if (nimble_port_deinit() != ESP_OK) {
++        ret = MP_EIO;
++        goto done;
++    }
++    mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_OFF;
++    done:
++    #if MICROPY_PY_BLUETOOTH_USE_SYNC_EVENTS_WITH_INTERLOCK
++    MP_THREAD_GIL_ENTER();
++    #endif
++    return ret;
++    #else
+     // Despite the name, these is an ESP32-specific (no other NimBLE ports have these functions).
+     // Calls ble_hs_stop() and waits for stack shutdown.
+     nimble_port_stop();
+@@ -83,6 +200,7 @@ int mp_bluetooth_nimble_port_shutdown(vo
+     mp_bluetooth_nimble_ble_state = MP_BLUETOOTH_NIMBLE_BLE_STATE_OFF;
+ 
+     return 0;
++    #endif
+ }
+ 
+ #endif

@@ -414,6 +414,10 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
         elif board_id in (M5.BOARD.M5Tab5, M5.BOARD.M5Tab5X):
             from .tab5 import Tab5_Startup
+            import esp_hosted_utils as hosted
+
+            print("P4 host version:", hosted.get_host_firmware_version())
+            print("C6 slave version:", hosted.get_slave_firmware_version())
 
             tab5 = Tab5_Startup()
             tab5.startup(ssid, pswd, timeout=timeout)
