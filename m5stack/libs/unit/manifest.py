@@ -118,6 +118,7 @@ package(
         "servo180.py",
         "servo360.py",
         "servos8.py",
+        "servos8_v2.py",
         "ssr.py",
         "step16.py",
         "synth.py",

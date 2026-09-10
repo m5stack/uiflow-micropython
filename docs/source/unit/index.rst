@@ -112,6 +112,7 @@ Unit
     servo180.rst
     servo360.rst
     servos8.rst
+    servos8_v2.rst
     ssr.rst
     step16.rst
     synth.rst

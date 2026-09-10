@@ -39,6 +39,7 @@ CHAIN_DEVICE_TYPE_SWITCH = 0x0007  # Switch device type
 CHAIN_DEVICE_TYPE_PEDAL = 0x0008  # Pedal device type
 CHAIN_DEVICE_TYPE_PIR = 0x0009  # PIR device type
 CHAIN_DEVICE_TYPE_MIC = 0x000A  # Microphone device type
+CHAIN_DEVICE_TYPE_8SERVOS2 = 0x000C  # Unit 8Servos2 device type
 CHAIN_DEVICE_TYPE_MONO = 0x000D  # Mono display device type
 CHAIN_DEVICE_TYPE_RGB = 0x000E  # RGB display device type
 

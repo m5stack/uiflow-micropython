@@ -16,6 +16,7 @@ package(
         "mono.py",
         "pir.py",
         "rgb.py",
+        "servos8_v2.py",
         "switch.py",
         "tof.py",
         "unit_bus.py",

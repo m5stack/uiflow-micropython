@@ -1,0 +1,35 @@
+.. |Unit 8Servos2-Chain| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U223
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/init.png
+.. |get_channel_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_channel_mode.png
+.. |set_channel_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_channel_mode.png
+.. |set_input_pull.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_input_pull.png
+.. |get_input_pull.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_input_pull.png
+.. |get_gpio_input_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_gpio_input_value.png
+.. |set_gpio_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_gpio_output_value.png
+.. |get_gpio_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_gpio_output_value.png
+.. |get_adc_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_adc_input.png
+.. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_servo_angle.png
+.. |get_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_servo_angle.png
+.. |set_rgb_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_rgb_config.png
+.. |get_rgb_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_rgb_config.png
+.. |get_rgb_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_rgb_count.png
+.. |refresh_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/refresh_rgb.png
+.. |set_rgb_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_rgb_buffer.png
+.. |get_rgb_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_rgb_buffer.png
+.. |set_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_pwm_duty.png
+.. |get_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_pwm_duty.png
+.. |set_pwm_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/set_pwm_freq.png
+.. |get_pwm_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_pwm_freq.png
+.. |get_reference_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_reference_voltage.png
+.. |get_grove_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_grove_voltage.png
+.. |get_dc_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_dc_voltage.png
+.. |get_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_current.png
+.. |get_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_device_uid.png
+.. |get_bootloader_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_bootloader_version.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_firmware_version.png
+.. |get_device_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/get_device_type.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_8servos2_chain/example.png

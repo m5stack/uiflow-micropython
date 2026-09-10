@@ -13,6 +13,7 @@ _attrs = {
     "MonoChain": "mono",
     "PIRChain": "pir",
     "RGBChain": "rgb",
+    "Servos8V2Chain": "servos8_v2",
     "SwitchChain": "switch",
     "ToFChain": "tof",
     "BusChainUnit": "unit_bus",

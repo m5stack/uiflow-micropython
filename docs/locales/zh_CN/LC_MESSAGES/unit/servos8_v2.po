@@ -1,0 +1,1023 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-20 14:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/unit/servos8_v2.rst:4 daa8efd905294c349076dd9d03d2eb73
+msgid "8Servos2 Unit"
+msgstr ""
+
+#: ../../source/unit/servos8_v2.rst:10 bdffa4321c344cc98744839c0e0d71c7
+msgid ""
+"The ``Servos8V2Unit`` class controls the Unit 8Servos2-I2C over I2C. The "
+"device provides eight configurable channels for GPIO input, GPIO output, "
+"ADC, servo, RGB, and PWM operation. It also provides power monitoring and "
+"device information APIs."
+msgstr ""
+"``Servos8V2Unit`` 类通过 I2C 控制 Unit 8Servos2-I2C。设备提供 8 个可配置通"
+"道，支持 GPIO 输入、GPIO 输出、ADC、舵机、RGB 和 PWM 操作，同时提供电源监测和"
+"设备信息 API。"
+
+#: ../../source/unit/servos8_v2.rst:15 e7cf9d6c5fd8448d96dbb7feec60c646
+msgid "Support the following products:"
+msgstr "支持以下产品:"
+
+#: ../../source/unit/servos8_v2.rst:17 d3839547f1bf43b59286bb9abee100f6
+msgid "|Unit 8Servos2-I2C|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:0 6ecd2ee1d54242c5a3dce8737af8811c
+msgid "Unit 8Servos2-I2C"
+msgstr ""
+
+#: ../../source/unit/servos8_v2.rst:20 972df68ac2b942da9730ee868bd6c8c7
+msgid "Constants"
+msgstr "Constants"
+
+#: ../../source/unit/servos8_v2.rst:22 f6d76c02f98d40b98ae9c780acce7c24
+msgid "Use the following constants with ``set_channel_mode()``:"
+msgstr "以下常量用于 ``set_channel_mode()``："
+
+#: ../../source/unit/servos8_v2.rst:24 82b739f640734b1d80b61e8d1097bfb5
+msgid "``MODE_INPUT``: GPIO input mode."
+msgstr "``MODE_INPUT``：GPIO 输入模式。"
+
+#: ../../source/unit/servos8_v2.rst:25 387923d548004ee2aea0b90b965fb5be
+msgid "``MODE_OUTPUT``: GPIO output mode."
+msgstr "``MODE_OUTPUT``：GPIO 输出模式。"
+
+#: ../../source/unit/servos8_v2.rst:26 24986d9cf6154f37a517c1b70c71423e
+msgid "``MODE_ADC``: ADC input mode."
+msgstr "``MODE_ADC``：ADC 输入模式。"
+
+#: ../../source/unit/servos8_v2.rst:27 3d8bbeeb45b444f6b8baf3102a602ba2
+msgid "``MODE_SERVO``: Servo control mode."
+msgstr "``MODE_SERVO``：舵机控制模式。"
+
+#: ../../source/unit/servos8_v2.rst:28 36ab0ae368a94580844b53d52b58cc24
+msgid "``MODE_RGB``: RGB output mode for WS2812 LEDs."
+msgstr "``MODE_RGB``：用于 WS2812 灯珠的 RGB 输出模式。"
+
+#: ../../source/unit/servos8_v2.rst:29 2c94852b3d804f51a8d09eb1698c010d
+msgid "``MODE_PWM``: PWM duty output mode."
+msgstr "``MODE_PWM``：PWM 占空比输出模式。"
+
+#: ../../source/unit/servos8_v2.rst:31 796ab4c4664d4f0ca8a07059f29265e0
+msgid ""
+"Use ``PULL_NONE``, ``PULL_UP``, or ``PULL_DOWN`` with ``set_input_pull()``."
+msgstr ""
+"调用 ``set_input_pull()`` 时可使用 ``PULL_NONE``、``PULL_UP`` 或 "
+"``PULL_DOWN``。"
+
+#: ../../source/unit/servos8_v2.rst:36 dcbeb8d711fe4f74bc6e1881c48787cc
+msgid ""
+"Channels 0-3 share one PWM frequency, and channels 4-7 share another. "
+"Setting the frequency of one channel changes every channel in the same "
+"group. Selecting servo mode sets the channel's shared group to 50 Hz."
+msgstr ""
+"通道 0-3 共享一个 PWM 频率，通道 4-7 共享另一个 PWM 频率。设置任一通道的频率"
+"会改变同组所有通道的频率。选择舵机模式时，会将该通道所在共享频率组设置为 50 "
+"Hz。"
+
+#: ../../source/unit/servos8_v2.rst:41 0c52f0690d64444fb8688a20b7903165
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/unit/servos8_v2.rst:44 ../../source/unit/servos8_v2.rst:65
+#: 479a7edeb12c44ef918b44888b86aacf
+msgid "Servo control"
+msgstr "舵机控制"
+
+#: ../../source/unit/servos8_v2.rst:46 42566441707b4c14a2131e789dcaac4e
+msgid ""
+"Open the |basic_8servos_v2_servo_control_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_8servos_v2_servo_control_example.m5f2| 项目。"
+
+#: ../../source/unit/servos8_v2.rst:48 419de6cce9aa4574aa9d8ced2091b65c
+msgid ""
+"This example initializes Unit 8Servos2-I2C for servo control. Button A "
+"selects a channel or the all-channel option. Buttons B and C increase or "
+"decrease the servo angle in 10-degree steps. The screen displays the "
+"selected channel and current angle."
+msgstr ""
+"本示例初始化 Unit 8Servos2-I2C 以控制舵机。按键 A 选择单个通道或全部通道，按"
+"键 B 和 C 以 10 度为步长增大或减小舵机角度。屏幕显示当前选中的通道和角度。"
+
+#: ../../source/unit/servos8_v2.rst:53
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:9
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:7
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:16
+#: unit.servos8_v2.Servos8V2Unit.get_current:6
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:6
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:6
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:7
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:7
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:6
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:6
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:7
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:7
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:10
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:6
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:7
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:7
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:7
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:7
+#: unit.servos8_v2.Servos8V2Unit.get_uid:6
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:5
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:19
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:6
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:6
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:6
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:10
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:6
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:7
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:6
+#: b66cc0c1a0b340a0936d5fd48851ee20
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/unit/servos8_v2.rst:55 8616c1e3f8144ba589ab7c4839cf175c
+msgid "|example.png|"
+msgstr "|example.png|"
+
+#: ../../source/refs/unit.servos8_v2.ref:36 ccdd67f0ba8d4bd19442750df66adb73
+msgid "example.png"
+msgstr ""
+
+#: ../../source/unit/servos8_v2.rst:57 ../../source/unit/servos8_v2.rst:77
+#: e9bd4a2792ee4b0d984b279a7bbee590
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/unit/servos8_v2.rst:59 fe7374da93b84e8fa35bc22f7929adfd
+msgid "The selected servo output moves to the angle shown on the screen."
+msgstr "选中的舵机输出会转动到屏幕显示的角度。"
+
+#: ../../source/unit/servos8_v2.rst:62 ad7d391e7eed4b9fbb82640c3c8c5d96
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/unit/servos8_v2.rst:67 9c12131db58f4326b3aba34f3d6373fb
+msgid ""
+"This example initializes Unit 8Servos2-I2C for servo control. Button A "
+"selects a channel or the all-channel option. Buttons B and C increase or "
+"decrease the servo angle in 10-degree steps."
+msgstr ""
+"本示例初始化 Unit 8Servos2-I2C 以控制舵机。按键 A 选择单个通道或全部通道，按"
+"键 B 和 C 以 10 度为步长增大或减小舵机角度。"
+
+#: ../../source/unit/servos8_v2.rst:71
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:13
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:11
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:20
+#: unit.servos8_v2.Servos8V2Unit.get_current:10
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:10
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:10
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:11
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:11
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:10
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:10
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:11
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:11
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:14
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:10
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:11
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:11
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:11
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:11
+#: unit.servos8_v2.Servos8V2Unit.get_uid:10
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:9
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:23
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:10
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:10
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:10
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:14
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:10
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:11
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:10
+#: cfe3ed0bddd947679beb0bc70aa2ad19
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/servos8_v2.rst:79 1651f64e8a7f424a8873ca370aa56b1b
+msgid ""
+"The screen displays the selected channel and angle, and the selected servo "
+"output moves when the angle is changed."
+msgstr "屏幕显示当前选中的通道和角度；角度改变时，选中的舵机输出会随之转动。"
+
+#: ../../source/unit/servos8_v2.rst:83 775317c4acc54d2ca7f341e87b4785e6
+msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/unit/servos8_v2.rst:86 daa8efd905294c349076dd9d03d2eb73
+msgid "Servos8V2Unit"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:1 6008584e84d24a2ca35d561dc988b8da
+msgid "Bases: :py:class:`object`"
+msgstr "继承自：:py:class:`object`"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:1 f8ebc8d6bd0846fd95bc2ae805bbeaa6
+msgid "Create a Unit 8Servos2 object."
+msgstr "创建 Unit 8Servos2 对象。"
+
+#: ../../source/unit/servos8_v2.rst:0
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:0
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:0
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:0
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:0
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:0
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:0
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:0
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:0
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:0
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:0
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:0
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:0
+#: 2fdfd9d7c2f54276b9141b72bf660fbb
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:3 7bee6d19802040b3920611cf0019d45d
+msgid "The I2C bus the Unit 8Servos2 is connected to."
+msgstr "Unit 8Servos2 所连接的 I2C 总线。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:4 56cbc49ecaeb4ded97c67c08433e1f62
+msgid "The I2C address of the device, range 0x25 to 0x34. Default is 0x25."
+msgstr "设备的 I2C 地址，范围为 0x25 到 0x34，默认为 0x25。"
+
+#: ../../source/unit/servos8_v2.rst:0 38a3744024a94f42abd3b81af4518a12
+msgid "Raises"
+msgstr "引发"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:7 e24393da649d4be29f8afa399642d957
+msgid "If the Unit 8Servos2 is not connected."
+msgstr "当 Unit 8Servos2 未连接时。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit:11 b9f0897a29564f3e8ca598e3f5af604b
+msgid "|init.png|"
+msgstr "|init.png|"
+
+#: ../../source/refs/unit.servos8_v2.ref:6 9e66e4f53c334525bdd974595caaf0e0
+msgid "init.png"
+msgstr "init.png"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:1
+#: fb9ab2d82aec4564bbb6cf35af18c73d
+msgid "Get the current mode of a specific channel."
+msgstr "获取指定通道的当前模式。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:3
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:3
+#: 9afd7dcaf8244339a50271abed67693b
+msgid "The channel mode values:"
+msgstr "通道模式值："
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:5
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:5
+#: 69a7ef8e75e2481eaa7e866261d03000
+msgid "``MODE_INPUT``: ``0x00``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:6
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:6
+#: cc0f858e8a484effad83e4c75c2888c8
+msgid "``MODE_OUTPUT``: ``0x01``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:7
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:7
+#: b97321d5a15141759e39eb42140d7ea7
+msgid "``MODE_ADC``: ``0x02``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:8
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:8
+#: 87ba3e99b2a34db4b6daaf2551eba14a
+msgid "``MODE_SERVO``: ``0x03``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:9
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:9
+#: 1511522582a644489051c5113d5fae1c
+msgid "``MODE_RGB``: ``0x04``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:10
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:10
+#: 2a86638e14074e55ac3d227a92fc4f51
+msgid "``MODE_PWM``: ``0x05``"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:3
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:12
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:3
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:3
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:3
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:3
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:6
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:3
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:3
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:3
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:3
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:16
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:3
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:3
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:3
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:7
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:3
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:3
+#: 78ca2f7eb52941b0a66800d22361d6c9 c09b561681fb47349201bdf890613257
+msgid "The channel number (0 to 7)."
+msgstr "通道编号，范围为 0 到 7。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:0
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:0
+#: unit.servos8_v2.Servos8V2Unit.get_current:0
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:0
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:0
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:0
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:0
+#: unit.servos8_v2.Servos8V2Unit.get_uid:0 49e4b25a1e0c4726b4b180a2dd82d69a
+msgid "Returns"
+msgstr "返回"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:13
+#: 90d41b150678478b97c5fd971f496e0b
+msgid "The mode of the specified channel."
+msgstr "指定通道的模式。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:0
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:0
+#: unit.servos8_v2.Servos8V2Unit.get_current:0
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:0
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:0
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:0
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:0
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:0
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:0
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:0
+#: unit.servos8_v2.Servos8V2Unit.get_uid:0
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:0
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:0
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:0
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:0
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:0
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:0
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:0
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:0
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:0
+#: 1fbe9f3e673d4721acbd8d7c79b2b165
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_channel_mode:18
+#: 0438cb0d31804301820b27db6c60ca8a
+msgid "|get_channel_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:8 e7c43be229814082acd483f1be1e9a97
+msgid "get_channel_mode.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:1
+#: 3a14e46e9f774c01a856f5ba82a4a138
+msgid "Set the mode of a specific channel."
+msgstr "设置指定通道的模式。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:12
+#: c278c15f352a484e96e4639d33bbd2d4
+msgid ""
+"When a channel is set to ``MODE_SERVO``, the driver automatically sets its "
+"shared frequency group to 50 Hz. Channels 0-3 share one frequency, and "
+"channels 4-7 share another frequency."
+msgstr ""
+"当通道设置为 ``MODE_SERVO`` 时，驱动会自动将其共享频率组设置为 50 Hz。通道 "
+"0-3 共享一个频率，通道 4-7 共享另一个频率。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:17
+#: 9291a990a1eb48e7825456825dad6c7c
+msgid "The channel mode to set."
+msgstr "要设置的通道模式。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_channel_mode:21
+#: 753df365bced41458ce48d4c8c9317d0
+msgid "|set_channel_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:9 1d65822c383f4a28bff90729c6602842
+msgid "set_channel_mode.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:1
+#: 1585c6d9010d4a229ebfaab77508b291
+msgid "Set the input pull configuration of a specific channel."
+msgstr "设置指定通道的输入上下拉配置。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:4
+#: 05cb3924dae14e42aafb49a1ea1fc186
+msgid "Pull configuration. Use PULL_NONE, PULL_UP, or PULL_DOWN."
+msgstr "上下拉配置，可使用 PULL_NONE、PULL_UP 或 PULL_DOWN。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_input_pull:8
+#: 301b12ac602b4dfeb4b747be7780971b
+msgid "|set_input_pull.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:12 555191c3526a47e2990b9948e05eef8c
+msgid "set_input_pull.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:1
+#: 42d070748ff7481f99dda5b2db381c62
+msgid "Get the input pull configuration of a specific channel."
+msgstr "获取指定通道的输入上下拉配置。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:4
+#: e87df2688bba47f29162f8a9d0066430
+msgid "Pull configuration of the specified channel."
+msgstr "指定通道的上下拉配置。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_input_pull:9
+#: 7d4a06c877eb48ce99f7910c8d807a03
+msgid "|get_input_pull.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:11 94aead47b44c4e14aa617f13b190aa1b
+msgid "get_input_pull.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:1
+#: e62cfa4c5ca941d2ae8b0fb0770f74a2
+msgid "Get the GPIO input value of a specific channel."
+msgstr "获取指定通道的 GPIO 输入电平。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:4
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:4
+#: fd4c8622eceb4cd6bd1a53457e5f7dcd
+msgid "True for high level, False for low level."
+msgstr "True 表示高电平，False 表示低电平。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_input_value:9
+#: b555351092b642d7a17b65ee8a62aa6c
+msgid "|get_gpio_input_value.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:13 130e97ebb4b64fc6b0f23af442b49218
+msgid "get_gpio_input_value.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:1
+#: 43296b224dff490c9555e50c620a0e1d
+msgid "Set the GPIO output value of a specific channel."
+msgstr "设置指定通道的 GPIO 输出电平。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:4
+#: a7d53b19b9c444c392af479d6d2ff41e
+msgid "Output value, False for low level or True for high level."
+msgstr "输出值，False 表示低电平，True 表示高电平。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_gpio_output_value:8
+#: 370641e531f94478a471ef2bf3b172a9
+msgid "|set_gpio_output_value.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:15 b9aa2a710bfd45d49aea90b74cb4d55e
+msgid "set_gpio_output_value.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:1
+#: 72652735d81945eda73d427b311d9d95
+msgid "Get the GPIO output value of a specific channel."
+msgstr "获取指定通道的 GPIO 输出电平。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_gpio_output_value:9
+#: 402ca07f444e413ebd6791d111a277a6
+msgid "|get_gpio_output_value.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:14 7220d283c94d4967b26b0d5ab16888bf
+msgid "get_gpio_output_value.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:1
+#: 42fd7466839f4d4b92d22a04efaaee99
+msgid "Get the 12-bit ADC input value of a specific channel."
+msgstr "获取指定通道的 12 位 ADC 输入值。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:4
+#: 1c2d4cc7855d4bdbbb9b7cf51cd32dd0
+msgid "ADC value, range 0 to 4095."
+msgstr "ADC 值，范围为 0 到 4095。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_adc_input:9
+#: 3bddef45fda94bd1b8eccddab5c761c8
+msgid "|get_adc_input.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:18 d235f9af9fa848f29e17c9f07a2fbf4e
+msgid "get_adc_input.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:1
+#: 191b8b5f454b4b8591228e2d58b9d263
+msgid "Set the servo angle of a specific channel."
+msgstr "设置指定通道的舵机角度。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:4
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:4
+#: c2538bfe9fba461e831e5ff4fbb3e27e fe0038bcc7ca4b1c90efbcd13ca09410
+msgid "Servo angle, range 0 to 180."
+msgstr "舵机角度，范围为 0 到 180 度。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_servo_angle:8
+#: 979eab8ddfe446679177d8c27d3129d9
+msgid "|set_servo_angle.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:17 421cc9831e49483784ddfba6defbd0b2
+msgid "set_servo_angle.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:1
+#: 14d94857b8184cb698cc0270500fe594
+msgid "Get the servo angle of a specific channel."
+msgstr "获取指定通道的舵机角度。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_servo_angle:9
+#: 080ab5ca123b4c69abaee311acaf65ab
+msgid "|get_servo_angle.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:16 28fc68fc09054a4c892749c297a51e76
+msgid "get_servo_angle.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:1
+#: b90672a66e1e40249f1fc18235e3c9b6
+msgid "Set the WS2812 LED count and refresh flag of a specific channel."
+msgstr "设置指定通道的 WS2812 灯珠数量和刷新标志。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:4
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:4
+#: 7df0e4e522324dd2852465ba335de7f0
+msgid "WS2812 LED count, range 0 to 16."
+msgstr "WS2812 灯珠数量，范围为 0 到 16。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:5
+#: 0c55e78aab194557bce2f5a81d25a4b5
+msgid "Whether to trigger an RGB refresh. Default is False."
+msgstr "是否触发 RGB 刷新，默认为 False。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_config:9
+#: 6f327a01156040d885af8c07ac683d59
+msgid "|set_rgb_config.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:21 972cd275db434ce28e28faeba0372b3b
+msgid "set_rgb_config.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:1
+#: 61c0f297a136452b94034628225c55aa
+msgid "Get the raw WS2812 config value of a specific channel."
+msgstr "获取指定通道的原始 WS2812 配置值。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:4
+#: 4f27d9a8e0a149c98a7a13b45f82d1fe
+msgid "Raw RGB config byte."
+msgstr "原始 RGB 配置字节。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_config:9
+#: ab18d45806f24929a0f8eb5490de282a
+msgid "|get_rgb_config.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:20 65e1d3f0706d4edebd1f441196fe8270
+msgid "get_rgb_config.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:1
+#: afbf3c2f0c994a71a262311d6c489ffe
+msgid "Get the configured WS2812 LED count of a specific channel."
+msgstr "获取指定通道配置的 WS2812 灯珠数量。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_count:9
+#: ca34d6f38eef4ea89a10e5f93c8cf1bb
+msgid "|get_rgb_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:19 c2574d12569c44ff9577f411d6560a0e
+msgid "get_rgb_count.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:1 ac4e30fd7733401ca235e9aaaf471a05
+msgid "Trigger WS2812 refresh for a specific channel."
+msgstr "触发指定通道的 WS2812 刷新。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.refresh_rgb:7 decd76d743c344c7bb6dc90b13345809
+msgid "|refresh_rgb.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:22 f60d3fb7e24a4aa5b6837d745b7ea42b
+msgid "refresh_rgb.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:1
+#: 19e4e0aaf029449e9cce99e536d23b5d
+msgid "Set one WS2812 color buffer entry."
+msgstr "设置一个 WS2812 颜色缓冲区条目。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:3
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:3
+#: 67f43013db384713b88597d5bbf2c164
+msgid "WS2812 color buffer index, range 0 to 15."
+msgstr "WS2812 颜色缓冲区索引，范围为 0 到 15。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:4
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:4
+#: 6c77b9f046d140eebaa6ec1d96ff6254 8b52e1a0556d402bb5a60303b285118a
+msgid "RGB888 color value in ``0xRRGGBB`` format."
+msgstr "``0xRRGGBB`` 格式的 RGB888 颜色值。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_rgb_buffer:8
+#: 7889fdb22f8f45d393449f23148d7779
+msgid "|set_rgb_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:24 37d815236f7e423ea4f80432ef22dd98
+msgid "set_rgb_buffer.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:1
+#: 2248fad8e629411eb9db30d69d218530
+msgid "Get one WS2812 color buffer entry."
+msgstr "获取一个 WS2812 颜色缓冲区条目。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_rgb_buffer:9
+#: 73e7a87ae10541aca9a847622cb002eb
+msgid "|get_rgb_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:23 85b8a35acf414b2c979ed7dacfbf72de
+msgid "get_rgb_buffer.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:1
+#: 985a03a71bee4e328f9e4a1f863e3e2c
+msgid "Set the PWM duty of a specific channel."
+msgstr "设置指定通道的 PWM 占空比。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:4
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:4
+#: d82b3108a3224ad5b455ce6a7e997731 bcdecf44a32940c083123b0f0852f998
+msgid "PWM duty, range 0 to 100."
+msgstr "PWM 占空比，范围为 0 到 100。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_duty:8
+#: fdb470c1442a4c8ebc55e2046371e748
+msgid "|set_pwm_duty.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:26 1ca3f1ae391a42309c787271083feeaf
+msgid "set_pwm_duty.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:1
+#: a020204dd1b9446a89d8189f3e1bac52
+msgid "Get the PWM duty of a specific channel."
+msgstr "获取指定通道的 PWM 占空比。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_duty:9
+#: 955f61c6986f4595a813f0262c764735
+msgid "|get_pwm_duty.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:25 2ff8780746b7437cbe61918cbf4a2214
+msgid "get_pwm_duty.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:1
+#: d9296f810a7b4388a1b69a40f5acf270
+msgid "Set the PWM frequency of a specific channel."
+msgstr "设置指定通道的 PWM 频率。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:3
+#: 45efab2d56214a88be552db0314b5e47
+msgid ""
+"Channels 0-3 share one frequency, and channels 4-7 share another frequency. "
+"Setting the frequency of any channel changes the frequency of every channel "
+"in the same group."
+msgstr ""
+"通道 0-3 共享一个频率，通道 4-7 共享另一个频率。设置任一通道的频率会改变同组"
+"所有通道的频率。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:8
+#: e8683ea14443442f980a3bc2c1fa08e5
+msgid "PWM frequency in Hz, range 1 to 65535."
+msgstr "PWM 频率，单位为 Hz，范围为 1 到 65535。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.set_pwm_freq:12
+#: 8616c1e3f8144ba589ab7c4839cf175c
+msgid "|set_pwm_freq.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:28 d5a5d435cefb45a4b70db9459b7e8d60
+msgid "set_pwm_freq.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:1
+#: 6001f441919d43019e4ea627714adbc9
+msgid "Get the PWM frequency of a specific channel."
+msgstr "获取指定通道的 PWM 频率。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:3
+#: ff0b1311b0924099bd52cfa70c44803c
+msgid ""
+"Channels 0-3 share one frequency, and channels 4-7 share another frequency. "
+"The returned value is the shared frequency of the channel's group."
+msgstr ""
+"通道 0-3 共享一个频率，通道 4-7 共享另一个频率。返回值为该通道所在组的共享频"
+"率。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:7
+#: e9a724761a304b7faaae8a08426102c3
+msgid "PWM frequency in Hz."
+msgstr "PWM 频率，单位为 Hz。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_pwm_freq:12
+#: 2f801f39946c455a815e90fa660c311a
+msgid "|get_pwm_freq.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:27 30d5ad58fa544959b39c42d7b021e0b4
+msgid "get_pwm_freq.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:1
+#: 3d3965d5daaf4faaacb9eaed511e7974
+msgid "Get the reference voltage."
+msgstr "获取参考电压。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:3
+#: dec2e1f6badd47b2abd429841eb7062d
+msgid "Reference voltage in mV."
+msgstr "参考电压，单位为 mV。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_reference_voltage:8
+#: e6f4fb4b4d864051989600c5a9392722
+msgid "|get_reference_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:29 b910f9264a2540b3b2c19ad3a3b9a520
+msgid "get_reference_voltage.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:1
+#: 9f46f5b783414197a2b1ff86830556ea
+msgid "Get the Grove port voltage."
+msgstr "获取 Grove 端口电压。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:3
+#: a5f8fc4fb45349949e2c0756683803ae
+msgid "Grove port voltage in mV."
+msgstr "Grove 端口电压，单位为 mV。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_grove_voltage:8
+#: 181853ce082140b59a31c8ffe3588c68
+msgid "|get_grove_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:30 674bece98bc4441b80ed790652c90537
+msgid "get_grove_voltage.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:1
+#: 01054dc3c48341fbb178cc6ac52e069b
+msgid "Get the DC input voltage."
+msgstr "获取直流输入电压。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:3
+#: c92ea68430ed4029802a6928f45772b6
+msgid "DC input voltage in mV."
+msgstr "直流输入电压，单位为 mV。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_dc_voltage:8
+#: 6c340315e0ae4b0889ca900dad24507a
+msgid "|get_dc_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:31 6c5f7260db32438aa200dc51897e8c7d
+msgid "get_dc_voltage.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_current:1 1d3c53025a07432cac9d8e91c589da56
+msgid "Get the system current."
+msgstr "获取系统电流。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_current:3 9f97cede05f84ee28e58bb5f16ca22f7
+msgid "System current in mA."
+msgstr "系统电流，单位为 mA。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_current:8 6b450db245db404ab1b5d4162a2b0210
+msgid "|get_current.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:32 f12b091ccd8b4e39b53a7eca227b0a4b
+msgid "get_current.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:1
+#: 6ab3059a23bf463e82c2700a70d64519
+msgid "Get the firmware version."
+msgstr "获取固件版本。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:3
+#: fd3825ac40dd4bd98302a642da6e23c5
+msgid "Firmware version."
+msgstr "固件版本。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_firmware_version:8
+#: 789ae36f868f40eaae191386a3e7c4db
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:33 ddfe407ea7714998991de3661c606d24
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:1
+#: 57a26be5991a426ebef50a0f1771533b
+msgid "Get the current I2C address."
+msgstr "获取当前 I2C 地址。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:3
+#: 75848c1db3034c8c8f0d0314c218cd46
+msgid "Current I2C address."
+msgstr "当前 I2C 地址。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_i2c_address:8
+#: c4f39a7c25144d08b673cd2befc24550
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:34 08a2b9345ae7482ea1aef2e52e038c22
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_uid:1 2f7cf6edb1334d52ac42981dbc088e47
+msgid "Get the 12-byte device UID."
+msgstr "获取 12 字节设备 UID。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_uid:3 d45b92515727415cbc2df2e4077557da
+msgid "Tuple containing the 12 UID bytes."
+msgstr "包含 12 个 UID 字节的元组。"
+
+#: ../../../m5stack/libs/unit/servos8_v2.py:docstring of
+#: unit.servos8_v2.Servos8V2Unit.get_uid:8 debba3c93c454d53b29f1f89a835e358
+msgid "|get_uid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.servos8_v2.ref:35 ccdd67f0ba8d4bd19442750df66adb73
+msgid "get_uid.png"
+msgstr ""

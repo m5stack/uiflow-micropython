@@ -122,6 +122,7 @@ _attrs = {
     "Servo180Unit": "servo180",
     "Servo360Unit": "servo360",
     "Servos8Unit": "servos8",
+    "Servos8V2Unit": "servos8_v2",
     "SSRUnit": "ssr",
     "Step16Unit": "step16",
     "SynthUnit": "synth",

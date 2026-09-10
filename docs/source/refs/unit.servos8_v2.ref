@@ -1,0 +1,45 @@
+.. |Unit 8Servos2-I2C| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U222
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/init.png
+.. |mode_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/mode_option.png
+.. |get_channel_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_channel_mode.png
+.. |set_channel_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_channel_mode.png
+.. |pull_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/pull_option.png
+.. |get_input_pull.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_input_pull.png
+.. |set_input_pull.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_input_pull.png
+.. |get_gpio_input_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_gpio_input_value.png
+.. |get_gpio_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_gpio_output_value.png
+.. |set_gpio_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_gpio_output_value.png
+.. |get_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_servo_angle.png
+.. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_servo_angle.png
+.. |get_adc_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_adc_input.png
+.. |get_rgb_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_rgb_count.png
+.. |get_rgb_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_rgb_config.png
+.. |set_rgb_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_rgb_config.png
+.. |refresh_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/refresh_rgb.png
+.. |get_rgb_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_rgb_buffer.png
+.. |set_rgb_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_rgb_buffer.png
+.. |get_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_pwm_duty.png
+.. |set_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_pwm_duty.png
+.. |get_pwm_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_pwm_freq.png
+.. |set_pwm_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/set_pwm_freq.png
+.. |get_reference_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_reference_voltage.png
+.. |get_grove_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_grove_voltage.png
+.. |get_dc_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_dc_voltage.png
+.. |get_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_current.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_firmware_version.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_i2c_address.png
+.. |get_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/get_uid.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos2_i2c/example.png
+
+.. |basic_8servos_v2_servo_control_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/8servos2/basic_8servos_v2_servo_control_example.m5f2"
+        target="_blank"
+    >
+        basic_8servos_v2_servo_control_example.m5f2
+    </a>
