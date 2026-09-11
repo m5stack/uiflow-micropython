@@ -8,6 +8,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
+#include "esp_mac.h"
 #include "esp_system.h"
 #include "esp_timer.h"
 #include "esp_wifi.h"
@@ -109,7 +110,12 @@ static inline void webrepl_wake_main_task(void) {
 static void webrepl_build_uri(void) {
     uint8_t mac[6] = {0};
     char mac_str[13] = {0};
+    // Match m5things device identity: P4 uses its own MAC, not the Wi-Fi coprocessor's.
+    #if CONFIG_IDF_TARGET_ESP32P4
+    esp_err_t err = esp_efuse_mac_get_default(mac);
+    #else
     esp_err_t err = esp_wifi_get_mac(WIFI_IF_STA, mac);
+    #endif
     if (err != ESP_OK) {
         ESP_LOGW(WEBREPL_TAG, "read mac failed: %s, fallback 000000000000", esp_err_to_name(err));
     }
