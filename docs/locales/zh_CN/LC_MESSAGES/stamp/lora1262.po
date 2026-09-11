@@ -710,4 +710,3 @@ msgstr "停止接收并将无线电置于睡眠模式。"
 #: of stamp.lora1262.StampLoRa1262.deinit:5
 msgid "Use the deinit block in UiFlow2."
 msgstr "在 UiFlow2 中使用 deinit 功能块。"
-
