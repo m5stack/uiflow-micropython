@@ -15,6 +15,7 @@ Unit
     asr.rst
     audioplayer.rst
     bldc_driver.rst
+    bmm350.rst
     bps.rst
     button.rst
     buzzer.rst
@@ -35,6 +36,9 @@ Unit
     digi_clock.rst
     dlight.rst
     dmx.rst
+    dof6.rst
+    dof9.rst
+    dof10.rst
     dualbutton.rst
     earth.rst
     encoder.rst

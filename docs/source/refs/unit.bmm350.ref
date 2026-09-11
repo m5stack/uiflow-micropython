@@ -1,0 +1,32 @@
+.. |BMM350 Unit| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/zh_CN/products/sku/U231
+    :height: 200px
+    :width: 200px
+
+.. Product page and product image are pending publication. SKU: U231.
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/init.png
+.. |get_mag.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_mag.png
+.. |get_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_temperature.png
+.. |get_heading.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_heading.png
+.. |get_output_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_output_data_rate.png
+.. |get_axis_mapping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_axis_mapping.png
+.. |get_magnetic_declination.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/get_magnetic_declination.png
+.. |is_calibrating.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/is_calibrating.png
+.. |set_output_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/set_output_data_rate.png
+.. |set_axis_mapping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/set_axis_mapping.png
+.. |set_magnetic_declination.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/set_magnetic_declination.png
+.. |clear_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/clear_calibration.png
+.. |start_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/start_calibration.png
+.. |stop_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/stop_calibration.png
+.. |cancel_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/cancel_calibration.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bmm350/example.png
+
+.. |cores3_unit_bmm350_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/bmm350/cores3_unit_bmm350_example.m5f2"
+        target="_blank"
+    >
+        cores3_unit_bmm350_example.m5f2
+    </a>

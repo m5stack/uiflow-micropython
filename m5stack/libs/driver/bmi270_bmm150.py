@@ -640,14 +640,25 @@ class BMI270:
         return False
 
     def _aux_read_reg(self, reg, size=1) -> bytes:
-        self._write_reg(AUX_IF_CONF, 0x80)
-        self._write_reg(AUX_RD_ADDR, reg)
-        while True:
-            if not (self._read_reg(STATUS_REG) & AUX_BUSY):
-                time.sleep_ms(1)
-                break
-            time.sleep_ms(10)
-        return self._read_reg(AUX_X_REG, size)
+        result = bytearray()
+        offset = 0
+        while offset < size:
+            chunk = min(8, size - offset)
+            burst = 0 if chunk == 1 else 1 if chunk == 2 else 2 if chunk <= 6 else 3
+            self._write_reg(AUX_IF_CONF, 0x80 | burst)
+            self._write_reg(AUX_RD_ADDR, reg + offset)
+            while True:
+                if not (self._read_reg(STATUS_REG) & AUX_BUSY):
+                    time.sleep_ms(1)
+                    break
+                time.sleep_ms(10)
+            data = self._read_reg(AUX_X_REG, chunk)
+            if isinstance(data, int):
+                result.append(data)
+            else:
+                result.extend(data)
+            offset += chunk
+        return result[0] if size == 1 else bytes(result)
 
     def _aux_write_reg(self, reg, val) -> None:
         self._write_reg(AUX_WR_DATA, val)
@@ -658,16 +669,20 @@ class BMI270:
                 break
             time.sleep_ms(10)
 
-    def gyro(self) -> tuple:
-        #! Returns gyroscope vector in degrees/sec.
+    def gyro(self, raw=False) -> tuple:
+        #! Returns gyroscope vector in degrees/sec, or signed register counts.
         f = self.gyro_scale
         self._read_reg_into(GYR_X, self.scratch)
+        if raw:
+            return (self.scratch[0], self.scratch[1], self.scratch[2])
         return (self.scratch[0] / f, self.scratch[1] / f, self.scratch[2] / f)
 
-    def accel(self) -> tuple:
-        #! Returns acceleration vector in gravity units (9.81m/s^2).
+    def accel(self, raw=False) -> tuple:
+        #! Returns acceleration vector in gravity units (9.81m/s^2), or signed register counts.
         f = self.accel_scale
         self._read_reg_into(ACC_X, self.scratch)
+        if raw:
+            return (self.scratch[0], self.scratch[1], self.scratch[2])
         return (self.scratch[0] / f, self.scratch[1] / f, self.scratch[2] / f)
 
     def temperature(self) -> float:

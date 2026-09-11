@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 17:15+0800\n"
+"PO-Revision-Date: 2026-08-24 17:16+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hans_CN\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/refs/unit.bmm350.ref ../../source/unit/bmm350.rst:2
+msgid "BMM350 Unit"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:8
+msgid "This library is the driver for BMM350 Unit, a three-axis BMM350 magnetometer."
+msgstr "该库是 BMM350 Unit 的驱动程序，用于读取三轴 BMM350 磁力计数据。"
+
+#: ../../source/unit/bmm350.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/unit/bmm350.rst:12
+msgid "|BMM350 Unit|"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:15
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/unit/bmm350.rst:18 ../../source/unit/bmm350.rst:38
+msgid "Read magnetic field and heading"
+msgstr "读取磁场和航向角"
+
+#: ../../source/unit/bmm350.rst:20
+msgid "Open the |cores3_unit_bmm350_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_unit_bmm350_example.m5f2| 项目。"
+
+#: ../../source/unit/bmm350.rst:22
+msgid ""
+"This example displays the heading, X/Y/Z magnetic field values, and sensor temperature. Tap the calibration button to"
+" start collecting samples, rotate the Unit through all three axes, then tap the button again to finish."
+msgstr ""
+"此示例显示航向角、X/Y/Z 三轴磁场值和传感器温度。点击校准按钮开始采样，旋转 Unit 使其经过三个轴向，"
+"然后再次点击按钮完成校准。"
+
+#: ../../source/unit/bmm350.rst:26
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 图形化代码块："
+
+#: ../../source/unit/bmm350.rst:28
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:23
+msgid "example.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:30
+msgid ""
+"Calibration requires at least 32 samples and at least ``10 uT`` of range on each axis. When the range is "
+"insufficient, the example keeps the previous calibration and reports that the calibration should be retried."
+msgstr ""
+"校准至少需要 32 个样本，并且每个轴的磁场范围至少达到 ``10 uT``。如果范围不足，示例会保留之前的校准结果，"
+"并提示重新校准。"
+
+#: ../../source/unit/bmm350.rst:35
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/unit/bmm350.rst:40
+msgid ""
+"This example uses CoreS3 Unit A I2C and continuously refreshes the graphical display with the current magnetic field,"
+" temperature, and heading."
+msgstr "此示例使用 CoreS3 Unit A 的 I2C 接口，持续刷新图形界面中的当前磁场、温度和航向角。"
+
+#: ../../source/unit/bmm350.rst:43
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/bmm350.rst:50
+msgid "**API**"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:53
+msgid "BMM350Unit"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:57
+msgid "Create a direct-I2C BMM350 Unit object."
+msgstr "创建一个直接连接 I2C 的 BMM350 Unit 对象。"
+
+#: ../../source/unit/bmm350.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:59
+msgid "Initialized ``machine.I2C`` or ``PAHUBUnit`` object."
+msgstr "已初始化的 ``machine.I2C`` 或 ``PAHUBUnit`` 对象。"
+
+#: ../../source/unit/bmm350.rst:60
+msgid "I2C address. The default is ``0x14``."
+msgstr "I2C 地址，默认值为 ``0x14``。"
+
+#: ../../source/unit/bmm350.rst:61
+msgid "Output data rate. Supported values are ``25``, ``50``, ``100``, ``200``, and ``400`` Hz."
+msgstr "输出数据速率，支持 ``25``、``50``、``100``、``200`` 和 ``400`` Hz。"
+
+#: ../../source/unit/bmm350.rst:64 ../../source/unit/bmm350.rst:76 ../../source/unit/bmm350.rst:88
+#: ../../source/unit/bmm350.rst:101 ../../source/unit/bmm350.rst:112 ../../source/unit/bmm350.rst:123
+#: ../../source/unit/bmm350.rst:139 ../../source/unit/bmm350.rst:150 ../../source/unit/bmm350.rst:176
+#: ../../source/unit/bmm350.rst:188 ../../source/unit/bmm350.rst:201 ../../source/unit/bmm350.rst:211
+#: ../../source/unit/bmm350.rst:222 ../../source/unit/bmm350.rst:234 ../../source/unit/bmm350.rst:245
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:66
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:8
+msgid "init.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:70
+msgid "Sample and return the mapped, calibrated magnetic field as ``(x, y, z)`` in ``uT``."
+msgstr "采样并返回经过轴映射和校准的磁场值，格式为 ``(x, y, z)``，单位为 ``uT``。"
+
+#: ../../source/unit/bmm350.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:73
+msgid "Magnetic field tuple."
+msgstr "磁场元组。"
+
+#: ../../source/unit/bmm350.rst
+msgid "Return type"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:78
+msgid "|get_mag.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:9
+msgid "get_mag.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:83
+msgid "Sample and return the sensor temperature in degrees Celsius."
+msgstr "采样并返回传感器温度，单位为摄氏度。"
+
+#: ../../source/unit/bmm350.rst:85
+msgid "Sensor temperature."
+msgstr "传感器温度。"
+
+#: ../../source/unit/bmm350.rst:90
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:10
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:95
+msgid ""
+"Sample and return the horizontal heading in the range ``0 <= heading < 360`` degrees. The Unit must be kept level for"
+" a meaningful heading."
+msgstr ""
+"采样并返回水平航向角，范围为 ``0 <= heading < 360`` 度。Unit 必须保持水平，才能获得有意义的航向角。"
+
+#: ../../source/unit/bmm350.rst:98
+msgid "Horizontal heading in degrees."
+msgstr "水平航向角，单位为度。"
+
+#: ../../source/unit/bmm350.rst:103
+msgid "|get_heading.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:11
+msgid "get_heading.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:107
+msgid "Set the output data rate to ``25``, ``50``, ``100``, ``200``, or ``400`` Hz."
+msgstr "将输出数据速率设置为 ``25``、``50``、``100``、``200`` 或 ``400`` Hz。"
+
+#: ../../source/unit/bmm350.rst:109
+msgid "Output data rate in Hz."
+msgstr "输出数据速率，单位为 Hz。"
+
+#: ../../source/unit/bmm350.rst:114
+msgid "|set_output_data_rate.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:16
+msgid "set_output_data_rate.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:118
+msgid "Return the configured output data rate in Hz."
+msgstr "返回已配置的输出数据速率，单位为 Hz。"
+
+#: ../../source/unit/bmm350.rst:120
+msgid "Output data rate."
+msgstr "输出数据速率。"
+
+#: ../../source/unit/bmm350.rst:125
+msgid "|get_output_data_rate.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:12
+msgid "get_output_data_rate.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:130
+msgid ""
+"Set the output axis order and direction. Each value must be one of ``1``, ``-1``, ``2``, ``-2``, ``3``, or ``-3``; "
+"each source axis must be used exactly once."
+msgstr ""
+"设置输出轴的顺序和方向。每个值必须为 ``1``、``-1``、``2``、``-2``、``3`` 或 ``-3`` 之一；每个源轴只能使用一次。"
+
+#: ../../source/unit/bmm350.rst:134
+msgid "Source axis and sign for output X."
+msgstr "输出 X 轴对应的源轴和方向。"
+
+#: ../../source/unit/bmm350.rst:135
+msgid "Source axis and sign for output Y."
+msgstr "输出 Y 轴对应的源轴和方向。"
+
+#: ../../source/unit/bmm350.rst:136
+msgid "Source axis and sign for output Z."
+msgstr "输出 Z 轴对应的源轴和方向。"
+
+#: ../../source/unit/bmm350.rst:141
+msgid "|set_axis_mapping.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:17
+msgid "set_axis_mapping.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:145
+msgid "Return the current axis mapping tuple."
+msgstr "返回当前的轴映射元组。"
+
+#: ../../source/unit/bmm350.rst:147
+msgid "Source axis and sign mapping."
+msgstr "源轴和方向映射。"
+
+#: ../../source/unit/bmm350.rst:152
+msgid "|get_axis_mapping.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:13
+msgid "get_axis_mapping.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:156
+msgid ""
+"Apply three hard-iron offsets in ``uT`` and three positive soft-iron scale factors. Both arguments must contain three"
+" finite numeric values."
+msgstr ""
+"应用三个 ``uT`` 单位的硬铁偏移量和三个正数软铁缩放系数。两个参数都必须包含三个有限数值。"
+
+#: ../../source/unit/bmm350.rst:159
+msgid "Three hard-iron offsets in ``uT``."
+msgstr "三个 ``uT`` 单位的硬铁偏移量。"
+
+#: ../../source/unit/bmm350.rst:160
+msgid "Three positive soft-iron scale factors."
+msgstr "三个正数软铁缩放系数。"
+
+#: ../../source/unit/bmm350.rst:165
+msgid "Return ``(offsets, scales)`` currently applied in memory."
+msgstr "返回当前应用于内存中的 ``(offsets, scales)``。"
+
+#: ../../source/unit/bmm350.rst:167
+msgid "Current offsets and scale factors."
+msgstr "当前偏移量和缩放系数。"
+
+#: ../../source/unit/bmm350.rst:172
+msgid "Restore zero offsets and unit scale factors."
+msgstr "恢复为零偏移量和单位缩放系数。"
+
+#: ../../source/unit/bmm350.rst:178
+msgid "|clear_calibration.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:19
+msgid "clear_calibration.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:182
+msgid ""
+"Start non-blocking min/max sample collection. Continue calling a sampling getter while rotating the Unit through all "
+"three axes."
+msgstr ""
+"开始非阻塞的最小值/最大值采样。旋转 Unit 使其经过三个轴向时，继续调用采样 getter。"
+
+#: ../../source/unit/bmm350.rst
+msgid "Raises"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:185
+msgid "If calibration is already active."
+msgstr "如果校准已经处于活动状态。"
+
+#: ../../source/unit/bmm350.rst:190
+msgid "|start_calibration.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:20
+msgid "start_calibration.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:194
+msgid ""
+"Finish sample collection, apply the calculated calibration, and return ``(offsets, scales)``. At least 32 samples and"
+" at least ``10 uT`` of range on every axis are required; otherwise ``RuntimeError`` is raised."
+msgstr ""
+"完成采样，应用计算出的校准结果，并返回 ``(offsets, scales)``。至少需要 32 个样本，且每个轴的范围至少达到 "
+"``10 uT``；否则会引发 ``RuntimeError``。"
+
+#: ../../source/unit/bmm350.rst:198
+msgid "Calculated offsets and scale factors."
+msgstr "计算出的偏移量和缩放系数。"
+
+#: ../../source/unit/bmm350.rst:203
+msgid "|stop_calibration.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:21
+msgid "stop_calibration.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:207
+msgid "Cancel active sample collection while preserving the previous calibration."
+msgstr "取消当前的采样过程，同时保留之前的校准结果。"
+
+#: ../../source/unit/bmm350.rst:213
+msgid "|cancel_calibration.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:22
+msgid "cancel_calibration.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:217
+msgid "Return ``True`` while calibration samples are being collected."
+msgstr "采集校准样本期间返回 ``True``。"
+
+#: ../../source/unit/bmm350.rst:219
+msgid "Whether calibration is active."
+msgstr "校准是否处于活动状态。"
+
+#: ../../source/unit/bmm350.rst:224
+msgid "|is_calibrating.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:15
+msgid "is_calibrating.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:228
+msgid "Set magnetic declination in degrees. The value is added to subsequent horizontal headings."
+msgstr "设置磁偏角，单位为度。该值会加到后续的水平航向角中。"
+
+#: ../../source/unit/bmm350.rst:231 ../../source/unit/bmm350.rst:242
+msgid "Magnetic declination in degrees."
+msgstr "磁偏角，单位为度。"
+
+#: ../../source/unit/bmm350.rst:236
+msgid "|set_magnetic_declination.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:18
+msgid "set_magnetic_declination.png"
+msgstr ""
+
+#: ../../source/unit/bmm350.rst:240
+msgid "Return the configured magnetic declination in degrees."
+msgstr "返回已配置的磁偏角，单位为度。"
+
+#: ../../source/unit/bmm350.rst:247
+msgid "|get_magnetic_declination.png|"
+msgstr ""
+
+#: ../../source/refs/unit.bmm350.ref:14
+msgid "get_magnetic_declination.png"
+msgstr ""

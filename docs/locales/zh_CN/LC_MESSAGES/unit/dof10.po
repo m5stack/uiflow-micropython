@@ -1,0 +1,547 @@
+# Chinese (Simplified, China) translations for UIFlow2 Programming Guide.
+# Copyright (C) 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-11 11:40+0800\n"
+"PO-Revision-Date: 2026-09-11 03:40+0000\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/unit/dof10.rst:2
+msgid "DoF10 Unit"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:8
+msgid "This library is the driver for Unit DoF10."
+msgstr "此库是 Unit DoF10 的驱动程序。"
+
+#: ../../source/unit/dof10.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/unit/dof10.rst:12
+msgid "|Unit DoF10|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref
+msgid "Unit DoF10"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:15
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/unit/dof10.rst:18 ../../source/unit/dof10.rst:51
+msgid "Read Acceleration"
+msgstr "读取加速度"
+
+#: ../../source/unit/dof10.rst:20
+msgid "Open the |cores3_unit_dof10_accel_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_unit_dof10_accel_example.m5f2| 项目。"
+
+#: ../../source/unit/dof10.rst:22 ../../source/unit/dof10.rst:53
+msgid "This example shows how to read and display X, Y, and Z acceleration."
+msgstr "此示例演示如何读取并显示 X、Y、Z 轴加速度。"
+
+#: ../../source/unit/dof10.rst:24 ../../source/unit/dof10.rst:39 ../../source/unit/dof10.rst:101 ../../source/unit/dof10.rst:126 ../../source/unit/dof10.rst:138 ../../source/unit/dof10.rst:151 ../../source/unit/dof10.rst:163 ../../source/unit/dof10.rst:175 ../../source/unit/dof10.rst:187 ../../source/unit/dof10.rst:202 ../../source/unit/dof10.rst:214 ../../source/unit/dof10.rst:227 ../../source/unit/dof10.rst:240 ../../source/unit/dof10.rst:253 ../../source/unit/dof10.rst:266 ../../source/unit/dof10.rst:279 ../../source/unit/dof10.rst:292 ../../source/unit/dof10.rst:307 ../../source/unit/dof10.rst:323 ../../source/unit/dof10.rst:337 ../../source/unit/dof10.rst:351 ../../source/unit/dof10.rst:371 ../../source/unit/dof10.rst:383 ../../source/unit/dof10.rst:392
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/unit/dof10.rst:26
+msgid "|accel_example.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:47
+msgid "accel_example.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:28 ../../source/unit/dof10.rst:43 ../../source/unit/dof10.rst:61 ../../source/unit/dof10.rst:76
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/unit/dof10.rst:30 ../../source/unit/dof10.rst:45 ../../source/unit/dof10.rst:63 ../../source/unit/dof10.rst:78
+msgid "None"
+msgstr "无"
+
+#: ../../source/unit/dof10.rst:33 ../../source/unit/dof10.rst:66
+msgid "Read Barometer"
+msgstr "读取气压计"
+
+#: ../../source/unit/dof10.rst:35
+msgid "Open the |cores3_unit_dof10_barometer_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_unit_dof10_barometer_example.m5f2| 项目。"
+
+#: ../../source/unit/dof10.rst:37 ../../source/unit/dof10.rst:68
+msgid "This example shows how to read and display pressure, altitude, and temperature."
+msgstr "此示例演示如何读取并显示气压、海拔和温度。"
+
+#: ../../source/unit/dof10.rst:41
+msgid "|barometer_example.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:49
+msgid "barometer_example.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:48
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/unit/dof10.rst:55 ../../source/unit/dof10.rst:70 ../../source/unit/dof10.rst:105
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/dof10.rst:81
+msgid "**API**"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:84
+msgid "DoF10Unit"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:87
+msgid "Constructors"
+msgstr "构造函数"
+
+#: ../../source/unit/dof10.rst:91
+msgid "Create a DoF10Unit on the host I2C bus. The BMI270 address can be ``0x68`` or ``0x69`` (default: ``0x68``). The BMM350 and SPL06-001 addresses remain ``0x14`` and ``0x76``."
+msgstr "在主机 I2C 总线上创建 DoF10Unit。BMI270 地址可选 ``0x68`` 或 ``0x69``，默认为 ``0x68``。BMM350 和 SPL06-001 地址仍为 ``0x14`` 和 ``0x76``。"
+
+#: ../../source/unit/dof10.rst
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/unit/dof10.rst:93
+msgid "Initialized I2C or PAHUBUnit interface."
+msgstr "已初始化的 I2C 或 PAHUBUnit 接口。"
+
+#: ../../source/unit/dof10.rst:95
+msgid "BMI270 I2C address, 0x68 or 0x69. Defaults to 0x68."
+msgstr "BMI270 I2C 地址，可选 0x68 或 0x69，默认为 0x68。"
+
+#: ../../source/unit/dof10.rst
+msgid "Raises"
+msgstr "异常"
+
+#: ../../source/unit/dof10.rst:96
+msgid "addr is not an integer."
+msgstr "addr 必须为整数。"
+
+#: ../../source/unit/dof10.rst:97
+msgid "addr is not 0x68 or 0x69."
+msgstr "addr 必须为 0x68 或 0x69。"
+
+#: ../../source/unit/dof10.rst:98
+msgid "No BMI270 responds at the selected address."
+msgstr "所选地址未检测到 BMI270。"
+
+#: ../../source/unit/dof10.rst:99
+msgid "Sensor initialization or I2C communication fails."
+msgstr "传感器初始化或 I2C 通信失败。"
+
+#: ../../source/unit/dof10.rst:103
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:24
+msgid "init.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:114
+msgid "Methods"
+msgstr "方法"
+
+#: ../../source/unit/dof10.rst:116
+msgid "The complete DoF10 interface is listed below."
+msgstr "下面列出了完整的 DoF10 接口。"
+
+#: ../../source/unit/dof10.rst:121
+msgid "Return mapped acceleration as ``(x, y, z)`` in ``m/s2``."
+msgstr "返回映射后的加速度 ``(x, y, z)``，单位为 ``m/s2``。"
+
+#: ../../source/unit/dof10.rst
+msgid "Returns"
+msgstr "返回值"
+
+#: ../../source/unit/dof10.rst:123
+msgid "Acceleration tuple."
+msgstr "加速度元组。"
+
+#: ../../source/unit/dof10.rst
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../source/unit/dof10.rst:128
+msgid "|get_accel.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:25
+msgid "get_accel.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:133
+msgid "Return signed 16-bit BMI270 counts from ``-32768`` to ``32767``."
+msgstr "返回范围为 ``-32768`` 到 ``32767`` 的有符号 16 位 BMI270 计数值。"
+
+#: ../../source/unit/dof10.rst:135
+msgid "Raw acceleration counts."
+msgstr "原始加速度计数值。"
+
+#: ../../source/unit/dof10.rst:140
+msgid "|get_accel_raw.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:26
+msgid "get_accel_raw.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:145
+msgid "Return mapped, offset-corrected angular velocity as ``(x, y, z)`` in ``rad/s``."
+msgstr "返回经过映射和偏移校正的角速度 ``(x, y, z)``，单位为 ``rad/s``。"
+
+#: ../../source/unit/dof10.rst:148
+msgid "Angular velocity tuple."
+msgstr "角速度元组。"
+
+#: ../../source/unit/dof10.rst:153
+msgid "|get_gyro.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:27
+msgid "get_gyro.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:158
+msgid "Return signed 16-bit BMI270 gyroscope counts from ``-32768`` to ``32767``."
+msgstr "返回范围为 ``-32768`` 到 ``32767`` 的有符号 16 位 BMI270 陀螺仪计数值。"
+
+#: ../../source/unit/dof10.rst:160
+msgid "Raw gyroscope counts."
+msgstr "原始陀螺仪计数值。"
+
+#: ../../source/unit/dof10.rst:165
+msgid "|get_gyro_raw.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:28
+msgid "get_gyro_raw.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:170
+msgid "Return mapped and calibrated magnetic field as ``(x, y, z)`` in ``uT``."
+msgstr "返回经过映射和校准的磁场 ``(x, y, z)``，单位为 ``uT``。"
+
+#: ../../source/unit/dof10.rst:172
+msgid "Magnetic field tuple."
+msgstr "磁场元组。"
+
+#: ../../source/unit/dof10.rst:177
+msgid "|get_mag.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:29
+msgid "get_mag.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:182
+msgid "Return signed 24-bit BMM350 counts from ``-8388608`` to ``8388607``."
+msgstr "返回范围为 ``-8388608`` 到 ``8388607`` 的有符号 24 位 BMM350 计数值。"
+
+#: ../../source/unit/dof10.rst:184
+msgid "Raw magnetic field counts."
+msgstr "原始磁场计数值。"
+
+#: ../../source/unit/dof10.rst:189
+msgid "|get_mag_raw.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:30
+msgid "get_mag_raw.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:194
+msgid "Return temperature in degrees Celsius. ``sensor`` accepts ``\"imu\"``, ``\"magnetometer\"``, or ``\"pressure\"``; the default is ``\"pressure\"``."
+msgstr "返回温度，单位为摄氏度。``sensor`` 可接受 ``\"imu\"``、``\"magnetometer\"`` 或 ``\"pressure\"``，默认值为 ``\"pressure\"``。"
+
+#: ../../source/unit/dof10.rst:197
+msgid "Temperature source."
+msgstr "温度来源。"
+
+#: ../../source/unit/dof10.rst:199
+msgid "Temperature in degrees Celsius."
+msgstr "温度，单位为摄氏度。"
+
+#: ../../source/unit/dof10.rst:204
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:31
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:209
+msgid "Return compensated atmospheric pressure in ``hPa``."
+msgstr "返回补偿后的大气压，单位为 ``hPa``。"
+
+#: ../../source/unit/dof10.rst:211
+msgid "Pressure in hPa."
+msgstr "气压，单位为 hPa。"
+
+#: ../../source/unit/dof10.rst:216
+msgid "|get_pressure.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:32
+msgid "get_pressure.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:221
+msgid "Return barometric altitude in meters using the configured sea-level pressure."
+msgstr "根据配置的海平面气压返回气压高度，单位为米。"
+
+#: ../../source/unit/dof10.rst:224
+msgid "Altitude in meters."
+msgstr "高度，单位为米。"
+
+#: ../../source/unit/dof10.rst:229
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:33
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:234
+msgid "Set the sea-level reference pressure in ``hPa``. The default is 1013.25."
+msgstr "设置海平面参考气压，单位为 ``hPa``，默认值为 1013.25。"
+
+#: ../../source/unit/dof10.rst:236
+msgid "Reference pressure in hPa."
+msgstr "参考气压，单位为 hPa。"
+
+#: ../../source/unit/dof10.rst:238
+msgid "If pressure is not positive."
+msgstr "如果气压不是正数。"
+
+#: ../../source/unit/dof10.rst:242
+msgid "|set_sea_level_pressure.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:34
+msgid "set_sea_level_pressure.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:247
+msgid "Sample motion and magnetic data and return tilt-compensated heading from 0 to less than 360 degrees."
+msgstr "采样运动和磁场数据并返回经过倾斜补偿的航向角，范围为 0 到小于 360 度。"
+
+#: ../../source/unit/dof10.rst:250
+msgid "Heading in degrees."
+msgstr "航向角，单位为度。"
+
+#: ../../source/unit/dof10.rst:255
+msgid "|get_heading.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:35
+msgid "get_heading.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:260
+msgid "Sample motion and magnetic data and return ``(yaw, pitch, roll)`` in degrees."
+msgstr "采样运动和磁场数据并返回 ``(yaw, pitch, roll)``，单位为度。"
+
+#: ../../source/unit/dof10.rst:263
+msgid "Attitude angles in degrees."
+msgstr "姿态角，单位为度。"
+
+#: ../../source/unit/dof10.rst:268
+msgid "|get_attitude.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:36
+msgid "get_attitude.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:273
+msgid "Set one of ``ACCEL_RANGE_2G``, ``ACCEL_RANGE_4G``, ``ACCEL_RANGE_8G``, or ``ACCEL_RANGE_16G``."
+msgstr "设置为 ``ACCEL_RANGE_2G``、``ACCEL_RANGE_4G``、``ACCEL_RANGE_8G`` 或 ``ACCEL_RANGE_16G`` 之一。"
+
+#: ../../source/unit/dof10.rst:276
+msgid "Full-scale range in g."
+msgstr "满量程范围，单位为 g。"
+
+#: ../../source/unit/dof10.rst:281
+msgid "|set_accel_range.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:37
+msgid "set_accel_range.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:286
+msgid "Set one of ``GYRO_RANGE_125DPS``, ``GYRO_RANGE_250DPS``, ``GYRO_RANGE_500DPS``, ``GYRO_RANGE_1000DPS``, or ``GYRO_RANGE_2000DPS``."
+msgstr "设置为 ``GYRO_RANGE_125DPS``、``GYRO_RANGE_250DPS``、``GYRO_RANGE_500DPS``、``GYRO_RANGE_1000DPS`` 或 ``GYRO_RANGE_2000DPS`` 之一。"
+
+#: ../../source/unit/dof10.rst:289
+msgid "Full-scale range in deg/s."
+msgstr "满量程范围，单位为 deg/s。"
+
+#: ../../source/unit/dof10.rst:294
+msgid "|set_gyro_range.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:38
+msgid "set_gyro_range.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:299
+msgid "Set BMI270 output data rates using ``ACCEL_ODR_VALUES`` and ``GYRO_ODR_VALUES``."
+msgstr "使用 ``ACCEL_ODR_VALUES`` 和 ``GYRO_ODR_VALUES`` 设置 BMI270 输出数据率。"
+
+#: ../../source/unit/dof10.rst:302
+msgid "Accelerometer ODR in Hz."
+msgstr "加速度计输出数据率，单位为 Hz。"
+
+#: ../../source/unit/dof10.rst:304
+msgid "Gyroscope ODR in Hz."
+msgstr "陀螺仪输出数据率，单位为 Hz。"
+
+#: ../../source/unit/dof10.rst:309
+msgid "|set_accel_gyro_odr.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:39
+msgid "set_accel_gyro_odr.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:314
+msgid "Set mapped gyroscope offsets in ``rad/s``."
+msgstr "设置映射后的陀螺仪偏移量，单位为 ``rad/s``。"
+
+#: ../../source/unit/dof10.rst:316
+msgid "X-axis offset in rad/s."
+msgstr "X 轴偏移量，单位为 rad/s。"
+
+#: ../../source/unit/dof10.rst:318
+msgid "Y-axis offset in rad/s."
+msgstr "Y 轴偏移量，单位为 rad/s。"
+
+#: ../../source/unit/dof10.rst:320
+msgid "Z-axis offset in rad/s."
+msgstr "Z 轴偏移量，单位为 rad/s。"
+
+#: ../../source/unit/dof10.rst:325
+msgid "|set_gyro_offsets.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:40
+msgid "set_gyro_offsets.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:330
+msgid "Estimate offsets while stationary and return ``True`` on success."
+msgstr "设备静止时估算偏移量，成功时返回 ``True``。"
+
+#: ../../source/unit/dof10.rst:332
+msgid "Number of samples."
+msgstr "采样次数。"
+
+#: ../../source/unit/dof10.rst:334
+msgid "Whether calibration succeeded."
+msgstr "校准是否成功。"
+
+#: ../../source/unit/dof10.rst:339
+msgid "|calibrate_gyro.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:41
+msgid "calibrate_gyro.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:344
+msgid "Set hard-iron offsets in ``uT`` and unitless soft-iron scale factors."
+msgstr "设置硬铁偏移量（单位为 ``uT``）和无量纲软铁比例因子。"
+
+#: ../../source/unit/dof10.rst:346
+msgid "Three hard-iron offsets in uT."
+msgstr "三个硬铁偏移量，单位为 uT。"
+
+#: ../../source/unit/dof10.rst:348
+msgid "Three positive scale factors."
+msgstr "三个正比例因子。"
+
+#: ../../source/unit/dof10.rst:353
+msgid "|set_magnetometer_calibration.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:42
+msgid "set_magnetometer_calibration.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:358
+msgid "Map ``accelerometer``, ``gyroscope``, or ``magnetometer`` axes. Values ``1/-1``, ``2/-2``, and ``3/-3`` select source X/Y/Z with sign; source axes cannot repeat."
+msgstr "映射 ``accelerometer``、``gyroscope`` 或 ``magnetometer`` 轴。``1/-1``、``2/-2`` 和 ``3/-3`` 分别选择带符号的源 X/Y/Z 轴；源轴不能重复。"
+
+#: ../../source/unit/dof10.rst:362
+msgid "Sensor name."
+msgstr "传感器名称。"
+
+#: ../../source/unit/dof10.rst:364
+msgid "Source axis for output X."
+msgstr "输出 X 轴对应的源轴。"
+
+#: ../../source/unit/dof10.rst:366
+msgid "Source axis for output Y."
+msgstr "输出 Y 轴对应的源轴。"
+
+#: ../../source/unit/dof10.rst:368
+msgid "Source axis for output Z."
+msgstr "输出 Z 轴对应的源轴。"
+
+#: ../../source/unit/dof10.rst:373
+msgid "|set_axis_mapping.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:43
+msgid "set_axis_mapping.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:378
+msgid "Set the non-negative complementary-filter time constant in seconds."
+msgstr "设置非负的互补滤波器时间常数，单位为秒。"
+
+#: ../../source/unit/dof10.rst:380
+msgid "Non-negative filter time constant."
+msgstr "非负滤波器时间常数。"
+
+#: ../../source/unit/dof10.rst:385
+msgid "|set_fusion_time_constant.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:44
+msgid "set_fusion_time_constant.png"
+msgstr ""
+
+#: ../../source/unit/dof10.rst:390
+msgid "Reset the attitude filter; the next attitude sample reinitializes it."
+msgstr "重置姿态滤波器；下一次姿态采样时会重新初始化。"
+
+#: ../../source/unit/dof10.rst:394
+msgid "|reset_fusion.png|"
+msgstr ""
+
+#: ../../source/refs/unit.dof10.ref:45
+msgid "reset_fusion.png"
+msgstr ""

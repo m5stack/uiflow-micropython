@@ -1,0 +1,49 @@
+.. |Unit DoF10| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U230
+    :height: 200px
+    :width: 200px
+
+.. |cores3_unit_dof10_accel_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://gitlab.m5stack.com/luoweiyuan/uiflow_micropython/-/raw/feature/unit/dof6_9_10/examples/unit/dof10/cores3_unit_dof10_accel_example.m5f2"
+        target="_blank"
+    >
+        cores3_unit_dof10_accel_example.m5f2
+    </a>
+
+.. |cores3_unit_dof10_barometer_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://gitlab.m5stack.com/luoweiyuan/uiflow_micropython/-/raw/feature/unit/dof6_9_10/examples/unit/dof10/cores3_unit_dof10_barometer_example.m5f2"
+        target="_blank"
+    >
+        cores3_unit_dof10_barometer_example.m5f2
+    </a>
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/init.png
+.. |get_accel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_accel.png
+.. |get_accel_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_accel_raw.png
+.. |get_gyro.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_gyro.png
+.. |get_gyro_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_gyro_raw.png
+.. |get_mag.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_mag.png
+.. |get_mag_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_mag_raw.png
+.. |get_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_temperature.png
+.. |get_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_pressure.png
+.. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_altitude.png
+.. |set_sea_level_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_sea_level_pressure.png
+.. |get_heading.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_heading.png
+.. |get_attitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/get_attitude.png
+.. |set_accel_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_accel_range.png
+.. |set_gyro_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_gyro_range.png
+.. |set_accel_gyro_odr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_accel_gyro_odr.png
+.. |set_gyro_offsets.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_gyro_offsets.png
+.. |calibrate_gyro.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/calibrate_gyro.png
+.. |set_magnetometer_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_magnetometer_calibration.png
+.. |set_axis_mapping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_axis_mapping.png
+.. |set_fusion_time_constant.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/set_fusion_time_constant.png
+.. |reset_fusion.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/reset_fusion.png
+
+.. |accel_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/accel_example.png
+
+.. |barometer_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dof10/barometer_example.png
