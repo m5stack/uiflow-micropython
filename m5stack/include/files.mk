@@ -42,6 +42,7 @@ endef
 ## $(2): PATCH_SERIES (space-separated list)
 ##
 define Patch/prepare
+	$(if $(strip $(2)),\
 	@echo "Preparing $(1) ..."
 	@(cd $(1) && [ -e patches ] || mkdir patches)
 	@(cd $(1) && \
@@ -49,6 +50,8 @@ define Patch/prepare
 		cd - >/dev/null)
 	@echo "Applying all patches in $(1) ..."
 	@cd $(1) && quilt push -a && cd -
+	,\
+	@echo "No patches required for $(1); skipping.")
 endef
 
 

@@ -2,6 +2,10 @@
 #
 # SPDX-License-Identifier: MIT
 
+# Keep the firmware within the 4 MB board's application partition.
+CONFIG_COMPILER_OPTIMIZATION_PERF=n
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
 # esp_codec_dev: use new I2C master API on IDF 5.3+ (avoids legacy driver/i2c.h)
 CONFIG_CODEC_I2C_BACKWARD_COMPATIBLE=n
 

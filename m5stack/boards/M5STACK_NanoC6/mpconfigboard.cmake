@@ -32,6 +32,7 @@ set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.c6
     boards/sdkconfig.ble
     boards/sdkconfig.freertos
+    boards/M5STACK_NanoC6/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...
