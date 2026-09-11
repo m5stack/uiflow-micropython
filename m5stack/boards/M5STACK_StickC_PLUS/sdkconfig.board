@@ -2,6 +2,10 @@
 #
 # SPDX-License-Identifier: MIT
 
+# Keep the firmware within the 4 MB board's application partition.
+CONFIG_COMPILER_OPTIMIZATION_PERF=n
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
 # SSL
 CONFIG_MBEDTLS_INTERNAL_MEM_ALLOC=n
 CONFIG_MBEDTLS_CUSTOM_MEM_ALLOC=y
