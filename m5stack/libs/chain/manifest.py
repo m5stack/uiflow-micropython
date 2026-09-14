@@ -18,6 +18,7 @@ package(
         "key.py",
         "mic.py",
         "mono.py",
+        "pedal.py",
         "pir.py",
         "rgb.py",
         "servos8_v2.py",

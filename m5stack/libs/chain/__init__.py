@@ -14,6 +14,7 @@ _attrs = {
     "KeyChain": "key",
     "MicChain": "mic",
     "MonoChain": "mono",
+    "PedalChain": "pedal",
     "PIRChain": "pir",
     "RGBChain": "rgb",
     "Servos8V2Chain": "servos8_v2",
