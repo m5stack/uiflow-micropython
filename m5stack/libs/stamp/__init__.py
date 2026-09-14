@@ -5,6 +5,7 @@
 _attrs = {
     "StampF12": "f12",
     "StampLoRa1262": "lora1262",
+    "StampTimerPower2": "stamp_timer_power2",
     "StampUWB": "uwb",
     "StampUWBAngle": "uwb",
     "UWBIO": "uwb",

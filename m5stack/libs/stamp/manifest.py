@@ -8,6 +8,7 @@ package(
         "__init__.py",
         "f12.py",
         "lora1262.py",
+        "stamp_timer_power2.py",
         "uwb.py",
     ),
     base_path="..",

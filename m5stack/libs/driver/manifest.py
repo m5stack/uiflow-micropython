@@ -26,6 +26,7 @@ package(
         "ir/transmitter.py",
         "jrd4035/__init__.py",
         "m5ioe1.py",
+        "m5pm1.py",
         "mcp2515/__init__.py",
         "mcp2515/mcp2515_spi.py",
         "mcp2515/mcp2515_param.py",
