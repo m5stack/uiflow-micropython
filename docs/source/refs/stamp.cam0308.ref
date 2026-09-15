@@ -1,0 +1,31 @@
+.. |Stamp-AddOn Cam0308| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1256/A178_Stamp-AddOn_Cam0308_main_pictures_01.png
+    :target: https://docs.m5stack.com/en/products/sku/a178
+    :height: 200px
+    :width: 200px
+
+.. |Stamp-AddOn Cam3660| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1266/A182_Stamp-AddOn_Cam3660_main_pictures_01.png
+    :target: https://docs.m5stack.com/en/products/sku/a182
+    :height: 200px
+    :width: 200px
+
+.. |cam0308_image_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/cam0308/image_example.png
+
+.. |cam0308_video_streaming_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/cam0308/video_streaming_example.png
+
+.. |cam0308_image_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/cam0308/cam0308_image_example.m5f2"
+        target="_blank"
+    >
+        cam0308_image_example.m5f2
+    </a>
+
+.. |cam0308_video_streaming_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/cam0308/cam0308_video_streaming_example.m5f2"
+        target="_blank"
+    >
+        cam0308_video_streaming_example.m5f2
+    </a>

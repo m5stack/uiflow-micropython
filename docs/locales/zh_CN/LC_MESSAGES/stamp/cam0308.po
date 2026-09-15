@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-15 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/stamp/cam0308.rst:2
+msgid "Stamp CAM0308/CAM3660 Camera"
+msgstr "Stamp CAM0308/CAM3660 摄像头"
+
+#: ../../source/stamp/cam0308.rst:8
+msgid ""
+"The Stamp camera add-on is available with either a GC0308 sensor "
+"(CAM0308) or an OV3660 sensor (CAM3660)."
+msgstr "Stamp 摄像头扩展可选用 GC0308 传感器（CAM0308）或 OV3660 传感器（CAM3660）。"
+
+#: ../../source/stamp/cam0308.rst:11
+msgid ""
+"The current UiFlow2 firmware supports both variants on the StampS3Bat "
+"host and automatically detects when ``camera.init`` is called."
+msgstr "当前 UiFlow2 固件在 StampS3Bat 主机上支持这两款摄像头，并会在调用 ``camera.init`` 时自动检测。"
+
+#: ../../source/stamp/cam0308.rst:15
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/stamp/cam0308.rst:18
+msgid "|Stamp-AddOn Cam0308|"
+msgstr "|Stamp-AddOn Cam0308|"
+
+#: ../../source/refs/stamp.cam0308.ref
+msgid "Stamp-AddOn Cam0308"
+msgstr "Stamp-AddOn Cam0308"
+
+#: ../../source/stamp/cam0308.rst:18
+msgid "|Stamp-AddOn Cam3660|"
+msgstr "|Stamp-AddOn Cam3660|"
+
+#: ../../source/refs/stamp.cam0308.ref
+msgid "Stamp-AddOn Cam3660"
+msgstr "Stamp-AddOn Cam3660"
+
+#: ../../source/stamp/cam0308.rst:23
+msgid "Supported sensors"
+msgstr "支持的传感器"
+
+#: ../../source/stamp/cam0308.rst:25
+msgid ""
+"The sensor driver identifies the camera over SCCB (the I2C-compatible "
+"camera control bus). The supported sensor variants are:"
+msgstr "传感器驱动通过 SCCB（兼容 I2C 的摄像头控制总线）识别摄像头。支持的传感器版本如下："
+
+#: ../../source/stamp/cam0308.rst:28
+msgid "Stamp camera sensor variants"
+msgstr "Stamp 摄像头传感器版本"
+
+#: ../../source/stamp/cam0308.rst:31
+msgid "Product"
+msgstr "产品"
+
+#: ../../source/stamp/cam0308.rst:32
+msgid "Sensor"
+msgstr "传感器"
+
+#: ../../source/stamp/cam0308.rst:33
+msgid "SCCB address"
+msgstr "SCCB 地址"
+
+#: ../../source/stamp/cam0308.rst:34
+msgid "Maximum resolution"
+msgstr "最大分辨率"
+
+#: ../../source/stamp/cam0308.rst:35
+msgid "Supported output formats"
+msgstr "支持的输出格式"
+
+#: ../../source/stamp/cam0308.rst:36
+msgid "CAM0308"
+msgstr "CAM0308"
+
+#: ../../source/stamp/cam0308.rst:37
+msgid "GC0308"
+msgstr "GC0308"
+
+#: ../../source/stamp/cam0308.rst:38
+msgid "``0x21``"
+msgstr "``0x21``"
+
+#: ../../source/stamp/cam0308.rst:39
+msgid "640 x 480 (VGA)"
+msgstr "640 x 480 (VGA)"
+
+#: ../../source/stamp/cam0308.rst:40
+msgid "RGB565, YUV422, grayscale"
+msgstr "RGB565、YUV422、灰度"
+
+#: ../../source/stamp/cam0308.rst:41
+msgid "CAM3660"
+msgstr "CAM3660"
+
+#: ../../source/stamp/cam0308.rst:42
+msgid "OV3660"
+msgstr "OV3660"
+
+#: ../../source/stamp/cam0308.rst:43
+msgid "``0x3C``"
+msgstr "``0x3C``"
+
+#: ../../source/stamp/cam0308.rst:44
+msgid "2048 x 1536 (QXGA)"
+msgstr "2048 x 1536 (QXGA)"
+
+#: ../../source/stamp/cam0308.rst:45
+msgid "RGB565, YUV422, JPEG"
+msgstr "RGB565、YUV422、JPEG"
+
+#: ../../source/stamp/cam0308.rst:47
+msgid ""
+"The camera wiring and power-control configuration in the current firmware"
+" is specific to the StampS3Bat controller. Attach the camera add-on "
+"before initializing the camera."
+msgstr "当前固件中的摄像头接线和电源控制配置针对 StampS3Bat 控制器。初始化摄像头前，请先连接摄像头扩展。"
+
+#: ../../source/stamp/cam0308.rst:52
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/stamp/cam0308.rst:55 ../../source/stamp/cam0308.rst:77
+msgid "Capture and draw on an image"
+msgstr "拍摄图像并进行绘制"
+
+#: ../../source/stamp/cam0308.rst:57
+msgid ""
+"Open the |cam0308_image_example.m5f2| project in UiFlow2. The example "
+"initializes the camera at QVGA/RGB565, captures one frame, draws text and"
+" shapes on it, and prints the image dimensions and format."
+msgstr ""
+"在 UiFlow2 中打开 |cam0308_image_example.m5f2| 项目。该示例以 QVGA/RGB565 "
+"初始化摄像头，拍摄一帧图像，在图像上绘制文本和图形，并打印图像尺寸及格式。"
+
+#: ../../source/stamp/cam0308.rst:61
+msgid "|cam0308_image_example.png|"
+msgstr "|cam0308_image_example.png|"
+
+#: ../../source/refs/stamp.cam0308.ref:11
+msgid "cam0308_image_example.png"
+msgstr "cam0308_image_example.png"
+
+#: ../../source/stamp/cam0308.rst:64 ../../source/stamp/cam0308.rst:84
+msgid "Wi-Fi video streaming with QR recognition"
+msgstr "通过 Wi-Fi 进行视频流传输并识别二维码"
+
+#: ../../source/stamp/cam0308.rst:66
+msgid ""
+"Open the |cam0308_video_streaming_example.m5f2| project in UiFlow2. "
+"Replace the Wi-Fi SSID and password in the project, then open the printed"
+" device IP address on port 8080 in a browser. The stream includes QR-code"
+" recognition results when a QR code is visible."
+msgstr ""
+"在 UiFlow2 中打开 |cam0308_video_streaming_example.m5f2| 项目。在项目中替换 Wi-Fi SSID"
+" 和密码，然后在浏览器中打开打印出的设备 IP 地址的 8080 端口。当画面中出现二维码时，视频流会包含二维码识别结果。"
+
+#: ../../source/stamp/cam0308.rst:71
+msgid "|cam0308_video_streaming_example.png|"
+msgstr "|cam0308_video_streaming_example.png|"
+
+#: ../../source/refs/stamp.cam0308.ref:13
+msgid "cam0308_video_streaming_example.png"
+msgstr "cam0308_video_streaming_example.png"
+
+#: ../../source/stamp/cam0308.rst:74
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/stamp/cam0308.rst:86
+msgid ""
+"Set ``ssid`` and ``pwd`` in the example before running it. After the "
+"board connects to Wi-Fi, visit ``http://<device-ip>:8080/`` to view the "
+"MJPEG stream."
+msgstr ""
+"运行示例前，请设置其中的 ``ssid`` 和 ``pwd``。开发板连接 Wi-Fi 后，访问 ``http://<device-"
+"ip>:8080/`` 查看 MJPEG 视频流。"
+
+#: ../../source/stamp/cam0308.rst:94
+msgid "API"
+msgstr "API参考"
+
+#: ../../source/stamp/cam0308.rst:96
+msgid ""
+"The camera add-on uses the shared ``camera`` module. See "
+":doc:`../advanced/camera` for initialization, capture, frame-size, pixel "
+"format, mirror, and flip APIs."
+msgstr ""
+"摄像头扩展使用共享的 ``camera`` 模块。初始化、拍摄、帧尺寸、像素格式、镜像和翻转 API 请参阅 "
+":doc:`../advanced/camera`。"
+
+#: ../../source/stamp/cam0308.rst:100
+msgid ""
+"The image returned by ``camera.snapshot()`` uses the shared ``image`` "
+"module; see :doc:`../advanced/image` for image drawing and inspection "
+"methods."
+msgstr ""
+"``camera.snapshot()`` 返回的图像使用共享的 ``image`` 模块；图像绘制和检查方法请参阅 "
+":doc:`../advanced/image`。"
+
+#~ msgid "CAM0308 CAM3660"
+#~ msgstr ""
+
+#~ msgid "|Stamp-AddOn Cam0308|    |Stamp-AddOn Cam3660|"
+#~ msgstr "|Stamp-AddOn Cam0308|    |Stamp-AddOn Cam3660|"
+
+#~ msgid "The CAM0308 product SKU is ``A178``."
+#~ msgstr "CAM0308 产品 SKU 为 ``A178``。"
+

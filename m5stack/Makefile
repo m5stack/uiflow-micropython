@@ -379,7 +379,6 @@ M5UNIFIED_PATCH_SERIES = \
 	2021-Fix-Tab5-charge-status-detection.patch \
 	2023-Add-CoreMatrix-PWM-speaker-support.patch \
 	2024-Add-ToughC5-PWM-speaker-support.patch \
-	2025-Enable-ToughC5-SD-power.patch \
 	2026-Enable-StampS3Bat-camera-power.patch
 
 ADF_PATCH_SERIES = \
