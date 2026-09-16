@@ -1,0 +1,220 @@
+.. |Stamp Timer Power 2| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/S021
+    :alt: Stamp Timer Power 2 (S021)
+    :height: 200px
+    :width: 200px
+
+.. UIFlow2 block and example images.
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/init.png
+.. |add_event_cb.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/event.png
+.. |remove_event_cb.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/remove_event_cb.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/deinit.png
+.. |wake.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/wake.png
+.. |is_connected.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/is_connected.png
+.. |get_device_info.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_device_info.png
+.. |get_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_uid.png
+.. |get_device_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_device_id.png
+.. |get_device_model.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_device_model.png
+.. |get_hardware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_hardware_version.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_firmware_version.png
+.. |Pin.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/create_pin.png
+.. |ADC.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/create_adc.png
+.. |PWM.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/create_pwm.png
+.. |NeoPixel.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/create_neopixel.png
+.. |set_pin_function.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_function.png
+.. |set_pin_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_mode.png
+.. |set_pin_pull.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_pull.png
+.. |set_pin_drive.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_drive.png
+.. |set_pin_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_value.png
+.. |read_pin.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_pin.png
+.. |get_power_source.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_power_source.png
+.. |get_power_config.png| replace:: ``get_power_config.png``
+.. |is_charging_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/is_charging_enabled.png
+.. |is_dcdc_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/is_dcdc_enabled.png
+.. |is_ldo_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/is_ldo_enabled.png
+.. |is_boost_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/is_boost_enabled.png
+.. |enable_charging.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_charging.png
+.. |disable_charging.png| replace:: ``disable_charging.png``
+.. |enable_dcdc.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_dcdc.png
+.. |disable_dcdc.png| replace:: ``disable_dcdc.png``
+.. |enable_ldo.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_ldo.png
+.. |disable_ldo.png| replace:: ``disable_ldo.png``
+.. |enable_boost.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_boost.png
+.. |disable_boost.png| replace:: ``disable_boost.png``
+.. |set_led_enable_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_led_enable_level.png
+.. |set_battery_low_voltage_threshold_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_battery_low_voltage_threshold_mv.png
+.. |get_battery_low_voltage_threshold_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_battery_low_voltage_threshold_mv.png
+.. |enable_gpio_power_hold.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_gpio_power_hold.png
+.. |disable_gpio_power_hold.png| replace:: ``disable_gpio_power_hold.png``
+.. |enable_ldo_power_hold.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_ldo_power_hold.png
+.. |disable_ldo_power_hold.png| replace:: ``disable_ldo_power_hold.png``
+.. |enable_boost_power_hold.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_boost_power_hold.png
+.. |disable_boost_power_hold.png| replace:: ``disable_boost_power_hold.png``
+.. |read_adc_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_adc_raw.png
+.. |read_adc_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_adc_mv.png
+.. |read_temperature_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_temperature_raw.png
+.. |read_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_button.png
+.. |read_button_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_button_event.png
+.. |set_button_timing.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_button_timing.png
+.. |read_reference_voltage_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_reference_voltage_mv.png
+.. |read_battery_voltage_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_battery_voltage_mv.png
+.. |read_vin_voltage_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_vin_voltage_mv.png
+.. |read_5v_inout_voltage_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_5v_inout_voltage_mv.png
+.. |get_wake_source.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_wake_source.png
+.. |clear_wake_source.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/clear_wake_source.png
+.. |set_pwm_frequency.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pwm_frequency.png
+.. |get_pwm_frequency.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_pwm_frequency.png
+.. |set_pwm_duty_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pwm_duty_percent.png
+.. |set_pwm_duty_u12.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pwm_duty_u12.png
+.. |enable_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_pwm.png
+.. |disable_pwm.png| replace:: ``disable_pwm.png``
+.. |get_pwm_duty_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_pwm_duty_percent.png
+.. |get_pwm_duty_u12.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_pwm_duty_u12.png
+.. |set_neopixel_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_neopixel_count.png
+.. |set_neopixel_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_neopixel_color.png
+.. |write_neopixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/write_neopixels.png
+.. |refresh_neopixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/refresh_neopixels.png
+.. |clear_neopixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/clear_neopixels.png
+.. |enable_neopixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_neopixels.png
+.. |disable_neopixels.png| replace:: ``disable_neopixels.png``
+.. |set_aw8737a_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_aw8737a_pulse.png
+.. |refresh_aw8737a.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/refresh_aw8737a.png
+.. |set_aw8737a_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_aw8737a_mode.png
+.. |get_irq_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_irq_status.png
+.. |clear_irq.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/clear_irq.png
+.. |disable_irq_events.png| replace:: ``disable_irq_events.png``
+.. |enable_irq_events.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_irq_events.png
+.. |enable_pin_wakeup.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_pin_wakeup.png
+.. |disable_pin_wakeup.png| replace:: ``disable_pin_wakeup.png``
+.. |set_pin_wakeup_edge.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_pin_wakeup_edge.png
+.. |enable_watchdog.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_watchdog.png
+.. |disable_watchdog.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/disable_watchdog.png
+.. |feed_watchdog.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/feed_watchdog.png
+.. |get_watchdog_countdown_s.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_watchdog_countdown_s.png
+.. |set_timer.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_timer.png
+.. |clear_timer.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/clear_timer.png
+.. |set_i2c_sleep_timeout_s.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_i2c_sleep_timeout_s.png
+.. |get_i2c_sleep_timeout_s.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_i2c_sleep_timeout_s.png
+.. |set_i2c_frequency.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/set_i2c_frequency.png
+.. |get_i2c_frequency.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/get_i2c_frequency.png
+.. |read_rtc_ram.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/read_rtc_ram.png
+.. |write_rtc_ram.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/write_rtc_ram.png
+.. |restore_defaults.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/restore_defaults.png
+.. |power_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/power_off.png
+.. |reboot.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/reboot.png
+.. |enter_download_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enter_download_mode.png
+.. |enable_download_lock.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_download_lock.png
+.. |disable_download_lock.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_download_lock.png
+.. |enable_single_click_reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_single_click_reset.png
+.. |disable_single_click_reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_single_click_reset.png
+.. |enable_double_click_power_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_double_click_power_off.png
+.. |disable_double_click_power_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/enable_double_click_power_off.png
+.. |pin.init.png| replace:: ``pin.init.png``
+.. |pin.deinit.png| replace:: ``pin.deinit.png``
+.. |pin.value.png| replace:: ``pin.value.png``
+.. |pin.on.png| replace:: ``pin.on.png``
+.. |pin.off.png| replace:: ``pin.off.png``
+.. |adc.init.png| replace:: ``adc.init.png``
+.. |adc.deinit.png| replace:: ``adc.deinit.png``
+.. |adc.read.png| replace:: ``adc.read.png``
+.. |adc.read_u16.png| replace:: ``adc.read_u16.png``
+.. |adc.read_uv.png| replace:: ``adc.read_uv.png``
+.. |pwm.init.png| replace:: ``pwm.init.png``
+.. |pwm.deinit.png| replace:: ``pwm.deinit.png``
+.. |pwm.freq.png| replace:: ``pwm.freq.png``
+.. |pwm.duty_u16.png| replace:: ``pwm.duty_u16.png``
+.. |pwm.duty_ns.png| replace:: ``pwm.duty_ns.png``
+.. |pwm.invert.png| replace:: ``pwm.invert.png``
+.. |neopixel.init.png| replace:: ``neopixel.init.png``
+.. |neopixel.deinit.png| replace:: ``neopixel.deinit.png``
+.. |neopixel.fill.png| replace:: ``neopixel.fill.png``
+.. |neopixel.write.png| replace:: ``neopixel.write.png``
+
+.. |basic_stp2_gpio_input_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_gpio_input_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_gpio_input_example.m5f2
+    </a>
+
+.. |basic_stp2_gpio_input_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/gpio_input_example.png
+
+.. |basic_stp2_gpio_output_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_gpio_output_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_gpio_output_example.m5f2
+    </a>
+
+.. |basic_stp2_gpio_output_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/gpio_output_example.png
+
+.. |basic_stp2_adc_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_adc_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_adc_example.m5f2
+    </a>
+
+.. |basic_stp2_adc_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/adc_example.png
+
+.. |basic_stp2_pwm_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_pwm_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_pwm_example.m5f2
+    </a>
+
+.. |basic_stp2_pwm_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/pwm_example.png
+
+.. |basic_stp2_gpio_irq_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_gpio_irq_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_gpio_irq_example.m5f2
+    </a>
+
+.. |basic_stp2_gpio_irq_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/gpio_irq_example.png
+
+.. |basic_stp2_power_config_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_power_config_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_power_config_example.m5f2
+    </a>
+
+.. |basic_stp2_power_config_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/power_config_example.png
+
+.. |basic_stp2_neopixel_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_neopixel_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_neopixel_example.m5f2
+    </a>
+
+.. |basic_stp2_neopixel_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/neopixel_example.png
+
+.. |basic_stp2_timer_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/stamp/timer_power2/basic_stp2_timer_example.m5f2"
+        target="_blank"
+    >
+        basic_stp2_timer_example.m5f2
+    </a>
+
+.. |basic_stp2_timer_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/stamp/timer_power2/timer_example.png

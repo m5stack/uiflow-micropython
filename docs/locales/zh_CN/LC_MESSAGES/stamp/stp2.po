@@ -1,0 +1,3343 @@
+# Chinese (Simplified, China) translations for UIFlow2 Programming Guide.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the UIFlow2 Programming Guide project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide master\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-09-14 16:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:23
+msgid "Stamp Timer Power 2"
+msgstr "Stamp Timer Power 2"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:8
+msgid ""
+"StampTimerPower2 provides power management, GPIO, ADC, PWM, NeoPixel, button events, "
+"IRQ, wakeup, watchdog, timers and RTC RAM through I2C."
+msgstr "StampTimerPower2 通过 I2C 提供电源管理、GPIO、ADC、PWM、NeoPixel、按钮事件、中断、唤醒、看门狗、定时器和 RTC RAM 功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:224
+msgid "API"
+msgstr "API"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:227
+msgid "Constructors"
+msgstr "构造函数"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:231
+msgid ""
+"Create the module at fixed I2C address ``0x6E``. The application owns the I2C object. Supply both"
+" IRQ GPIOs or leave both at ``-1``."
+msgstr "在固定 I2C 地址 ``0x6E`` 创建模块对象，I2C 由应用管理。两个 IRQ GPIO 必须同时指定，或同时保留为 ``-1`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:236
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:459
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:499
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:537
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:565
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:590
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:618
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:643
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:757
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:800
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:828
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:876
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:919
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:944
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:969
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:994
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1019
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1044
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1176
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1196
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1228
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1248
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1284
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1312
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1378
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1451
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1479
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1499
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1531
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1561
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1591
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1611
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1631
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1659
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1687
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1707
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1732
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1761
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1789
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1823
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1853
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1886
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1911
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1936
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1961
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1981
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2001
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2026
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2066
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2095
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2127
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2159
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2192
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2268
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2302
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2404
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2443
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2471
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2499
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2527
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2570
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:237
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:460
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:500
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:538
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:566
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:591
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:619
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:644
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:758
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:801
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:829
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:877
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:920
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:945
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:970
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:995
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1020
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1045
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1177
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1197
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1229
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1249
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1285
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1313
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1379
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1452
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1480
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1500
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1532
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1562
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1592
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1612
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1632
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1660
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1688
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1708
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1733
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1762
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1790
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1824
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1854
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1887
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1912
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1937
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1962
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1982
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2002
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2027
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2067
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2096
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2128
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2160
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2193
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2269
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2303
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2405
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2444
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2472
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2500
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2528
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2571
+msgid "Type"
+msgstr "类型"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:238
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:461
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:501
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:539
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:567
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:592
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:620
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:645
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:759
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:802
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:830
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:878
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:921
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:946
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:971
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:996
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1021
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1046
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1178
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1198
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1230
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1250
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1286
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1314
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1380
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1453
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1481
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1501
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1533
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1563
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1593
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1613
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1633
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1661
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1689
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1709
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1734
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1763
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1791
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1825
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1855
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1888
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1913
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1938
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1963
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1983
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2003
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2028
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2068
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2097
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2129
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2161
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2194
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2270
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2304
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2406
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2445
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2473
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2501
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2529
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2572
+msgid "Keyword-only"
+msgstr "关键字参数"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:239
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:462
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:502
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:540
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:568
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:593
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:621
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:646
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:760
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:803
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:831
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:879
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:922
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:947
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:972
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:997
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1022
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1047
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1179
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1199
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1231
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1251
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1287
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1315
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1381
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1454
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1482
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1502
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1534
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1564
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1594
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1614
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1634
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1662
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1690
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1710
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1735
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1764
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1792
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1826
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1856
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1889
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1914
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1939
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1964
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1984
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2004
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2029
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2069
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2098
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2130
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2162
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2195
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2271
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2305
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2407
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2446
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2474
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2502
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2530
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2573
+msgid "Default"
+msgstr "默认值"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:240
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:463
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:484
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:503
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:514
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:541
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:552
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:569
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:594
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:605
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:622
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:647
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:674
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:686
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:698
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:710
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:722
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:734
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:746
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:761
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:787
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:804
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:815
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:832
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:863
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:880
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:906
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:923
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:948
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:973
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:998
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1023
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1048
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1059
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1073
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1085
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1097
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1109
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1121
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1133
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1180
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1200
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1217
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1232
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1252
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1288
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1299
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1316
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1327
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1341
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1355
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1367
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1382
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1404
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1416
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1428
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1440
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1455
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1466
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1483
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1503
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1520
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1535
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1565
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1595
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1615
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1635
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1646
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1663
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1674
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1691
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1711
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1736
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1765
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1793
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1827
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1857
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1873
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1890
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1915
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1940
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1965
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1985
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2005
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2030
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2055
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2070
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2099
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2116
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2131
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2148
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2163
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2179
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2196
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2272
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2306
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2317
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2358
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2372
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2386
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2408
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2447
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2458
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2475
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2486
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2503
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2514
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2531
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2542
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2574
+msgid "Description"
+msgstr "说明"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:243
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:466
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:471
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:506
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:544
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:572
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:577
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:597
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:625
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:630
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:650
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:655
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:660
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:764
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:769
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:774
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:807
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:835
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:883
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:888
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:926
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:931
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:951
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:956
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:976
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:981
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1001
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1006
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1026
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1031
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1051
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1183
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1203
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1235
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1255
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1291
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1319
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1385
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1390
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1486
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1506
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1538
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1543
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1568
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1573
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1598
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1618
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1638
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1666
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1694
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1714
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1719
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1739
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1796
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1801
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1830
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1835
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1860
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1893
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1898
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1918
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1923
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1943
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1948
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1968
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1988
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2008
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2013
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2033
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2073
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2078
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2102
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2134
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2166
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2171
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2199
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2204
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2275
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2280
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2309
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2450
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2478
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2506
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2534
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2577
+msgid "No"
+msgstr "否"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:245
+msgid "Caller-owned I2C bus."
+msgstr "应用创建并管理的 I2C 总线。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:246
+msgid "pm1_int_gpio"
+msgstr "pm1_int_gpio"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:247
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:252
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:470
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:543
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:571
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:576
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:596
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:624
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:629
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:649
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:654
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:659
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:763
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:806
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:834
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:844
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:882
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:887
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:892
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:897
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:925
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:930
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:950
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:955
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:975
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:980
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1000
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1005
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1025
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1050
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1202
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1234
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1254
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1290
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1318
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1384
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1389
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1505
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1537
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1542
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1567
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1572
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1597
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1617
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1637
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1665
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1693
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1713
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1795
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1800
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1829
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1834
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1922
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1947
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1967
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1987
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2007
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2012
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2032
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2072
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2077
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2101
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2133
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2165
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2170
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2198
+msgid "int"
+msgstr "int"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:248
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:253
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:476
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:779
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:840
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:845
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:850
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:855
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:893
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:898
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1458
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1548
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1578
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1744
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1768
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1806
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1840
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1865
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2285
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2411
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2416
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2421
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2426
+msgid "Yes"
+msgstr "是"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:250
+msgid "Module IRQ output GPIO, 0~4; -1 disables IRQ."
+msgstr "模块 IRQ 输出 GPIO，范围 0~4；-1 表示不启用。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:251
+msgid "mcu_int_gpio"
+msgstr "mcu_int_gpio"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:255
+msgid "Basic IRQ input GPIO; use 26 for this wiring, or -1 without IRQ."
+msgstr "Basic IRQ 输入 GPIO，本示例接线使用 26；不用 IRQ 时为 -1。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:257
+msgid ""
+"Raises ValueError for invalid GPIO arguments or a partially configured IRQ pair; OSError on "
+"failed I2C configuration and RuntimeError if host Pin support is unavailable for IRQ. With IRQ "
+"enabled, construction configures the module output and Basic falling-edge input."
+msgstr ""
+"GPIO 参数无效或只配置一个 IRQ 引脚时抛出 ValueError；I2C 配置失败时抛出 OSError；IRQ 所需主控 Pin 支持不可用时抛出 RuntimeError。启用 "
+"IRQ 的构造过程会配置模块输出和 Basic 下降沿输入。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:269
+msgid ""
+"For callbacks, replace the final line with the following construction; do not keep two active "
+"instances for one module."
+msgstr "需要事件回调时，用以下构造替换最后一行；不要为同一个模块同时保留两个活动实例。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:276
+msgid "Constants"
+msgstr "常量"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:281
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:398
+msgid "Constant"
+msgstr "常量"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:282
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:399
+msgid "Value"
+msgstr "值"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:283
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:400
+msgid "Meaning"
+msgstr "含义"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:284
+msgid "``StampTimerPower2.PIN_FUNCTION_GPIO``"
+msgstr "``StampTimerPower2.PIN_FUNCTION_GPIO``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:286
+msgid "Normal GPIO function."
+msgstr "普通 GPIO 功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:287
+msgid "``StampTimerPower2.PIN_FUNCTION_IRQ``"
+msgstr "``StampTimerPower2.PIN_FUNCTION_IRQ``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:289
+msgid "Active-low IRQ output function."
+msgstr "低有效 IRQ 输出功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:290
+msgid "``StampTimerPower2.PIN_FUNCTION_WAKE``"
+msgstr "``StampTimerPower2.PIN_FUNCTION_WAKE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:292
+msgid "Power-off wake input function."
+msgstr "GPIO 关机唤醒输入功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:293
+msgid "``StampTimerPower2.PIN_FUNCTION_OTHER``"
+msgstr "``StampTimerPower2.PIN_FUNCTION_OTHER``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:295
+msgid "ADC, PWM, NeoPixel, or another alternate function."
+msgstr "ADC、PWM 或 NeoPixel 等复用功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:296
+msgid "``StampTimerPower2.GPIO_MODE_IN``"
+msgstr "``StampTimerPower2.GPIO_MODE_IN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:298
+msgid "Digital input mode."
+msgstr "数字输入模式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:299
+msgid "``StampTimerPower2.GPIO_MODE_OUT``"
+msgstr "``StampTimerPower2.GPIO_MODE_OUT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:301
+msgid "Push-pull output mode."
+msgstr "推挽输出模式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:302
+msgid "``StampTimerPower2.GPIO_MODE_OPEN_DRAIN``"
+msgstr "``StampTimerPower2.GPIO_MODE_OPEN_DRAIN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:304
+msgid "Open-drain output mode."
+msgstr "开漏输出模式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:305
+msgid "``StampTimerPower2.GPIO_PULL_NONE``"
+msgstr "``StampTimerPower2.GPIO_PULL_NONE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:307
+msgid "No internal pull resistor."
+msgstr "无内部上下拉。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:308
+msgid "``StampTimerPower2.GPIO_PULL_UP``"
+msgstr "``StampTimerPower2.GPIO_PULL_UP``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:310
+msgid "Internal pull-up enabled."
+msgstr "启用内部上拉。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:311
+msgid "``StampTimerPower2.GPIO_PULL_DOWN``"
+msgstr "``StampTimerPower2.GPIO_PULL_DOWN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:313
+msgid "Internal pull-down enabled."
+msgstr "启用内部下拉。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:314
+msgid "``StampTimerPower2.DRIVE_PUSH_PULL``"
+msgstr "``StampTimerPower2.DRIVE_PUSH_PULL``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:316
+msgid "Push-pull drive."
+msgstr "推挽驱动。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:317
+msgid "``StampTimerPower2.DRIVE_OPEN_DRAIN``"
+msgstr "``StampTimerPower2.DRIVE_OPEN_DRAIN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:319
+msgid "Open-drain drive."
+msgstr "开漏驱动。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:320
+msgid "``StampTimerPower2.POWER_SOURCE_NONE``"
+msgstr "``StampTimerPower2.POWER_SOURCE_NONE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:322
+msgid "No power-source flag is active."
+msgstr "未检测到电源来源标志。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:323
+msgid "``StampTimerPower2.POWER_SOURCE_5VIN``"
+msgstr "``StampTimerPower2.POWER_SOURCE_5VIN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:325
+msgid "5VIN / USB input is active."
+msgstr "5VIN / USB 输入有效。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:326
+msgid "``StampTimerPower2.POWER_SOURCE_5VINOUT``"
+msgstr "``StampTimerPower2.POWER_SOURCE_5VINOUT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:328
+msgid "The bidirectional 5VINOUT input is active."
+msgstr "5VINOUT 双向端口输入有效。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:329
+msgid "``StampTimerPower2.POWER_SOURCE_BATTERY``"
+msgstr "``StampTimerPower2.POWER_SOURCE_BATTERY``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:331
+msgid "Battery input is active."
+msgstr "电池输入有效。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:332
+msgid "``StampTimerPower2.WAKE_SOURCE_TIMER``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_TIMER``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:334
+msgid "Timer wake."
+msgstr "定时器唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:335
+msgid "``StampTimerPower2.WAKE_SOURCE_VIN``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_VIN``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:337
+msgid "5VIN insertion wake."
+msgstr "5VIN 插入唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:338
+msgid "``StampTimerPower2.WAKE_SOURCE_POWER_BUTTON``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_POWER_BUTTON``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:340
+msgid "Power-button wake."
+msgstr "电源键唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:341
+msgid "``StampTimerPower2.WAKE_SOURCE_RESET_BUTTON``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_RESET_BUTTON``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:343
+msgid "Reset-button wake."
+msgstr "复位键唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:344
+msgid "``StampTimerPower2.WAKE_SOURCE_COMMAND_RESET``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_COMMAND_RESET``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:345
+msgid "16"
+msgstr "16"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:346
+msgid "Command-reset wake."
+msgstr "命令复位唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:347
+msgid "``StampTimerPower2.WAKE_SOURCE_GPIO``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_GPIO``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:348
+msgid "32"
+msgstr "32"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:349
+msgid "GPIO input wake."
+msgstr "GPIO 输入唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:350
+msgid "``StampTimerPower2.WAKE_SOURCE_5V_INOUT``"
+msgstr "``StampTimerPower2.WAKE_SOURCE_5V_INOUT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:351
+msgid "64"
+msgstr "64"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:352
+msgid "5VINOUT event wake."
+msgstr "5VINOUT 事件唤醒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:353
+msgid "``StampTimerPower2.BUTTON_TIMING_CLICK``"
+msgstr "``StampTimerPower2.BUTTON_TIMING_CLICK``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:355
+msgid "Single-click timing selector."
+msgstr "单击判定时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:356
+msgid "``StampTimerPower2.BUTTON_TIMING_DOUBLE``"
+msgstr "``StampTimerPower2.BUTTON_TIMING_DOUBLE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:358
+msgid "Double-click timing selector."
+msgstr "双击判定时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:359
+msgid "``StampTimerPower2.BUTTON_TIMING_LONG``"
+msgstr "``StampTimerPower2.BUTTON_TIMING_LONG``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:361
+msgid "Long-press timing selector."
+msgstr "长按判定时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:362
+msgid "``StampTimerPower2.TIMER_ACTION_STOP``"
+msgstr "``StampTimerPower2.TIMER_ACTION_STOP``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:364
+msgid "Stop when the timer expires."
+msgstr "定时到期后停止，不执行其它动作。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:365
+msgid "``StampTimerPower2.TIMER_ACTION_FLAG``"
+msgstr "``StampTimerPower2.TIMER_ACTION_FLAG``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:367
+msgid "Generate an event flag when the timer expires."
+msgstr "定时到期后产生事件标志。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:368
+msgid "``StampTimerPower2.TIMER_ACTION_REBOOT``"
+msgstr "``StampTimerPower2.TIMER_ACTION_REBOOT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:370
+msgid "Reboot when the timer expires."
+msgstr "定时到期后重启。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:371
+msgid "``StampTimerPower2.TIMER_ACTION_POWER_ON``"
+msgstr "``StampTimerPower2.TIMER_ACTION_POWER_ON``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:373
+msgid "Power on when the timer expires."
+msgstr "定时到期后开机。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:374
+msgid "``StampTimerPower2.TIMER_ACTION_POWER_OFF``"
+msgstr "``StampTimerPower2.TIMER_ACTION_POWER_OFF``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:376
+msgid "Power off when the timer expires."
+msgstr "定时到期后关机。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:377
+msgid "``StampTimerPower2.IRQ_GROUP_GPIO``"
+msgstr "``StampTimerPower2.IRQ_GROUP_GPIO``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:379
+msgid "irq group gpio"
+msgstr "GPIO 中断状态组"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:380
+msgid "``StampTimerPower2.IRQ_GROUP_SYSTEM``"
+msgstr "``StampTimerPower2.IRQ_GROUP_SYSTEM``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:382
+msgid "irq group system"
+msgstr "系统中断状态组"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:383
+msgid "``StampTimerPower2.IRQ_GROUP_BUTTON``"
+msgstr "``StampTimerPower2.IRQ_GROUP_BUTTON``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:385
+msgid "irq group button"
+msgstr "按钮中断状态组"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:386
+msgid "``StampTimerPower2.WAKE_EDGE_FALLING``"
+msgstr "``StampTimerPower2.WAKE_EDGE_FALLING``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:388
+msgid "wake edge falling"
+msgstr "下降沿唤醒"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:389
+msgid "``StampTimerPower2.WAKE_EDGE_RISING``"
+msgstr "``StampTimerPower2.WAKE_EDGE_RISING``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:391
+msgid "wake edge rising"
+msgstr "上升沿唤醒"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:393
+msgid ""
+"Combine EVENT flags with bitwise OR for add_event_cb(). The namespace refers to the existing "
+"driver constants without copying values."
+msgstr "使用按位或组合 EVENT 标志并传入 add_event_cb()。该命名空间直接引用现有驱动常量，不复制数值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:401
+msgid "``StampTimerPower2.EVENT.GPIO0_CHANGE``"
+msgstr "``StampTimerPower2.EVENT.GPIO0_CHANGE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:402
+msgid "0x1"
+msgstr "0x1"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:403
+msgid "gpio0 change"
+msgstr "G0 输入变化"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:404
+msgid "``StampTimerPower2.EVENT.GPIO1_CHANGE``"
+msgstr "``StampTimerPower2.EVENT.GPIO1_CHANGE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:405
+msgid "0x2"
+msgstr "0x2"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:406
+msgid "gpio1 change"
+msgstr "G1 输入变化"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:407
+msgid "``StampTimerPower2.EVENT.GPIO2_CHANGE``"
+msgstr "``StampTimerPower2.EVENT.GPIO2_CHANGE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:408
+msgid "0x4"
+msgstr "0x4"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:409
+msgid "gpio2 change"
+msgstr "G2 输入变化"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:410
+msgid "``StampTimerPower2.EVENT.GPIO3_CHANGE``"
+msgstr "``StampTimerPower2.EVENT.GPIO3_CHANGE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:411
+msgid "0x8"
+msgstr "0x8"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:412
+msgid "gpio3 change"
+msgstr "G3 输入变化"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:413
+msgid "``StampTimerPower2.EVENT.GPIO4_CHANGE``"
+msgstr "``StampTimerPower2.EVENT.GPIO4_CHANGE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:414
+msgid "0x10"
+msgstr "0x10"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:415
+msgid "gpio4 change"
+msgstr "G4 输入变化"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:416
+msgid "``StampTimerPower2.EVENT.VIN_INSERT``"
+msgstr "``StampTimerPower2.EVENT.VIN_INSERT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:417
+msgid "0x20"
+msgstr "0x20"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:418
+msgid "vin insert"
+msgstr "5VIN 接入"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:419
+msgid "``StampTimerPower2.EVENT.VIN_REMOVE``"
+msgstr "``StampTimerPower2.EVENT.VIN_REMOVE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:420
+msgid "0x40"
+msgstr "0x40"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:421
+msgid "vin remove"
+msgstr "5VIN 移除"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:422
+msgid "``StampTimerPower2.EVENT.VINOUT_INSERT``"
+msgstr "``StampTimerPower2.EVENT.VINOUT_INSERT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:423
+msgid "0x80"
+msgstr "0x80"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:424
+msgid "vinout insert"
+msgstr "5VINOUT 接入"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:425
+msgid "``StampTimerPower2.EVENT.VINOUT_REMOVE``"
+msgstr "``StampTimerPower2.EVENT.VINOUT_REMOVE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:426
+msgid "0x100"
+msgstr "0x100"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:427
+msgid "vinout remove"
+msgstr "5VINOUT 移除"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:428
+msgid "``StampTimerPower2.EVENT.BATTERY_INSERT``"
+msgstr "``StampTimerPower2.EVENT.BATTERY_INSERT``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:429
+msgid "0x200"
+msgstr "0x200"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:430
+msgid "battery insert"
+msgstr "电池接入"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:431
+msgid "``StampTimerPower2.EVENT.BATTERY_REMOVE``"
+msgstr "``StampTimerPower2.EVENT.BATTERY_REMOVE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:432
+msgid "0x400"
+msgstr "0x400"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:433
+msgid "battery remove"
+msgstr "电池移除"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:434
+msgid "``StampTimerPower2.EVENT.BUTTON_CLICK``"
+msgstr "``StampTimerPower2.EVENT.BUTTON_CLICK``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:435
+msgid "0x800"
+msgstr "0x800"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:436
+msgid "button click"
+msgstr "按钮单击"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:437
+msgid "``StampTimerPower2.EVENT.WAKE``"
+msgstr "``StampTimerPower2.EVENT.WAKE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:438
+msgid "0x1000"
+msgstr "0x1000"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:440
+msgid "``StampTimerPower2.EVENT.BUTTON_DOUBLE``"
+msgstr "``StampTimerPower2.EVENT.BUTTON_DOUBLE``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:441
+msgid "0x2000"
+msgstr "0x2000"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:442
+msgid "button double"
+msgstr "按钮双击"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:443
+msgid "``StampTimerPower2.EVENT.ALL``"
+msgstr "``StampTimerPower2.EVENT.ALL``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:444
+msgid "0x3fff"
+msgstr "0x3fff"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:448
+msgid "Methods"
+msgstr "方法"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:450
+msgid ""
+"Methods below are called on the StampTimerPower2 instance. Register transactions may raise "
+"OSError; failed communication is reported as False by is_connected(). Setters and action methods "
+"return None unless a return value is listed. Inputs are converted and validated by the current "
+"implementation; validation errors may be ValueError or TypeError."
+msgstr ""
+"以下方法均通过 StampTimerPower2 实例调用。寄存器访问可能抛出 OSError；is_connected() 将通信失败返回为 False。未列出返回值的设置和动作方法返回 "
+"None。参数按当前实现进行转换和校验，校验错误可能为 ValueError 或 TypeError。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:454
+msgid ""
+"Register an event listener. The IRQ output and MCU falling-edge input are initialized by the "
+"StampTimerPower2 constructor. The driver combines all filters, configures IRQ masks, and "
+"automatically switches GPIO event inputs to GPIO input mode without changing their pull settings."
+" The original GPIO configuration is restored after its last listener is removed."
+msgstr ""
+"注册事件监听者。IRQ 输出和 MCU 下降沿输入在构造 StampTimerPower2 对象时初始化。驱动会合并所有监听者的过滤器并自动配置 IRQ mask；GPIO "
+"事件对应的引脚会自动切换为普通输入，但不会修改上下拉。最后一个相关监听者注销后恢复引脚原配置。硬中断只负责调度，I2C 读取和用户回调在调度上下文执行。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:464
+msgid "``callback``"
+msgstr "``callback``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:465
+msgid "callable"
+msgstr "callable"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:467
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:472
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:507
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:545
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:573
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:578
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:598
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:626
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:631
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:651
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:656
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:661
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:765
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:808
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:836
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:884
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:889
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:927
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:932
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:952
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:957
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:977
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:982
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1002
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1007
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1027
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1032
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1052
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1184
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1204
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1236
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1256
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1292
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1320
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1386
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1391
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1507
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1539
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1544
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1569
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1574
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1599
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1619
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1639
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1667
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1695
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1715
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1720
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1740
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1797
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1802
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1831
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1836
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1861
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1894
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1919
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1924
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1944
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1949
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1969
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1989
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2009
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2014
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2034
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2074
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2079
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2103
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2135
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2200
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2205
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2578
+msgid "``-``"
+msgstr "``-``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:468
+msgid "Callback receiving one ``Event`` object."
+msgstr "接收一个 ``Event`` 对象的回调函数。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:469
+msgid "``filter``"
+msgstr "``filter``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:473
+msgid "One or more ORed ``StampTimerPower2.EVENT.*`` flags."
+msgstr "一个或多个按位或组合的 ``StampTimerPower2.EVENT.*`` 标志。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:474
+msgid "``user_data``"
+msgstr "``user_data``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:475
+msgid "object"
+msgstr "object"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:477
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:770
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:780
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:841
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:851
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1487
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1899
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2276
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2286
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2310
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2412
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2417
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2422
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2427
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2451
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2479
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2507
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2535
+msgid "``None``"
+msgstr "``None``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:478
+msgid "Application data exposed as ``event.user_data``."
+msgstr "随事件原样提供给回调的数据。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:483
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:513
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:551
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:604
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:673
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:685
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:697
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:709
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:721
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:733
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:745
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:786
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:814
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:862
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:905
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1058
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1072
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1084
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1096
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1108
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1120
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1132
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1216
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1298
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1326
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1340
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1354
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1366
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1403
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1415
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1427
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1439
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1465
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1519
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1645
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1673
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1872
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2054
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2115
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2147
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2178
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2316
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2357
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2371
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2385
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2457
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2485
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2513
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2541
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:485
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:515
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:553
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:606
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:711
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:723
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:735
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:747
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1060
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1074
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1086
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1218
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1300
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1328
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1342
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1356
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1405
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1417
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1429
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1441
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1467
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1521
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1647
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1675
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1874
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2056
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2117
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2149
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2359
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2373
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2387
+msgid "``int``"
+msgstr "``int``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:486
+msgid "Registration handle accepted by ``remove_event_cb()``."
+msgstr "回调注册 handle，可传给 ``remove_event_cb()`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:488
+msgid "Invalid arguments or state may raise TypeError, ValueError."
+msgstr "``TypeError`` ： ``callback`` 不可调用。 ``ValueError`` ： ``filter`` 不包含有效事件。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:490
+msgid ""
+"Callbacks run in scheduled MicroPython context. Each triggered bit produces one Event with "
+"target, code and user_data. code contains one EVENT flag. Calling without an IRQ pair raises "
+"RuntimeError; remove callbacks by their returned handle."
+msgstr ""
+"回调在 MicroPython 调度上下文执行。每个触发位产生一个含 target、code、user_data 的 Event，code 为单个 EVENT 标志。未配置 IRQ "
+"引脚对时调用会抛出 RuntimeError；使用返回的句柄注销回调。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:494
+msgid "Remove one listener by handle or all registrations using the same callback object."
+msgstr "按注册 handle 精确移除一个监听者，或按回调对象移除该对象的全部注册。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:504
+msgid "``handle_or_callback``"
+msgstr "``handle_or_callback``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:505
+msgid "int / callable"
+msgstr "int / callable"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:508
+msgid "Registration handle or callback object."
+msgstr "``add_event_cb()`` 返回的 handle，或注册时使用的回调对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:516
+msgid "Number of registrations removed."
+msgstr "实际移除的注册数量。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:518
+msgid "Invalid arguments or state may raise TypeError."
+msgstr "``TypeError`` ：参数既不是整数 handle，也不是可调用对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:522
+msgid "Release the host IRQ registration owned by this driver."
+msgstr "注销驱动创建的主控 IRQ，不关闭由应用传入的 I2C 总线。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:524
+msgid ""
+"This operation is idempotent. Ordinary register access remains available, and add_event_cb() can "
+"recreate the IRQ registration when the pins were configured."
+msgstr "此操作可重复调用，普通寄存器访问仍可使用；已配置 IRQ 引脚时，add_event_cb() 可重新创建中断注册。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:528
+msgid ""
+"Wake StampTimerPower2 and wait for communication to recover. The driver sends an empty I2C "
+"transaction and ignores a NACK from the first wake attempt."
+msgstr "唤醒 StampTimerPower2，并等待通信恢复。方法通过 I2C 空事务触发唤醒；芯片可能 NACK 第一笔事务，该错误会被忽略。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:542
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:570
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:595
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:623
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:648
+msgid "``reg``"
+msgstr "``reg``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:556
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:581
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:609
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:634
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:664
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:791
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:819
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:867
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:910
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:935
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:960
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:985
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1010
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1035
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1063
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1187
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1207
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1239
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1259
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1394
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1470
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1490
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1510
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1552
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1582
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1602
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1622
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1650
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1678
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1698
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1723
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1748
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1772
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1810
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1844
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1877
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1902
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1927
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1952
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1972
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1992
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2017
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2037
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2082
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2106
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2138
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2183
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2208
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2289
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2430
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2581
+msgid "Invalid arguments or state may raise ValueError."
+msgstr "``ValueError`` ：参数值或范围无效。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:575
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:628
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:658
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:777
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1029
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2283
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2307
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2448
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2476
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2504
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2532
+msgid "``value``"
+msgstr "``value``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:668
+msgid "Check whether a device responds at the configured I2C address."
+msgstr "检查配置地址上的 StampTimerPower2 是否响应 I2C 访问。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:675
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1098
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1110
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1122
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1134
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1368
+msgid "``bool``"
+msgstr "``bool``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:676
+msgid "``True`` when the device responds, otherwise ``False``."
+msgstr "设备响应时为 ``True`` ，否则为 ``False`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:680
+msgid "Read the device information block."
+msgstr "一次读取设备 ID、型号、硬件版本和固件版本。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:687
+msgid "``tuple``"
+msgstr "``tuple``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:688
+msgid "``(device_id, device_model, hardware_version, firmware_version)``."
+msgstr "``(device_id, device_model, hw_version, firmware_version)`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:692
+msgid "Read the 12-byte device unique identifier."
+msgstr "读取长度为 12 字节的芯片唯一标识。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:699
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2180
+msgid "``bytes``"
+msgstr "``bytes``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:700
+msgid "The 12-byte device UID."
+msgstr "长度为 12 字节的设备 UID。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:704
+msgid "Read the device ID."
+msgstr "读取设备 ID。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:712
+msgid "Device ID in the range ``0~255``."
+msgstr "设备 ID，范围 ``0~255`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:716
+msgid "Read the device model."
+msgstr "读取设备型号。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:724
+msgid "Device model in the range ``0~255``."
+msgstr "设备型号，范围 ``0~255`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:728
+msgid "Read the hardware version."
+msgstr "读取硬件版本。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:736
+msgid "Hardware version in the range ``0~255``."
+msgstr "硬件版本，范围 ``0~255`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:740
+msgid "Read the firmware version."
+msgstr "读取固件版本。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:748
+msgid "Firmware version in the range ``0~255``."
+msgstr "固件版本，范围 ``0~255`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:752
+msgid "Create a MicroPython Pin-style object backed by StampTimerPower2 GPIO registers."
+msgstr "创建与常用 MicroPython Pin 用法一致的 StampTimerPower2 GPIO 对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:762
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:881
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:924
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:949
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:974
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:999
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1024
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1049
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1233
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1253
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1794
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1828
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1966
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1986
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2006
+msgid "``gpio``"
+msgstr "``gpio``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:766
+msgid "StampTimerPower2 GPIO number in the range ``0~4``."
+msgstr "StampTimerPower2 GPIO 编号，范围 ``0~4`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:767
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:954
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1833
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2273
+msgid "``mode``"
+msgstr "``mode``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:768
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:773
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:839
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:849
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1485
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1897
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2274
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2279
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2410
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2415
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2420
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2449
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2477
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2505
+msgid "int / None"
+msgstr "int / None"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:771
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2277
+msgid "``Pin.IN``, ``Pin.OUT``, or ``Pin.OPEN_DRAIN``; ``None`` preserves the current mode."
+msgstr "使用 ``Pin.IN`` 、 ``Pin.OUT`` 或 ``Pin.OPEN_DRAIN`` ； ``None`` 保持当前模式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:772
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:979
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2278
+msgid "``pull``"
+msgstr "``pull``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:775
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2281
+msgid "``-1``"
+msgstr "``-1``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:776
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2282
+msgid "``Pin.PULL_UP``, ``Pin.PULL_DOWN``, or ``None``; ``-1`` preserves the current setting."
+msgstr "使用 ``Pin.PULL_UP`` 、 ``Pin.PULL_DOWN`` 或 ``None`` ； ``-1`` 保持当前配置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:778
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2284
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2308
+msgid "int / bool / None"
+msgstr "int / bool / None"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:781
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2287
+msgid "Initial output level; ``None`` leaves the output latch unchanged."
+msgstr "初始输出电平，支持 ``0`` 、 ``1`` 、 ``False`` 或 ``True`` ； ``None`` 不写输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:788
+msgid "``Pin``"
+msgstr "``Pin``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:789
+msgid "Configured StampTimerPower2 GPIO object."
+msgstr "StampTimerPower2 GPIO 对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:795
+msgid "Create a MicroPython ADC-style object for GPIO1 or GPIO2."
+msgstr "创建 ADC 对象。ADC1 固定使用 GPIO1，ADC2 固定使用 GPIO2。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:805
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:833
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1289
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1317
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1536
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1566
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1596
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1616
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1636
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1664
+msgid "``channel``"
+msgstr "``channel``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:809
+msgid "ADC channel; only ``1`` (GPIO1) or ``2`` (GPIO2) is supported."
+msgstr "ADC 通道编号，仅支持 ``1`` （GPIO1）或 ``2`` （GPIO2）。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:816
+msgid "``ADC``"
+msgstr "``ADC``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:817
+msgid "A new ADC object for the selected input."
+msgstr "ADC 对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:823
+msgid "Create a MicroPython PWM-style object for PWM0 or PWM1."
+msgstr "创建 PWM 对象。PWM0 固定使用 GPIO3，PWM1 固定使用 GPIO4，两个通道共用频率。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:837
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1540
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1570
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1600
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1620
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1640
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1668
+msgid "PWM channel; only ``0`` (GPIO3) or ``1`` (GPIO4) is supported."
+msgstr "PWM 通道编号，仅支持 ``0`` （GPIO3）或 ``1`` （GPIO4）。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:838
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2409
+msgid "``freq``"
+msgstr "``freq``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:843
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2414
+msgid "``duty_u16``"
+msgstr "``duty_u16``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:846
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2167
+msgid "``0``"
+msgstr "``0``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:847
+msgid "Initial duty in the range ``0~65535``."
+msgstr "16 位占空比，范围 ``0~65535`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:848
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2419
+msgid "``duty_ns``"
+msgstr "``duty_ns``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:852
+msgid "Initial high pulse width in nanoseconds; mutually exclusive with nonzero ``duty_u16``."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示不设置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:853
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1546
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1576
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2424
+msgid "``invert``"
+msgstr "``invert``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:854
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1457
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1547
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1577
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1743
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1767
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1805
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1839
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1864
+msgid "bool"
+msgstr "bool"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:856
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1459
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1549
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1579
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1866
+msgid "``False``"
+msgstr "``False``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:857
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1550
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1580
+msgid "``True`` selects inverted output polarity."
+msgstr "是否反相输出极性。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:864
+msgid "``PWM``"
+msgstr "``PWM``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:865
+msgid "Configured StampTimerPower2 PWM object."
+msgstr "PWM 对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:871
+msgid "Create a buffered MicroPython NeoPixel-style object."
+msgstr "创建 NeoPixel 缓冲对象。StampTimerPower2 仅支持 GPIO0 和 RGB 三通道颜色。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:885
+msgid "NeoPixel output pin; only StampTimerPower2 GPIO0 is supported."
+msgstr "NeoPixel 输出引脚，仅支持 StampTimerPower2 GPIO0。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:886
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1692
+msgid "``count``"
+msgstr "``count``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:890
+msgid "Number of buffered LEDs in the range ``1~32``."
+msgstr "缓冲区中的 LED 数量，范围 ``1~32`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:891
+msgid "``bpp``"
+msgstr "``bpp``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:894
+msgid "``3``"
+msgstr "``3``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:895
+msgid "Bytes per pixel; only RGB value ``3`` is supported."
+msgstr "每像素字节数；StampTimerPower2 仅支持 RGB，即 ``3`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:896
+msgid "``timing``"
+msgstr "``timing``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:899
+msgid "``1``"
+msgstr "``1``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:900
+msgid ""
+"NeoPixel protocol timing selector, ``0`` or ``1``; StampTimerPower2 uses fixed hardware timing "
+"for both."
+msgstr "NeoPixel 协议时序选择值，可用 ``0`` 或 ``1`` ；两者均由 StampTimerPower2 使用固定硬件时序输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:907
+msgid "``NeoPixel``"
+msgstr "``NeoPixel``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:908
+msgid "A new buffered NeoPixel object."
+msgstr "NeoPixel 缓冲对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:914
+msgid "Set a GPIO function mux."
+msgstr "设置指定 GPIO 的复用功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:928
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:953
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:978
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1003
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1028
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1053
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1990
+msgid "GPIO index in the range ``0~4``."
+msgstr "StampTimerPower2 GPIO 编号，范围 ``0~4`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:929
+msgid "``function``"
+msgstr "``function``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:933
+msgid "GPIO function selected with a ``PIN_FUNCTION_*`` constant."
+msgstr "GPIO 复用功能，使用 ``PIN_FUNCTION_*`` 常量。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:939
+msgid "Set a GPIO input/output mode."
+msgstr "设置 GPIO 输入、推挽输出或开漏输出模式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:958
+msgid "``GPIO_MODE_IN``, ``GPIO_MODE_OUT``, or ``GPIO_MODE_OPEN_DRAIN``."
+msgstr "使用 ``GPIO_MODE_IN`` 、 ``GPIO_MODE_OUT`` 或 ``GPIO_MODE_OPEN_DRAIN`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:964
+msgid "Set GPIO pull configuration."
+msgstr "设置 GPIO 内部上拉、下拉或无上下拉。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:983
+msgid "``GPIO_PULL_NONE``, ``GPIO_PULL_UP``, or ``GPIO_PULL_DOWN``."
+msgstr "使用 ``GPIO_PULL_NONE`` 、 ``GPIO_PULL_UP`` 或 ``GPIO_PULL_DOWN`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:989
+msgid "Set GPIO output drive type."
+msgstr "设置 GPIO 推挽或开漏驱动方式。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1004
+msgid "``drive``"
+msgstr "``drive``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1008
+msgid "``DRIVE_PUSH_PULL`` or ``DRIVE_OPEN_DRAIN``."
+msgstr "使用 ``DRIVE_PUSH_PULL`` 或 ``DRIVE_OPEN_DRAIN`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1014
+msgid "Write a GPIO output latch value."
+msgstr "设置 GPIO 输出电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1030
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1182
+msgid "int / bool"
+msgstr "int / bool"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1033
+msgid "Output level: ``0``, ``1``, ``False``, or ``True``."
+msgstr "输出电平，支持 ``0`` 、 ``1`` 、 ``False`` 或 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1039
+msgid "Read a GPIO input value."
+msgstr "读取 GPIO 当前输入电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1061
+msgid "Current input level, ``0`` or ``1``."
+msgstr "GPIO 电平， ``0`` 或 ``1`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1067
+msgid "Read the active power-source bit mask."
+msgstr "读取当前有效电源来源位图，可同时包含多个 ``POWER_SOURCE_*`` 标志。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1075
+msgid "ORed ``POWER_SOURCE_*`` flags."
+msgstr "由 ``POWER_SOURCE_*`` 组成的电源来源位图。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1079
+msgid "Read the power-configuration bit mask."
+msgstr "读取充电、DCDC、LDO、BOOST 和 LED_EN 等电源配置位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1087
+msgid "Raw power-configuration bit mask in the range ``0~255``."
+msgstr "电源配置寄存器值，范围 ``0~255`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1091
+msgid "Return whether battery charging is enabled."
+msgstr "读取充电使能位。该值表示充电功能是否启用，不表示当前是否存在充电电流。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1099
+msgid "``True`` when the charging-enable bit is set."
+msgstr "充电使能时为 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1103
+msgid "Return whether the DCDC power rail is enabled."
+msgstr "读取 3.3 V DCDC 电源轨使能状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1111
+msgid "``True`` when the DCDC rail is enabled."
+msgstr "DCDC 电源轨启用时为 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1115
+msgid "Return whether the LDO power rail is enabled."
+msgstr "读取 3.3 V LDO 电源轨使能状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1123
+msgid "``True`` when the LDO rail is enabled."
+msgstr "LDO 电源轨启用时为 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1127
+msgid "Return whether the BOOST / 5VINOUT power rail is enabled."
+msgstr "读取 BOOST / 5VINOUT 电源轨使能状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1135
+msgid "``True`` when the BOOST / 5VINOUT rail is enabled."
+msgstr "BOOST / 5VINOUT 电源轨启用时为 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1139
+msgid "Enable battery charging."
+msgstr "启用电池充电功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1143
+msgid "Disable battery charging."
+msgstr "关闭电池充电功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1147
+msgid "Enable the DCDC power rail."
+msgstr "启用 3.3 V DCDC 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1151
+msgid "Disable the DCDC power rail."
+msgstr "关闭 3.3 V DCDC 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1155
+msgid "Enable the LDO power rail."
+msgstr "启用 3.3 V LDO 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1159
+msgid "Disable the LDO power rail."
+msgstr "关闭 3.3 V LDO 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1163
+msgid "Enable the BOOST / 5VINOUT power rail."
+msgstr "启用 BOOST / 5VINOUT 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1167
+msgid "Disable the BOOST / 5VINOUT power rail."
+msgstr "关闭 BOOST / 5VINOUT 电源轨。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1171
+msgid "Set the LED_EN default output level bit."
+msgstr "设置 LED_EN 的默认输出电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1181
+msgid "``level``"
+msgstr "``level``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1185
+msgid "Default LED_EN output level: ``0``/``False`` for low, ``1``/``True`` for high."
+msgstr "目标电平，使用 ``False`` / ``True`` 或 ``0`` / ``1`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1191
+msgid "Set the battery low-voltage protection threshold."
+msgstr "设置电池低压保护阈值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1201
+msgid "``voltage_mv``"
+msgstr "``voltage_mv``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1205
+msgid "Low-voltage threshold in millivolts; one of ``3000``, ``3100``, ``3200``, or ``3300``."
+msgstr "电池低压保护阈值，范围 ``2000~3991`` mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1211
+msgid "Read the configured battery low-voltage threshold."
+msgstr "读取电池低压保护阈值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1219
+msgid "Configured threshold in millivolts: ``3000``, ``3100``, ``3200``, or ``3300``."
+msgstr "电池低压保护阈值，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1223
+msgid "Enable power-hold behavior for one GPIO output."
+msgstr "使指定 GPIO 在关机后保持输出状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1237
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1257
+msgid "GPIO output index in the range ``0~4``."
+msgstr "StampTimerPower2 GPIO 编号，范围 ``0~4`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1243
+msgid "Disable power-hold behavior for one GPIO output."
+msgstr "取消指定 GPIO 的关机保持。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1263
+msgid "Enable LDO power hold."
+msgstr "使 LDO 在关机后保持供电。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1267
+msgid "Disable LDO power hold."
+msgstr "取消 LDO 的关机保持。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1271
+msgid "Enable BOOST / 5VINOUT power hold."
+msgstr "使 BOOST 在关机后保持供电。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1275
+msgid "Disable BOOST / 5VINOUT power hold."
+msgstr "取消 BOOST 的关机保持。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1279
+msgid "Read a raw ADC conversion value."
+msgstr "读取指定 ADC 通道的 12 位原始值。通道 6 是内部温度通道。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1293
+msgid "ADC channel; use ``1``, ``2``, or internal temperature channel ``6``."
+msgstr "ADC 通道编号，支持 ``1`` 、 ``2`` 或内部温度通道 ``6`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1301
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2360
+msgid "Native 12-bit ADC code in the range ``0~4095``."
+msgstr "12 位 ADC 原始值，范围 ``0~4095`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1303
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1331
+msgid "Invalid arguments or state may raise ValueError, OSError."
+msgstr "``ValueError`` ：ADC 通道无效。 ``OSError`` ：ADC 转换超时。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1307
+msgid "Read an external ADC channel in millivolts."
+msgstr "读取外部 ADC 通道电压，仅支持 ADC1 和 ADC2。输入不得超过 3.3 V。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1321
+msgid "External ADC channel; only ``1`` (GPIO1) or ``2`` (GPIO2) is supported."
+msgstr "外部 ADC 通道编号，仅支持 ``1`` （GPIO1）或 ``2`` （GPIO2）。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1329
+msgid "External ADC input voltage in millivolts."
+msgstr "外部 ADC 输入电压，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1335
+msgid "Read the internal temperature sensor raw code."
+msgstr "读取芯片内部温度传感器的 12 位原始值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1343
+msgid "Internal temperature-channel code in the range ``0~4095``."
+msgstr "内部温度通道原始值，范围 ``0~4095`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1345
+msgid "Invalid arguments or state may raise OSError."
+msgstr "``OSError`` ：ADC 转换超时。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1349
+msgid "Read the current PM1 button state."
+msgstr "读取电源按键当前电平状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1357
+msgid "Current button level: ``0`` when released or ``1`` when pressed."
+msgstr "按键松开为 ``0`` ，按下为 ``1`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1361
+msgid "Read the sticky button-pressed flag."
+msgstr "读取粘滞按键事件标志；硬件会在读取后清除该标志。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1369
+msgid "``True`` when the sticky pressed flag was set; reading clears the hardware flag."
+msgstr "检测到按键事件时为 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1373
+msgid "Configure button timing."
+msgstr "设置单击、双击或长按的判定时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1383
+msgid "``event``"
+msgstr "``event``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1387
+msgid "``BUTTON_TIMING_CLICK``, ``BUTTON_TIMING_DOUBLE``, or ``BUTTON_TIMING_LONG``."
+msgstr "``BUTTON_TIMING_CLICK`` 、 ``BUTTON_TIMING_DOUBLE`` 或 ``BUTTON_TIMING_LONG`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1388
+msgid "``duration_ms``"
+msgstr "``duration_ms``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1398
+msgid "Read the PM1 reference voltage."
+msgstr "读取芯片当前参考电压。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1406
+msgid "Current reference voltage in millivolts."
+msgstr "参考电压，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1410
+msgid "Read the battery voltage."
+msgstr "读取电池电压。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1418
+msgid "Battery voltage in millivolts."
+msgstr "电池电压，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1422
+msgid "Read the voltage at the external module 5VIN input."
+msgstr "读取外接模块 5VIN 输入电压。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1430
+msgid "5VIN voltage in millivolts."
+msgstr "5VIN 电压，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1434
+msgid "Read the voltage at the external module 5VINOUT port."
+msgstr "读取外接模块 5VINOUT 端口电压。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1442
+msgid "5VINOUT voltage in millivolts."
+msgstr "5VINOUT 电压，单位 mV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1446
+msgid "Read wake-source flags."
+msgstr "读取唤醒来源位图，并可选择清除状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1456
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1863
+msgid "``clear``"
+msgstr "``clear``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1460
+msgid "Clear the wake-source flags returned by this read."
+msgstr "是否清除本次读取到的唤醒来源位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1468
+msgid "Wake-source bit mask."
+msgstr "由 ``WAKE_SOURCE_*`` 组成的唤醒来源位图。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1474
+msgid "Clear wake-source flags."
+msgstr "清除全部或指定唤醒来源状态位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1488
+msgid "Wake-source bits to clear; ``None`` clears every valid wake-source bit."
+msgstr "要操作的状态位掩码。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1494
+msgid "Set the shared PWM frequency."
+msgstr "设置 PWM0 和 PWM1 共用的输出频率。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1504
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2132
+msgid "``frequency``"
+msgstr "``frequency``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1508
+msgid "Shared PWM frequency in the range ``1~65535`` Hz."
+msgstr "共享 PWM 频率，范围 ``1~65535`` Hz。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1514
+msgid "Read the shared PWM frequency."
+msgstr "读取 PWM0 和 PWM1 共用的输出频率。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1522
+msgid "Shared PWM frequency in hertz."
+msgstr "共享 PWM 频率，单位 Hz。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1526
+msgid "Set a PWM channel duty by percent."
+msgstr "设置指定通道的百分比占空比和极性，不改变通道使能状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1541
+msgid "``percent``"
+msgstr "``percent``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1545
+msgid "Duty cycle in percent. Range: ``0~100``."
+msgstr "百分比占空比，范围 ``0~100`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1556
+msgid "Set a PWM channel duty by 12-bit code."
+msgstr "设置指定通道的 12 位占空比和极性，不改变通道使能状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1571
+msgid "``duty_u12``"
+msgstr "``duty_u12``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1575
+msgid "Unsigned 12-bit duty code. Range: ``0~4095``."
+msgstr "12 位占空比，范围 ``0~4095`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1586
+msgid "Enable a PWM output channel."
+msgstr "启用指定 PWM 通道。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1606
+msgid "Disable a PWM output channel."
+msgstr "关闭指定 PWM 通道。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1626
+msgid "Read a PWM channel duty by percent."
+msgstr "读取百分比占空比。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1648
+msgid "Duty percentage in the range ``0~100``."
+msgstr "百分比占空比，范围 ``0~100`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1654
+msgid "Read a PWM channel duty by 12-bit code."
+msgstr "读取 12 位占空比。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1676
+msgid "12-bit duty value in the range ``0~4095``."
+msgstr "12 位占空比，范围 ``0~4095`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1682
+msgid "Set the active NeoPixel LED count."
+msgstr "设置有效 NeoPixel 数量。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1696
+msgid "Active LED count in the range ``0~32``; ``0`` disables output."
+msgstr "有效 LED 数量，范围 ``0~32`` ； ``0`` 表示关闭输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1702
+msgid "Write one RGB888 color into LED RAM."
+msgstr "设置 LED RAM 中单颗 LED 的颜色。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1712
+msgid "``index``"
+msgstr "``index``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1716
+msgid "LED RAM index in the range ``0~31``."
+msgstr "LED 索引，范围 ``0~31`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1717
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2575
+msgid "``color``"
+msgstr "``color``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1718
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2576
+msgid "int / tuple"
+msgstr "int / tuple"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1721
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2579
+msgid "``0xRRGGBB`` or ``(r, g, b)`` with each component in ``0~255``."
+msgstr "颜色，可使用 ``0xRRGGBB`` 或 ``(r, g, b)`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1727
+msgid "Write multiple RGB888 colors into LED RAM."
+msgstr "批量写入多颗 LED 的颜色，并可选择立即刷新。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1737
+msgid "``colors``"
+msgstr "``colors``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1738
+msgid "iterable"
+msgstr "iterable"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1741
+msgid "Up to 32 RGB colors in integer or tuple form."
+msgstr "RGB 颜色序列，最多 32 项。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1742
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1766
+msgid "``auto_refresh``"
+msgstr "``auto_refresh``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1745
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1769
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1807
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1841
+msgid "``True``"
+msgstr "``True``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1746
+msgid "Refresh the LED output after writing."
+msgstr "写入后是否立即刷新 LED 输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1752
+msgid "Refresh NeoPixel output from LED RAM."
+msgstr "把 LED RAM 的内容刷新到 NeoPixel 输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1756
+msgid "Clear LED RAM to black."
+msgstr "清空当前有效 LED 的颜色，并可选择立即刷新。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1770
+msgid "Refresh the LED output after clearing."
+msgstr "写入后是否立即刷新 LED 输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1776
+msgid ""
+"Enable NeoPixel output without changing LED RAM. After disable_neopixels(), the remembered count "
+"is cleared; enabling starts with one LED. Call set_neopixel_count() to select another count."
+msgstr ""
+"启用 NeoPixel 输出，不改写 LED RAM。disable_neopixels() 会清除保存的灯珠数量，随后启用默认使用一颗；需要其他数量时调用 "
+"set_neopixel_count()。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1780
+msgid "Disable NeoPixel output without clearing LED RAM."
+msgstr "关闭 NeoPixel 输出，不改写 LED RAM。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1784
+msgid "Configure AW8737A pulse output."
+msgstr "配置指定 GPIO 输出 AW8737A 控制脉冲。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1798
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1832
+msgid "AW8737A mode-control GPIO in the range ``0~4``."
+msgstr "StampTimerPower2 GPIO 编号，范围 ``0~4`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1799
+msgid "``pulses``"
+msgstr "``pulses``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1803
+msgid "Pulse count in the range ``0~255``."
+msgstr "AW8737A 控制脉冲数，范围 ``0~3`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1804
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1838
+msgid "``refresh``"
+msgstr "``refresh``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1808
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1842
+msgid "Execute the configured pulse output immediately."
+msgstr "配置后是否立即执行脉冲输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1814
+msgid "Execute the last configured AW8737A pulse output."
+msgstr "执行最近一次保存的 AW8737A 脉冲配置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1818
+msgid "Set AW8737A gain mode."
+msgstr "按 AW8737A 模式编号配置控制脉冲。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1837
+msgid "Gain mode in the range ``0~3``, mapped directly to the pulse count."
+msgstr "工作模式；具体常量取决于对象接口或基础 GPIO 接口。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1848
+msgid "Read an IRQ status group."
+msgstr "读取一个 IRQ 状态组，并可清除本次读到的状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1858
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1891
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1916
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1941
+msgid "``group``"
+msgstr "``group``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1859
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1892
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1917
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1942
+msgid "int / str"
+msgstr "int / str"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1862
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1895
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1920
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1945
+msgid "IRQ group constant or corresponding string."
+msgstr "``IRQ_GROUP_GPIO`` 、 ``IRQ_GROUP_SYSTEM`` 、 ``IRQ_GROUP_BUTTON`` ，或对应字符串。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1867
+msgid "Clear the flags returned by this read."
+msgstr "是否清除本次读取到的状态位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1875
+msgid "Status bit mask for the selected IRQ group."
+msgstr "指定 IRQ 组的状态位图。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1881
+msgid "Clear IRQ status bits."
+msgstr "清除一个 IRQ 状态组的全部或指定状态位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1900
+msgid "Group-local status bits to clear; ``None`` clears every valid bit in the group."
+msgstr "要操作的状态位掩码。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1906
+msgid "Mask IRQ bits."
+msgstr "屏蔽指定 IRQ 状态位。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1921
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1946
+msgid "``events``"
+msgstr "``events``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1925
+msgid "Group-local event bit mask to disable."
+msgstr "要禁用的组内事件位掩码。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1931
+msgid "Unmask IRQ bits."
+msgstr "解除指定 IRQ 状态位的屏蔽。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1950
+msgid "Group-local event bit mask to enable."
+msgstr "要启用的组内事件位掩码。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1956
+msgid "Enable GPIO wakeup."
+msgstr "启用指定 GPIO 的关机唤醒功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1970
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2010
+msgid "Wake GPIO in the range ``0~4``; GPIO1 does not support wakeup."
+msgstr "StampTimerPower2 GPIO 编号，范围 ``0~4`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1976
+msgid "Disable GPIO wakeup."
+msgstr "关闭指定 GPIO 的关机唤醒功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1996
+msgid "Set GPIO wakeup edge."
+msgstr "设置指定 GPIO 的唤醒触发边沿。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2011
+msgid "``edge``"
+msgstr "``edge``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2015
+msgid "``WAKE_EDGE_FALLING`` or ``WAKE_EDGE_RISING``."
+msgstr "``WAKE_EDGE_FALLING`` 或 ``WAKE_EDGE_RISING`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2021
+msgid "Set watchdog timeout."
+msgstr "启用看门狗并设置超时时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2031
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2100
+msgid "``timeout_s``"
+msgstr "``timeout_s``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2035
+msgid "Watchdog timeout in the range ``1~255`` seconds."
+msgstr "看门狗超时时间，范围 ``1~255`` 秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2041
+msgid "Disable the watchdog."
+msgstr "关闭看门狗。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2045
+msgid "Feed the watchdog."
+msgstr "重载看门狗计数。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2049
+msgid "Read the watchdog countdown."
+msgstr "读取当前看门狗剩余计数。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2057
+msgid "Remaining watchdog time in seconds."
+msgstr "看门狗剩余计数，范围 ``0~255`` 秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2061
+msgid "Set the PM1 timer and timeout action."
+msgstr "设置 PMIC 定时器持续时间和到期动作。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2071
+msgid "``duration_s``"
+msgstr "``duration_s``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2075
+msgid "Timer duration in seconds, range ``0~2147483647``."
+msgstr "定时器持续时间，范围 ``0~2147483647`` 秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2076
+msgid "``action``"
+msgstr "``action``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2080
+msgid "Timer action selected with a ``TIMER_ACTION_*`` constant."
+msgstr "定时器到期动作，使用 ``TIMER_ACTION_*`` 常量。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2086
+msgid "Stop and clear the PM1 timer."
+msgstr "停止并清除 PMIC 定时器。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2090
+msgid "Set PM1 I2C idle sleep timeout."
+msgstr "设置 I2C 空闲后进入休眠的等待时间；传入 0 时关闭休眠。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2104
+msgid "Idle sleep timeout in seconds, range ``0~15``."
+msgstr "空闲休眠等待时间，范围 ``0~15`` 秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2110
+msgid "Read PM1 I2C idle sleep timeout."
+msgstr "读取 I2C 空闲休眠等待时间。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2118
+msgid "Idle-sleep timeout in the range ``0~15`` seconds."
+msgstr "I2C 空闲休眠等待时间，范围 ``0~15`` 秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2122
+msgid "Set PM1 device-side I2C speed mode."
+msgstr "设置 StampTimerPower2 使用的 I2C 总线速度配置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2136
+msgid "I2C frequency; only ``100000`` or ``400000`` Hz is supported."
+msgstr "I2C 频率，仅支持 ``100000`` 或 ``400000`` Hz。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2142
+msgid "Read the PM1 device-side I2C speed mode."
+msgstr "读取 StampTimerPower2 使用的 I2C 总线速度配置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2150
+msgid "I2C frequency, either ``100000`` or ``400000`` Hz."
+msgstr "I2C 频率，返回 ``100000`` 或 ``400000`` Hz。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2154
+msgid ""
+"Read a region of the 32-byte RTC retention RAM. Retention depends on the module power conditions;"
+" this is not flash storage."
+msgstr "读取 32 字节 RTC 保持 RAM 的指定区域。数据保持取决于模块供电条件，不等同于 Flash 非易失存储。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2164
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2197
+msgid "``offset``"
+msgstr "``offset``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2169
+msgid "``length``"
+msgstr "``length``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2172
+msgid "``32``"
+msgstr "``32``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2173
+msgid "Number of bytes to read; ``offset + length`` must not exceed ``32``."
+msgstr "读取长度，且 ``offset + length`` 不得超过 32。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2181
+msgid "Requested RTC RAM byte sequence."
+msgstr "读取到的 RTC RAM 数据。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2187
+msgid "Write a region of the 32-byte RTC retention RAM. Retention depends on the module power conditions."
+msgstr "写入 32 字节 RTC 保持 RAM 的指定区域，数据保持取决于模块供电条件。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2202
+msgid "``data``"
+msgstr "``data``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2203
+msgid "buffer / iterable"
+msgstr "buffer / iterable"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2206
+msgid "Bytes to write; ``offset + len(data)`` must not exceed ``32``."
+msgstr "要写入的 bytes-like 数据。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2212
+msgid ""
+"Restore writable StampTimerPower2 configuration to the documented defaults, including power, "
+"GPIO, wake, ADC, PWM, timer, IRQ, button, NeoPixel, and AW8737A settings, and clear sticky wake "
+"and IRQ status. Event callbacks are removed. Device information, UID, and the 32-byte RTC RAM are"
+" preserved, and the chip is not rebooted."
+msgstr ""
+"恢复电源、GPIO、唤醒、ADC、PWM、定时器、中断、按钮、NeoPixel 和 AW8737A 的可写配置，清除唤醒和 IRQ 粘滞状态并注销事件回调。保留设备信息、UID 和 32 字节 "
+"RTC RAM，不重启芯片。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2214
+msgid ""
+"The StampTimerPower2 I2C speed returns to 100 kHz. Configure the host I2C bus for the same speed "
+"before subsequent access. Existing ``Pin``, ``ADC``, ``PWM``, and ``NeoPixel`` objects must be "
+"reinitialized before reuse."
+msgstr "I2C 速度恢复为 100 kHz，再次访问前应将主控总线配置为相同频率。已有 ``Pin`` 、 ``ADC`` 、 ``PWM`` 和 ``NeoPixel`` 对象须重新初始化后使用。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2216
+msgid "**Exceptions**"
+msgstr "**异常**"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2218
+msgid "``OSError`` is raised on I2C failure; configuration may then be only partially restored."
+msgstr "I2C 失败会抛出 ``OSError`` ，此时配置可能仅部分恢复。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2222
+msgid ""
+"Send a power-off command to the external StampTimerPower2. Basic remains powered by its own USB "
+"or battery supply."
+msgstr "向外接 StampTimerPower2 发送关机命令。Basic 由自己的 USB 或电池供电，不因此自动关机。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2226
+msgid ""
+"Reboot the external StampTimerPower2. Basic continues running; wait for the module to recover "
+"before further I2C access."
+msgstr "重启外接 StampTimerPower2。Basic 继续运行，再次访问 I2C 前需等待模块恢复。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2230
+msgid "Request PM1 download mode."
+msgstr "发送进入下载模式命令。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2234
+msgid "Enable the PM1 download-mode lock."
+msgstr "启用下载模式锁定。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2238
+msgid "Disable the PM1 download-mode lock."
+msgstr "关闭下载模式锁定。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2242
+msgid "Enable single-click reset behavior."
+msgstr "启用单击复位行为。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2246
+msgid "Disable single-click reset behavior."
+msgstr "关闭单击复位行为。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2250
+msgid "Enable double-click poweroff behavior."
+msgstr "启用双击关机行为。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2254
+msgid "Disable double-click poweroff behavior."
+msgstr "关闭双击关机行为。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2257
+msgid "Pin object methods"
+msgstr "Pin 对象方法"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2259
+msgid ""
+"Create this helper through ``stp2.Pin()``. The following methods belong to the returned object, "
+"not the StampTimerPower2 instance."
+msgstr "通过 ``stp2.Pin()`` 创建此封装对象，以下方法属于返回的对象，不直接属于 StampTimerPower2 实例。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2263
+msgid "Initialize or reconfigure the GPIO pin."
+msgstr "初始化或重新配置 Pin 对象。对象模式使用 ``machine.Pin`` 常量。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2293
+msgid "Restore a floating GPIO input and deactivate this object."
+msgstr "停用 Pin 对象，并将对应 GPIO 恢复为无上下拉输入。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2297
+msgid "Read or write the GPIO value."
+msgstr "不传参数时读取电平；传入值时设置输出电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2311
+msgid "Output level; ``None`` reads, while ``0``, ``1``, ``False``, or ``True`` writes."
+msgstr "输出电平； ``None`` 表示读取，写入支持 ``0`` 、 ``1`` 、 ``False`` 或 ``True`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2318
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2459
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2487
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2515
+msgid "``int / None``"
+msgstr "``int / None``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2319
+msgid "``0`` or ``1`` when reading; ``None`` when writing."
+msgstr "读取时返回 ``0`` 或 ``1`` ；设置时返回 ``None`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2321
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2462
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2490
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2518
+msgid "Invalid arguments or state may raise RuntimeError, ValueError."
+msgstr "``RuntimeError`` ：对象已经停用。 ``ValueError`` ：输出值无效。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2325
+msgid "Set the GPIO output high."
+msgstr "输出高电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2327
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2333
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2587
+msgid "Invalid arguments or state may raise RuntimeError."
+msgstr "``RuntimeError`` ：对象已经停用。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2331
+msgid "Set the GPIO output low."
+msgstr "输出低电平。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2335
+msgid ""
+"``pin()`` reads the level and ``pin(value)`` writes it, as aliases for value(). Use "
+"``hardware.Pin.IN``, ``OUT``, ``OPEN_DRAIN``, ``PULL_UP`` and ``PULL_DOWN`` for the helper "
+"arguments."
+msgstr ""
+"``pin()`` 读取电平， ``pin(value)`` 设置电平，等同于 value()。封装参数使用 ``hardware.Pin.IN`` 、 ``OUT`` 、 "
+"``OPEN_DRAIN`` 、 ``PULL_UP`` 和 ``PULL_DOWN`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2338
+msgid "ADC object methods"
+msgstr "ADC 对象方法"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2340
+msgid ""
+"Create this helper through ``stp2.ADC()``. The following methods belong to the returned object, "
+"not the StampTimerPower2 instance."
+msgstr "通过 ``stp2.ADC()`` 创建此封装对象，以下方法属于返回的对象，不直接属于 StampTimerPower2 实例。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2344
+msgid "Initialize or reinitialize the ADC input."
+msgstr "初始化或重新启用 ADC 对象，并将对应 GPIO 切换到 ADC 功能。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2348
+msgid "Release the ADC function and restore a floating GPIO input."
+msgstr "停用 ADC 对象，并将对应 GPIO 恢复为无上下拉输入。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2352
+msgid "Read the native 12-bit ADC code."
+msgstr "读取 12 位 ADC 原始值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2362
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2376
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2390
+msgid "Invalid arguments or state may raise RuntimeError, OSError."
+msgstr "``RuntimeError`` ：对象已经停用。 ``OSError`` ：ADC 转换超时。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2366
+msgid "Read a full-scale normalized unsigned 16-bit value."
+msgstr "读取换算到 16 位满量程的 ADC 值。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2374
+msgid "Full-scale normalized value in the range ``0~65535``."
+msgstr "归一化值，范围 ``0~65535`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2380
+msgid "Read the ADC input voltage in microvolts."
+msgstr "读取使用实时 VREF 换算的输入电压。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2388
+msgid "ADC input voltage in microvolts."
+msgstr "输入电压，单位 uV。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2393
+msgid "PWM object methods"
+msgstr "PWM 对象方法"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2395
+msgid ""
+"Create this helper through ``stp2.PWM()``. The following methods belong to the returned object, "
+"not the StampTimerPower2 instance."
+msgstr "通过 ``stp2.PWM()`` 创建此封装对象，以下方法属于返回的对象，不直接属于 StampTimerPower2 实例。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2399
+msgid "Initialize or reconfigure the PWM output."
+msgstr "初始化或重新配置 PWM 对象。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2418
+msgid "Duty in the range ``0~65535``; ``None`` preserves it."
+msgstr "16 位占空比，范围 ``0~65535`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2423
+msgid "High pulse width in nanoseconds; mutually exclusive with ``duty_u16``."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示不设置。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2425
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2533
+msgid "bool / None"
+msgstr "bool / None"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2428
+msgid "Output polarity; ``None`` preserves it."
+msgstr "是否反相输出极性。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2434
+msgid "Disable PWM and restore its fixed pin as a floating input."
+msgstr "关闭当前 PWM 通道，并将固定映射 GPIO 恢复为输入。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2438
+msgid "Read or set the shared PWM frequency."
+msgstr "不传参数时读取共享频率；传入频率时同时更新两个 PWM 通道的频率。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2452
+msgid "Shared frequency in the range ``1~65535`` Hz; ``None`` reads it."
+msgstr "PWM 频率，范围 ``1~65535`` Hz； ``None`` 表示读取。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2460
+msgid "Frequency in hertz when reading; ``None`` when setting."
+msgstr "读取时返回频率，单位 Hz；设置时返回 ``None`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2466
+msgid "Read or set duty using the MicroPython unsigned 16-bit scale."
+msgstr "读取或设置 ``0~65535`` 范围的占空比。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2480
+msgid "Duty in the range ``0~65535``; ``None`` reads it."
+msgstr "16 位占空比，范围 ``0~65535`` ； ``None`` 表示读取。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2488
+msgid "Duty in the range ``0~65535`` when reading; ``None`` when setting."
+msgstr "读取时返回 ``0~65535`` ；设置时返回 ``None`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2494
+msgid "Read or set PWM pulse width in nanoseconds."
+msgstr "读取或设置高电平脉宽，单位为纳秒。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2508
+msgid ""
+"High pulse width in nanoseconds; ``None`` reads it. The value cannot exceed the current PWM "
+"period."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示读取。设置值不得超过当前 PWM 周期。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2516
+msgid "High pulse width in nanoseconds when reading; ``None`` when setting."
+msgstr "读取时返回高电平脉宽，单位 ns；设置时返回 ``None`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2522
+msgid "Read or set output invert."
+msgstr "读取或设置输出极性反相状态。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2536
+msgid "``True`` selects inverted polarity, ``False`` selects normal polarity, and ``None`` reads it."
+msgstr "``True`` 表示反相； ``False`` 表示正常极性； ``None`` 表示读取。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2543
+msgid "``bool / None``"
+msgstr "``bool / None``"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2544
+msgid "Invert state when reading; ``None`` when setting."
+msgstr "读取时返回反相状态；设置时返回 ``None`` 。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2546
+msgid "Invalid arguments or state may raise ValueError, RuntimeError."
+msgstr "``ValueError`` ：反相参数不是布尔值。 ``RuntimeError`` ：对象已经停用。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2548
+msgid ""
+"Use duty_u16() or duty_ns(); this implementation does not provide duty(). Frequency is shared "
+"between both channels."
+msgstr "使用 duty_u16() 或 duty_ns()；当前实现未提供 duty()。两个通道共享频率。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2551
+msgid "NeoPixel object methods"
+msgstr "NeoPixel 对象方法"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2553
+msgid ""
+"Create this helper through ``stp2.NeoPixel()``. The following methods belong to the returned "
+"object, not the StampTimerPower2 instance."
+msgstr "通过 ``stp2.NeoPixel()`` 创建此封装对象，以下方法属于返回的对象，不直接属于 StampTimerPower2 实例。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2557
+msgid "Initialize or reinitialize the fixed GPIO0 NeoPixel output."
+msgstr "初始化或重新启用 GPIO0 NeoPixel 输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2561
+msgid "Clear LEDs, disable output, and restore GPIO0 as an input."
+msgstr "清空并关闭 LED 输出，将 GPIO0 恢复为输入。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2565
+msgid "Fill the local buffer without writing the LEDs."
+msgstr "用同一 RGB 颜色填充本地像素缓冲区，不立即刷新硬件。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2585
+msgid "Convert the RGB buffer to RGB565 and refresh the LED output."
+msgstr "将本地 RGB 缓冲区写入 StampTimerPower2 并刷新 LED 输出。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2589
+msgid ""
+"``len(pixels)`` returns the LED count. ``pixels[index]`` reads or writes an RGB tuple in the "
+"local buffer; call write() to display changes. Indices range from 0 to count-1, and RGB "
+"components from 0 to 255."
+msgstr ""
+"``len(pixels)`` 返回灯珠数量。 ``pixels[index]`` 读取或设置本地缓冲区 RGB 元组，调用 write() 后更新灯珠。下标范围为 0 到 "
+"count-1，RGB 分量范围为 0 到 255。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2168
+msgid "Byte offset in the range 0~31; offset + length must not exceed 32."
+msgstr "字节偏移范围为 0~31；offset + length 不得超过 32。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2201
+msgid "Byte offset in the range 0~31; offset + len(data) must not exceed 32."
+msgstr "字节偏移范围为 0~31；offset + len(data) 不得超过 32。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:1392
+msgid ""
+"Button timing in milliseconds: click/double-click accepts 125, 250, 500 or 1000; long press "
+"accepts 1000, 2000, 3000 or 4000."
+msgstr "按钮时间，单位 ms。单击/双击可选 125、250、500、1000；长按可选 1000、2000、3000、4000。"
+
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:842
+#: ../../../home/loki/uiflow_workspace/uiflow-stp2-rebase/docs/source/stamp/stp2.rst:2413
+msgid ""
+"Shared frequency in the range ``1~65535`` Hz; ``None`` preserves it, falling back to 500 Hz when "
+"the frequency register is zero."
+msgstr "共享频率范围为  ``1~65535``  Hz； ``None``  保持当前频率，寄存器为零时使用 500 Hz。"
+
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+msgid "Example output:"
+msgstr "示例输出："
+
+msgid "**API**"
+msgstr "**API**"
+
+msgid "Module IRQ output GPIO, 0~4; -1 disables IRQ. Default: -1. Keyword-only parameter."
+msgstr "模块 IRQ 输出 GPIO，范围 0~4；-1 表示不启用。 默认值：-1。 仅限关键字参数。"
+
+msgid ""
+"Basic IRQ input GPIO; use 26 for this wiring, or -1 without IRQ. Default: -1. Keyword-only "
+"parameter."
+msgstr "Basic IRQ 输入 GPIO，本示例接线使用 26；不用 IRQ 时为 -1。 默认值：-1。 仅限关键字参数。"
+
+msgid "Application data exposed as ``event.user_data``. Default: ``None``. Keyword-only parameter."
+msgstr "随事件原样提供给回调的数据。 默认值：``None``。 仅限关键字参数。"
+
+msgid "Invalid argument type."
+msgstr "参数类型无效。"
+
+msgid "Invalid argument value."
+msgstr "参数值无效。"
+
+msgid "No return value."
+msgstr "无返回值。"
+
+msgid ""
+"``Pin.IN``, ``Pin.OUT``, or ``Pin.OPEN_DRAIN``; ``None`` preserves the current mode. Default: "
+"``None``."
+msgstr "使用 ``Pin.IN`` 、 ``Pin.OUT`` 或 ``Pin.OPEN_DRAIN`` ； ``None`` 保持当前模式。 默认值：``None``。"
+
+msgid ""
+"``Pin.PULL_UP``, ``Pin.PULL_DOWN``, or ``None``; ``-1`` preserves the current setting. Default: "
+"``-1``."
+msgstr "使用 ``Pin.PULL_UP`` 、 ``Pin.PULL_DOWN`` 或 ``None`` ； ``-1`` 保持当前配置。 默认值：``-1``。"
+
+msgid ""
+"Initial output level; ``None`` leaves the output latch unchanged. Default: ``None``. Keyword-only"
+" parameter."
+msgstr "初始输出电平，支持 ``0`` 、 ``1`` 、 ``False`` 或 ``True`` ； ``None`` 不写输出。 默认值：``None``。 仅限关键字参数。"
+
+msgid ""
+"Shared frequency in the range ``1~65535`` Hz; ``None`` preserves it, falling back to 500 Hz when "
+"the frequency register is zero. Default: ``None``. Keyword-only parameter."
+msgstr "共享频率范围为  ``1~65535``  Hz； ``None``  保持当前频率，寄存器为零时使用 500 Hz。 默认值：``None``。 仅限关键字参数。"
+
+msgid "Initial duty in the range ``0~65535``. Default: ``0``. Keyword-only parameter."
+msgstr "16 位占空比，范围 ``0~65535`` 。 默认值：``0``。 仅限关键字参数。"
+
+msgid ""
+"Initial high pulse width in nanoseconds; mutually exclusive with nonzero ``duty_u16``. Default: "
+"``None``. Keyword-only parameter."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示不设置。 默认值：``None``。 仅限关键字参数。"
+
+msgid "``True`` selects inverted output polarity. Default: ``False``. Keyword-only parameter."
+msgstr "是否反相输出极性。 默认值：``False``。 仅限关键字参数。"
+
+msgid "Bytes per pixel; only RGB value ``3`` is supported. Default: ``3``. Keyword-only parameter."
+msgstr "每像素字节数；StampTimerPower2 仅支持 RGB，即 ``3`` 。 默认值：``3``。 仅限关键字参数。"
+
+msgid ""
+"NeoPixel protocol timing selector, ``0`` or ``1``; StampTimerPower2 uses fixed hardware timing "
+"for both. Default: ``1``. Keyword-only parameter."
+msgstr "NeoPixel 协议时序选择值，可用 ``0`` 或 ``1`` ；两者均由 StampTimerPower2 使用固定硬件时序输出。 默认值：``1``。 仅限关键字参数。"
+
+msgid "Operation failed."
+msgstr "操作失败。"
+
+msgid "Clear the wake-source flags returned by this read. Default: ``False``. Keyword-only parameter."
+msgstr "是否清除本次读取到的唤醒来源位。 默认值：``False``。 仅限关键字参数。"
+
+msgid "Wake-source bits to clear; ``None`` clears every valid wake-source bit. Default: ``None``."
+msgstr "要操作的状态位掩码。 默认值：``None``。"
+
+msgid "Refresh the LED output after writing. Default: ``True``. Keyword-only parameter."
+msgstr "写入后是否立即刷新 LED 输出。 默认值：``True``。 仅限关键字参数。"
+
+msgid "Refresh the LED output after clearing. Default: ``True``. Keyword-only parameter."
+msgstr "写入后是否立即刷新 LED 输出。 默认值：``True``。 仅限关键字参数。"
+
+msgid "Execute the configured pulse output immediately. Default: ``True``. Keyword-only parameter."
+msgstr "配置后是否立即执行脉冲输出。 默认值：``True``。 仅限关键字参数。"
+
+msgid "Clear the flags returned by this read. Default: ``False``. Keyword-only parameter."
+msgstr "是否清除本次读取到的状态位。 默认值：``False``。 仅限关键字参数。"
+
+msgid "Group-local status bits to clear; ``None`` clears every valid bit in the group. Default: ``None``."
+msgstr "要操作的状态位掩码。 默认值：``None``。"
+
+msgid "Byte offset in the range 0~31; offset + length must not exceed 32. Default: ``0``."
+msgstr "字节偏移范围为 0~31；offset + length 不得超过 32。 默认值：``0``。"
+
+msgid "Number of bytes to read; ``offset + length`` must not exceed ``32``. Default: ``32``."
+msgstr "读取长度，且 ``offset + length`` 不得超过 32。 默认值：``32``。"
+
+msgid ""
+"Output level; ``None`` reads, while ``0``, ``1``, ``False``, or ``True`` writes. Default: "
+"``None``."
+msgstr "输出电平； ``None`` 表示读取，写入支持 ``0`` 、 ``1`` 、 ``False`` 或 ``True`` 。 默认值：``None``。"
+
+msgid "The object is not in a valid state."
+msgstr "对象当前状态不允许此操作。"
+
+msgid "Duty in the range ``0~65535``; ``None`` preserves it. Default: ``None``. Keyword-only parameter."
+msgstr "16 位占空比，范围 ``0~65535`` 。 默认值：``None``。 仅限关键字参数。"
+
+msgid ""
+"High pulse width in nanoseconds; mutually exclusive with ``duty_u16``. Default: ``None``. "
+"Keyword-only parameter."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示不设置。 默认值：``None``。 仅限关键字参数。"
+
+msgid "Output polarity; ``None`` preserves it. Default: ``None``. Keyword-only parameter."
+msgstr "是否反相输出极性。 默认值：``None``。 仅限关键字参数。"
+
+msgid "Shared frequency in the range ``1~65535`` Hz; ``None`` reads it. Default: ``None``."
+msgstr "PWM 频率，范围 ``1~65535`` Hz； ``None`` 表示读取。 默认值：``None``。"
+
+msgid "Duty in the range ``0~65535``; ``None`` reads it. Default: ``None``."
+msgstr "16 位占空比，范围 ``0~65535`` ； ``None`` 表示读取。 默认值：``None``。"
+
+msgid ""
+"High pulse width in nanoseconds; ``None`` reads it. The value cannot exceed the current PWM "
+"period. Default: ``None``."
+msgstr "高电平脉宽，单位 ns； ``None`` 表示读取。设置值不得超过当前 PWM 周期。 默认值：``None``。"
+
+msgid ""
+"``True`` selects inverted polarity, ``False`` selects normal polarity, and ``None`` reads it. "
+"Default: ``None``."
+msgstr "``True`` 表示反相； ``False`` 表示正常极性； ``None`` 表示读取。 默认值：``None``。"
+
+msgid ""
+"Run each file independently on Basic. A/C selects a test and B starts it. During a test, B stops "
+"and releases resources; A/C changes the parameter shown on screen. The screen shows wiring, mode,"
+" live values and errors. Power actions require ENABLE_POWER_ACTIONS = True and a second B "
+"confirmation. Hardware verification is pending."
+msgstr ""
+"各文件在 Basic 上独立运行。菜单中 A/C 选择测试、B 启动；运行时 B 停止并释放资源，A/C 调整屏幕提示的参数。屏幕显示接线、模式、实时数值和异常。电源动作需手动设置 "
+"ENABLE_POWER_ACTIONS = True，再次按 B 确认。实机状态：未验证。"
+
+msgid ""
+"Use the Basic button menu to select: Identity / power source, Unique ID, Voltage monitor. Read "
+"the current test values on screen; press B to stop."
+msgstr "通过按键切换设备信息、UID 和电压监视；屏幕数值随模块供电变化。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read power configuration, Charging control, DCDC control, "
+"LDO control, Boost control. Read the current test values on screen; press B to stop."
+msgstr "默认读取配置；充电及各电源轨控制需手动解锁。运行时 A 关闭/C 开启，屏幕读回并在停止时恢复进入测试前状态。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Direct input G4, Pin input G4, Direct push-pull G3, Pin "
+"push-pull G3, Direct open-drain G3, Pin open-drain G3. Read the current test values on screen; "
+"press B to stop."
+msgstr "A/C 控制输出低/高电平，输入模式显示实时电平。直接接口与 Pin 封装分别可选。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Direct ADC G1, Direct ADC G2, ADC wrapper G1, ADC wrapper "
+"G2, Internal ADC. Read the current test values on screen; press B to stop."
+msgstr "直接接口/ADC 封装分别采样 G1/G2；屏幕显示通道、原始值、毫伏/微伏和参考电压。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Direct PWM0 1kHz, Direct PWM1 1kHz, Wrapper PWM0 1kHz, "
+"Wrapper PWM1 1kHz, Direct PWM0 5kHz, Wrapper PWM0 1kHz INV. Read the current test values on "
+"screen; press B to stop."
+msgstr "启动后 A/C 以 10% 步进调整占空比；分别提供 1kHz/5kHz 和反相场景，屏幕显示设置和读回值。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Direct RGB / 1 LED, Wrapper RGB / 1 LED, Wrapper RGB / 4 "
+"LEDs. Read the current test values on screen; press B to stop."
+msgstr "A/C 选择红绿蓝白/关闭，屏幕显示模式、数量和 RGB，停止时熄灭并释放输出。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Communication, Gain mode, Pulse count. Read the current test"
+" values on screen; press B to stop."
+msgstr "默认只检查通信；输出测试用 A/C 手动选择模式或脉冲数，按键变更才触发一次。屏幕不将命令成功当作声音验收。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: G4 single IRQ, G2 + G3 IRQ. Read the current test values on "
+"screen; press B to stop."
+msgstr "屏幕分别显示 IRQ 计数、最后事件和实时输入电平。停止时注销回调、释放 G26 IRQ 并恢复输入上拉位。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Poll button, Button INT callbacks. Read the current test "
+"values on screen; press B to stop."
+msgstr "屏幕显示 STP2 按钮电平、单击/双击事件及计数，Basic B 停止。回调测试才创建 G26。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read wake source, Configure G4 wake, LDO shutdown + G4 wake."
+" Read the current test values on screen; press B to stop."
+msgstr "先读唤醒来源，选配置测试可启用 G4 Wake 并停止清理；关机唤醒测试解锁后倒计时，观察 LDO 断电及接地恢复，不是 Basic 整机唤醒。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read RTC pages, Temporary pattern. Read the current test "
+"values on screen; press B to stop."
+msgstr "屏幕显示地址、测试字节和读回比较。A/C 切换 0x55/0xAA/递增/全零图案，B 停止恢复。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Flag timer / 5 s, Clear timer, Timer reboot, Timer off, "
+"Timer on. Read the current test values on screen; press B to stop."
+msgstr "屏幕显示软件倒计时及模块 IRQ 标志；标志测试结束清除定时器，电源动作执行后由用户观察模块供电。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read watchdog, Feed / expire test. Read the current test "
+"values on screen; press B to stop."
+msgstr "默认只读取剩余秒数。主动测试启动 10 秒看门狗，屏幕显示喂狗/停止喂狗、计数和剩余时间；A 停止喂狗，C 恢复，B 禁用。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read configuration, Set idle timeout, Idle then wake. Read "
+"the current test values on screen; press B to stop."
+msgstr "读取页显示模块频率和超时；A/C 修改睡眠秒数；休眠测试显示等待倒计时、唤醒和通信结果。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Communication, Reboot, Power off, Download, Defaults. Read "
+"the current test values on screen; press B to stop."
+msgstr "默认检查通信；选定命令后屏幕先给出确认提示，执行后停留在命令已发送页面，不继续访问模块。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid ""
+"Use the Basic button menu to select: Read registers, Temporary u16 write. Read the current test "
+"values on screen; press B to stop."
+msgstr "屏幕显示 8/16 位寄存器读值；临时写入测试 A/C 修改数值并读回，停止时恢复。 菜单中使用 A/C 选择测试、B 启动或停止。"
+
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 图形代码块："
+
+msgid "Invalid GPIO arguments or an incomplete IRQ pair."
+msgstr "GPIO 参数无效，或 IRQ 引脚未成对配置。"
+
+msgid "I2C communication failed."
+msgstr "I2C 通信失败。"
+
+msgid "Host IRQ support is unavailable."
+msgstr "主机不支持所需的 IRQ 功能。"
+
+msgid ""
+"Use the Basic button menu to select: Direct input G4, Pin input G4, Direct push-pull G3, Pin "
+"push-pull G3, Direct open-drain G3, Pin open-drain G3, Wrapper lifecycle. Read the current test "
+"values on screen; press B to stop."
+msgstr "A/C 控制输出低/高电平，输入模式显示实时电平。直接接口与 Pin 封装分别可选。 菜单中使用 A/C 选择测试、B 启动或停止。 另有封装生命周期测试，A/C 手动执行释放与重新初始化。"
+
+msgid ""
+"Use the Basic button menu to select: Direct ADC G1, Direct ADC G2, ADC wrapper G1, ADC wrapper "
+"G2, Internal ADC, Wrapper lifecycle. Read the current test values on screen; press B to stop."
+msgstr "直接接口/ADC 封装分别采样 G1/G2；屏幕显示通道、原始值、毫伏/微伏和参考电压。 菜单中使用 A/C 选择测试、B 启动或停止。 另有封装生命周期测试，A/C 手动执行释放与重新初始化。"
+
+msgid ""
+"Use the Basic button menu to select: Direct PWM0 1kHz, Direct PWM1 1kHz, Wrapper PWM0 1kHz, "
+"Wrapper PWM1 1kHz, Direct PWM0 5kHz, Wrapper PWM0 1kHz INV, Wrapper lifecycle. Read the current "
+"test values on screen; press B to stop."
+msgstr ""
+"启动后 A/C 以 10% 步进调整占空比；分别提供 1kHz/5kHz 和反相场景，屏幕显示设置和读回值。 菜单中使用 A/C 选择测试、B 启动或停止。 另有封装生命周期测试，A/C "
+"手动执行释放与重新初始化。"
+
+msgid ""
+"Use the Basic button menu to select: Direct RGB / 1 LED, Wrapper RGB / 1 LED, Wrapper RGB / 4 "
+"LEDs, Wrapper lifecycle. Read the current test values on screen; press B to stop."
+msgstr "A/C 选择红绿蓝白/关闭，屏幕显示模式、数量和 RGB，停止时熄灭并释放输出。 菜单中使用 A/C 选择测试、B 启动或停止。 另有封装生命周期测试，A/C 手动执行释放与重新初始化。"
+
+msgid "None"
+msgstr "None"
+
+msgid "System configuration"
+msgstr "系统配置"
+
+msgid "Display G4 input and G3 level immediately on a black background. A sets G3 low; C sets it high. B switches G3 between input and output, setting the pin to input and preloading low before enabling output. Values are also printed to the serial console."
+msgstr "黑底实时显示 G4 输入和 G3 电平。A 将 G3 置低，C 置高，B 切换 G3 输入/输出；启用输出前先置为输入并预写低电平。串口同步输出电平。"
+
+msgid "Display the raw ADC values (0..4095) from G1 and G2 immediately on a black background. Both values are updated every 200 ms and printed to the serial console. No button operation is required."
+msgstr "黑底直接显示 G1、G2 的 ADC 原始值（0..4095），每 200 ms 更新并同步输出串口，无需按键启动。"
+
+msgid "Control external RGB LEDs on G0. A cycles red, green, blue and white; B decreases brightness by 10%; C increases it by 10%. Brightness ranges from 0% (off) to 100%. The black screen shows only color, brightness and button hints. Set LED_COUNT to match the connected strip."
+msgstr "控制 G0 外接 RGB 灯珠。A 切换红绿蓝白，B 降低 10% 亮度，C 提高 10%；范围 0%（熄灯）至 100%。黑底只显示颜色、亮度和按键提示。LED_COUNT 按实际灯珠数量设置。"
+
+msgid "G4 input: connect to GND / release. Reads automatically; no button needed."
+msgstr "GPIO 输入：G4 上拉输入，接地显示 LOW (0)，松开显示 HIGH (1)，自动刷新，无需按键。"
+
+msgid "G3 output: meter or resistor + LED. A/B/C only control G3 output."
+msgstr "GPIO 输出：仅控制 G3。A 置低，B 翻转，C 置高；分别显示输出设定和引脚实际读回值。"
+
+msgid "G3: select input or output explicitly. Output starts only after level is set."
+msgstr "GPIO 安全切换：仅操作 G3。A 切输入，B 切低电平输出，C 切高电平输出。切输出前先处于输入模式，写入目标电平后再启用输出；先断开外部强驱动。"
+
+msgid "G1 / G2: analog signals to module GND. Input: 0..Vref; never connect 5V."
+msgstr "ADC 输入：自动显示 G1、G2 的 ADC 原始数值（0..4095），不换算电压。"
+
+msgid "RGB LED DIN -> G0; shared GND. A changes color; B/C change brightness."
+msgstr "NeoPixel：灯珠 DIN 接 G0 并共地。A 切换红/绿/蓝/白，B 亮度减 10%，C 加 10%；LED_COUNT 按实际灯珠数填写。"
+
+msgid "PWM0 / G3 -> oscilloscope or LED. A/C change duty; B sets duty to zero."
+msgstr "PWM 输出：PWM0 对应 G3。A 占空比减 10%，B 置零，C 加 10%，范围 0..100%；显示共享频率。"
+
+msgid "Read STP2 identity and battery voltage. Automatic readout; no button needed."
+msgstr "设备信息：自动显示固件/硬件版本和电池电压（mV）。"
+
+msgid "AW8737A control -> G3; audio required. Select gain mode, then press B to send."
+msgstr "功放控制：AW8737A 控制线接 G3。A/C 选择 0..3 模式，B 才发送；分别显示待发送和上次已发送的模式。"
+
+msgid "Adjust STP2 I2C idle sleep timeout. B restores timeout captured at startup."
+msgstr "I2C 配置：A/C 将空闲休眠超时减/加 1 秒，B 恢复启动时值；0 表示禁用。持续轮询仅演示配置读写，不验证进入休眠。"
+
+msgid "Write patterns to RTC bytes 24..31. B restores the original eight bytes."
+msgstr "RTC RAM：显示字节 24..31。A 写入 55，C 写入 AA，B 恢复启动时保存的八个字节；退出前按 B。"
+
+msgid "Read/write one RTC RAM word. B restores the startup value."
+msgstr "寄存器：仅操作 RTC RAM 的 0xBE/0xBF 字。A 减 1，C 加 1，B 恢复启动值；按十六进制显示读回值，退出前按 B。"
+
+msgid "Start a 5-second flag-only timer. No reboot or power switching."
+msgstr "定时器：A 启动 5 秒置标志定时器，B 取消；分别显示主机倒计时和实际系统 IRQ 原始标志，不进行电源切换。"
+
+msgid "G4 falling-edge wake configuration. Enable first, then pull G4 to GND."
+msgstr "GPIO 唤醒配置：G4 下降沿。A 启用，B 禁用；显示配置与唤醒源原始值。本例不主动关机。"
+
+msgid "IRQ wire: STP2 G0 -> Basic G26. G4 -> GND triggers input changes."
+msgstr "GPIO 中断：STP2 G0 接 Basic G26，G4 为被测输入。A 清零，B 暂停，C 继续；显示中断次数和 G4 电平。"
+
+msgid "IRQ wire: STP2 G0 -> Basic G26. Press STP2 button, not the Basic keys."
+msgstr "模块按键中断：STP2 G0 接 Basic G26；按 STP2 自带按键产生事件。Basic A 清零，B 暂停，C 继续；分别显示单击与双击次数。"
+
+msgid "Control the external STP2 LDO rail. B restores the original LDO state."
+msgstr "LDO 电源：默认只读，按键不启用。源码 ALLOW_POWER_CHANGES=True 后，A 关闭，B 恢复启动状态，C 开启；Basic 必须独立供电。"
+
+msgid "Manual feed test with a 10s timeout. When enabled: feed or stop before zero."
+msgstr "看门狗：默认只读，按键不启用。源码 ALLOW_POWER_CHANGES=True 后，A 启动 10 秒看门狗，B 停止，C 手动喂狗；超时可能复位，Basic 独立供电。"
+
+msgid "Commands affect the external STP2. No automatic reconnect after a command."
+msgstr "系统命令：默认只读，按键不启用。源码 ALLOW_POWER_CHANGES=True 后，A 重启模块，B 关机，C 恢复默认配置；Basic 独立供电。普通示例不执行复位或恢复默认。"
+
+msgid "Examples"
+msgstr "示例"
+
+msgid "Use M5Stack Basic with STP2 on I2C port A (SDA 21, SCL 22, 100 kHz). Each example includes a UiFlow2 project and its Python export. The examples use ticks_diff for a 100 ms refresh interval."
+msgstr "使用 M5Stack Basic，STP2 接 I2C PORT.A（SDA 21、SCL 22、100 kHz）。每组提供 UiFlow2 图形化项目及 Python 导出代码，使用 ticks_diff 每 100 ms 刷新。"
+
+msgid "GPIO input"
+msgstr "GPIO 输入"
+
+msgid "G4 is a pull-up input. Connect G4 to GND for Low (0), or release it for High (1)."
+msgstr "G4 上拉输入，接地显示 Low (0)，松开显示 High (1)。"
+
+msgid "GPIO output"
+msgstr "GPIO 输出"
+
+msgid "G3 is the output. Button A sets Low, B toggles the level, and C sets High. The display shows the commanded level and pin readback."
+msgstr "G3 输出：A 置低、B 翻转、C 置高；分别显示设定值和引脚读回值。"
+
+msgid "ADC input"
+msgstr "ADC 输入"
+
+msgid "Read raw ADC values from G1 and G2. Each value is in the range 0 to 4095."
+msgstr "读取 G1、G2 的 ADC 原始值，范围为 0～4095。"
+
+msgid "PWM output"
+msgstr "PWM 输出"
+
+msgid "PWM0 uses G3 at 1 kHz. Button A decreases duty by 10 percentage points, B sets duty to zero, and C increases duty by 10 percentage points. Duty is limited to 0 to 100 percent."
+msgstr "PWM0 使用 G3，频率 1 kHz。A 将占空比降低 10 个百分点，B 置零，C 提高 10 个百分点，范围 0～100%。"
+
+msgid "GPIO interrupt"
+msgstr "GPIO 中断"
+
+msgid "Connect STP2 G0 to Basic G26 for IRQ. Connect G4 to GND and release it to generate input changes. Button A clears the count, B pauses IRQ handling, and C resumes it. The display shows the count and G4 level."
+msgstr "IRQ 线连接 STP2 G0 与 Basic G26。G4 接地或松开产生输入变化；A 清零、B 暂停、C 继续，显示中断次数和 G4 电平。"
+
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+msgid "Blockly screenshot pending."
+msgstr "图形化积木截图待补充。"
+
+msgid "Open the |basic_stp2_gpio_input_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_gpio_input_example.m5f2| 项目。"
+
+msgid "Open the |basic_stp2_gpio_output_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_gpio_output_example.m5f2| 项目。"
+
+msgid "Open the |basic_stp2_adc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_adc_example.m5f2| 项目。"
+
+msgid "Open the |basic_stp2_pwm_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_pwm_example.m5f2| 项目。"
+
+msgid "Open the |basic_stp2_gpio_irq_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_gpio_irq_example.m5f2| 项目。"
+
+msgid "Power control"
+msgstr "电源控制"
+
+msgid "Open the |basic_stp2_power_config_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_power_config_example.m5f2| 项目。"
+
+msgid "Button A toggles LDO and button B toggles DCDC. The display and serial output show the enable states read from the module every 100 ms."
+msgstr "按键 A 切换 LDO 开关，按键 B 切换 DCDC 开关。屏幕和串口每 100 ms 显示从模块读取的使能状态。"
+
+msgid "NeoPixel control"
+msgstr "NeoPixel 控制"
+
+msgid "Open the |basic_stp2_neopixel_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_neopixel_example.m5f2| 项目。"
+
+msgid "Connect the LED data input to G0 and share GND. Button A cycles through red, green, blue and white; B decreases brightness by 10 percentage points and C increases it by 10. The example controls one LED, starting with red at 20 percent brightness."
+msgstr "LED 数据输入连接 G0，并共地。按键 A 切换红、绿、蓝、白色，B 降低 10 个百分点亮度，C 提高 10 个百分点亮度。示例默认控制 1 颗 LED，初始为红色、20% 亮度。"
+
+msgid "Timed power-on"
+msgstr "定时开机"
+
+msgid "Open the |basic_stp2_timer_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |basic_stp2_timer_example.m5f2| 项目。"
+
+msgid "Button A toggles LDO output retention during shutdown (Off by default). Button B cycles the power-on delay through 5, 10 and 15 seconds (5 seconds by default). Button C (Shutdown) applies the setting, arms the power-on timer and immediately shuts down STP2. Buttons are locked until the countdown finishes."
+msgstr "按键 A 切换关机期间的 LDO 输出保持，默认关闭。按键 B 循环选择 5、10、15 秒开机延时，默认 5 秒。按键 C（Shutdown）应用设置、启动定时开机并立即关闭 STP2。倒计时期间锁定按键。"
+
+msgid "Keep Basic independently powered so it can display the countdown while STP2 is shut down."
+msgstr "Basic 需独立供电，以便在 STP2 关机期间继续显示倒计时。"
+
+msgid "The graphical example displays Timer elapsed when the countdown finishes; it does not verify the wake source."
+msgstr "图形化示例在倒计时结束后显示 Timer elapsed，不核对唤醒来源。"
+
+msgid "The Python example reads the wake source after the countdown and displays whether a timer wake was detected."
+msgstr "Python 示例在倒计时结束后读取唤醒来源，显示是否检测到定时唤醒。"
