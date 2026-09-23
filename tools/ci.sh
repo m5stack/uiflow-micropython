@@ -209,8 +209,8 @@ function ci_esp32_idf551_setup {
     ci_esp32_idf_tag_setup v5.5.1
 }
 
-function ci_esp32_idf554_setup {
-    ci_esp32_idf_tag_setup v5.5.4
+function ci_esp32_idf555_setup {
+    ci_esp32_idf_tag_setup v5.5.5
 }
 
 function ci_esp32_build {
