@@ -1,0 +1,629 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-23 16:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/pedal.rst:2 ../../source/refs/chain.pedal.ref
+msgid "Chain Pedal"
+msgstr ""
+
+#: ../../source/chain/pedal.rst:6
+msgid ""
+"PedalChain is the helper class for Chain Pedal devices on the Chain bus. "
+"It provides access to the physical pedal state, logical switch state, "
+"event callbacks, work modes, and the four RGB LEDs."
+msgstr ""
+"PedalChain 是 Chain 总线上 Chain Pedal 设备的辅助类。它提供对物理踏板状态、逻辑开关状态、事件回调、工作模式及 4 "
+"个 RGB LED 的访问。"
+
+#: ../../source/chain/pedal.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/pedal.rst:12
+msgid "|Chain Pedal|"
+msgstr ""
+
+#: ../../source/chain/pedal.rst:15
+msgid "Product Features"
+msgstr "产品特性"
+
+#: ../../source/chain/pedal.rst:17
+msgid "Read the physical pedal state or the latched logical switch state."
+msgstr "读取物理踏板状态或锁存的逻辑开关状态。"
+
+#: ../../source/chain/pedal.rst:18
+msgid ""
+"Use single-click mode or switch mode, and receive click or status-change "
+"callbacks when event reporting is enabled."
+msgstr "使用单击模式或开关模式，并在启用事件上报时接收单击或状态变化回调。"
+
+#: ../../source/chain/pedal.rst:20
+msgid ""
+"Control four RGB LEDs independently and select which LEDs show the pedal "
+"event overlay."
+msgstr "独立控制 4 个 RGB LED，并选择显示踏板事件叠加效果的 LED。"
+
+#: ../../source/chain/pedal.rst:22
+msgid ""
+"Configure how long the pedal must be held to enter local configuration "
+"mode."
+msgstr "配置踏板需持续踩下多长时间才能进入本地配置模式。"
+
+#: ../../source/chain/pedal.rst:23
+msgid ""
+"Optionally save the work mode, configuration-entry time, RGB overlay "
+"mask, and RGB brightness to flash."
+msgstr "可选择将工作模式、进入配置模式的时间、RGB 叠加掩码和 RGB 亮度保存到 Flash。"
+
+#: ../../source/chain/pedal.rst:27
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/chain/pedal.rst:30 ../../source/chain/pedal.rst:52
+msgid "Switch status callbacks"
+msgstr "开关状态回调"
+
+#: ../../source/chain/pedal.rst:32
+msgid "Open the |chain_pedal_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_pedal_core2_example.m5f2| 项目。"
+
+#: ../../source/chain/pedal.rst:34 ../../source/chain/pedal.rst:54
+msgid ""
+"This example configures Chain Pedal in switch mode, sets the RGB LEDs, "
+"and prints a message when the switch status changes."
+msgstr "该示例将 Chain Pedal 配置为开关模式，设置 RGB LED，并在开关状态变化时打印消息。"
+
+#: ../../source/chain/pedal.rst:37 chain.base.ChainDevice.fill_rgb_color:7
+#: chain.base.ChainDevice.get_bootloader_version:6
+#: chain.base.ChainDevice.get_device_type:6
+#: chain.base.ChainDevice.get_device_uid:7
+#: chain.base.ChainDevice.get_firmware_version:6
+#: chain.base.ChainDevice.get_rgb_brightness:6
+#: chain.base.ChainDevice.get_rgb_color:7
+#: chain.base.ChainDevice.set_rgb_brightness:8
+#: chain.base.ChainDevice.set_rgb_color:8 chain.pedal.PedalChain:6
+#: chain.pedal.PedalChain.get_button_mode:6
+#: chain.pedal.PedalChain.get_button_state:6
+#: chain.pedal.PedalChain.get_enter_config_time:6
+#: chain.pedal.PedalChain.get_rgb_overlay:6
+#: chain.pedal.PedalChain.get_switch_status:6
+#: chain.pedal.PedalChain.get_work_mode:6
+#: chain.pedal.PedalChain.set_button_mode:8
+#: chain.pedal.PedalChain.set_click_callback:9
+#: chain.pedal.PedalChain.set_enter_config_time:10
+#: chain.pedal.PedalChain.set_rgb_overlay:11
+#: chain.pedal.PedalChain.set_trigger_callback:11
+#: chain.pedal.PedalChain.set_work_mode:10 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/pedal.rst:39
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:7
+msgid "example.png"
+msgstr ""
+
+#: ../../source/chain/pedal.rst:41 ../../source/chain/pedal.rst:63
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/pedal.rst:49
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/chain/pedal.rst:57 chain.base.ChainDevice.fill_rgb_color:11
+#: chain.base.ChainDevice.get_bootloader_version:10
+#: chain.base.ChainDevice.get_device_type:10
+#: chain.base.ChainDevice.get_device_uid:11
+#: chain.base.ChainDevice.get_firmware_version:10
+#: chain.base.ChainDevice.get_rgb_brightness:10
+#: chain.base.ChainDevice.get_rgb_color:11
+#: chain.base.ChainDevice.set_rgb_brightness:12
+#: chain.base.ChainDevice.set_rgb_color:12 chain.pedal.PedalChain:10
+#: chain.pedal.PedalChain.get_button_mode:10
+#: chain.pedal.PedalChain.get_button_state:10
+#: chain.pedal.PedalChain.get_enter_config_time:10
+#: chain.pedal.PedalChain.get_rgb_overlay:10
+#: chain.pedal.PedalChain.get_switch_status:10
+#: chain.pedal.PedalChain.get_work_mode:10
+#: chain.pedal.PedalChain.set_button_mode:12
+#: chain.pedal.PedalChain.set_click_callback:13
+#: chain.pedal.PedalChain.set_enter_config_time:14
+#: chain.pedal.PedalChain.set_rgb_overlay:15
+#: chain.pedal.PedalChain.set_trigger_callback:15
+#: chain.pedal.PedalChain.set_work_mode:14 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/pedal.rst:71
+msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/chain/pedal.rst:74
+msgid "PedalChain"
+msgstr ""
+
+#: chain.pedal.PedalChain:1 of
+msgid "Bases: :py:class:`~chain.base.ChainDevice`"
+msgstr ""
+
+#: chain.pedal.PedalChain:1 of
+msgid "Pedal Chain class for interacting with pedal devices over Chain bus."
+msgstr "用于通过 Chain 总线与踏板设备交互的 Pedal Chain 类。"
+
+#: ../../source/chain/pedal.rst chain.base.ChainDevice.fill_rgb_color
+#: chain.base.ChainDevice.get_device_uid chain.base.ChainDevice.get_rgb_color
+#: chain.base.ChainDevice.set_rgb_brightness
+#: chain.base.ChainDevice.set_rgb_color chain.pedal.PedalChain.set_button_mode
+#: chain.pedal.PedalChain.set_click_callback
+#: chain.pedal.PedalChain.set_enter_config_time
+#: chain.pedal.PedalChain.set_rgb_overlay
+#: chain.pedal.PedalChain.set_trigger_callback
+#: chain.pedal.PedalChain.set_work_mode of
+msgid "Parameters"
+msgstr ""
+
+#: chain.pedal.PedalChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: chain.pedal.PedalChain:4 of
+msgid "The device ID of the pedal on the Chain bus."
+msgstr "踏板在 Chain 总线上的设备 ID。"
+
+#: chain.pedal.PedalChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:21
+msgid "init.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_button_state:1 of
+msgid "get button state."
+msgstr "获取按键状态。"
+
+#: chain.base.ChainDevice.fill_rgb_color
+#: chain.base.ChainDevice.get_bootloader_version
+#: chain.base.ChainDevice.get_device_type chain.base.ChainDevice.get_device_uid
+#: chain.base.ChainDevice.get_firmware_version
+#: chain.base.ChainDevice.get_rgb_brightness
+#: chain.base.ChainDevice.get_rgb_color
+#: chain.base.ChainDevice.set_rgb_brightness
+#: chain.base.ChainDevice.set_rgb_color chain.pedal.PedalChain.get_button_mode
+#: chain.pedal.PedalChain.get_button_state
+#: chain.pedal.PedalChain.get_enter_config_time
+#: chain.pedal.PedalChain.get_rgb_overlay
+#: chain.pedal.PedalChain.get_switch_status
+#: chain.pedal.PedalChain.get_work_mode chain.pedal.PedalChain.set_button_mode
+#: chain.pedal.PedalChain.set_enter_config_time
+#: chain.pedal.PedalChain.set_rgb_overlay chain.pedal.PedalChain.set_work_mode
+#: of
+msgid "Returns"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_button_state:3 of
+msgid "Button state, True if pressed, False if released or failed."
+msgstr "按键状态，按下时为 True，释放或读取失败时为 False。"
+
+#: chain.base.ChainDevice.fill_rgb_color
+#: chain.base.ChainDevice.get_bootloader_version
+#: chain.base.ChainDevice.get_device_type chain.base.ChainDevice.get_device_uid
+#: chain.base.ChainDevice.get_firmware_version
+#: chain.base.ChainDevice.get_rgb_brightness
+#: chain.base.ChainDevice.get_rgb_color
+#: chain.base.ChainDevice.set_rgb_brightness
+#: chain.base.ChainDevice.set_rgb_color chain.pedal.PedalChain.get_button_mode
+#: chain.pedal.PedalChain.get_button_state
+#: chain.pedal.PedalChain.get_enter_config_time
+#: chain.pedal.PedalChain.get_rgb_overlay
+#: chain.pedal.PedalChain.get_switch_status
+#: chain.pedal.PedalChain.get_work_mode chain.pedal.PedalChain.set_button_mode
+#: chain.pedal.PedalChain.set_click_callback
+#: chain.pedal.PedalChain.set_enter_config_time
+#: chain.pedal.PedalChain.set_rgb_overlay
+#: chain.pedal.PedalChain.set_trigger_callback
+#: chain.pedal.PedalChain.set_work_mode of
+msgid "Return type"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_button_state:8 of
+msgid "|get_button_state.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:11
+msgid "get_button_state.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_switch_status:1 of
+msgid "get switch status."
+msgstr "获取开关状态。"
+
+#: chain.pedal.PedalChain.get_switch_status:3 of
+msgid "Switch status, 0 for close, 1 for open, or -1 if failed."
+msgstr "开关状态：0 表示关闭，1 表示打开，-1 表示读取失败。"
+
+#: chain.pedal.PedalChain.get_switch_status:8 of
+msgid "|get_switch_status.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:19
+msgid "get_switch_status.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_click_callback:1 of
+msgid "set button click callback."
+msgstr "设置按键单击回调。"
+
+#: chain.pedal.PedalChain.set_click_callback:3
+#: chain.pedal.PedalChain.set_trigger_callback:4 of
+msgid "Callback function accepting one argument, or None to disable it."
+msgstr "接受一个参数的回调函数；设为 None 可禁用回调。"
+
+#: chain.pedal.PedalChain.set_click_callback:7
+#: chain.pedal.PedalChain.set_trigger_callback:9 of
+msgid "Chain related methods cannot be called in the callback function."
+msgstr "回调函数中不能调用 Chain 相关方法。"
+
+#: chain.pedal.PedalChain.set_click_callback:11 of
+msgid "|click_callback.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:6
+msgid "click_callback.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_trigger_callback:1 of
+msgid "set callback for switch status change events."
+msgstr "设置开关状态变化事件的回调。"
+
+#: chain.pedal.PedalChain.set_trigger_callback:3 of
+msgid "Trigger type, 0 for close or 1 for open."
+msgstr "触发类型：0 表示关闭，1 表示打开。"
+
+#: chain.pedal.PedalChain.set_button_mode
+#: chain.pedal.PedalChain.set_enter_config_time
+#: chain.pedal.PedalChain.set_rgb_overlay
+#: chain.pedal.PedalChain.set_trigger_callback
+#: chain.pedal.PedalChain.set_work_mode of
+msgid "Raises"
+msgstr "引发"
+
+#: chain.pedal.PedalChain.set_trigger_callback:6 of
+msgid "If ``trigger_type`` is not 0 or 1."
+msgstr "当 ``trigger_type`` 不是 0 或 1 时。"
+
+#: chain.pedal.PedalChain.set_trigger_callback:13 of
+msgid "|status_callback.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:28
+msgid "status_callback.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_work_mode:1 of
+msgid "set pedal work mode."
+msgstr "设置踏板工作模式。"
+
+#: chain.pedal.PedalChain.set_work_mode:3 of
+msgid "Work mode. Use ``WORK_MODE_SINGLE`` or ``WORK_MODE_SWITCH``."
+msgstr "工作模式。使用 ``WORK_MODE_SINGLE`` 或 ``WORK_MODE_SWITCH``。"
+
+#: chain.pedal.PedalChain.set_enter_config_time:5
+#: chain.pedal.PedalChain.set_rgb_overlay:5
+#: chain.pedal.PedalChain.set_work_mode:5 of
+msgid "Whether to save the setting to flash. Default: False."
+msgstr "是否将设置保存到 Flash。默认值：False。"
+
+#: chain.base.ChainDevice.fill_rgb_color:4
+#: chain.base.ChainDevice.set_rgb_brightness:5
+#: chain.base.ChainDevice.set_rgb_color:5
+#: chain.pedal.PedalChain.set_button_mode:4
+#: chain.pedal.PedalChain.set_enter_config_time:6
+#: chain.pedal.PedalChain.set_rgb_overlay:6
+#: chain.pedal.PedalChain.set_work_mode:6 of
+msgid "True if success, False otherwise."
+msgstr "成功返回 True，否则返回 False。"
+
+#: chain.pedal.PedalChain.set_work_mode:8 of
+msgid "If ``mode`` is not a supported work mode."
+msgstr "当 ``mode`` 不是受支持的工作模式时。"
+
+#: chain.pedal.PedalChain.set_work_mode:12 of
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:27
+msgid "set_work_mode.png"
+msgstr ""
+
+#: chain.base.ChainDevice.fill_rgb_color:1 of
+msgid "fill RGB color."
+msgstr "填充 RGB 颜色。"
+
+#: chain.base.ChainDevice.fill_rgb_color:3
+#: chain.base.ChainDevice.get_rgb_color:4
+#: chain.base.ChainDevice.set_rgb_color:4 of
+msgid "RGB color value."
+msgstr "RGB 颜色值。"
+
+#: chain.base.ChainDevice.fill_rgb_color:9 of
+msgid "|fill_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:8
+msgid "fill_rgb_color.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_bootloader_version:1 of
+msgid "get bootloader version."
+msgstr "获取引导程序版本。"
+
+#: chain.base.ChainDevice.get_bootloader_version:3 of
+msgid "Bootloader version."
+msgstr "引导程序版本。"
+
+#: chain.base.ChainDevice.get_bootloader_version:8 of
+msgid "|get_bootloader_version.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:9
+msgid "get_bootloader_version.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_device_type:1 of
+msgid "get device type."
+msgstr "获取设备类型。"
+
+#: chain.base.ChainDevice.get_device_type:3 of
+msgid "Device type. Returns -1 if failed."
+msgstr "设备类型。读取失败时返回 -1。"
+
+#: chain.base.ChainDevice.get_device_type:8 of
+msgid "|get_device_type.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:12
+msgid "get_device_type.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_device_uid:1 of
+msgid "get device UID."
+msgstr "获取设备 UID。"
+
+#: chain.base.ChainDevice.get_device_uid:3 of
+msgid "UID type, 0 for 4-byte UID, 1 for 12-byte UID."
+msgstr "UID 类型，0 表示 4 字节 UID，1 表示 12 字节 UID。"
+
+#: chain.base.ChainDevice.get_device_uid:4 of
+msgid "Tuple of UID bytes (4 bytes or 12 bytes). Returns empty tuple on error."
+msgstr "UID 字节元组（4 字节或 12 字节）。发生错误时返回空元组。"
+
+#: chain.base.ChainDevice.get_device_uid:9 of
+msgid "|get_device_uid.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:13
+msgid "get_device_uid.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_firmware_version:1 of
+msgid "get firmware version."
+msgstr "获取固件版本。"
+
+#: chain.base.ChainDevice.get_firmware_version:3 of
+msgid "Firmware version."
+msgstr "固件版本。"
+
+#: chain.base.ChainDevice.get_firmware_version:8 of
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:15
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_rgb_brightness:1 of
+msgid "get RGB brightness."
+msgstr "获取 RGB 亮度。"
+
+#: chain.base.ChainDevice.get_rgb_brightness:3
+#: chain.base.ChainDevice.set_rgb_brightness:3 of
+msgid "Brightness value (0-100)."
+msgstr "亮度值（0-100）。"
+
+#: chain.base.ChainDevice.get_rgb_brightness:8 of
+msgid "|get_rgb_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:16
+msgid "get_rgb_brightness.png"
+msgstr ""
+
+#: chain.base.ChainDevice.get_rgb_color:1 of
+msgid "get RGB color."
+msgstr "获取 RGB 颜色。"
+
+#: chain.base.ChainDevice.get_rgb_color:3
+#: chain.base.ChainDevice.set_rgb_color:3 of
+msgid "Index of the RGB LED."
+msgstr "RGB LED 的索引。"
+
+#: chain.base.ChainDevice.get_rgb_color:9 of
+msgid "|get_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:17
+msgid "get_rgb_color.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_work_mode:1 of
+msgid "get pedal work mode."
+msgstr "获取踏板工作模式。"
+
+#: chain.pedal.PedalChain.get_work_mode:3 of
+msgid "Work mode, 0 for single click, 1 for switch, or -1 if failed."
+msgstr "工作模式：0 表示单击模式，1 表示开关模式，-1 表示读取失败。"
+
+#: chain.pedal.PedalChain.get_work_mode:8 of
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:20
+msgid "get_work_mode.png"
+msgstr ""
+
+#: chain.base.ChainDevice.set_rgb_brightness:1 of
+msgid "set RGB brightness."
+msgstr "设置 RGB 亮度。"
+
+#: chain.base.ChainDevice.set_rgb_brightness:4 of
+msgid "Whether to save the brightness setting to flash."
+msgstr "是否将亮度设置保存到 Flash。"
+
+#: chain.base.ChainDevice.set_rgb_brightness:10 of
+msgid "|set_rgb_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:24
+msgid "set_rgb_brightness.png"
+msgstr ""
+
+#: chain.base.ChainDevice.set_rgb_color:1 of
+msgid "set RGB color."
+msgstr "设置 RGB 颜色。"
+
+#: chain.base.ChainDevice.set_rgb_color:10 of
+msgid "|set_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:25
+msgid "set_rgb_color.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_button_mode:1 of
+msgid "set button reporting mode."
+msgstr "设置按键上报模式。"
+
+#: chain.pedal.PedalChain.set_button_mode:3 of
+msgid "Reporting mode. Use ``MODE_POLL`` or ``MODE_EVENT``."
+msgstr "上报模式。使用 ``MODE_POLL`` 或 ``MODE_EVENT``。"
+
+#: chain.pedal.PedalChain.set_button_mode:6 of
+msgid "If ``mode`` is not a supported reporting mode."
+msgstr "当 ``mode`` 不是受支持的上报模式时。"
+
+#: chain.pedal.PedalChain.set_button_mode:10 of
+msgid "|set_button_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:22
+msgid "set_button_mode.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_button_mode:1 of
+msgid "get button reporting mode."
+msgstr "获取按键上报模式。"
+
+#: chain.pedal.PedalChain.get_button_mode:3 of
+msgid "Reporting mode, 0 for polling, 1 for events, or -1 if failed."
+msgstr "上报模式：0 表示轮询，1 表示事件，-1 表示读取失败。"
+
+#: chain.pedal.PedalChain.get_button_mode:8 of
+msgid "|get_button_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:10
+msgid "get_button_mode.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_enter_config_time:1 of
+msgid "set local configuration entry time."
+msgstr "设置进入本地配置模式的时间。"
+
+#: chain.pedal.PedalChain.set_enter_config_time:3 of
+msgid "Time in seconds from 1 to 30. Use 0 to disable local configuration entry."
+msgstr "时间，单位为秒，取值范围为 1 到 30；设为 0 可禁用本地配置入口。"
+
+#: chain.pedal.PedalChain.set_enter_config_time:8 of
+msgid "If ``seconds`` is outside the range 0-30."
+msgstr "当 ``seconds`` 不在 0 到 30 的范围内时。"
+
+#: chain.pedal.PedalChain.set_enter_config_time:12 of
+msgid "|set_enter_config_time.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:23
+msgid "set_enter_config_time.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_enter_config_time:1 of
+msgid "get local configuration entry time."
+msgstr "获取进入本地配置模式的时间。"
+
+#: chain.pedal.PedalChain.get_enter_config_time:3 of
+msgid "Time in seconds, 0 if disabled, or -1 if failed."
+msgstr "时间，单位为秒；0 表示已禁用，-1 表示读取失败。"
+
+#: chain.pedal.PedalChain.get_enter_config_time:8 of
+msgid "|get_enter_config_time.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:14
+msgid "get_enter_config_time.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.set_rgb_overlay:1 of
+msgid "set the pedal event RGB overlay mask."
+msgstr "设置踏板事件的 RGB 叠加掩码。"
+
+#: chain.pedal.PedalChain.set_rgb_overlay:3 of
+msgid "Bitmask from 0x00 to 0x0F. Bits 0-3 select LEDs 0-3."
+msgstr "位掩码范围为 0x00 到 0x0F。位 0 至 3 用于选择 LED 0 至 3。"
+
+#: chain.pedal.PedalChain.set_rgb_overlay:8 of
+msgid "If ``overlay_mask`` is outside the range 0x00-0x0F."
+msgstr "当 ``overlay_mask`` 不在 0x00 到 0x0F 的范围内时。"
+
+#: chain.pedal.PedalChain.set_rgb_overlay:13 of
+msgid "|set_rgb_overlay.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:26
+msgid "set_rgb_overlay.png"
+msgstr ""
+
+#: chain.pedal.PedalChain.get_rgb_overlay:1 of
+msgid "get the pedal event RGB overlay mask."
+msgstr "获取踏板事件的 RGB 叠加掩码。"
+
+#: chain.pedal.PedalChain.get_rgb_overlay:3 of
+msgid "Bitmask from 0x00 to 0x0F, or -1 if failed."
+msgstr "位掩码范围为 0x00 到 0x0F；读取失败时为 -1。"
+
+#: chain.pedal.PedalChain.get_rgb_overlay:8 of
+msgid "|get_rgb_overlay.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pedal.ref:18
+msgid "get_rgb_overlay.png"
+msgstr ""

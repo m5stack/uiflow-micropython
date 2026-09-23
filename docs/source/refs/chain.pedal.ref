@@ -1,0 +1,38 @@
+.. |Chain Pedal| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1286/U239_Chain_Pedal_main_pictures_01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U239
+    :height: 200px
+    :width: 200px
+
+.. |click_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/click_callback.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/example.png
+.. |fill_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/fill_rgb_color.png
+.. |get_bootloader_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_bootloader_version.png
+.. |get_button_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_button_mode.png
+.. |get_button_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_button_state.png
+.. |get_device_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_device_type.png
+.. |get_device_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_device_uid.png
+.. |get_enter_config_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_enter_config_time.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_firmware_version.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_rgb_brightness.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_rgb_color.png
+.. |get_rgb_overlay.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_rgb_overlay.png
+.. |get_switch_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_switch_status.png
+.. |get_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/get_work_mode.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/init.png
+.. |set_button_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_button_mode.png
+.. |set_enter_config_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_enter_config_time.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_rgb_brightness.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_rgb_color.png
+.. |set_rgb_overlay.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_rgb_overlay.png
+.. |set_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/set_work_mode.png
+.. |status_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/status_callback.png
+.. |work_mode_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/pedal/work_mode_option.png
+
+.. |chain_pedal_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/pedal/chain_pedal_core2_example.m5f2"
+        target="_blank"
+    >
+        chain_pedal_core2_example.m5f2
+    </a>

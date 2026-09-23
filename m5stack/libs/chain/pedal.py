@@ -15,8 +15,9 @@ class PedalChain(ChainDevice):
     :param ChainBus bus: The Chain bus instance.
     :param int device_id: The device ID of the pedal on the Chain bus.
 
-    The pedal has four independently addressable RGB LEDs. LED indexes start at
-    0. Settings are not saved to flash unless ``save=True`` is specified.
+    UiFlow2 Code Block:
+
+        |init.png|
 
     MicroPython Code Block:
 
@@ -24,11 +25,8 @@ class PedalChain(ChainDevice):
 
             from chain import ChainBus, PedalChain
 
-            bus = ChainBus(2, tx=32, rx=33)
-            pedal = PedalChain(bus, 1)
-            pedal.fill_rgb_color(0x001000)
-            pedal.set_rgb_color(0, 0x0000FF)
-            pedal.set_work_mode(PedalChain.WORK_MODE_SWITCH)
+            chainbus_0 = ChainBus(2, tx=32, rx=33)
+            pedalchain_0 = PedalChain(chainbus_0, 1)
     """
 
     CMD_KEY_PRESS = 0xE0
@@ -47,14 +45,14 @@ class PedalChain(ChainDevice):
     """Number of independently addressable RGB LEDs."""
 
     WORK_MODE_SINGLE = 0
-    """Report a click when the pedal is released."""
+    """Handle a short press-and-release as a click outside configuration mode."""
     WORK_MODE_SWITCH = 1
-    """Toggle the logical switch when the pedal is released."""
+    """Toggle the logical switch on a short press-and-release outside configuration mode."""
 
     MODE_POLL = 0
-    """Disable event reports while continuing local pedal operation."""
+    """Disable active event reports while keeping polling available."""
     MODE_EVENT = 1
-    """Enable event reports. This is the default after power-on."""
+    """Enable active event reports. This is the power-on default."""
 
     STATUS_CLOSE = 0
     """Logical switch off."""
@@ -77,14 +75,16 @@ class PedalChain(ChainDevice):
         :return: Button state, True if pressed, False if released or failed.
         :rtype: bool
 
+        UiFlow2 Code Block:
+
+            |get_button_state.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
 
                 state = pedalchain_0.get_button_state()
 
-        This reads the GPIO state, not the latched switch state. It remains
-        available when event reporting is disabled.
         """
         return self._send_value(self.CMD_KEY_STATE) == 1
 
@@ -94,14 +94,16 @@ class PedalChain(ChainDevice):
         :return: Switch status, 0 for close, 1 for open, or -1 if failed.
         :rtype: int
 
+        UiFlow2 Code Block:
+
+            |get_switch_status.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
 
                 status = pedalchain_0.get_switch_status()
 
-        The state starts at 0 after power-on and toggles on release in switch
-        mode. Changing the work mode does not reset it.
         """
         return self._send_value(self.CMD_GET_SWITCH_STATUS)
 
@@ -114,6 +116,10 @@ class PedalChain(ChainDevice):
         .. note::
             Chain related methods cannot be called in the callback function.
 
+        UiFlow2 Code Block:
+
+            |click_callback.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
@@ -123,9 +129,6 @@ class PedalChain(ChainDevice):
 
                 pedalchain_0.set_click_callback(pedal_click_callback)
 
-        The event is generated on release. Long presses used to enter or exit
-        local configuration do not generate this event. Reporting must be
-        enabled.
         """
         self.bus.register_event(self, self.CMD_KEY_PRESS, b"\x00\x00", callback)
 
@@ -140,6 +143,10 @@ class PedalChain(ChainDevice):
         .. note::
             Chain related methods cannot be called in the callback function.
 
+        UiFlow2 Code Block:
+
+            |status_callback.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
@@ -151,7 +158,6 @@ class PedalChain(ChainDevice):
                     PedalChain.STATUS_OPEN, pedal_status_callback
                 )
 
-        The callback is generated on release when event reporting is enabled.
         """
         if trigger_type not in (self.STATUS_CLOSE, self.STATUS_OPEN):
             raise ValueError("trigger_type must be STATUS_CLOSE (0) or STATUS_OPEN (1)")
@@ -161,10 +167,16 @@ class PedalChain(ChainDevice):
     def set_work_mode(self, mode: int, save: bool = False) -> bool:
         """set pedal work mode.
 
-        :param int mode: Work mode, 0 for single click or 1 for switch.
+        :param int mode: Work mode. Use ``WORK_MODE_SINGLE`` or
+            ``WORK_MODE_SWITCH``.
         :param bool save: Whether to save the setting to flash. Default: False.
         :return: True if success, False otherwise.
         :rtype: bool
+        :raises ValueError: If ``mode`` is not a supported work mode.
+
+        UiFlow2 Code Block:
+
+            |set_work_mode.png|
 
         MicroPython Code Block:
 
@@ -172,8 +184,6 @@ class PedalChain(ChainDevice):
 
                 pedalchain_0.set_work_mode(PedalChain.WORK_MODE_SWITCH)
 
-        The default is single-click mode. The work mode is independent of
-        whether button events are reported.
         """
         if mode not in (self.WORK_MODE_SINGLE, self.WORK_MODE_SWITCH):
             raise ValueError("mode must be WORK_MODE_SINGLE (0) or WORK_MODE_SWITCH (1)")
@@ -184,6 +194,10 @@ class PedalChain(ChainDevice):
 
         :return: Work mode, 0 for single click, 1 for switch, or -1 if failed.
         :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_work_mode.png|
 
         MicroPython Code Block:
 
@@ -196,9 +210,14 @@ class PedalChain(ChainDevice):
     def set_button_mode(self, mode: int) -> bool:
         """set button reporting mode.
 
-        :param int mode: Reporting mode, 0 for polling or 1 for events.
+        :param int mode: Reporting mode. Use ``MODE_POLL`` or ``MODE_EVENT``.
         :return: True if success, False otherwise.
         :rtype: bool
+        :raises ValueError: If ``mode`` is not a supported reporting mode.
+
+        UiFlow2 Code Block:
+
+            |set_button_mode.png|
 
         MicroPython Code Block:
 
@@ -206,9 +225,6 @@ class PedalChain(ChainDevice):
 
                 pedalchain_0.set_button_mode(PedalChain.MODE_EVENT)
 
-        The default after power-on is ``MODE_EVENT``. Disabling reports does
-        not stop button scanning, switch state changes, local configuration or
-        LED effects. This setting is not saved to flash.
         """
         if mode not in (self.MODE_POLL, self.MODE_EVENT):
             raise ValueError("mode must be MODE_POLL (0) or MODE_EVENT (1)")
@@ -219,6 +235,10 @@ class PedalChain(ChainDevice):
 
         :return: Reporting mode, 0 for polling, 1 for events, or -1 if failed.
         :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_button_mode.png|
 
         MicroPython Code Block:
 
@@ -231,10 +251,16 @@ class PedalChain(ChainDevice):
     def set_enter_config_time(self, seconds: int, save: bool = False) -> bool:
         """set local configuration entry time.
 
-        :param int seconds: Time in seconds, 0-30. Default: 10.
+        :param int seconds: Time in seconds from 1 to 30. Use 0 to disable
+            local configuration entry.
         :param bool save: Whether to save the setting to flash. Default: False.
         :return: True if success, False otherwise.
         :rtype: bool
+        :raises ValueError: If ``seconds`` is outside the range 0-30.
+
+        UiFlow2 Code Block:
+
+            |set_enter_config_time.png|
 
         MicroPython Code Block:
 
@@ -242,8 +268,6 @@ class PedalChain(ChainDevice):
 
                 pedalchain_0.set_enter_config_time(10)
 
-        Setting 0 also exits local configuration immediately. In configuration
-        mode, a click selects the work mode without saving it to flash.
         """
         if not 0 <= seconds <= 30:
             raise ValueError("seconds must be in range 0-30")
@@ -255,6 +279,10 @@ class PedalChain(ChainDevice):
 
         :return: Time in seconds, 0 if disabled, or -1 if failed.
         :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_enter_config_time.png|
 
         MicroPython Code Block:
 
@@ -268,10 +296,16 @@ class PedalChain(ChainDevice):
         """set the pedal event RGB overlay mask.
 
         :param int overlay_mask: Bitmask from 0x00 to 0x0F. Bits 0-3 select LEDs
-            0-3. The default is 0x0F.
+            0-3.
         :param bool save: Whether to save the setting to flash. Default: False.
         :return: True if success, False otherwise.
         :rtype: bool
+        :raises ValueError: If ``overlay_mask`` is outside the range
+            0x00-0x0F.
+
+        UiFlow2 Code Block:
+
+            |set_rgb_overlay.png|
 
         MicroPython Code Block:
 
@@ -279,9 +313,6 @@ class PedalChain(ChainDevice):
 
                 pedalchain_0.set_rgb_overlay(0x0F)
 
-        Use 0 to disable event overlays during normal operation. An existing
-        click overlay may remain until its fade finishes. Local configuration
-        indicators are independent of this mask.
         """
         if not 0 <= overlay_mask <= 0x0F:
             raise ValueError("overlay_mask must be in range 0x00-0x0F")
@@ -293,6 +324,10 @@ class PedalChain(ChainDevice):
 
         :return: Bitmask from 0x00 to 0x0F, or -1 if failed.
         :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_rgb_overlay.png|
 
         MicroPython Code Block:
 

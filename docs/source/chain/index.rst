@@ -15,6 +15,7 @@ Chain
     key.rst
     mic.rst
     mono.rst
+    pedal.rst
     pir.rst
     rgb.rst
     servos8_v2.rst
