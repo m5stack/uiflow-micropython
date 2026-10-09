@@ -560,7 +560,7 @@ class BME68X:
             if self._variant_id == 0x01:
                 gas_resistance = self.calc_gas_resistance_high(adc_gas_res_high, gas_range_h)
             else:
-                gas_resistance = self.calc_gas_resistance_high(adc_gas_res_low, gas_range_l)
+                gas_resistance = self.calc_gas_resistance_low(adc_gas_res_low, gas_range_l)
 
             self._sensor_data[0].status = status
             self._sensor_data[0].gas_index = gas_index
