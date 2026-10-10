@@ -237,7 +237,7 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
         from driver.ip101gri import IP101GRI
 
         lan_if = IP101GRI(mdc_pin=31, mdio_pin=52, power_pin=51)
-    elif board_id == M5.BOARD.M5StamPLC:
+    elif board_id == M5.BOARD.M5StamPLC and net_mode == "ETH":
         from stamplc import PoEStamPLC
 
         lan_if = PoEStamPLC()
