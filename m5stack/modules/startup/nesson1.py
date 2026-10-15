@@ -53,6 +53,23 @@ SETUP_SERVER_NG_IMG = "/system/nesso-n1/a9.jpg"
 SETUP_SERVER_OK_IMG = "/system/nesso-n1/a11.jpg"
 
 
+def _draw_access_code_caption():
+    # Cover the legacy caption baked into the shared CLOUD/setup background.
+    M5.Lcd.fillRect(3, 132, 129, 18, 0x99CCCD)
+    caption = widgets.Label(
+        "Access Code",
+        10,
+        132,
+        w=129,
+        h=18,
+        font_align=widgets.Label.LEFT_ALIGNED,
+        fg_color=0x000000,
+        bg_color=0x99CCCD,
+        font=M5.Lcd.FONTS.Montserrat14,
+    )
+    caption.set_text()
+
+
 class AppBase:
     def __init__(self) -> None:
         self._task = None
@@ -742,6 +759,7 @@ class SetupApp(AppBase):
                             self._nick_name = M5Things.nick_name()
                             print_access_info(self._nick_name, self._access_code)
                             self._bg_img.set_src(SETUP_SERVER_OK_IMG)
+                            _draw_access_code_caption()
 
                             self._net_status_img = widgets.Image(use_sprite=False)
                             self._net_status_img.set_x(98)
@@ -760,7 +778,7 @@ class SetupApp(AppBase):
                             self._access_code_label = widgets.Label(
                                 self._access_code,
                                 67,
-                                153,
+                                151,
                                 w=103,
                                 h=29,
                                 font_align=widgets.Label.CENTER_ALIGNED,
@@ -771,7 +789,7 @@ class SetupApp(AppBase):
                             self._nick_name_label = widgets.Label(
                                 self._nick_name,
                                 67,
-                                103,
+                                101,
                                 w=129,
                                 h=29,
                                 font_align=widgets.Label.CENTER_ALIGNED,
@@ -873,6 +891,7 @@ class CloudApp(AppBase):
         self._bg_img.set_y(0)
         self._bg_img.set_size(135, 240)
         self._bg_img.set_src(CLOUD_IMG)
+        _draw_access_code_caption()
 
         self._net_status_img = widgets.Image(use_sprite=False)
         self._net_status_img.set_x(98)
@@ -889,7 +908,7 @@ class CloudApp(AppBase):
         self._access_code_label = widgets.Label(
             self._access_code,
             67,
-            153,
+            151,
             w=103,
             h=29,
             font_align=widgets.Label.CENTER_ALIGNED,
@@ -901,7 +920,7 @@ class CloudApp(AppBase):
         self._nick_name_label = widgets.Label(
             self._nick_name,
             67,
-            103,
+            101,
             w=129,
             h=29,
             font_align=widgets.Label.CENTER_ALIGNED,
