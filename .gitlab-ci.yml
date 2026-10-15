@@ -2,6 +2,10 @@ workflow:
   auto_cancel:
     on_new_commit: conservative # the default behavior
 
+default:
+  artifacts:
+    expire_in: 3 days
+
 variables:
   DEBIAN_FRONTEND: noninteractive
   ESP_IDF_SRC_DIR: $CI_PROJECT_DIR/esp-idf
