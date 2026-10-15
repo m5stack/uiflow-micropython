@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-07 16:09+0800\n"
+"POT-Creation-Date: 2026-10-15 11:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -19,108 +19,198 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../source/controllers/paperdiy.rst:3
-#: ../../source/refs/controllers.paperdiy.ref b47e082c23b74102b01dbf8be79c1f97
-#: db3303cb0dd343d6a6209ba1b714a49a
+#: ../../../source/controllers/paperdiy.rst:3 ../../../source/refs/controllers.paperdiy.ref
 msgid "PaperDIY"
 msgstr "PaperDIY"
 
-#: ../../source/controllers/paperdiy.rst:7 16334a1b93d64233bac04d2c75b2d692
+#: ../../../source/controllers/paperdiy.rst:7
+msgid ""
+"PaperDIY is an ESP32-S3 controller with a 4.7-inch, 960x540 monochrome e-paper "
+"display, 16MB Flash, and 8MB PSRAM."
+msgstr "PaperDIY 是一款基于 ESP32-S3 的主机，配备 4.7 英寸、960x540 单色墨水屏、16MB Flash 和 8MB PSRAM。"
+
+#: ../../../source/controllers/paperdiy.rst:9
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../source/controllers/paperdiy.rst:9 74d8556796bc40aea2806ad575eb87fd
+#: ../../../source/controllers/paperdiy.rst:11
 msgid "|PaperDIY|"
 msgstr ""
 
-#: ../../source/controllers/paperdiy.rst:12 1ad7c92332644d0182f67b9328475f1b
+#: ../../../source/controllers/paperdiy.rst:14
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../../source/controllers/paperdiy.rst:16
+msgid "PaperDIY supports the following components:"
+msgstr "PaperDIY 支持以下组件："
+
+#: ../../../source/controllers/paperdiy.rst:18
+msgid "`Display <../hardware/display.html>`_: Screen drawing through ``M5.Lcd``."
+msgstr "`Display <../hardware/display.html>`_：通过 ``M5.Lcd`` 进行屏幕绘图。"
+
+#: ../../../source/controllers/paperdiy.rst:19
+msgid ""
+"`Widgets <../widgets/index.html>`_: Labels and basic UI components through "
+"``M5.Widgets`` and the ``widgets`` package."
+msgstr "`Widgets <../widgets/index.html>`_：通过 ``M5.Widgets`` 和 ``widgets`` 包使用标签等基础 UI 组件。"
+
+#: ../../../source/controllers/paperdiy.rst:20
+msgid "`Unit <../unit/index.html>`_: The ``unit`` package containing Unit drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 包。"
+
+#: ../../../source/controllers/paperdiy.rst:21
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 包。"
+
+#: ../../../source/controllers/paperdiy.rst:22
+msgid "``usb.device``: USB HID keyboard and mouse support."
+msgstr "``usb.device``：提供 USB HID 键盘和鼠标支持。"
+
+#: ../../../source/controllers/paperdiy.rst:24
+msgid ""
+"The PaperDIY firmware uses M5GFX for display rendering. LVGL and M5UI are not enabled"
+" in this firmware."
+msgstr "PaperDIY 固件使用 M5GFX 进行显示渲染，未启用 LVGL 和 M5UI。"
+
+#: ../../../source/controllers/paperdiy.rst:27
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+#: ../../../source/controllers/paperdiy.rst:29
+msgid ""
+"The PaperDIY firmware provides the following Montserrat fonts through "
+"``M5.Lcd.FONTS`` and ``M5.Widgets.FONTS``: ``Montserrat12``, ``Montserrat14``, "
+"``Montserrat16``, ``Montserrat18``, ``Montserrat24``, ``Montserrat40``, "
+"``Montserrat44``, and ``Montserrat48``."
+msgstr ""
+"PaperDIY 固件通过 ``M5.Lcd.FONTS`` 和 ``M5.Widgets.FONTS`` 提供以下 Montserrat "
+"字体：``Montserrat12``、``Montserrat14``、``Montserrat16``、``Montserrat18``、``Montserrat24``、``Montserrat40``、``Montserrat44``"
+" 和 ``Montserrat48``。"
+
+#: ../../../source/controllers/paperdiy.rst:31
+msgid ""
+"The firmware also provides ``AlibabaPuHuiTiCN24``, ``AlibabaSansJA24``, and "
+"``AlibabaSansKR24`` for Chinese, Japanese, and Korean text respectively."
+msgstr "固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 ``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+
+#: ../../../source/controllers/paperdiy.rst:34
+msgid "Board Features"
+msgstr "板载功能"
+
+#: ../../../source/controllers/paperdiy.rst:36
+msgid "PaperDIY supports the following built-in functions and peripherals:"
+msgstr "PaperDIY 支持以下内置功能和外设："
+
+#: ../../../source/controllers/paperdiy.rst:38
+msgid "A 4.7-inch monochrome e-paper display with portrait and landscape orientations."
+msgstr "4.7 英寸单色墨水屏，支持竖屏和横屏显示。"
+
+#: ../../../source/controllers/paperdiy.rst:39
+msgid "`Button <../hardware/button.html>`_ input through ``BtnA`` and ``BtnB``."
+msgstr "通过 ``BtnA`` 和 ``BtnB`` 进行 `按键 <../hardware/button.html>`_ 输入。"
+
+#: ../../../source/controllers/paperdiy.rst:40
+msgid ""
+"`Power <../system/power.html>`_ monitoring through M5PM1: USB and battery voltages, "
+"charging status, and battery-charging control."
+msgstr "通过 M5PM1 进行 `电源管理 <../system/power.html>`_：读取 USB 电压、电池电压和充电状态，并控制电池充电。"
+
+#: ../../../source/controllers/paperdiy.rst:41
+msgid "TF (microSD) card storage."
+msgstr "TF（microSD）卡存储。"
+
+#: ../../../source/controllers/paperdiy.rst:42
+msgid "Wi-Fi networking and native USB programming."
+msgstr "Wi-Fi 联网和原生 USB 编程。"
+
+#: ../../../source/controllers/paperdiy.rst:44
+msgid "The e-paper display has no touch panel or backlight."
+msgstr "墨水屏不带触摸面板和背光。"
+
+#: ../../../source/controllers/paperdiy.rst:47
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
-#: ../../source/controllers/paperdiy.rst:15
-#: ../../source/controllers/paperdiy.rst:48 58dd35c913d74141846bff848c42347c
-#: 909ae7c905ac49f5a7a4f3e1337efab6
+#: ../../../source/controllers/paperdiy.rst:50 ../../../source/controllers/paperdiy.rst:83
 msgid "Button Counter"
 msgstr "按键计数"
 
-#: ../../source/controllers/paperdiy.rst:17 7388123418414f589f52bba966463239
+#: ../../../source/controllers/paperdiy.rst:52
 msgid "Open the |paperdiy_button_counter_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |paperdiy_button_counter_example.m5f2| 项目。"
 
-#: ../../source/controllers/paperdiy.rst:19
-#: ../../source/controllers/paperdiy.rst:50 6a3806a7af344b7b96974d411627c3ab
-#: c67f2ae6c50e4c4ca9dc057b3c2f00c2
+#: ../../../source/controllers/paperdiy.rst:54 ../../../source/controllers/paperdiy.rst:85
 msgid ""
-"This example counts Button A and Button B presses independently and "
-"displays each button's count on the screen."
-msgstr "此示例分别统计按键 A 和按键 B 的按下次数，并在屏幕上显示各按键的计数。"
+"This example displays two independent button counters in portrait orientation. Press "
+"**BtnA** or **BtnB** to increment its own counter. Both counters start at 0 when the "
+"example starts."
+msgstr "此示例以竖屏显示两个独立的按键计数器。按下 **BtnA** 或 **BtnB**，对应的计数器加 1。示例启动时，两个计数器均从 0 开始。"
 
-#: ../../source/controllers/paperdiy.rst:21
-#: ../../source/controllers/paperdiy.rst:36 95589a1c38934d16872ac2e83bd78a12
-#: d9a518ea63cf4db7ba9f6e2baac5d9b5
+#: ../../../source/controllers/paperdiy.rst:56 ../../../source/controllers/paperdiy.rst:71
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/controllers/paperdiy.rst:23 34d3b43fd8724229bc8601e133ac2a40
+#: ../../../source/controllers/paperdiy.rst:58
 msgid "|paperdiy_button_counter_example.png|"
 msgstr ""
 
-#: ../../source/refs/controllers.paperdiy.ref:6
-#: 0c250ceda6484882bf148d2ed7417ebc
+#: ../../../source/refs/controllers.paperdiy.ref:6
 msgid "paperdiy_button_counter_example.png"
 msgstr ""
 
-#: ../../source/controllers/paperdiy.rst:25
-#: ../../source/controllers/paperdiy.rst:40
-#: ../../source/controllers/paperdiy.rst:58
-#: ../../source/controllers/paperdiy.rst:73 115a151780c7429a813c85aef00fa87c
-#: 3c33a94ee2f74f5584a609fbda094ad1 5ef2b4000d034ef49536ad5f6fc30c9b
-#: addca4665ad44bb0a00bf8367145af97
+#: ../../../source/controllers/paperdiy.rst:60 ../../../source/controllers/paperdiy.rst:75
+#: ../../../source/controllers/paperdiy.rst:93 ../../../source/controllers/paperdiy.rst:108
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../source/controllers/paperdiy.rst:27
-#: ../../source/controllers/paperdiy.rst:42
-#: ../../source/controllers/paperdiy.rst:60
-#: ../../source/controllers/paperdiy.rst:75 26ee25e1fd274b689d714204de23729e
-#: 2bd54958ea144651b648daf82b480765 a156d835171440b8afd68eb2570fb955
-#: da4f76b8194947848ad098f79b9498d6
+#: ../../../source/controllers/paperdiy.rst:62 ../../../source/controllers/paperdiy.rst:77
+#: ../../../source/controllers/paperdiy.rst:95 ../../../source/controllers/paperdiy.rst:110
 msgid "None"
 msgstr "无"
 
-#: ../../source/controllers/paperdiy.rst:30
-#: ../../source/controllers/paperdiy.rst:63 6a83f168568041248ea61c5586e05617
-#: 7a2018df05b64e2089333ffc7948ad5c
+#: ../../../source/controllers/paperdiy.rst:65 ../../../source/controllers/paperdiy.rst:98
 msgid "Charge Detection"
 msgstr "充电检测"
 
-#: ../../source/controllers/paperdiy.rst:32 9b615b9079c94499bb7af5c3af8c3811
+#: ../../../source/controllers/paperdiy.rst:67
 msgid "Open the |paperdiy_charge_detection_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |paperdiy_charge_detection_example.m5f2| 项目。"
 
-#: ../../source/controllers/paperdiy.rst:34
-#: ../../source/controllers/paperdiy.rst:65 047eaa135577498499d0810f6ce0c56d
-#: 9d3b40e1ab0247cc91bd0f5600fe578d
+#: ../../../source/controllers/paperdiy.rst:69 ../../../source/controllers/paperdiy.rst:100
 msgid ""
-"This example displays battery voltage, USB voltage, and charging status. "
-"Press Button A to enable or disable battery charging."
-msgstr "此示例显示电池电压、USB 电压和充电状态。按下按键 A 可开启或关闭电池充电。"
+"This example displays battery voltage and USB voltage in millivolts (mV), together "
+"with charging status. Battery charging starts enabled. Press **BtnA** to enable or "
+"disable it. The readings refresh every 15 seconds and immediately after a button "
+"press."
+msgstr ""
+"此示例以毫伏（mV）显示电池电压和 USB 电压，并显示充电状态。示例启动时默认开启电池充电，按下 **BtnA** 可开启或关闭充电。读数每 15 "
+"秒刷新一次，按键后也会立即刷新。"
 
-#: ../../source/controllers/paperdiy.rst:38 2d5cfca72fe7444db02fcbfdaeab690c
+#: ../../../source/controllers/paperdiy.rst:73
 msgid "|paperdiy_charge_detection_example.png|"
 msgstr ""
 
-#: ../../source/refs/controllers.paperdiy.ref:8
-#: 8b002decd80d46a2b6c1db08df65b7d5
+#: ../../../source/refs/controllers.paperdiy.ref:8
 msgid "paperdiy_charge_detection_example.png"
 msgstr ""
 
-#: ../../source/controllers/paperdiy.rst:45 0f070837bd2d41138fa2026c99fbc294
+#: ../../../source/controllers/paperdiy.rst:80
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../source/controllers/paperdiy.rst:52
-#: ../../source/controllers/paperdiy.rst:67 08f0c001f3584393b3f7b7103e84e115
-#: 61357d9a44c045e89346da2ea80ff309
+#: ../../../source/controllers/paperdiy.rst:87 ../../../source/controllers/paperdiy.rst:102
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
+
+#~ msgid ""
+#~ "This example counts Button A and Button "
+#~ "B presses independently and displays each "
+#~ "button's count on the screen."
+#~ msgstr "此示例分别统计按键 A 和按键 B 的按下次数，并在屏幕上显示各按键的计数。"
+
+#~ msgid ""
+#~ "This example displays battery voltage, USB "
+#~ "voltage, and charging status. Press Button A"
+#~ " to enable or disable battery charging."
+#~ msgstr "此示例显示电池电压、USB 电压和充电状态。按下按键 A 可开启或关闭电池充电。"
