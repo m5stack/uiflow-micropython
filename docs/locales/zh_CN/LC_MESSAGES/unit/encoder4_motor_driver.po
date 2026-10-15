@@ -1,0 +1,1032 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-15 18:25+0800\n"
+"PO-Revision-Date: 2026-10-15 18:44+0800\n"
+"Last-Translator: luoweiyuan <luoweiyuan@m5stack.com>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/unit/encoder4_motor_driver.rst:2
+msgid "4EncoderMotor Driver Unit"
+msgstr ""
+
+#: ../../source/unit/encoder4_motor_driver.rst:8
+msgid ""
+"This library controls Unit 4EncoderMotor Driver over I2C, including four "
+"motor channels, open-loop PWM, position and speed control, and encoder "
+"feedback."
+msgstr "本库通过 I2C 控制 Unit 4EncoderMotor Driver，支持四路电机的开环 PWM 控制、位置控制、速度控制以及编码器反馈。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:11
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/unit/encoder4_motor_driver.rst:13
+msgid "|Unit 4EncoderMotor Driver|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref
+msgid "Unit 4EncoderMotor Driver"
+msgstr ""
+
+#: ../../source/unit/encoder4_motor_driver.rst:16
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/unit/encoder4_motor_driver.rst:19
+#: ../../source/unit/encoder4_motor_driver.rst:59
+msgid "Four-Motor PWM Control"
+msgstr "四路电机 PWM 控制"
+
+#: ../../source/unit/encoder4_motor_driver.rst:21
+msgid ""
+"Open the |m5cores3_unit_4encoder_motor_driver_basic_example.m5f2| project"
+" in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5cores3_unit_4encoder_motor_driver_basic_example.m5f2| 项目。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:23
+msgid ""
+"Use **CoreS3** and connect the Unit to **Port A** (``SDA=G2``, "
+"``SCL=G1``, I2C 100 kHz). The default Unit address is ``0x24``."
+msgstr ""
+"使用 **CoreS3** 作为主机，将 Unit 连接到 **Port A** 端口（``SDA=G2``、``SCL=G1``，I2C 频率为"
+" 100 kHz）。Unit 的默认地址为 ``0x24``。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:26
+msgid "The m5ui page provides four sliders and a **STOP** touch button:"
+msgstr "m5ui 页面提供四个滑块和一个 **STOP** 触摸按键："
+
+#: ../../source/unit/encoder4_motor_driver.rst:28
+msgid ""
+"Each **M1~M4** slider sets the corresponding motor's PWM target from "
+"``0~100`` percent and updates the adjacent label. Moving a slider sets "
+"the Unit RGB LED to green (``0x009900``)."
+msgstr ""
+"**M1~M4** 四个滑块分别控制对应电机的 PWM 占空比，范围为 "
+"``0~100``，单位为百分比；旁边的标签同步显示设置值。移动任一滑块时，Unit 的 RGB LED 变为绿色（``0x009900``）。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:31
+msgid ""
+"**STOP** stops all four motors, changes the RGB LED to red "
+"(``0xCC0000``), and resets all four displayed values to 0. The slider "
+"positions stay unchanged. Moving a slider again sends a new PWM target to"
+" that motor."
+msgstr ""
+"按 **STOP** 停止全部四路电机，将 RGB LED "
+"设为红色（``0xCC0000``），并将四个显示值归零。滑块位置保持不变；再次移动某个滑块时，会重新设置对应电机的 PWM 控制值。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:35
+msgid ""
+"The displayed values are PWM targets. This example uses positive PWM "
+"only; it does not read encoder counts or measured speed."
+msgstr "屏幕显示的是 PWM 设置值。本示例使用 0~100 的 PWM 控制值，不切换转动方向，也不读取编码器计数或实际速度。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:40
+msgid ""
+"The sliders start at 0 and the labels show ``00``. Startup selects open-"
+"loop mode for all four motors and sets the RGB LED to green; it does not "
+"write initial PWM values. If an earlier program left motor output active,"
+" press **STOP** before adjusting a slider. Motor power must be present. "
+"Press **STOP** before ending the example."
+msgstr ""
+"滑块初始值为 0，标签显示 ``00``。程序启动时将四路电机切换到开环模式，并将 RGB LED 设为绿色，但不会设置初始 PWM "
+"输出。若之前的程序仍有电机输出，请先按 **STOP** 停止电机，再调节滑块。运行前请接好电机电源，结束示例前请按 **STOP** 停止电机。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:46 of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit:12
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count:8
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit:10
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count:10
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color:7
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc:7
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:12
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:13
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:14
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:10
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness:8
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:14
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:10
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:11
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/unit/encoder4_motor_driver.rst:48
+msgid "|m5cores3_unit_4encoder_motor_driver_basic_example.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:45
+msgid "m5cores3_unit_4encoder_motor_driver_basic_example.png"
+msgstr ""
+
+#: ../../source/unit/encoder4_motor_driver.rst:50
+#: ../../source/unit/encoder4_motor_driver.rst:69
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/unit/encoder4_motor_driver.rst:52
+msgid ""
+"Moving M1 to 40 displays ``40`` beside M1 and sets its PWM to 40 percent."
+" **STOP** displays ``0`` beside all four motors and turns the Unit RGB "
+"LED red."
+msgstr ""
+"将 M1 滑块调到 40，M1 旁会显示 ``40``，对应 PWM 占空比设为 40%。按 **STOP** 后，四路电机旁均显示 "
+"``0``，Unit RGB LED 变为红色。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:56
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/unit/encoder4_motor_driver.rst:61
+msgid "Run the same example on CoreS3 with the connection described above."
+msgstr "使用上述接线，在 CoreS3 上运行相同示例。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:63 of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit:16
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/unit/encoder4_motor_driver.rst:71
+msgid ""
+"Four sliders control the motor PWM targets independently; **STOP** stops "
+"all four motors. If the Unit is not detected, a connection-check prompt "
+"is shown."
+msgstr "四个滑块分别控制四路电机的 PWM 占空比；按 **STOP** 可停止全部四路电机。未检测到 Unit 时，程序会提示检查连接。"
+
+#: ../../source/unit/encoder4_motor_driver.rst:75
+msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/unit/encoder4_motor_driver.rst:78
+msgid "Encoder4MotorDriverUnit"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:1
+msgid "Bases: :py:class:`object`"
+msgstr "基类： :py:class:`object`"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:1
+msgid "Control the Unit 4EncoderMotor Driver over I2C."
+msgstr "通过 I2C 控制 Unit 4EncoderMotor Driver。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:3
+msgid ""
+"The Unit supports four motor channels with open-loop PWM, position and "
+"speed control, encoder feedback, soft start and stop, RGB LED control, "
+"and input power monitoring. The object borrows the supplied I2C bus and "
+"does not deinitialize it. If the configured address is not found, check "
+"the Unit's Grove connection, power supply, and I2C address."
+msgstr ""
+"Unit 支持四路电机的开环 PWM 控制、位置控制、速度控制、编码器反馈、软启动和软停止、RGB LED "
+"控制及输入电压和电流监测。驱动使用传入的 I2C 总线，不会关闭该总线。未检测到指定地址时，请检查 Unit 的 Grove 接线、供电和 I2C"
+" 地址。"
+
+#: ../../source/unit/encoder4_motor_driver.rst of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor
+msgid "Parameters"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:9
+msgid "Initialized I2C bus or compatible PAHUB port."
+msgstr "已初始化的 I2C 总线或兼容的 PAHUB 端口。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:10
+msgid "7-bit I2C address in the range 0x08~0x77. Defaults to 0x24."
+msgstr "7 位 I2C 地址，范围为 0x08~0x77，默认值为 0x24。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:14
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:6
+msgid "init.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:26
+msgid "Motor channel constants:"
+msgstr "电机通道常量："
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:28
+msgid "``MOTOR_ALL = -1``: apply a setter or action to all four motors in order."
+msgstr "``MOTOR_ALL = -1``：依次对全部四路电机执行设置或控制操作。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:29
+msgid ""
+"``MOTOR_1 = 0``, ``MOTOR_2 = 1``, ``MOTOR_3 = 2``, ``MOTOR_4 = 3``: "
+"select one motor. Reading methods accept one channel in the range 0~3."
+msgstr ""
+"``MOTOR_1 = 0``、``MOTOR_2 = 1``、``MOTOR_3 = 2``、``MOTOR_4 = "
+"3``：选择对应的一路电机。读取数据时需指定单个通道，通道编号为 0~3。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:32
+msgid "Control mode constants:"
+msgstr "电机控制模式常量："
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:34
+msgid "``MODE_OPEN_LOOP = 0``: open-loop PWM control."
+msgstr "``MODE_OPEN_LOOP = 0``：开环 PWM 控制。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:35
+msgid "``MODE_POSITION = 1``: position control."
+msgstr "``MODE_POSITION = 1``：位置控制。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:36
+msgid "``MODE_SPEED = 2``: speed control."
+msgstr "``MODE_SPEED = 2``：速度控制。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:38
+msgid "Encoder phase constants:"
+msgstr "编码器相位常量："
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:40
+msgid "``ENCODER_MODE_AB = 0``: AB phase order."
+msgstr "``ENCODER_MODE_AB = 0``：AB 相位顺序。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:41
+msgid "``ENCODER_MODE_BA = 1``: BA phase order."
+msgstr "``ENCODER_MODE_BA = 1``：BA 相位顺序。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit:43
+msgid ""
+"Speed samples and closed-loop speed targets use the device's native "
+"values in the range -127~127, without a documented RPM conversion. "
+"Position speed limits use the native range 0~127. Soft start and stop "
+"gradually changes PWM output to reduce mechanical shock when starting, "
+"stopping, or changing speed."
+msgstr ""
+"速度读数和闭环速度设置值的范围均为 -127~127，协议未提供其与转速（RPM）的换算关系。位置控制的速度上限范围为 "
+"0~127。启用软启动和软停止后，PWM 输出会逐渐变化，减轻电机启动、停止或调速时的机械冲击。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:1
+msgid "Set one motor control mode."
+msgstr "设置一路电机的控制模式。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:6
+msgid "Motor channel index. Range: 0~3, or ``MOTOR_ALL`` for all motors."
+msgstr "电机通道编号，范围为 0~3；使用 ``MOTOR_ALL`` 可对全部四路电机执行操作。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:5
+msgid "One of ``MODE_OPEN_LOOP``, ``MODE_POSITION``, or ``MODE_SPEED``."
+msgstr "使用 ``MODE_OPEN_LOOP``、``MODE_POSITION`` 或 ``MODE_SPEED``。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor
+msgid "Returns"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:10
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:11
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:12
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:8
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color:7
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:12
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:8
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:9
+msgid "None."
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:13
+msgid "|set_motor_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:7
+msgid "set_motor_mode.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_mode:15
+msgid "|motor_mode_option.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:8
+msgid "motor_mode_option.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode:1
+msgid "Get one motor control mode."
+msgstr "获取一路电机的控制模式。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed:3
+msgid "Motor channel index. Range: 0~3."
+msgstr "电机通道编号，范围为 0~3。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode:6
+msgid "Current mode. Range: 0~2."
+msgstr "当前模式，范围为 0~2。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed
+msgid "Return type"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_mode:11
+msgid "|get_motor_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:9
+msgid "get_motor_mode.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:1
+msgid "Set open-loop PWM duty and direction for one motor."
+msgstr "设置指定电机在开环模式下的 PWM 控制值。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:5
+msgid ""
+"Signed PWM duty. Unit: percent. Range: -100~100. The sign selects "
+"direction and 0 stops output."
+msgstr "PWM 控制值，范围为 -100~100。正负表示相反的转动方向，绝对值表示占空比百分数，0 表示停止输出。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_motor_pwm_duty:13
+msgid "|set_motor_pwm_duty.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:10
+msgid "set_motor_pwm_duty.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty:1
+msgid "Get the commanded open-loop PWM duty for one motor."
+msgstr "获取指定电机在开环模式下的 PWM 设置值。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty:6
+msgid "Signed commanded PWM duty. Unit: percent. Range: -100~100."
+msgstr "PWM 设置值，范围为 -100~100。正负表示相反的转动方向，绝对值表示占空比百分数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_motor_pwm_duty:11
+msgid "|get_motor_pwm_duty.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:11
+msgid "get_motor_pwm_duty.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed:1
+msgid "Read the live native speed sample for one motor."
+msgstr "读取指定电机当前的速度读数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed:6
+msgid ""
+"Signed device-native speed sample. Range: -127~127. The firmware updates "
+"this value every 20 ms. It is not RPM and has no verified physical-unit "
+"conversion."
+msgstr "速度读数，可正可负，范围为 -127~127，固件每 20 ms 更新一次。该值未换算为转速（RPM），协议未提供相应的物理单位换算关系。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_motor_speed:13
+msgid "|read_motor_speed.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:12
+msgid "read_motor_speed.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:1
+msgid "Stop one motor and leave it in open-loop mode."
+msgstr "停止指定电机，并将其控制模式设为开环模式。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:3
+msgid ""
+"PWM is cleared before the mode changes so a previous position or speed "
+"target cannot resume when open-loop mode becomes active."
+msgstr "切换到开环模式前会先将 PWM 控制值清零，避免之前的位置或速度控制输出在模式切换后继续驱动电机。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.stop_motor:13
+msgid "|stop_motor.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:13
+msgid "stop_motor.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:1
+msgid "Enable soft start and stop for one motor in open-loop mode."
+msgstr "在开环模式下启用一路电机的软启动和软停止。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:3
+msgid ""
+"The shared setting is retained in the Unit's flash. Repeating the call "
+"with the channel already enabled does not change the stored value."
+msgstr "各通道的软启动配置共同保存在 Unit 的 Flash 中。指定通道已启用时重复调用，不会更改已保存的设置。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.enable_soft_start:13
+msgid "|enable_soft_start.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:14
+msgid "enable_soft_start.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:1
+msgid "Disable soft start and stop for one motor in open-loop mode."
+msgstr "在开环模式下禁用一路电机的软启动和软停止。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:3
+msgid ""
+"The shared setting is retained in the Unit's flash. Repeating the call "
+"with the channel already disabled does not change the stored value."
+msgstr "各通道的软启动配置共同保存在 Unit 的 Flash 中。指定通道已禁用时重复调用，不会更改已保存的设置。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.disable_soft_start:13
+msgid "|disable_soft_start.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:15
+msgid "disable_soft_start.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled:1
+msgid "Return whether soft start and stop is enabled for one motor."
+msgstr "检查指定电机的软启动和软停止是否已启用。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled:6
+msgid "``True`` when soft start and stop is enabled."
+msgstr "软启动和软停止已启用时返回 ``True``。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.is_soft_start_enabled:11
+msgid "|is_soft_start_enabled.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:16
+msgid "is_soft_start_enabled.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count:1
+msgid "Read one motor encoder count without clearing it."
+msgstr "读取指定电机的编码器计数，读取操作不会将计数清零。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:5
+msgid "Signed encoder count. Range: -2147483648~2147483647."
+msgstr "编码器计数，可正可负，范围为 -2147483648~2147483647。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_encoder_count:11
+msgid "|read_encoder_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:17
+msgid "read_encoder_count.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:1
+msgid "Set one motor encoder count."
+msgstr "设置一路电机的编码器计数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_count:13
+msgid "|set_encoder_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:18
+msgid "set_encoder_count.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count:1
+msgid "Clear one motor encoder count to zero."
+msgstr "将一路电机的编码器计数清零。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.clear_encoder_count:10
+msgid "|clear_encoder_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:19
+msgid "clear_encoder_count.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:1
+msgid "Set the global encoder phase order."
+msgstr "设置全局编码器相位顺序。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:3
+msgid ""
+"A changed value is retained in the Unit's flash and immediately restarts "
+"the Unit. The call waits for the current I2C address to become available "
+"again. Avoid unnecessary calls to limit flash writes."
+msgstr ""
+"修改相位顺序后，设置会保存到 Unit 的 Flash 中，并立即触发 Unit 重启。本方法会等待 Unit 重新响应当前 I2C "
+"地址后返回。请避免重复写入相同设置，以减少 Flash 写入次数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:7
+msgid "``ENCODER_MODE_AB`` or ``ENCODER_MODE_BA``."
+msgstr "使用 ``ENCODER_MODE_AB`` 或 ``ENCODER_MODE_BA``。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:14
+msgid "|set_encoder_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:20
+msgid "set_encoder_mode.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_encoder_mode:16
+msgid "|encoder_mode_option.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:21
+msgid "encoder_mode_option.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode:1
+msgid "Get the global encoder phase order."
+msgstr "获取全局编码器相位顺序。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_encoder_mode:8
+msgid "|get_encoder_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:22
+msgid "get_encoder_mode.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:1
+msgid "Set position-loop PID coefficients for one motor."
+msgstr "设置一路电机的位置环 PID 系数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:5
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:5
+msgid "Native proportional coefficient. Range: 0~255."
+msgstr "比例系数，范围为 0~255。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:7
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:7
+msgid "Native integral coefficient. Range: 0~255."
+msgstr "积分系数，范围为 0~255。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:9
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:9
+msgid "Native derivative coefficient. Range: 0~255."
+msgstr "微分系数，范围为 0~255。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_pid:16
+msgid "|set_position_pid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:23
+msgid "set_position_pid.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid:1
+msgid "Get position-loop PID coefficients for one motor."
+msgstr "获取一路电机的位置环 PID 系数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid:6
+msgid "``(kp, ki, kd)``. Each native coefficient is 0~255."
+msgstr "PID 系数元组 ``(kp, ki, kd)``，依次为比例、积分、微分系数，每项范围均为 0~255。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_pid:11
+msgid "|get_position_pid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:24
+msgid "get_position_pid.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:1
+msgid "Set the position-loop target in encoder counts."
+msgstr "设置位置控制的目标位置，以编码器计数为单位。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:5
+msgid "Signed target. Unit: encoder counts. Range: -2147483648~2147483647."
+msgstr "目标位置，以编码器计数为单位，可正可负，范围为 -2147483648~2147483647。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_target_count:13
+msgid "|set_position_target_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:25
+msgid "set_position_target_count.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count:1
+msgid "Get the configured position-loop target in encoder counts."
+msgstr "获取已设置的目标位置，以编码器计数为单位。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_target_count:12
+msgid "|get_position_target_count.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:26
+msgid "get_position_target_count.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:1
+msgid "Set the native position-loop speed limit."
+msgstr "设置位置控制时的速度上限。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:5
+msgid "Unsigned device-native speed limit. Range: 0~127."
+msgstr "位置控制时的速度上限，范围为 0~127。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_position_speed_limit:12
+msgid "|set_position_speed_limit.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:27
+msgid "set_position_speed_limit.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit:1
+msgid "Get the native position-loop speed limit."
+msgstr "获取位置控制时的速度上限设置。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit:6
+msgid "Unsigned, dimensionless device level. Range: 0~127. This value is not RPM."
+msgstr "速度上限设置值，范围为 0~127。该值为设备使用的速度数值，单位不是转速（RPM）。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_position_speed_limit:12
+msgid "|get_position_speed_limit.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:28
+msgid "get_position_speed_limit.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:1
+msgid "Set speed-loop PID coefficients for one motor."
+msgstr "设置一路电机的速度环 PID 系数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_pid:16
+msgid "|set_speed_pid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:29
+msgid "set_speed_pid.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid:1
+msgid "Get speed-loop PID coefficients for one motor."
+msgstr "获取一路电机的速度环 PID 系数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_pid:11
+msgid "|get_speed_pid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:30
+msgid "get_speed_pid.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:1
+msgid "Set the native closed-loop speed target for one motor."
+msgstr "设置指定电机的闭环速度控制目标。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target:6
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:5
+msgid "Signed device-native speed target. Range: -127~127."
+msgstr "目标速度设置值，可正可负，范围为 -127~127。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_speed_target:12
+msgid "|set_speed_target.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:31
+msgid "set_speed_target.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target:1
+msgid "Get the configured closed-loop speed target."
+msgstr "获取已设置的闭环速度控制目标。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_speed_target:11
+msgid "|get_speed_target.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:32
+msgid "get_speed_target.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color:1
+msgid "Set the onboard RGB LED color."
+msgstr "设置板载 RGB LED 颜色。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color:3
+msgid "RGB888 color in ``0xRRGGBB`` format. Range: 0x000000~0xFFFFFF."
+msgstr "``0xRRGGBB`` 格式的 RGB888 颜色，范围为 0x000000~0xFFFFFF。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_color:11
+msgid "|set_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:33
+msgid "set_rgb_color.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color:1
+msgid "Get the onboard RGB LED color."
+msgstr "获取板载 RGB LED 颜色。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_color:9
+msgid "|get_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:34
+msgid "get_rgb_color.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness:1
+msgid "Set the onboard RGB LED brightness."
+msgstr "设置板载 RGB LED 亮度。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness:3
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness:3
+msgid "Brightness. Unit: percent. Range: 0~100."
+msgstr "亮度，单位为百分比，范围为 0~100。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_rgb_brightness:10
+msgid "|set_rgb_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:35
+msgid "set_rgb_brightness.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness:1
+msgid "Get the onboard RGB LED brightness."
+msgstr "获取板载 RGB LED 亮度。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_rgb_brightness:8
+msgid "|get_rgb_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:36
+msgid "get_rgb_brightness.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage:1
+msgid "Read the motor supply input voltage."
+msgstr "读取电机供电输入电压。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage:3
+msgid "Input voltage. Unit: V. Range depends on the hardware supply."
+msgstr "输入电压，单位为 V，范围取决于硬件供电。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage:8
+msgid "|read_input_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:37
+msgid "read_input_voltage.png"
+msgstr ""
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc:1
+msgid "Read the raw 12-bit motor-supply voltage ADC sample."
+msgstr "读取电机供电电压的原始 12 位 ADC 采样值。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc:3
+msgid ""
+"Raw ADC sample. Range: 0~4095. This is not a voltage unit; use "
+"``read_input_voltage()`` for volts."
+msgstr "原始 ADC 采样值，范围为 0~4095。如需读取以 V 为单位的电压，请使用 ``read_input_voltage()``。"
+
+#: of
+#: unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_voltage_adc:9
+msgid "|read_input_voltage_adc.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:38
+msgid "read_input_voltage_adc.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current:1
+msgid "Read the total motor supply input current."
+msgstr "读取电机供电输入总电流。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current:3
+msgid "Input current. Unit: A. Range depends on the connected load."
+msgstr "输入电流，单位为 A，范围取决于所连接的负载。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.read_input_current:8
+msgid "|read_input_current.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:39
+msgid "read_input_current.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version:1
+msgid "Get the Unit firmware version register value."
+msgstr "读取 Unit 的固件版本值。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version:3
+msgid "Firmware version value. Range: 0~255."
+msgstr "固件版本值，范围为 0~255。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_firmware_version:8
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:40
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid:1
+msgid "Get the device's 12-byte STM32 unique identifier."
+msgstr "获取设备的 12 字节 STM32 唯一标识符。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid:3
+msgid "Device UID with exactly 12 bytes in protocol order."
+msgstr "设备 UID，按协议顺序返回，长度固定为 12 字节。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_uid:8
+msgid "|get_uid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:41
+msgid "get_uid.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address:1
+msgid "Get the Unit I2C address from the device."
+msgstr "从设备获取 Unit I2C 地址。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address:3
+msgid "7-bit I2C address. Range: 0x08~0x77 for public API use."
+msgstr "7 位 I2C 地址，接口支持的范围为 0x08~0x77。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.get_i2c_address:8
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:42
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:1
+msgid "Set the Unit I2C address and switch this object to it."
+msgstr "修改 Unit 的 I2C 地址，并更新当前驱动对象使用的地址。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:3
+msgid ""
+"A changed address is retained in the Unit's flash and immediately "
+"restarts the Unit. The call waits at least 300 ms, then polls the new "
+"address before updating this object. Avoid unnecessary calls to limit "
+"flash writes."
+msgstr ""
+"新地址会保存到 Unit 的 Flash 中，并立即触发 Unit 重启。本方法会先等待至少 300 "
+"ms，再检测新地址，确认响应后更新驱动对象的地址。请避免不必要的调用，以减少 Flash 写入次数。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:8
+msgid "New 7-bit I2C address. Range: 0x08~0x77."
+msgstr "新的 7 位 I2C 地址，范围为 0x08~0x77。"
+
+#: of unit.encoder4_motor_driver.Encoder4MotorDriverUnit.set_i2c_address:15
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/unit.encoder4_motor_driver.ref:43
+msgid "set_i2c_address.png"
+msgstr ""

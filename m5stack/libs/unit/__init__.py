@@ -48,6 +48,8 @@ _attrs = {
     "EarthUnit": "earth",
     "EncoderUnit": "encoder",
     "Encoder8Unit": "encoder8",
+    "Encoder4MotorDriverUnit": "encoder4_motor_driver",
+    "EncoderMotorDriverUnit": "encoder_motor_driver",
     "ENVUnit": "env",
     "ENVPROUnit": "envpro",
     "ExtEncoderUnit": "extencoder",

@@ -42,6 +42,8 @@ Unit
     dualbutton.rst
     earth.rst
     encoder.rst
+    encoder4_motor_driver.rst
+    encoder_motor_driver.rst
     encoder8.rst
     env.rst
     envpro.rst

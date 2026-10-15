@@ -43,6 +43,8 @@ package(
         "dual_button.py",
         "earth.py",
         "encoder.py",
+        "encoder4_motor_driver.py",
+        "encoder_motor_driver.py",
         "encoder8.py",
         "env.py",
         "envpro.py",

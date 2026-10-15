@@ -1,0 +1,54 @@
+.. |Unit 4EncoderMotor Driver| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U233
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/init.png
+.. |set_motor_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_motor_mode.png
+.. |motor_mode_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/motor_mode_option.png
+.. |get_motor_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_motor_mode.png
+.. |set_motor_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_motor_pwm_duty.png
+.. |get_motor_pwm_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_motor_pwm_duty.png
+.. |read_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/read_motor_speed.png
+.. |stop_motor.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/stop_motor.png
+.. |enable_soft_start.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/enable_soft_start.png
+.. |disable_soft_start.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/enable_soft_start.png
+.. |is_soft_start_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/is_soft_start_enabled.png
+.. |read_encoder_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/read_encoder_count.png
+.. |set_encoder_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_encoder_count.png
+.. |clear_encoder_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/clear_encoder_count.png
+.. |set_encoder_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_encoder_mode.png
+.. |encoder_mode_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/encoder_mode_option.png
+.. |get_encoder_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_encoder_mode.png
+.. |set_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_position_pid.png
+.. |get_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_position_pid.png
+.. |set_position_target_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_position_target_count.png
+.. |get_position_target_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_position_target_count.png
+.. |set_position_speed_limit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_position_speed_limit.png
+.. |get_position_speed_limit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_position_speed_limit.png
+.. |set_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_speed_pid.png
+.. |get_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_speed_pid.png
+.. |set_speed_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_speed_target.png
+.. |get_speed_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_speed_target.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_rgb_color.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_rgb_color.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_rgb_brightness.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_rgb_brightness.png
+.. |read_input_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/read_input_voltage.png
+.. |read_input_voltage_adc.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/read_input_voltage_adc.png
+.. |read_input_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/read_input_current.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_firmware_version.png
+.. |get_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_uid.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/get_i2c_address.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/set_i2c_address.png
+
+.. |m5cores3_unit_4encoder_motor_driver_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4encodermotor_driver/example.png
+
+.. |m5cores3_unit_4encoder_motor_driver_basic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/encoder4_motor_driver/m5cores3_unit_4encoder_motor_driver_basic_example.m5f2"
+        target="_blank"
+    >
+        m5cores3_unit_4encoder_motor_driver_basic_example.m5f2
+    </a>
