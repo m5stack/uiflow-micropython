@@ -1,4 +1,4 @@
-docs/  (356 Markdown files, 22 directories; .md suffix omitted)
+docs/  (367 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -9,7 +9,7 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            dtu_nbiot2v11, echo, echo_pyramid, gpsv2, hdriver, motion, pwm, qrcode, qrcode2, rs232, rs485, speaker
            stepmotor, tfcard
   - cap/: cc1101, lora1262, lora868
-  - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, switch, tof, unit_bus
+  - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, servos8_v2, switch, tof, unit_bus
   - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, dinmeter, dualkey, nesso-n1, paper
                   stackchan, stamplc, sticks3, stopwatch, tab5x, toughc5
   - get-started/: _overview
@@ -23,24 +23,26 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            textarea, win
   - module/: 4in8out, ain4, asr, audio, bala2, basex, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
              encoder4_motor, faces_calculator3, faces_gamepad3, faces_keyboard3, fan, gateway_h2, gnss, goplus2, gps
-             gpsv2, grbl, hmi, lan, llm, lora, lora868_v12, lorawan868, lorawan_rui3, lte, module16340, nbiot, odrive
-             plus, pm25, pps, pwrcan, qrcode, rca, relay_2, rs232, servo2, step_motor_driver, usb, zigbee
+             gpsv2, grbl, hmi, lan, llm, lora, lora1262, lora868_v12, lorawan868, lorawan_rui3, lte, module16340
+             nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2, rs232, servo2, step_motor_driver, usb
+             zigbee
   - quick-reference/: get-started, usb-mode
   - software/: easysocket, modbus, modbus.rtu.master, modbus.rtu.slave, modbus.tcp.client, modbus.tcp.server
                requests2, tcp.client, tcp.server, udp.client, udp.server, umqtt.default, umqtt
-  - stamp/: uwb
+  - stamp/: cam0308, f12, lora1262, stp2, uwb
   - stamplc/: ac, io, poe
   - system/: audio, audio.player, audio.recorder, bleuart.client, bleuart, bleuart.server, m5ble, m5espnow, power
              time, wlan.ap, wlan.sta
   - tab5/: keyboard
-  - unit/: ac_measure, accel, acssr, adc, adc_v11, ain4, angle, angle8, asr, audioplayer, bldc_driver, bps, button
-           buzzer, bytebutton, byteswitch, can, cardkb, cardkb2, cat1cn, catch, co2, co2l, color, dac, dac2, dcssr
-           dds, digi_clock, dlight, dmx, dualbutton, earth, encoder, encoder8, env, envpro, extencoder, extio, extio2
-           fader, finger, fingerprint2, flash_light, gateway_h2, glass, glass2, gps_v11, grove2grove, hall_effect
-           hbridge, heart, id, imu, imupro, ina226, ir, joystick, joystick2, key, kmeter, kmeter_iso, laser_rx
-           laser_tx, lcd, light, limit, lora_e220, lora_e220_433, lorawan_rui3, midi, minioled, miniscale, mq, mqtt
-           mqttpoe, nbiot, nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pahub, pdm, pir, puzzle, qrcode, rca
-           reflective_ir, relay, relay2, relay4, rf433r, rf433t, rfid, rgb, roller485, rollercan, rtc, scales, scroll
-           servo180, servo360, servos8, ssr, step16, synth, thermal, timerpwr, tmos, tof, tof4m, tof90, tube_pressure
-           tvoc, uhf_rfid, ultrasonic, ultrasonic_io, uwb, vibrator, watering, weight, weight_i2c, zigbee
+  - unit/: ac_measure, accel, acssr, adc, adc_v11, ain4, angle, angle8, asr, audioplayer, bldc_driver, bmm350, bps
+           button, buzzer, bytebutton, byteswitch, can, cardkb, cardkb2, cat1cn, catch, co2, co2l, color, dac, dac2
+           dcssr, dds, digi_clock, dlight, dmx, dof10, dof6, dof9, dualbutton, earth, encoder, encoder8, env, envpro
+           extencoder, extio, extio2, fader, finger, fingerprint2, flash_light, gateway_h2, glass, glass2, gps_v11
+           grove2grove, hall_effect, hbridge, heart, id, imu, imupro, ina226, ir, joystick, joystick2, key, kmeter
+           kmeter_iso, laser_rx, laser_tx, lcd, light, limit, lora_e220, lora_e220_433, lorawan_rui3, midi, minioled
+           miniscale, mq, mqtt, mqttpoe, nbiot, nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pahub, pdm, pir
+           puzzle, qrcode, rca, reflective_ir, relay, relay2, relay4, rf433r, rf433t, rfid, rgb, roller485, rollercan
+           rtc, scales, scroll, servo180, servo360, servos8, servos8_v2, ssr, step16, synth, thermal, timerpwr, tmos
+           tof, tof4m, tof90, tube_pressure, tvoc, uhf_rfid, ultrasonic, ultrasonic_io, uwb, vibrator, watering
+           weight, weight_i2c, zigbee
   - widgets/: _overview, circle, image+, image, label+, label
