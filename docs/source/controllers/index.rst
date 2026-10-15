@@ -18,6 +18,7 @@ Controllers
     dualkey.rst
     nesso-n1.rst
     paper.rst
+    paperdiy.rst
     stackchan.rst
     stamplc.rst
     sticks3.rst

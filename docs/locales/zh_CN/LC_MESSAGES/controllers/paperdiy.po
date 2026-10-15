@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-07 16:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/controllers/paperdiy.rst:3
+#: ../../source/refs/controllers.paperdiy.ref b47e082c23b74102b01dbf8be79c1f97
+#: db3303cb0dd343d6a6209ba1b714a49a
+msgid "PaperDIY"
+msgstr "PaperDIY"
+
+#: ../../source/controllers/paperdiy.rst:7 16334a1b93d64233bac04d2c75b2d692
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/controllers/paperdiy.rst:9 74d8556796bc40aea2806ad575eb87fd
+msgid "|PaperDIY|"
+msgstr ""
+
+#: ../../source/controllers/paperdiy.rst:12 1ad7c92332644d0182f67b9328475f1b
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../source/controllers/paperdiy.rst:15
+#: ../../source/controllers/paperdiy.rst:48 58dd35c913d74141846bff848c42347c
+#: 909ae7c905ac49f5a7a4f3e1337efab6
+msgid "Button Counter"
+msgstr "按键计数"
+
+#: ../../source/controllers/paperdiy.rst:17 7388123418414f589f52bba966463239
+msgid "Open the |paperdiy_button_counter_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |paperdiy_button_counter_example.m5f2| 项目。"
+
+#: ../../source/controllers/paperdiy.rst:19
+#: ../../source/controllers/paperdiy.rst:50 6a3806a7af344b7b96974d411627c3ab
+#: c67f2ae6c50e4c4ca9dc057b3c2f00c2
+msgid ""
+"This example counts Button A and Button B presses independently and "
+"displays each button's count on the screen."
+msgstr "此示例分别统计按键 A 和按键 B 的按下次数，并在屏幕上显示各按键的计数。"
+
+#: ../../source/controllers/paperdiy.rst:21
+#: ../../source/controllers/paperdiy.rst:36 95589a1c38934d16872ac2e83bd78a12
+#: d9a518ea63cf4db7ba9f6e2baac5d9b5
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/controllers/paperdiy.rst:23 34d3b43fd8724229bc8601e133ac2a40
+msgid "|paperdiy_button_counter_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.paperdiy.ref:6
+#: 0c250ceda6484882bf148d2ed7417ebc
+msgid "paperdiy_button_counter_example.png"
+msgstr ""
+
+#: ../../source/controllers/paperdiy.rst:25
+#: ../../source/controllers/paperdiy.rst:40
+#: ../../source/controllers/paperdiy.rst:58
+#: ../../source/controllers/paperdiy.rst:73 115a151780c7429a813c85aef00fa87c
+#: 3c33a94ee2f74f5584a609fbda094ad1 5ef2b4000d034ef49536ad5f6fc30c9b
+#: addca4665ad44bb0a00bf8367145af97
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/controllers/paperdiy.rst:27
+#: ../../source/controllers/paperdiy.rst:42
+#: ../../source/controllers/paperdiy.rst:60
+#: ../../source/controllers/paperdiy.rst:75 26ee25e1fd274b689d714204de23729e
+#: 2bd54958ea144651b648daf82b480765 a156d835171440b8afd68eb2570fb955
+#: da4f76b8194947848ad098f79b9498d6
+msgid "None"
+msgstr "无"
+
+#: ../../source/controllers/paperdiy.rst:30
+#: ../../source/controllers/paperdiy.rst:63 6a83f168568041248ea61c5586e05617
+#: 7a2018df05b64e2089333ffc7948ad5c
+msgid "Charge Detection"
+msgstr "充电检测"
+
+#: ../../source/controllers/paperdiy.rst:32 9b615b9079c94499bb7af5c3af8c3811
+msgid "Open the |paperdiy_charge_detection_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |paperdiy_charge_detection_example.m5f2| 项目。"
+
+#: ../../source/controllers/paperdiy.rst:34
+#: ../../source/controllers/paperdiy.rst:65 047eaa135577498499d0810f6ce0c56d
+#: 9d3b40e1ab0247cc91bd0f5600fe578d
+msgid ""
+"This example displays battery voltage, USB voltage, and charging status. "
+"Press Button A to enable or disable battery charging."
+msgstr "此示例显示电池电压、USB 电压和充电状态。按下按键 A 可开启或关闭电池充电。"
+
+#: ../../source/controllers/paperdiy.rst:38 2d5cfca72fe7444db02fcbfdaeab690c
+msgid "|paperdiy_charge_detection_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.paperdiy.ref:8
+#: 8b002decd80d46a2b6c1db08df65b7d5
+msgid "paperdiy_charge_detection_example.png"
+msgstr ""
+
+#: ../../source/controllers/paperdiy.rst:45 0f070837bd2d41138fa2026c99fbc294
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../source/controllers/paperdiy.rst:52
+#: ../../source/controllers/paperdiy.rst:67 08f0c001f3584393b3f7b7103e84e115
+#: 61357d9a44c045e89346da2ea80ff309
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："

@@ -37,6 +37,7 @@ boards := \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
 	M5STACK_PaperS3:papers3          \
+	M5STACK_PaperDIY:paperdiy        \
 	M5STACK_DinMeter:dinmeter        \
 	M5STACK_StickC:stickc            \
 	M5STACK_Station:station          \
@@ -95,6 +96,7 @@ BOARD_TYPE_DEF := \
 	cardputer   \
 	paper       \
 	papers3     \
+	paperdiy    \
 	dinmeter    \
 	stickc      \
 	station     \

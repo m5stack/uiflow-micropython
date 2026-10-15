@@ -1,0 +1,123 @@
+{
+  "version": "V2.0",
+  "versionNumber": "V2.4.9",
+  "type": "paperdiy",
+  "components": [
+    {
+      "name": "screen",
+      "type": "screen",
+      "layer": 0,
+      "screenId": "builtin",
+      "screenName": "",
+      "id": "__paperdiy_screen",
+      "createTime": 1786060800000,
+      "x": 0,
+      "y": 0,
+      "width": 540,
+      "height": 960,
+      "backgroundColor": "#ffffff",
+      "size": 0,
+      "isSelected": true
+    },
+    {
+      "name": "label_title",
+      "type": "label",
+      "layer": 1,
+      "screenId": "builtin",
+      "screenName": "",
+      "id": "paperdiy_counter_title",
+      "createTime": 1786082400001,
+      "x": 30,
+      "y": 40,
+      "color": "#000000",
+      "backgroundColor": "#ffffff",
+      "text": "PaperDIY Button Counter",
+      "engine": "gfx",
+      "font": "Widgets.FONTS.Montserrat24",
+      "rotation": 0,
+      "isSelected": false
+    },
+    {
+      "name": "label_btn_a",
+      "type": "label",
+      "layer": 2,
+      "screenId": "builtin",
+      "screenName": "",
+      "id": "paperdiy_counter_label_a",
+      "createTime": 1786082400002,
+      "x": 30,
+      "y": 240,
+      "color": "#000000",
+      "backgroundColor": "#ffffff",
+      "text": "Button A: 0",
+      "engine": "gfx",
+      "font": "Widgets.FONTS.Montserrat40",
+      "rotation": 0,
+      "isSelected": false
+    },
+    {
+      "name": "label_btn_b",
+      "type": "label",
+      "layer": 3,
+      "screenId": "builtin",
+      "screenName": "",
+      "id": "paperdiy_counter_label_b",
+      "createTime": 1786082400003,
+      "x": 30,
+      "y": 400,
+      "color": "#000000",
+      "backgroundColor": "#ffffff",
+      "text": "Button B: 0",
+      "engine": "gfx",
+      "font": "Widgets.FONTS.Montserrat40",
+      "rotation": 0,
+      "isSelected": false
+    },
+    {
+      "name": "label_hint",
+      "type": "label",
+      "layer": 4,
+      "screenId": "builtin",
+      "screenName": "",
+      "id": "paperdiy_counter_hint",
+      "createTime": 1786082400004,
+      "x": 30,
+      "y": 600,
+      "color": "#000000",
+      "backgroundColor": "#ffffff",
+      "text": "Press Button A or Button B",
+      "engine": "gfx",
+      "font": "Widgets.FONTS.Montserrat24",
+      "rotation": 0,
+      "isSelected": false
+    }
+  ],
+  "resources": [
+    {
+      "hardware": [
+        "hardware_button"
+      ]
+    }
+  ],
+  "units": [],
+  "hats": [],
+  "i2cs": [],
+  "blockly": "<variables><variable id=\"paperdiy_counter_a\">button_a_count</variable><variable id=\"paperdiy_counter_b\">button_b_count</variable></variables><block type=\"basic_on_setup\" id=\"setup_block\" x=\"50\" y=\"50\" deletable=\"false\"><mutation isBegin=\"true\"/><field name=\"UPDATEOP\">true</field><statement name=\"FUNC\"><block type=\"system_m5_begin\" id=\"counter_begin\"><next><block type=\"ui_lcd_set_epd_mode\" id=\"counter_epd_mode\"><value name=\"VALUE\"><shadow type=\"ui_lcd_epd_mode_option\" id=\"counter_epd_option\"><field name=\"VALUE\">EPD_FASTEST</field></shadow></value><next><block type=\"variables_set\" id=\"counter_set_a_0\"><field name=\"VAR\" id=\"paperdiy_counter_a\">button_a_count</field><value name=\"VALUE\"><block type=\"math_number\" id=\"counter_zero_a\"><mutation max=\"Infinity\" min=\"-Infinity\" precision=\"0\"/><field name=\"NUM\">0</field></block></value><next><block type=\"variables_set\" id=\"counter_set_b_0\"><field name=\"VAR\" id=\"paperdiy_counter_b\">button_b_count</field><value name=\"VALUE\"><block type=\"math_number\" id=\"counter_zero_b\"><mutation max=\"Infinity\" min=\"-Infinity\" precision=\"0\"/><field name=\"NUM\">0</field></block></value></block></next></block></next></block></next></block></statement></block><block type=\"basic_on_loop\" id=\"loop_block\" x=\"50\" y=\"400\" deletable=\"false\"><mutation isUpdate=\"true\"/><field name=\"UPDATEOP\">true</field><statement name=\"FUNC\"><block type=\"system_m5_update\" id=\"counter_update\"><next><block type=\"time_sleep_millisecond\" id=\"counter_sleep\"><value name=\"MS\"><shadow type=\"math_number\" id=\"counter_sleep_ms\"><mutation max=\"Infinity\" min=\"0\" precision=\"0\"/><field name=\"NUM\">10</field></shadow></value></block></next></block></statement></block><block type=\"button_callback\" id=\"counter_button_a\" x=\"720\" y=\"50\"><field name=\"NAME\">BtnA</field><field name=\"TYPE\">WAS_PRESSED</field><statement name=\"FUNC\"><block type=\"variables_set\" id=\"counter_increment_a\"><field name=\"VAR\" id=\"paperdiy_counter_a\">button_a_count</field><value name=\"VALUE\"><block type=\"math_arithmetic\" id=\"counter_add_a\"><field name=\"OP\">ADD</field><value name=\"A\"><block type=\"variables_get\" id=\"counter_get_a\"><field name=\"VAR\" id=\"paperdiy_counter_a\">button_a_count</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"counter_one_a\"><mutation max=\"Infinity\" min=\"-Infinity\" precision=\"0\"/><field name=\"NUM\">1</field></block></value></block></value><next><block type=\"label_set_text\" id=\"counter_label_a\"><field name=\"NAME\">label_btn_a</field><value name=\"TEXT\"><block type=\"text_add_str\" id=\"counter_text_a\"><value name=\"VALUE1\"><shadow type=\"text\" id=\"counter_prefix_a\"><field name=\"TEXT\">Button A: </field></shadow></value><value name=\"VALUE2\"><block type=\"variables_get\" id=\"counter_value_a\"><field name=\"VAR\" id=\"paperdiy_counter_a\">button_a_count</field></block></value></block></value></block></next></block></statement></block><block type=\"button_callback\" id=\"counter_button_b\" x=\"720\" y=\"400\"><field name=\"NAME\">BtnB</field><field name=\"TYPE\">WAS_PRESSED</field><statement name=\"FUNC\"><block type=\"variables_set\" id=\"counter_increment_b\"><field name=\"VAR\" id=\"paperdiy_counter_b\">button_b_count</field><value name=\"VALUE\"><block type=\"math_arithmetic\" id=\"counter_add_b\"><field name=\"OP\">ADD</field><value name=\"A\"><block type=\"variables_get\" id=\"counter_get_b\"><field name=\"VAR\" id=\"paperdiy_counter_b\">button_b_count</field></block></value><value name=\"B\"><block type=\"math_number\" id=\"counter_one_b\"><mutation max=\"Infinity\" min=\"-Infinity\" precision=\"0\"/><field name=\"NUM\">1</field></block></value></block></value><next><block type=\"label_set_text\" id=\"counter_label_b\"><field name=\"NAME\">label_btn_b</field><value name=\"TEXT\"><block type=\"text_add_str\" id=\"counter_text_b\"><value name=\"VALUE1\"><shadow type=\"text\" id=\"counter_prefix_b\"><field name=\"TEXT\">Button B: </field></shadow></value><value name=\"VALUE2\"><block type=\"variables_get\" id=\"counter_value_b\"><field name=\"VAR\" id=\"paperdiy_counter_b\">button_b_count</field></block></value></block></value></block></next></block></statement></block>",
+  "screen": [
+    {
+      "simulationName": "Built-in",
+      "type": "builtin",
+      "width": 540,
+      "height": 960,
+      "scale": 0.28,
+      "screenName": "",
+      "blockId": "",
+      "screenColorType": 2,
+      "rotation": 0,
+      "id": "builtin",
+      "createTime": 1786060799999
+    }
+  ],
+  "logicWhenNum": 0,
+  "customList": []
+}
