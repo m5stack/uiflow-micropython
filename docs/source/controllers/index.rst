@@ -23,6 +23,7 @@ Controllers
     stamplc.rst
     sticks3.rst
     stopwatch.rst
+    tab5.rst
     tab5x.rst
     toughc5.rst
     unit_c6l.rst

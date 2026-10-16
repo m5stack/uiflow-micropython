@@ -1,26 +1,155 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# Chinese (Simplified, China) translations for UIFlow2 Programming Guide.
+# Copyright (C) 2026 M5Stack Technology Co., Ltd
 # This file is distributed under the same license as the UIFlow2 Programming
-# Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# Guide project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: UIFlow2 Programming Guide \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: UIFlow2 Programming Guide VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-16 14:57+0800\n"
+"PO-Revision-Date: 2026-10-16 06:58+0000\n"
+"Last-Translator: M5Stack\n"
 "Language: zh_CN\n"
-"Language-Team: zh_CN <LL@li.org>\n"
+"Language-Team: Chinese (Simplified)\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/controllers/cores3.rst:2 d741016330b841d4895c344ceada15dd
+#: ../../../source/controllers/cores3.rst:3
+#: ../../../source/refs/controllers.cores3.ref
 msgid "CoreS3"
 msgstr "CoreS3"
+
+#: ../../../source/controllers/cores3.rst:7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../../source/controllers/cores3.rst:9
+msgid "|CoreS3|"
+msgstr "|CoreS3|"
+
+#: ../../../source/controllers/cores3.rst:12
+msgid "Supported Components"
+msgstr "支持的组件"
+
+#: ../../../source/controllers/cores3.rst:14
+msgid "CoreS3 supports the following components:"
+msgstr "CoreS3 支持以下组件："
+
+#: ../../../source/controllers/cores3.rst:16
+msgid "`M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library."
+msgstr "`M5UI <../m5ui/index.html>`_：``m5ui`` LVGL 组件库。"
+
+#: ../../../source/controllers/cores3.rst:17
+msgid ""
+"`Module <../module/index.html>`_: The ``module`` package for expansion "
+"modules."
+msgstr "`Module <../module/index.html>`_：用于扩展模块的 ``module`` 软件包。"
+
+#: ../../../source/controllers/cores3.rst:18
+msgid "`Unit <../unit/index.html>`_: The ``unit`` package containing Unit drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+
+#: ../../../source/controllers/cores3.rst:19
+msgid ""
+"`USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package for "
+"HID devices."
+msgstr "`USB <../advanced/usb/device/index.html>`_：用于 HID 设备的 ``usb.device`` 软件包。"
+
+#: ../../../source/controllers/cores3.rst:20
+msgid ""
+"`M5Camera <../advanced/camera.html>`_: The frozen ``m5camera.py`` camera "
+"helper."
+msgstr "`M5Camera <../advanced/camera.html>`_：冻结的 ``m5camera.py`` 摄像头辅助模块。"
+
+#: ../../../source/controllers/cores3.rst:21
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
+
+#: ../../../source/controllers/cores3.rst:24
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+#: ../../../source/controllers/cores3.rst:26
+msgid ""
+"The CoreS3 firmware includes the following Montserrat fonts for LVGL and "
+"M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, "
+"``lv.font_montserrat_16``, ``lv.font_montserrat_18``, "
+"``lv.font_montserrat_24``, ``lv.font_montserrat_40``, "
+"``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
+msgstr ""
+"CoreS3 固件为 LVGL 和 M5UI 提供以下 Montserrat "
+"字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_24``、``lv.font_montserrat_40``、``lv.font_montserrat_44``"
+" 和 ``lv.font_montserrat_48``。"
+
+#: ../../../source/controllers/cores3.rst:31
+msgid ""
+"For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, "
+"``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and "
+"Korean text respectively."
+msgstr ""
+"对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 "
+"``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+
+#: ../../../source/controllers/cores3.rst:36
+msgid "Board Features"
+msgstr "板载功能"
+
+#: ../../../source/controllers/cores3.rst:38
+msgid "CoreS3 supports the following built-in functions and board peripherals:"
+msgstr "CoreS3 支持以下内置功能和板载外设："
+
+#: ../../../source/controllers/cores3.rst:40
+msgid "`Display <../hardware/display.html>`_: 2.0-inch, 320 x 240 color LCD output."
+msgstr "`显示屏 <../hardware/display.html>`_：2.0 英寸、320 x 240 分辨率的彩色液晶显示屏输出。"
+
+#: ../../../source/controllers/cores3.rst:41
+msgid "`Touch <../hardware/touch.html>`_: Capacitive touch input."
+msgstr "`触摸 <../hardware/touch.html>`_：电容式触摸输入。"
+
+#: ../../../source/controllers/cores3.rst:42
+msgid ""
+"`IMU <../hardware/imu.html>`_: BMI270 accelerometer and gyroscope, and "
+"BMM150 magnetometer readings."
+msgstr "`IMU <../hardware/imu.html>`_：读取 BMI270 加速度计、陀螺仪和 BMM150 磁力计数据。"
+
+#: ../../../source/controllers/cores3.rst:43
+msgid ""
+"`ALS <../hardware/als.html>`_: Built-in LTR-553ALS-WA ambient light sensor "
+"readings."
+msgstr "`环境光传感器 <../hardware/als.html>`_：读取内置 LTR-553ALS-WA 环境光传感器数据。"
+
+#: ../../../source/controllers/cores3.rst:44
+msgid ""
+"`Camera <../advanced/camera.html>`_: Image capture with the built-in GC0308 "
+"camera."
+msgstr "`摄像头 <../advanced/camera.html>`_：使用内置 GC0308 摄像头采集图像。"
+
+#: ../../../source/controllers/cores3.rst:45
+msgid ""
+"`Speaker <../hardware/speaker.html>`_ playback and `microphone "
+"<../hardware/mic.html>`_ recording."
+msgstr "`扬声器 <../hardware/speaker.html>`_ 播放和 `麦克风 <../hardware/mic.html>`_ 录音。"
+
+#: ../../../source/controllers/cores3.rst:46
+msgid "BM8563 real-time clock for date and time keeping."
+msgstr "BM8563 实时时钟，用于保持日期和时间。"
+
+#: ../../../source/controllers/cores3.rst:47
+msgid ""
+"`Power <../system/power.html>`_: Battery, charging, and external output "
+"power management."
+msgstr "`电源 <../system/power.html>`_：电池、充电和外部输出电源管理。"
+
+#: ../../../source/controllers/cores3.rst:48
+msgid "microSD card access through ``hardware.SDCard``."
+msgstr "通过 ``hardware.SDCard`` 访问 microSD 卡。"
+
+#: ../../../source/controllers/cores3.rst:49
+msgid "Grove and M-BUS expansion interfaces."
+msgstr "Grove 和 M-BUS 扩展接口。"
 
