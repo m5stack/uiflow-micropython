@@ -87,6 +87,7 @@ jobs:
           - M5STACK_NanoC6
           - M5STACK_Paper
           - M5STACK_PaperS3
+          - M5STACK_PaperDIY
           - M5STACK_PowerHub
           - M5STACK_Stamp_PICO
           - M5STACK_StampC5
