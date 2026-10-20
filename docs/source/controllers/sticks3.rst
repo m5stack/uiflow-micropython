@@ -2,6 +2,8 @@
 StickS3
 #######
 
+.. py:currentmodule:: controllers.sticks3
+
 .. include:: ../refs/controllers.sticks3.ref
 
 Support the following products:
@@ -40,6 +42,7 @@ StickS3 supports the following built-in functions and connected peripherals:
 * Battery, VBUS, charging, and external output power management.
 * `Infrared <../hardware/ir.html>`_ transmit and receive.
 * `Audio <../system/audio.html>`_ recording and playback.
+* `RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 and StickS3 Lite v1.1 or later).
 * `ToF HAT <../hat/tof.html>`_ distance measurement.
 
 UiFlow2 Example 
@@ -156,6 +159,28 @@ Example output:
 
     None
 
+RTC Clock
+^^^^^^^^^
+
+Open the |sticks3_rtc_example.m5f2| project in UiFlow2.
+
+.. note::
+   This example supports StickS3 and StickS3 Lite v1.1 or later.
+   Earlier StickS3 hardware versions do not include the RTC used by this example.
+
+This example reads the built-in RTC and displays the current time. Press **BtnA**
+to select the hour, minute, or second field. Press **BtnB** to increment the
+selected field. Press **BtnA** again after the seconds field to write the new
+time to the RTC.
+
+UiFlow2 Code Block:
+
+    |sticks3_rtc_example.png|
+
+Example output:
+
+    None
+
 MicroPython Example 
 -------------------
 
@@ -264,6 +289,25 @@ This example demonstrates how to use the ToF (Time of Flight) HAT sensor to meas
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_hat_tof_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+RTC Clock
+^^^^^^^^^
+
+This example reads and updates the built-in RTC time.
+
+.. note::
+   This example supports StickS3 and StickS3 Lite v1.1 or later.
+   Earlier StickS3 hardware versions do not include the RTC used by this example.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_rtc_example.py
         :language: python
         :linenos:
 

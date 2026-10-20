@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-21 11:06+0800\n"
+"POT-Creation-Date: 2026-10-20 13:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -45,8 +45,7 @@ msgstr "StickS3 支持以下组件："
 msgid ""
 "`Unit <../unit/index.html>`_: The ``unit`` package containing Unit "
 "drivers."
-msgstr ""
-"`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
 
 #: ../../source/controllers/sticks3.rst:17
 msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
@@ -60,70 +59,88 @@ msgstr "`HAT <../hat/index.html>`_：用于 HAT 设备的 ``hat`` 软件包。"
 msgid ""
 "`USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package "
 "for HID devices."
-msgstr ""
-"`USB <../advanced/usb/device/index.html>`_：用于 HID 设备的 ``usb.device`` 软件包。"
+msgstr "`USB <../advanced/usb/device/index.html>`_：用于 HID 设备的 ``usb.device`` 软件包。"
 
 #: ../../source/controllers/sticks3.rst:22
 msgid "Supported Display Fonts"
 msgstr "支持的显示字体"
 
 #: ../../source/controllers/sticks3.rst:24
-msgid "The StickS3 firmware includes the following Montserrat fonts for LVGL and M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv.font_montserrat_16``, ``lv.font_montserrat_18``, ``lv.font_montserrat_24``, ``lv.font_montserrat_40``, ``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
-msgstr "StickS3 固件为 LVGL 和 M5UI 提供以下 Montserrat 字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_24``、``lv.font_montserrat_40``、``lv.font_montserrat_44`` 和 ``lv.font_montserrat_48``。"
+msgid ""
+"The StickS3 firmware includes the following Montserrat fonts for LVGL and"
+" M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, "
+"``lv.font_montserrat_16``, ``lv.font_montserrat_18``, "
+"``lv.font_montserrat_24``, ``lv.font_montserrat_40``, "
+"``lv.font_montserrat_44``, and ``lv.font_montserrat_48``."
+msgstr ""
+"StickS3 固件为 LVGL 和 M5UI 提供以下 Montserrat "
+"字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_24``、``lv.font_montserrat_40``、``lv.font_montserrat_44``"
+" 和 ``lv.font_montserrat_48``。"
 
-#: ../../source/controllers/sticks3.rst:31
-msgid "For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, ``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and Korean text respectively."
-msgstr "对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 ``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+#: ../../source/controllers/sticks3.rst:29
+msgid ""
+"For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, "
+"``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and "
+"Korean text respectively."
+msgstr ""
+"对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 "
+"``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
 
-#: ../../source/controllers/sticks3.rst:36
+#: ../../source/controllers/sticks3.rst:34
 msgid "Board Features"
 msgstr "板载功能"
 
-#: ../../source/controllers/sticks3.rst:26
+#: ../../source/controllers/sticks3.rst:36
 msgid ""
 "StickS3 supports the following built-in functions and connected "
 "peripherals:"
 msgstr "StickS3 支持以下内置功能和连接的外设："
 
-#: ../../source/controllers/sticks3.rst:28
+#: ../../source/controllers/sticks3.rst:38
 msgid "Button input and display output."
 msgstr "按键输入和显示输出。"
 
-#: ../../source/controllers/sticks3.rst:29
+#: ../../source/controllers/sticks3.rst:39
 msgid "`IMU <../hardware/imu.html>`_ accelerometer and gyroscope readings."
 msgstr "`IMU <../hardware/imu.html>`_ 加速度计和陀螺仪读数。"
 
-#: ../../source/controllers/sticks3.rst:30
+#: ../../source/controllers/sticks3.rst:40
 msgid "Battery, VBUS, charging, and external output power management."
 msgstr "电池、VBUS、充电和外部输出电源管理。"
 
-#: ../../source/controllers/sticks3.rst:31
+#: ../../source/controllers/sticks3.rst:41
 msgid "`Infrared <../hardware/ir.html>`_ transmit and receive."
 msgstr "`红外 <../hardware/ir.html>`_ 发送与接收。"
 
-#: ../../source/controllers/sticks3.rst:32
+#: ../../source/controllers/sticks3.rst:42
 msgid "`Audio <../system/audio.html>`_ recording and playback."
 msgstr "`音频 <../system/audio.html>`_ 录制与播放。"
 
-#: ../../source/controllers/sticks3.rst:33
+#: ../../source/controllers/sticks3.rst:43
+msgid ""
+"`RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 "
+"and StickS3 Lite v1.1 or later)."
+msgstr "`RTC <../unit/rtc.html>`_ 日期和时间功能（StickS3 和 StickS3 Lite v1.1 或更高版本支持）。"
+
+#: ../../source/controllers/sticks3.rst:44
 msgid "`ToF HAT <../hat/tof.html>`_ distance measurement."
 msgstr "`ToF HAT <../hat/tof.html>`_ 距离测量。"
 
-#: ../../source/controllers/sticks3.rst:36
+#: ../../source/controllers/sticks3.rst:47
 msgid "UiFlow2 Example"
-msgstr "UiFlow2 示例"
+msgstr "UiFlow2 应用示例"
 
-#: ../../source/controllers/sticks3.rst:39
-#: ../../source/controllers/sticks3.rst:153
+#: ../../source/controllers/sticks3.rst:50
+#: ../../source/controllers/sticks3.rst:186
 msgid "Button Control"
 msgstr "按键控制"
 
-#: ../../source/controllers/sticks3.rst:41
+#: ../../source/controllers/sticks3.rst:52
 msgid "Open the |sticks3_button_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_button_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:43
-#: ../../source/controllers/sticks3.rst:155
+#: ../../source/controllers/sticks3.rst:54
+#: ../../source/controllers/sticks3.rst:188
 msgid ""
 "This example demonstrates button callback functions. When button A (BtnA)"
 " is clicked, it increments a counter and updates the display. When button"
@@ -131,17 +148,18 @@ msgid ""
 "display."
 msgstr "此示例演示了按键的使用。当按下按键 A (BtnA) 时，计数器递增并更新显示。当按下按键 B (BtnB) 时，计数器也会递增并更新显示。"
 
-#: ../../source/controllers/sticks3.rst:45
-#: ../../source/controllers/sticks3.rst:60
-#: ../../source/controllers/sticks3.rst:75
-#: ../../source/controllers/sticks3.rst:93
-#: ../../source/controllers/sticks3.rst:111
-#: ../../source/controllers/sticks3.rst:126
-#: ../../source/controllers/sticks3.rst:141
+#: ../../source/controllers/sticks3.rst:56
+#: ../../source/controllers/sticks3.rst:71
+#: ../../source/controllers/sticks3.rst:86
+#: ../../source/controllers/sticks3.rst:104
+#: ../../source/controllers/sticks3.rst:122
+#: ../../source/controllers/sticks3.rst:137
+#: ../../source/controllers/sticks3.rst:152
+#: ../../source/controllers/sticks3.rst:174
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/controllers/sticks3.rst:47
+#: ../../source/controllers/sticks3.rst:58
 msgid "|sticks3_button_example.png|"
 msgstr ""
 
@@ -149,51 +167,55 @@ msgstr ""
 msgid "sticks3_button_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:49
-#: ../../source/controllers/sticks3.rst:64
-#: ../../source/controllers/sticks3.rst:79
-#: ../../source/controllers/sticks3.rst:97
-#: ../../source/controllers/sticks3.rst:115
-#: ../../source/controllers/sticks3.rst:130
-#: ../../source/controllers/sticks3.rst:145
-#: ../../source/controllers/sticks3.rst:163
+#: ../../source/controllers/sticks3.rst:60
+#: ../../source/controllers/sticks3.rst:75
+#: ../../source/controllers/sticks3.rst:90
+#: ../../source/controllers/sticks3.rst:108
+#: ../../source/controllers/sticks3.rst:126
+#: ../../source/controllers/sticks3.rst:141
+#: ../../source/controllers/sticks3.rst:156
 #: ../../source/controllers/sticks3.rst:178
-#: ../../source/controllers/sticks3.rst:193
+#: ../../source/controllers/sticks3.rst:196
 #: ../../source/controllers/sticks3.rst:211
-#: ../../source/controllers/sticks3.rst:229
-#: ../../source/controllers/sticks3.rst:245
-#: ../../source/controllers/sticks3.rst:260
+#: ../../source/controllers/sticks3.rst:226
+#: ../../source/controllers/sticks3.rst:244
+#: ../../source/controllers/sticks3.rst:262
+#: ../../source/controllers/sticks3.rst:278
+#: ../../source/controllers/sticks3.rst:293
+#: ../../source/controllers/sticks3.rst:312
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../source/controllers/sticks3.rst:51
-#: ../../source/controllers/sticks3.rst:66
-#: ../../source/controllers/sticks3.rst:81
-#: ../../source/controllers/sticks3.rst:99
-#: ../../source/controllers/sticks3.rst:117
-#: ../../source/controllers/sticks3.rst:132
-#: ../../source/controllers/sticks3.rst:147
-#: ../../source/controllers/sticks3.rst:165
+#: ../../source/controllers/sticks3.rst:62
+#: ../../source/controllers/sticks3.rst:77
+#: ../../source/controllers/sticks3.rst:92
+#: ../../source/controllers/sticks3.rst:110
+#: ../../source/controllers/sticks3.rst:128
+#: ../../source/controllers/sticks3.rst:143
+#: ../../source/controllers/sticks3.rst:158
 #: ../../source/controllers/sticks3.rst:180
-#: ../../source/controllers/sticks3.rst:195
+#: ../../source/controllers/sticks3.rst:198
 #: ../../source/controllers/sticks3.rst:213
-#: ../../source/controllers/sticks3.rst:231
-#: ../../source/controllers/sticks3.rst:247
-#: ../../source/controllers/sticks3.rst:262
+#: ../../source/controllers/sticks3.rst:228
+#: ../../source/controllers/sticks3.rst:246
+#: ../../source/controllers/sticks3.rst:264
+#: ../../source/controllers/sticks3.rst:280
+#: ../../source/controllers/sticks3.rst:295
+#: ../../source/controllers/sticks3.rst:314
 msgid "None"
 msgstr "无"
 
-#: ../../source/controllers/sticks3.rst:54
-#: ../../source/controllers/sticks3.rst:168
+#: ../../source/controllers/sticks3.rst:65
+#: ../../source/controllers/sticks3.rst:201
 msgid "IMU Sensor"
 msgstr "IMU 传感器"
 
-#: ../../source/controllers/sticks3.rst:56
+#: ../../source/controllers/sticks3.rst:67
 msgid "Open the |sticks3_imu_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_imu_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:58
-#: ../../source/controllers/sticks3.rst:170
+#: ../../source/controllers/sticks3.rst:69
+#: ../../source/controllers/sticks3.rst:203
 msgid ""
 "This example demonstrates the built-in IMU (Inertial Measurement Unit) "
 "sensor functionality. It reads and displays accelerometer and gyroscope "
@@ -203,7 +225,7 @@ msgstr ""
 "此示例演示了内置 IMU（惯性测量单元）传感器功能。它实时读取并显示加速度计和陀螺仪数据，以 m/s² 显示加速度值，以度/秒 (dps) "
 "显示陀螺仪值。"
 
-#: ../../source/controllers/sticks3.rst:62
+#: ../../source/controllers/sticks3.rst:73
 msgid "|sticks3_imu_example.png|"
 msgstr ""
 
@@ -211,17 +233,17 @@ msgstr ""
 msgid "sticks3_imu_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:69
-#: ../../source/controllers/sticks3.rst:183
+#: ../../source/controllers/sticks3.rst:80
+#: ../../source/controllers/sticks3.rst:216
 msgid "Power Management"
 msgstr "电源管理"
 
-#: ../../source/controllers/sticks3.rst:71
+#: ../../source/controllers/sticks3.rst:82
 msgid "Open the |sticks3_power_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_power_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:73
-#: ../../source/controllers/sticks3.rst:185
+#: ../../source/controllers/sticks3.rst:84
+#: ../../source/controllers/sticks3.rst:218
 msgid ""
 "This example demonstrates power management features including battery "
 "voltage monitoring, VBUS voltage reading, charging status detection, and "
@@ -231,7 +253,7 @@ msgstr ""
 "此示例演示了电源管理功能，包括电池电压监控、VBUS 电压读取、充电状态检测以及电池充电和外部输出的控制。按 BtnA 切换外部输出（5V "
 "OUT），按 BtnB 切换电池充电。"
 
-#: ../../source/controllers/sticks3.rst:77
+#: ../../source/controllers/sticks3.rst:88
 msgid "|sticks3_power_example.png|"
 msgstr ""
 
@@ -239,29 +261,29 @@ msgstr ""
 msgid "sticks3_power_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:84
-#: ../../source/controllers/sticks3.rst:198
+#: ../../source/controllers/sticks3.rst:95
+#: ../../source/controllers/sticks3.rst:231
 msgid "IR Transmission"
 msgstr "红外发射"
 
-#: ../../source/controllers/sticks3.rst:86
+#: ../../source/controllers/sticks3.rst:97
 msgid "Open the |sticks3_ir_tx_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_ir_tx_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:88
-#: ../../source/controllers/sticks3.rst:200
+#: ../../source/controllers/sticks3.rst:99
+#: ../../source/controllers/sticks3.rst:233
 msgid ""
 "This example demonstrates infrared (IR) transmission functionality. When "
 "button A is pressed, it sends IR data with a specified address and data "
 "value. The example displays the address and data being transmitted."
 msgstr "此示例演示了红外（IR）发射功能。当按下按键 A 时，它会发送带有指定地址和数据值的 IR 数据。示例会显示正在传输的地址和数据。"
 
-#: ../../source/controllers/sticks3.rst:91
-#: ../../source/controllers/sticks3.rst:203
+#: ../../source/controllers/sticks3.rst:102
+#: ../../source/controllers/sticks3.rst:236
 msgid "When using IR transmission, the external output mode should be enabled."
 msgstr "使用红外发送时，需要启用外部输出模式。"
 
-#: ../../source/controllers/sticks3.rst:95
+#: ../../source/controllers/sticks3.rst:106
 msgid "|sticks3_ir_tx_example.png|"
 msgstr ""
 
@@ -269,30 +291,30 @@ msgstr ""
 msgid "sticks3_ir_tx_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:102
-#: ../../source/controllers/sticks3.rst:216
+#: ../../source/controllers/sticks3.rst:113
+#: ../../source/controllers/sticks3.rst:249
 msgid "IR Reception"
 msgstr "红外接收"
 
-#: ../../source/controllers/sticks3.rst:104
+#: ../../source/controllers/sticks3.rst:115
 msgid "Open the |sticks3_ir_rx_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_ir_rx_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:106
+#: ../../source/controllers/sticks3.rst:117
 msgid ""
 "This example demonstrates infrared (IR) reception functionality using NEC"
 " decode protocol. When IR data is received, it displays the address and "
 "data values on the screen."
 msgstr "此示例演示了使用 NEC 解码协议的红外（IR）接收功能。当接收到 IR 数据时，它会在屏幕上显示地址和数据值。"
 
-#: ../../source/controllers/sticks3.rst:109
-#: ../../source/controllers/sticks3.rst:221
+#: ../../source/controllers/sticks3.rst:120
+#: ../../source/controllers/sticks3.rst:254
 msgid ""
 "When using IR reception, the PA (Power Amplifier) should be turned off "
 "and the external output mode should be enabled."
 msgstr "使用红外接收时，需要关闭 PA（功率放大器）并启用外部输出模式。"
 
-#: ../../source/controllers/sticks3.rst:113
+#: ../../source/controllers/sticks3.rst:124
 msgid "|sticks3_ir_rx_example.png|"
 msgstr ""
 
@@ -300,17 +322,17 @@ msgstr ""
 msgid "sticks3_ir_rx_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:120
-#: ../../source/controllers/sticks3.rst:234
+#: ../../source/controllers/sticks3.rst:131
+#: ../../source/controllers/sticks3.rst:267
 msgid "Audio Recording and Playback"
 msgstr "音频录制与播放"
 
-#: ../../source/controllers/sticks3.rst:122
+#: ../../source/controllers/sticks3.rst:133
 msgid "Open the |sticks3_audio_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_audio_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:124
-#: ../../source/controllers/sticks3.rst:236
+#: ../../source/controllers/sticks3.rst:135
+#: ../../source/controllers/sticks3.rst:269
 msgid ""
 "This example demonstrates audio recording and playback functionality. "
 "Press button A to start recording for 5 seconds. After recording "
@@ -318,7 +340,7 @@ msgid ""
 "the recording status and countdown timer."
 msgstr "此示例演示了音频录制和播放功能。按下按键 A 开始录制 5 秒。录制完成后，音频将自动播放。示例会显示录制状态和倒计时器。"
 
-#: ../../source/controllers/sticks3.rst:128
+#: ../../source/controllers/sticks3.rst:139
 msgid "|sticks3_audio_example.png|"
 msgstr ""
 
@@ -326,23 +348,23 @@ msgstr ""
 msgid "sticks3_audio_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:135
-#: ../../source/controllers/sticks3.rst:250
+#: ../../source/controllers/sticks3.rst:146
+#: ../../source/controllers/sticks3.rst:283
 msgid "HAT ToF Sensor"
 msgstr "HAT ToF 传感器"
 
-#: ../../source/controllers/sticks3.rst:137
+#: ../../source/controllers/sticks3.rst:148
 msgid "Open the |sticks3_hat_tof_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |sticks3_hat_tof_example.m5f2| 项目。"
 
-#: ../../source/controllers/sticks3.rst:139
+#: ../../source/controllers/sticks3.rst:150
 msgid ""
 "This example demonstrates how to use the ToF (Time of Flight) HAT sensor "
 "to measure distance. The example reads distance values from the sensor "
 "and displays them on the screen."
 msgstr "此示例演示了如何使用 ToF（飞行时间）HAT 传感器测量距离。示例从传感器读取距离值并在屏幕上显示。"
 
-#: ../../source/controllers/sticks3.rst:143
+#: ../../source/controllers/sticks3.rst:154
 msgid "|sticks3_hat_tof_example.png|"
 msgstr ""
 
@@ -350,33 +372,70 @@ msgstr ""
 msgid "sticks3_hat_tof_example.png"
 msgstr ""
 
-#: ../../source/controllers/sticks3.rst:150
-msgid "MicroPython Example"
-msgstr "MicroPython 示例"
+#: ../../source/controllers/sticks3.rst:161
+#: ../../source/controllers/sticks3.rst:298
+msgid "RTC Clock"
+msgstr "RTC 时钟"
 
-#: ../../source/controllers/sticks3.rst:157
-#: ../../source/controllers/sticks3.rst:172
-#: ../../source/controllers/sticks3.rst:187
+#: ../../source/controllers/sticks3.rst:163
+msgid "Open the |sticks3_rtc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_rtc_example.m5f2| 项目。"
+
+#: ../../source/controllers/sticks3.rst:166
+#: ../../source/controllers/sticks3.rst:303
+msgid ""
+"This example supports StickS3 and StickS3 Lite v1.1 or later. Earlier "
+"StickS3 hardware versions do not include the RTC used by this example."
+msgstr "注意：此示例支持 StickS3 和 StickS3 Lite v1.1 或更高版本。更早版本的 StickS3 硬件不包含此示例使用的 RTC。"
+
+#: ../../source/controllers/sticks3.rst:169
+msgid ""
+"This example reads the built-in RTC and displays the current time. Press "
+"**BtnA** to select the hour, minute, or second field. Press **BtnB** to "
+"increment the selected field. Press **BtnA** again after the seconds "
+"field to write the new time to the RTC."
+msgstr "此示例读取内置 RTC 并显示当前时间。按下 **BtnA** 选择小时、分钟或秒字段，按下 **BtnB** 增加所选字段的值。设置完秒后再次按下 **BtnA**，将新时间写入 RTC。"
+
+#: ../../source/controllers/sticks3.rst:176
+msgid "|sticks3_rtc_example.png|"
+msgstr ""
+
+#: ../../source/refs/controllers.sticks3.ref:11
+msgid "sticks3_rtc_example.png"
+msgstr ""
+
+#: ../../source/controllers/sticks3.rst:183
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/controllers/sticks3.rst:190
 #: ../../source/controllers/sticks3.rst:205
-#: ../../source/controllers/sticks3.rst:223
-#: ../../source/controllers/sticks3.rst:239
-#: ../../source/controllers/sticks3.rst:254
+#: ../../source/controllers/sticks3.rst:220
+#: ../../source/controllers/sticks3.rst:238
+#: ../../source/controllers/sticks3.rst:256
+#: ../../source/controllers/sticks3.rst:272
+#: ../../source/controllers/sticks3.rst:287
+#: ../../source/controllers/sticks3.rst:306
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/controllers/sticks3.rst:218
+#: ../../source/controllers/sticks3.rst:251
 msgid ""
 "This example demonstrates infrared (IR) reception functionality using NEC"
 " decode protocol. When IR data is received, it displays the address and "
 "data values on the screen in real-time."
 msgstr "此示例演示了使用 NEC 解码协议的红外（IR）接收功能。当接收到 IR 数据时，它会在屏幕上实时显示地址和数据值。"
 
-#: ../../source/controllers/sticks3.rst:252
+#: ../../source/controllers/sticks3.rst:285
 msgid ""
 "This example demonstrates how to use the ToF (Time of Flight) HAT sensor "
 "to measure distance. The example reads distance values from the sensor "
 "and displays them on the screen in real-time."
 msgstr "此示例演示了如何使用 ToF（飞行时间）HAT 传感器测量距离。示例从传感器实时读取距离值并在屏幕上显示。"
+
+#: ../../source/controllers/sticks3.rst:300
+msgid "This example reads and updates the built-in RTC time."
+msgstr "此示例读取并更新内置 RTC 时间。"
 
 #~ msgid "Speaker"
 #~ msgstr "扬声器"
