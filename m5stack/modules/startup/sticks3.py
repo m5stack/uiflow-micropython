@@ -920,9 +920,9 @@ class Framework:
         app.install()
         self._apps.append(app)
 
-    def start(self):
+    def start(self, initial_app=None):
         # asyncio.create_task(self.gc_task())
-        asyncio.run(self.run())
+        asyncio.run(self.run(initial_app))
 
     async def unload(self, app: AppBase):
         # app = self._apps.pop()
@@ -935,10 +935,11 @@ class Framework:
         app.stop()
         app.start()
 
-    async def run(self):
-        if self._launcher:
-            self._app_selector.select(self._launcher)
-            self._launcher.start()
+    async def run(self, initial_app=None):
+        initial_app = initial_app or self._launcher
+        if initial_app:
+            self._app_selector.select(initial_app)
+            initial_app.start()
 
         # asyncio.create_task(self.gc_task())
         while True:
@@ -1007,4 +1008,4 @@ class StickS3_Startup:
         fw.install(usb_app)
         # fw.install(lorachat_app)
         fw.install(setup_app)
-        fw.start()
+        fw.start(cloud_app)
