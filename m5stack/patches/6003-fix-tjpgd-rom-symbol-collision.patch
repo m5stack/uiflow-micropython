@@ -1,0 +1,24 @@
+Index: lv_binding_micropython/lvgl/src/libs/tjpgd/tjpgd.h
+===================================================================
+--- lv_binding_micropython.orig/lvgl/src/libs/tjpgd/tjpgd.h
++++ lv_binding_micropython/lvgl/src/libs/tjpgd/tjpgd.h
+@@ -16,6 +16,19 @@
+ #include <string.h>
+ #include <stdint.h>
+ 
++/*
++ * Prefix the TJPGD API symbols with "lv_" so they cannot collide with the
++ * TJPGD symbols exported by the ROM linker scripts of ESP32-C5/C6/C61.
++ * Those scripts define e.g. "jd_prepare" as an absolute address, which
++ * silently overrides the definition below at link time and makes LVGL call
++ * the older ROM decoder with an incompatible JDEC layout.
++ */
++#define jd_prepare      lv_jd_prepare
++#define jd_decomp       lv_jd_decomp
++#define jd_mcu_load     lv_jd_mcu_load
++#define jd_mcu_output   lv_jd_mcu_output
++#define jd_restart      lv_jd_restart
++
+ #if JD_FASTDECODE >= 1
+ typedef int16_t jd_yuv_t;
+ #else
