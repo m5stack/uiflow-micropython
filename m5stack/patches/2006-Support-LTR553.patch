@@ -1,8 +1,6 @@
-Index: M5Unified/src/M5Unified.cpp
-===================================================================
---- M5Unified.orig/src/M5Unified.cpp
-+++ M5Unified/src/M5Unified.cpp
-@@ -1909,6 +1909,7 @@ static constexpr const uint8_t _pin_tabl
+--- M5Unified.orig/src/M5Unified.inl
++++ M5Unified/src/M5Unified.inl
+@@ -2116,6 +2116,7 @@ static constexpr const uint8_t _pin_tabl
        case board_t::board_M5StackCoreS3:
        case board_t::board_M5StackCoreS3SE:
        case board_t::board_M5StackChan:
@@ -10,7 +8,7 @@ Index: M5Unified/src/M5Unified.cpp
          if (cfg.internal_mic)
          {
            mic_cfg.magnification = 2;
-@@ -2501,6 +2502,9 @@ static constexpr const uint8_t _pin_tabl
+@@ -2874,6 +2875,9 @@ static constexpr const uint8_t _pin_tabl
      {
        port_a_used = M5.Imu.begin(&M5.Ex_I2C) || port_a_used;
      }
@@ -20,11 +18,9 @@ Index: M5Unified/src/M5Unified.cpp
      return port_a_used;
    }
  
-Index: M5Unified/src/M5Unified.hpp
-===================================================================
 --- M5Unified.orig/src/M5Unified.hpp
 +++ M5Unified/src/M5Unified.hpp
-@@ -63,6 +63,7 @@ namespace m5
+@@ -65,6 +65,7 @@ namespace m5
  #include "utility/Log_Class.hpp"
  #include "utility/LED_Class.hpp"
  #include "utility/IMU_Class.hpp"
@@ -32,7 +28,7 @@ Index: M5Unified/src/M5Unified.hpp
  #include "utility/IOExpander_Base.hpp"
  
  #include <memory>
-@@ -144,6 +145,9 @@ namespace m5
+@@ -151,6 +152,9 @@ namespace m5
        /// use the speaker.
        bool internal_spk  = true;
  
@@ -42,7 +38,7 @@ Index: M5Unified/src/M5Unified.hpp
        /// use Unit Accel & Gyro.
        bool external_imu  = false;
  
-@@ -220,6 +224,7 @@ namespace m5
+@@ -222,6 +226,7 @@ namespace m5
      Power_Class Power;
      RTC_Class Rtc;
      Touch_Class Touch;
@@ -50,8 +46,6 @@ Index: M5Unified/src/M5Unified.hpp
      Speaker_Class Speaker;
      Mic_Class Mic;
      LED_Class Led;
-Index: M5Unified/src/utility/LTR553_Class.cpp
-===================================================================
 --- /dev/null
 +++ M5Unified/src/utility/LTR553_Class.cpp
 @@ -0,0 +1,135 @@
@@ -191,8 +185,6 @@ Index: M5Unified/src/utility/LTR553_Class.cpp
 +
 +}
 \ No newline at end of file
-Index: M5Unified/src/utility/LTR553_Class.hpp
-===================================================================
 --- /dev/null
 +++ M5Unified/src/utility/LTR553_Class.hpp
 @@ -0,0 +1,122 @@

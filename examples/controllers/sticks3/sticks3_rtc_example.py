@@ -1,4 +1,8 @@
-# Note: This example supports StickS3 and StickS3 Lite v1.1 or later.
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+# Note: This example supports StickS3 Lite and StickS3 v1.1 or later.
 import os, sys, io
 import M5
 from M5 import *

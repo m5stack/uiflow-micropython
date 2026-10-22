@@ -118,9 +118,9 @@ msgstr "`音频 <../system/audio.html>`_ 录制与播放。"
 
 #: ../../source/controllers/sticks3.rst:43
 msgid ""
-"`RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 "
-"and StickS3 Lite v1.1 or later)."
-msgstr "`RTC <../unit/rtc.html>`_ 日期和时间功能（StickS3 和 StickS3 Lite v1.1 或更高版本支持）。"
+"`RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 Lite "
+"and StickS3 v1.1 or later)."
+msgstr "`RTC <../unit/rtc.html>`_ 日期和时间功能（支持 StickS3 Lite，以及 v1.1 或更高硬件版本的 StickS3）。"
 
 #: ../../source/controllers/sticks3.rst:44
 msgid "`ToF HAT <../hat/tof.html>`_ distance measurement."
@@ -384,9 +384,9 @@ msgstr "在 UiFlow2 中打开 |sticks3_rtc_example.m5f2| 项目。"
 #: ../../source/controllers/sticks3.rst:166
 #: ../../source/controllers/sticks3.rst:303
 msgid ""
-"This example supports StickS3 and StickS3 Lite v1.1 or later. Earlier "
+"This example supports StickS3 Lite and StickS3 v1.1 or later. Earlier "
 "StickS3 hardware versions do not include the RTC used by this example."
-msgstr "注意：此示例支持 StickS3 和 StickS3 Lite v1.1 或更高版本。更早版本的 StickS3 硬件不包含此示例使用的 RTC。"
+msgstr "注意：此示例支持 StickS3 Lite，以及 v1.1 或更高硬件版本的 StickS3。更早版本的 StickS3 硬件不包含此示例使用的 RTC。"
 
 #: ../../source/controllers/sticks3.rst:169
 msgid ""

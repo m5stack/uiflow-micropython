@@ -1,8 +1,7 @@
-Index: M5Unified/src/utility/IOExpander_Base.hpp
-===================================================================
 --- M5Unified.orig/src/utility/IOExpander_Base.hpp
 +++ M5Unified/src/utility/IOExpander_Base.hpp
-@@ -13,9 +13,5 @@ namespace m5
+@@ -12,11 +12,7 @@
+ 
  namespace m5
  {
 -#if CONFIG_IDF_TARGET_ESP32C6
@@ -12,7 +11,11 @@ Index: M5Unified/src/utility/IOExpander_Base.hpp
 -#endif
    {
    public:
-@@ -32,8 +28,3 @@ namespace m5
+     enum gpio_pull_t : std::uint8_t
+@@ -29,13 +25,8 @@ namespace m5
+     /// back, and read-modify-write accesses are not atomic against
+     /// concurrent access to the same register.
+ 
 -#if CONFIG_IDF_TARGET_ESP32C6
 -    IOExpander_Base(std::uint8_t i2c_addr, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
 -      : SoftI2C_Device(i2c_addr, freq, i2c)
@@ -21,8 +24,8 @@ Index: M5Unified/src/utility/IOExpander_Base.hpp
        : I2C_Device(i2c_addr, freq, i2c)
 -#endif
      {}
-Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
-===================================================================
+     IOExpander_Base(const IOExpander_Base&) = delete;
+ 
 --- M5Unified.orig/src/utility/PI4IOE5V6408_Class.hpp
 +++ M5Unified/src/utility/PI4IOE5V6408_Class.hpp
 @@ -26,15 +26,10 @@ namespace m5
@@ -42,8 +45,6 @@ Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
  
      bool begin();
  
-Index: M5Unified/src/utility/SoftI2C_Class.hpp
-===================================================================
 --- M5Unified.orig/src/utility/SoftI2C_Class.hpp
 +++ M5Unified/src/utility/SoftI2C_Class.hpp
 @@ -7,10 +7,11 @@
@@ -241,11 +242,9 @@ Index: M5Unified/src/utility/SoftI2C_Class.hpp
  }
  
  #endif
-Index: M5Unified/src/M5Unified.cpp
-===================================================================
---- M5Unified.orig/src/M5Unified.cpp
-+++ M5Unified/src/M5Unified.cpp
-@@ -1383,8 +1383,8 @@ static constexpr const uint8_t _pin_tabl
+--- M5Unified.orig/src/M5Unified.inl
++++ M5Unified/src/M5Unified.inl
+@@ -1625,8 +1625,8 @@ static constexpr const uint8_t _pin_tabl
  #elif defined (CONFIG_IDF_TARGET_ESP32C6)
      case board_t::board_M5UnitC6L:
        {
@@ -255,9 +254,7 @@ Index: M5Unified/src/M5Unified.cpp
 +        auto ioexp = new PI4IOE5V6408_Class(0x43, 400000, &In_SoftI2C);
          ioexp->begin();
          _io_expander[0].reset(ioexp);
-         // user button(P0) input pullup 
-Index: M5Unified/src/utility/SoftI2C_Class.cpp
-===================================================================
+         // user button(P0) input pullup
 --- M5Unified.orig/src/utility/SoftI2C_Class.cpp
 +++ M5Unified/src/utility/SoftI2C_Class.cpp
 @@ -30,7 +30,7 @@ namespace m5
@@ -301,8 +298,6 @@ Index: M5Unified/src/utility/SoftI2C_Class.cpp
 -
  } // namespace m5
 \ No newline at end of file
-Index: M5Unified/src/utility/I2C_Class.hpp
-===================================================================
 --- M5Unified.orig/src/utility/I2C_Class.hpp
 +++ M5Unified/src/utility/I2C_Class.hpp
 @@ -23,56 +23,56 @@ namespace m5

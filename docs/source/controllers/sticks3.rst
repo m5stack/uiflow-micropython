@@ -42,7 +42,7 @@ StickS3 supports the following built-in functions and connected peripherals:
 * Battery, VBUS, charging, and external output power management.
 * `Infrared <../hardware/ir.html>`_ transmit and receive.
 * `Audio <../system/audio.html>`_ recording and playback.
-* `RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 and StickS3 Lite v1.1 or later).
+* `RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 Lite and StickS3 v1.1 or later).
 * `ToF HAT <../hat/tof.html>`_ distance measurement.
 
 UiFlow2 Example 
@@ -165,7 +165,7 @@ RTC Clock
 Open the |sticks3_rtc_example.m5f2| project in UiFlow2.
 
 .. note::
-   This example supports StickS3 and StickS3 Lite v1.1 or later.
+   This example supports StickS3 Lite and StickS3 v1.1 or later.
    Earlier StickS3 hardware versions do not include the RTC used by this example.
 
 This example reads the built-in RTC and displays the current time. Press **BtnA**
@@ -302,7 +302,7 @@ RTC Clock
 This example reads and updates the built-in RTC time.
 
 .. note::
-   This example supports StickS3 and StickS3 Lite v1.1 or later.
+   This example supports StickS3 Lite and StickS3 v1.1 or later.
    Earlier StickS3 hardware versions do not include the RTC used by this example.
 
 MicroPython Code Block:

@@ -1,8 +1,6 @@
-Index: M5Unified/src/M5Unified.cpp
-===================================================================
---- M5Unified.orig/src/M5Unified.cpp
-+++ M5Unified/src/M5Unified.cpp
-@@ -1418,6 +1418,24 @@ static constexpr const uint8_t _pin_tabl
+--- M5Unified.orig/src/M5Unified.inl
++++ M5Unified/src/M5Unified.inl
+@@ -1660,6 +1660,24 @@ static constexpr const uint8_t _pin_tabl
          ioexp->begin();
          _io_expander[i].reset(ioexp);
        }
@@ -26,4 +24,13 @@ Index: M5Unified/src/M5Unified.cpp
 +        _io_expander[0]->digitalWrite(6, true);
        break;
  #elif defined (CONFIG_IDF_TARGET_ESP32S3)
-     case board_t::board_M5StampPLC:
+     case board_t::board_M5StamPLC:
+@@ -3026,7 +3044,7 @@ static constexpr const uint8_t _pin_tabl
+       btn_rawstate_bits |= (( raw_gpio32_39 >> (GPIO_NUM_37 & 31)) & 1    )  // gpio37 A
+                          | (((raw_gpio32_39 >> (GPIO_NUM_39 & 31)) & 1)<<1); // gpio39 B
+       break;
+-    
++
+     case board_t::board_M5UnitC6L:
+     {
+       use_rawstate_bits = 0b00001;

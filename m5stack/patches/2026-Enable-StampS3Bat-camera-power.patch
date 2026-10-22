@@ -1,8 +1,6 @@
-Index: M5Unified/src/utility/Power_Class.cpp
-===================================================================
---- M5Unified.orig/src/utility/Power_Class.cpp
-+++ M5Unified/src/utility/Power_Class.cpp
-@@ -868,6 +868,12 @@ namespace m5
+--- M5Unified.orig/src/utility/Power_Class.inl
++++ M5Unified/src/utility/Power_Class.inl
+@@ -1052,6 +1052,12 @@ namespace m5
      if (_pmic == pmic_t::pmic_m5pm1)
      {
        M5pm1.begin();
