@@ -442,6 +442,7 @@ class FacesKeyboard3Module(_FacesModule):
             raise RuntimeError("invalid Faces Keyboard3 operating mode")
         self._i2c.writeto_mem(self._i2c_addr, self._MODE_REG, bytes([mode]))
         self._mode = mode
+        time.sleep_ms(50)
 
     def set_led_effect(self, effect: int) -> None:
         """Set a keyboard LED effect in Direct mode.
