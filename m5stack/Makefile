@@ -382,6 +382,7 @@ M5UNIFIED_PATCH_SERIES = \
 	2007-Support-UnitC6L.patch \
 	2009-fix-SoftI2C.patch \
 	2010-Support-Nesso-N1.patch \
+	2017-Fix-INA226-Data-For-StamPLC.patch \
 	2023-Add-CoreMatrix-PWM-speaker-support.patch \
 	2024-Add-ToughC5-PWM-speaker-support.patch \
 	2026-Enable-StampS3Bat-camera-power.patch
