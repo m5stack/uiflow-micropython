@@ -58,7 +58,7 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (367 Markdown files, 22 directories; .md suffix omitted)
+docs/  (372 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -70,8 +70,8 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            stepmotor, tfcard
   - cap/: cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, servos8_v2, switch, tof, unit_bus
-  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, dinmeter, dualkey, nesso-n1, paper
-                  stackchan, stamplc, sticks3, stopwatch, tab5x, toughc5
+  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, cores3, dinmeter, dualkey, nesso-n1
+                  paper, paperdiy, stackchan, stamplc, sticks3, stopwatch, tab5, tab5x, toughc5
   - get-started/: _overview
   - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
                sht30, sht4x, speaker, touch, uart, wdt
@@ -96,15 +96,15 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
   - tab5/: keyboard
   - unit/: ac_measure, accel, acssr, adc, adc_v11, ain4, angle, angle8, asr, audioplayer, bldc_driver, bmm350, bps
            button, buzzer, bytebutton, byteswitch, can, cardkb, cardkb2, cat1cn, catch, co2, co2l, color, dac, dac2
-           dcssr, dds, digi_clock, dlight, dmx, dof10, dof6, dof9, dualbutton, earth, encoder, encoder8, env, envpro
-           extencoder, extio, extio2, fader, finger, fingerprint2, flash_light, gateway_h2, glass, glass2, gps_v11
-           grove2grove, hall_effect, hbridge, heart, id, imu, imupro, ina226, ir, joystick, joystick2, key, kmeter
-           kmeter_iso, laser_rx, laser_tx, lcd, light, limit, lora_e220, lora_e220_433, lorawan_rui3, midi, minioled
-           miniscale, mq, mqtt, mqttpoe, nbiot, nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pahub, pdm, pir
-           puzzle, qrcode, rca, reflective_ir, relay, relay2, relay4, rf433r, rf433t, rfid, rgb, roller485, rollercan
-           rtc, scales, scroll, servo180, servo360, servos8, servos8_v2, ssr, step16, synth, thermal, timerpwr, tmos
-           tof, tof4m, tof90, tube_pressure, tvoc, uhf_rfid, ultrasonic, ultrasonic_io, uwb, vibrator, watering
-           weight, weight_i2c, zigbee
+           dcssr, dds, digi_clock, dlight, dmx, dof10, dof6, dof9, dualbutton, earth, encoder, encoder4_motor_driver
+           encoder8, encoder_motor_driver, env, envpro, extencoder, extio, extio2, fader, finger, fingerprint2
+           flash_light, gateway_h2, glass, glass2, gps_v11, grove2grove, hall_effect, hbridge, heart, id, imu, imupro
+           ina226, ir, joystick, joystick2, key, kmeter, kmeter_iso, laser_rx, laser_tx, lcd, light, limit, lora_e220
+           lora_e220_433, lorawan_rui3, midi, minioled, miniscale, mq, mqtt, mqttpoe, nbiot, nbiot2, ncir, ncir2, neco
+           nfc, oled, op180, op90, pahub, pdm, pir, puzzle, qrcode, rca, reflective_ir, relay, relay2, relay4, rf433r
+           rf433t, rfid, rgb, roller485, rollercan, rtc, scales, scroll, servo180, servo360, servos8, servos8_v2, ssr
+           step16, synth, thermal, timerpwr, tmos, tof, tof4m, tof90, tube_pressure, tvoc, uhf_rfid, ultrasonic
+           ultrasonic_io, uwb, vibrator, watering, weight, weight_i2c, zigbee
   - widgets/: _overview, circle, image+, image, label+, label
 ```
 <!-- END_DOC_TREE -->
