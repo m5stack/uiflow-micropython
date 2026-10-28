@@ -102,7 +102,7 @@ msgstr "创建一个标签页视图对象。"
 #: b7d12d9399884593a76f9314038f8a77 f8ed68cfddee4c75a2beee24853e7e0f
 #: m5ui.tabview.M5TabView.add_tab m5ui.tabview.M5TabView.rename_tab of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: f4c52061ad054578be53ba47849d8a3f m5ui.tabview.M5TabView:3 of
 msgid "The x position of the tab view."
@@ -145,7 +145,7 @@ msgstr "标签页上要显示的文本。"
 #: 9a65179b710e41bf8ce35f3c5f19a1af ec3871f01a85414bbf6935ab556e8102
 #: m5ui.tabview.M5TabView.add_tab m5ui.tabview.M5TabView.rename_tab of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: 84e2e58b34734e7c8811ef85f857fc7f m5ui.tabview.M5TabView.add_tab:8 of
 msgid "|add_tab.png|"
@@ -183,4 +183,3 @@ msgstr "M5Label 可以在 TabView 中使用。具体用法请参考 :ref:`m5ui.M
 
 #~ msgid "|tabview_cores3_example.png|"
 #~ msgstr ""
-

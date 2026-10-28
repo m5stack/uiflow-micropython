@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../source/unit/ncir.rst:32 ca1e99ea07894d62b2b859f9700edc48
 msgid "Constructors"
-msgstr "\"\"\"Constructors\"\"\""
+msgstr "构造函数"
 
 #: ../../source/unit/ncir.rst:36 930fe6228b99459b92c9bc09a7ada52e
 msgid "Create an NCIRUnit object."

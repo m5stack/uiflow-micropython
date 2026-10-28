@@ -362,7 +362,7 @@ def setup():
     global cells, valid_cells, last_frame_ms
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page = m5ui.M5Page(bg_c=COLOR_SURFACE)
     # Replace LVGL's default white screen immediately. Widgets and the initial

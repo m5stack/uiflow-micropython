@@ -133,7 +133,7 @@ msgstr "创建一个可以从 URL 获取和显示文本的 LabelPlus 对象。"
 #: label_plus.LabelPlus.setColor label_plus.LabelPlus.set_update_enable
 #: label_plus.LabelPlus.set_update_period of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 510584e40aca48f487fbb7bd2d6112a9 label_plus.LabelPlus:3 of
 msgid "The initial text to display on the label."
@@ -321,7 +321,7 @@ msgstr "检查当前数据是否有效（即不是错误消息）。"
 #: 284ae0fe380a4c85a3a1ebc24f3d37c7 547fb8df83ca48c18378623a539d589b
 #: label_plus.LabelPlus.get_data label_plus.LabelPlus.is_valid_data of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: 6496ca739bb542e1ade39bf8dc038e18 label_plus.LabelPlus.is_valid_data:3 of
 msgid "True if the current data is valid, False otherwise."
@@ -330,7 +330,7 @@ msgstr "如果当前数据有效则返回 True，否则返回 False。"
 #: 43064ab5cc8e4d859b2ef1e1175fab99 d9307119b9dc4d4bbb4aaf2862ddd30b
 #: label_plus.LabelPlus.get_data label_plus.LabelPlus.is_valid_data of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: 38cd917c8f1744bfb2820506f384c690 label_plus.LabelPlus.is_valid_data:8 of
 msgid "|is_valid_data.png|"
@@ -378,4 +378,3 @@ msgstr ""
 
 #~ msgid "The font to set (e.g., Widgets.FONTS.DejaVu9)."
 #~ msgstr "要设置的字体（例如，Widgets.FONTS.DejaVu9）。"
-

@@ -72,7 +72,7 @@ msgstr "class ButtonUnit"
 
 #: ../../source/unit/button.rst:32 bd16ee8d2d124045972dc7b3e5b3ad9e
 msgid "Constructors"
-msgstr "\"\"\"构造函数\"\"\""
+msgstr "构造函数"
 
 #: ../../source/unit/button.rst:36 59b5afd18ef8412d82856ceb93cc8ec1
 msgid ""

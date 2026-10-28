@@ -113,7 +113,7 @@ msgstr "显示不同颜色几何图形的画布。"
 
 #: ../../source/m5ui/canvas.rst:50
 msgid "batch drawing"
-msgstr ""
+msgstr "批量绘制"
 
 #: ../../source/m5ui/canvas.rst:52
 msgid ""
@@ -122,6 +122,8 @@ msgid ""
 "intermediate redraws when a complex shape or animation frame needs "
 "several draw calls."
 msgstr ""
+"使用 ``begin_draw()`` 和 ``end_draw()`` "
+"可将画布上的多次绘制合并为一次图层提交。绘制复杂图形或动画帧需要多次调用时，这样可避免显示中间绘制状态。"
 
 #: ../../source/m5ui/canvas.rst:67
 msgid "**API**"
@@ -142,7 +144,7 @@ msgstr "创建用于绘图的画布控件。"
 #: m5ui.canvas.M5Canvas.get_px_color m5ui.canvas.M5Canvas.get_px_opa
 #: m5ui.canvas.M5Canvas.set_px of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/m5ui/canvas.rst:116 ../../source/m5ui/canvas.rst:134
 #: m5ui.canvas.M5Canvas:3 of
@@ -200,7 +202,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: ../../source/m5ui/canvas.rst m5ui.canvas.M5Canvas.get_px_color
 #: m5ui.canvas.M5Canvas.get_px_opa of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/canvas.rst:82 ../../source/m5ui/canvas.rst:99
 #: ../../source/m5ui/canvas.rst:118 ../../source/m5ui/canvas.rst:135
@@ -343,7 +345,7 @@ msgstr "获取画布的宽度。"
 #: ../../source/m5ui/canvas.rst m5ui.canvas.M5Canvas.get_px_color
 #: m5ui.canvas.M5Canvas.get_px_opa of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/m5ui/canvas.rst:245
 msgid "|get_width.png|"
@@ -367,18 +369,18 @@ msgstr ""
 
 #: m5ui.canvas.M5Canvas.begin_draw:1 of
 msgid "Start batch drawing and defer layer commit until ``end_draw()``."
-msgstr ""
+msgstr "开始批量绘制，并将图层提交推迟到调用 ``end_draw()`` 时。"
 
 #: m5ui.canvas.M5Canvas.begin_draw:3 of
 msgid ""
 "Draw methods keep their default behavior when batch drawing is not "
 "active. Call this before multiple draw operations to avoid refreshing the"
 " canvas after each individual operation."
-msgstr ""
+msgstr "未启用批量绘制时，各绘图方法保持默认行为。执行多次绘制前调用此方法，可避免每次操作后都刷新画布。"
 
 #: m5ui.canvas.M5Canvas.end_draw:1 of
 msgid "Finish batch drawing and commit all pending draw operations once."
-msgstr ""
+msgstr "结束批量绘制，并一次性提交所有待更新的绘制结果。"
 
 #: m5ui.canvas.M5Canvas.fill_bg:1 of
 msgid "Fill the canvas background with the specified color and opacity."
@@ -753,4 +755,3 @@ msgstr ""
 #: ../../source/refs/m5ui.canvas.ref:18
 msgid "draw_triangle.png"
 msgstr ""
-

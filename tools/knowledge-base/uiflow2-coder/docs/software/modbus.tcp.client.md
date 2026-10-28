@@ -88,7 +88,7 @@ def setup():
         res
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("co", 65, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("di", 135, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)

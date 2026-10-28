@@ -40,6 +40,10 @@ msgid ""
 "``22``, ``30``, and ``36``. The Alibaba CJK fonts are ``M5.Lcd.FONTS`` "
 "fonts for ``M5.Lcd`` / ``M5.Widgets`` drawing."
 msgstr ""
+"**可用字体**：``m5ui`` 组件使用 LVGL 字体，例如 ``lv.font_montserrat_12`` 以及字号为 "
+"``14``、``16``、``18``、``24``、``40``、``44``、``48`` 的同系列字体。部分固件（如 Tab5）还提供 "
+"``20``、``22``、``30``、``36`` 字号。Alibaba 中日韩字体属于 ``M5.Lcd.FONTS``，用于 "
+"``M5.Lcd`` / ``M5.Widgets`` 绘制。"
 
 #: ../../source/m5ui/dropdown.rst:17 81e583ac79ab42129a6180c451fd38e5
 msgid "UiFlow2 Example"
@@ -187,7 +191,7 @@ msgstr "创建一个下拉菜单对象。"
 #: m5ui.dropdown.M5Dropdown.set_size m5ui.dropdown.M5Dropdown.set_style_radius
 #: of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 3698b89ca790483899f22732bc632f35 m5ui.dropdown.M5Dropdown:3 of
 msgid "The x position of the dropdown."
@@ -261,7 +265,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: f5d0ebc20f314f2e9d7cbad928254601 fda3c521de7e4f9eb3e801190166f400
 #: m5ui.dropdown.M5Dropdown.get_selected_str of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/dropdown.rst:73 0b80e4ca36cd4164af4a757c1010bc82
 msgid "|set_flag.png|"
@@ -403,7 +407,7 @@ msgstr "获取下拉菜单的宽度。"
 #: m5ui.dropdown.M5Dropdown.set_size m5ui.dropdown.M5Dropdown.set_style_radius
 #: of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/m5ui/dropdown.rst:219 ffb2340fa4a343d38cb6cfb86ea1b8a1
 msgid "|get_width.png|"

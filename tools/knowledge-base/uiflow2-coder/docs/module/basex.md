@@ -96,7 +96,7 @@ def setup():
         agnle2
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Servo Control", 36, 1, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24
@@ -242,7 +242,7 @@ def setup():
         i
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Motor Control", 34, 0, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24
@@ -386,7 +386,7 @@ def setup():
         position_target
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Position Control", 16, 0, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24
@@ -538,7 +538,7 @@ def setup():
         speed_target
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Speed Control", 34, 0, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24
@@ -645,7 +645,7 @@ def setup():
         basex_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Encoder", 58, 0, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24

@@ -34,7 +34,7 @@ brightness = None
 def setup():
     global title0, label_brightness, label_val, bus2, chain_angle_0, last_time, value, brightness
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title("Chain Angle Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu24)
     label_brightness = Widgets.Label(

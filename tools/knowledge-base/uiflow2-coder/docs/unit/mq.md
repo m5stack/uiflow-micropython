@@ -36,7 +36,7 @@ def setup():
     global page0, label0, label1, label2, i2c0, mq_0, valid
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     label0 = m5ui.M5Label(

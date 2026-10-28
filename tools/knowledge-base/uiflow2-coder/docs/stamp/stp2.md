@@ -47,7 +47,7 @@ def setup():
         level
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "GPIO Input", 108, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -236,7 +236,7 @@ def setup():
         actual
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "GPIO Output", 99, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -542,7 +542,7 @@ def setup():
         level
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "GPIO Interrupt", 91, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -681,7 +681,7 @@ def setup():
         adc2
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "ADC Input", 111, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -908,7 +908,7 @@ def setup():
         last_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "PWM Output", 98, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -1211,7 +1211,7 @@ def setup():
         blue
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "Neopixel Output", 83, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -1400,7 +1400,7 @@ def setup():
         last_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "Power Control", 94, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18
@@ -1553,7 +1553,7 @@ def btnc_was_clicked_event(state):
 def setup():
     global stp2, label_hold, label_on, label_status, last_refresh
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     Widgets.Label("Power-on Timer", 80, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18)
     Widgets.Label(

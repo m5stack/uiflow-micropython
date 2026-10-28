@@ -104,13 +104,13 @@ msgstr "获取当前触摸点的 X 坐标。"
 msgid ""
 "The returned coordinate is automatically adjusted based on the current "
 "display rotation set by ``setRotation()``."
-msgstr ""
+msgstr "返回的坐标会根据 ``setRotation()`` 设置的当前屏幕旋转方向自动调整。"
 
 #: ../../source/hardware/touch.rst 24a34d9d2c094e7d87f0959b9adf26de
 #: 289cb652749f445ca96e3c77b9a4229d 2e182d2ddd1c419b9fcfd6dfadc3f021
 #: 3f63de123fd74d8ba3dced28891d26ea 73a71543236d4b5da5f21b9acf49c46d
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/hardware/touch.rst:61 a9263517e711496a9650a8893e1c19d7
 msgid "int - The X coordinate."
@@ -163,7 +163,7 @@ msgstr "获取指定触点的详细信息。"
 #: ../../source/hardware/touch.rst 1df06f2b503049b8b534b8e06abad284
 #: f8afbd9be93f4a4fa275669bd81ed669
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/hardware/touch.rst:112 ../../source/hardware/touch.rst:148
 #: 6c9a00cbb4ac49a8b7b211c30a78d1ab d24e9a45505d4eb689e8614d0ead1b0e
@@ -251,6 +251,8 @@ msgid ""
 "you have changed the display rotation, you must manually transform the "
 "coordinates to match the display orientation."
 msgstr ""
+"此方法返回 **原始硬件坐标**，**不会** 根据 ``setRotation()`` "
+"设置的当前屏幕方向调整。修改屏幕方向后，必须手动转换坐标，使其与显示方向一致。"
 
 #: ../../source/hardware/touch.rst:144 39c1229602684a4fb2f54a45fd99b089
 msgid ""
@@ -258,6 +260,8 @@ msgid ""
 "automatically adjust for rotation. Use ``getTouchPointRaw()`` only when "
 "you need multi-touch support."
 msgstr ""
+"单点触摸优先使用会自动适配旋转方向的 ``getX()`` / ``getY()``；需要多点触摸时再使用 "
+"``getTouchPointRaw()``。"
 
 #: ../../source/hardware/touch.rst:149 64c3fefcabbf4f0bbc1d20470a8b9c25
 msgid ""
@@ -307,7 +311,7 @@ msgstr ""
 
 #: ../../source/hardware/touch.rst:168 681bd9bd690544b79c88a3af9b28d204
 msgid "**Coordinate Transformation for Multi-Touch**"
-msgstr ""
+msgstr "**多点触摸的坐标转换**"
 
 #: ../../source/hardware/touch.rst:170 779b41320a9d4e49ba20816ffd9a57b8
 msgid ""
@@ -315,9 +319,11 @@ msgid ""
 "coordinates from ``getTouchPointRaw()`` must be manually transformed to "
 "match the current screen orientation:"
 msgstr ""
+"通过 ``setRotation()`` 修改屏幕方向后，必须手动转换 ``getTouchPointRaw()`` "
+"返回的原始坐标，使其与当前显示方向一致："
 
 #: ../../source/hardware/touch.rst:195 6e3fb62211344a1db189d81a82c2abb0
 msgid ""
 "For single-touch scenarios, prefer ``getX()`` / ``getY()`` which handle "
 "rotation automatically."
-msgstr ""
+msgstr "单点触摸优先使用会自动适配旋转方向的 ``getX()`` / ``getY()``。"

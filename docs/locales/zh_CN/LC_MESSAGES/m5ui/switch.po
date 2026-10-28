@@ -128,7 +128,7 @@ msgstr "创建一个开关对象。"
 #: f6c7fc1153214fc28f13bffda99783dc f97307312926464192cd5919c386f4db
 #: m5ui.switch.M5Switch.set_direction of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 812ddbde280d4eaf83bf57e272ec5701 m5ui.switch.M5Switch:3 of
 msgid "The x position of the switch."
@@ -234,7 +234,7 @@ msgstr "要获取的状态。"
 
 #: ../../source/m5ui/switch.rst dd8b827c947d47979777a0cb28b980d5
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/switch.rst:102 8e627744a1a44c7fbe586f2be0e11efb
 msgid "True if the state is set, False otherwise."
@@ -242,7 +242,7 @@ msgstr "若状态已设置则返回 True，否则返回 False。"
 
 #: ../../source/m5ui/switch.rst ac5a0cc02a2d4483a42e1dff9bf392c0
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/m5ui/switch.rst:107 0a1817f5c58d4fa4bd5ea40aadec43f7
 msgid "|has_state.png|"
@@ -449,4 +449,3 @@ msgstr ""
 
 #~ msgid "set_knob_color_default.png"
 #~ msgstr ""
-

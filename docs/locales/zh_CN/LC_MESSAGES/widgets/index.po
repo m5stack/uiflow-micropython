@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../en/widgets/index.rst:51 b857983e661c4217aab0932bc47982a6
 msgid "Screen functions"
-msgstr "\"\"\"Screen 函数\"\"\""
+msgstr "Screen 函数"
 
 #: ../../en/widgets/index.rst:55 af0ca7284ee142e183750c679052e2d7
 msgid "Set the backlight of the monitor。``brightness`` ranges from 0 to 255."
@@ -162,20 +162,20 @@ msgid "The ``rotation`` parameter only accepts the following values:"
 msgstr "``rotation`` 参数只接受以下值："
 
 #: ../../en/widgets/index.rst:75 2b250874e87e4b3c852aff7920bcbd07
-msgid "``0``: Portrait (0°C)"
-msgstr "``0``: 竖屏 (0°C)"
+msgid "``0``: 0°"
+msgstr "``0``：0°"
 
 #: ../../en/widgets/index.rst:76 d1707a4865ca4b8d92dfca0da1f552ee
-msgid "``1``: Landscape (90°C)"
-msgstr "``1``: 横屏 (90°C)"
+msgid "``1``: 90°"
+msgstr "``1``：90°"
 
 #: ../../en/widgets/index.rst:77 22545305c9424d4cb7d7b62ed62387c1
-msgid "``2``: Inverse Portrait (180°C)"
-msgstr "``2``: 反向竖屏 (180°C)"
+msgid "``2``: 180°"
+msgstr "``2``：180°"
 
 #: ../../en/widgets/index.rst:78 77ffffa9ad1241bda84d274eef07311e
-msgid "``3``: Inverse Landscape (270°C)"
-msgstr "``3``: 反向横屏 (270°C)"
+msgid "``3``: 270°"
+msgstr "``3``：270°"
 
 #: ../../en/widgets/index.rst:82 34d0f17d8bc34bc7a666eea18aac942f
 msgid "|setRotation.png|"
@@ -187,5 +187,28 @@ msgstr ""
 
 #: ../../en/widgets/index.rst:85 8c672047b28140f0943dc3e7335ce3bd
 msgid "Classes"
-msgstr ""
+msgstr "类"
 
+msgid "The physical orientation depends on the board and the M5GFX version. A rotation value does not always mean portrait or landscape. With the updated M5GFX, Core/Basic/Fire, Core2 and CoreS3 use 0 for their normal landscape orientation. When migrating an example, update both the Python file and its .m5f2 screen configuration or rotation block."
+msgstr "实际显示方向取决于主机型号和 M5GFX 版本，同一个旋转值并不总是表示横屏或竖屏。更新 M5GFX 后，Core/Basic/Fire、Core2 和 CoreS3 的正常横屏方向使用 0。迁移示例时，应同时更新 Python 文件和对应 .m5f2 的屏幕配置或旋转积木。"
+
+#: ../../source/widgets/index.rst:22
+msgid ""
+"**Recommendation**: For new interactive UI projects, prefer M5UI/LVGL. Use "
+"M5.Widgets for simple or legacy UI components."
+msgstr "**建议**：新的交互界面项目优先使用 M5UI/LVGL；简单界面或现有项目中的组件可使用 M5.Widgets。"
+
+#: ../../source/widgets/index.rst:28
+msgid "**Recommendation**: Prefer M5UI/LVGL for new interactive UI projects."
+msgstr "**建议**：新的交互界面项目优先使用 M5UI/LVGL。"
+
+#: ../../source/widgets/index.rst:35
+msgid "For multi-page UI → use M5UI/LVGL (recommended for new projects)."
+msgstr "多页面界面 → 使用 M5UI/LVGL（新项目推荐）。"
+
+#: ../../source/widgets/index.rst:84
+msgid ""
+"See :ref:`display-rotation` for board-specific dimensions and migration "
+"from older examples. Set the desired rotation before initializing "
+"M5UI/LVGL."
+msgstr "各主机的显示尺寸及旧示例迁移方法见 :ref:`display-rotation`。使用 M5UI/LVGL 时，应在初始化界面前设置旋转方向。"

@@ -39,10 +39,13 @@ msgid ""
 "calling ``page0.screen_load()`` will load a blank page without those "
 "widgets."
 msgstr ""
+"创建所有 m5ui 组件（``M5Label``、``M5Chart``、``M5Button`` 等）时，都应设置 "
+"``parent=page0``（或其他 ``M5Page`` 实例）。省略 ``parent`` 时，组件会挂载到默认屏幕；之后调用 "
+"``page0.screen_load()`` 将显示不包含这些组件的空白页面。"
 
 #: ../../source/m5ui/page.rst:18 2d9854bccee745e099d74606253eecd7
 msgid "Correct order:"
-msgstr ""
+msgstr "正确顺序："
 
 #: ../../source/m5ui/page.rst:20 55d31a5316564487907b7451a56f541f
 msgid "``m5ui.init()``"
@@ -50,11 +53,11 @@ msgstr ""
 
 #: ../../source/m5ui/page.rst:21 b984e4988ae34f7ea40639a489cbd4ff
 msgid "Create ``page0 = M5Page(bg_c=0xFFFFFF)``"
-msgstr ""
+msgstr "创建 ``page0 = M5Page(bg_c=0xFFFFFF)``"
 
 #: ../../source/m5ui/page.rst:22 395e8df9d5e145b3b104807e941f197a
 msgid "Create widgets with ``parent=page0``"
-msgstr ""
+msgstr "创建组件时设置 ``parent=page0``"
 
 #: ../../source/m5ui/page.rst:23 3c458b373992426f936ad03023b50244
 msgid "``page0.screen_load()``"
@@ -155,7 +158,7 @@ msgstr "创建一个页面对象。"
 #: 5ffd3b6704554cd4ae94be9237344579 6969e3b12bd04b2e92df01b7fb10224d
 #: 6d48955dcddc4c44b4620b5298065982 de43a5bbb7c44f4fa73825752a8aa2ff
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 645f8bb4c11f444a807b0cee2393d7f2 m5ui.page.M5Page:3 of
 msgid ""
@@ -182,7 +185,7 @@ msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
 #: 87ccdeb57d52420c9679c17b5ff73405 b127191fe3fd459ca531eb9cbd1f8730
 #: f21cebe276ee4fff981586697c262f51
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/page.rst:82 fbce444190564fbca7b03a75428af9c9
 msgid "|set_flag.png|"

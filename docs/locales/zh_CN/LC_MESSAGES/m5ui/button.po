@@ -40,6 +40,10 @@ msgid ""
 "before using them in cross-board examples. The Alibaba CJK fonts are "
 "``M5.Lcd.FONTS`` fonts for ``M5.Lcd`` / ``M5.Widgets`` drawing."
 msgstr ""
+"**可用字体**：``m5ui`` 组件使用 LVGL 字体，例如 ``lv.font_montserrat_12`` 以及字号为 "
+"``14``、``16``、``18``、``24``、``40``、``44``、``48`` 的同系列字体。部分固件（如 Tab5）还提供 "
+"``20``、``22``、``30``、``36`` 字号。跨主机示例在使用可选字号前，应先通过 ``hasattr()`` 检查。Alibaba "
+"中日韩字体属于 ``M5.Lcd.FONTS``，用于 ``M5.Lcd`` / ``M5.Widgets`` 绘制。"
 
 #: ../../source/m5ui/button.rst:16 cbff9ce898c64b9084b1b49ebe69c849
 msgid "UiFlow2 Example"
@@ -167,7 +171,7 @@ msgstr "创建一个按钮对象。"
 #: f4b625d63dd143e0a54cfc20f23ade08 f6b63e8703ce4269b056df5ad421a8f2
 #: fcd86c71aadf43c1919bec92b363c33b m5ui.button.M5Button.set_btn_text of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 9343a81298574b1a81ce39ba8037334b m5ui.button.M5Button:3 of
 msgid "The text to display on the button."
@@ -175,7 +179,7 @@ msgstr "按钮上显示的文本。"
 
 #: ce7952e19be944e5ac3a5d8f8df56109 m5ui.button.M5Button:4 of
 msgid "The x position of the button."
-msgstr "The x position of the button."
+msgstr "按钮的 X 坐标。"
 
 #: 860f73c6575d4a3ba964fc827d7de815 m5ui.button.M5Button:5 of
 msgid "The y position of the button."
@@ -235,7 +239,7 @@ msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
 #: 95eb0ae971f54a359b7284db565a1efb c610fdeee6fb452792858c144c2023d7
 #: c7dbffe75f1447e9bd1a6bb1c85e2be6 d86281996aa34a05858b9134f46f3a77
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/button.rst:72 7f8ddde570194894a0058f216d4c14da
 msgid "|set_flag.png|"
@@ -551,7 +555,7 @@ msgstr "要在按钮上设置的文本。"
 #: ../../source/m5ui/button.rst 951c5c78131248dd80ab8963a0c476c4
 #: b3beb97562264d6093ec815126c8f07d m5ui.button.M5Button.set_btn_text of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: f59e0998fe32432bb4c8a198743dfcc1 m5ui.button.M5Button.set_btn_text:7 of
 msgid "|set_btn_text.png|"

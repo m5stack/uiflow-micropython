@@ -213,7 +213,7 @@ msgstr "单元格中要显示的文本。"
 #: d73e8d3e9a104fa9b694c24829cb555d db616cf86d1c47289bc4c6ca1429776d
 #: e59a798de2ea46d5a5f10dd33b1be767 f6b9ac7d06dd4865a7875f12080fb829
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/table.rst:70 2f2aecad0c874569bddd5382a9b68a5e
 msgid "|set_cell_value.png|"
@@ -244,7 +244,7 @@ msgstr "单元格中的文本。"
 #: 9488b85984f143a894becf1be38005e1 aebb2c59dcc6425382aa3ae10478686d
 #: c08b6bb6532f407c892e65185d8f8a1b ef163b95fbd3427fa4e42de1bbe0777a
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/table.rst:89 7e224098540d4d82a016d0027005d51e
 msgid "|get_cell_value.png|"
@@ -627,4 +627,3 @@ msgstr "lv.ALIGN.OUT_RIGHT_BOTTOM"
 #~ msgstr ""
 #~ "此示例演示了如何创建一个包含学生信息的表格，包括姓名、年龄和分数。该表格显示三名学生的数据：Alice (18, "
 #~ "95)、Bob (18, 80) 和 Carol (17, 86)。"
-

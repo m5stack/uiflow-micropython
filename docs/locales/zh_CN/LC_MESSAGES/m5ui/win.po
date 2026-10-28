@@ -279,7 +279,7 @@ msgstr "要为 window 按钮/标签/标题设置的文本。"
 #: m5ui.win.M5Win.add_button m5ui.win.M5Win.add_text m5ui.win.M5Win.add_title
 #: of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/win.rst:88 2efb053197484082a533f90f72db972c
 msgid "|button_set_text.png|"
@@ -852,4 +852,3 @@ msgstr "按钮文本的不透明度（0-255）。"
 #: 5d487fa1c17a4eaaa8d34bb7a9b16045 m5ui.win.M5Win.add_button:10 of
 msgid "The font to use for the button text."
 msgstr "按钮文本所使用的字体。"
-

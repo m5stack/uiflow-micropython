@@ -30,7 +30,7 @@ val = None
 def setup():
     global title0, label1, label_val, i2c0, step16_0, val
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title("UnitStep16 Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu24)
     label1 = Widgets.Label(

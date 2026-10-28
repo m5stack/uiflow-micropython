@@ -112,7 +112,7 @@ def setup():
         last_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -240,7 +240,7 @@ def setup():
     global page0, label_title, label_agnle_x, label_angle_y, stackchan, last_time, x_angle, y_angle
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -344,7 +344,7 @@ def setup():
     global page0, label_title, label_status, stackchan
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -509,7 +509,7 @@ def setup():
         y_target
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
 
     stackchan = StackChan(i2c=1, uart=1)
@@ -644,7 +644,7 @@ def setup():
         power
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -766,7 +766,7 @@ def setup():
     global page0, label_title, stackchan, tp, last_time, active
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -866,7 +866,7 @@ def setup():
         last_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(
@@ -1044,7 +1044,7 @@ def setup():
         tx_addr
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "IR TX & RX Example", 41, 5, 1.0, 0x0DC9F4, 0x000000, Widgets.FONTS.Montserrat24

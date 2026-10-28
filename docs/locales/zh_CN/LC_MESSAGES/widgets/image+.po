@@ -97,7 +97,7 @@ msgstr "``parent`` 是绘制图像的图形对象。如果未提供，则将使�
 
 #: ../../en/widgets/image+.rst:40 900e7a85ab8340a4bcf54b43c77f65a7
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../en/widgets/image+.rst:44 d91cb1663e5b4efbb548240846b72456
 msgid ""
@@ -194,4 +194,3 @@ msgstr ""
 #: ../../en/refs/widgets.image+.ref:10 55efd807a1a24c4c91d4c83218a020d4
 msgid "is_valid_image.png"
 msgstr ""
-

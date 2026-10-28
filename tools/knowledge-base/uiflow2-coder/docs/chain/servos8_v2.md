@@ -62,7 +62,7 @@ def setup():
     global bus2, servos8v2_0, last_move
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title = Widgets.Title("Chain 8Servos2 Servo", 3, 0xFFFFFF, 0x0055AA, Widgets.FONTS.DejaVu18)
     label_angle = Widgets.Label(

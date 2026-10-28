@@ -538,7 +538,7 @@ msgstr "获取当前 I2C 设备地址。"
 
 #: 137d1bf4bb374d648f4fdd59fd835751 of unit.step16.Step16Unit.get_addr:3
 msgid "I2C address."
-msgstr "\"\"\"I2C 地址。\"\"\""
+msgstr "I2C 地址。"
 
 #: 31912e208f5f4a7386be92546025ad8f of unit.step16.Step16Unit.get_addr:8
 msgid "|get_addr.png|"

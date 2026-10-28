@@ -166,7 +166,7 @@ msgstr "创建一个复选框对象。"
 #: d4c58a2bab6c4eada6b3a3eba065036c e63bd8dad0984094a8ba128d89bb6999
 #: ee7f2afd038c461a8d55cbe18d63bd29 f6ab192d5ab6416ab9574bd2d4243ce7
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 2ccc234c29af43c9a617778f0d888702 m5ui.checkbox.M5Checkbox:3 of
 msgid "The title text of the checkbox."
@@ -232,7 +232,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: e2f4d728451e408db26f29e9ff5a9f44 e75790b8ca554e2c864ec91f11765af3
 #: e81d8dd0144448f99ba85527c775c7ea ef07b25d3ce646f9afac88686d7bf42d
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/checkbox.rst:67 d3fd078549154241ac798edf7df77b99
 msgid "|set_flag.png|"
@@ -466,7 +466,7 @@ msgstr "获取复选框的宽度。"
 #: ../../en/m5ui/checkbox.rst 28b316445c1b4673a748006d1f2ac1ef
 #: 7313be711b8c4befa9af362898a3e629 9aaf15a286484231aeb225b50bdd7c2a
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/checkbox.rst:304 7c2ad3106e194a229fda44c017be37cc
 msgid "|get_width.png|"
@@ -601,4 +601,3 @@ msgstr ""
 #: ../../en/refs/m5ui.checkbox.ref:3 3b926738ff58454585b114131d93fd5b
 msgid "event.png"
 msgstr ""
-

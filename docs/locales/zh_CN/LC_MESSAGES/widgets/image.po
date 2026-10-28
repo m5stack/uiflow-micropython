@@ -78,7 +78,7 @@ msgstr "``parent`` 是绘制图像的图形对象。如果未提供，则使用�
 
 #: ../../en/widgets/image.rst:37 57951f79b2894cbaaf7244c0d26dc7fe
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../en/widgets/image.rst:41 a173f52fb7e442d595e1b3f52cd8818d
 msgid "Set the position of the Imgae object. Accept the following parameters:"
@@ -145,4 +145,3 @@ msgstr ""
 #: ../../en/refs/widgets.image.ref:8 dbf44d1f7a5342f29b2df358695fd910
 msgid "setVisible.png"
 msgstr ""
-

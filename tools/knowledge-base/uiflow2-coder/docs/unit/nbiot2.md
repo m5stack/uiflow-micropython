@@ -56,7 +56,7 @@ def setup():
     global page0, label0, label1, button0, textarea0, textarea1, nbiot2_0_http_req, nbiot2_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     textarea0 = m5ui.M5TextArea(
@@ -172,7 +172,7 @@ def setup():
     global page0, label0, nbiot2_0_mqtt, nbiot2_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     label0 = m5ui.M5Label(

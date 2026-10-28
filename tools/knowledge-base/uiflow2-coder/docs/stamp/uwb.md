@@ -506,10 +506,10 @@ stamp_uwb_0.configure_tx_rf(0x34, 0xFEFEFEFE, 0)
 ```
 ### `StampUWB.set_antenna_delay(tx=16385, rx=16385)`
 
-    Set the TX and RX antenna delays.
+    Set the TX and RX timestamp antenna-delay compensation values. These values compensate the fixed delay between the UWB timestamp reference point and the actual antenna TX/RX point for ranging calibration. They do not delay packet transmission or change RF power. Keep the default values unless the device has been calibrated for precision ranging.
 
-    - Parameter `tx` (`int`): TX antenna delay in device time units, range `0` to `65535`. Default is `16385`.
-    - Parameter `rx` (`int`): RX antenna delay in device time units, range `0` to `65535`. Default is `16385`.
+    - Parameter `tx` (`int`): TX compensation in device time units, range `0` to `65535`. Default is `16385`.
+    - Parameter `rx` (`int`): RX compensation in device time units, range `0` to `65535`. Default is `16385`.
 
 ```python
 stamp_uwb_0.set_antenna_delay(tx=16385, rx=16385)
@@ -672,7 +672,7 @@ stamp_uwb_0.rx_timestamp()
 
     Read the current UWB system timestamp.
 
-    - Returns: Full 40-bit system timestamp in device time units.
+    - Returns: 32-bit system timestamp as a raw device-clock count. One count is approximately `15.65 ps`; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by `1 / (499200000 * 128)` to convert it to seconds. The counter wraps approximately every `67.2 ms`.
     - Return type: int
 
 ```python

@@ -97,7 +97,7 @@ msgstr "parent 是 Label 对象的输出目标，默认输出到 LCD，也可以
 
 #: ../../source/widgets/label.rst:45 28107abe80724f90be7dcb0cbf32cfbe
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../source/widgets/label.rst:49 0f6c5fad15424c8da4dc4f95733a3263
 msgid ""
@@ -146,7 +146,7 @@ msgstr "设置 Label 对象的字体。"
 
 #: ../../source/widgets/label.rst 4e0e2d8dd32a4cefb85f9f12a7bdcba9
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/widgets/label.rst:74 15faebf71ac840afbc8a90a453ca30e8
 msgid ""
@@ -214,4 +214,3 @@ msgstr ""
 #~ " used to display text, the built-"
 #~ "in font, see ``Widgets.FONTS``."
 #~ msgstr "设置 Label 对象的字体集。font 是用于显示文本的字体集，内置字体请参见 ``Widgets.FONTS``。"
-

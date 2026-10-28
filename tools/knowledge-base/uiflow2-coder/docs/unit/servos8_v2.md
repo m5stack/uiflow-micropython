@@ -140,7 +140,7 @@ def setup():
         i
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "Servo Control", 76, 2, 1.0, 0x1393E8, 0x000000, Widgets.FONTS.Montserrat24

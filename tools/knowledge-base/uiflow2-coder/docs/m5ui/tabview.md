@@ -28,7 +28,7 @@ def setup():
     global page0, tabview0, Tab1, Tab2, label1, label2, label3
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     tabview0 = m5ui.M5TabView(

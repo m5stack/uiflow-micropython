@@ -10,9 +10,12 @@ Controllers
     atoms3r_cam.rst
     atoms3u.rst
     stamps3.rst
+    stampp4x.rst
     cardputer.rst
+    cardputer-adv.rst
     coreink.rst
     corematrix.rst
+    corep4x.rst
     cores3.rst
     dinmeter.rst
     dualkey.rst

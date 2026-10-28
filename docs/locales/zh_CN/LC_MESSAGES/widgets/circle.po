@@ -83,7 +83,7 @@ msgstr "``bg_color`` 是显示的圆的背景颜色。"
 
 #: ../../en/widgets/circle.rst:38 84ab346358eb4fa0b96e0e0dd6bccf85
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../en/widgets/circle.rst:42 a56b891dcd604855818eceeeef08a446
 msgid "Set the color of the Circle object. Accept the following parameters:"
@@ -143,4 +143,3 @@ msgstr ""
 #: ../../en/refs/widgets.circle.ref:7 60b402dee737493f991cfb233e57e74a
 msgid "setVisible.png"
 msgstr ""
-

@@ -54,6 +54,63 @@ Common Mistakes to Avoid
 - ``M5.Widgets`` = UI component classes (Label, Image, Rectangle, Circle, etc.)
 
 
+.. _display-rotation:
+
+Screen Rotation
+---------------
+
+The rotation value is relative to the board's normal viewing direction.
+The values ``0``, ``1``, ``2`` and ``3`` select 0°, 90°, 180° and 270°,
+respectively. A value does not universally mean portrait or landscape;
+the physical direction depends on the board and the M5GFX version.
+
+Normal Orientation
+^^^^^^^^^^^^^^^^^^
+
+- Core/Basic/Fire, Core2, CoreS3, StackChan: rotation ``0``, logical size ``320 × 240``.
+- Cardputer, Cardputer Adv, DinMeter, Station: rotation ``0``, logical size ``240 × 135``.
+- CoreP4X: rotation ``0``, logical size ``480 × 480``.
+
+These values apply to the firmware documented on this site. Older firmware
+may use a different rotation mapping. For the 320 × 240 controllers listed
+above, rotations ``1`` and ``3`` use a logical size of 240 × 320, while
+``0`` and ``2`` use 320 × 240.
+
+On a square display such as CoreP4X, all four rotations have the same
+dimensions. Use readable text or corner markers to identify the direction.
+
+Migrating Existing Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For Core/Basic/Fire, Core2, CoreS3 and StackChan, older examples that used
+``Widgets.setRotation(1)`` for normal landscape should now use
+``Widgets.setRotation(0)``. The same applies to ``M5.Lcd.setRotation()``.
+
+For graphical projects, update both the ``.m5f2`` screen rotation setting and any rotation block. Check the generated Python, then save and reopen the project to confirm the setting is preserved.
+
+For M5UI/LVGL, set the desired rotation before calling ``m5ui.init()`` so
+the UI is initialized with the intended screen dimensions.
+
+For other controllers or deliberately rotated layouts, select the rotation
+that matches the intended result rather than replacing every ``1`` with
+``0``.
+
+After changing rotation, read ``M5.Lcd.width()`` and ``M5.Lcd.height()``
+to check the logical dimensions. The origin is the top-left corner;
+X increases to the right and Y increases downward. On touch devices,
+also check that touches at all four corners match the displayed positions.
+
+.. code-block:: python
+
+    import M5
+    from M5 import Widgets
+
+    M5.begin()
+    Widgets.setRotation(0)
+    width = M5.Lcd.width()
+    height = M5.Lcd.height()
+
+
 UiFlow2 Example
 ---------------
 
@@ -286,6 +343,10 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
             - 1: 90° rotation
             - 2: 180° rotation
             - 3: 270° rotation
+
+        .. note::
+
+            See :ref:`display-rotation` for board-specific dimensions and migration from older examples. Set the desired rotation before initializing M5UI/LVGL.
 
         UiFlow2 Code Block:
 

@@ -23,7 +23,7 @@ msgstr ""
 #: ../../source/m5ui/image.rst:4 ../../source/m5ui/image.rst:52
 #: 3d9636c8524141a5a02a64d21b29ceaf 82bebcd9b27c47a48496dd41e8d8f118
 msgid "M5Image"
-msgstr "\"\"\"M5Image\"\"\""
+msgstr "M5Image"
 
 #: ../../source/m5ui/image.rst:8 9efc218ed7af4e10a305a10e466344b0
 msgid ""
@@ -116,7 +116,7 @@ msgstr "创建一个图像对象。"
 #: m5ui.image.M5Image.set_image m5ui.image.M5Image.set_rotation
 #: m5ui.image.M5Image.set_scale of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 7c868089b8e944e5a45a8c8915e5c190 a56f869e29f94185b85a686f30b1d685
 #: m5ui.image.M5Image:3 m5ui.image.M5Image.set_image:3 of
@@ -295,4 +295,3 @@ msgstr ""
 #~ "`scale_y` is not provided, this value"
 #~ " will be used for both axes."
 #~ msgstr "水平缩放因子。如果未提供 scale_y，则此值将用于两个轴。"
-

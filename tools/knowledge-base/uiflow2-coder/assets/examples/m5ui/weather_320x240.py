@@ -441,7 +441,7 @@ def setup():
     global page, canvas, status_label, refresh_button, wlan
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page = m5ui.M5Page(bg_c=COLOR_SURFACE)
     canvas = m5ui.M5Canvas(

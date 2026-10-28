@@ -165,7 +165,7 @@ msgstr "初始化一个新的 M5Bar 控件。"
 #: ee70107f933e408cb863adb2f855acc1 f1504ee437a842b79fcdf9cb0d7cd976
 #: f2011de4cdf747a0a133bcf66c055802
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../en/m5ui/bar.rst:270 ../../en/m5ui/bar.rst:288
 #: 164dd15eed5f4385bb9c693e237e37fb 7cd8f9f8029748c6933663addd422a4f
@@ -233,7 +233,7 @@ msgstr "父对象。如果为 None，则使用当前活动屏幕。"
 #: dcab1cd5edcd4b699f7770d1db292762 e4731f3bb6244eff861ed3db9274de3b
 #: e76927a053524a099a08e6c472c6102c ec63bb6f0a0b4dfbb527b3d34bd71425
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/bar.rst:63 a26c0f00a5384c1fa7ba1316c05888b8
 msgid "Set the current value of the bar."
@@ -267,7 +267,7 @@ msgstr "进度条的当前值。"
 #: 4a81aa357fbc4253aa456c415ff666b1 af319c1c979c4badb2ac71532f5a20e3
 #: f695c4b514e14589af6068e6dbe65106 fd79c73f09de4847bdbdc2746fe5388b
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/bar.rst:88 9cbe4e71f9784cb59144b09777bc4488
 msgid "|get_value.png|"
@@ -599,4 +599,3 @@ msgstr ""
 #: ../../en/refs/m5ui.bar.ref:4 b79ded96728041f5bbc5d461f25a7a09
 msgid "align_to.png"
 msgstr ""
-

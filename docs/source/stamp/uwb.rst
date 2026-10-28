@@ -272,10 +272,14 @@ Methods
 
 .. method:: StampUWB.set_antenna_delay(tx=16385, rx=16385)
 
-    Set the TX and RX antenna delays.
+    Set the TX and RX timestamp antenna-delay compensation values. These values
+    compensate the fixed delay between the UWB timestamp reference point and the
+    actual antenna TX/RX point for ranging calibration. They do not delay packet
+    transmission or change RF power. Keep the default values unless the device
+    has been calibrated for precision ranging.
 
-    :param int tx: TX antenna delay in device time units, range ``0`` to ``65535``. Default is ``16385``.
-    :param int rx: RX antenna delay in device time units, range ``0`` to ``65535``. Default is ``16385``.
+    :param int tx: TX compensation in device time units, range ``0`` to ``65535``. Default is ``16385``.
+    :param int rx: RX compensation in device time units, range ``0`` to ``65535``. Default is ``16385``.
 
     UiFlow2 Code Block:
 
@@ -563,7 +567,7 @@ Methods
 
     Read the current UWB system timestamp.
 
-    :returns: Full 40-bit system timestamp in device time units.
+    :returns: 32-bit system timestamp as a raw device-clock count. One count is approximately ``15.65 ps``; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by ``1 / (499200000 * 128)`` to convert it to seconds. The counter wraps approximately every ``67.2 ms``.
     :rtype: int
 
     UiFlow2 Code Block:

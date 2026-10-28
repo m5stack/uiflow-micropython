@@ -87,9 +87,8 @@ msgid "M5 Series Display Libraries"
 msgstr "M5 系列显示库说明"
 
 #: ../../source/m5ui/index.rst:30
-#, fuzzy
 msgid "1. Display (M5.Lcd)"
-msgstr "显示"
+msgstr "1. Display 底层绘图库（M5.Lcd）"
 
 #: ../../source/m5ui/index.rst:31
 msgid ""
@@ -108,11 +107,12 @@ msgid ""
 "**Access via**: ``M5.Lcd.fillRect()``, ``M5.Lcd.drawRect()``, "
 "``M5.Lcd.drawString()``, etc."
 msgstr ""
+"**调用方式**：``M5.Lcd.fillRect()``、``M5.Lcd.drawRect()``、``M5.Lcd.drawString()``"
+" 等。"
 
 #: ../../source/m5ui/index.rst:36
-#, fuzzy
 msgid "2. Widgets (M5.Widgets)"
-msgstr "2. 控件"
+msgstr "2. Widgets 组件库（M5.Widgets）"
 
 #: ../../source/m5ui/index.rst:37
 msgid ""
@@ -133,12 +133,14 @@ msgid ""
 "**Access via**: ``M5.Widgets.Label()``, ``M5.Widgets.Image()``, "
 "``M5.Widgets.Rectangle()``, etc."
 msgstr ""
+"**调用方式**：``M5.Widgets.Label()``、``M5.Widgets.Image()``、``M5.Widgets.Rectangle()``"
+" 等。"
 
 #: ../../source/m5ui/index.rst:41
 msgid ""
 "**Important**: ``M5.Widgets`` provides UI component **classes**, not "
 "drawing methods."
-msgstr ""
+msgstr "**注意**：``M5.Widgets`` 提供 UI 组件 **类**，不提供绘图方法。"
 
 #: ../../source/m5ui/index.rst:42
 msgid ""
@@ -168,7 +170,7 @@ msgstr "**建议**：新建交互式 UI 项目优先使用 M5UI/LVGL。"
 msgid ""
 "**Access via**: ``m5ui.M5Label()``, ``m5ui.M5Button()``, "
 "``m5ui.M5Page()``, etc."
-msgstr ""
+msgstr "**调用方式**：``m5ui.M5Label()``、``m5ui.M5Button()``、``m5ui.M5Page()`` 等。"
 
 #: ../../source/m5ui/index.rst:52
 msgid "Usage Tips"
@@ -181,9 +183,8 @@ msgid ""
 msgstr "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
 
 #: ../../source/m5ui/index.rst:54
-#, fuzzy
 msgid "For graphics-only drawing → use M5GFX (M5.Lcd)."
-msgstr "单独绘图 → 使用 M5GFX。"
+msgstr "仅需图形绘制 → 使用 M5GFX（M5.Lcd）。"
 
 #: ../../source/m5ui/index.rst:55
 msgid "For simple interactive widgets → use M5Widgets."
@@ -195,31 +196,31 @@ msgstr "多页面 UI → 使用 M5UI/LVGL（新项目推荐）。"
 
 #: ../../source/m5ui/index.rst:59
 msgid "Common Mistakes to Avoid"
-msgstr ""
+msgstr "常见错误及正确用法"
 
 #: ../../source/m5ui/index.rst:60
 msgid ""
 "❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These "
 "methods do not exist in Widgets module"
-msgstr ""
+msgstr "❌ **错误**：``Widgets.fillRect()`` 或 ``Widgets.drawRect()``——Widgets 模块中没有这些方法。"
 
 #: ../../source/m5ui/index.rst:61
 msgid ""
 "✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use "
 "M5.Lcd for drawing methods"
-msgstr ""
+msgstr "✅ **正确**：``M5.Lcd.fillRect()`` 或 ``M5.Lcd.drawRect()``——通过 M5.Lcd 调用绘图方法。"
 
 #: ../../source/m5ui/index.rst:62
 msgid ""
 "❌ **WRONG**: Mixing ``M5.Widgets.Rectangle()`` with ``m5ui.M5Page()`` - "
 "Different UI systems, don't mix"
-msgstr ""
+msgstr "❌ **错误**：将 ``M5.Widgets.Rectangle()`` 与 ``m5ui.M5Page()`` 混用——它们属于不同的 UI 系统。"
 
 #: ../../source/m5ui/index.rst:63
 msgid ""
 "✅ **CORRECT**: Use either M5.Widgets OR m5ui consistently, not both "
 "together"
-msgstr ""
+msgstr "✅ **正确**：在同一界面中统一使用 M5.Widgets 或 m5ui，避免混用。"
 
 #: ../../source/m5ui/index.rst:65
 msgid ""
@@ -228,6 +229,9 @@ msgid ""
 "classes (Label, Image, Rectangle, Circle, etc.) - ``m5ui`` = LVGL-based "
 "UI framework (M5Label, M5Button, M5Page, M5Chart, etc.)"
 msgstr ""
+"**主要区别**：- ``M5.Lcd`` 提供绘图方法（fillRect、drawRect、drawCircle、drawString 等）；- "
+"``M5.Widgets`` 提供简单 UI 组件类（Label、Image、Rectangle、Circle 等）；- ``m5ui`` 是基于 "
+"LVGL 的 UI 框架（M5Label、M5Button、M5Page、M5Chart 等）。"
 
 #: ../../source/m5ui/index.rst:72
 msgid "Available Fonts"
@@ -391,7 +395,7 @@ msgstr "**示例**："
 
 #: ../../source/m5ui/index.rst:149
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/m5ui/index.rst:153
 msgid ""
@@ -401,7 +405,7 @@ msgstr "初始化 M5UI 库。使用任何其他 M5UI 函数之前必须调用此
 
 #: ../../source/m5ui/index.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/index.rst:155 ../../source/m5ui/index.rst:162
 msgid "None"
@@ -415,7 +419,7 @@ msgstr "取消初始化 M5UI 库。当您不再需要使用 M5UI 时，应调用
 
 #: ../../source/m5ui/index.rst:166
 msgid "Classes"
-msgstr "Classes"
+msgstr "类"
 
 #~ msgid "M5 系列显示库说明"
 #~ msgstr ""
@@ -527,3 +531,13 @@ msgstr "Classes"
 #~ "Very large numbers or dashboards -> "
 #~ "``lv.font_montserrat_40`` / ``44`` / ``48``"
 #~ msgstr ""
+
+#: ../../source/m5ui/index.rst:13
+msgid ""
+"Set the display rotation before calling ``m5ui.init()``. With the updated "
+"M5GFX, Core2, CoreS3 and StackChan use ``0`` for their normal 320 × 240 "
+"landscape layout. See :ref:`display-rotation` for other controllers and "
+"migration instructions."
+msgstr ""
+"请在调用 ``m5ui.init()`` 前设置屏幕旋转方向。更新 M5GFX 后，Core2、CoreS3 和 StackChan 的正常 320 "
+"× 240 横屏布局使用 ``0``。其他主机及旧工程的迁移方法见 :ref:`display-rotation`。"

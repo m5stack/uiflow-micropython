@@ -24,7 +24,7 @@ def setup():
     global label0, label1, cur_x, cur_y
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("x: 0", 32, 41, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("y: 0", 33, 84, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)

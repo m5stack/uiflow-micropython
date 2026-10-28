@@ -162,7 +162,7 @@ msgstr "创建一个滚轮控件。"
 #: dea2f2de3e65472795ff37a915c535ae ff4393b9d2e549cdba5c2a58969d2a77
 #: m5ui.roller.M5Roller.set_options m5ui.roller.M5Roller.set_style_radius of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: c42af21103df468c90a4006af95db9e6 m5ui.roller.M5Roller:3 of
 msgid "X position of the widget."
@@ -231,7 +231,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: m5ui.roller.M5Roller.get_selected_str m5ui.roller.M5Roller.set_style_radius
 #: of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/roller.rst:70 5f94bc038a9f44c08e95c9dc6aaf0428
 msgid "|set_flag.png|"
@@ -401,7 +401,7 @@ msgstr "选中选项的索引。"
 #: m5ui.roller.M5Roller.get_selected_str m5ui.roller.M5Roller.set_style_radius
 #: of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/roller.rst:229 49dda85905a54689bf28c6ab637f6498
 msgid "|get_selected.png|"
@@ -652,4 +652,3 @@ msgstr ""
 #: ../../en/refs/m5ui.roller.ref:19 1031f158b5dc431aa33319950d756849
 msgid "set_style_radius.png"
 msgstr ""
-

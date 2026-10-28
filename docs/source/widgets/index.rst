@@ -74,10 +74,14 @@ Screen functions
 
     The ``rotation`` parameter only accepts the following values:
 
-        - ``0``: Portrait (0°C)
-        - ``1``: Landscape (90°C)
-        - ``2``: Inverse Portrait (180°C)
-        - ``3``: Inverse Landscape (270°C)
+        - ``0``: 0°
+        - ``1``: 90°
+        - ``2``: 180°
+        - ``3``: 270°
+
+    .. note::
+
+        See :ref:`display-rotation` for board-specific dimensions and migration from older examples. Set the desired rotation before initializing M5UI/LVGL.
 
     UIFLOW2:
 

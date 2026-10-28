@@ -139,7 +139,7 @@ msgstr "创建一个数字输入框控件。"
 #: m5ui.spinbox.M5Spinbox.set_style_border_width
 #: m5ui.spinbox.M5Spinbox.set_style_radius m5ui.spinbox.M5Spinbox.set_value of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: e108057c01be42df976b1bec935e4706 m5ui.spinbox.M5Spinbox:3 of
 msgid "The x position of the spinbox."
@@ -210,7 +210,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: m5ui.spinbox.M5Spinbox.set_border_color
 #: m5ui.spinbox.M5Spinbox.set_style_border_width of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/spinbox.rst:71 f5a9cb7141a640ab9747e3d9ec6f5156
 msgid "|set_flag.png|"
@@ -357,7 +357,7 @@ msgstr "获取数字输入框的宽度。"
 #: m5ui.spinbox.M5Spinbox.set_range m5ui.spinbox.M5Spinbox.set_step
 #: m5ui.spinbox.M5Spinbox.set_style_radius m5ui.spinbox.M5Spinbox.set_value of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/spinbox.rst:227 24030b115de243fcb425dd5006646515
 msgid "|get_width.png|"
@@ -593,4 +593,3 @@ msgstr ""
 #: ../../en/refs/m5ui.spinbox.ref:18 8f3f6093d4b84a2394a17a454e98d965
 msgid "set_step.png"
 msgstr ""
-

@@ -129,7 +129,7 @@ msgstr "创建一个滑块小部件。"
 
 #: ../../en/m5ui/slider.rst 1732d89b6033416baced4cae5d2f2d7d
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 5f84dbd4555d474db2193a2944060527 m5ui.slider.M5Slider:3 of
 msgid "The x position of the slider."
@@ -198,7 +198,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: ../../en/m5ui/slider.rst 00feeabbb9d44514835dd2f77943a5a5
 #: a01772ee12844d51851760cfbd879156
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/slider.rst:67 a5ac599efdda4b63a21ab2d202176431
 msgid "|set_flag.png|"
@@ -440,7 +440,7 @@ msgstr "滑块的当前值。"
 
 #: ../../en/m5ui/slider.rst 8edf7a0801aa4ce4915e5eeabb892ac5
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/slider.rst:253 9d1c2f12ffc44b2ca77438696471e66c
 msgid "|get_value.png|"
@@ -639,4 +639,3 @@ msgstr ""
 #: ../../en/refs/m5ui.slider.ref:9 1b02b5696ba14e5cad528f61709d783a
 msgid "get_height.png"
 msgstr ""
-

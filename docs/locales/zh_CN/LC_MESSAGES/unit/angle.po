@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../../source/unit/angle.rst:36 38dc5dcd9a41450ea4327ac7c6822f97
 msgid "class Angle"
-msgstr "\"\"\"class Angle\"\"\""
+msgstr "class Angle"
 
 #: ../../source/unit/angle.rst:39 1bb36dc5aa5e42caa75a10afa8783f75
 msgid "Constructors"

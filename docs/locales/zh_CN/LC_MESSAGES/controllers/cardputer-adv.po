@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-06 00:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Cardputer Adv"
+msgstr "Cardputer Adv"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Cardputer Adv provides a built-in I2C keyboard controller. In UiFlow2 MicroPython, use ``MatrixKeyboard`` as the high-level keyboard interface. It automatically selects the correct keyboard backend for Cardputer and Cardputer Adv."
+msgstr "Cardputer Adv 提供内置 I2C 键盘控制器。在 UiFlow2 MicroPython 中，使用 ``MatrixKeyboard`` 作为高级键盘接口。它会自动为 Cardputer 和 Cardputer Adv 选择正确的键盘后端。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "polling keyboard input"
+msgstr "轮询键盘输入"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "This example reads one key event at a time. ``get_key()`` and ``get_string()`` both consume a pending key event, so use one of them for each read."
+msgstr "该示例每次读取一个按键事件。``get_key()`` 和 ``get_string()`` 都会消耗一个待处理按键事件，因此每次读取时二者选择其一即可。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "callback keyboard input"
+msgstr "回调键盘输入"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "This example registers a callback and then reads the pending key code from the ``MatrixKeyboard`` instance."
+msgstr "该示例注册一个回调函数，然后从 ``MatrixKeyboard`` 实例读取待处理的按键码。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "MatrixKeyboard"
+msgstr "MatrixKeyboard"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Create the built-in keyboard interface for the current host. On Cardputer Adv, the keyboard is connected through the internal I2C keyboard controller."
+msgstr "创建当前主机的内置键盘接口。在 Cardputer Adv 上，键盘通过内部 I2C 键盘控制器连接。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Return the next pressed key code, or ``None`` when no key event is pending."
+msgstr "返回下一个按下按键的按键码；没有待处理按键事件时返回 ``None``。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Printable keys return ASCII key codes. Use this method for non-printable keys and navigation keys."
+msgstr "可打印按键返回 ASCII 按键码。对于不可打印按键和导航按键，请使用此方法。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Return the next pressed key as a one-character string, or ``None`` when no key event is pending."
+msgstr "将下一个按下的按键作为单字符字符串返回；没有待处理按键事件时返回 ``None``。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "This method converts the value returned by ``get_key()`` with ``chr()``. Use ``get_key()`` instead when the key code is more useful than a string."
+msgstr "此方法会用 ``chr()`` 转换 ``get_key()`` 返回的值。当按键码比字符串更有用时，请改用 ``get_key()``。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Return ``True`` when at least one key event is waiting to be read."
+msgstr "当至少有一个按键事件等待读取时返回 ``True``。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Return ``True`` when the specified key code is currently pressed."
+msgstr "当指定按键码当前处于按下状态时返回 ``True``。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "On Cardputer Adv, ``FN`` + ````` reports ``ESC`` and can be checked with ``0x1B``."
+msgstr "在 Cardputer Adv 上，``FN`` + ````` 会报告 ``ESC``，可使用 ``0x1B`` 检测。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Register a callback for key press events."
+msgstr "注册按键按下事件的回调函数。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "The callback receives the active keyboard object as its only argument. For portable Cardputer and Cardputer Adv code, read the pending event from your ``MatrixKeyboard`` instance inside the callback."
+msgstr "回调函数会接收当前活动键盘对象作为唯一参数。为了让代码在 Cardputer 和 Cardputer Adv 上保持兼容，请在回调函数中从你的 ``MatrixKeyboard`` 实例读取待处理事件。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Update the scanned keyboard state."
+msgstr "更新扫描式键盘状态。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Cardputer Adv receives key events from the I2C keyboard controller, so this method is not required for polling on Cardputer Adv. It can remain in shared Cardputer/Cardputer Adv loops."
+msgstr "Cardputer Adv 从 I2C 键盘控制器接收按键事件，因此在 Cardputer Adv 上轮询时不需要调用此方法。它可以保留在 Cardputer/Cardputer Adv 共用的循环中。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Release the keyboard resources and clear pending key events."
+msgstr "释放键盘资源并清除待处理按键事件。"
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/controllers/cardputer-adv.rst
+msgid "|Cardputer Adv|"
+msgstr ""

@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../../en/refs/module.zigbee.ref e8906b72f02a4f329a0e0eca1f8bc86f
 msgid "ZigbeeModule"
-msgstr "\"\"\"ZigbeeModule\"\"\""
+msgstr "ZigbeeModule"
 
 #: ../../en/module/zigbee.rst:22 178202f0e5d84847910286e1101fe3f1
 msgid "Micropython TX Example:"

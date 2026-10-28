@@ -193,7 +193,7 @@ msgstr "创建一个文本框控件。"
 #: c0f95fc94539480aa2f0bbd9df5b11bf c88fbef5416642c194e8e5a063da93d5
 #: d2ce365c54614d3a9822156420db2136 fbf2076894a54721bd50df76439c4691
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 6ca4d36958ad45ccb9ea247fd097636e m5ui.textarea.M5TextArea:3 of
 msgid "Initial text content of the text area."
@@ -271,7 +271,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: e9f1b8ef26b74da281c97b3b78475a18 f143651bfe494e71a67adc2e6b456c80
 #: fdfba699f9d9479983ea43a3291188a3 fe6b3b5949fa4152866fcc6038d72819
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/textarea.rst:68 0e0f6bad868d423dbc50642c75137c08
 msgid "|set_flag.png|"
@@ -546,7 +546,7 @@ msgstr "当前文本内容。"
 #: ../../en/m5ui/textarea.rst 2db2c1ff24db42299f76cf49c0c70538
 #: 5371c7681ab0432e8d5d1c72e8b87c49 ae50d411e14f445db98fa7583199ca6e
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/textarea.rst:353 bb0710d85fb947ce9dd9149dfdc41cb4
 msgid "|get_text.png|"
@@ -785,4 +785,3 @@ msgstr ""
 #: ../../en/refs/m5ui.textarea.ref:8 6f954704af704ac7877d440dc6fbcae6
 msgid "get_height.png"
 msgstr ""
-

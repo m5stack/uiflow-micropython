@@ -137,7 +137,7 @@ msgstr "Bases: :py:class:`~lvgl.keyboard`"
 
 #: f1f358e9396c4edfb5ae4c580eced7fc m5ui.keyboard.M5Keyboard:1 of
 msgid "Create a keyboard widget."
-msgstr "Create a keyboard widget."
+msgstr "创建一个键盘组件。"
 
 #: ../../en/m5ui/keyboard.rst 1ae679c151764c20ac68689a4d7904d1
 #: 2332612523674d1fbf0010318800c77b 305fcd2e5ac045f0b20a376904c045fd
@@ -145,7 +145,7 @@ msgstr "Create a keyboard widget."
 #: c0a4ea64c31d4fb2842cdc391d0b7497 d1e073c527d64f7a9fed9ab21fef80a2
 #: f465bf8eb9f64072a208afe2e893224f fc4e681af4ba47d3ba30a2111a00edb9
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: f1fc097f93a44754a9c6fe06ce000516 m5ui.keyboard.M5Keyboard:3 of
 msgid "The x position of the keyboard."
@@ -199,7 +199,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: 85d610c72cf542edb4a1e742b6a9a11d 9c3a3a525be046ec914c284c8185ea8f
 #: ae538a395fb7488798c56707061ff197 d2d0859ce7d84ca5ad666fbb56dee826
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/keyboard.rst:68 434944999a9340b7bd34db2e433d6cd9
 msgid "|set_flag.png|"
@@ -322,7 +322,7 @@ msgstr "已连接的文本输入区域对象，如果没有连接文本区域则
 #: ../../en/m5ui/keyboard.rst 5b9c6d830a25445ba8ea1dbe3b147f24
 #: ae7461710894421cbb10f821ba768c9b
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/keyboard.rst:189 1dacf62e44524ab9b5c50d949dd83491
 msgid "|get_textarea.png|"
@@ -587,4 +587,3 @@ msgstr ""
 #~ "lv.keyboard.MODE.TEXT_LOWER, lv.keyboard.MODE.TEXT_UPPER, "
 #~ "lv.keyboard.MODE.SPECIAL, lv.keyboard.MODE.NUMBER)."
 #~ msgstr "要设置的键盘模式（例如，lv.keyboard.MODE.TEXT_LOWER（小写文本）、lv.keyboard.MODE.TEXT_UPPER（大写文本）、lv.keyboard.MODE.SPECIAL（特殊字符）、lv.keyboard.MODE.NUMBER（数字））。"
-

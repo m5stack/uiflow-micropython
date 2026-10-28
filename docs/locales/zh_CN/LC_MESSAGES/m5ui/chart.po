@@ -186,7 +186,7 @@ msgstr "创建一个图表对象。"
 #: m5ui.chart.M5Chart.set_axis_range m5ui.chart.M5Chart.set_series_color
 #: m5ui.chart.M5Chart.set_series_values of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 821b4577693b45119560b91c129d646d m5ui.chart.M5Chart:3 of
 msgid "X coordinate of the chart's position. Default is 0."
@@ -272,7 +272,7 @@ msgstr "如果为 True,则添加标志;如果为 False,则移除标志。"
 #: e40da07b2a524054b2226292b0477059 f65da2d54d7b4b7f9fcb1f82542adeb6
 #: ff85410561484fafb309a8d8d52a6d93 m5ui.chart.M5Chart.get_series_color of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/chart.rst:60 ../../source/m5ui/chart.rst:78
 #: ../../source/m5ui/chart.rst:98 ../../source/m5ui/chart.rst:130
@@ -506,7 +506,7 @@ msgstr "获取图表中的点数。"
 #: 8b00f821bc8c4e97be24c546f81c0b94 9c838082ff214cffaee5c8411ab91a55
 #: m5ui.chart.M5Chart.get_series_color of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/m5ui/chart.rst:281 20a6e27c2f134c1c88f0c498938feb01
 msgid "|get_point_count.png|"
@@ -568,6 +568,9 @@ msgid ""
 "with ``set_series_values()`` every frame, which triggers a full chart "
 "redraw and becomes slow with 400+ data points."
 msgstr ""
+"显示传感器、音频等实时数据时，可结合 ``set_next_value()`` 与 "
+"``set_update_mode(lv.chart.UPDATE_MODE.SHIFT)`` 实现增量滚动。相比每帧调用 "
+"``set_series_values()`` 替换整个数据序列，这种方式效率更高；后者会重绘整张图表，在数据点超过 400 个时明显变慢。"
 
 #: ../../source/m5ui/chart.rst:345 244ad57dd30f4cb9a5ad5f37f33fa06d
 msgid "|set_next_value.png|"

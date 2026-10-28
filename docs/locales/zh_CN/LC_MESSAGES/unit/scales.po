@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../source/refs/unit.scales.ref 1a43ec608ab5429a96a7e09b40deca4c
 msgid "ScalesUnit"
-msgstr "\"\"\"ScalesUnit\"\"\""
+msgstr "ScalesUnit"
 
 #: ../../source/unit/scales.rst:13 74c4e2ab322f41f08160c4d02eac0c43
 msgid "Micropython Example:"

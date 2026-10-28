@@ -68,7 +68,7 @@ y1 = None
 def setup():
     global img, qrcode_list, corners, point, i, coord, x0, y0, x1, y1
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     camera.init(pixformat=camera.RGB565, framesize=camera.QVGA)
 

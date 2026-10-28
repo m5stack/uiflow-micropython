@@ -33,9 +33,8 @@ msgid "M5 Series Display Libraries"
 msgstr "M5 系列显示库说明"
 
 #: ../../source/hardware/display.rst:18
-#, fuzzy
 msgid "1. Display (M5.Lcd)"
-msgstr "1. 显示"
+msgstr "1. Display 底层绘图库（M5.Lcd）"
 
 #: ../../source/hardware/display.rst:19
 msgid ""
@@ -54,6 +53,8 @@ msgid ""
 "**Access via**: ``M5.Lcd.fillRect()``, ``M5.Lcd.drawRect()``, "
 "``M5.Lcd.drawString()``, etc."
 msgstr ""
+"**调用方式**：``M5.Lcd.fillRect()``、``M5.Lcd.drawRect()``、``M5.Lcd.drawString()``"
+" 等。"
 
 #: ../../source/hardware/display.rst:24
 msgid "2. M5Widgets"
@@ -78,12 +79,14 @@ msgid ""
 "**Access via**: ``M5.Widgets.Label()``, ``M5.Widgets.Image()``, "
 "``M5.Widgets.Rectangle()``, etc."
 msgstr ""
+"**调用方式**：``M5.Widgets.Label()``、``M5.Widgets.Image()``、``M5.Widgets.Rectangle()``"
+" 等。"
 
 #: ../../source/hardware/display.rst:29
 msgid ""
 "**Important**: ``M5.Widgets`` provides UI component **classes**, not "
 "drawing methods."
-msgstr ""
+msgstr "**注意**：``M5.Widgets`` 提供 UI 组件 **类**，不提供绘图方法。"
 
 #: ../../source/hardware/display.rst:32
 msgid "3. M5UI"
@@ -123,31 +126,33 @@ msgstr "多页面 UI → 使用 M5UI。"
 
 #: ../../source/hardware/display.rst:44
 msgid "Common Mistakes to Avoid"
-msgstr ""
+msgstr "常见错误及正确用法"
 
 #: ../../source/hardware/display.rst:45
 msgid ""
 "❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These "
 "methods do not exist in Widgets module"
-msgstr ""
+msgstr "❌ **错误**：``Widgets.fillRect()`` 或 ``Widgets.drawRect()``——Widgets 模块中没有这些方法。"
 
 #: ../../source/hardware/display.rst:46
 msgid ""
 "✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use "
 "M5.Lcd for drawing methods"
-msgstr ""
+msgstr "✅ **正确**：``M5.Lcd.fillRect()`` 或 ``M5.Lcd.drawRect()``——通过 M5.Lcd 调用绘图方法。"
 
 #: ../../source/hardware/display.rst:47
 msgid ""
 "❌ **WRONG**: ``from M5 import Widgets; Widgets.fillRect(...)`` - Widgets "
 "is for UI components, not drawing"
 msgstr ""
+"❌ **错误**：``from M5 import Widgets; Widgets.fillRect(...)``——Widgets 用于创建 UI"
+" 组件，不提供此绘图方法。"
 
 #: ../../source/hardware/display.rst:48
 msgid ""
 "✅ **CORRECT**: ``from M5 import *; M5.Lcd.fillRect(...)`` - M5.Lcd "
 "provides all drawing methods"
-msgstr ""
+msgstr "✅ **正确**：``from M5 import *; M5.Lcd.fillRect(...)``——通过 M5.Lcd 调用绘图方法。"
 
 #: ../../source/hardware/display.rst:50
 msgid ""
@@ -155,6 +160,8 @@ msgid ""
 "drawCircle, drawString, etc.) - ``M5.Widgets`` = UI component classes "
 "(Label, Image, Rectangle, Circle, etc.)"
 msgstr ""
+"**主要区别**：- ``M5.Lcd`` 提供绘图方法（fillRect、drawRect、drawCircle、drawString 等）；- "
+"``M5.Widgets`` 提供 UI 组件类（Label、Image、Rectangle、Circle 等）。"
 
 #: ../../source/hardware/display.rst:56
 msgid "UiFlow2 Example"
@@ -277,7 +284,7 @@ msgstr "MicroPython 代码块："
 
 #: ../../source/hardware/display.rst:122
 msgid "Flicker-free Animation with Canvas"
-msgstr ""
+msgstr "使用 Canvas 实现无闪烁动画"
 
 #: ../../source/hardware/display.rst:124
 msgid ""
@@ -287,13 +294,16 @@ msgid ""
 "flicker. Create an off-screen canvas once, draw the complete frame on the"
 " canvas, and call ``push()`` once after the frame is ready."
 msgstr ""
+"当一帧动画包含多次绘制操作时，不要直接在 ``M5.Lcd`` "
+"上逐个擦除并重绘元素。屏幕可能显示刚被清空或只绘制了一部分的中间状态，从而产生闪烁。应预先创建一个离屏画布，在画布上绘制完整的一帧，准备好后再调用一次"
+" ``push()`` 显示。"
 
 #: ../../source/hardware/display.rst:129
 msgid ""
 "The API name is ``M5.Lcd`` (case-sensitive). Create the canvas during "
 "setup and reuse it; creating a new canvas for every frame wastes memory "
 "and can cause allocation failures."
-msgstr ""
+msgstr "API 名称为 ``M5.Lcd``，区分大小写。应在初始化时创建画布并重复使用；每帧都新建画布会浪费内存，还可能导致内存分配失败。"
 
 #: ../../source/hardware/display.rst:175
 msgid ""
@@ -305,6 +315,9 @@ msgid ""
 "gauges, or animation frames, prefer the canvas-and-single-``push()`` "
 "pattern."
 msgstr ""
+"屏幕其余区域保持静止时，只需为变化区域创建相应大小的画布。内存不足时，可缩小画布或降低颜色深度；设备没有 PSRAM 时，应设置 "
+"``psram=False``。不涉及中间帧状态的单次小范围更新仍可直接绘制。对于多步图形绘制、精灵、仪表或动画帧，建议在画布上完成绘制后，调用一次 "
+"``push()`` 显示。"
 
 #: ../../source/hardware/display.rst:182
 msgid "**API**"
@@ -324,7 +337,7 @@ msgstr "水平分辨率。"
 
 #: ../../source/hardware/display.rst
 msgid "return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/hardware/display.rst:191 ../../source/hardware/display.rst:208
 #: ../../source/hardware/display.rst:225 ../../source/hardware/display.rst:249
@@ -449,13 +462,13 @@ msgstr "设置显示屏旋转。"
 
 #: ../../source/hardware/display.rst
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/hardware/display.rst:282
 msgid ""
-"rotation value (1~4) - 1: 0° rotation - 2: 90° rotation - 3: 180° "
-"rotation - 4: 270° rotation"
-msgstr "旋转值（1～4）：- 1：旋转 0°。- 2：旋转 90°。- 3：旋转 180°。- 4：旋转 270°。"
+"rotation value (0~3) - 0: 0° rotation - 1: 90° rotation - 2: 180° "
+"rotation - 3: 270° rotation"
+msgstr "旋转值（0～3）：- 0：旋转 0°。- 1：旋转 90°。- 2：旋转 180°。- 3：旋转 270°。"
 
 #: ../../source/hardware/display.rst:290
 msgid "|setrotation.png|"
@@ -878,6 +891,8 @@ msgid ""
 "``fillRect()`` to erase only the changed region, then draw the new "
 "content on top."
 msgstr ""
+"避免在循环或事件处理函数中调用 ``clear()``，它会重绘所有像素，造成明显闪烁。更新动态内容时，可用 ``fillRect()`` "
+"仅擦除变化区域，再绘制新内容。"
 
 #: ../../source/hardware/display.rst:498
 msgid "|clear.png|"
@@ -898,6 +913,8 @@ msgid ""
 "backgrounds once during setup. For dynamic updates, use ``fillRect()`` to"
 " clear only the changed area."
 msgstr ""
+"避免在循环或事件处理函数中调用 ``fillScreen()``，它会重绘所有像素，造成明显闪烁。静态背景应在初始化时绘制一次；更新动态内容时，可用 "
+"``fillRect()`` 仅清除变化区域。"
 
 #: ../../source/hardware/display.rst:521
 msgid "|fillscreen.png|"
@@ -1480,7 +1497,7 @@ msgid ""
 "Create an off-screen canvas. Use it to compose a complete animation frame"
 " before presenting the frame with a single ``push(x, y)`` call. Reuse the"
 " returned object instead of creating it repeatedly in the main loop."
-msgstr ""
+msgstr "创建一个离屏画布。先在画布上绘制完整的一帧，再调用一次 ``push(x, y)`` 显示。应重复使用返回的画布对象，避免在主循环中反复创建。"
 
 #: ../../source/hardware/display.rst:1085
 msgid "canvas width"
@@ -1500,7 +1517,7 @@ msgstr "使用 PSRAM"
 
 #: ../../source/hardware/display.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/hardware/display.rst:1089
 msgid "created canvas object"
@@ -1572,3 +1589,136 @@ msgstr ""
 #~ msgid "Create a canvas."
 #~ msgstr "创建一个画布。"
 
+msgid "The physical orientation depends on the board and the M5GFX version. A rotation value does not always mean portrait or landscape. With the updated M5GFX, Core/Basic/Fire, Core2 and CoreS3 use 0 for their normal landscape orientation. When migrating an example, update both the Python file and its .m5f2 screen configuration or rotation block."
+msgstr "实际显示方向取决于主机型号和 M5GFX 版本，同一个旋转值并不总是表示横屏或竖屏。更新 M5GFX 后，Core/Basic/Fire、Core2 和 CoreS3 的正常横屏方向使用 0。迁移示例时，应同时更新 Python 文件和对应 .m5f2 的屏幕配置或旋转积木。"
+
+#: ../../source/hardware/display.rst:30
+msgid ""
+"**Recommendation**: For new interactive UI projects, prefer M5UI/LVGL. Use "
+"M5.Widgets for simple or legacy UI components."
+msgstr "**建议**：新的交互界面项目优先使用 M5UI/LVGL；简单界面或现有项目中的组件可使用 M5.Widgets。"
+
+#: ../../source/hardware/display.rst:36
+msgid "**Recommendation**: Prefer M5UI/LVGL for new interactive UI projects."
+msgstr "**建议**：新的交互界面项目优先使用 M5UI/LVGL。"
+
+#: ../../source/hardware/display.rst:43
+msgid "For multi-page UI → use M5UI/LVGL (recommended for new projects)."
+msgstr "多页面界面 → 使用 M5UI/LVGL（新项目推荐）。"
+
+#: ../../source/hardware/display.rst:231
+msgid "0: 0° rotation"
+msgstr "0：旋转 0°"
+
+#: ../../source/hardware/display.rst:232
+msgid "1: 90° rotation"
+msgstr "1：旋转 90°"
+
+#: ../../source/hardware/display.rst:233
+msgid "2: 180° rotation"
+msgstr "2：旋转 180°"
+
+#: ../../source/hardware/display.rst:234
+msgid "3: 270° rotation"
+msgstr "3：旋转 270°"
+
+#: ../../source/hardware/display.rst:60
+msgid "Screen Rotation"
+msgstr "屏幕旋转方向"
+
+#: ../../source/hardware/display.rst:62
+msgid ""
+"The rotation value is relative to the board's normal viewing direction. The"
+" values ``0``, ``1``, ``2`` and ``3`` select 0°, 90°, 180° and 270°, "
+"respectively. A value does not universally mean portrait or landscape; the "
+"physical direction depends on the board and the M5GFX version."
+msgstr ""
+"旋转值以主机的正常观看方向为基准。``0``、``1``、``2``、``3`` 分别表示旋转 "
+"0°、90°、180°、270°，不能统一理解为竖屏或横屏；实际方向取决于主机型号和 M5GFX 版本。"
+
+#: ../../source/hardware/display.rst:68
+msgid "Normal Orientation"
+msgstr "正常显示方向"
+
+#: ../../source/hardware/display.rst:70
+msgid ""
+"Core/Basic/Fire, Core2, CoreS3, StackChan: rotation ``0``, logical size "
+"``320 × 240``."
+msgstr "Core/Basic/Fire、Core2、CoreS3、StackChan：旋转值 ``0``，逻辑尺寸 ``320 × 240``。"
+
+#: ../../source/hardware/display.rst:71
+msgid ""
+"Cardputer, Cardputer Adv, DinMeter, Station: rotation ``0``, logical size "
+"``240 × 135``."
+msgstr "Cardputer、Cardputer Adv、DinMeter、Station：旋转值 ``0``，逻辑尺寸 ``240 × 135``。"
+
+#: ../../source/hardware/display.rst:72
+msgid "CoreP4X: rotation ``0``, logical size ``480 × 480``."
+msgstr "CoreP4X：旋转值 ``0``，逻辑尺寸 ``480 × 480``。"
+
+#: ../../source/hardware/display.rst:74
+msgid ""
+"These values apply to the firmware documented on this site. Older firmware "
+"may use a different rotation mapping. For the 320 × 240 controllers listed "
+"above, rotations ``1`` and ``3`` use a logical size of 240 × 320, while "
+"``0`` and ``2`` use 320 × 240."
+msgstr ""
+"以上取值对应本文档配套的固件，旧固件的方向映射可能不同。对于上述 320 × 240 主机，旋转值为 ``1`` 或 ``3`` 时，逻辑尺寸为 "
+"240 × 320；为 ``0`` 或 ``2`` 时，逻辑尺寸为 320 × 240。"
+
+#: ../../source/hardware/display.rst:79
+msgid ""
+"On a square display such as CoreP4X, all four rotations have the same "
+"dimensions. Use readable text or corner markers to identify the direction."
+msgstr "对于 CoreP4X 这样的方形屏幕，四个旋转方向的宽高相同，需要通过文字朝向或四角标记确认显示方向。"
+
+#: ../../source/hardware/display.rst:83
+msgid "Migrating Existing Examples"
+msgstr "旧示例迁移"
+
+#: ../../source/hardware/display.rst:85
+msgid ""
+"For Core/Basic/Fire, Core2, CoreS3 and StackChan, older examples that used "
+"``Widgets.setRotation(1)`` for normal landscape should now use "
+"``Widgets.setRotation(0)``. The same applies to ``M5.Lcd.setRotation()``."
+msgstr ""
+"Core/Basic/Fire、Core2、CoreS3 和 StackChan 的旧示例中，用于正常横屏的 "
+"``Widgets.setRotation(1)`` 现在应改为 "
+"``Widgets.setRotation(0)``；``M5.Lcd.setRotation()`` 同理。"
+
+#: ../../source/hardware/display.rst:89
+msgid ""
+"For graphical projects, update both the ``.m5f2`` screen rotation setting "
+"and any rotation block. Check the generated Python, then save and reopen "
+"the project to confirm the setting is preserved."
+msgstr "图形化工程需要同时更新 ``.m5f2`` 的屏幕旋转设置和工程内的旋转积木，并检查生成的 Python；保存后重新打开工程，确认设置仍然正确。"
+
+#: ../../source/hardware/display.rst:91
+msgid ""
+"For M5UI/LVGL, set the desired rotation before calling ``m5ui.init()`` so "
+"the UI is initialized with the intended screen dimensions."
+msgstr "使用 M5UI/LVGL 时，应在调用 ``m5ui.init()`` 前设置旋转方向，使界面按预期的屏幕尺寸初始化。"
+
+#: ../../source/hardware/display.rst:94
+msgid ""
+"For other controllers or deliberately rotated layouts, select the rotation "
+"that matches the intended result rather than replacing every ``1`` with "
+"``0``."
+msgstr "其他主机以及有意旋转显示的布局，应按预期效果选择旋转值，不要将所有 ``1`` 一律替换为 ``0``。"
+
+#: ../../source/hardware/display.rst:98
+msgid ""
+"After changing rotation, read ``M5.Lcd.width()`` and ``M5.Lcd.height()`` to"
+" check the logical dimensions. The origin is the top-left corner; X "
+"increases to the right and Y increases downward. On touch devices, also "
+"check that touches at all four corners match the displayed positions."
+msgstr ""
+"修改方向后，通过 ``M5.Lcd.width()`` 和 ``M5.Lcd.height()`` 检查逻辑宽高。坐标原点位于左上角，X 向右增大，Y"
+" 向下增大。带触摸屏的主机还应检查四角触点与显示位置是否一致。"
+
+#: ../../source/hardware/display.rst:349
+msgid ""
+"See :ref:`display-rotation` for board-specific dimensions and migration "
+"from older examples. Set the desired rotation before initializing "
+"M5UI/LVGL."
+msgstr "各主机的显示尺寸及旧示例迁移方法见 :ref:`display-rotation`。使用 M5UI/LVGL 时，应在初始化界面前设置旋转方向。"

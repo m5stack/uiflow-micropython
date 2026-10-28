@@ -1,0 +1,138 @@
+# CoreP4X controller documentation.
+msgid ""
+msgstr "Project-Id-Version: UIFlow2 Programming Guide\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\n"
+
+msgid "CoreP4X"
+msgstr "CoreP4X"
+
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+msgid "Supported Components"
+msgstr "支持的组件"
+
+msgid "CoreP4X supports the following components:"
+msgstr "CoreP4X 支持以下组件："
+
+msgid "`M5UI <../m5ui/index.html>`_: The ``m5ui`` LVGL component library."
+msgstr "`M5UI <../m5ui/index.html>`_：``m5ui`` LVGL 组件库。"
+
+msgid "`Unit <../unit/index.html>`_: The ``unit`` package containing Unit drivers."
+msgstr "`Unit <../unit/index.html>`_：包含 Unit 驱动的 ``unit`` 软件包。"
+
+msgid "`Module <../module/index.html>`_: The ``module`` package for expansion modules."
+msgstr "`Module <../module/index.html>`_：用于扩展模块的 ``module`` 软件包。"
+
+msgid "`Chain <../chain/index.html>`_: The ``chain`` package for Chain devices."
+msgstr "`Chain <../chain/index.html>`_：用于 Chain 设备的 ``chain`` 软件包。"
+
+msgid "`USB <../advanced/usb/device/index.html>`_: The ``usb.device`` package for HID devices."
+msgstr "`USB <../advanced/usb/device/index.html>`_：用于 HID 设备的 ``usb.device`` 软件包。"
+
+msgid "Supported Display Fonts"
+msgstr "支持的显示字体"
+
+msgid "The CoreP4X firmware includes the following Montserrat fonts for LVGL and M5UI: ``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv.font_montserrat_16``, ``lv.font_montserrat_18``, ``lv.font_montserrat_20``, ``lv.font_montserrat_22``, ``lv.font_montserrat_24``, ``lv.font_montserrat_30``, ``lv.font_montserrat_36``, ``lv.font_montserrat_40``, ``lv.font_montserrat_44``, ``lv.font_montserrat_48``."
+msgstr "CoreP4X 固件为 LVGL 和 M5UI 提供以下 Montserrat 字体：``lv.font_montserrat_12``、``lv.font_montserrat_14``、``lv.font_montserrat_16``、``lv.font_montserrat_18``、``lv.font_montserrat_20``、``lv.font_montserrat_22``、``lv.font_montserrat_24``、``lv.font_montserrat_30``、``lv.font_montserrat_36``、``lv.font_montserrat_40``、``lv.font_montserrat_44``、``lv.font_montserrat_48``。"
+
+msgid "For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``, ``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and Korean text respectively."
+msgstr "对于 ``M5.Lcd.FONTS``，固件还提供 ``AlibabaPuHuiTiCN24``、``AlibabaSansJA24`` 和 ``AlibabaSansKR24``，分别用于显示中文、日文和韩文。"
+
+msgid "Board Features"
+msgstr "板载功能"
+
+msgid "CoreP4X supports the following built-in functions and peripherals:"
+msgstr "CoreP4X 支持以下内置功能和外设："
+
+msgid "480 x 480 display and capacitive touch input."
+msgstr "480 × 480 显示与电容触摸输入。"
+
+msgid "`IMU <../hardware/imu.html>`_ accelerometer and gyroscope readings."
+msgstr "`IMU <../hardware/imu.html>`_ 加速度计和陀螺仪读数。"
+
+msgid "RTC date and time display and adjustment."
+msgstr "RTC 日期和时间显示与调整。"
+
+msgid "USB and battery voltage monitoring, charging status, and Port A 5 V output control."
+msgstr "USB 与电池电压监测、充电状态检测和 Port A 5 V 输出控制。"
+
+msgid "`Speaker <../hardware/speaker.html>`_ tone playback, volume adjustment, and PA control."
+msgstr "`扬声器 <../hardware/speaker.html>`_ 音调播放、音量调节和 PA 控制。"
+
+msgid "`Microphone <../hardware/mic.html>`_ recording and speaker playback."
+msgstr "`麦克风 <../hardware/mic.html>`_ 录音和扬声器回放。"
+
+msgid "`Infrared <../hardware/ir.html>`_ NEC transmission and reception."
+msgstr "`红外 <../hardware/ir.html>`_ NEC 协议发送与接收。"
+
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+msgid "RTC Clock"
+msgstr "RTC 时钟"
+
+msgid "Open the |corep4x_rtc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_rtc_example.m5f2| 项目。"
+
+msgid "Display the date and a blue HH:MM:SS clock from the built-in RTC, using UTC. Tap **SET TIME** to adjust hours, minutes, and seconds with the **+** and **-** buttons. Tap **SAVE** to update the RTC while preserving the date, or **CANCEL** to discard the changes."
+msgstr "读取内置 RTC，以 UTC 显示日期和蓝色 HH:MM:SS 时钟。点击 **SET TIME**，使用 **+**、**-** 调整时、分、秒。点击 **SAVE** 保存时间并保留原日期，或点击 **CANCEL** 放弃修改。"
+
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+msgid "Example output:"
+msgstr "示例输出："
+
+msgid "None"
+msgstr "无"
+
+msgid "IMU Sensor"
+msgstr "IMU 传感器"
+
+msgid "Open the |corep4x_imu_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_imu_example.m5f2| 项目。"
+
+msgid "Display the X, Y, and Z readings from the built-in accelerometer and gyroscope. Acceleration is shown in g, and angular velocity in degrees per second (dps). Tilt or rotate the device to observe the readings."
+msgstr "显示内置加速度计和陀螺仪的 X、Y、Z 三轴读数。加速度单位为 g，角速度单位为度每秒（dps）。倾斜或旋转设备即可观察数值变化。"
+
+msgid "Power Management"
+msgstr "电源管理"
+
+msgid "Open the |corep4x_power_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_power_example.m5f2| 项目。"
+
+msgid "Display USB VBUS and battery voltages in mV, charging status, Port A 5 V output, and charge control. The battery voltage turns green while the battery is charging. Tap **PORT A** to toggle external output and **CHARGE** to enable or disable charging. Battery percentage is not displayed."
+msgstr "显示 USB VBUS 和电池电压（mV）、充电状态、Port A 5 V 输出状态和充电许可。实际充电时，电池电压显示为绿色。点击 **PORT A** 开关外部输出，点击 **CHARGE** 允许或禁止充电，不显示电量百分比。"
+
+msgid "Speaker Tone"
+msgstr "扬声器音调"
+
+msgid "Open the |corep4x_speaker_tone_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_speaker_tone_example.m5f2| 项目。"
+
+msgid "Use separate sliders to adjust frequency from 200 to 4000 Hz and volume from 0 to 100%. The default values are 1000 Hz and 70%. Tap **Start tone** or **Stop tone** to control playback. The PA switch controls the amplifier independently; it is enabled at startup, while tone playback is stopped. Turning PA off mutes the output without stopping the tone."
+msgstr "使用独立滑条调节频率（200～4000 Hz）和音量（0～100%），默认值为 1000 Hz 和 70%。点击 **Start tone** 或 **Stop tone** 控制音调播放。PA 开关独立控制功放；启动时 PA 默认开启，音调默认停止。关闭 PA 仅关闭声音输出，不停止音调。"
+
+msgid "Audio Recording and Playback"
+msgstr "录音与播放"
+
+msgid "Open the |corep4x_audio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_audio_example.m5f2| 项目。"
+
+msgid "Record audio in memory at 8 kHz, mono, 16 bit. Tap **RECORD** to start and **STOP REC** to finish, with a maximum duration of 30 seconds. Tap **PLAY** to play the recording or **STOP PLAY** to stop playback. The volume slider ranges from 0 to 100%, with a default of 70%. PA is enabled automatically for playback."
+msgstr "以 8 kHz、单声道、16 bit 将音频录入内存。点击 **RECORD** 开始录音，点击 **STOP REC** 结束，最长录制 30 秒。点击 **PLAY** 回放录音，点击 **STOP PLAY** 停止播放。音量滑条范围为 0～100%，默认 70%；播放时自动开启 PA。"
+
+msgid "Infrared Transmission and Reception"
+msgstr "红外发送与接收"
+
+msgid "Open the |corep4x_ir_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |corep4x_ir_example.m5f2| 项目。"
+
+msgid "Use the built-in infrared receiver on G13 and transmitter on G49. Tap the send button to transmit an NEC frame with address 0x08 and an incrementing data byte. The screen shows transmitted data, received address and data, and the receive count. Use an NEC-compatible infrared remote control to test reception."
+msgstr "使用 G13 的板载红外接收器和 G49 的发射器。点击发送按钮，发送地址为 0x08、数据字节逐次递增的 NEC 帧。界面显示发送数据、接收地址与数据以及接收次数。可使用支持 NEC 协议的红外遥控器测试接收。"
+
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："

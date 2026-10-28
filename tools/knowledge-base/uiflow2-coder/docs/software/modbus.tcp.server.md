@@ -298,7 +298,7 @@ def setup():
         slave_list5
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("label0", 61, 54, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("label1", 58, 94, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)

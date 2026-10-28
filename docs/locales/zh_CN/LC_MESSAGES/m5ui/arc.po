@@ -130,7 +130,7 @@ msgstr "创建一个弧形对象。"
 #: e1843687993a4810b7937e0173460072 f521692c047b4bbbada82b1a60e8a9c8
 #: m5ui.arc.M5Arc.set_arc_color of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: d7470eb36b1449869664508ab939e227 m5ui.arc.M5Arc:3 of
 msgid "The x position of the arc."
@@ -226,11 +226,11 @@ msgstr "获取弧形的数值。"
 #: ../../source/m5ui/arc.rst 4ce727892ab84bea94a8ef5c7dd20dad
 #: 89383fe8dbc64db5824c91c3ae836661
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/arc.rst 8f36635dec324ae8b5588b679421a2f4
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../source/m5ui/arc.rst:99 13513824cc894e4e84409c1c05bc8a5a
 msgid "|get_value.png|"
@@ -484,4 +484,3 @@ msgstr ""
 
 #~ msgid "set_arc_color.png"
 #~ msgstr ""
-

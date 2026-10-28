@@ -113,7 +113,7 @@ msgstr "创建一个列表对象。"
 #: c9ce7c7ace1d40eda1d31030ad0e3cb7 d1f13ceb07404acf809a3830daaf70fb
 #: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 656be22e7fab478c8b640bddbb49461c m5ui.list.M5List:3 of
 msgid "The x position of the list."
@@ -222,7 +222,7 @@ msgstr "标签使用的字体。"
 #: b6652f01b589498cbcdfe8c3367f3e3f bc0cde36666e43eb87167cefd1009706
 #: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: c3b78ad83a764a06ab7233f20cccc7e1 m5ui.list.M5List.add_text:9 of
 msgid "The created label object :ref:`m5ui.M5Label <m5ui.M5Label>`."
@@ -231,7 +231,7 @@ msgstr "创建的标签对象 :ref:`m5ui.M5Label <m5ui.M5Label>`。"
 #: 75f600ac35d545d382151ee7a58beaca ecdd19082e054be3ab7119136bff2ce5
 #: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: 665c248379e3426fad778960a6fbce48 m5ui.list.M5List.add_text:14 of
 msgid "|add_text.png| |add_text2.png|"
@@ -326,4 +326,3 @@ msgstr ""
 
 #~ msgid "|add_button.png|"
 #~ msgstr ""
-

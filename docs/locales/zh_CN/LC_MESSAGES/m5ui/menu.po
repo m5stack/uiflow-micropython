@@ -112,7 +112,7 @@ msgstr "创建一个列表对象。"
 #: c1b37b41756b47deb0cd5188cf9b8eb4 fa61ed37fa944d0b90ca9697438b0126
 #: m5ui.menu.M5Menu.add_label m5ui.menu.M5Menu.add_switch of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 37455e5c81d5417b977c16b1309937f2 m5ui.menu.M5Menu:3 of
 msgid "The x position of the menu."
@@ -263,7 +263,7 @@ msgstr "要附加标签的父对象。如果未指定，标签将附加到菜单
 #: 10d765d84cea4292bea38639ca5e49bd 9eed72d2c8d84c77af2fa807e5d581e0
 #: m5ui.menu.M5Menu.add_label m5ui.menu.M5Menu.add_switch of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: 0d75e3f0e4654d0d998765fd0dd21cd9 m5ui.menu.M5Menu.add_label:9 of
 msgid "The created label object."
@@ -272,7 +272,7 @@ msgstr "创建的标签对象。"
 #: 083b5e9f4a2940d3b2e8f52fb7def5db 81ea3c8fa7964d9cad921107ebc83511
 #: m5ui.menu.M5Menu.add_label m5ui.menu.M5Menu.add_switch of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: 708443611919439881529f64ff778eb3 m5ui.menu.M5Menu.add_label:10 of
 msgid ""
@@ -364,4 +364,3 @@ msgstr ""
 #~ ":ref:`m5ui.M5Label <m5ui.M5Label>`  UiFlow2 Code "
 #~ "Block:     |add_label.png|"
 #~ msgstr ""
-

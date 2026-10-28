@@ -232,7 +232,7 @@ Methods
 
 .. method:: Speaker.setVolumePercentage(percentage: float) -> None
 
-    Set the master volume level for audio output as a percentage. ``percentage`` ranges from 0% to 100%.
+    Set the master volume level for audio output as a ratio from 0.0 to 1.0. For example, 0.5 means 50% and 1.0 means 100%. Values outside this range are clamped.
 
     UIFLOW2:
 
@@ -241,7 +241,7 @@ Methods
 
 .. method:: Speaker.getVolumePercentage() -> float
 
-    Get the master volume level for audio output as a percentage. Returns volume levels from 0% to 100%.
+    Get the master volume level for audio output as a ratio from 0.0 to 1.0, using the same units as ``setVolumePercentage``. For example, 0.5 means 50%.
 
     UIFLOW2:
 

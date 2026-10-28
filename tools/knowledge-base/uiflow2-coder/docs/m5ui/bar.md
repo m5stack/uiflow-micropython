@@ -30,7 +30,7 @@ def setup():
     global page0, bar0, label0, i2c0, envpro_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     bar0 = m5ui.M5Bar(

@@ -120,7 +120,7 @@ msgstr "创建一个刻度对象。"
 
 #: ../../en/m5ui/scale.rst 915381198a9b4bb68f44c91effd05bef
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: fb8a63fe738c47cf97125b41b659d1fc m5ui.scale.M5Scale:3 of
 msgid "The x position of the scale."
@@ -601,4 +601,3 @@ msgstr ""
 
 #~ msgid "set_height.png"
 #~ msgstr ""
-

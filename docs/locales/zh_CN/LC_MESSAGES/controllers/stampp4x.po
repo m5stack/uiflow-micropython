@@ -1,0 +1,95 @@
+# Chinese translations for UIFlow2 Programming Guide package.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-07 17:48+0800\n"
+"PO-Revision-Date: 2026-08-07 17:48+0800\n"
+"Last-Translator: Automatically generated\n"
+"Language: zh_CN\n"
+"Language-Team: none\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:3
+#: ../uiflow-stamp-p4x-doc/docs/source/refs/controllers.stampp4x.ref 1864b10c76ba4024bc73bf481e6cc3e2
+#: 9f7db039d19747199cdf301cafe94b69
+msgid "StampP4X"
+msgstr "StampP4X"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:7 8529423b703741ff81ba55ec84784133
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:9 da5f790783744fc086a5d6143b622d3a
+msgid "|StampP4X|"
+msgstr "|StampP4X|"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:12 891618216fc14b05a9b887a58d34123e
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:15
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:39 0b62fffec409466ebc44be930cbb7941
+#: 21604484065a4ad39bdb1e2decdd3310
+msgid "ADC Input"
+msgstr "ADC 输入"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:17 a93673c86c3a4aa599fdcab453093061
+msgid "Open the |stampp4x_adc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stampp4x_adc_example.m5f2| 项目。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:19
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:41 5ad55090668042c4a6bd5052b50479c2
+#: afce7744dc9046d3ab8588a735c250c4
+msgid ""
+"This example reads the 16-bit ADC value from GPIO23 every 200 ms and prints the result to the "
+"serial console."
+msgstr "此示例每 200 ms 读取一次 GPIO23 的 16 位 ADC 值，并将结果输出到串口终端。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:22
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:48 afc718857e404f31a8a75315a04ac74b
+#: eedee15e6036440bbba21327483dd08e
+msgid "GPIO Output"
+msgstr "GPIO 输出"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:24 286931f5cb4a459bbd85b248074c16ff
+msgid "Open the |stampp4x_gpio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stampp4x_gpio_example.m5f2| 项目。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:26
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:50 88883cc335954c58838afa647fbbb81d
+#: 9f13f0bcf7ec4995b51abfd9a2807893
+msgid ""
+"This example toggles GPIO15 high and low once per second and prints the current output state to "
+"the serial console."
+msgstr "此示例每秒切换一次 GPIO15 的高低电平，并将当前输出状态打印到串口终端。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:29
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:57 a3b097e81791407491cc8e6b3eda6701
+#: ac092c2b35b14b708f6218a548e4d03b
+msgid "PWM Output"
+msgstr "PWM 输出"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:31 de09d94ce3c944188b89a6663ef5322e
+msgid "Open the |stampp4x_pwm_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stampp4x_pwm_example.m5f2| 项目。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:33
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:59 049c6e71251c42ff807d955ac2a9c9ae
+#: 09d9e020a09d4de3950f0f60f8d1ec09
+msgid ""
+"This example outputs a 20 kHz PWM signal on GPIO15. The duty value repeatedly ramps between 0 "
+"and 1023 and is printed to the serial console."
+msgstr "此示例在 GPIO15 输出 20 kHz PWM 信号，占空比数值在 0 至 1023 之间往返变化，并输出到串口终端。"
+
+#: ../uiflow-stamp-p4x-doc/docs/source/controllers/stampp4x.rst:36 c79dfa62b4574a77a37cf7240428b950
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"

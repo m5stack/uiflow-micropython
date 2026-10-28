@@ -23,7 +23,7 @@ msgstr ""
 #: ../../source/m5ui/label.rst:5 ../../source/m5ui/label.rst:64
 #: 90d778f1bc744935ac559bc0fec2d2ca e77b2d069c2047148830b6a86b5c2725
 msgid "M5Label"
-msgstr "\"\"\"M5Label\"\"\""
+msgstr "M5Label"
 
 #: ../../source/m5ui/label.rst:9 db711b0b665e43a594afc24d1eeb6612
 msgid ""
@@ -42,6 +42,11 @@ msgid ""
 "examples. The Alibaba CJK fonts are ``M5.Lcd.FONTS`` fonts for ``M5.Lcd``"
 " / ``M5.Widgets`` drawing, not ``lv.font_montserrat_*`` objects."
 msgstr ""
+"**可用字体**：``m5ui`` 组件使用 LVGL 字体，例如 ``lv.font_montserrat_12`` 以及字号为 "
+"``14``、``16``、``18``、``24``、``40``、``44``、``48`` 的同系列字体。部分固件（如 Tab5）还提供 "
+"``20``、``22``、``30``、``36`` 字号。跨主机示例在使用可选字号前，应先通过 ``hasattr(lv, "
+"\"font_montserrat_20\")`` 检查。Alibaba 中日韩字体属于 ``M5.Lcd.FONTS``，用于 ``M5.Lcd``"
+" / ``M5.Widgets`` 绘制，并非 ``lv.font_montserrat_*`` 字体对象。"
 
 #: ../../source/m5ui/label.rst:23 1c29035949b24c62a1d48865643b2d7d
 msgid "UiFlow2 Example"
@@ -128,6 +133,8 @@ msgid ""
 "automatically by its text content. To explicitly set a label's width, "
 "call ``label.set_width(150)`` after creation."
 msgstr ""
+"与 ``M5Button`` 和 ``M5Chart`` 不同，``M5Label`` 构造函数 **不接受** ``w`` 或 ``h`` "
+"参数。标签尺寸由文本内容自动确定。如需指定宽度，可在创建后调用 ``label.set_width(150)``。"
 
 #: aa5a298bcd8e4a5882cda2467ebe174b m5ui.label.M5Label:1 of
 msgid "Bases: :py:class:`~lvgl.label`"
@@ -140,7 +147,7 @@ msgstr "创建标签对象。"
 #: ../../source/m5ui/label.rst dab4ae0b9d1741ce86d3f2aea733b20c
 #: m5ui.label.M5Label.set_shadow of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: acd2118e39464407ad64ca40cb8ab7a0 m5ui.label.M5Label:3 of
 msgid "The text to display on the label."
@@ -193,7 +200,7 @@ msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
 #: ../../source/m5ui/label.rst cdfbde51e69147488c64a6b1c303317f
 #: m5ui.label.M5Label.set_shadow of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/label.rst:86 b7f11a39907541e38dfe7b98b702e47e
 msgid "|set_flag.png|"
@@ -451,7 +458,7 @@ msgstr "阴影的垂直偏移。"
 #: 7da295d490bb4ec5b47082025f74672f m5ui.label.M5Label.set_shadow
 #: m5ui.label.M5Label.unset_shadow of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: f30147a9e794416586f7c49d8883aefa m5ui.label.M5Label.set_shadow:12 of
 msgid "|set_shadow.png|"

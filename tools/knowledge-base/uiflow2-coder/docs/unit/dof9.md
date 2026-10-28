@@ -49,7 +49,7 @@ def setup():
         UPDATE_DURATION_MS
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x10171D)
     title = Widgets.Label(
         "DoF9 / Compass", 12, 8, 1.0, 0x4CD7D0, 0x10171D, Widgets.FONTS.Montserrat18

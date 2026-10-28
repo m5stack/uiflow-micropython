@@ -44,7 +44,7 @@ def setup():
     global title0, label_freq, label_tip, bus2, chain_buzzer_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     title0 = Widgets.Title(
         "Chain Buzzer Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18

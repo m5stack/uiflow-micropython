@@ -119,7 +119,7 @@ msgstr "创建一个直线对象。"
 #: e9f89e952bc24eafb61a9c7e767786e7 m5ui.line.M5Line.add_point
 #: m5ui.line.M5Line.set_points of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 7a513704d79f46a0a68381f5d442747f 92c3610dd06540fc96a6b5c850e9ddbc
 #: m5ui.line.M5Line:3 m5ui.line.M5Line.set_points:3 of
@@ -203,7 +203,7 @@ msgstr "如果为 True，则添加标志；如果为 False，则移除标志。"
 
 #: ../../source/m5ui/line.rst ce50c7198db44f8f9ddf218fcb63e0e4
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../source/m5ui/line.rst:102 aa5d2df3594b4cbbbf5c1e9a78dd5520
 msgid "|set_flag.png|"
@@ -327,4 +327,3 @@ msgstr ""
 
 #~ msgid "The opacity level (0-255)."
 #~ msgstr "透明度级别（0-255）。"
-

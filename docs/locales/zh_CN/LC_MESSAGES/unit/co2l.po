@@ -76,7 +76,7 @@ msgstr "class CO2LUnit"
 
 #: ../../source/unit/co2l.rst:32 5d426c4873cf40ebb2bfa0e32fecab80
 msgid "Constructors"
-msgstr "\"\"\"Constructors\"\"\""
+msgstr "构造函数"
 
 #: ../../source/unit/co2l.rst:36 d1e727058b2c4e51b2ce424e6c699466
 msgid "Initialize the CO2LUnit with the I2C interface and address."

@@ -8,6 +8,10 @@ M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and functi
 
 It has been adapted for M5Stack devices and you only need to call ``m5ui.init()`` to start using it.
 
+.. note::
+
+    Set the display rotation before calling ``m5ui.init()``. With the updated M5GFX, Core2, CoreS3 and StackChan use ``0`` for their normal 320 × 240 landscape layout. See :ref:`display-rotation` for other controllers and migration instructions.
+
 Supported Controllers
 ---------------------
 

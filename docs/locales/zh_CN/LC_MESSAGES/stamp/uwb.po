@@ -433,20 +433,28 @@ msgid "configure_tx_rf.png"
 msgstr ""
 
 #: ../../source/stamp/uwb.rst:275 ad3b82aabeca4c678cfb61962c89921e
-msgid "Set the TX and RX antenna delays."
-msgstr "设置 TX 和 RX 天线延时。"
+msgid ""
+"Set the TX and RX timestamp antenna-delay compensation values. These values "
+"compensate the fixed delay between the UWB timestamp reference point and the "
+"actual antenna TX/RX point for ranging calibration. They do not delay packet "
+"transmission or change RF power. Keep the default values unless the device "
+"has been calibrated for precision ranging."
+msgstr ""
+"设置 TX 和 RX 时间戳的天线延迟补偿值。此参数用于补偿 UWB 时间戳参考点与实际天线 "
+"收发点之间的固定延迟，以校准测距结果。它不会让数据包延迟发送，也不会改变射频功率。 "
+"除非设备已经完成精密测距标定，否则请保持默认值。"
 
 #: ../../source/stamp/uwb.rst:277 de315d546a6b4a889f94938c586d919d
 msgid ""
-"TX antenna delay in device time units, range ``0`` to ``65535``. Default "
+"TX compensation in device time units, range ``0`` to ``65535``. Default "
 "is ``16385``."
-msgstr "TX 天线延时，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
+msgstr "TX 补偿值，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
 
 #: ../../source/stamp/uwb.rst:278 a4d3c7a872c04c51b4049e0337b9f331
 msgid ""
-"RX antenna delay in device time units, range ``0`` to ``65535``. Default "
+"RX compensation in device time units, range ``0`` to ``65535``. Default "
 "is ``16385``."
-msgstr "RX 天线延时，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
+msgstr "RX 补偿值，单位为设备时间单位，范围为 ``0`` 到 ``65535``。默认值为 ``16385``。"
 
 #: ../../source/stamp/uwb.rst:282 429357e79b4e41daaa2a45635d159908
 msgid "|set_antenna_delay.png|"
@@ -779,8 +787,15 @@ msgid "Read the current UWB system timestamp."
 msgstr "读取当前 UWB 系统时间戳。"
 
 #: ../../source/stamp/uwb.rst:566 e7b5a68c01b94e7ea8c9e5879c5ec3ce
-msgid "Full 40-bit system timestamp in device time units."
-msgstr "完整的 40 位系统时间戳，单位为设备时间单位。"
+msgid ""
+"32-bit system timestamp as a raw device-clock count. One count is "
+"approximately ``15.65 ps``; this is not milliseconds or a wall-clock "
+"timestamp. Multiply a timestamp difference by ``1 / (499200000 * 128)`` "
+"to convert it to seconds. The counter wraps approximately every ``67.2 ms``."
+msgstr ""
+"32 位系统时间戳，为原始设备时钟计数。每个计数约为 ``15.65 ps``；"
+"它不是毫秒或实际日期时间戳。将时间戳差值乘以 ``1 / (499200000 * 128)`` 可转换为秒。"
+"计数器约每 ``67.2 ms`` 回绕一次。"
 
 #: ../../source/stamp/uwb.rst:571 6697163afcb242b187f8f69cb59410eb
 msgid "|system_timestamp.png|"

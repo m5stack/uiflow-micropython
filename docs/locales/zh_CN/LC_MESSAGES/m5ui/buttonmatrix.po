@@ -161,7 +161,7 @@ msgstr "创建一个按钮矩阵对象。"
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: 6cc0f8ac0d824c7b82c483b49de58b44 m5ui.buttonmatrix.M5ButtonMatrix:3 of
 msgid "A list of button labels. Use \"\\\\n\" to create a new row."
@@ -213,7 +213,7 @@ msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea of
 msgid "Returns"
-msgstr ""
+msgstr "返回值"
 
 #: ../../en/m5ui/buttonmatrix.rst:70 4d46a61d475a40f69911de9c966ba7a7
 msgid "|set_flag.png|"
@@ -341,7 +341,7 @@ msgstr "按钮的文本。"
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: ../../en/m5ui/buttonmatrix.rst:194 ef8d890ca5bc466ba65c35843be53882
 msgid "|get_button_text.png|"
@@ -669,4 +669,3 @@ msgstr ""
 #~ "button, or lv.buttonmatrix.BUTTON.NONE if no"
 #~ " button is pressed."
 #~ msgstr "最后按下按钮的索引，如果没有按钮被按下，则返回 lv.buttonmatrix.BUTTON.NONE。"
-

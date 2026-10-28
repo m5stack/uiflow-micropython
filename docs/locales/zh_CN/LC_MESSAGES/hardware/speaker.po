@@ -227,10 +227,12 @@ msgid ""
 "module. Use ``from M5 import *`` to make ``Speaker`` available. Do not "
 "write ``from hardware import Speaker``."
 msgstr ""
+"Speaker 注册在 ``M5`` 模块中，**不在** ``hardware`` 模块中。请使用 ``from M5 import *`` 导入 "
+"``Speaker``，不要使用 ``from hardware import Speaker``。"
 
 #: ../../source/hardware/speaker.rst:110 7d00518d93ed42da9a624ed7f5c941d6
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
 #: ../../source/hardware/speaker.rst:116 0441743975d44be589d13394bdf44582
 msgid "Get or set the parameters of the Speaker object."
@@ -547,9 +549,9 @@ msgstr ""
 
 #: ../../source/hardware/speaker.rst:235 174c3022cd5541a5957d384e9b9beb25
 msgid ""
-"Set the master volume level for audio output as a percentage. "
-"``percentage`` ranges from 0% to 100%."
-msgstr "设置声音的输出主音量百分比。``percentage`` 是 0% ~ 100% 的音量等级。"
+"Set the master volume level for audio output as a ratio from 0.0 to 1.0. "
+"For example, 0.5 means 50% and 1.0 means 100%. Values outside this range are clamped."
+msgstr "使用 0.0 到 1.0 的比例设置声音的输出主音量。例如，0.5 表示 50%，1.0 表示 100%。超出范围的值会限制在此范围内。"
 
 #: ../../source/hardware/speaker.rst:239 767c4bc5135b4fd4bb9c8792556daf90
 msgid "|setVolumePercentage.png|"
@@ -561,9 +563,9 @@ msgstr ""
 
 #: ../../source/hardware/speaker.rst:244 d4f0b8e6b8fb4cb1b327b3345391f46b
 msgid ""
-"Get the master volume level for audio output as a percentage. Returns "
-"volume levels from 0% to 100%."
-msgstr "获取声音的输出主音量百分比。返回 0% ~ 100% 的音量等级。"
+"Get the master volume level for audio output as a ratio from 0.0 to 1.0, "
+"using the same units as ``setVolumePercentage``. For example, 0.5 means 50%."
+msgstr "获取声音的输出主音量，返回 0.0 到 1.0 的比例，与 ``setVolumePercentage`` 使用相同单位。例如，0.5 表示 50%。"
 
 #: ../../source/hardware/speaker.rst:248 39424647c53946d289e7efc9edefb8fb
 msgid "|getVolumePercentage.png|"
@@ -597,7 +599,7 @@ msgstr "设置指定虚拟通道的声音输出音量。"
 #: 55bcfd39799a4ee8acadf9b015570809 8d654b39ccac4ce2875db6d8c7e1f8dd
 #: b4051e3548644094a01ef747e0695fb6 db8b8ad11df34327aa9c952919f7b024
 msgid "Parameters:"
-msgstr ""
+msgstr "参数："
 
 #: ../../source/hardware/speaker.rst:266 5e8e40ed5b1442ce8d190bff187d01cd
 msgid "``volume`` accepts volume levels from 0 to 255."
