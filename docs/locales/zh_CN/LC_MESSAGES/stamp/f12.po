@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 22:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/stamp/f12.rst:2
+msgid "Stamp FPC12"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:6
+msgid ""
+"``StampF12`` maps the one-based connector positions of the Stamp Series "
+"FPC12 connector to GPIO numbers on the current Stamp host. It supports "
+"StampC5, StampC6, and StampS3Mini."
+msgstr ""
+
+#: ../../source/stamp/f12.rst:11
+msgid "Pin Mapping"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:13
+msgid "Stamp Series FPC12 position mapping"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:16
+msgid "Position"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:17
+msgid "StampC5"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:18
+msgid "StampC6"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:19
+msgid "StampS3Mini"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:20
+msgid "1"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:21 ../../source/stamp/f12.rst:22
+#: ../../source/stamp/f12.rst:23 ../../source/stamp/f12.rst:25
+#: ../../source/stamp/f12.rst:26 ../../source/stamp/f12.rst:27
+msgid "3V3"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:24
+msgid "2"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:28
+msgid "3"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:29 ../../source/stamp/f12.rst:66
+msgid "G23"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:30
+msgid "G8"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:31
+msgid "G38"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:32
+msgid "4"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:33 ../../source/stamp/f12.rst:34
+msgid "G0"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:35 ../../source/stamp/f12.rst:54
+msgid "G21"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:36
+msgid "5"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:37
+msgid "G24"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:38
+msgid "G18"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:39
+msgid "G39"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:40
+msgid "6"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:41
+msgid "G25"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:42
+msgid "G19"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:43
+msgid "G40"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:44
+msgid "7"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:45 ../../source/stamp/f12.rst:46
+#: ../../source/stamp/f12.rst:47 ../../source/stamp/f12.rst:61
+#: ../../source/stamp/f12.rst:62 ../../source/stamp/f12.rst:63
+msgid "GND"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:48
+msgid "8"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:49
+msgid "G26"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:50
+msgid "G20"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:51
+msgid "G41"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:52
+msgid "9"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:53
+msgid "G27"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:55
+msgid "G42"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:56
+msgid "10"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:57
+msgid "G11"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:58
+msgid "G22"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:59
+msgid "G43"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:60
+msgid "11"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:64
+msgid "12"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:65
+msgid "G12"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:67
+msgid "G44"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:69
+msgid ""
+"Positions 1 and 2 are 3.3 V. Positions 7 and 11 are ground. They are not "
+"returned as GPIO signals."
+msgstr ""
+
+#: ../../source/stamp/f12.rst:73
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:75
+msgid ""
+"The following example obtains the GPIO at FPC12 position 4 on the current"
+" Stamp host."
+msgstr ""
+
+#: ../../source/stamp/f12.rst:78
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:89
+msgid "**API**"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:92
+msgid "class StampF12"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:95
+msgid "Constructors"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:99
+msgid "Create an FPC12 position mapper for the current Stamp host."
+msgstr ""
+
+#: ../../source/stamp/f12.rst
+msgid "Raises"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:101
+msgid "If the current board is not StampC5, StampC6, or StampS3Mini."
+msgstr ""
+
+#: ../../source/stamp/f12.rst:105
+msgid "Methods"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:109
+msgid "Return the GPIO number assigned to a connector position."
+msgstr ""
+
+#: ../../source/stamp/f12.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:111
+msgid "One-based FPC12 position."
+msgstr ""
+
+#: ../../source/stamp/f12.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:112
+msgid "GPIO number for the current Stamp host."
+msgstr ""
+
+#: ../../source/stamp/f12.rst
+msgid "Return type"
+msgstr ""
+
+#: ../../source/stamp/f12.rst:114
+msgid "If the position is outside 1-12 or is a power or ground position."
+msgstr ""
+
+\n

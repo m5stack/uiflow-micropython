@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 18:42+0800\n"
+"POT-Creation-Date: 2026-10-28 22:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -27,9 +27,7 @@ msgstr "Faces Gamepad3 模块"
 msgid ""
 "Faces Gamepad3 is an eight-button input module. Button states are active-"
 "low: a cleared bit means that the button is pressed."
-msgstr ""
-"Faces Gamepad3 是一个八按键输入模块。按键状态采用低电平有效：清零的位"
-"表示对应按键被按下。"
+msgstr "Faces Gamepad3 是一个八按键输入模块。按键状态采用低电平有效：清零的位表示对应按键被按下。"
 
 #: ../../source/module/faces_gamepad3.rst:11
 msgid "Support the following products:"
@@ -48,7 +46,7 @@ msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/module/faces_gamepad3.rst:19
-#: ../../source/module/faces_gamepad3.rst:33
+#: ../../source/module/faces_gamepad3.rst:37
 msgid "Button event display"
 msgstr "按键事件显示"
 
@@ -57,26 +55,42 @@ msgid ""
 "This example reports press and release events for the Up and Down "
 "buttons. The callback receives ``True`` when the selected button is "
 "pressed and ``False`` when it is released."
-msgstr ""
-"该示例演示 Up 和 Down 按键的按下与释放事件。选中按键被按下时，回调收到"
-" ``True``；释放时收到 ``False``。"
+msgstr "该示例演示 Up 和 Down 按键的按下与释放事件。选中按键被按下时，回调收到 ``True``；释放时收到 ``False``。"
 
 #: ../../source/module/faces_gamepad3.rst:27
 msgid "Open the |faces_gamepad3_cores3_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |faces_gamepad3_cores3_example.m5f2| 项目。"
 
-#: ../../source/module/faces_gamepad3.rst:30
+#: ../../source/module/faces_gamepad3.rst:29 module.faces.FacesGamepad3Module:5
+#: module.faces.FacesGamepad3Module.get_key_state:6
+#: module.faces.FacesGamepad3Module.tick:3
+#: module.faces._FacesModule.get_device_id:6
+#: module.faces._FacesModule.get_firmware_version:6
+#: module.faces._FacesModule.get_i2c_address:6
+#: module.faces._FacesModule.get_uid:6
+#: module.faces._FacesModule.set_i2c_address:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/module/faces_gamepad3.rst:31
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/module.faces_gamepad3.ref:5
+msgid "example.png"
+msgstr ""
+
+#: ../../source/module/faces_gamepad3.rst:34
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../source/module/faces_gamepad3.rst:35
+#: ../../source/module/faces_gamepad3.rst:39
 msgid ""
 "Register one callback for each button that should be monitored, then call"
 " :meth:`FacesGamepad3Module.tick` regularly from the main loop."
-msgstr "为需要监测的每个按键注册回调，然后在主循环中定期调用"
-" :meth:`FacesGamepad3Module.tick`。"
+msgstr "为需要监测的每个按键注册回调，然后在主循环中定期调用 :meth:`FacesGamepad3Module.tick`。"
 
-#: ../../source/module/faces_gamepad3.rst:43
+#: ../../source/module/faces_gamepad3.rst:47
 msgid "API"
 msgstr "API参考"
 
@@ -97,22 +111,11 @@ msgstr ""
 msgid "I2C address. Default is ``0x08``."
 msgstr "I2C 地址，默认为 ``0x08``。"
 
-#: module.faces.FacesGamepad3Module:5
-#: module.faces.FacesGamepad3Module.get_key_state:6
-#: module.faces.FacesGamepad3Module.tick:3
-#: module.faces._FacesModule.get_device_id:6
-#: module.faces._FacesModule.get_firmware_version:6
-#: module.faces._FacesModule.get_i2c_address:6
-#: module.faces._FacesModule.get_uid:6
-#: module.faces._FacesModule.set_i2c_address:5 of
-msgid "UiFlow2 Code Block:"
-msgstr "UiFlow2 代码块："
-
 #: module.faces.FacesGamepad3Module:7 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:5
+#: ../../source/refs/module.faces_gamepad3.ref:7
 msgid "init.png"
 msgstr ""
 
@@ -158,7 +161,7 @@ msgstr ""
 msgid "|get_key_state.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:11
+#: ../../source/refs/module.faces_gamepad3.ref:13
 msgid "get_key_state.png"
 msgstr ""
 
@@ -202,7 +205,7 @@ msgstr "轮询一次，并为每个发生变化的按键调用回调。"
 msgid "|tick.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:13
+#: ../../source/refs/module.faces_gamepad3.ref:15
 msgid "tick.png"
 msgstr ""
 
@@ -218,7 +221,7 @@ msgstr "设备类型 ID。"
 msgid "|get_device_id.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:6
+#: ../../source/refs/module.faces_gamepad3.ref:8
 msgid "get_device_id.png"
 msgstr ""
 
@@ -234,7 +237,7 @@ msgstr "固件版本。"
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:8
+#: ../../source/refs/module.faces_gamepad3.ref:10
 msgid "get_firmware_version.png"
 msgstr ""
 
@@ -250,7 +253,7 @@ msgstr "当前 I2C 地址。"
 msgid "|get_i2c_address.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:9
+#: ../../source/refs/module.faces_gamepad3.ref:11
 msgid "get_i2c_address.png"
 msgstr ""
 
@@ -266,7 +269,7 @@ msgstr "12 字节的唯一标识符。"
 msgid "|get_uid.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:7
+#: ../../source/refs/module.faces_gamepad3.ref:9
 msgid "get_uid.png"
 msgstr ""
 
@@ -282,82 +285,84 @@ msgstr "新地址范围为 ``0x08`` 到 ``0x77``。"
 msgid "|set_i2c_address.png|"
 msgstr ""
 
-#: ../../source/refs/module.faces_gamepad3.ref:10
+#: ../../source/refs/module.faces_gamepad3.ref:12
 msgid "set_i2c_address.png"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:50
+#: ../../source/module/faces_gamepad3.rst:54
 msgid "Gamepad button masks:"
 msgstr "游戏手柄按键掩码："
 
-#: ../../source/module/faces_gamepad3.rst:56
+#: ../../source/module/faces_gamepad3.rst:60
 msgid "Constant"
 msgstr "常量"
 
-#: ../../source/module/faces_gamepad3.rst:57
+#: ../../source/module/faces_gamepad3.rst:61
 msgid "Value"
 msgstr "值"
 
-#: ../../source/module/faces_gamepad3.rst:58
+#: ../../source/module/faces_gamepad3.rst:62
 msgid "``BUTTON_UP``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:59
+#: ../../source/module/faces_gamepad3.rst:63
 msgid "``0x01``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:60
+#: ../../source/module/faces_gamepad3.rst:64
 msgid "``BUTTON_DOWN``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:61
+#: ../../source/module/faces_gamepad3.rst:65
 msgid "``0x02``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:62
+#: ../../source/module/faces_gamepad3.rst:66
 msgid "``BUTTON_LEFT``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:63
+#: ../../source/module/faces_gamepad3.rst:67
 msgid "``0x04``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:64
+#: ../../source/module/faces_gamepad3.rst:68
 msgid "``BUTTON_RIGHT``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:65
+#: ../../source/module/faces_gamepad3.rst:69
 msgid "``0x08``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:66
+#: ../../source/module/faces_gamepad3.rst:70
 msgid "``BUTTON_A``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:67
+#: ../../source/module/faces_gamepad3.rst:71
 msgid "``0x10``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:68
+#: ../../source/module/faces_gamepad3.rst:72
 msgid "``BUTTON_B``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:69
+#: ../../source/module/faces_gamepad3.rst:73
 msgid "``0x20``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:70
+#: ../../source/module/faces_gamepad3.rst:74
 msgid "``BUTTON_SELECT``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:71
+#: ../../source/module/faces_gamepad3.rst:75
 msgid "``0x40``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:72
+#: ../../source/module/faces_gamepad3.rst:76
 msgid "``BUTTON_START``"
 msgstr ""
 
-#: ../../source/module/faces_gamepad3.rst:73
+#: ../../source/module/faces_gamepad3.rst:77
 msgid "``0x80``"
 msgstr ""
+
+\n
