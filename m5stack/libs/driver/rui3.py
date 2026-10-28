@@ -11,7 +11,7 @@ class RUI3:
     _instance = None
     _recv_thread_running = False
 
-    def __init__(self, id, tx, rx, rst, debug=False):
+    def __init__(self, id, tx, rx, rst=-1, debug=False):
         if RUI3._instance is not None:
             try:
                 RUI3._instance.close()

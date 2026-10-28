@@ -11,7 +11,7 @@ if sys.platform != "esp32":
 
 class LoRaWANUnit_RUI3(RUI3):
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, debug=False):
-        super().__init__(id, port[1], port[0], debug)
+        super().__init__(id=id, tx=port[1], rx=port[0], debug=debug)
 
     def set_abp_config(self, dev_addr: str, apps_key: str, nwks_key: str):
         """
