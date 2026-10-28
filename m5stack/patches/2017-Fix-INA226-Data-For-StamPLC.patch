@@ -1,11 +1,7 @@
-Index: M5Unified/src/utility/Power_Class.cpp
-===================================================================
---- M5Unified.orig/src/utility/Power_Class.cpp
-+++ M5Unified/src/utility/Power_Class.cpp
-@@ -2858,7 +2858,7 @@ namespace m5
-       }
- 
-       case board_t::board_M5StampPLC:
+--- M5Unified.orig/src/utility/Power_Class.inl
++++ M5Unified/src/utility/Power_Class.inl
+@@ -4029,7 +4029,7 @@
+       case board_t::board_M5StamPLC:
 -        if (port_mask & (ext_port_mask_t::ext_PWR485 | ext_port_mask_t::ext_PWRCAN)) {
 +        if (port_mask & (ext_port_mask_t::ext_EXT)) {
            if (is_voltage)
