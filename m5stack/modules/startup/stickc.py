@@ -846,8 +846,11 @@ class Framework:
         app.on_hide()
         app.on_ready()
 
-    async def run(self):
-        asyncio.create_task(self.load(self._launcher))
+    async def run(self, initial_app=None):
+        await self.load(self._launcher)
+        if initial_app is not None and initial_app is not self._launcher:
+            await self.unload(self._launcher)
+            await self.load(initial_app)
         # asyncio.create_task(self.gc_task())
         while True:
             M5.update()
@@ -905,6 +908,7 @@ class StickC_Startup:
         DEBUG and print("Run startup menu")
 
         statusbar = StatusBarApp(icos=None, wifi=self._wifi)
+        dev_app = DevApp(None)
         cloud_app = CloudApp((self._wifi, ssid))
         menu_app = MenuApp(data=cloud_app)
         launcher = LauncherApp(data=(cloud_app, menu_app))
@@ -912,4 +916,4 @@ class StickC_Startup:
         fw = Framework()
         fw.install_launcher(launcher)
         fw.install_bar(statusbar)
-        asyncio.run(fw.run())
+        asyncio.run(fw.run(dev_app))

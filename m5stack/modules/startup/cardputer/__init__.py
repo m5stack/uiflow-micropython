@@ -53,4 +53,4 @@ class Cardputer_Startup:
         fw.install(setting_app)
         fw.install(dev_app)
         fw.install(ezdata_app)
-        fw.start()
+        fw.start(dev_app)

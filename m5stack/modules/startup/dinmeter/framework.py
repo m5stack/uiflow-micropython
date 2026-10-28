@@ -37,9 +37,9 @@ class Framework:
         app.install()
         self._apps.append(app)
 
-    def start(self):
+    def start(self, initial_app=None):
         # asyncio.create_task(self.gc_task())
-        asyncio.run(self.run())
+        asyncio.run(self.run(initial_app))
 
     async def unload(self, app: app_base.AppBase):
         # app = self._apps.pop()
@@ -52,13 +52,14 @@ class Framework:
         app.stop()
         app.start()
 
-    async def run(self):
+    async def run(self, initial_app=None):
         rotary = hardware.Rotary()
         self._bar and self._bar.start()
         self._sidebar and self._sidebar.start()
-        if self._launcher:
-            self._app_selector.select(self._launcher)
-            self._launcher.start()
+        initial_app = initial_app or self._launcher
+        if initial_app:
+            self._app_selector.select(initial_app)
+            initial_app.start()
 
         self.i2c0 = machine.I2C(0, scl=machine.Pin(15), sda=machine.Pin(13), freq=100000)
         self._kb_status = False
