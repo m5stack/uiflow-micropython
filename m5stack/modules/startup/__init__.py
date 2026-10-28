@@ -243,9 +243,10 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
 
         lan_if = create_lan()
     elif board_id == M5.BOARD.M5StamPLC:
-        from stamplc import PoEStamPLC
+        if net_mode == "ETH":
+            from stamplc import PoEStamPLC
 
-        lan_if = PoEStamPLC()
+            lan_if = PoEStamPLC()
     startup.connect_network(ssid, pswd, lan_if)
     if board_id == _BOARD_M5COREP4X and net_mode == "ETH":
         if lan_if.set_default_netif() != 0:
