@@ -3,3 +3,20 @@
 # SPDX-License-Identifier: MIT
 
 CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
+
+# PaperMono keeps a 96 KB EPD framebuffer in internal DMA RAM, which leaves
+# very little internal heap once the startup UI is up. Wi-Fi + BLE coexistence
+# needs contiguous internal (DMA-capable) memory that PSRAM cannot provide,
+# so prefer PSRAM for small allocations and shrink the Wi-Fi/BLE buffer pools.
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=1024
+# Move the Wi-Fi/LWIP (and Bluetooth) static BSS into PSRAM so the internal
+# heap gets the space back at link time.
+CONFIG_SPIRAM_ALLOW_BSS_SEG_EXTERNAL_MEMORY=y
+
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=6
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=16
+CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM=16
+CONFIG_ESP_WIFI_MGMT_SBUF_NUM=16
+
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=1
+CONFIG_BT_CTRL_BLE_MAX_ACT=2
