@@ -118,6 +118,7 @@ def loop():
                 stamp_uwb.clear_status(uwb.STATUS_TX_DONE)
                 print((str("final sent, sequence=") + str(sequence)))
                 sequence = sequence + 1 & 0xFF
+        print(stamp_uwb.tx_timestamp())
     except:
         print("ranging retry")
         stamp_uwb.force_trx_off()

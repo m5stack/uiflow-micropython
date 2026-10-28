@@ -230,10 +230,14 @@ class StampUWB:
         )
 
     def set_antenna_delay(self, tx=16385, rx=16385):
-        """Set the TX and RX antenna delays.
+        """Set the TX and RX timestamp antenna-delay compensation values.
 
-        :param int tx: TX antenna delay in device time units, range 0-65535. Default is 16385.
-        :param int rx: RX antenna delay in device time units, range 0-65535. Default is 16385.
+        These values compensate the fixed delay between the UWB timestamp
+        reference point and the actual antenna TX/RX point. They affect
+        ranging calibration; they do not delay the packet or change RF power.
+        :param int tx: TX compensation in device time units, range 0-65535. Default is 16385.
+        :param int rx: RX compensation in device time units, range 0-65535. Default is 16385.
+            Keep the default values unless the device has been calibrated for precision ranging.
         :return: None.
         :rtype: None
 
@@ -497,7 +501,7 @@ class StampUWB:
     def system_timestamp(self):
         """Read the current UWB system timestamp.
 
-        :return: Full 40-bit system timestamp in device time units, range 0-(2**40 - 1).
+        :return: 32-bit system timestamp as a raw device-clock count, range 0-(2**32 - 1). One count is about 15.65 ps; this is not milliseconds or a wall-clock timestamp. Multiply a timestamp difference by ``1 / (499200000 * 128)`` to convert it to seconds. The counter wraps approximately every 67.2 milliseconds.
         :rtype: int
 
         MicroPython Code Block:

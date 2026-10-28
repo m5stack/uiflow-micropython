@@ -390,11 +390,11 @@ static mp_obj_t uwb_read_rx_frame(mp_obj_t self_in) {
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(uwb_read_rx_frame_obj, uwb_read_rx_frame);
 
-static uint64_t read_timestamp(void (*reader)(uint8_t *)) {
-    uint8_t bytes[5];
+static uint64_t read_timestamp(void (*reader)(uint8_t *), int byte_count) {
+    uint8_t bytes[5] = {0};
     reader(bytes);
     uint64_t value = 0;
-    for (int index = 4; index >= 0; --index) {
+    for (int index = byte_count - 1; index >= 0; --index) {
         value = (value << 8) | bytes[index];
     }
     return value;
@@ -404,17 +404,17 @@ static void read_rx_timestamp_adapter(uint8_t *timestamp) {
 }
 static mp_obj_t uwb_tx_timestamp(mp_obj_t self_in) {
     get_active(self_in);
-    return mp_obj_new_int_from_ull(read_timestamp(dwt_readtxtimestamp));
+    return mp_obj_new_int_from_ull(read_timestamp(dwt_readtxtimestamp, 5));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(uwb_tx_timestamp_obj, uwb_tx_timestamp);
 static mp_obj_t uwb_rx_timestamp(mp_obj_t self_in) {
     get_active(self_in);
-    return mp_obj_new_int_from_ull(read_timestamp(read_rx_timestamp_adapter));
+    return mp_obj_new_int_from_ull(read_timestamp(read_rx_timestamp_adapter, 5));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(uwb_rx_timestamp_obj, uwb_rx_timestamp);
 static mp_obj_t uwb_system_timestamp(mp_obj_t self_in) {
     get_active(self_in);
-    return mp_obj_new_int_from_ull(read_timestamp(dwt_readsystime));
+    return mp_obj_new_int_from_ull(read_timestamp(dwt_readsystime, 4));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(uwb_system_timestamp_obj, uwb_system_timestamp);
 
