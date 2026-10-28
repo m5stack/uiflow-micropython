@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from driver.simcom.sim7028 import SIM7028
+from driver.m5ioe1 import M5IOE1, Pin
 import sys
 import machine
 import time
@@ -11,137 +12,6 @@ import M5
 if sys.platform != "esp32":
     from typing import Literal
     from typing import Optional
-
-
-class PY32_register:
-
-    """A class for interacting with the TCA8418 registers
-
-    :param TCA8418 tca: The associated TCA8418 object
-    :param int base_addr: The base address for this register
-    :param bool invert_value: Whether the value given should be interpreted as inverted
-        (True -> False), default is False (inputs are as-is, not inverted)
-    :param bool read_only: Whether the register is read-only or read/write, default
-        is False (register is read/write)
-    :param int|None initial_value: An initial value to provide to the register, default
-        is ``None`` (no default is provided)
-    """
-
-    def __init__(
-        self,
-        tca: "PY32IOExpander",
-        base_addr: int,
-        invert_value: bool = False,
-        read_only: bool = False,
-        initial_value: Optional[int] = None,
-    ) -> None:
-        self._tca = tca
-        self._baseaddr = base_addr
-        self._invert = invert_value
-        self._ro = read_only
-
-        # theres 2 registers in a row for each setting
-        if not read_only and initial_value is not None:
-            self._tca._write_reg(base_addr, initial_value)
-            self._tca._write_reg(base_addr + 1, initial_value)
-
-    def __index__(self) -> int:
-        """Read all 18 bits of register data and return as one integer"""
-        val = self._tca._read_reg(self._baseaddr + 1)
-        val <<= 8
-        val |= self._tca._read_reg(self._baseaddr)
-        return val
-
-    def __getitem__(self, pin_number: int) -> bool:
-        """Read the single bit at 'pin_number' offset"""
-        value = self._tca._get_gpio_register(self._baseaddr, pin_number)
-        if self._invert:
-            value = not value
-        return value
-
-    def __setitem__(self, pin_number: int, value: bool) -> None:
-        """Set a single bit at 'pin_number' offset to 'value'"""
-        if self._ro:
-            raise NotImplementedError("Read only register")
-        if self._invert:
-            value = not value
-        self._tca._set_gpio_register(self._baseaddr, pin_number, value)
-
-
-class PY32IOExpander:
-    def __init__(self, i2c, address=0x6F):
-        self._i2c = i2c
-        self._address = address
-        self._buf = bytearray(1)
-        self.gpio_output = PY32_register(self, 0x05, initial_value=0x00)
-        self.gpio_drive = PY32_register(self, 0x13, initial_value=0x00)
-        self.gpio_mode = PY32_register(self, 0x03, initial_value=0x00)
-
-    def adc_init(self, channel: Literal[1, 2, 3, 4]):
-        value = self._read_reg(0x15)
-        value &= 0b1111_1000
-        value |= channel
-        self._write_reg(0x15, value)
-
-        value |= 1 << 6
-        self._write_reg(0x15, value)
-
-    def adc_read(self) -> int:
-        timeout = 3000
-        last_time = time.ticks_ms()
-        while time.ticks_diff(time.ticks_ms(), last_time) < timeout:
-            if self._read_reg(0x15) & (1 << 7) == 0:
-                break
-
-        adc_raw = self._read_reg(0x16)
-        adc_raw |= (self._read_reg(0x17) & 0x0F) << 8
-        return adc_raw
-
-    def adc_read_reference(self) -> int:
-        adc_raw = self._read_reg(0x27)
-        adc_raw |= self._read_reg(0x28) << 8
-        return adc_raw
-
-    def _set_gpio_register(self, reg_base_addr: int, pin_number: int, value: bool) -> None:
-        if not 1 <= pin_number <= 14:
-            raise ValueError("Pin number must be between 1 & 14")
-        pin_number -= 1
-        reg_base_addr += pin_number // 8
-        self._set_reg_bit(reg_base_addr, pin_number % 8, value)
-
-    def _get_gpio_register(self, reg_base_addr: int, pin_number: int) -> bool:
-        if not 1 <= pin_number <= 14:
-            raise ValueError("Pin number must be between 1 & 14")
-        pin_number -= 1
-        reg_base_addr += pin_number // 8
-        return self._get_reg_bit(reg_base_addr, pin_number % 8)
-
-    # register helpers
-
-    def _set_reg_bit(self, addr: int, bitoffset: int, value: bool) -> None:
-        temp = self._read_reg(addr)
-        if value:
-            temp |= 1 << bitoffset
-        else:
-            temp &= ~(1 << bitoffset)
-        self._write_reg(addr, temp)
-
-    def _get_reg_bit(self, addr: int, bitoffset: int) -> bool:
-        temp = self._read_reg(addr)
-        return bool(temp & (1 << bitoffset))
-
-    def _read_reg(self, addr: int) -> int:
-        self._i2c.readfrom_mem_into(self._address, addr, self._buf)
-        # print("readfrom_mem_into reg:", hex(addr), "val:", hex(self._buf[0]))
-        return self._buf[0]
-
-    def _write_reg(self, addr: int, val: int) -> None:
-        # print("writeto_mem reg:", hex(addr), "val:", hex(val))
-        self._buf[0] = val & 0xFF
-        self._i2c.writeto_mem(self._address, addr, self._buf)
-
-    def get_firmware_version(self):
-        return self._read_reg(0x02)
 
 
 class AtomDTUNBIoT2V11(SIM7028):
@@ -165,6 +35,10 @@ class AtomDTUNBIoT2V11(SIM7028):
             base_nbiot2v11 = AtomDTUNBIoT2V11(uart2, verbose=False)
     """
 
+    IOE1_VIN_ADC_PIN = 2
+    IOE1_SIM_PWR_PIN = 9
+    IOE1_SIM_RST_PIN = 11
+
     _pin_map = {
         M5.BOARD.M5AtomEcho: (21, 25),
         M5.BOARD.M5AtomEchoS3R: (39, 38),
@@ -179,23 +53,19 @@ class AtomDTUNBIoT2V11(SIM7028):
     def __init__(self, uart, verbose=False):
         (scl, sda) = self._pin_map.get(M5.getBoard())
         self._i2c1 = machine.I2C(1, scl=machine.Pin(scl), sda=machine.Pin(sda), freq=100000)
-        print(self._i2c1.scan())
-        self._ioexpander = PY32IOExpander(self._i2c1, address=0x6F)
+        self.m5ioe1 = M5IOE1(self._i2c1, addr=0x6F)
+        self.vin_adc_pin = Pin(self.m5ioe1, self.IOE1_VIN_ADC_PIN, Pin.IN)
+        self.sim_pwr_pin = Pin(self.m5ioe1, self.IOE1_SIM_PWR_PIN, Pin.OUT)
+        self.sim_rst_pin = Pin(self.m5ioe1, self.IOE1_SIM_RST_PIN, Pin.OUT)
 
         # power on
-        self._ioexpander.gpio_drive[9] = 0  # Set GPIO9 to open-drain
-        self._ioexpander.gpio_mode[9] = 1  # Set GPIO9 to output mode
-        self._ioexpander.gpio_output[9] = 1  # Set GPIO9 high
+        self.sim_pwr_pin.on()
         time.sleep(1)
 
         # reset
-        self._ioexpander.gpio_drive[11] = 0  # Set GPIO11 to open-drain
-        self._ioexpander.gpio_mode[11] = 1  # Set GPIO11 to output mode
-        self._ioexpander.gpio_output[11] = 0  # Set GPIO11 low
+        self.sim_rst_pin.off()
         time.sleep(0.1)
-        self._ioexpander.gpio_output[11] = 1  # Set GPIO11 high
-
-        self._ioexpander.adc_init(1)
+        self.sim_rst_pin.on()
 
         time.sleep(3)
 
@@ -214,11 +84,11 @@ class AtomDTUNBIoT2V11(SIM7028):
 
                 base_nbiot2v11.power_on()
         """
-        self._ioexpander.gpio_output[9] = 1  # Set GPIO9 high
+        self.sim_pwr_pin.on()
         time.sleep(1)
-        self._ioexpander.gpio_output[11] = 0  # Set GPIO11 low
+        self.sim_rst_pin.off()
         time.sleep(0.1)
-        self._ioexpander.gpio_output[11] = 1  # Set GPIO11 high
+        self.sim_rst_pin.on()
 
     def power_off(self):
         """Power off the DTU NB-IoT module.
@@ -233,7 +103,7 @@ class AtomDTUNBIoT2V11(SIM7028):
 
                 base_nbiot2v11.power_off()
         """
-        self._ioexpander.gpio_output[9] = 0  # Set GPIO9 low
+        self.sim_pwr_pin.off()
 
     def get_voltage(self) -> float:
         """Get the RS485 Port voltage in volts.
@@ -249,7 +119,4 @@ class AtomDTUNBIoT2V11(SIM7028):
                 voltage = base_nbiot2v11.get_voltage()
                 print("Voltage:", voltage)
         """
-        adc_value = self._ioexpander.adc_read()
-        ref_value = self._ioexpander.adc_read_reference()
-        voltage = adc_value * (ref_value / 1000.0) / 4096.0 / 0.090909
-        return voltage
+        return self.m5ioe1.read_adc_mv(self.IOE1_VIN_ADC_PIN) / 1000.0 / 0.090909
