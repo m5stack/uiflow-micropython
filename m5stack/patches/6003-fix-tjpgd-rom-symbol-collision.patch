@@ -2,10 +2,10 @@ Index: lv_binding_micropython/lvgl/src/libs/tjpgd/tjpgd.h
 ===================================================================
 --- lv_binding_micropython.orig/lvgl/src/libs/tjpgd/tjpgd.h
 +++ lv_binding_micropython/lvgl/src/libs/tjpgd/tjpgd.h
-@@ -16,6 +16,19 @@
+@@ -16,5 +16,19 @@
  #include <string.h>
  #include <stdint.h>
- 
++
 +/*
 + * Prefix the TJPGD API symbols with "lv_" so they cannot collide with the
 + * TJPGD symbols exported by the ROM linker scripts of ESP32-C5/C6/C61.
