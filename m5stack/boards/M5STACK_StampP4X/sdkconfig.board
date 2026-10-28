@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
+
+#
+# Ultra Low Power (ULP) Co-processor
+#
+# CONFIG_ULP_COPROC_ENABLED is not set
+# CONFIG_ULP_COPROC_TYPE_FSM is not set
+# CONFIG_ULP_COPROC_RESERVE_MEM is not set

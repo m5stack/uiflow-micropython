@@ -71,6 +71,9 @@
 #if WEB_REPL_ENABLE
 #include "webrepl.h"
 #endif
+#if !CONFIG_IDF_TARGET_ESP32C61
+void rmt_ir_deinit(void);
+#endif
 // End of modification section, by M5Stack
 
 #if MICROPY_BLUETOOTH_NIMBLE
@@ -228,6 +231,10 @@ soft_reset_exit:
 
     #if MICROPY_HW_ENABLE_USBDEV
     mp_usbd_deinit();
+    #endif
+
+    #if !CONFIG_IDF_TARGET_ESP32C61
+    rmt_ir_deinit();
     #endif
 
     gc_sweep_all();

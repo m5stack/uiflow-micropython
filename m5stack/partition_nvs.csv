@@ -16,5 +16,5 @@ pswd2,data,string,
 sntp0,data,string,ntp.aliyun.com
 sntp1,data,string,jp.pool.ntp.org
 sntp2,data,string,pool.ntp.org
-tz,data,string,GMT0
+tz,data,string,GMT+8
 boot_option,data,u8,1

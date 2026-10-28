@@ -1,0 +1,3 @@
+import startup
+
+startup.main()

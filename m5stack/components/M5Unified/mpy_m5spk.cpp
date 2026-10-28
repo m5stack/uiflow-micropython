@@ -5,6 +5,7 @@
 */
 
 #include <M5Unified.h>
+#include <utility/M5IOE1_Class.hpp>
 
 extern "C"
 {
@@ -221,6 +222,14 @@ namespace m5
     }
 
     mp_obj_t spk_setPA(mp_obj_t self, mp_obj_t enable) {
+        if (M5.getBoard() == m5::board_t::board_M5CoreP4X) {
+            // CoreP4X PA enable is M5IOE1 IO3; leave the audio engine running.
+            auto& ioe1 = M5.getIOExpander(0);
+            bool success = ioe1.setHighImpedance(M5IOE1_Class::gpio3, false);
+            success = ioe1.setDirection(M5IOE1_Class::gpio3, true) && success;
+            success = ioe1.digitalWrite(M5IOE1_Class::gpio3, mp_obj_is_true(enable)) && success;
+            return mp_obj_new_bool(success);
+        }
         int i2c_speed = 100000;
         if (M5.getBoard() == m5::board_t::board_M5StickS3) {
             // M5PM1 G3 -> PA enable
@@ -284,11 +293,12 @@ namespace m5
 
     mp_obj_t spk_setVolumePercentage(mp_obj_t self_in, mp_obj_t percentage_in) {
         float percentage = mp_obj_get_float(percentage_in);
+        // Keep the existing 0.0-1.0 ratio convention used by startup and examples.
         if (percentage > 1.0) {
-            percentage = 1.0;
+            percentage = 1.0f;
         }
-        if (percentage < 0.0) {
-            percentage = 0.0;
+        if (percentage < 0.0f) {
+            percentage = 0.0f;
         }
 
         getSpk(&self_in)->setVolume(percentage * 255);
@@ -297,7 +307,7 @@ namespace m5
 
     mp_obj_t spk_getVolumePercentage(mp_obj_t self) {
         uint8_t volume = getSpk(&self)->getVolume();
-        return mp_obj_new_float(volume / 255);
+        return mp_obj_new_float(volume / 255.0f);
     }
 
     mp_obj_t spk_setAllChannelVolume(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {

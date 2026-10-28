@@ -20,6 +20,7 @@ class IRUnit:
         (self._rx_pin, self._tx_pin) = port
         self._receiver = None
         self._rmt_ir_instance = None
+        self._rmt_rx_callback = None
         self._user_callback = None
         if self._tx_pin:
             if _HAS_RMT_IR_CMODULE:
@@ -71,10 +72,14 @@ class IRUnit:
                         ctrl = -1 if is_repeat else 0
                         self._user_callback(cmd_8, addr_8, ctrl)
 
+            # Keep the adapter reachable while the native receiver uses it.
+            self._rmt_rx_callback = _ir_rx_callback
             if self._tx_pin:
-                self._rmt_ir_instance = rmt_ir.NEC_8(self._rx_pin, self._tx_pin, _ir_rx_callback)
+                self._rmt_ir_instance = rmt_ir.NEC_8(
+                    self._rx_pin, self._tx_pin, self._rmt_rx_callback
+                )
             else:
-                self._rmt_ir_instance = rmt_ir.NEC_8(self._rx_pin, _ir_rx_callback)
+                self._rmt_ir_instance = rmt_ir.NEC_8(self._rx_pin, self._rmt_rx_callback)
             self._receiver = self._rmt_ir_instance
         else:
             # Fallback to Python driver

@@ -114,7 +114,8 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
     }
 
     enum { ARG_id, ARG_mdc, ARG_mdio, ARG_power, ARG_phy_addr, ARG_phy_type,
-           ARG_spi, ARG_cs, ARG_int, ARG_ref_clk_mode, ARG_ref_clk };
+           ARG_spi, ARG_cs, ARG_int, ARG_ref_clk_mode, ARG_ref_clk,
+           ARG_tx_en, ARG_txd0, ARG_txd1, ARG_crs_dv, ARG_rxd0, ARG_rxd1 };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_id,           MP_ARG_OBJ, {.u_obj = mp_const_none} },
         { MP_QSTR_mdc,          MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
@@ -127,6 +128,12 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
         { MP_QSTR_int,          MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
         { MP_QSTR_ref_clk_mode, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
         { MP_QSTR_ref_clk,      MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_tx_en,        MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_txd0,         MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_txd1,         MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_crs_dv,       MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_rxd0,         MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_rxd1,         MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
     };
 
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -188,6 +195,30 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
     }
     if (args[ARG_ref_clk].u_obj != mp_const_none) {
         esp32_config.clock_config.rmii.clock_gpio = machine_pin_get_id(args[ARG_ref_clk].u_obj);
+    }
+    #endif
+
+    #if CONFIG_IDF_TARGET_ESP32P4
+    if (args[ARG_ref_clk].u_obj != mp_const_none) {
+        esp32_config.clock_config.rmii.clock_gpio = machine_pin_get_id(args[ARG_ref_clk].u_obj);
+    }
+    if (args[ARG_tx_en].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.tx_en_num = machine_pin_get_id(args[ARG_tx_en].u_obj);
+    }
+    if (args[ARG_txd0].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.txd0_num = machine_pin_get_id(args[ARG_txd0].u_obj);
+    }
+    if (args[ARG_txd1].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.txd1_num = machine_pin_get_id(args[ARG_txd1].u_obj);
+    }
+    if (args[ARG_crs_dv].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.crs_dv_num = machine_pin_get_id(args[ARG_crs_dv].u_obj);
+    }
+    if (args[ARG_rxd0].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.rxd0_num = machine_pin_get_id(args[ARG_rxd0].u_obj);
+    }
+    if (args[ARG_rxd1].u_obj != mp_const_none) {
+        esp32_config.emac_dataif_gpio.rmii.rxd1_num = machine_pin_get_id(args[ARG_rxd1].u_obj);
     }
     #endif
 

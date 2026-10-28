@@ -15,6 +15,7 @@ _BOOT_OVERRIDE_WINDOW_MS = 100
 _BOOT_OVERRIDE_STABLE_MS = 30
 _BOOT_OVERRIDE_POLL_MS = 10
 _CARDPUTER_ADV_BOOT_KEYCODE = 0x60
+_BOARD_M5COREP4X = 31
 
 _WIFI_STATUS_MAP = {
     network.STAT_IDLE: "STAT_IDLE",  # 空闲 / 断开连接后
@@ -237,11 +238,18 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
         from driver.ip101gri import IP101GRI
 
         lan_if = IP101GRI(mdc_pin=31, mdio_pin=52, power_pin=51)
+    elif board_id == _BOARD_M5COREP4X and net_mode == "ETH":
+        from .corep4x import create_lan
+
+        lan_if = create_lan()
     elif board_id == M5.BOARD.M5StamPLC:
         from stamplc import PoEStamPLC
 
         lan_if = PoEStamPLC()
     startup.connect_network(ssid, pswd, lan_if)
+    if board_id == _BOARD_M5COREP4X and net_mode == "ETH":
+        if lan_if.set_default_netif() != 0:
+            raise OSError("Unable to select Ethernet route")
 
 
 def startup(boot_opt, timeout: int = 60) -> None:
@@ -289,6 +297,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             M5.BOARD.M5StampS3,
             M5.BOARD.M5StampS3Mini,
             M5.BOARD.M5StampP4,
+            M5.BOARD.M5StampP4X,
             M5.BOARD.M5StampC5,
             M5.BOARD.M5StampC6,
             M5.BOARD.M5NanoC6,
@@ -426,6 +435,14 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             tab5 = Tab5_Startup()
             tab5.startup(ssid, pswd, timeout=timeout)
+
+        elif board_id == _BOARD_M5COREP4X:
+            from .corep4x import CoreP4X_Startup
+
+            corep4x = CoreP4X_Startup()
+            corep4x.startup(
+                ssid, pswd, protocol, ip, netmask, gateway, dns, timeout, net_mode=net_mode
+            )
 
         elif board_id == M5.BOARD.M5UnitC6L:
             from .unit_c6l import UnitC6L_Startup

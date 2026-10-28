@@ -1,0 +1,77 @@
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+set(IDF_TARGET esp32p4)
+
+# stampp4x https://github.com/m5stack/m5stack-board-id/blob/main/board.csv
+set(BOARD_ID 156)
+set(MICROPY_PY_LVGL 0)
+
+# Font Support
+set(FONT_MONTSERRAT_12 1)
+set(FONT_MONTSERRAT_14 1)
+set(FONT_MONTSERRAT_16 1)
+set(FONT_MONTSERRAT_18 1)
+set(FONT_MONTSERRAT_20 0)
+set(FONT_MONTSERRAT_22 0)
+set(FONT_MONTSERRAT_24 1)
+set(FONT_MONTSERRAT_30 0)
+set(FONT_MONTSERRAT_36 0)
+set(FONT_MONTSERRAT_40 1)
+set(FONT_MONTSERRAT_44 1)
+set(FONT_MONTSERRAT_48 1)
+set(FONT_ALIBABAPUHUITI_CN24 1)
+set(FONT_ALIBABASANS_JA24 1)
+set(FONT_ALIBABASANS_KR24 1)
+
+set(SDKCONFIG_DEFAULTS
+    boards/sdkconfig.base
+    boards/sdkconfig.p4
+    boards/M5STACK_StampP4X/sdkconfig.p4x
+    boards/sdkconfig.p4_wifi_common
+    boards/sdkconfig.p4_wifi_c6
+    boards/sdkconfig.flash_16mb
+    boards/sdkconfig.flash_qio
+    boards/sdkconfig.freertos
+    boards/M5STACK_Tab5/sdkconfig.freertos
+    boards/M5STACK_StampP4X/sdkconfig.board
+    boards/M5STACK_StampP4X/sdkconfig.esp_hosted
+)
+
+# If not enable LVGL, ignore this...
+set(LV_CFLAGS
+    -DLV_COLOR_DEPTH=16
+    -DLV_COLOR_16_SWAP=0
+    -DLV_FONT_MONTSERRAT_12=${FONT_MONTSERRAT_12}
+    -DLV_FONT_MONTSERRAT_14=${FONT_MONTSERRAT_14}
+    -DLV_FONT_MONTSERRAT_16=${FONT_MONTSERRAT_16}
+    -DLV_FONT_MONTSERRAT_18=${FONT_MONTSERRAT_18}
+    -DLV_FONT_MONTSERRAT_20=${FONT_MONTSERRAT_20}
+    -DLV_FONT_MONTSERRAT_22=${FONT_MONTSERRAT_22}
+    -DLV_FONT_MONTSERRAT_24=${FONT_MONTSERRAT_24}
+    -DLV_FONT_MONTSERRAT_30=${FONT_MONTSERRAT_30}
+    -DLV_FONT_MONTSERRAT_36=${FONT_MONTSERRAT_36}
+    -DLV_FONT_MONTSERRAT_40=${FONT_MONTSERRAT_40}
+    -DLV_FONT_MONTSERRAT_44=${FONT_MONTSERRAT_44}
+    -DLV_FONT_MONTSERRAT_48=${FONT_MONTSERRAT_48}
+    -DUSR_FONT_ALIBABAPUHUITI_CN24=${FONT_ALIBABAPUHUITI_CN24}
+    -DUSR_FONT_ALIBABASANS_JA24=${FONT_ALIBABASANS_JA24}
+    -DUSR_FONT_ALIBABASANS_KR24=${FONT_ALIBABASANS_KR24}
+)
+
+if(NOT MICROPY_FROZEN_MANIFEST)
+    set(MICROPY_FROZEN_MANIFEST ${CMAKE_SOURCE_DIR}/boards/manifest.py)
+endif()
+
+# NOTE: 这里的配置是无效的，仅为了兼容ADF，保证编译通过
+set(ADF_COMPS     "$ENV{ADF_PATH}/components")
+set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/esp32_s3_box_3")
+
+list(APPEND EXTRA_COMPONENT_DIRS
+    $ENV{ADF_PATH}/components/audio_pipeline
+    $ENV{ADF_PATH}/components/audio_sal
+    $ENV{ADF_PATH}/components/esp-adf-libs
+    $ENV{ADF_PATH}/components/esp-sr
+    ${CMAKE_SOURCE_DIR}/boards
+)

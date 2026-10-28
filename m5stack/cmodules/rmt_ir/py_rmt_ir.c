@@ -45,13 +45,17 @@ typedef struct _rmt_ir_obj_t {
 
 extern const mp_obj_type_t mp_ir_nec8_type;
 
-static mp_obj_t ir_rx_callback = mp_const_none;
+// These pointers outlive the constructor and are used by a native task.
+// Plain C statics are not scanned by MicroPython's garbage collector.
+MP_REGISTER_ROOT_POINTER(mp_obj_t rmt_ir_rx_callback);
+MP_REGISTER_ROOT_POINTER(void *rmt_ir_rx_symbols);
+#define ir_rx_callback MP_STATE_PORT(rmt_ir_rx_callback)
+#define ir_rx_symbols MP_STATE_PORT(rmt_ir_rx_symbols)
 static TaskHandle_t ir_rx_task_handle = NULL;
 static QueueHandle_t ir_rx_done_queue = NULL;
 static bool ir_rx_is_initialized = false;
 static rmt_channel_handle_t ir_rx_channel = NULL;
 static int ir_rx_initialized_pin = -1;
-static rmt_symbol_word_t *ir_rx_symbols = NULL;
 static size_t ir_rx_symbol_buf_num = 0;
 static uint16_t ir_nec_address = 0;
 static uint16_t ir_nec_command = 0;
@@ -166,7 +170,7 @@ static void process_nec_frame(rmt_item32_t *items, size_t symbol_num) {
         }
     }
 
-    if (ir_data_ready && ir_rx_callback != mp_const_none) {
+    if (ir_data_ready && ir_rx_callback != MP_OBJ_NULL && ir_rx_callback != mp_const_none) {
         mp_sched_schedule(ir_rx_callback, mp_const_none);
     }
 }
@@ -202,6 +206,10 @@ static void deinit_rx_if_needed(void) {
         return;
     }
     ir_rx_is_initialized = false;
+    // Stop ISR producers before deleting the worker, queue and GC buffer.
+    if (ir_rx_channel) {
+        rmt_disable(ir_rx_channel);
+    }
     if (ir_rx_task_handle) {
         vTaskDelete(ir_rx_task_handle);
         ir_rx_task_handle = NULL;
@@ -211,7 +219,6 @@ static void deinit_rx_if_needed(void) {
         ir_rx_done_queue = NULL;
     }
     if (ir_rx_channel) {
-        rmt_disable(ir_rx_channel);
         rmt_del_channel(ir_rx_channel);
         ir_rx_channel = NULL;
     }
@@ -238,6 +245,15 @@ static void deinit_tx_if_needed(void) {
     }
     ir_tx_is_initialized = false;
     ir_tx_initialized_pin = -1;
+}
+
+// Called before a soft reset sweeps the Python heap. The RMT task must not
+// keep using a receive buffer or callback from the previous VM instance.
+void rmt_ir_deinit(void) {
+    ir_rx_callback = mp_const_none;
+    deinit_rx_if_needed();
+    deinit_tx_if_needed();
+    ir_data_ready = false;
 }
 
 static esp_err_t init_tx_if_needed(int tx_pin) {
