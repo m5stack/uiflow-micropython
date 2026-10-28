@@ -89,7 +89,7 @@ def setup():
         brightness
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "Chain RGB Control", 45, 11, 1.0, 0x0F92E8, 0x000000, Widgets.FONTS.Montserrat24

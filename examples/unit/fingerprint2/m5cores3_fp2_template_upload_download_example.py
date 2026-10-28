@@ -494,7 +494,7 @@ def setup():
         id2
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     btn_enroll = m5ui.M5Button(

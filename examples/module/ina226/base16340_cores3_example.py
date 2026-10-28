@@ -21,7 +21,7 @@ def setup():
     global title0, label0, label1, label2, label3, module16340_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "Base16340 CoreS3 Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18

@@ -87,7 +87,7 @@ def setup():
         agnle2
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "BaseX Servo Control", 36, 1, 1.0, 0x12DEEE, 0x000000, Widgets.FONTS.Montserrat24

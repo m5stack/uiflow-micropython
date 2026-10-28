@@ -368,7 +368,7 @@ def setup():
         speed
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     button_stop = m5ui.M5Button(

@@ -37,7 +37,7 @@ def setup():
     global page0, label_title, stackchan, tp, last_time, active
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0x000000)
     label_title = m5ui.M5Label(

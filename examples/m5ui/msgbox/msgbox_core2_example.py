@@ -51,7 +51,7 @@ def setup():
     global page0, msgbox0, label_sfu, btn_apply, btn_cancel
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     msgbox0 = m5ui.M5Msgbox(title="Message Box", x=0, y=0, w=320, h=240, parent=page0)

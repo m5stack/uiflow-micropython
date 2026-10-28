@@ -47,7 +47,7 @@ def setup():
         adc2
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "ADC Input", 111, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18

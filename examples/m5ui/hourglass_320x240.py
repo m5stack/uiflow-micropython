@@ -109,9 +109,7 @@ def glass_outline_half_width(y):
 
     if y < neck_top:
         return neck_outline_half_width + (
-            (neck_top - y)
-            * (outer_half_width - neck_outline_half_width)
-            // (neck_top - TOP_Y)
+            (neck_top - y) * (outer_half_width - neck_outline_half_width) // (neck_top - TOP_Y)
         )
     if y <= neck_bottom:
         return neck_outline_half_width
@@ -364,7 +362,7 @@ def setup():
     global cells, valid_cells, last_frame_ms
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page = m5ui.M5Page(bg_c=COLOR_SURFACE)
     # Replace LVGL's default white screen immediately. Widgets and the initial

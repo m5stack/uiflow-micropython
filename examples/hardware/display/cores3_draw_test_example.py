@@ -8,7 +8,7 @@ from M5 import *
 
 def setup():
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
 
     print((str("rotation: ") + str((M5.Display.getRotation()))))
@@ -18,7 +18,7 @@ def setup():
             + str((str("h:") + str((M5.Display.height()))))
         )
     )
-    M5.Display.setRotation(1)
+    M5.Display.setRotation(0)
     M5.Display.clear(0x000000)
     M5.Display.setTextColor(0x0000FF, 0x000000)
     M5.Display.setCursor(200, 3)

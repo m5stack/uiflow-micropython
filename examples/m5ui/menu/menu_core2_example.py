@@ -92,7 +92,7 @@ def setup():
         Page3_Switch
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     menu0 = m5ui.M5Menu(x=0, y=0, w=320, h=240, parent=page0)

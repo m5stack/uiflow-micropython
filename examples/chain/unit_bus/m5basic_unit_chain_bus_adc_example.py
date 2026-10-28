@@ -24,7 +24,7 @@ def setup():
     global title, label_adc, label_tip, bus2, unit_chain_bus_0, last_time, adc_value
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title = Widgets.Title(
         "Unit Chain Bus Example: ADC", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18

@@ -57,7 +57,7 @@ def btn_upload_event_handler(event_struct):
 def setup():
     global page0, canvas0, btn_upload, label0, fingerprint2_0, upload, fpimg
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     canvas0 = m5ui.M5Canvas(

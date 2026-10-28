@@ -13,7 +13,7 @@ def setup():
 
     Widgets.setBrightness(100)
     Widgets.fillScreen(0x6600CC)
-    Widgets.setRotation(0)
+    Widgets.setRotation(3)
 
 
 def loop():

@@ -18,7 +18,7 @@ def setup():
     global page0, image0, image1
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     image0 = m5ui.M5Image("/flash/res/img/uiflow.jpg", x=129, y=54, parent=page0)

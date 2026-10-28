@@ -35,7 +35,7 @@ def setup():
     global title0, label2, label0, label1, wlan_sta, udpc_0, received_data, client_address_port
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "UDPClient Core2 Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18

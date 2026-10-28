@@ -20,7 +20,7 @@ def setup():
     global page0, dropdown0, dropdown1, dropdown2, dropdown3
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     dropdown0 = m5ui.M5Dropdown(

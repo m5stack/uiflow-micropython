@@ -63,7 +63,7 @@ def setup():
         snr
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title("LoRa1262 Module Rx", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18)
     label_r = Widgets.Label("Recv:", 5, 50, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.Montserrat18)

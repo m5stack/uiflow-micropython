@@ -100,7 +100,7 @@ class CoreMatrix_Startup(Headless_Startup):
     def __init__(self) -> None:
         self._board = M5.getBoard()
         self._wifi_led = None
-        M5.Lcd.setRotation(1)
+        M5.Lcd.setRotation(0)
         self.rgb = MatrixStatusDisplay()
         self.rgb.set_brightness(50)
         self.rgb.fill_color(self.COLOR_BLUE)

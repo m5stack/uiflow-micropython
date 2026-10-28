@@ -27,7 +27,7 @@ def setup():
     global label_plus0, en
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     label_plus0 = LabelPlus(
         "label_plus0",

@@ -38,7 +38,7 @@ def setup():
         gpio2_value
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title = Widgets.Title(
         "Unit Chain Bus Example: GPIO", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18

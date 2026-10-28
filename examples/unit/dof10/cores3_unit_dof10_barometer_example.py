@@ -51,7 +51,7 @@ def setup():
         last_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x10171D)
     title = Widgets.Label(
         "DoF10 / Barometer", 12, 8, 1.0, 0x4CD7D0, 0x10171D, Widgets.FONTS.Montserrat18

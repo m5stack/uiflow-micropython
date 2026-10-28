@@ -30,7 +30,7 @@ def setup():
     global title0, label_adc, label_state, bus2, chain_switch_0
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     title0 = Widgets.Title("Chain Switch Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu24)
     label_adc = Widgets.Label("ADC: --", 20, 70, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu24)

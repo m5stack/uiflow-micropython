@@ -21,7 +21,7 @@ def setup():
     global title0, label_t, label_tx, label_ts, label_time, lora1262_0, count, message
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title("LoRa1262 Module Tx", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18)
     label_t = Widgets.Label("Send:", 5, 50, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.Montserrat18)

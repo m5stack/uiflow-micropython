@@ -78,7 +78,7 @@ def setup():
     global page0, list0, File, New, Open, Save, Delete
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     list0 = m5ui.M5List(x=-1, y=2, w=320, h=240, parent=page0)

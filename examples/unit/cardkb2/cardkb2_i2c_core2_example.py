@@ -30,7 +30,7 @@ def setup():
     global title0, label0, i2c0, cardkb2_0, char
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "CardKB2 I2C Mode Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18

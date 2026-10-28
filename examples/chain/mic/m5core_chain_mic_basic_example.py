@@ -34,7 +34,7 @@ def setup():
     global title0, label_adc, label_status, bus2, chain_mic_0, last_trigger_time
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     title0 = Widgets.Title("Chain MIC Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu24)
     label_adc = Widgets.Label("ADC: --", 95, 76, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu24)

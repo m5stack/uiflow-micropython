@@ -67,7 +67,7 @@ def setup():
         y_target
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
 
     stackchan = StackChan(i2c=1, uart=1)

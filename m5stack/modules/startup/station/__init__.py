@@ -33,7 +33,7 @@ class Station_Startup:
         self._wlan.connect_network(
             ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
         )
-        M5.Lcd.setRotation(1)
+        M5.Lcd.setRotation(0)
         # M5.Lcd.drawImage(LOGO_IMG)
         time.sleep_ms(200)
         M5.Lcd.clear(0x333333)

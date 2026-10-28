@@ -14,7 +14,7 @@ def setup():
     global title0, canvas_rmy
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "Display canvas example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.Montserrat18

@@ -64,7 +64,7 @@ def setup():
     global page0, window0, btn_lav, title_fmk, btn_nzk, btn_dkc, label_wgy
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     window0 = m5ui.M5Win(x=0, y=0, w=320, h=240, parent=page0)

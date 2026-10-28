@@ -54,7 +54,7 @@ def btnc_was_clicked_event(state):
 def setup():
     global stp2, label_hold, label_on, label_status, last_refresh
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     Widgets.Label("Power-on Timer", 80, 5, 1.0, 0x38BDF8, 0x000000, Widgets.FONTS.Montserrat18)
     Widgets.Label(

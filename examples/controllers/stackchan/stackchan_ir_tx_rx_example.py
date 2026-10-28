@@ -82,7 +82,7 @@ def setup():
         tx_addr
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     label_title = Widgets.Label(
         "IR TX & RX Example", 41, 5, 1.0, 0x0DC9F4, 0x000000, Widgets.FONTS.Montserrat24

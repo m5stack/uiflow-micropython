@@ -528,7 +528,7 @@ def setup():
     global bus2, device
 
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(BG)
     bus2 = ChainBus(2, tx=21, rx=22)
     device = Servos8V2Chain(bus2, 1)

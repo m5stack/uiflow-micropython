@@ -67,7 +67,7 @@ def run_repeat_move_test():
 def setup():
     global stackchan
     M5.begin()
-    Widgets.setRotation(1)
+    Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
     M5.Lcd.setFont(Widgets.FONTS.DejaVu12)
     M5.Lcd.setTextColor(0xFFFFFF, 0x000000)

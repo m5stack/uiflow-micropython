@@ -35,7 +35,7 @@ class CardputerADV_Startup:
         )
         M5.Speaker.setVolume(60)
         M5.Speaker.tone(4000, 50)
-        M5.Lcd.setRotation(1)
+        M5.Lcd.setRotation(0)
         # M5.Lcd.drawImage(LOGO_IMG)
         time.sleep_ms(200)
 

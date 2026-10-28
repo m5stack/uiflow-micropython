@@ -671,7 +671,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     m5_display.gfx = (void *)(&(M5.Display));
     // Reset persistent CoreMatrix display state after a MicroPython soft reset.
     #if BOARD_ID == 152
-    M5.Display.setRotation(1);
+    M5.Display.setRotation(0);
     M5.Display.setTextSize(1);
     M5.Display.setTextScroll(false);
     M5.Display.unloadFont();
