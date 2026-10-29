@@ -285,6 +285,7 @@ function ci_unit_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5X pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreP4X pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PowerHub pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickS3 pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
@@ -305,6 +306,7 @@ function ci_module_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5X pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreP4X pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
 }
 
@@ -379,6 +381,7 @@ M5STACK_StickC_PLUS
 M5STACK_StickC_PLUS2
 M5STACK_Tab5
 M5STACK_Tab5X
+M5STACK_CoreP4X
 M5STACK_Tough
 M5STACK_Unit_C6L
 Nesso_N1
@@ -386,6 +389,7 @@ M5STACK_StickS3
 M5STACK_Unit_PoEP4
 M5STACK_StampS3Bat
 M5STACK_StampP4
+M5STACK_StampP4X
 "
 
 CI_ESP32_NIGHTLY_THIRD_PARTY_BOARDS="
