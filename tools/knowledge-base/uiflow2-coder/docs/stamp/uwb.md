@@ -355,6 +355,7 @@ def loop():
                 stamp_uwb.clear_status(uwb.STATUS_TX_DONE)
                 print((str("final sent, sequence=") + str(sequence)))
                 sequence = sequence + 1 & 0xFF
+        print(stamp_uwb.tx_timestamp())
     except:
         print("ranging retry")
         stamp_uwb.force_trx_off()
@@ -506,7 +507,11 @@ stamp_uwb_0.configure_tx_rf(0x34, 0xFEFEFEFE, 0)
 ```
 ### `StampUWB.set_antenna_delay(tx=16385, rx=16385)`
 
-    Set the TX and RX timestamp antenna-delay compensation values. These values compensate the fixed delay between the UWB timestamp reference point and the actual antenna TX/RX point for ranging calibration. They do not delay packet transmission or change RF power. Keep the default values unless the device has been calibrated for precision ranging.
+    Set the TX and RX timestamp antenna-delay compensation values. These values
+    compensate the fixed delay between the UWB timestamp reference point and the
+    actual antenna TX/RX point for ranging calibration. They do not delay packet
+    transmission or change RF power. Keep the default values unless the device
+    has been calibrated for precision ranging.
 
     - Parameter `tx` (`int`): TX compensation in device time units, range `0` to `65535`. Default is `16385`.
     - Parameter `rx` (`int`): RX compensation in device time units, range `0` to `65535`. Default is `16385`.

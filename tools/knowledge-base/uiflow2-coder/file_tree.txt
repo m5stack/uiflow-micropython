@@ -1,4 +1,4 @@
-docs/  (372 Markdown files, 22 directories; .md suffix omitted)
+docs/  (375 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -10,8 +10,9 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            stepmotor, tfcard
   - cap/: cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, servos8_v2, switch, tof, unit_bus
-  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, cores3, dinmeter, dualkey, nesso-n1
-                  paper, paperdiy, stackchan, stamplc, sticks3, stopwatch, tab5, tab5x, toughc5
+  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer-adv, cardputer, coreink, corematrix, corep4x, cores3
+                  dinmeter, dualkey, nesso-n1, paper, paperdiy, stackchan, stamplc, stampp4x, sticks3, stopwatch, tab5
+                  tab5x, toughc5
   - get-started/: _overview
   - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
                sht30, sht4x, speaker, touch, uart, wdt

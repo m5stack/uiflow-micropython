@@ -10,6 +10,22 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 ## 强制原则
 
 - 先查文档，再写代码；禁止凭经验编造 UIFlow2 API、构造参数、返回值或 import。
+- **`M5.Lcd` 的绘图方法全部是驼峰**，写错会直接 `AttributeError: 'Display' object has no attribute 'fill_rect'`：
+
+  ```python
+  M5.Lcd.fillRect(x, y, w, h, color)      # 不是 fill_rect
+  M5.Lcd.drawRect(x, y, w, h, color)      # 不是 draw_rect
+  M5.Lcd.drawCircle(x, y, r, color)       # 不是 draw_circle
+  M5.Lcd.drawLine(x0, y0, x1, y1, color)  # 不是 draw_line
+  M5.Lcd.drawString(text, x, y, color)    # 不是 draw_string
+  M5.Lcd.setTextColor(fg, bg)             # 不是 set_text_color
+  M5.Lcd.setRotation(1)                   # 不是 set_rotation
+  ```
+
+- **但不要反向过度纠正**：`m5ui` 的 `Label` 是 `label.set_text_color(...)`，`Image`/摄像头对象是 `img.draw_string(...)`——这些是**各自类**的蛇形方法，按各自文档写。判断依据永远是对象类型：`M5.Lcd` 用驼峰，其他对象查对应 `docs/`。
+- **写任何绘图、Canvas、Widgets、m5ui 代码之前，先读 `docs/hardware/display.md`**（或对应的 `docs/m5ui/*.md`）。只靠记忆写显示代码是这类报错的头号来源。
+- **部署前自查**：`grep -nE "M5\.Lcd\.(fill|draw|set)_[a-z]" main.py` 必须无输出，有输出就说明把驼峰写成了蛇形。
+- **屏幕方向先确认再写显示代码**：先读 `docs/hardware/display.md` 的 Screen Rotation 段。Core/Basic/Fire、Core2、CoreS3、StackChan 的正常方向是 rotation `0`（旧示例常用 `1`）；Cardputer/Cardputer Adv/DinMeter/Station 也是 `0`。M5UI/LVGL 必须在 `m5ui.init()` 之前设置 rotation；改完读 `M5.Lcd.width()/height()` 校验逻辑尺寸，触摸屏还要验证四角坐标。
 - 先定位目标设备、模块类别和功能，再读取对应 `docs/` 文件。
 - 用户需求是核心目标，但通常不是完整功能规格：读取已确认的设备能力后，做一次“能力到价值”检查，选择一个能让结果更清晰、更好用或更易操作的硬件增强。板载屏幕有可用结果时默认显示状态/结果/趋势/告警；有 IMU 时按相关性考虑姿态、手势、摇晃/倾斜控制、运动状态或校准；温湿度、光照、距离、空气质量等传感器可补充上下文或告警。增强必须服务于原需求，不能为了“用上硬件”堆无关功能。
 - 只能使用客户端声明或官方资料确认的硬件；不要仅凭产品名猜测能力。每个主动加入的 Unit/Module、显示、IMU 或传感器 API 都要核对对应官方文档；能力不明确时保留核心功能并说明或询问，不要猜测。
@@ -58,7 +74,7 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (372 Markdown files, 22 directories; .md suffix omitted)
+docs/  (375 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -70,8 +86,9 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            stepmotor, tfcard
   - cap/: cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, servos8_v2, switch, tof, unit_bus
-  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer, coreink, corematrix, cores3, dinmeter, dualkey, nesso-n1
-                  paper, paperdiy, stackchan, stamplc, sticks3, stopwatch, tab5, tab5x, toughc5
+  - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer-adv, cardputer, coreink, corematrix, corep4x, cores3
+                  dinmeter, dualkey, nesso-n1, paper, paperdiy, stackchan, stamplc, stampp4x, sticks3, stopwatch, tab5
+                  tab5x, toughc5
   - get-started/: _overview
   - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
                sht30, sht4x, speaker, touch, uart, wdt
