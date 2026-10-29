@@ -44,6 +44,8 @@ Usage Tips
 
 Common Mistakes to Avoid
 ^^^^^^^^^^^^^^^^^^^^^^^^
+- ❌ **WRONG**: ``M5.Lcd.fill_rect()`` / ``draw_string()`` / ``set_text_color()`` - ``M5.Lcd`` methods are camelCase only; snake_case raises AttributeError
+- ℹ️ **NOT the same rule**: ``m5ui`` ``Label.set_text_color()`` and ``Image.draw_string()`` are real snake_case methods of *those* classes - check the object type, do not "fix" them by habit
 - ❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These methods do not exist in Widgets module
 - ✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use M5.Lcd for drawing methods
 - ❌ **WRONG**: ``from M5 import Widgets; Widgets.fillRect(...)`` - Widgets is for UI components, not drawing
