@@ -352,11 +352,11 @@ msgid "The course over ground in degrees."
 msgstr "以度为单位的地面航向。"
 
 #: ../../source/unit/gps_v11.rst:179 162f3ceb425b481e9bdded0ff936e5d6
-msgid "|get_corse_over_ground.png|"
+msgid "|get_course_over_ground.png|"
 msgstr ""
 
 #: ../../source/refs/unit.gps_v11.ref:21 ecca70010317467282976710ad609de1
-msgid "get_corse_over_ground.png"
+msgid "get_course_over_ground.png"
 msgstr ""
 
 #: ../../source/unit/gps_v11.rst:183 6d658333184348d5ac187e863e0434dd

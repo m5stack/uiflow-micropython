@@ -78,7 +78,7 @@ msgstr "本示例获取 ATOM GPS Base 的 GPS 数据并将其显示在串口监�
 #: b6e8402871924bab96e34e260b28fe9d base.atom_gps.ATOMGPSBase:8
 #: base.atom_gps.ATOMGPSBase.deinit:3 base.atom_gps.ATOMGPSBase.get_altitude:6
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:6
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground:6
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground:6
 #: base.atom_gps.ATOMGPSBase.get_gps_date:6
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time:6
 #: base.atom_gps.ATOMGPSBase.get_gps_time:6
@@ -126,7 +126,7 @@ msgstr "MicroPython 应用示例："
 #: 8f5c92c600764e289166ecf9f5d66c63 base.atom_gps.ATOMGPSBase:12
 #: base.atom_gps.ATOMGPSBase.deinit:7 base.atom_gps.ATOMGPSBase.get_altitude:10
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:10
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground:10
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground:10
 #: base.atom_gps.ATOMGPSBase.get_gps_date:10
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time:10
 #: base.atom_gps.ATOMGPSBase.get_gps_time:10
@@ -207,7 +207,7 @@ msgstr ""
 #: 9ed2ff25a8604d98a63a6d22d382ada7 a350fa9fe10c416380b651928de04a26
 #: base.atom_gps.ATOMGPSBase.deinit base.atom_gps.ATOMGPSBase.get_altitude
 #: base.atom_gps.ATOMGPSBase.get_antenna_state
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground
 #: base.atom_gps.ATOMGPSBase.get_gps_date
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time
 #: base.atom_gps.ATOMGPSBase.get_gps_time
@@ -233,7 +233,7 @@ msgstr "获取当前的海拔高度。"
 #: 7c612f3de7cf487397079e746d8a4337 871259028f24488d8bbc3184325ae1a8
 #: base.atom_gps.ATOMGPSBase.get_altitude
 #: base.atom_gps.ATOMGPSBase.get_antenna_state
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground
 #: base.atom_gps.ATOMGPSBase.get_gps_date
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time
 #: base.atom_gps.ATOMGPSBase.get_gps_time
@@ -281,22 +281,22 @@ msgid "get_antenna_state.png"
 msgstr ""
 
 #: 479a722257384e41935ebc5f063ab370
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground:1 of
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground:1 of
 msgid "Get the course over ground (COG)."
 msgstr "获取当前相对地面真航向。"
 
 #: 1e0794ddd91244999275cd8146b84b89
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground:3 of
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground:3 of
 msgid "The course over ground in degrees."
 msgstr "相对地面真航向。"
 
-#: base.atom_gps.ATOMGPSBase.get_corse_over_ground:8
+#: base.atom_gps.ATOMGPSBase.get_course_over_ground:8
 #: d70b8f6732df4f4db84d2369808be94a of
-msgid "|get_corse_over_ground.png|"
+msgid "|get_course_over_ground.png|"
 msgstr ""
 
 #: ../../en/refs/base.gps.ref:22 e92764dba90c4d029d06ff8c796aa4ba
-msgid "get_corse_over_ground.png"
+msgid "get_course_over_ground.png"
 msgstr ""
 
 #: 6cddfe2dc6824b8ea21cb8fdda166b57 base.atom_gps.ATOMGPSBase.get_gps_date:1 of

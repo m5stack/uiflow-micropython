@@ -9,7 +9,7 @@
 
 .. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/deinit.png
 .. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_altitude.png
-.. |get_corse_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_corse_over_ground.png
+.. |get_course_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_corse_over_ground.png
 .. |get_gps_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_gps_date.png
 .. |get_gps_date_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_gps_date_time.png
 .. |get_gps_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora868/get_gps_time.png

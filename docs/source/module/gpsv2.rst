@@ -168,7 +168,7 @@ Methods
 
         |get_pos_quality.png|
 
-.. method:: GPSV2Module.get_corse_over_ground()
+.. method:: GPSV2Module.get_course_over_ground()
 
     Get the course over ground (COG).
 
@@ -176,7 +176,7 @@ Methods
 
     UIFLOW2:
 
-        |get_corse_over_ground.png|
+        |get_course_over_ground.png|
 
 .. method:: GPSV2Module.get_speed_over_ground()
 

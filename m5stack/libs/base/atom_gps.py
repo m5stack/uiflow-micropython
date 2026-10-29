@@ -46,7 +46,7 @@ class ATOMGPSBase:
         self.altitude = "0"
         self.satellite_num = "0"
         self.pos_quality = "0"
-        self.corse_ground_degree = "0"
+        self.course_ground_degree = "0"
         self.speed_ground_knot = "0"
         self.time_offset = 0
         self.uart = UART(id, tx=port[1], rx=port[0])
@@ -235,6 +235,9 @@ class ATOMGPSBase:
         return self.pos_quality
 
     def get_corse_over_ground(self) -> str:
+        return self.get_course_over_ground()
+
+    def get_course_over_ground(self) -> str:
         """Get the course over ground (COG).
 
         :returns: The course over ground in degrees.
@@ -242,15 +245,15 @@ class ATOMGPSBase:
 
         UiFlow2 Code Block:
 
-            |get_corse_over_ground.png|
+            |get_course_over_ground.png|
 
         MicroPython Code Block:
 
             .. code-block:: python
 
-                gps.get_corse_over_ground()
+                gps.get_course_over_ground()
         """
-        return self.corse_ground_degree
+        return self.course_ground_degree
 
     def get_speed_over_ground(self) -> str:
         """Get the speed over ground (SOG).
@@ -378,7 +381,7 @@ class ATOMGPSBase:
             self.latitude = self._convert_to_decimal(gps_list[3], gps_list[4])
             self.longitude = self._convert_to_decimal(gps_list[5], gps_list[6], False)
             self.speed_ground_knot = gps_list[7]
-            self.corse_ground_degree = gps_list[8]
+            self.course_ground_degree = gps_list[8]
             data_buf = gps_list[9]
             self.gps_date = [int(data_buf[4:7]) + 2000, int(data_buf[2:4]), int(data_buf[0:2])]
             t = (
