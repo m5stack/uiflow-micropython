@@ -502,5 +502,3 @@ msgstr ""
 
 #~ msgid "Index of the RGB LED."
 #~ msgstr "RGB LED 的索引。"
-
-\n

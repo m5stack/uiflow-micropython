@@ -364,5 +364,3 @@ msgstr ""
 #: ../../source/module/faces_gamepad3.rst:77
 msgid "``0x80``"
 msgstr ""
-
-\n

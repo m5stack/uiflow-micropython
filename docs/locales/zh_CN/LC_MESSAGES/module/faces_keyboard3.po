@@ -504,5 +504,3 @@ msgid ""
 msgstr ""
 "在 Normal 模式下，``KEY_BACKSPACE`` 为 ``0x08``，``KEY_ENTER`` 为 "
 "``0x0D``，``KEY_DELETE`` 为 ``0x7F``。LED 效果和手动 LED 状态仅在 Direct 模式下可用。"
-
-\n

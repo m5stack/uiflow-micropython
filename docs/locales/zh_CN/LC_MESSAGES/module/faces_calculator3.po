@@ -396,5 +396,3 @@ msgstr ""
 #: ../../source/module/faces_calculator3.rst:94
 msgid "Equal"
 msgstr "等号"
-
-\n

@@ -355,5 +355,3 @@ msgstr "MicroPython 示例"
 #: ../../source/controllers/corep4x.rst:228
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
-
-\n

@@ -274,5 +274,3 @@ msgstr ""
 #: ../../source/stamp/f12.rst:114
 msgid "If the position is outside 1-12 or is a power or ground position."
 msgstr ""
-
-\n
