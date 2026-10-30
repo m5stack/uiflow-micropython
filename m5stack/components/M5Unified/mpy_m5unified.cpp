@@ -619,7 +619,7 @@ void rtc_sync(struct timeval *tv_in) {
         tv = *tv_in;
     }
     struct tm now;
-    localtime_r(&tv.tv_sec, &now);
+    gmtime_r(&tv.tv_sec, &now);
     M5.Rtc.setDateTime(&now);
 }
 
@@ -681,7 +681,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     M5.Display.setFont(&m5gfx::fonts::lvFontMontserrat12);
     #endif
 
-    // get local time and sync to RTC IC
+    // get UTC time and sync to RTC IC
     rtc_sync(nullptr);
 
     {
