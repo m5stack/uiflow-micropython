@@ -1,0 +1,94 @@
+Index: micropython/ports/esp32/usb.c
+===================================================================
+--- micropython.orig/ports/esp32/usb.c
++++ micropython/ports/esp32/usb.c
+@@ -34,6 +34,13 @@
+ #include "esp_rom_gpio.h"
+ #include "esp_private/usb_phy.h"
+
++#if CONFIG_IDF_TARGET_ESP32P4 && !MICROPY_HW_USB_HS && defined(MICROPY_HW_USB_FS_PHY)
++#include "driver/gpio.h"
++#include "esp_private/periph_ctrl.h"
++#include "hal/usb_serial_jtag_ll.h"
++#include "hal/usb_wrap_ll.h"
++#endif
++
+ #include "shared/tinyusb/mp_usbd.h"
+
+ static usb_phy_handle_t phy_hdl;
+@@ -55,14 +62,48 @@ void usb_phy_init(void) {
+     };
+
+     // Init ESP USB Phy
+-    usb_new_phy(&phy_conf, &phy_hdl);
++    ESP_ERROR_CHECK(usb_new_phy(&phy_conf, &phy_hdl));
++
++    #if CONFIG_IDF_TARGET_ESP32P4 && !MICROPY_HW_USB_HS && defined(MICROPY_HW_USB_FS_PHY)
++    MP_STATIC_ASSERT(MICROPY_HW_USB_FS_PHY == 0 || MICROPY_HW_USB_FS_PHY == 1);
++    // P4 defaults to OTG on GPIO26/27. Tab5 needs OTG on GPIO24/25;
++    // GPIO26/27 belong to I2S, so also disconnect the Serial/JTAG pads.
++    if (MICROPY_HW_USB_FS_PHY == 0) {
++        PERIPH_RCC_ATOMIC() {
++            usb_serial_jtag_ll_enable_bus_clock(true);
++        }
++        usb_wrap_ll_phy_select(&USB_WRAP, 0);
++        usb_serial_jtag_ll_phy_enable_pad(false);
++        gpio_set_drive_capability(GPIO_NUM_24, GPIO_DRIVE_CAP_3);
++        gpio_set_drive_capability(GPIO_NUM_25, GPIO_DRIVE_CAP_3);
++    }
++    #endif
+ }
+
+ #if CONFIG_IDF_TARGET_ESP32S3 || CONFIG_IDF_TARGET_ESP32P4
+ void usb_usj_mode(void) {
+     // Switch the USB PHY back to Serial/Jtag mode, disabling OTG support
+     // This should be run before jumping to bootloader.
++    #if CONFIG_IDF_TARGET_ESP32P4 && !MICROPY_HW_USB_HS && defined(MICROPY_HW_USB_FS_PHY)
++    if (MICROPY_HW_USB_FS_PHY == 0) {
++        // Let the PC observe CDC disconnect before changing USB controllers.
++        tud_disconnect();
++        mp_hal_delay_us(20000);
++    }
++    #endif
+     usb_del_phy(phy_hdl);
++    #if CONFIG_IDF_TARGET_ESP32P4 && !MICROPY_HW_USB_HS && defined(MICROPY_HW_USB_FS_PHY)
++    if (MICROPY_HW_USB_FS_PHY == 0) {
++        // ROM download uses Serial/JTAG on the original USB-C pins. Reset its
++        // endpoint state left over from the previous ROM download session.
++        usb_wrap_ll_phy_select(&USB_WRAP, 1);
++        PERIPH_RCC_ATOMIC() {
++            usb_serial_jtag_ll_enable_bus_clock(true);
++            usb_serial_jtag_ll_reset_register();
++        }
++        usb_serial_jtag_ll_phy_set_defaults();
++    }
++    #endif
+     usb_phy_config_t phy_conf = {
+         .controller = USB_PHY_CTRL_SERIAL_JTAG,
+     };
+Index: micropython/ports/esp32/modmachine.c
+===================================================================
+--- micropython.orig/ports/esp32/modmachine.c
++++ micropython/ports/esp32/modmachine.c
+@@ -260,9 +260,9 @@ static mp_int_t mp_machine_reset_cause(v
+ }
+
+ #if MICROPY_ESP32_USE_BOOTLOADER_RTC
++#include "usb.h"
+ #if !CONFIG_IDF_TARGET_ESP32P4
+ #include "soc/rtc_cntl_reg.h"
+-#include "usb.h"
+ #else
+ #include "soc/lp_system_reg.h"
+ #endif
+@@ -273,6 +273,10 @@ static mp_int_t mp_machine_reset_cause(v
+ #endif
+
+ MP_NORETURN static void machine_bootloader_rtc(void) {
++    #if CONFIG_IDF_TARGET_ESP32P4 && MICROPY_HW_USB_CDC && !MICROPY_HW_USB_HS && defined(MICROPY_HW_USB_FS_PHY)
++    // Restore USB-C to Serial/JTAG before the ROM download-mode reset.
++    usb_usj_mode();
++    #endif
+     #if CONFIG_IDF_TARGET_ESP32S3 && MICROPY_HW_USB_CDC
+     usb_usj_mode();
+     usb_dc_prepare_persist();

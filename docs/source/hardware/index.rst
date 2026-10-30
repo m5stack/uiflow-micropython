@@ -28,4 +28,5 @@ Hardware
     speaker.rst
     touch.rst
     uart.rst
+    usbhost.rst
     wdt.rst

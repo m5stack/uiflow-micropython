@@ -324,6 +324,10 @@ if (UPDATE_SUBMODULES)
     unset(MICROPY_INC_CORE)
 endif()
 
+if(BOARD_TYPE STREQUAL "tab5")
+    list(APPEND IDF_COMPONENTS espressif__usb_host_hid)
+endif()
+
 # Register the main IDF component.
 idf_component_register(
     SRCS
