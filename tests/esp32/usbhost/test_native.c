@@ -19,7 +19,7 @@ struct fake_hid {
     size_t length;
 };
 static struct fake_hid fake_devices[32];
-static atomic_bool host_ok, hid_ok;
+static atomic_bool host_ok, hid_ok, mock_uvc_installed;
 static bool rail;
 static int resources, allocation_calls, fail_allocation;
 static bool fail_library, fail_hid, fail_task, fail_enable, fail_disable, fail_protocol, fail_close, unplug_on_open;
@@ -68,6 +68,13 @@ EventGroupHandle_t xEventGroupCreate(void) {
     if (g) { pthread_mutex_init(&g->lock, NULL); pthread_cond_init(&g->cond, NULL); }
     return g;
 }
+EventBits_t xEventGroupClearBits(EventGroupHandle_t g, EventBits_t bits) {
+    pthread_mutex_lock(&g->lock);
+    unsigned old = g->bits;
+    g->bits &= ~bits;
+    pthread_mutex_unlock(&g->lock);
+    return old;
+}
 EventBits_t xEventGroupSetBits(EventGroupHandle_t g, EventBits_t bits) {
     pthread_mutex_lock(&g->lock);
     g->bits |= bits;
@@ -114,7 +121,7 @@ int usb_host_install(const usb_host_config_t *config) {
     if (fail_library) { return ESP_FAIL; }
     atomic_store(&host_ok, true); return ESP_OK;
 }
-int usb_host_uninstall(void) { assert(!atomic_load(&hid_ok)); atomic_store(&host_ok, false); return ESP_OK; }
+int usb_host_uninstall(void) { assert(!atomic_load(&hid_ok) && !atomic_load(&mock_uvc_installed)); atomic_store(&host_ok, false); return ESP_OK; }
 int usb_host_lib_set_root_port_power(bool enabled) {
     assert(atomic_load(&host_ok));
     if (!enabled) {
@@ -132,11 +139,11 @@ int usb_host_lib_set_root_port_power(bool enabled) {
 }
 int usb_host_lib_handle_events(TickType_t ticks, uint32_t *flags) {
     vTaskDelay(1);
-    *flags = atomic_load(&hid_ok) ? 0 : USB_HOST_LIB_EVENT_FLAGS_NO_CLIENTS;
+    *flags = (atomic_load(&hid_ok) || atomic_load(&mock_uvc_installed)) ? 0 : USB_HOST_LIB_EVENT_FLAGS_NO_CLIENTS;
     return ESP_OK;
 }
 int usb_host_lib_unblock(void) { return ESP_OK; }
-int usb_host_device_free_all(void) { return atomic_load(&hid_ok) ? ESP_ERR_INVALID_STATE : ESP_OK; }
+int usb_host_device_free_all(void) { return (atomic_load(&hid_ok) || atomic_load(&mock_uvc_installed)) ? ESP_ERR_INVALID_STATE : ESP_OK; }
 bool uiflow_usbhost_set_power(bool enabled) {
     if ((enabled && fail_enable) || (!enabled && fail_disable)) { return false; }
     rail = enabled;
@@ -177,7 +184,103 @@ int hid_host_device_get_raw_input_report_data(hid_host_device_handle_t d, uint8_
     *length = d->length < capacity ? d->length : capacity; memcpy(data, d->data, *length); return ESP_OK;
 }
 
+
+static uvc_host_driver_config_t mock_uvc_driver;
+static uvc_host_stream_config_t mock_uvc_config;
+struct uvc_host_stream_s { bool opened, streaming; };
+static struct uvc_host_stream_s mock_uvc_stream;
+static bool mock_camera_present, fail_uvc_install, fail_uvc_open, fail_uvc_start, fail_uvc_close;
+static bool mock_frame_held[4];
+static uint8_t mock_frame_data[4][16];
+static uvc_host_frame_t mock_frames[4] = {
+    {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[0]},
+    {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[1]},
+    {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[2]},
+    {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 1, .data = mock_frame_data[3]},
+};
+
+int uvc_host_install(const uvc_host_driver_config_t *config) {
+    assert(config->create_background_task && atomic_load(&host_ok));
+    if (fail_uvc_install) { return ESP_FAIL; }
+    mock_uvc_driver = *config;
+    atomic_store(&mock_uvc_installed, true);
+    return ESP_OK;
+}
+int uvc_host_uninstall(void) {
+    assert(!mock_uvc_stream.opened);
+    atomic_store(&mock_uvc_installed, false);
+    return ESP_OK;
+}
+int uvc_host_stream_open(const uvc_host_stream_config_t *config, int timeout, uvc_host_stream_hdl_t *out) {
+    assert(atomic_load(&mock_uvc_installed) && !mock_uvc_stream.opened);
+    assert(config->vs_format.format == UVC_VS_FORMAT_MJPEG);
+    assert(config->advanced.number_of_frame_buffers == 3);
+    assert(config->advanced.frame_heap_caps == (MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT));
+    if (fail_uvc_open || !mock_camera_present) { return ESP_ERR_NOT_FOUND; }
+    mock_uvc_config = *config;
+    mock_uvc_stream.opened = true;
+    *out = &mock_uvc_stream;
+    return ESP_OK;
+}
+int uvc_host_stream_start(uvc_host_stream_hdl_t stream) {
+    assert(stream->opened);
+    if (fail_uvc_start) { return ESP_FAIL; }
+    stream->streaming = true;
+    return ESP_OK;
+}
+int uvc_host_stream_stop(uvc_host_stream_hdl_t stream) {
+    assert(stream->opened);
+    stream->streaming = false;
+    return mock_camera_present ? ESP_OK : ESP_ERR_NOT_FOUND;
+}
+int uvc_host_stream_close(uvc_host_stream_hdl_t stream) {
+    assert(stream->opened && !stream->streaming);
+    if (fail_uvc_close) { return ESP_FAIL; }
+    for (size_t i = 0; i < 4; ++i) { assert(!mock_frame_held[i]); }
+    stream->opened = false;
+    return ESP_OK;
+}
+int uvc_host_stream_format_get(uvc_host_stream_hdl_t stream, uvc_host_stream_format_t *format) {
+    *format = mock_uvc_config.vs_format;
+    if (!format->fps) { format->fps = 30; }
+    return ESP_OK;
+}
+int uvc_host_frame_return(uvc_host_stream_hdl_t stream, uvc_host_frame_t *frame) {
+    assert(stream == &mock_uvc_stream && stream->opened);
+    ptrdiff_t index = frame - mock_frames;
+    assert(index >= 0 && index < 4 && mock_frame_held[index]);
+    mock_frame_held[index] = false;
+    return ESP_OK;
+}
+int uvc_host_get_frame_list(uint8_t address, uint8_t index, uvc_host_frame_info_t (*formats)[], size_t *count) {
+    assert(address == 1 && index == 0);
+    if (!mock_camera_present) { return ESP_ERR_NOT_FOUND; }
+    if (formats) {
+        assert(*count >= 1);
+        (*formats)[0] = (uvc_host_frame_info_t){
+            .format = UVC_VS_FORMAT_MJPEG, .h_res = 640, .v_res = 480, .default_interval = 333333,
+        };
+    }
+    *count = 1;
+    return ESP_OK;
+}
+static void mock_uvc_attach(void) {
+    mock_camera_present = true;
+    uvc_host_driver_event_data_t event = {
+        .type = UVC_HOST_DRIVER_EVENT_DEVICE_CONNECTED,
+        .device_connected = {.dev_addr = 1, .uvc_stream_index = 0, .frame_info_num = 1},
+    };
+    mock_uvc_driver.event_cb(&event, NULL);
+}
+static void mock_uvc_emit(size_t index) {
+    assert(mock_uvc_stream.streaming && !mock_frame_held[index]);
+    mock_frame_held[index] = true;
+    if (mock_uvc_config.frame_cb(&mock_frames[index], NULL)) { mock_frame_held[index] = false; }
+}
+
 // Include the unmodified production backend so tests can inject its native callbacks.
+#include "usbhost_bus.c"
+#include "uvc_camera.c"
 #include "usbhost_backend.c"
 
 static struct fake_hid *connect_device(size_t index, uint8_t protocol, uint8_t subclass) {
@@ -192,6 +295,79 @@ static void assert_clean(void) {
     assert(resources == 0 && !thread_created && !rail);
     assert(!atomic_load(&host_ok) && !atomic_load(&hid_ok));
     assert(uiflow_usbhost_stop() == ESP_OK);
+}
+
+
+static void test_uvc(void) {
+    for (int failure = 1; failure <= 2; ++failure) {
+        allocation_calls = 0; fail_allocation = failure;
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_NO_MEM);
+        assert_clean();
+    }
+    fail_allocation = 0;
+    bool *failures[] = {&fail_library, &fail_task, &fail_uvc_install, &fail_enable};
+    for (size_t i = 0; i < 4; ++i) {
+        *failures[i] = true;
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) != ESP_OK);
+        *failures[i] = false;
+        assert(uiflow_uvc_deinit() == ESP_OK);
+        assert_clean();
+    }
+    for (int cycle = 0; cycle < 100; ++cycle) {
+        uint32_t old = uiflow_uvc_generation();
+        mock_camera_present = false;
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_OK);
+        assert(uiflow_uvc_active(uiflow_uvc_generation()) && !uiflow_uvc_active(old));
+        // A failed competing constructor and stale HID teardown cannot touch UVC.
+        assert(uiflow_usbhost_start() == ESP_ERR_INVALID_STATE);
+        assert(uiflow_usbhost_stop() == ESP_OK && rail);
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_INVALID_STATE);
+        size_t count = 0;
+        assert(uiflow_uvc_formats(NULL, &count) == ESP_ERR_NOT_FOUND);
+        assert(uiflow_uvc_start(0) == ESP_ERR_NOT_FOUND);
+        mock_uvc_attach();
+        assert(uiflow_uvc_formats(NULL, &count) == ESP_OK && count == 1);
+        uvc_host_frame_info_t formats[1];
+        assert(uiflow_uvc_formats(&formats, &count) == ESP_OK && formats[0].h_res == 640);
+        assert(uiflow_uvc_start(5000) == ESP_OK);
+        assert(uiflow_uvc_start(0) == ESP_ERR_INVALID_STATE);
+        mock_uvc_emit(0); mock_uvc_emit(1); mock_uvc_emit(2); mock_uvc_emit(3);
+        assert(mock_frame_held[0] && mock_frame_held[1] && !mock_frame_held[2] && !mock_frame_held[3]);
+        uiflow_uvc_info_t info;
+        uiflow_uvc_info(&info);
+        assert(info.frames == 3 && info.dropped == 1 && info.errors == 1 && info.format.fps == 30);
+        uvc_host_frame_t *frame;
+        assert(uiflow_uvc_frame_take(&frame) == ESP_OK && frame == &mock_frames[0]);
+        assert(uiflow_uvc_frame_release(frame) == ESP_OK);
+        // Stop must return queued frames before closing and permit a restart.
+        assert(uiflow_uvc_stop() == ESP_OK && !mock_frame_held[1]);
+        assert(uiflow_uvc_start(5000) == ESP_OK);
+        mock_uvc_emit(0);
+        mock_camera_present = false;
+        uvc_host_stream_event_data_t event = {.type = UVC_HOST_DEVICE_DISCONNECTED};
+        mock_uvc_config.event_cb(&event, NULL);
+        assert(uiflow_uvc_frame_take(&frame) == ESP_ERR_NOT_FOUND && frame == NULL);
+        assert(uiflow_uvc_stop() == ESP_OK && !mock_frame_held[0]);
+        assert(uiflow_uvc_deinit() == ESP_OK);
+        assert(!uiflow_uvc_active(uiflow_uvc_generation()));
+        assert_clean();
+    }
+    assert(uiflow_usbhost_start() == ESP_OK);
+    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_INVALID_STATE);
+    assert(uiflow_uvc_deinit() == ESP_OK && rail);
+    assert(uiflow_usbhost_stop() == ESP_OK);
+    assert_clean();
+    // Failed stream startup and close retain a recoverable native handle.
+    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_OK);
+    mock_uvc_attach();
+    fail_uvc_start = fail_uvc_close = true;
+    assert(uiflow_uvc_start(0) == ESP_FAIL && mock_uvc_stream.opened);
+    fail_uvc_start = fail_uvc_close = false;
+    assert(uiflow_uvc_stop() == ESP_OK && !mock_uvc_stream.opened);
+    assert(uiflow_uvc_start(0) == ESP_OK);
+    mock_uvc_emit(0);
+    uiflow_usbhost_deinit_all();
+    assert_clean();
 }
 
 int main(void) {
@@ -271,9 +447,10 @@ int main(void) {
     // VBUS failure must not leave tasks referencing destroyed native queues.
     assert(uiflow_usbhost_start() == ESP_OK); fail_disable = true;
     assert(uiflow_usbhost_stop() == ESP_FAIL);
-    assert(resources == 0 && !thread_created && !atomic_load(&host_ok));
+    assert(resources <= 2 && !thread_created && !atomic_load(&host_ok));
     assert(uiflow_usbhost_start() == ESP_ERR_INVALID_STATE);
     fail_disable = false;
     assert(uiflow_usbhost_stop() == ESP_OK); assert_clean();
+    test_uvc();
     return 0;
 }

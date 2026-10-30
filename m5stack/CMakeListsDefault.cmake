@@ -325,7 +325,7 @@ if (UPDATE_SUBMODULES)
 endif()
 
 if(BOARD_TYPE STREQUAL "tab5")
-    list(APPEND IDF_COMPONENTS espressif__usb_host_hid)
+    list(APPEND IDF_COMPONENTS espressif__usb_host_hid espressif__usb_host_uvc)
 endif()
 
 # Register the main IDF component.

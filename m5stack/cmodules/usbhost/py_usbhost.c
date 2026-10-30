@@ -6,6 +6,9 @@
 #include "py/mperrno.h"
 #include "usbhost.h"
 #include "hid_report.h"
+#include "uvc_camera.h"
+
+extern const mp_obj_type_t uiflow_uvc_camera_type;
 
 typedef struct {
     mp_obj_base_t base;
@@ -150,6 +153,7 @@ static mp_obj_t hid_host_deinit(mp_obj_t self_in) {
 static MP_DEFINE_CONST_FUN_OBJ_1(hid_host_deinit_obj, hid_host_deinit);
 
 static mp_obj_t module_deinit(void) {
+    check_error(uiflow_uvc_deinit());
     check_error(uiflow_usbhost_stop());
     return mp_const_none;
 }
@@ -174,6 +178,7 @@ static MP_DEFINE_CONST_OBJ_TYPE(
 static const mp_rom_map_elem_t module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_usbhost)},
     {MP_ROM_QSTR(MP_QSTR_HIDHost), MP_ROM_PTR(&hid_host_type)},
+    {MP_ROM_QSTR(MP_QSTR_UVCCamera), MP_ROM_PTR(&uiflow_uvc_camera_type)},
     {MP_ROM_QSTR(MP_QSTR_deinit), MP_ROM_PTR(&module_deinit_obj)},
 };
 static MP_DEFINE_CONST_DICT(module_globals, module_globals_table);

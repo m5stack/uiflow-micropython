@@ -11,9 +11,9 @@
 #include "usb/usb_host.h"
 #include "usb/hid_host.h"
 #include "usbhost.h"
+#include "usbhost_bus.h"
+#include "uvc_camera.h"
 
-#define DAEMON_DONE (1 << 0)
-#define DEVICES_FREE (1 << 1)
 #define SHUTDOWN_MS (5000)
 
 typedef struct {
@@ -27,14 +27,9 @@ static hid_slot_t slots[UIFLOW_HID_MAX_INTERFACES];
 static portMUX_TYPE slots_lock = portMUX_INITIALIZER_UNLOCKED;
 static QueueHandle_t connections;
 static QueueHandle_t reports;
-static EventGroupHandle_t lifecycle;
-static bool library_installed;
 static bool hid_installed;
-static bool daemon_created;
-static bool power_owned;
 static uint32_t generation;
 static atomic_bool stopping;
-static atomic_bool daemon_stop;
 static atomic_uint dropped;
 static atomic_int fatal_error;
 
@@ -51,26 +46,6 @@ static void emit(const uiflow_hid_event_t *event) {
             atomic_fetch_add(&dropped, 1);
         }
     }
-}
-
-static void library_task(void *arg) {
-    while (!atomic_load(&daemon_stop)) {
-        uint32_t flags = 0;
-        esp_err_t err = usb_host_lib_handle_events(pdMS_TO_TICKS(50), &flags);
-        if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
-            atomic_store(&fatal_error, err);
-        }
-        if (flags & USB_HOST_LIB_EVENT_FLAGS_NO_CLIENTS) {
-            if (usb_host_device_free_all() == ESP_OK) {
-                xEventGroupSetBits(lifecycle, DEVICES_FREE);
-            }
-        }
-        if (flags & USB_HOST_LIB_EVENT_FLAGS_ALL_FREE) {
-            xEventGroupSetBits(lifecycle, DEVICES_FREE);
-        }
-    }
-    xEventGroupSetBits(lifecycle, DAEMON_DONE);
-    vTaskDelete(NULL);
 }
 
 static void interface_callback(hid_host_device_handle_t handle, hid_host_interface_event_t event, void *arg) {
@@ -217,7 +192,10 @@ esp_err_t uiflow_usbhost_service(void) {
     if (!hid_installed || atomic_load(&stopping)) {
         return ESP_ERR_INVALID_STATE;
     }
-    int err = atomic_load(&fatal_error);
+    int err = uiflow_usb_bus_error();
+    if (err == ESP_OK) {
+        err = atomic_load(&fatal_error);
+    }
     if (err != ESP_OK) {
         return err;
     }
@@ -233,18 +211,8 @@ esp_err_t uiflow_usbhost_service(void) {
 esp_err_t uiflow_usbhost_stop(void) {
     atomic_store(&stopping, true);
     esp_err_t power_error = ESP_OK;
-    if (library_installed) {
-        esp_err_t err = usb_host_lib_set_root_port_power(false);
-        if (err != ESP_OK) {
-            return err;
-        }
-    }
-    if (power_owned) {
-        if (!uiflow_usbhost_set_power(false)) {
-            power_error = ESP_FAIL;
-        } else {
-            power_owned = false;
-        }
+    if (uiflow_usb_bus_owner() == UIFLOW_USB_BUS_HID) {
+        power_error = uiflow_usb_bus_disconnect(UIFLOW_USB_BUS_HID);
     }
     if (hid_installed) {
         TickType_t start = xTaskGetTickCount();
@@ -264,28 +232,11 @@ esp_err_t uiflow_usbhost_stop(void) {
         }
         hid_installed = false;
     }
-    if (library_installed && daemon_created) {
-        if (usb_host_device_free_all() == ESP_OK) {
-            xEventGroupSetBits(lifecycle, DEVICES_FREE);
-        }
-        if (!(xEventGroupWaitBits(lifecycle, DEVICES_FREE, pdFALSE, pdTRUE,
-            pdMS_TO_TICKS(SHUTDOWN_MS)) & DEVICES_FREE)) {
-            return ESP_ERR_TIMEOUT;
-        }
-        atomic_store(&daemon_stop, true);
-        usb_host_lib_unblock();
-        if (!(xEventGroupWaitBits(lifecycle, DAEMON_DONE, pdFALSE, pdTRUE,
-            pdMS_TO_TICKS(SHUTDOWN_MS)) & DAEMON_DONE)) {
-            return ESP_ERR_TIMEOUT;
-        }
-        daemon_created = false;
-    }
-    if (library_installed) {
-        esp_err_t err = usb_host_uninstall();
+    if (uiflow_usb_bus_owner() == UIFLOW_USB_BUS_HID) {
+        esp_err_t err = uiflow_usb_bus_release(UIFLOW_USB_BUS_HID);
         if (err != ESP_OK) {
             return err;
         }
-        library_installed = false;
     }
     if (connections != NULL) {
         vQueueDelete(connections);
@@ -295,45 +246,27 @@ esp_err_t uiflow_usbhost_stop(void) {
         vQueueDelete(reports);
         reports = NULL;
     }
-    if (lifecycle != NULL) {
-        vEventGroupDelete(lifecycle);
-        lifecycle = NULL;
-    }
     memset(slots, 0, sizeof(slots));
     return power_error;
 }
 
 esp_err_t uiflow_usbhost_start(void) {
-    if (library_installed || connections != NULL || power_owned) {
+    if (connections != NULL || uiflow_usb_bus_owner() != UIFLOW_USB_BUS_NONE) {
         return ESP_ERR_INVALID_STATE;
     }
     atomic_store(&stopping, false);
-    atomic_store(&daemon_stop, false);
     atomic_store(&dropped, 0);
     atomic_store(&fatal_error, ESP_OK);
-    connections = xQueueCreate(16, sizeof(hid_host_device_handle_t));
-    reports = xQueueCreate(32, sizeof(uiflow_hid_event_t));
-    lifecycle = xEventGroupCreate();
-    esp_err_t err = ESP_ERR_NO_MEM;
-    if (connections == NULL || reports == NULL || lifecycle == NULL) {
-        goto fail;
-    }
-    const usb_host_config_t config = {
-        .intr_flags = ESP_INTR_FLAG_LEVEL1,
-        .root_port_unpowered = true,
-        // IDF numbers HS as peripheral 0; TinyUSB numbers it RHPORT1.
-        .peripheral_map = 1 << 0,
-    };
-    err = usb_host_install(&config);
+    esp_err_t err = uiflow_usb_bus_claim(UIFLOW_USB_BUS_HID);
     if (err != ESP_OK) {
         goto fail;
     }
-    library_installed = true;
-    if (xTaskCreate(library_task, "usbh_lib", 4096, NULL, 4, NULL) != pdPASS) {
+    connections = xQueueCreate(16, sizeof(hid_host_device_handle_t));
+    reports = xQueueCreate(32, sizeof(uiflow_hid_event_t));
+    if (connections == NULL || reports == NULL) {
         err = ESP_ERR_NO_MEM;
         goto fail;
     }
-    daemon_created = true;
     const hid_host_driver_config_t hid_config = {
         .create_background_task = true,
         .task_priority = 5,
@@ -346,13 +279,7 @@ esp_err_t uiflow_usbhost_start(void) {
         goto fail;
     }
     hid_installed = true;
-    // M5.begin() must have initialized the board and its IO expanders first.
-    power_owned = true;
-    if (!uiflow_usbhost_set_power(true)) {
-        err = ESP_FAIL;
-        goto fail;
-    }
-    err = usb_host_lib_set_root_port_power(true);
+    err = uiflow_usb_bus_enable(UIFLOW_USB_BUS_HID);
     if (err != ESP_OK) {
         goto fail;
     }
@@ -398,7 +325,11 @@ uint32_t uiflow_usbhost_dropped(void) {
 }
 
 void uiflow_usbhost_deinit_all(void) {
-    esp_err_t err = uiflow_usbhost_stop();
+    esp_err_t err = uiflow_uvc_deinit();
+    if (err != ESP_OK) {
+        ESP_LOGE("usbhost", "UVC Host cleanup failed: %s", esp_err_to_name(err));
+    }
+    err = uiflow_usbhost_stop();
     if (err != ESP_OK) {
         ESP_LOGE("usbhost", "HID Host cleanup failed: %s", esp_err_to_name(err));
     }

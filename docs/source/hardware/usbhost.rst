@@ -1,8 +1,8 @@
-USB HID Host
-============
+USB Host
+========
 
 .. module:: usbhost
-   :synopsis: Native USB-A boot keyboard and mouse input on Tab5
+   :synopsis: Native USB-A HID input and MJPEG UVC cameras on Tab5
 
 This module is available on Tab5. The USB-A connector uses the ESP32-P4
 high-speed OTG controller as Host. USB-C uses the separate full-speed OTG
@@ -15,7 +15,7 @@ VBUS through the board's IO expander. ``deinit()`` disables that supply and
 releases the Host controller. Do not change the USB-A power configuration
 while the host is active.
 
-The first implementation supports directly connected USB boot keyboards and
+``HIDHost`` supports directly connected USB boot keyboards and
 boot mice, including composite devices with multiple supported interfaces.
 It does not enable hubs, mass storage, serial adapters or USB Wi-Fi drivers.
 Report-only/NKRO keyboards and vendor-specific mouse reports are not decoded.
@@ -62,6 +62,10 @@ HID reports are serialized to preserve press/release edges while an earlier
 transfer is pending. The status panel shows submitted/completed report counts.
 When USB-C is attached to a virtual machine, touch input controls that guest.
 Display dimensions follow the board's existing rotation.
+
+``HIDHost`` and ``UVCCamera`` share one native Host bus manager. This version
+allows one of these classes to own USB-A at a time. Deinitialize the current
+owner before switching classes. USB-C CDC/REPL remains available in either mode.
 
 Class HIDHost
 -------------
@@ -126,3 +130,109 @@ Class HIDHost
 
     Stop the current native host, including after losing its Python instance
     or after a constructor failed partway through initialization.
+
+
+Class UVCCamera
+---------------
+
+.. class:: UVCCamera(*, width=640, height=480, fps=0, frame_size=524288)
+
+    Start the UVC driver for one directly connected camera's first video stream.
+    Call ``M5.begin()`` first. Only MJPEG is accepted by this API; YUY2, H.264,
+    H.265, audio and camera controls are not enabled.
+
+    Width and height must be 1..4096 and must match a camera-supported format.
+    FPS is an integer from 0..120; zero requests the device's default FPS.
+    Unsupported format/FPS combinations raise ``OSError`` during ``start()``.
+
+    ``frame_size`` is the maximum compressed size of one JPEG, from 16 KiB to
+    4 MiB. Three driver frame buffers are allocated in PSRAM when a stream opens.
+    Larger frames are discarded and counted in ``info()["overflows"]``.
+    The API never silently falls back to an uncompressed format.
+
+    Construction installs the driver and enables USB-A power; it does not wait
+    for a camera or start streaming. A second camera or HID owner raises
+    ``OSError``. Soft reset releases native resources.
+
+.. method:: UVCCamera.formats(timeout=5000)
+
+    Wait up to ``timeout`` milliseconds for enumeration and return the first
+    camera stream's frame formats as dictionaries containing ``format``,
+    ``width``, ``height`` and ``default_fps``. An empty list means no camera
+    arrived in time. Reported formats other than ``"mjpeg"`` are informational
+    and cannot be selected by this implementation.
+
+.. method:: UVCCamera.start(timeout=5000)
+
+    Open the first matching UVC stream and start MJPEG reception. No camera,
+    an unsupported requested mode or a negotiation failure raises ``OSError``.
+    ``timeout`` bounds device discovery; USB control requests have their own
+    driver timeouts. Starting an already open stream raises ``OSError``.
+
+.. method:: UVCCamera.read(timeout=1000)
+
+    Return a complete JPEG as ``bytes``, or ``None`` on timeout. Each successful
+    call copies one frame into Python-managed memory. Prefer ``readinto`` for
+    continuous preview.
+
+.. method:: UVCCamera.readinto(buffer, timeout=1000)
+
+    Copy the next JPEG into a writable buffer and return its byte length, or
+    zero on timeout. Allocate a ``bytearray(frame_size)`` once and reuse it.
+    The supplied buffer must fit the actual JPEG; otherwise the frame is
+    returned to the driver and ``ValueError`` is raised.
+
+    Native callbacks retain at most two frames in a bounded queue. A slow
+    consumer causes new frames to be dropped; it never grows the Python heap
+    or blocks the USB event task. A received frame is copied once into the
+    caller's buffer and promptly returned to the driver.
+
+    ``read`` and ``readinto`` require a started stream. Unplugging the camera
+    raises ``OSError(ENODEV)``. After reconnecting, call ``stop()`` and
+    ``start()`` to negotiate the new stream.
+
+.. method:: UVCCamera.info()
+
+    Return ``status`` (``"waiting"``, ``"ready"`` or ``"streaming"``),
+    ``format``, ``width``, ``height``, ``fps``, ``received``, ``dropped``,
+    ``overflows``, ``errors`` and ``last_error``. FPS is the negotiated setting,
+    not a measurement of delivered throughput. Counters reset on construction.
+
+.. method:: UVCCamera.stop()
+
+    Stop and close the stream, returning all queued driver frames. The driver
+    and USB-A power remain available for another ``start()``. Repeated calls
+    are allowed.
+
+.. method:: UVCCamera.deinit()
+
+    Stop streaming, uninstall the driver and release USB-A power and controller.
+    Call this in ``finally``. Repeated calls are allowed; an old instance
+    cannot stop a newer camera. Methods on a deinitialized instance raise
+    ``OSError(ENODEV)``.
+
+All camera timeout arguments accept 0..60000 milliseconds. This implementation
+requires hardware validation with the actual camera; supported modes and frame
+rates depend on that camera's descriptors and the USB/display workload.
+
+Example::
+
+    import M5
+    import usbhost
+
+    M5.begin()
+    camera = usbhost.UVCCamera(width=640, height=480)
+    try:
+        print(camera.formats())
+        camera.start()
+        buffer = bytearray(512 * 1024)
+        count = camera.readinto(buffer)
+        if count:
+            M5.Lcd.drawJpg(memoryview(buffer)[:count], 0, 0)
+    finally:
+        camera.deinit()
+
+``examples/hardware/usbhost/tab5_uvc_camera.py`` adds continuous preview,
+delivered FPS and error counters, a CAPTURE button that saves a JPEG under
+``/flash`` without overwriting existing captures, and a STOP button. It is an
+explicitly launched example and does not modify the launcher or ``main.py``.

@@ -25,6 +25,8 @@ with tempfile.TemporaryDirectory(prefix="uiflow-usbhost-") as temporary:
         "esp_log.h",
         "usb/usb_host.h",
         "usb/hid_host.h",
+        "usb/uvc_host.h",
+        "esp_heap_caps.h",
     ):
         p = output / header
         p.parent.mkdir(parents=True, exist_ok=True)
@@ -51,5 +53,5 @@ with tempfile.TemporaryDirectory(prefix="uiflow-usbhost-") as temporary:
     subprocess.run(command, check=True)
     subprocess.run([str(binary)], check=True)
     print(
-        "PASS: HID reports, startup failures, unplug, queue overflow, cleanup/retry, 100 lifecycle cycles (ASan/UBSan)"
+        "PASS: HID reports, startup failures, unplug, queue overflow, cleanup/retry, HID/UVC ownership, retained frames, disconnect/retry and 200 lifecycle cycles (ASan/UBSan)"
     )

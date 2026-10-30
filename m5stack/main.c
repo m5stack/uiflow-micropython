@@ -68,7 +68,7 @@
 
 // Start of modification section, by M5Stack
 #include "board.h"
-#if MICROPY_HW_USB_HOST_HID
+#if MICROPY_HW_USB_HOST
 #include "usbhost.h"
 #endif
 #if WEB_REPL_ENABLE
@@ -234,7 +234,7 @@ soft_reset_exit:
     mp_thread_deinit();
     #endif
 
-    #if MICROPY_HW_USB_HOST_HID
+    #if MICROPY_HW_USB_HOST
     uiflow_usbhost_deinit_all();
     #endif
 
