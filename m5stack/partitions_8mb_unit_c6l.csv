@@ -1,0 +1,7 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+# Unit C6L: reserve more app space without moving or shrinking the user filesystem.
+nvs,      data, nvs,     0x9000,  0x6000,
+phy_init, data, phy,     0xf000,  0x1000,
+factory,  app,  factory, 0x10000, 0x581000,
+sys,      data, fat,     0x591000, 0x0c0000,
+vfs,      data, fat,     0x651000, 0x1ae000,

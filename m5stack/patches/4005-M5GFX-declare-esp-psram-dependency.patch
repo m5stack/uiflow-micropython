@@ -1,0 +1,8 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -44 +44,5 @@
++# S3 octal-PSRAM detection includes esp_psram.h on ESP-IDF 5 and later.
++if(IDF_VERSION_MAJOR GREATER_EQUAL 5 AND IDF_TARGET STREQUAL "esp32s3")
++    list(APPEND COMPONENT_REQUIRES esp_psram)
++endif()
+ message(STATUS "M5GFX use components = ${COMPONENT_REQUIRES}")

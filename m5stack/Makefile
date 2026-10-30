@@ -391,7 +391,8 @@ ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch
 
 # M5GFX 9bcedf4 includes the I2C bus-sharing and VLW space fixes.
-M5GFX_PATCH_SERIES =
+M5GFX_PATCH_SERIES = \
+	4005-M5GFX-declare-esp-psram-dependency.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch

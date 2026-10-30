@@ -3,3 +3,6 @@
 # SPDX-License-Identifier: MIT
 
 CONFIG_FREERTOS_ENABLE_BACKWARD_COMPATIBILITY=y
+
+# Grow the app into the system reserve while keeping the user filesystem fixed.
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_8mb_unit_c6l.csv"

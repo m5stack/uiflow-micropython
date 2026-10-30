@@ -83,6 +83,7 @@ jobs:
           - M5STACK_StackChan
           - M5STACK_Dial
           - M5STACK_DinMeter
+          - M5STACK_DualKey
           - M5STACK_Fire
           - M5STACK_NanoC6
           - M5STACK_Paper
@@ -91,9 +92,12 @@ jobs:
           - M5STACK_PowerHub
           - M5STACK_Stamp_PICO
           - M5STACK_StampC5
+          - M5STACK_StampC6
           - M5STACK_StamPLC
           - M5STACK_StampS3
+          - M5STACK_StampS3Mini
           - M5STACK_Station
+          - M5STACK_StopWatch
           - M5STACK_StickC
           - M5STACK_StickC_PLUS
           - M5STACK_StickC_PLUS2
@@ -103,6 +107,7 @@ jobs:
           - M5STACK_StampP4X
           - M5STACK_CoreP4X
           - M5STACK_Tough
+          - M5STACK_ToughC5
           - M5STACK_Unit_C6L
           - M5STACK_Unit_PoEP4
           - M5STACK_StampS3Bat

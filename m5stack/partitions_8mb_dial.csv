@@ -1,0 +1,7 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+# Dial: extend the app into the system reserve; retain the user filesystem layout.
+nvs,      data, nvs,     0x9000,  0x6000,
+phy_init, data, phy,     0xf000,  0x1000,
+factory,  app,  factory, 0x10000, 0x660000,
+sys,      data, fat,     0x670000, 0x0d0000,
+vfs,      data, fat,     0x740000, 0x0c0000,
