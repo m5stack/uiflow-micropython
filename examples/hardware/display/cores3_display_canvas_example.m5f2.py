@@ -25,7 +25,7 @@ def setup():
     canvas_rmy.drawCircle(30, 50, 20, 0xFFFFFF)
     canvas_rmy.drawCircle(50, 40, 20, 0xFFFFFF)
     canvas_rmy.push(50, 30)
-    print((str("colro depth: ") + str((canvas_rmy.getColorDepth()))))
+    print((str("color depth: ") + str((canvas_rmy.getColorDepth()))))
 
 
 def loop():
