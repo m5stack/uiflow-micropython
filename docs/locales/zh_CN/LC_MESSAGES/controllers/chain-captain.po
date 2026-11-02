@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-06 18:03+0800\n"
+"PO-Revision-Date: 2026-08-06 18:20+0800\n"
+"Last-Translator: M5Stack Documentation Team\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/controllers/chain-captain.rst:3
+#: ../../source/refs/controllers.chain_captain.ref
+msgid "Chain Captain"
+msgstr "Chain Captain"
+
+#: ../../source/controllers/chain-captain.rst:7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/controllers/chain-captain.rst:9
+msgid "|Chain Captain|"
+msgstr "|Chain Captain|"
+
+#: ../../source/controllers/chain-captain.rst:12
+msgid ""
+"Chain Captain has a 240 x 240 display and three physical buttons. Its UI "
+"supports **M5.Lcd** and **M5.Widgets**. **M5UI** is not supported."
+msgstr ""
+"Chain Captain 配备 240 x 240 显示屏和三个实体按键。其 UI 支持 "
+"**M5.Lcd** 和 **M5.Widgets**，不支持 **M5UI**。"
+
+#: ../../source/controllers/chain-captain.rst:16
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../source/controllers/chain-captain.rst:19
+#: ../../source/controllers/chain-captain.rst:130
+msgid "Button Counter"
+msgstr "按键计数器"
+
+#: ../../source/controllers/chain-captain.rst:21
+msgid "Open the |chain_captain_button_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_button_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:23
+msgid ""
+"This example registers click callbacks for all three physical buttons. "
+"Press **BtnA**, **BtnB**, or **BtnC** to increment the corresponding "
+"counter on the display. Each event is also written to the serial console."
+msgstr ""
+"此示例为三个实体按键注册点击回调。按下 **BtnA**、**BtnB** 或 "
+"**BtnC**，显示屏上对应的计数器将加一，同时每次按键事件也会输出到串口控制台。"
+
+#: ../../source/controllers/chain-captain.rst:27
+#: ../../source/controllers/chain-captain.rst:45
+#: ../../source/controllers/chain-captain.rst:62
+#: ../../source/controllers/chain-captain.rst:80
+#: ../../source/controllers/chain-captain.rst:100
+#: ../../source/controllers/chain-captain.rst:118
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 图形化代码："
+
+#: ../../source/controllers/chain-captain.rst:29
+msgid "|chain_captain_button_example.png|"
+msgstr "|chain_captain_button_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:7
+msgid "chain_captain_button_example.png"
+msgstr "chain_captain_button_example.png"
+
+#: ../../source/controllers/chain-captain.rst:31
+#: ../../source/controllers/chain-captain.rst:49
+#: ../../source/controllers/chain-captain.rst:66
+#: ../../source/controllers/chain-captain.rst:84
+#: ../../source/controllers/chain-captain.rst:104
+#: ../../source/controllers/chain-captain.rst:122
+#: ../../source/controllers/chain-captain.rst:141
+#: ../../source/controllers/chain-captain.rst:158
+#: ../../source/controllers/chain-captain.rst:174
+#: ../../source/controllers/chain-captain.rst:192
+#: ../../source/controllers/chain-captain.rst:209
+#: ../../source/controllers/chain-captain.rst:225
+msgid "Example output:"
+msgstr "运行效果："
+
+#: ../../source/controllers/chain-captain.rst:33
+msgid "The display shows independent counters for BtnA, BtnB, and BtnC."
+msgstr "显示屏分别显示 BtnA、BtnB 和 BtnC 的独立计数值。"
+
+#: ../../source/controllers/chain-captain.rst:36
+#: ../../source/controllers/chain-captain.rst:146
+msgid "Audio Recording and Playback"
+msgstr "音频录制与播放"
+
+#: ../../source/controllers/chain-captain.rst:38
+msgid "Open the |chain_captain_audio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_audio_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:40
+msgid ""
+"This example configures the recorder for 8 kHz, 16-bit audio and stores a"
+" five-second recording as ``/flash/res/audio/test.amr``. Press **BtnA** "
+"to start recording. The display shows a countdown, and playback starts "
+"automatically when recording finishes."
+msgstr ""
+"此示例将录音器配置为 8 kHz、16 位音频，并将 5 秒录音保存为 "
+"``/flash/res/audio/test.amr``。按下 **BtnA** 开始录音，显示屏显示倒计时，"
+"录音结束后自动开始播放。"
+
+#: ../../source/controllers/chain-captain.rst:47
+msgid "|chain_captain_audio_example.png|"
+msgstr "|chain_captain_audio_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:6
+msgid "chain_captain_audio_example.png"
+msgstr "chain_captain_audio_example.png"
+
+#: ../../source/controllers/chain-captain.rst:51
+msgid ""
+"The display changes between Stop, Recording, countdown, and Playing "
+"states."
+msgstr "显示屏会在停止、录音、倒计时和播放状态之间切换。"
+
+#: ../../source/controllers/chain-captain.rst:54
+#: ../../source/controllers/chain-captain.rst:163
+msgid "IMU and Magnetometer"
+msgstr "IMU 与磁力计"
+
+#: ../../source/controllers/chain-captain.rst:56
+msgid "Open the |chain_captain_imu_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_imu_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:58
+msgid ""
+"This example reads the accelerometer, gyroscope, and magnetometer every "
+"100 ms. It converts acceleration to ``m/s^2`` and displays the X, Y, and "
+"Z values for all three sensors."
+msgstr ""
+"此示例每 100 ms 读取一次加速度计、陀螺仪和磁力计数据，将加速度转换为 "
+"``m/s^2``，并显示三个传感器的 X、Y、Z 轴数据。"
+
+#: ../../source/controllers/chain-captain.rst:64
+msgid "|chain_captain_imu_example.png|"
+msgstr "|chain_captain_imu_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:8
+msgid "chain_captain_imu_example.png"
+msgstr "chain_captain_imu_example.png"
+
+#: ../../source/controllers/chain-captain.rst:68
+msgid ""
+"The display shows live Acc, Gyro, and Mag readings on the 240 x 240 "
+"screen."
+msgstr "240 x 240 显示屏实时显示 Acc、Gyro 和 Mag 数据。"
+
+#: ../../source/controllers/chain-captain.rst:71
+#: ../../source/controllers/chain-captain.rst:180
+msgid "Infrared Transmission and Reception"
+msgstr "红外发射与接收"
+
+#: ../../source/controllers/chain-captain.rst:73
+msgid "Open the |chain_captain_ir_rx_tx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_ir_rx_tx_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:75
+msgid ""
+"This example receives infrared frames continuously and displays the "
+"received address, data, and frame count. Press **BtnA** to increment the "
+"transmit data value and send it using address ``8``. A short speaker tone"
+" confirms startup and each received frame."
+msgstr ""
+"此示例持续接收红外帧，并显示接收地址、数据和帧计数。按下 **BtnA** 可将"
+"发射数据值加一，并使用地址 ``8`` 发送。程序启动和每次收到红外帧时，扬声器"
+"都会发出短提示音。"
+
+#: ../../source/controllers/chain-captain.rst:82
+msgid "|chain_captain_ir_rx_tx_example.png|"
+msgstr "|chain_captain_ir_rx_tx_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:9
+msgid "chain_captain_ir_rx_tx_example.png"
+msgstr "chain_captain_ir_rx_tx_example.png"
+
+#: ../../source/controllers/chain-captain.rst:86
+msgid "The display shows the current TX address/data and the latest RX values."
+msgstr "显示屏显示当前 TX 地址和数据，以及最新的 RX 数据。"
+
+#: ../../source/controllers/chain-captain.rst:89
+#: ../../source/controllers/chain-captain.rst:198
+msgid "Power Management"
+msgstr "电源管理"
+
+#: ../../source/controllers/chain-captain.rst:91
+msgid "Open the |chain_captain_power_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_power_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:93
+msgid ""
+"This example updates USB, battery, and external-output voltage once per "
+"second. The battery value is green while charging, and the output state "
+"is shown as ON or OFF."
+msgstr ""
+"此示例每秒更新一次 USB、电池和外部输出电压。充电时电池数值显示为绿色，"
+"输出状态显示为 ON 或 OFF。"
+
+#: ../../source/controllers/chain-captain.rst:97
+msgid "**BtnA** enables or disables the external 5 V output."
+msgstr "**BtnA** 用于启用或关闭外部 5 V 输出。"
+
+#: ../../source/controllers/chain-captain.rst:98
+msgid "**BtnB** enables or disables battery charging."
+msgstr "**BtnB** 用于启用或关闭电池充电。"
+
+#: ../../source/controllers/chain-captain.rst:102
+msgid "|chain_captain_power_example.png|"
+msgstr "|chain_captain_power_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:10
+msgid "chain_captain_power_example.png"
+msgstr "chain_captain_power_example.png"
+
+#: ../../source/controllers/chain-captain.rst:106
+msgid ""
+"The display shows USB, battery, and output voltage together with charging"
+" and output state."
+msgstr "显示屏同时显示 USB、电池和输出电压，以及充电状态和输出状态。"
+
+#: ../../source/controllers/chain-captain.rst:110
+#: ../../source/controllers/chain-captain.rst:214
+msgid "Speaker Tone"
+msgstr "扬声器音调"
+
+#: ../../source/controllers/chain-captain.rst:112
+msgid "Open the |chain_captain_speaker_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |chain_captain_speaker_example.m5f2| 项目。"
+
+#: ../../source/controllers/chain-captain.rst:114
+msgid ""
+"This example starts at 600 Hz with speaker volume set to 90 percent. "
+"Press **BtnA** to play the current frequency for 200 ms. A new random "
+"frequency from 600 Hz to 1600 Hz is then selected and displayed for the "
+"next press."
+msgstr ""
+"此示例以 600 Hz 启动，并将扬声器音量设为 90%。按下 **BtnA** 以当前频率"
+"播放 200 ms，随后随机选择并显示一个 600 Hz 至 1600 Hz 的新频率，供下次"
+"按键播放。"
+
+#: ../../source/controllers/chain-captain.rst:120
+msgid "|chain_captain_speaker_example.png|"
+msgstr "|chain_captain_speaker_example.png|"
+
+#: ../../source/refs/controllers.chain_captain.ref:11
+msgid "chain_captain_speaker_example.png"
+msgstr "chain_captain_speaker_example.png"
+
+#: ../../source/controllers/chain-captain.rst:124
+msgid ""
+"The display shows the frequency that will be played on the next BtnA "
+"click."
+msgstr "显示屏显示下一次按下 BtnA 时将播放的频率。"
+
+#: ../../source/controllers/chain-captain.rst:127
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../source/controllers/chain-captain.rst:132
+msgid ""
+"This example registers click callbacks for BtnA, BtnB, and BtnC and "
+"maintains an independent display counter for each button."
+msgstr "此示例为 BtnA、BtnB 和 BtnC 注册点击回调，并为每个按键维护独立的显示计数器。"
+
+#: ../../source/controllers/chain-captain.rst:135
+#: ../../source/controllers/chain-captain.rst:152
+#: ../../source/controllers/chain-captain.rst:168
+#: ../../source/controllers/chain-captain.rst:186
+#: ../../source/controllers/chain-captain.rst:203
+#: ../../source/controllers/chain-captain.rst:219
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码："
+
+#: ../../source/controllers/chain-captain.rst:143
+msgid "The display shows independent counters for all three buttons."
+msgstr "显示屏显示三个按键各自的独立计数值。"
+
+#: ../../source/controllers/chain-captain.rst:148
+msgid ""
+"This example records five seconds of 8 kHz, 16-bit audio to "
+"``/flash/res/audio/test.amr`` and automatically plays the file when "
+"recording finishes. Press BtnA to start recording."
+msgstr ""
+"此示例将 5 秒的 8 kHz、16 位音频录制到 ``/flash/res/audio/test.amr``，"
+"录音结束后自动播放文件。按下 BtnA 开始录音。"
+
+#: ../../source/controllers/chain-captain.rst:160
+msgid "The display shows the recording countdown and playback state."
+msgstr "显示屏显示录音倒计时和播放状态。"
+
+#: ../../source/controllers/chain-captain.rst:165
+msgid ""
+"This example reads accelerometer, gyroscope, and magnetometer data every "
+"100 ms and updates the nine displayed axis values in place."
+msgstr ""
+"此示例每 100 ms 读取一次加速度计、陀螺仪和磁力计数据，并原位更新显示的九个"
+"轴向数值。"
+
+#: ../../source/controllers/chain-captain.rst:176
+msgid ""
+"The display shows live acceleration, angular velocity, and magnetic field"
+" values for the X, Y, and Z axes."
+msgstr "显示屏实时显示 X、Y、Z 轴的加速度、角速度和磁场数据。"
+
+#: ../../source/controllers/chain-captain.rst:182
+msgid ""
+"This example registers an infrared receive callback and tracks received "
+"address, data, and frame count. Press BtnA to increment and send the "
+"transmit data value using address ``8``."
+msgstr ""
+"此示例注册红外接收回调，并记录接收地址、数据和帧计数。按下 BtnA 可将发射"
+"数据值加一，并使用地址 ``8`` 发送。"
+
+#: ../../source/controllers/chain-captain.rst:194
+msgid ""
+"The display shows live TX and RX values, and the speaker confirms "
+"received frames with a short tone."
+msgstr "显示屏实时显示 TX 和 RX 数据，扬声器通过短提示音确认收到红外帧。"
+
+#: ../../source/controllers/chain-captain.rst:200
+msgid ""
+"This example monitors USB, battery, and external-output voltage. BtnA "
+"toggles the external 5 V output, while BtnB toggles battery charging."
+msgstr ""
+"此示例监测 USB、电池和外部输出电压。BtnA 用于切换外部 5 V 输出，BtnB "
+"用于切换电池充电。"
+
+#: ../../source/controllers/chain-captain.rst:211
+msgid "The display shows voltage, charging state, and external-output state."
+msgstr "显示屏显示电压、充电状态和外部输出状态。"
+
+#: ../../source/controllers/chain-captain.rst:216
+msgid ""
+"This example plays a 200 ms speaker tone when BtnA is clicked, then "
+"selects and displays a new random frequency between 600 Hz and 1600 Hz."
+msgstr ""
+"此示例在点击 BtnA 时播放 200 ms 的扬声器音调，随后在 600 Hz 至 1600 Hz "
+"之间随机选择并显示一个新频率。"
+
+#: ../../source/controllers/chain-captain.rst:227
+msgid "The display shows the next tone frequency."
+msgstr "显示屏显示下一次播放的音调频率。"

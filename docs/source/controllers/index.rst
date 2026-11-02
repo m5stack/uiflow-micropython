@@ -13,6 +13,7 @@ Controllers
     stampp4x.rst
     cardputer.rst
     cardputer-adv.rst
+    chain-captain.rst
     coreink.rst
     corematrix.rst
     corep4x.rst
