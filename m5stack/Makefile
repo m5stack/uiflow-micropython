@@ -213,7 +213,7 @@ endef
 
 export ADF_PATH=$(abspath ../esp-adf)
 
-.PHONY: all menu build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
+.PHONY: all menu build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules patch unpatch FORCE
 
 all: nvs fs pack
 	@echo ""
@@ -436,18 +436,22 @@ PKG_PATCH_SERIES := $(strip \
 # $(info PKG_PATCH_SERIES for $(PKG) is [$(PKG_PATCH_SERIES)])
 
 prepare:
+	$(if $(filter esp-idf,$(PKG)),$(call require-idf-env,prepare))
 	$(call Patch/prepare,$(abspath $(PKG_PATH)),$(PKG_PATCH_SERIES))
 
 .PHONY: $(PACKAGES) update
 update:
+	$(if $(filter esp-idf,$(PKG)),$(call require-idf-env,update))
 	$(call Patch/update,$(abspath $(PKG_PATH)),$(abspath $(MAKEFILE_DIR)patches))
 
 .PHONY: $(PACKAGES) unprepare
 unprepare:
+	$(if $(filter esp-idf,$(PKG)),$(call require-idf-env,unprepare))
 	$(call Patch/clean,$(abspath $(PKG_PATH)),$(PKG_PATCH_SERIES))
 
 # Apply patches
 patch: unpatch
+	$(call require-idf-env,patch)
 	$(call Patch/prepare,$(LV_BINDING_PATH),$(LV_BINDING_PATCH_SERIES))
 	$(call Patch/prepare,$(MICROPYTHON_PATH),$(MICROPYTHON_PATCH_SERIES))
 	$(call Patch/prepare,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
@@ -458,6 +462,7 @@ patch: unpatch
 
 # Unapply patches
 unpatch:
+	$(call require-idf-env,$(if $(filter patch,$(MAKECMDGOALS)),patch,unpatch))
 	$(call Patch/clean,$(LV_BINDING_PATH),$(LV_BINDING_PATCH_SERIES))
 	$(call Patch/clean,$(MICROPYTHON_PATH),$(MICROPYTHON_PATCH_SERIES))
 	$(call Patch/clean,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
