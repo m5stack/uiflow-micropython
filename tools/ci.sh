@@ -356,6 +356,7 @@ M5STACK_Basic_4MB
 M5STACK_Capsule
 M5STACK_Cardputer
 M5STACK_CardputerADV
+M5STACK_ChainCaptain
 M5STACK_Core2
 M5STACK_CoreInk
 M5STACK_CoreS3
