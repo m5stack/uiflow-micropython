@@ -205,7 +205,7 @@ class CoreP4XView:
         self.wifi_available = True
         self.scanning = False
         self.ap_buttons = []
-        self.brightness = 70
+        self.brightness = 90
         self.wifi_state = "unconfigured"
         self.wifi_rssi = None
         self.service_state = "offline"
@@ -420,7 +420,7 @@ class CoreP4XView:
         card = surface(self.settings, 24, 104, 432, 120)
         text(card, "Brightness", 24, 20, 280, lv.font_montserrat_24)
         self.brightness_label = text(
-            card, "70%", 312, 20, 96, lv.font_montserrat_24, ACCENT, lv.TEXT_ALIGN.RIGHT
+            card, "%d%%" % self.brightness, 312, 20, 96, lv.font_montserrat_24, ACCENT, lv.TEXT_ALIGN.RIGHT
         )
         self.slider = lv.slider(card)
         self.slider.set_pos(32, 78)

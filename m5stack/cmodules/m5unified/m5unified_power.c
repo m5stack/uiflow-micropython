@@ -41,6 +41,7 @@ const mp_obj_type_t mp_power_port_mask_enum = {
 
 MAKE_METHOD_KW(power, setExtOutput, 1);
 MAKE_METHOD_0(power, getExtOutput);
+MAKE_METHOD_KW(power, setIRPower, 1);
 MAKE_METHOD_KW(power, setExtPortBusConfig, 1);
 MAKE_METHOD_1(power, getExtVoltage);
 MAKE_METHOD_1(power, getExtCurrent);
@@ -70,6 +71,7 @@ static const mp_rom_map_elem_t power_member_table[] = {
     // control functions
     MAKE_TABLE(power, setExtOutput),
     MAKE_TABLE(power, getExtOutput),
+    MAKE_TABLE(power, setIRPower),
     MAKE_TABLE(power, setExtPortBusConfig),
     MAKE_TABLE(power, getExtVoltage),
     MAKE_TABLE(power, getExtCurrent),

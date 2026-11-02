@@ -6,6 +6,7 @@
 
 #include <M5Unified.h>
 #include <utility/M5IOE1_Class.hpp>
+#include "driver/gpio.h"
 
 extern "C"
 {
@@ -252,6 +253,13 @@ namespace m5
             } else {
                 lgfx::i2c::bitOff(1, m5ioe1_i2c_addr, 0x06, g10_pa_mask, i2c_speed);
             }
+            return mp_obj_new_bool(true);
+        }
+        if (M5.getBoard() == m5::board_t::board_M5ChainCaptain) {
+            static constexpr gpio_num_t pa_gpio = GPIO_NUM_21;
+            gpio_reset_pin(pa_gpio);
+            gpio_set_direction(pa_gpio, GPIO_MODE_OUTPUT);
+            gpio_set_level(pa_gpio, mp_obj_is_true(enable) ? 1 : 0);
             return mp_obj_new_bool(true);
         }
         return mp_obj_new_bool(false);

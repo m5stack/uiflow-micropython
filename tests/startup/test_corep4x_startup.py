@@ -14,6 +14,7 @@ if not (root / "corep4x.py").exists():
 package = types.ModuleType("startup")
 package.__path__ = [str(root)]
 package.print_access_info = lambda *args: None
+package.DEFAULT_BRIGHTNESS = 90
 substitutes = {"startup": package}
 view_module = types.ModuleType("startup.corep4x_ui")
 view_module.CoreP4XView = object
@@ -246,6 +247,15 @@ class StartupTests(unittest.TestCase):
         self.app._step(500)
         self.assertEqual(self.nvs.values[controller._BRIGHTNESS_KEY], 80)
         self.assertEqual(self.nvs.commits, 1)
+
+    def test_brightness_defaults_to_ninety_and_preserves_saved_value(self):
+        self.app._load_brightness()
+        self.assertEqual(self.backlight[-1], 230)
+        self.assertEqual(self.app._view.brightness, 90)
+        self.nvs.values[controller._BRIGHTNESS_KEY] = 35
+        self.app._load_brightness()
+        self.assertEqual(self.app._view.brightness, 35)
+        self.assertEqual(self.backlight[-1], 89)
 
     def test_offline_clears_stale_cloud_identity_and_unknown_charge_is_not_green(self):
         controller.M5Things.status = lambda: 2

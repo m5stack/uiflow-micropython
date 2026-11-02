@@ -12,6 +12,7 @@ except ImportError:
 
 import M5
 import machine
+import time
 
 
 class IR:
@@ -40,8 +41,12 @@ class IR:
             M5.BOARD.M5CoreP4X: (13, 49),
             M5.BOARD.M5StackChan: (10, 5),
             M5.BOARD.M5PaperColor: (None, 48),
+            M5.BOARD.M5ChainCaptain: (47, 48),
         }
         (self._rx_pin, self._tx_pin) = _pin_map.get(M5.getBoard())
+        if M5.getBoard() == M5.BOARD.M5ChainCaptain:
+            M5.Power.setIRPower(True)
+            time.sleep_ms(10)
         self._receiver = None
         self._rmt_ir_instance = None
         self._rmt_rx_callback = None

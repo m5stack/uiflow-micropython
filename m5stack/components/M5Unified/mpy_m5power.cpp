@@ -6,6 +6,7 @@
 
 // #include <utility/Power_Class.hpp>
 #include <M5Unified.h>
+#include <utility/M5IOE1_Class.hpp>
 
 extern "C"
 {
@@ -50,6 +51,35 @@ namespace m5
 
     mp_obj_t power_getExtOutput(mp_obj_t self) {
         return mp_obj_new_bool(getPower(self)->getExtOutput());
+    }
+
+    mp_obj_t power_setIRPower(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+        enum {ARG_enable};
+        const mp_arg_t allowed_args[] = {
+            { MP_QSTR_enable, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true} },
+        };
+        mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+        mp_arg_parse_all(
+            n_args - 1,
+            pos_args + 1,
+            kw_args,
+            MP_ARRAY_SIZE(allowed_args),
+            allowed_args,
+            args
+            );
+
+        #if defined(CONFIG_IDF_TARGET_ESP32S3)
+        if (M5.getBoard() == board_t::board_M5ChainCaptain) {
+            auto& ioe = M5.getIOExpander(0);
+            ioe.setHighImpedance(M5IOE1_Class::gpio2, false);
+            ioe.setDirection(M5IOE1_Class::gpio2, true);
+            ioe.digitalWrite(M5IOE1_Class::gpio2, args[ARG_enable].u_bool);
+            return mp_const_none;
+        }
+        #endif
+        mp_raise_NotImplementedError(
+            MP_ERROR_TEXT("IR power control is not supported on this board")
+            );
     }
 
     mp_obj_t power_setExtPortBusConfig(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {

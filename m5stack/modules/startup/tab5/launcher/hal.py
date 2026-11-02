@@ -33,7 +33,7 @@ class NetworkConfig:
 class HALBase:
     def __init__(self):
         self._volume = 100
-        self._backlight = 100
+        self._backlight = 90
         self._charge_mode = ChargeMode.NORMAL
 
     def power_off(self):

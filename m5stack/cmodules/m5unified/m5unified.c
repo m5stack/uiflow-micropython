@@ -42,6 +42,7 @@ static const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5CoreP4X),       MP_ROM_INT(31) },
     { MP_ROM_QSTR(MP_QSTR_M5ToughC5),       MP_ROM_INT(33) },
     { MP_ROM_QSTR(MP_QSTR_M5PaperDIY),      MP_ROM_INT(34) },
+    { MP_ROM_QSTR(MP_QSTR_M5ChainCaptain),  MP_ROM_INT(32) },
     // non display boards
     { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(128) },
     { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(129) },

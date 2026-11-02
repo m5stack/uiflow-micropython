@@ -75,6 +75,7 @@ class RGB:
                 M5.BOARD.M5StampS3Bat,
                 M5.BOARD.M5PaperColor,
                 M5.BOARD.M5PaperMono,
+                M5.BOARD.M5ChainCaptain,
             ]:
                 cls._instance = M5LED()
                 return cls._instance

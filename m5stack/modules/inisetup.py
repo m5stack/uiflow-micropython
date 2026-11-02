@@ -83,12 +83,6 @@ if __name__ == "__main__":
 
     nvs = esp32.NVS("uiflow")
     try:
-        tz = nvs.get_str("tz")
-        time.timezone(tz)
-    except:
-        pass
-
-    try:
         boot_option = nvs.get_u8("boot_option")
     except:
         boot_option = 1  # default

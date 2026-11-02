@@ -65,7 +65,7 @@ class CoreP4X_Startup:
         self._pending_brightness = None
         self._pending_timezone = None
         self._brightness_save_at = None
-        self._brightness = 70
+        self._brightness = startup.DEFAULT_BRIGHTNESS
         self._last_refresh = None
         self._last_log_state = None
         self._wifi_error = False
@@ -144,7 +144,7 @@ class CoreP4X_Startup:
         try:
             value = self._nvs.get_u8(_BRIGHTNESS_KEY)
         except OSError:
-            value = (M5.Lcd.getBrightness() * 100 + 127) // 255
+            value = startup.DEFAULT_BRIGHTNESS
         self._brightness = max(10, min(100, value))
         M5.Lcd.setBrightness((self._brightness * 255 + 50) // 100)
         self._view.set_brightness(self._brightness)

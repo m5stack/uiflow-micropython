@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import Startup, print_access_info
+from . import Startup, print_access_info, DEFAULT_BRIGHTNESS
 import M5
 import network
 import widgets
@@ -902,9 +902,11 @@ class StickC_Startup:
         M5.Lcd.drawImage(LAUNCHER_IMG)
         M5.Lcd.setBrightness(0)
 
-        for i in range(0, 128, 20):
+        brightness = (DEFAULT_BRIGHTNESS * 255 + 50) // 100
+        for i in range(0, brightness, 20):
             M5.Lcd.setBrightness(i)
             time.sleep_ms(80)
+        M5.Lcd.setBrightness(brightness)
         DEBUG and print("Run startup menu")
 
         statusbar = StatusBarApp(icos=None, wifi=self._wifi)

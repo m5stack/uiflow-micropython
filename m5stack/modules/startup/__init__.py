@@ -11,6 +11,8 @@ import time
 BOOT_OPT_NOTHING = 0  # Run main.py(after download code to device set to this)
 BOOT_OPT_MENU_NET = 1  # Startup menu + Network setup
 BOOT_OPT_NETWORK = 2  # Only Network setup
+DEFAULT_TIMEZONE = "GMT+8"
+DEFAULT_BRIGHTNESS = 90
 _BOOT_OVERRIDE_WINDOW_MS = 100
 _BOOT_OVERRIDE_STABLE_MS = 30
 _BOOT_OVERRIDE_POLL_MS = 10
@@ -202,6 +204,8 @@ def _apply_boot_input_override(boot_opt, board_id, nvs):
 
 
 def _prepare_board(board_id):
+    if not M5.Lcd.isEPD():
+        M5.Lcd.setBrightness((DEFAULT_BRIGHTNESS * 255 + 50) // 100)
     if board_id in (M5.BOARD.M5Tab5, M5.BOARD.M5Tab5X):
         M5.Lcd.clear(0xFFFFFF)
     elif board_id not in [M5.BOARD.M5PaperColor, M5.BOARD.M5PaperMono]:
@@ -253,6 +257,15 @@ def _connect_network_only(board_id, net_mode, ssid, pswd):
             raise OSError("Unable to select Ethernet route")
 
 
+def _load_timezone(nvs):
+    """Use a saved zone, or UTC+8 for an unconfigured device on any board."""
+    try:
+        zone = nvs.get_str("tz")
+    except OSError:
+        zone = None
+    time.timezone(zone or DEFAULT_TIMEZONE)
+
+
 def startup(boot_opt, timeout: int = 60) -> None:
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
@@ -264,11 +277,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
     netmask = nvs.get_str("netmask")
     gateway = nvs.get_str("gateway")
     dns = nvs.get_str("dns")
-    try:
-        tz = nvs.get_str("tz")
-        time.timezone(tz)
-    except:
-        pass
+    _load_timezone(nvs)
 
     board_id = M5.getBoard()
     boot_opt = _apply_boot_input_override(boot_opt, board_id, nvs)
@@ -465,6 +474,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             stopwatch = StopWatch_Startup()
             stopwatch.startup(ssid, pswd, timeout=timeout)
+        elif board_id == M5.BOARD.M5ChainCaptain:
+            from .chain_captain import ChainCaptain_Startup
+
+            chain_captain = ChainCaptain_Startup()
+            chain_captain.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Unit_PoEP4:
             from .unit_poep4 import Unit_PoEP4_Startup
 

@@ -64,6 +64,7 @@ boards := \
 	M5STACK_StampP4X:stampp4x        \
 	M5STACK_CoreP4X:corep4x          \
 	M5STACK_StackChan:stackchan      \
+	M5STACK_ChainCaptain:chaincaptain\
 	M5STACK_PaperColor:papercolor    \
 	M5STACK_PaperMono:papermono      \
 
@@ -122,6 +123,7 @@ BOARD_TYPE_DEF := \
 	unit_poep4  \
 	stamps3bat  \
 	stampp4     \
+	chaincaptain\
 	stampp4x    \
 	corep4x     \
 	stackchan   \

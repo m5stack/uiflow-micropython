@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 import M5
+from . import DEFAULT_BRIGHTNESS
 from .headless import Headless_Startup
 
 
@@ -102,7 +103,7 @@ class CoreMatrix_Startup(Headless_Startup):
         self._wifi_led = None
         M5.Lcd.setRotation(0)
         self.rgb = MatrixStatusDisplay()
-        self.rgb.set_brightness(50)
+        self.rgb.set_brightness(DEFAULT_BRIGHTNESS)
         self.rgb.fill_color(self.COLOR_BLUE)
 
     def show_access_code(self, access_code: str) -> None:

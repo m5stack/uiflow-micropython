@@ -18,6 +18,8 @@
 #include "../M5STACK_StickS3/audioconfigboard.h"
 #elif CONFIG_STOPWATCH
 #include "../M5STACK_StopWatch/audioconfigboard.h"
+#elif CONFIG_CHAINCAPTAIN
+#include "../M5STACK_ChainCaptain/audioconfigboard.h"
 #endif
 
 

@@ -36,4 +36,10 @@ menu "Audio Board Configuration"
         help
             Enable this option to support m5stack StopWatch.
 
+    config CHAINCAPTAIN
+        bool "select M5STACK ChainCaptain"
+        default n
+        help
+            Enable this option to support m5stack ChainCaptain.
+
 endmenu
