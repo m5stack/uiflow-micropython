@@ -41,24 +41,44 @@ static unsigned camera_timeout(size_t n_args, const mp_obj_t *pos_args, mp_map_t
 }
 
 static mp_obj_t camera_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
-    enum { ARG_width, ARG_height, ARG_fps, ARG_frame_size };
+    enum { ARG_width, ARG_height, ARG_fps, ARG_frame_size, ARG_format };
     static const mp_arg_t allowed[] = {
         {MP_QSTR_width, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 640}},
         {MP_QSTR_height, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 480}},
         {MP_QSTR_fps, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 0}},
-        {MP_QSTR_frame_size, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 512 * 1024}},
+        {MP_QSTR_frame_size, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 0}},
+        {MP_QSTR_format, MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_rom_obj = MP_ROM_QSTR(MP_QSTR_mjpeg)}},
     };
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed)];
     mp_arg_parse_all_kw_array(n_args, n_kw, all_args, MP_ARRAY_SIZE(allowed), allowed, args);
     if (args[ARG_width].u_int <= 0 || args[ARG_width].u_int > 4096 ||
         args[ARG_height].u_int <= 0 || args[ARG_height].u_int > 4096 ||
         args[ARG_fps].u_int < 0 || args[ARG_fps].u_int > 120 ||
-        args[ARG_frame_size].u_int < 16 * 1024 || args[ARG_frame_size].u_int > 4 * 1024 * 1024) {
+        args[ARG_frame_size].u_int < 0 || args[ARG_frame_size].u_int > 4 * 1024 * 1024) {
         mp_raise_ValueError(MP_ERROR_TEXT("invalid resolution, fps or frame_size"));
+    }
+    const char *name = mp_obj_str_get_str(args[ARG_format].u_obj);
+    enum uvc_host_stream_format format;
+    if (strcmp(name, "mjpeg") == 0) {
+        format = UVC_VS_FORMAT_MJPEG;
+    } else if (strcmp(name, "yuy2") == 0) {
+        format = UVC_VS_FORMAT_YUY2;
+    } else {
+        mp_raise_ValueError(MP_ERROR_TEXT("format must be mjpeg or yuy2"));
+    }
+    size_t raw_size = (size_t)args[ARG_width].u_int * args[ARG_height].u_int * 2;
+    size_t frame_size = args[ARG_frame_size].u_int;
+    if (frame_size == 0) {
+        frame_size = format == UVC_VS_FORMAT_YUY2 ?
+            (raw_size < 16 * 1024 ? 16 * 1024 : raw_size) : 512 * 1024;
+    }
+    if (frame_size < 16 * 1024 || frame_size > 4 * 1024 * 1024 ||
+        (format == UVC_VS_FORMAT_YUY2 && ((args[ARG_width].u_int & 1) || frame_size < raw_size))) {
+        mp_raise_ValueError(MP_ERROR_TEXT("frame_size too small or invalid YUY2 resolution"));
     }
     uvc_camera_obj_t *self = mp_obj_malloc(uvc_camera_obj_t, type);
     camera_check(uiflow_uvc_init(args[ARG_width].u_int, args[ARG_height].u_int,
-        args[ARG_fps].u_int, args[ARG_frame_size].u_int));
+        args[ARG_fps].u_int, frame_size, format));
     self->generation = uiflow_uvc_generation();
     return MP_OBJ_FROM_PTR(self);
 }
@@ -118,11 +138,36 @@ static mp_obj_t camera_readinto(size_t n_args, const mp_obj_t *pos_args, mp_map_
     }
     camera_check(uiflow_uvc_frame_release(frame));
     if (length > buf.len) {
-        mp_raise_ValueError(MP_ERROR_TEXT("buffer too small for JPEG frame"));
+        mp_raise_ValueError(MP_ERROR_TEXT("buffer too small for camera frame"));
     }
     return mp_obj_new_int_from_uint(length);
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(camera_readinto_obj, 2, camera_readinto);
+
+static mp_obj_t camera_readinto_rgb565(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    camera_check_active(pos_args[0]);
+    unsigned timeout = camera_timeout(n_args - 2, pos_args + 2, kw_args, 1000);
+    mp_buffer_info_t buf;
+    mp_get_buffer_raise(pos_args[1], &buf, MP_BUFFER_WRITE);
+    uiflow_uvc_info_t info;
+    uiflow_uvc_info(&info);
+    if (info.format.format != UVC_VS_FORMAT_YUY2) {
+        mp_raise_ValueError(MP_ERROR_TEXT("RGB565 conversion requires yuy2"));
+    }
+    if (buf.len < (size_t)info.format.h_res * info.format.v_res * 2) {
+        mp_raise_ValueError(MP_ERROR_TEXT("buffer too small for RGB565 frame"));
+    }
+    uvc_host_frame_t *frame = camera_wait_frame(pos_args[0], timeout);
+    if (frame == NULL) {
+        return MP_OBJ_NEW_SMALL_INT(0);
+    }
+    size_t length = frame->data_len;
+    esp_err_t err = uiflow_uvc_rgb565(frame, buf.buf, buf.len);
+    camera_check(uiflow_uvc_frame_release(frame));
+    camera_check(err);
+    return mp_obj_new_int_from_uint(length);
+}
+static MP_DEFINE_CONST_FUN_OBJ_KW(camera_readinto_rgb565_obj, 2, camera_readinto_rgb565);
 
 static mp_obj_t camera_read(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     camera_check_active(pos_args[0]);
@@ -237,6 +282,7 @@ static const mp_rom_map_elem_t camera_locals_table[] = {
     {MP_ROM_QSTR(MP_QSTR_stop), MP_ROM_PTR(&camera_stop_obj)},
     {MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&camera_read_obj)},
     {MP_ROM_QSTR(MP_QSTR_readinto), MP_ROM_PTR(&camera_readinto_obj)},
+    {MP_ROM_QSTR(MP_QSTR_readinto_rgb565), MP_ROM_PTR(&camera_readinto_rgb565_obj)},
     {MP_ROM_QSTR(MP_QSTR_info), MP_ROM_PTR(&camera_info_obj)},
     {MP_ROM_QSTR(MP_QSTR_deinit), MP_ROM_PTR(&camera_deinit_obj)},
 };

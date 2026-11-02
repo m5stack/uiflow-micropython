@@ -64,8 +64,14 @@ static bool camera_frame_received(const uvc_host_frame_t *frame, void *arg) {
     atomic_fetch_add(&camera_callbacks, 1);
     bool returned = true;
     if (atomic_load(&camera_accept_frames)) {
-        if (frame->vs_format.format != UVC_VS_FORMAT_MJPEG || frame->data_len < 4 ||
-            frame->data_len > frame->data_buffer_len) {
+        bool invalid = frame->vs_format.format != camera_format.format || frame->data_len < 4 ||
+            frame->data_len > frame->data_buffer_len || frame->data_len > camera_frame_size;
+        if (camera_format.format == UVC_VS_FORMAT_YUY2) {
+            invalid |= frame->vs_format.h_res != camera_format.h_res ||
+                frame->vs_format.v_res != camera_format.v_res ||
+                frame->data_len != (size_t)camera_format.h_res * camera_format.v_res * 2;
+        }
+        if (invalid) {
             atomic_fetch_add(&camera_errors, 1);
             atomic_store(&camera_last_error, ESP_ERR_INVALID_SIZE);
         } else {
@@ -162,7 +168,8 @@ esp_err_t uiflow_uvc_deinit(void) {
     return ESP_OK;
 }
 
-esp_err_t uiflow_uvc_init(unsigned width, unsigned height, unsigned fps, size_t frame_size) {
+esp_err_t uiflow_uvc_init(unsigned width, unsigned height, unsigned fps, size_t frame_size,
+    enum uvc_host_stream_format format) {
     if (camera_installed || camera_frames != NULL || uiflow_usb_bus_owner() != UIFLOW_USB_BUS_NONE) {
         return ESP_ERR_INVALID_STATE;
     }
@@ -175,7 +182,7 @@ esp_err_t uiflow_uvc_init(unsigned width, unsigned height, unsigned fps, size_t 
     atomic_store(&camera_errors, 0);
     atomic_store(&camera_last_error, ESP_OK);
     camera_format = (uvc_host_stream_format_t) {
-        .h_res = width, .v_res = height, .fps = fps, .format = UVC_VS_FORMAT_MJPEG,
+        .h_res = width, .v_res = height, .fps = fps, .format = format,
     };
     camera_requested_format = camera_format;
     camera_frame_size = frame_size;
@@ -286,4 +293,38 @@ void uiflow_uvc_info(uiflow_uvc_info_t *info) {
         .streaming = atomic_load(&camera_accept_frames),
         .format = camera_format,
     };
+}
+
+static uint8_t camera_clamp(int value) {
+    return value < 0 ? 0 : (value > 255 ? 255 : value);
+}
+
+static void camera_pixel_rgb565(uint8_t *output, int y, int u, int v) {
+    // BT.601 limited range. Store native little-endian RGB565 for drawRawBuf.
+    int c = y - 16;
+    unsigned r = camera_clamp((298 * c + 409 * v + 128) >> 8);
+    unsigned g = camera_clamp((298 * c - 100 * u - 208 * v + 128) >> 8);
+    unsigned b = camera_clamp((298 * c + 516 * u + 128) >> 8);
+    uint16_t pixel = ((r & 0xf8) << 8) | ((g & 0xfc) << 3) | (b >> 3);
+    output[0] = pixel;
+    output[1] = pixel >> 8;
+}
+
+esp_err_t uiflow_uvc_rgb565(const uvc_host_frame_t *frame, uint8_t *output, size_t size) {
+    if (frame->vs_format.format != UVC_VS_FORMAT_YUY2) {
+        return ESP_ERR_INVALID_ARG;
+    }
+    size_t expected = (size_t)frame->vs_format.h_res * frame->vs_format.v_res * 2;
+    if (!frame->vs_format.h_res || !frame->vs_format.v_res || (frame->vs_format.h_res & 1) ||
+        frame->data_len != expected || expected > frame->data_buffer_len || size < expected) {
+        return ESP_ERR_INVALID_SIZE;
+    }
+    const uint8_t *input = frame->data;
+    for (size_t i = 0; i < expected; i += 4) {
+        int u = input[i + 1] - 128;
+        int v = input[i + 3] - 128;
+        camera_pixel_rgb565(output + i, input[i], u, v);
+        camera_pixel_rgb565(output + i + 2, input[i + 2], u, v);
+    }
+    return ESP_OK;
 }

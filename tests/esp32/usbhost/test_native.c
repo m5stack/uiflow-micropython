@@ -190,13 +190,16 @@ static uvc_host_stream_config_t mock_uvc_config;
 struct uvc_host_stream_s { bool opened, streaming; };
 static struct uvc_host_stream_s mock_uvc_stream;
 static bool mock_camera_present, fail_uvc_install, fail_uvc_open, fail_uvc_start, fail_uvc_close;
-static bool mock_frame_held[4];
-static uint8_t mock_frame_data[4][16];
-static uvc_host_frame_t mock_frames[4] = {
+static bool mock_frame_held[7];
+static uint8_t mock_frame_data[7][16];
+static uvc_host_frame_t mock_frames[7] = {
     {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[0]},
     {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[1]},
     {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[2]},
     {.vs_format = {.format = UVC_VS_FORMAT_MJPEG}, .data_buffer_len = 16, .data_len = 1, .data = mock_frame_data[3]},
+    {.vs_format = {.format = UVC_VS_FORMAT_YUY2, .h_res = 4, .v_res = 2}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[4]},
+    {.vs_format = {.format = UVC_VS_FORMAT_YUY2, .h_res = 4, .v_res = 2}, .data_buffer_len = 16, .data_len = 14, .data = mock_frame_data[5]},
+    {.vs_format = {.format = UVC_VS_FORMAT_YUY2, .h_res = 2, .v_res = 4}, .data_buffer_len = 16, .data_len = 16, .data = mock_frame_data[6]},
 };
 
 int uvc_host_install(const uvc_host_driver_config_t *config) {
@@ -213,7 +216,7 @@ int uvc_host_uninstall(void) {
 }
 int uvc_host_stream_open(const uvc_host_stream_config_t *config, int timeout, uvc_host_stream_hdl_t *out) {
     assert(atomic_load(&mock_uvc_installed) && !mock_uvc_stream.opened);
-    assert(config->vs_format.format == UVC_VS_FORMAT_MJPEG);
+    assert(config->vs_format.format == UVC_VS_FORMAT_MJPEG || config->vs_format.format == UVC_VS_FORMAT_YUY2);
     assert(config->advanced.number_of_frame_buffers == 3);
     assert(config->advanced.frame_heap_caps == (MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT));
     if (fail_uvc_open || !mock_camera_present) { return ESP_ERR_NOT_FOUND; }
@@ -236,7 +239,7 @@ int uvc_host_stream_stop(uvc_host_stream_hdl_t stream) {
 int uvc_host_stream_close(uvc_host_stream_hdl_t stream) {
     assert(stream->opened && !stream->streaming);
     if (fail_uvc_close) { return ESP_FAIL; }
-    for (size_t i = 0; i < 4; ++i) { assert(!mock_frame_held[i]); }
+    for (size_t i = 0; i < 7; ++i) { assert(!mock_frame_held[i]); }
     stream->opened = false;
     return ESP_OK;
 }
@@ -248,7 +251,7 @@ int uvc_host_stream_format_get(uvc_host_stream_hdl_t stream, uvc_host_stream_for
 int uvc_host_frame_return(uvc_host_stream_hdl_t stream, uvc_host_frame_t *frame) {
     assert(stream == &mock_uvc_stream && stream->opened);
     ptrdiff_t index = frame - mock_frames;
-    assert(index >= 0 && index < 4 && mock_frame_held[index]);
+    assert(index >= 0 && index < 7 && mock_frame_held[index]);
     mock_frame_held[index] = false;
     return ESP_OK;
 }
@@ -298,17 +301,62 @@ static void assert_clean(void) {
 }
 
 
+static void test_yuy2(void) {
+    uint8_t input[] = {
+        16, 128, 235, 128,  // black, white
+        82, 90, 82, 240,   // red, red
+        145, 54, 145, 34,  // green, green
+        41, 240, 41, 110,  // blue, blue
+        0, 128, 255, 128,  // clamp black, white
+    };
+    const uint8_t expected[] = {
+        0, 0, 255, 255, 0, 248, 0, 248, 224, 7, 224, 7,
+        31, 0, 31, 0, 0, 0, 255, 255,
+    };
+    uvc_host_frame_t vector = {
+        .vs_format = {.format = UVC_VS_FORMAT_YUY2, .h_res = 10, .v_res = 1},
+        .data_buffer_len = sizeof(input), .data_len = sizeof(input), .data = input,
+    };
+    uint8_t output[sizeof(input) + 1];
+    memset(output, 0xaa, sizeof(output));
+    assert(uiflow_uvc_rgb565(&vector, output, sizeof(input) - 1) == ESP_ERR_INVALID_SIZE);
+    assert(output[0] == 0xaa);
+    assert(uiflow_uvc_rgb565(&vector, output, sizeof(input)) == ESP_OK);
+    assert(memcmp(output, expected, sizeof(expected)) == 0 && output[sizeof(input)] == 0xaa);
+    vector.data_len--;
+    assert(uiflow_uvc_rgb565(&vector, output, sizeof(output)) == ESP_ERR_INVALID_SIZE);
+    assert(uiflow_uvc_rgb565(&mock_frames[0], output, sizeof(output)) == ESP_ERR_INVALID_ARG);
+    for (int cycle = 0; cycle < 20; ++cycle) {
+        assert(uiflow_uvc_init(4, 2, 0, 16 * 1024, UVC_VS_FORMAT_YUY2) == ESP_OK);
+        mock_uvc_attach();
+        assert(uiflow_uvc_start(0) == ESP_OK);
+        mock_uvc_emit(4); mock_uvc_emit(5); mock_uvc_emit(6); mock_uvc_emit(0);
+        uiflow_uvc_info_t info;
+        uiflow_uvc_info(&info);
+        assert(info.frames == 1 && info.errors == 3 && info.format.format == UVC_VS_FORMAT_YUY2);
+        uvc_host_frame_t *frame;
+        assert(uiflow_uvc_frame_take(&frame) == ESP_OK && frame == &mock_frames[4]);
+        assert(uiflow_uvc_frame_release(frame) == ESP_OK);
+        mock_uvc_emit(4);
+        assert(uiflow_uvc_stop() == ESP_OK && !mock_frame_held[4]);
+        assert(uiflow_uvc_start(0) == ESP_OK);
+        mock_uvc_emit(4);
+        assert(uiflow_uvc_deinit() == ESP_OK && !mock_frame_held[4]);
+        assert_clean();
+    }
+}
+
 static void test_uvc(void) {
     for (int failure = 1; failure <= 2; ++failure) {
         allocation_calls = 0; fail_allocation = failure;
-        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_NO_MEM);
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) == ESP_ERR_NO_MEM);
         assert_clean();
     }
     fail_allocation = 0;
     bool *failures[] = {&fail_library, &fail_task, &fail_uvc_install, &fail_enable};
     for (size_t i = 0; i < 4; ++i) {
         *failures[i] = true;
-        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) != ESP_OK);
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) != ESP_OK);
         *failures[i] = false;
         assert(uiflow_uvc_deinit() == ESP_OK);
         assert_clean();
@@ -316,12 +364,12 @@ static void test_uvc(void) {
     for (int cycle = 0; cycle < 100; ++cycle) {
         uint32_t old = uiflow_uvc_generation();
         mock_camera_present = false;
-        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_OK);
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) == ESP_OK);
         assert(uiflow_uvc_active(uiflow_uvc_generation()) && !uiflow_uvc_active(old));
         // A failed competing constructor and stale HID teardown cannot touch UVC.
         assert(uiflow_usbhost_start() == ESP_ERR_INVALID_STATE);
         assert(uiflow_usbhost_stop() == ESP_OK && rail);
-        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_INVALID_STATE);
+        assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) == ESP_ERR_INVALID_STATE);
         size_t count = 0;
         assert(uiflow_uvc_formats(NULL, &count) == ESP_ERR_NOT_FOUND);
         assert(uiflow_uvc_start(0) == ESP_ERR_NOT_FOUND);
@@ -353,12 +401,12 @@ static void test_uvc(void) {
         assert_clean();
     }
     assert(uiflow_usbhost_start() == ESP_OK);
-    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_ERR_INVALID_STATE);
+    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) == ESP_ERR_INVALID_STATE);
     assert(uiflow_uvc_deinit() == ESP_OK && rail);
     assert(uiflow_usbhost_stop() == ESP_OK);
     assert_clean();
     // Failed stream startup and close retain a recoverable native handle.
-    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024) == ESP_OK);
+    assert(uiflow_uvc_init(640, 480, 0, 512 * 1024, UVC_VS_FORMAT_MJPEG) == ESP_OK);
     mock_uvc_attach();
     fail_uvc_start = fail_uvc_close = true;
     assert(uiflow_uvc_start(0) == ESP_FAIL && mock_uvc_stream.opened);
@@ -452,5 +500,6 @@ int main(void) {
     fail_disable = false;
     assert(uiflow_usbhost_stop() == ESP_OK); assert_clean();
     test_uvc();
+    test_yuy2();
     return 0;
 }

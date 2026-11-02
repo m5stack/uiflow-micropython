@@ -53,5 +53,5 @@ with tempfile.TemporaryDirectory(prefix="uiflow-usbhost-") as temporary:
     subprocess.run(command, check=True)
     subprocess.run([str(binary)], check=True)
     print(
-        "PASS: HID reports, startup failures, unplug, queue overflow, cleanup/retry, HID/UVC ownership, retained frames, disconnect/retry and 200 lifecycle cycles (ASan/UBSan)"
+        "PASS: HID reports, startup failures, unplug, queue overflow, cleanup/retry, HID/UVC ownership, YUY2 RGB565 vectors and frame validation, retained frames, disconnect/retry and 220 lifecycle cycles (ASan/UBSan)"
     )

@@ -2,7 +2,7 @@ USB Host
 ========
 
 .. module:: usbhost
-   :synopsis: Native USB-A HID input and MJPEG UVC cameras on Tab5
+   :synopsis: Native USB-A HID input and MJPEG/YUY2 UVC cameras on Tab5
 
 This module is available on Tab5. The USB-A connector uses the ESP32-P4
 high-speed OTG controller as Host. USB-C uses the separate full-speed OTG
@@ -135,18 +135,22 @@ Class HIDHost
 Class UVCCamera
 ---------------
 
-.. class:: UVCCamera(*, width=640, height=480, fps=0, frame_size=524288)
+.. class:: UVCCamera(*, width=640, height=480, fps=0, frame_size=0, format="mjpeg")
 
     Start the UVC driver for one directly connected camera's first video stream.
-    Call ``M5.begin()`` first. Only MJPEG is accepted by this API; YUY2, H.264,
-    H.265, audio and camera controls are not enabled.
+    Call ``M5.begin()`` first. ``format`` accepts ``"mjpeg"`` (the default)
+    or ``"yuy2"`` (uncompressed Y0 U Y1 V, also called YUYV).
+    H.264, H.265, audio and camera controls are not enabled.
 
     Width and height must be 1..4096 and must match a camera-supported format.
     FPS is an integer from 0..120; zero requests the device's default FPS.
     Unsupported format/FPS combinations raise ``OSError`` during ``start()``.
 
-    ``frame_size`` is the maximum compressed size of one JPEG, from 16 KiB to
-    4 MiB. Three driver frame buffers are allocated in PSRAM when a stream opens.
+    ``frame_size`` is the maximum size of one frame, from 16 KiB to 4 MiB.
+    Zero selects 512 KiB for MJPEG or ``max(16384, width * height * 2)`` for
+    YUY2. YUY2 requires an even width and enough space for the entire raw frame:
+    153600 bytes at 320x240 or 614400 bytes at 640x480.
+    Three driver frame buffers are allocated in PSRAM when a stream opens.
     Larger frames are discarded and counted in ``info()["overflows"]``.
     The API never silently falls back to an uncompressed format.
 
@@ -159,27 +163,27 @@ Class UVCCamera
     Wait up to ``timeout`` milliseconds for enumeration and return the first
     camera stream's frame formats as dictionaries containing ``format``,
     ``width``, ``height`` and ``default_fps``. An empty list means no camera
-    arrived in time. Reported formats other than ``"mjpeg"`` are informational
-    and cannot be selected by this implementation.
+    arrived in time. Formats other than ``"mjpeg"`` and ``"yuy2"`` are
+    informational and cannot be selected by this implementation.
 
 .. method:: UVCCamera.start(timeout=5000)
 
-    Open the first matching UVC stream and start MJPEG reception. No camera,
+    Open the first matching UVC stream and start reception. No camera,
     an unsupported requested mode or a negotiation failure raises ``OSError``.
     ``timeout`` bounds device discovery; USB control requests have their own
     driver timeouts. Starting an already open stream raises ``OSError``.
 
 .. method:: UVCCamera.read(timeout=1000)
 
-    Return a complete JPEG as ``bytes``, or ``None`` on timeout. Each successful
+    Return a complete JPEG or raw YUY2 frame as ``bytes``, or ``None`` on timeout. Each successful
     call copies one frame into Python-managed memory. Prefer ``readinto`` for
     continuous preview.
 
 .. method:: UVCCamera.readinto(buffer, timeout=1000)
 
-    Copy the next JPEG into a writable buffer and return its byte length, or
-    zero on timeout. Allocate a ``bytearray(frame_size)`` once and reuse it.
-    The supplied buffer must fit the actual JPEG; otherwise the frame is
+    Copy the next frame into a writable buffer and return its byte length, or
+    zero on timeout. Allocate a buffer once and reuse it: 512 KiB for default
+    MJPEG or ``width * height * 2`` for YUY2. The supplied buffer must fit the frame; otherwise it is
     returned to the driver and ``ValueError`` is raised.
 
     Native callbacks retain at most two frames in a bounded queue. A slow
@@ -190,6 +194,17 @@ Class UVCCamera
     ``read`` and ``readinto`` require a started stream. Unplugging the camera
     raises ``OSError(ENODEV)``. After reconnecting, call ``stop()`` and
     ``start()`` to negotiate the new stream.
+
+.. method:: UVCCamera.readinto_rgb565(buffer, timeout=1000)
+
+    For YUY2 only, convert the next frame directly into a writable buffer of at
+    least ``width * height * 2`` bytes. Return the converted byte length, or zero
+    on timeout. Conversion uses BT.601 limited-range YUV and produces little-endian
+    RGB565. The native frame is returned to the driver after conversion.
+    Selecting MJPEG or supplying a small buffer raises ``ValueError``.
+
+    Display the result with ``M5.Lcd.drawRawBuf(buffer, x, y, width, height,
+    width * height, swap=True)``. YUY2 data and RGB565 pixels are not JPEG files.
 
 .. method:: UVCCamera.info()
 
@@ -232,7 +247,13 @@ Example::
     finally:
         camera.deinit()
 
+For a YUY2-only camera::
+
+    import tab5_uvc_camera
+    tab5_uvc_camera.run(width=320, height=240, format="yuy2")
+
 ``examples/hardware/usbhost/tab5_uvc_camera.py`` adds continuous preview,
-delivered FPS and error counters, a CAPTURE button that saves a JPEG under
+delivered FPS and error counters, a CAPTURE button that saves a JPEG (MJPEG)
+or RGB565 BMP (YUY2) under
 ``/flash`` without overwriting existing captures, and a STOP button. It is an
 explicitly launched example and does not modify the launcher or ``main.py``.
