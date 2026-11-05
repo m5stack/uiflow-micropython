@@ -360,6 +360,47 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
                 Display.setRotation(2)
 
+    .. method:: setBrightness(brightness)
+
+        Set the brightness of the display backlight. The same method is available
+        through the ``M5.Lcd`` alias, e.g. ``M5.Lcd.setBrightness(128)``.
+
+        :param int brightness: backlight brightness in the range 0~255. 0 turns
+            the backlight off and 255 is the maximum brightness.
+
+        .. note::
+
+            On boards whose backlight cannot be controlled in software this method
+            has no visible effect. To use a percentage instead of a raw value,
+            convert it with ``level * 255 // 100``.
+
+        UiFlow2 Code Block:
+
+            |setBrightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.setBrightness(128)
+
+    .. method:: getBrightness()
+
+        Get the current brightness of the display backlight.
+
+        :returns brightness: current backlight brightness in the range 0~255.
+        :return type: int
+
+        UiFlow2 Code Block:
+
+            |getBrightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.getBrightness()
+
     .. method:: setColorDepth(bpp)
 
         Set the color depth of the canvas.
