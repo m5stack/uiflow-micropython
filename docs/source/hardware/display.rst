@@ -360,6 +360,47 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
                 Display.setRotation(2)
 
+    .. method:: setBrightness(brightness)
+
+        Set the brightness of the display backlight. The same method is available
+        through the ``M5.Lcd`` alias, e.g. ``M5.Lcd.setBrightness(128)``.
+
+        :param int brightness: backlight brightness in the range 0~255. 0 turns
+            the backlight off and 255 is the maximum brightness.
+
+        .. note::
+
+            On boards whose backlight cannot be controlled in software this method
+            has no visible effect. To use a percentage instead of a raw value,
+            convert it with ``level * 255 // 100``.
+
+        UiFlow2 Code Block:
+
+            |setBrightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.setBrightness(128)
+
+    .. method:: getBrightness()
+
+        Get the current brightness of the display backlight.
+
+        :returns brightness: current backlight brightness in the range 0~255.
+        :return type: int
+
+        UiFlow2 Code Block:
+
+            |getBrightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.getBrightness()
+
     .. method:: setColorDepth(bpp)
 
         Set the color depth of the canvas.
@@ -866,6 +907,13 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
         :param int angle0: starting angle in degrees (default -1)
         :param int angle1: ending angle in degrees (default -1)
         :param int color: fill color in RGB888 format (default 0)
+
+        .. note::
+
+            ``r0`` is the inner radius and ``r1`` is the outer radius. Pass
+            ``0`` and ``360`` as the angles to fill a complete annulus (ring)
+            in one call. Arc edges are not anti-aliased; if smoother edges are
+            required, draw to a canvas at a higher resolution and scale it down.
 
         UiFlow2 Code Block:
 
