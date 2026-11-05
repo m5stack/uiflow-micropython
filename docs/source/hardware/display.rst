@@ -908,6 +908,13 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
         :param int angle1: ending angle in degrees (default -1)
         :param int color: fill color in RGB888 format (default 0)
 
+        .. note::
+
+            ``r0`` is the inner radius and ``r1`` is the outer radius. Pass
+            ``0`` and ``360`` as the angles to fill a complete annulus (ring)
+            in one call. Arc edges are not anti-aliased; if smoother edges are
+            required, draw to a canvas at a higher resolution and scale it down.
+
         UiFlow2 Code Block:
 
             |fillarc.png|
