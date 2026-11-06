@@ -172,6 +172,7 @@ def setup():
 
     page0.screen_load()
     rtc = RTC()
+    rtc.timezone("GMT0")
     hour = 11
     minute = 10
     second = 0

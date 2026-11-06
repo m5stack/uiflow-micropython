@@ -53,7 +53,7 @@ def btnA_wasClicked_event(state):
     else:
         label_second.setColor(0x00CCCC, 0x000000)
         sw = 0
-        rtc.init((2026, 10, 19, hour, minute, second, 584, 0))
+        rtc.init((2026, 10, 19, hour, minute, second, 0, 0))
 
 
 def btnB_wasClicked_event(state):
@@ -118,6 +118,7 @@ def setup():
     BtnB.setCallback(type=BtnB.CB_TYPE.WAS_CLICKED, cb=btnB_wasClicked_event)
 
     rtc = RTC()
+    rtc.timezone("GMT0")
     hour = 11
     minute = 10
     second = 0
@@ -150,10 +151,10 @@ def loop():
             hour = (rtc.local_datetime())[4]
             minute = (rtc.local_datetime())[5]
             second = (rtc.local_datetime())[6]
-        if hour < 10:
-            label_hour.setText(str((str("0") + str(hour))))
-        else:
-            label_hour.setText(str(hour))
+    if hour < 10:
+        label_hour.setText(str((str("0") + str(hour))))
+    else:
+        label_hour.setText(str(hour))
     label_hour.setCursor(x=21, y=109)
     if minute < 10:
         label_min.setText(str((str("0") + str(minute))))
