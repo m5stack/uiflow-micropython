@@ -70,7 +70,7 @@ class JRD4035:
 
     def inventory(self) -> bytes:
         rxdata, status = self.command(0x22)
-        if status is False:
+        if status is False or len(rxdata) < 5:
             return b""
         rssi, pc, epc, crc = struct.unpack_from(">BH%dsH" % (len(rxdata) - 5), rxdata)
         self._verbose and print("RSSI: %d, PC: %d, EPC: %s, CRC: %d" % (rssi, pc, epc, crc))
@@ -461,43 +461,66 @@ class JRD4035:
         self._uart.write(frame)
 
     def _receive(self, length: int = 8, timeout=1000) -> tuple:
-        _buffer = b""
-        startpos = -1
-        endpos = -1
-        count = timeout
-        l = 0
-        while count > 0 and (l - startpos) < length:
-            if self._uart.any() == 0:
-                time.sleep(0.01)
-                count -= 10
+        # Frame: 0xBB, type, cmd, length (2 bytes), data, checksum, 0x7E.
+        # A frame must be delimited by its length field: 0x7E is a valid byte
+        # inside the binary payload (RSSI, PC, EPC, CRC, ...).
+        buf = bytearray()
+        deadline = time.ticks_add(time.ticks_ms(), timeout)
+        while time.ticks_diff(deadline, time.ticks_ms()) > 0:
+            pending = self._uart.any()
+            if pending == 0:
+                time.sleep_ms(1)
                 continue
-            _buffer += self._uart.read(1)
-            l += 1
-            if startpos == -1:
-                startpos = _buffer.find(self._HEADER.to_bytes(1, "Big"))
-            if startpos != -1 and endpos == -1:
-                endpos = _buffer.rfind(self._END.to_bytes(1, "Big"), startpos + 1)
-            if startpos != -1 and endpos != -1:
-                break
+            chunk = self._uart.read(1)
+            if chunk:
+                buf.extend(chunk)
 
-        endpos = _buffer.rfind(self._END.to_bytes(1, "Big"), startpos)
-        if startpos != -1 and endpos != -1:
-            self._verbose and print(
-                "Recv buffer: %s" % (" ".join(f"{byte:02x}" for byte in _buffer))
-            )
-            frame = _buffer[startpos + 1 : endpos]
-            ftype, cmd, length = struct.unpack_from("!BBH", frame, 0)
-            rxdata, checksum = struct.unpack_from("!%dsB" % (length), frame, 4)
-            if self._checksum(ftype, cmd, len(rxdata), rxdata) != checksum:
+            while True:
+                start = buf.find(b"\xbb")
+                if start < 0:
+                    buf = bytearray()
+                    break
+                if start > 0:
+                    buf = buf[start:]
+                if len(buf) < 5:
+                    break
+
+                payload_len = (buf[3] << 8) | buf[4]
+                if payload_len > 512:
+                    # Invalid header, resync from the next byte.
+                    buf = buf[1:]
+                    continue
+
+                frame_len = payload_len + 7
+                if len(buf) < frame_len:
+                    break
+
+                frame = buf[:frame_len]
+                if frame[-1] != self._END:
+                    buf = buf[1:]
+                    continue
+
+                if (
+                    self._checksum(frame[1], frame[2], payload_len, frame[5 : 5 + payload_len])
+                    != frame[5 + payload_len]
+                ):
+                    self._verbose and print(
+                        "Invalid checksum: %s, data: 0x%s"
+                        % (
+                            frame[5 + payload_len],
+                            " ".join(f"{byte:02x}" for byte in frame),
+                        )
+                    )
+                    buf = buf[1:]
+                    continue
+
                 self._verbose and print(
-                    "Invalid checksum: %s, data: 0x%s"
-                    % (checksum, " ".join(f"{byte:02x}" for byte in frame))
+                    "Recv buffer: %s" % (" ".join(f"{byte:02x}" for byte in frame))
                 )
-                return b"", False
-            return rxdata, False if cmd == 0xFF else True
-        else:
-            self._verbose and print("Malformed packet received, ignore it")
-            return b"", False
+                return bytes(frame[5 : 5 + payload_len]), frame[2] != 0xFF
+
+        self._verbose and print("Malformed packet received, ignore it")
+        return b"", False
 
     def _checksum(self, *args) -> int:
         chcksum = 0
