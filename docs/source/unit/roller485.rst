@@ -659,12 +659,8 @@ Methods
     :param id: The motor ID.
     :return: A tuple (success, response). Success is True if the response is valid, and response is the data read.
 
-.. method:: Roller485._crc8(buffer) -> int
-
-    Calculate CRC8 checksum.
-
-    :param buffer: The data buffer to compute the checksum for.
-    :return: The computed CRC8 value.
+Command and response methods handle CRC8 internally. The private ``_crc8``
+helper is not part of the public API.
 
 
 class Roller485ToI2CBus(RollerBase)

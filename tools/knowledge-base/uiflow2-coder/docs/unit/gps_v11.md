@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
     - Returns: The position quality indicator.
 
-### `GPSV11Unit.get_corse_over_ground()`
+### `GPSV11Unit.get_course_over_ground()`
 
     Get the course over ground (COG).
 
@@ -190,32 +190,5 @@ if __name__ == "__main__":
 
     Deinitialize the GPS unit, stopping any running tasks and releasing resources.
 
-### `GPSV11Unit._add_checksum(message)`
-
-    Add checksum to the message for communication with the GPS module.
-
-    - Parameter `message` (`str`): The message to which the checksum will be added.
-
-    - Returns: The message with added checksum.
-
-### `GPSV11Unit._decode_gga(data)`
-
-    Decode the GGA sentence to extract GPS quality, number of satellites, and altitude.
-
-    - Parameter `data` (`str`): The GGA sentence to decode.
-
-### `GPSV11Unit._decode_rmc(data)`
-
-    Decode the RMC sentence to extract GPS time, latitude, longitude, speed, course, and date.
-
-    - Parameter `data` (`str`): The RMC sentence to decode.
-
-### `GPSV11Unit._decode_txt(data)`
-
-    Decode the TXT sentence to extract antenna state.
-
-    - Parameter `data` (`str`): The TXT sentence to decode.
-
-### `GPSV11Unit._monitor()`
-
-    Monitor the GPS data and decode incoming sentences.
+Sentence decoding, polling, and checksum helpers whose names start with `_`
+are internal implementation details and are not part of the public API.

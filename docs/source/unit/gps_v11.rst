@@ -217,36 +217,5 @@ Methods
         |deinit.png|
 
 
-.. method:: GPSV11Unit._add_checksum(message)
-
-    Add checksum to the message for communication with the GPS module.
-
-    :param str message: The message to which the checksum will be added.
-
-    :return: The message with added checksum.
-
-
-.. method:: GPSV11Unit._decode_gga(data)
-
-    Decode the GGA sentence to extract GPS quality, number of satellites, and altitude.
-
-    :param str data: The GGA sentence to decode.
-
-
-.. method:: GPSV11Unit._decode_rmc(data)
-
-    Decode the RMC sentence to extract GPS time, latitude, longitude, speed, course, and date.
-
-    :param str data: The RMC sentence to decode.
-
-
-.. method:: GPSV11Unit._decode_txt(data)
-
-    Decode the TXT sentence to extract antenna state.
-
-    :param str data: The TXT sentence to decode.
-
-
-.. method:: GPSV11Unit._monitor()
-
-    Monitor the GPS data and decode incoming sentences.
+Sentence decoding, polling, and checksum helpers whose names start with ``_``
+are internal implementation details and are not part of the public API.

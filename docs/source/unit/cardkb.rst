@@ -40,6 +40,14 @@ Constructors
     selecting ``mode`` does not reconfigure the keyboard firmware.
 
     :param int mode: ``CardKB_I2C_MODE`` (0, default), ``CardKB_UART_MODE`` (1), or ``CardKB_ESP_NOW_MODE`` (2).
+    :return: ``unit.cardkb.CardKBI2C`` for I2C mode,
+        ``unit.cardkb.CardKBUART`` for UART mode, or
+        ``unit.cardkb.CardKBESPNOW`` for ESP-NOW mode.
+    :raises ValueError: If ``mode`` is not one of the three supported values.
+
+    These are the concrete returned classes, not subclasses of ``CardKBUnit``.
+    The methods below belong to the returned instance; for example, call
+    ``cardkb.get_key()`` rather than looking up ``CardKBUnit.get_key``.
 
     **I2C:** pass the I2C object as the first positional argument. The optional
     ``address`` keyword defaults to ``0x5F`` and applies only to I2C.

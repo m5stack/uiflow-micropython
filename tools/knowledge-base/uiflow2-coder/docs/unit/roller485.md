@@ -746,12 +746,8 @@ if __name__ == "__main__":
     - Parameter `id`: The motor ID.
     - Returns: A tuple (success, response). Success is True if the response is valid, and response is the data read.
 
-### `Roller485._crc8(buffer) -> int`
-
-    Calculate CRC8 checksum.
-
-    - Parameter `buffer`: The data buffer to compute the checksum for.
-    - Returns: The computed CRC8 value.
+Command and response methods handle CRC8 internally. The private `_crc8`
+helper is not part of the public API.
 
 ## class Roller485ToI2CBus(RollerBase)
 

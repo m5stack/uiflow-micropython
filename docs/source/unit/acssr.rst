@@ -17,6 +17,9 @@ Micropython I2C Example:
 
 Micropython Modbus Example:
 
+    Connect an ISO485 Unit to CoreS3 Port C (RX=18, TX=17) and configure the
+    ACSSR for Modbus mode, 115200 baud, 8N1, device address ``0x04``.
+
     .. literalinclude:: ../../../examples/unit/acssr/cores3_acssr_modbus_example.py
         :language: python
         :linenos:
@@ -45,12 +48,39 @@ class ACSSRUnit
 Constructors
 ------------
 
-.. class:: ACSSRUnit(bus, address=None)
+.. class:: ACSSRUnit(bus, address=0x50)
 
-    Create an ACSSRUnit object.
+    Factory returning the driver selected by the bus object. It does not
+    change the ACSSR hardware's communication mode.
 
-    :param bus: I2C bus or Modbus.
-    :param address: Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus mode.
+    :param bus: A ``machine.I2C`` instance, or a configured Modbus master
+        providing ``read_coils`` and the register/coil operations used below.
+    :param int address: Device address. The factory default is ``0x50`` in
+        both modes. For a Modbus device at its default address, explicitly
+        pass ``address=0x04``.
+    :return: ``unit.acssr.ACSSRI2CUnit`` for ``machine.I2C``;
+        ``unit.acssr.ACSSRModbusUnit`` for a Modbus master.
+
+    The implementation class ``ACSSRModbusUnit`` has a default address of
+    ``0x04``, but the factory always forwards its own ``address`` argument.
+    Selecting a bus does not select that implementation default.
+
+    .. code-block:: python
+
+        from unit import ACSSRUnit, ISO485Unit
+        from modbus import ModbusRTUMaster
+
+        # I2C: use the configured I2C bus.
+        acssr_i2c = ACSSRUnit(i2c0, address=0x50)
+
+        # Modbus: CoreS3 Port C, ISO485 Unit, ACSSR in Modbus mode.
+        rs485 = ISO485Unit(2, port=(18, 17))
+        rs485.init(baudrate=115200, data_bits=8, stop_bits=1, parity=None)
+        master = ModbusRTUMaster(uart=rs485)
+        acssr_modbus = ACSSRUnit(master, address=0x04)
+
+    Use methods on the returned instance, such as ``acssr_modbus.value()``.
+    The factory class itself does not define the instance methods below.
 
     UIFLOW2:
 
