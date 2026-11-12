@@ -40,7 +40,7 @@ A lcd display library
 - ❌ **WRONG**: `Widgets.fillRect()` or `Widgets.drawRect()` - These methods do not exist in Widgets module
 - ✅ **CORRECT**: `M5.Lcd.fillRect()` or `M5.Lcd.drawRect()` - Use M5.Lcd for drawing methods
 - ❌ **WRONG**: `from M5 import Widgets; Widgets.fillRect(...)` - Widgets is for UI components, not drawing
-- ✅ **CORRECT**: `from M5 import *; M5.Lcd.fillRect(...)` - M5.Lcd provides all drawing methods
+- ✅ **CORRECT**: `import M5; M5.Lcd.fillRect(...)` - M5.Lcd provides all drawing methods
 
 **Key Distinction**:
 - `M5.Lcd` = Drawing methods (fillRect, drawRect, drawCircle, drawString, etc.)
@@ -257,6 +257,18 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-`push()` patt
 
 ## **API**
 
+The examples below use `M5.Lcd`, the built-in display object. Initialize it
+before running an example:
+
+```python
+import M5
+
+M5.begin()
+```
+`M5.Display` is an alias for `M5.Lcd`. `from M5 import *` also exports
+the same object as `Display` and `Lcd`. The off-screen `canvas` objects
+in the Canvas examples are separate drawing targets.
+
 ### `class M5.Display`
 
 ### `width()`
@@ -264,14 +276,14 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-`push()` patt
         Get the horizontal resolution of the display.
 
 ```python
-Display.width()
+M5.Lcd.width()
 ```
 ### `height()`
 
         Get the vertical resolution of the display.
 
 ```python
-Display.height()
+M5.Lcd.height()
 ```
 ### `getRotation()`
 
@@ -285,21 +297,21 @@ Display.height()
         - 3: 270° rotation
 
 ```python
-Display.getRotation()
+M5.Lcd.getRotation()
 ```
 ### `getColorDepth()`
 
         Get the color depth of the display.
 
 ```python
-Display.getColorDepth()
+M5.Lcd.getColorDepth()
 ```
 ### `getCursor()`
 
         Get the current cursor position on the display.
 
 ```python
-Display.getCursor()
+M5.Lcd.getCursor()
 ```
 ### `setRotation(r)`
 
@@ -314,7 +326,7 @@ Display.getCursor()
 > Note: See `display-rotation` for board-specific dimensions and migration from older examples. Set the desired rotation before initializing M5UI/LVGL.
 
 ```python
-Display.setRotation(2)
+M5.Lcd.setRotation(2)
 ```
 ### `setColorDepth(bpp)`
 
@@ -325,7 +337,7 @@ Display.setRotation(2)
         Notes: This method only applies to canvas objects, not the display itself. For CoreS3 devices, the display color depth is fixed at 16 bits.
 
 ```python
-Display.setColorDepth(16)
+M5.Lcd.setColorDepth(16)
 ```
 ### `setEpdMode(epd_mode)`
 
@@ -340,14 +352,29 @@ Display.setColorDepth(16)
         Notes: Only applicable to devices with EPD capabilities.
 
 ```python
-Display.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
+M5.Lcd.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
+```
+### `getEpdMode()`
+
+        Return the current EPD refresh mode as an integer.
+
+        - Returns: 0 for a non-EPD display, or the current EPD mode:
+            1 (EPD_QUALITY), 2 (EPD_TEXT), 3 (EPD_FAST), or 4 (EPD_FASTEST).
+        - Return type: int
+
+        This is the refresh mode, not a Boolean flag. Use `isEPD()` to
+        check display capabilities and `setEpdMode()` to select a mode
+        on an EPD display.
+
+```python
+print(M5.Lcd.getEpdMode())
 ```
 ### `isEPD()`
 
         Check if the display is an EPD (Electronic Paper Display).
 
 ```python
-Display.isEPD()
+M5.Lcd.isEPD()
 ```
 ### `setFont(font)`
 
@@ -379,7 +406,62 @@ Display.isEPD()
              M5.Lcd.FONTS.AlibabaSansKR24         S Recommended                                       M5STACK_AtomU, M5STACK_Atom_Echo, M5STACK_NanoC6             |
 
 ```python
-Display.setFont(M5.Lcd.FONTS.DejaVu18)
+M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu18)
+```
+### `drawString(text, x, y, font=None)`
+
+        Draw a string at the specified pixel coordinates using the current
+        text color, text size, and the current or supplied font.
+
+        - Parameter `text` (`str`): text to draw (required).
+        - Parameter `x` (`int`): horizontal coordinate (required).
+        - Parameter `y` (`int`): vertical coordinate (required).
+        - Parameter `font`: optional built-in font object from `M5.Lcd.FONTS`.
+            `None` uses the current font. A supplied font becomes the
+            current font for subsequent drawing operations.
+        - Returns: `None`. The Python wrapper does not return the drawn width.
+
+        To use a font file, load it with `setFont()` first and omit the
+        `font` argument. To measure a string, use `textWidth()`.
+
+```python
+M5.Lcd.drawString("Hello", 10, 20)
+M5.Lcd.drawString("World", 10, 50, M5.Lcd.FONTS.Montserrat18)
+```
+### `textWidth(text, font=None)`
+
+        Return the width of a string in pixels at the current text size.
+
+        - Parameter `text` (`str`): text to measure (required).
+        - Parameter `font`: optional built-in font object from `M5.Lcd.FONTS`.
+            `None` uses the current font. In the current Python wrapper,
+            supplying this argument also changes the current drawing font.
+        - Returns: string width in pixels.
+        - Return type: int
+
+        To measure text with a font file, load it with `setFont()` first
+        and omit the `font` argument.
+
+```python
+width = M5.Lcd.textWidth("Hello")
+print(width)
+```
+### `fontHeight(font=None)`
+
+        Return the font height in pixels at the current text size.
+
+        - Parameter `font`: optional built-in font object from `M5.Lcd.FONTS`.
+            `None` measures the current font. Supplying a font here does
+            not change the current drawing font.
+        - Returns: font height in pixels.
+        - Return type: int
+
+        To measure a font file, load it with `setFont()` first and omit
+        the `font` argument.
+
+```python
+height = M5.Lcd.fontHeight()
+print(height)
 ```
 ### `setTextColor(fgcolor, bgcolor)`
 
@@ -389,7 +471,7 @@ Display.setFont(M5.Lcd.FONTS.DejaVu18)
         - Parameter `bgcolor` (`int`): background color in RGB888 format (default 0, black)
 
 ```python
-Display.setTextColor(0xFF0000, 0x000000)
+M5.Lcd.setTextColor(0xFF0000, 0x000000)
 ```
 ### `setTextScroll(scroll)`
 
@@ -398,7 +480,7 @@ Display.setTextColor(0xFF0000, 0x000000)
         - Parameter `scroll` (`bool`): True to enable text scrolling, False to disable (default False)
 
 ```python
-Display.setTextScroll(True)
+M5.Lcd.setTextScroll(True)
 ```
 ### `setTextSize(size)`
 
@@ -407,7 +489,7 @@ Display.setTextScroll(True)
         - Parameter `size` (`int`): desired text size
 
 ```python
-Display.setTextSize(2)
+M5.Lcd.setTextSize(2)
 ```
 ### `setCursor(x, y)`
 
@@ -417,7 +499,7 @@ Display.setTextSize(2)
         - Parameter `y` (`int`): vertical position of the cursor (default 0)
 
 ```python
-Display.setCursor(10, 20)
+M5.Lcd.setCursor(10, 20)
 ```
 ### `clear(color)`
 
@@ -431,7 +513,7 @@ Display.setCursor(10, 20)
 > then draw the new content on top.
 
 ```python
-Display.clear(0xFFFFFF)
+M5.Lcd.clear(0xFFFFFF)
 ```
 ### `fillScreen(color)`
 
@@ -445,7 +527,7 @@ Display.clear(0xFFFFFF)
 > `fillRect()` to clear only the changed area.
 
 ```python
-Display.fillScreen(0xFF0000)
+M5.Lcd.fillScreen(0xFF0000)
 ```
 ### `drawPixel(x, y, color)`
 
@@ -456,7 +538,7 @@ Display.fillScreen(0xFF0000)
         - Parameter `color` (`int`): pixel color in RGB888 format (default 0)
 
 ```python
-Display.drawPixel(50, 50, 0x00FF00)
+M5.Lcd.drawPixel(50, 50, 0x00FF00)
 ```
 ### `drawCircle(x, y, r, color)`
 
@@ -468,7 +550,7 @@ Display.drawPixel(50, 50, 0x00FF00)
         - Parameter `color` (`int`): circle color in RGB888 format (default 0)
 
 ```python
-Display.drawCircle(60, 60, 20, 0x0000FF)
+M5.Lcd.drawCircle(60, 60, 20, 0x0000FF)
 ```
 ### `fillCircle(x, y, r, color)`
 
@@ -480,7 +562,7 @@ Display.drawCircle(60, 60, 20, 0x0000FF)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillCircle(60, 60, 20, 0x00FFFF)
+M5.Lcd.fillCircle(60, 60, 20, 0x00FFFF)
 ```
 ### `drawEllipse(x, y, rx, ry, color)`
 
@@ -493,7 +575,7 @@ Display.fillCircle(60, 60, 20, 0x00FFFF)
         - Parameter `color` (`int`): ellipse color in RGB888 format (default 0)
 
 ```python
-Display.drawEllipse(80, 40, 30, 20, 0xFF00FF)
+M5.Lcd.drawEllipse(80, 40, 30, 20, 0xFF00FF)
 ```
 ### `fillEllipse(x, y, rx, ry, color)`
 
@@ -506,7 +588,7 @@ Display.drawEllipse(80, 40, 30, 20, 0xFF00FF)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillEllipse(80, 40, 30, 20, 0x00FF00)
+M5.Lcd.fillEllipse(80, 40, 30, 20, 0x00FF00)
 ```
 ### `drawLine(x0, y0, x1, y1, color)`
 
@@ -519,7 +601,7 @@ Display.fillEllipse(80, 40, 30, 20, 0x00FF00)
         - Parameter `color` (`int`): line color in RGB888 format (default 0)
 
 ```python
-Display.drawLine(10, 10, 100, 100, 0xFF0000)
+M5.Lcd.drawLine(10, 10, 100, 100, 0xFF0000)
 ```
 ### `drawRect(x, y, w, h, color)`
 
@@ -532,7 +614,7 @@ Display.drawLine(10, 10, 100, 100, 0xFF0000)
         - Parameter `color` (`int`): rectangle color in RGB888 format (default 0)
 
 ```python
-display.drawRect(20, 20, 80, 50, 0x00FF00)
+M5.Lcd.drawRect(20, 20, 80, 50, 0x00FF00)
 ```
 ### `fillRect(x, y, w, h, color)`
 
@@ -545,7 +627,7 @@ display.drawRect(20, 20, 80, 50, 0x00FF00)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillRect(20, 20, 80, 50, 0x0000FF)
+M5.Lcd.fillRect(20, 20, 80, 50, 0x0000FF)
 ```
 ### `drawRoundRect(x, y, w, h, r, color)`
 
@@ -559,7 +641,7 @@ Display.fillRect(20, 20, 80, 50, 0x0000FF)
         - Parameter `color` (`int`): rectangle color in RGB888 format (default 0)
 
 ```python
-Display.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
+M5.Lcd.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
 ```
 ### `fillRoundRect(x, y, w, h, r, color)`
 
@@ -573,7 +655,7 @@ Display.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
+M5.Lcd.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
 ```
 ### `drawTriangle(x0, y0, x1, y1, x2, y2, color)`
 
@@ -588,7 +670,7 @@ Display.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
         - Parameter `color` (`int`): triangle color in RGB888 format (default 0)
 
 ```python
-Display.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
+M5.Lcd.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
 ```
 ### `fillTriangle(x0, y0, x1, y1, x2, y2, color)`
 
@@ -603,7 +685,7 @@ Display.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
+M5.Lcd.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
 ```
 ### `drawArc(x, y, r0, r1, angle0, angle1, color)`
 
@@ -618,7 +700,7 @@ Display.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
         - Parameter `color` (`int`): arc color in RGB888 format (default 0)
 
 ```python
-Display.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
+M5.Lcd.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
 ```
 ### `fillArc(x, y, r0, r1, angle0, angle1, color)`
 
@@ -633,7 +715,7 @@ Display.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
+M5.Lcd.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
 ```
 ### `drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)`
 
@@ -650,7 +732,7 @@ Display.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
         - Parameter `color` (`int`): arc color in RGB888 format (default 0)
 
 ```python
-Display.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
+M5.Lcd.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
 ```
 ### `fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)`
 
@@ -667,7 +749,7 @@ Display.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
         - Parameter `color` (`int`): fill color in RGB888 format (default 0)
 
 ```python
-Display.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
+M5.Lcd.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
 ```
 ### `drawQR(text, x, y, w, version)`
 
@@ -680,7 +762,7 @@ Display.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
         - Parameter `version` (`int`): QR code version (default 1, range: 0~38)
 
 ```python
-Display.drawQR("Hello", 0, 0, 200)
+M5.Lcd.drawQR("Hello", 0, 0, 200)
 ```
 ### `drawPng(img, x, y, maxW, maxH, offX, offY, scaleX, scaleY)`
 
@@ -697,15 +779,15 @@ Display.drawQR("Hello", 0, 0, 200)
         - Parameter `scaleY` (`bool`): scale vertically (default False)
 
 ```python
-Display.drawPng("res/img/uiflow.png", 0, 0)
+M5.Lcd.drawPng("res/img/uiflow.png", 0, 0)
 ```
         Example:
 
 ```python
-Display.drawPng("res/img/uiflow.png", 0, 0)
+M5.Lcd.drawPng("res/img/uiflow.png", 0, 0)
 img = open("res/img/uiflow.png", "b")
 img.seek(0)
-Display.drawPng(img.read(), 0, 100)
+M5.Lcd.drawPng(img.read(), 0, 100)
 img.close()
 ```
 ### `drawJpg(img, x, y, maxW, maxH, offX, offY)`
@@ -721,15 +803,15 @@ img.close()
         - Parameter `offY` (`int`): y-offset in image (default 0)
 
 ```python
-Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+M5.Lcd.drawJpg("res/img/uiflow.jpg", 0, 0)
 ```
         Example:
 
 ```python
-Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+M5.Lcd.drawJpg("res/img/uiflow.jpg", 0, 0)
 img = open("res/img/uiflow.jpg", "b")
 img.seek(0)
-Display.drawJpg(img.read(), 0, 100)
+M5.Lcd.drawJpg(img.read(), 0, 100)
 img.close()
 ```
 ### `drawBmp(img, x, y, maxW, maxH, offX, offY)`
@@ -745,15 +827,15 @@ img.close()
         - Parameter `offY` (`int`): y-offset in image (default 0)
 
 ```python
-Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+M5.Lcd.drawBmp("res/img/uiflow.bmp", 0, 0)
 ```
         Example:
 
 ```python
-Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+M5.Lcd.drawBmp("res/img/uiflow.bmp", 0, 0)
 img = open("res/img/uiflow.bmp", "b")
 img.seek(0)
-Display.drawBmp(img.read(), 0, 100)
+M5.Lcd.drawBmp(img.read(), 0, 100)
 img.close()
 ```
 ### `drawImage(img, x, y, maxW, maxH, offX, offY)`
@@ -776,7 +858,7 @@ img = open("res/img/uiflow.jpg", "b")
 ```python
 img = open("res/img/uiflow.jpg", "b")
 img.seek(0)
-Display.drawImage(img.read(), 0, 0)
+M5.Lcd.drawImage(img.read(), 0, 0)
 img.close()
 ```
 ### `drawRawBuf(buf, x, y, w, h, len, swap)`
@@ -792,7 +874,7 @@ img.close()
         - Parameter `swap` (`bool`): inverted display (default False)
 
 ```python
-Display.drawRawBuf(raw_buf, 0, 0, 100, 100, len(raw_buf), swap=False)
+M5.Lcd.drawRawBuf(raw_buf, 0, 0, 100, 100, len(raw_buf), swap=False)
 ```
         Example:
 
@@ -803,7 +885,7 @@ raw_buf = bytearray(width * height * 2)
 for i in range(width * height):
     raw_buf[2*i]   = (green565 >> 8) & 0xFF
     raw_buf[2*i+1] = green565 & 0xFF
-Display.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
+M5.Lcd.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
 ```
 ### `print(text, color)`
 
@@ -813,7 +895,7 @@ Display.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
         - Parameter `color` (`int`): color in RGB888 format (default 0)
 
 ```python
-Display.print("Hello World", color=0xFF0000)
+M5.Lcd.print("Hello World", color=0xFF0000)
 ```
 ### `printf(text)`
 
@@ -822,7 +904,7 @@ Display.print("Hello World", color=0xFF0000)
         - Parameter `text` (`str`): text to display with formatting
 
 ```python
-Display.printf("Value: %d" % 100)
+M5.Lcd.printf("Value: %d" % 100)
 ```
 ### `newCanvas(w, h, bpp, psram)`
 
@@ -837,12 +919,12 @@ Display.printf("Value: %d" % 100)
         - Returns: created canvas object
 
 ```python
-w1 = Display.newCanvas(w=100, h=100, bpp=16)
+w1 = M5.Lcd.newCanvas(w=100, h=100, bpp=16)
 ```
         Example:
 
 ```python
-w1 = Display.newCanvas(w=100, h=100, bpp=16)
+w1 = M5.Lcd.newCanvas(w=100, h=100, bpp=16)
 w1.drawImage("res/img/uiflow.jpg", 80, 0)
 w1.push(30, 0)
 ```
@@ -851,19 +933,19 @@ w1.push(30, 0)
         Start writing to the display.
 
 ```python
-Display.startWrite()
+M5.Lcd.startWrite()
 ```
         Example:
 
 ```python
-Display.startWrite()
-Display.drawPixel(10, 10, 0xFF0000)
-Display.endWrite()
+M5.Lcd.startWrite()
+M5.Lcd.drawPixel(10, 10, 0xFF0000)
+M5.Lcd.endWrite()
 ```
 ### `endWrite()`
 
         End writing to the display.
 
 ```python
-Display.endWrite()
+M5.Lcd.endWrite()
 ```

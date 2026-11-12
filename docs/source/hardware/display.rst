@@ -49,7 +49,7 @@ Common Mistakes to Avoid
 - ❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These methods do not exist in Widgets module
 - ✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use M5.Lcd for drawing methods
 - ❌ **WRONG**: ``from M5 import Widgets; Widgets.fillRect(...)`` - Widgets is for UI components, not drawing
-- ✅ **CORRECT**: ``from M5 import *; M5.Lcd.fillRect(...)`` - M5.Lcd provides all drawing methods
+- ✅ **CORRECT**: ``import M5; M5.Lcd.fillRect(...)`` - M5.Lcd provides all drawing methods
 
 **Key Distinction**:
 - ``M5.Lcd`` = Drawing methods (fillRect, drawRect, drawCircle, drawString, etc.)
@@ -242,6 +242,19 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 **API**
 -------
 
+The examples below use ``M5.Lcd``, the built-in display object. Initialize it
+before running an example:
+
+.. code-block:: python
+
+    import M5
+
+    M5.begin()
+
+``M5.Display`` is an alias for ``M5.Lcd``. ``from M5 import *`` also exports
+the same object as ``Display`` and ``Lcd``. The off-screen ``canvas`` objects
+in the Canvas examples are separate drawing targets.
+
 .. class:: M5.Display
 
     .. method:: width()
@@ -259,7 +272,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.width()
+                M5.Lcd.width()
 
     .. method:: height()
 
@@ -276,7 +289,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.height()
+                M5.Lcd.height()
 
     .. method:: getRotation()
 
@@ -300,7 +313,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.getRotation()
+                M5.Lcd.getRotation()
 
     .. method:: getColorDepth()
 
@@ -317,7 +330,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.getColorDepth()
+                M5.Lcd.getColorDepth()
 
     .. method:: getCursor()
 
@@ -334,7 +347,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.getCursor()
+                M5.Lcd.getCursor()
 
     .. method:: setRotation(r)
 
@@ -358,7 +371,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setRotation(2)
+                M5.Lcd.setRotation(2)
 
     .. method:: setColorDepth(bpp)
 
@@ -376,7 +389,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setColorDepth(16)
+                M5.Lcd.setColorDepth(16)
 
     .. method:: setEpdMode(epd_mode)
 
@@ -398,7 +411,25 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
+                M5.Lcd.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
+
+    .. method:: getEpdMode()
+
+        Return the current EPD refresh mode as an integer.
+
+        :returns: 0 for a non-EPD display, or the current EPD mode:
+            1 (EPD_QUALITY), 2 (EPD_TEXT), 3 (EPD_FAST), or 4 (EPD_FASTEST).
+        :rtype: int
+
+        This is the refresh mode, not a Boolean flag. Use ``isEPD()`` to
+        check display capabilities and ``setEpdMode()`` to select a mode
+        on an EPD display.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                print(M5.Lcd.getEpdMode())
 
     .. method:: isEPD()
 
@@ -415,7 +446,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.isEPD()
+                M5.Lcd.isEPD()
 
     .. method:: setFont(font)
 
@@ -477,7 +508,71 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setFont(M5.Lcd.FONTS.DejaVu18)
+                M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu18)
+
+    .. method:: drawString(text, x, y, font=None)
+
+        Draw a string at the specified pixel coordinates using the current
+        text color, text size, and the current or supplied font.
+
+        :param str text: text to draw (required).
+        :param int x: horizontal coordinate (required).
+        :param int y: vertical coordinate (required).
+        :param font: optional built-in font object from ``M5.Lcd.FONTS``.
+            ``None`` uses the current font. A supplied font becomes the
+            current font for subsequent drawing operations.
+        :returns: ``None``. The Python wrapper does not return the drawn width.
+
+        To use a font file, load it with ``setFont()`` first and omit the
+        ``font`` argument. To measure a string, use ``textWidth()``.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                M5.Lcd.drawString("Hello", 10, 20)
+                M5.Lcd.drawString("World", 10, 50, M5.Lcd.FONTS.Montserrat18)
+
+    .. method:: textWidth(text, font=None)
+
+        Return the width of a string in pixels at the current text size.
+
+        :param str text: text to measure (required).
+        :param font: optional built-in font object from ``M5.Lcd.FONTS``.
+            ``None`` uses the current font. In the current Python wrapper,
+            supplying this argument also changes the current drawing font.
+        :returns: string width in pixels.
+        :rtype: int
+
+        To measure text with a font file, load it with ``setFont()`` first
+        and omit the ``font`` argument.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                width = M5.Lcd.textWidth("Hello")
+                print(width)
+
+    .. method:: fontHeight(font=None)
+
+        Return the font height in pixels at the current text size.
+
+        :param font: optional built-in font object from ``M5.Lcd.FONTS``.
+            ``None`` measures the current font. Supplying a font here does
+            not change the current drawing font.
+        :returns: font height in pixels.
+        :rtype: int
+
+        To measure a font file, load it with ``setFont()`` first and omit
+        the ``font`` argument.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                height = M5.Lcd.fontHeight()
+                print(height)
 
     .. method:: setTextColor(fgcolor, bgcolor)
 
@@ -494,7 +589,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setTextColor(0xFF0000, 0x000000)
+                M5.Lcd.setTextColor(0xFF0000, 0x000000)
 
     .. method:: setTextScroll(scroll)
 
@@ -510,7 +605,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setTextScroll(True)
+                M5.Lcd.setTextScroll(True)
 
     .. method:: setTextSize(size)
 
@@ -526,7 +621,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setTextSize(2)
+                M5.Lcd.setTextSize(2)
 
     .. method:: setCursor(x, y)
 
@@ -543,7 +638,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setCursor(10, 20)
+                M5.Lcd.setCursor(10, 20)
 
     .. method:: clear(color)
 
@@ -566,7 +661,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.clear(0xFFFFFF)
+                M5.Lcd.clear(0xFFFFFF)
 
     .. method:: fillScreen(color)
 
@@ -589,7 +684,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillScreen(0xFF0000)
+                M5.Lcd.fillScreen(0xFF0000)
 
     .. method:: drawPixel(x, y, color)
 
@@ -607,7 +702,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawPixel(50, 50, 0x00FF00)
+                M5.Lcd.drawPixel(50, 50, 0x00FF00)
 
     .. method:: drawCircle(x, y, r, color)
 
@@ -626,7 +721,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawCircle(60, 60, 20, 0x0000FF)
+                M5.Lcd.drawCircle(60, 60, 20, 0x0000FF)
 
     .. method:: fillCircle(x, y, r, color)
 
@@ -645,7 +740,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillCircle(60, 60, 20, 0x00FFFF)
+                M5.Lcd.fillCircle(60, 60, 20, 0x00FFFF)
 
     .. method:: drawEllipse(x, y, rx, ry, color)
 
@@ -665,7 +760,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawEllipse(80, 40, 30, 20, 0xFF00FF)
+                M5.Lcd.drawEllipse(80, 40, 30, 20, 0xFF00FF)
 
     .. method:: fillEllipse(x, y, rx, ry, color)
 
@@ -685,7 +780,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillEllipse(80, 40, 30, 20, 0x00FF00)
+                M5.Lcd.fillEllipse(80, 40, 30, 20, 0x00FF00)
 
     .. method:: drawLine(x0, y0, x1, y1, color)
 
@@ -705,7 +800,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawLine(10, 10, 100, 100, 0xFF0000)
+                M5.Lcd.drawLine(10, 10, 100, 100, 0xFF0000)
 
     .. method:: drawRect(x, y, w, h, color)
 
@@ -725,7 +820,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                display.drawRect(20, 20, 80, 50, 0x00FF00)
+                M5.Lcd.drawRect(20, 20, 80, 50, 0x00FF00)
 
     .. method:: fillRect(x, y, w, h, color)
 
@@ -745,7 +840,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillRect(20, 20, 80, 50, 0x0000FF)
+                M5.Lcd.fillRect(20, 20, 80, 50, 0x0000FF)
 
     .. method:: drawRoundRect(x, y, w, h, r, color)
 
@@ -766,7 +861,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
+                M5.Lcd.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
 
     .. method:: fillRoundRect(x, y, w, h, r, color)
 
@@ -787,7 +882,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
+                M5.Lcd.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
 
     .. method:: drawTriangle(x0, y0, x1, y1, x2, y2, color)
 
@@ -809,7 +904,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
+                M5.Lcd.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
 
     .. method:: fillTriangle(x0, y0, x1, y1, x2, y2, color)
 
@@ -831,7 +926,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
+                M5.Lcd.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
 
     .. method:: drawArc(x, y, r0, r1, angle0, angle1, color)
 
@@ -853,7 +948,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
+                M5.Lcd.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
 
     .. method:: fillArc(x, y, r0, r1, angle0, angle1, color)
 
@@ -875,7 +970,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
+                M5.Lcd.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
 
     .. method:: drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
 
@@ -899,7 +994,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
+                M5.Lcd.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
 
     .. method:: fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
 
@@ -923,7 +1018,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
+                M5.Lcd.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
 
     .. method:: drawQR(text, x, y, w, version)
 
@@ -943,7 +1038,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawQR("Hello", 0, 0, 200)
+                M5.Lcd.drawQR("Hello", 0, 0, 200)
 
     .. method:: drawPng(img, x, y, maxW, maxH, offX, offY, scaleX, scaleY)
 
@@ -967,16 +1062,16 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawPng("res/img/uiflow.png", 0, 0)
+                M5.Lcd.drawPng("res/img/uiflow.png", 0, 0)
 
         Example:
 
             .. code-block:: python
 
-                Display.drawPng("res/img/uiflow.png", 0, 0)
+                M5.Lcd.drawPng("res/img/uiflow.png", 0, 0)
                 img = open("res/img/uiflow.png", "b")
                 img.seek(0)
-                Display.drawPng(img.read(), 0, 100)
+                M5.Lcd.drawPng(img.read(), 0, 100)
                 img.close()
 
     .. method:: drawJpg(img, x, y, maxW, maxH, offX, offY)
@@ -999,16 +1094,16 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+                M5.Lcd.drawJpg("res/img/uiflow.jpg", 0, 0)
 
         Example:
 
             .. code-block:: python
 
-                Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+                M5.Lcd.drawJpg("res/img/uiflow.jpg", 0, 0)
                 img = open("res/img/uiflow.jpg", "b")
                 img.seek(0)
-                Display.drawJpg(img.read(), 0, 100)
+                M5.Lcd.drawJpg(img.read(), 0, 100)
                 img.close()
 
     .. method:: drawBmp(img, x, y, maxW, maxH, offX, offY)
@@ -1031,16 +1126,16 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+                M5.Lcd.drawBmp("res/img/uiflow.bmp", 0, 0)
 
         Example:
 
             .. code-block:: python
 
-                Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+                M5.Lcd.drawBmp("res/img/uiflow.bmp", 0, 0)
                 img = open("res/img/uiflow.bmp", "b")
                 img.seek(0)
-                Display.drawBmp(img.read(), 0, 100)
+                M5.Lcd.drawBmp(img.read(), 0, 100)
                 img.close()
 
     .. method:: drawImage(img, x, y, maxW, maxH, offX, offY)
@@ -1071,7 +1166,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
                 img = open("res/img/uiflow.jpg", "b")
                 img.seek(0)
-                Display.drawImage(img.read(), 0, 0)
+                M5.Lcd.drawImage(img.read(), 0, 0)
                 img.close()
 
     .. method:: drawRawBuf(buf, x, y, w, h, len, swap)
@@ -1094,7 +1189,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.drawRawBuf(raw_buf, 0, 0, 100, 100, len(raw_buf), swap=False)
+                M5.Lcd.drawRawBuf(raw_buf, 0, 0, 100, 100, len(raw_buf), swap=False)
 
         Example:
 
@@ -1106,7 +1201,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
                 for i in range(width * height):
                     raw_buf[2*i]   = (green565 >> 8) & 0xFF
                     raw_buf[2*i+1] = green565 & 0xFF
-                Display.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
+                M5.Lcd.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
 
     .. method:: print(text, color)
 
@@ -1123,7 +1218,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.print("Hello World", color=0xFF0000)
+                M5.Lcd.print("Hello World", color=0xFF0000)
 
     .. method:: printf(text)
 
@@ -1139,7 +1234,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.printf("Value: %d" % 100)
+                M5.Lcd.printf("Value: %d" % 100)
 
     .. method:: newCanvas(w, h, bpp, psram)
 
@@ -1161,13 +1256,13 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                w1 = Display.newCanvas(w=100, h=100, bpp=16)
+                w1 = M5.Lcd.newCanvas(w=100, h=100, bpp=16)
 
         Example:
 
             .. code-block:: python
 
-                w1 = Display.newCanvas(w=100, h=100, bpp=16)
+                w1 = M5.Lcd.newCanvas(w=100, h=100, bpp=16)
                 w1.drawImage("res/img/uiflow.jpg", 80, 0)
                 w1.push(30, 0)
 
@@ -1183,15 +1278,15 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.startWrite()
+                M5.Lcd.startWrite()
 
         Example:
 
             .. code-block:: python
 
-                Display.startWrite()
-                Display.drawPixel(10, 10, 0xFF0000)
-                Display.endWrite()
+                M5.Lcd.startWrite()
+                M5.Lcd.drawPixel(10, 10, 0xFF0000)
+                M5.Lcd.endWrite()
 
     .. method:: endWrite()
 
@@ -1205,7 +1300,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.endWrite()
+                M5.Lcd.endWrite()
 
 
 .. |S| unicode:: U+2705
