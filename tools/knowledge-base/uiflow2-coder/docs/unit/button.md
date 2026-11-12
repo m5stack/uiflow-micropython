@@ -1,7 +1,7 @@
 
 # Button Unit
 
-BUTTON is a single button Unit. The button status can be detected by the input pin by simply capturing the high/low electrical level. If the button is pressed, the signal level will be *high* if the button is released, the signal level will be *low*.
+BUTTON is a single button Unit. The button status can be detected by the input pin by simply capturing the high/low electrical level. With the default active-low configuration, pressing the button produces a low signal and releasing it produces a high signal.
 
 Support the following products:
 
@@ -60,13 +60,23 @@ if __name__ == "__main__":
 
 ## Constructors
 
-### `class ButtonUnit(pin_num, active_low, pullup_active)`
+### `class ButtonUnit(port, active_low=True, type=SWITCH)`
 
-    Initialize a Button instance with the specified pin, active-low configuration, and pull-up resistor state.
+    Initialize the button input. ButtonUnit is an alias of LIMITUnit.
 
-    - Parameter `pin_num`: The GPIO pin number connected to the button.
-    - Parameter `active_low` (`bool`): Determines whether the button signal is active-low. Default is True.
-    - Parameter `pullup_active` (`bool`): Specifies whether the internal pull-up resistor is enabled. Default is True.
+    - Parameter `port` (`tuple`): Grove GPIO tuple; the input uses the first pin, `port[0]`.
+    - Parameter `active_low` (`bool`): Whether a low signal means pressed. Default is True.
+    - Parameter `type` (`int`): `SWITCH` (default) or `COUNTER`, imported from `unit.limit`.
+
+    The input enables `Pin.PULL_UP` internally. There is no
+    `pullup_active` constructor argument.
+
+```python
+from unit import ButtonUnit
+from unit.limit import SWITCH, COUNTER
+
+button = ButtonUnit((33, 32), active_low=True, type=SWITCH)
+```
 
 ## Methods
 

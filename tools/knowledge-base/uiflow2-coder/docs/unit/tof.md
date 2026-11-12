@@ -52,10 +52,10 @@ if __name__ == "__main__":
 
 ### `class ToFUnit(i2c: I2C, address: int = 0x29, io_timeout_ms: int = 0)`
 
-    Create a DLight object.
+    Create a ToFUnit object backed by the VL53L0X driver.
 
     - Parameter `i2c`: the I2C object.
-    - Parameter `address`: the I2C address of the device. Default is 0x23.
+    - Parameter `address`: the I2C address of the device. Default is 0x29.
     - Parameter `io_timeout_ms`: the timeout of I2C communication. Default is 0ms.
 
 ## Methods
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     Get distance in centimeters.
 
-    - Returns: distance in millimeters.
+    - Returns: distance in centimeters.
 
 ### `ToFUnit.get_data_ready() -> bool`
 

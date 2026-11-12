@@ -50,9 +50,9 @@ Methods
 
     Play buzzer once.
 
-    :param int freq: The frequency of the vibration, range is 100 - 10000Hz.
+    :param int freq: The PWM frequency in Hz. Supported frequencies depend on the controller.
     :param int duty: The duty cycle of the vibration, range is 0 - 100.
-    :param int duration: The duration of the vibration, range is 0 - 10000ms.
+    :param int duration: The duration in milliseconds. The default is 50 ms.
 
     UIFLOW2:
 
@@ -63,7 +63,7 @@ Methods
 
     Set the frequency of the buzzer.
 
-    :param int freq: The frequency of the vibration, range is 100 - 10000Hz.
+    :param int freq: The PWM frequency in Hz. Supported frequencies depend on the controller.
 
     UIFLOW2:
 
@@ -90,7 +90,7 @@ Methods
         |turn_off.png|
 
 
-.. method:: BuzzerUnit.deint()
+.. method:: BuzzerUnit.deinit()
 
     Deinitialize the buzzer.
 

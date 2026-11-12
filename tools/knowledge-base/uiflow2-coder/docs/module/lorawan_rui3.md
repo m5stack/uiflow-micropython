@@ -175,7 +175,7 @@ Configure the device for OTAA (Over-The-Air Activation) mode.
 ```python
 lorawan_rui3.set_otaa_config(
     device_eui="2CF7F1C0420000AA",
-    app_key="2B7E151628AED2A6ABF7158809CF4F3C"
+    app_key="2B7E151628AED2A6ABF7158809CF4F3C",
     app_eui="80000000000000AA",
 )
 ```

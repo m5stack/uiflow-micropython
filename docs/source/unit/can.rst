@@ -90,48 +90,26 @@ API
 CANUnit
 ^^^^^^^
 
-.. class:: CANUnit(port, mode, baudrate=125000)
+.. class:: CANUnit(id=0, port=None, mode=CANUnit.NORMAL, prescaler=0, sjw=0, bs1=0, bs2=0, triple_sampling=False, quantum_resolution_hz=0, baudrate=0, verbose=False)
 
-    Create a CANUnit object.
+    Create a CANUnit object. Supply ``port=(rx_pin, tx_pin)`` for the connected
+    controller; the default ``None`` does not select pins automatically.
 
-    :param int id: The CAN ID.
-    :param tuple port: The port pins (tx, rx).
-    :param int mode: One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    :param int baudrate: The baudrate of CANUnit.
+    :param int id: The hardware CAN controller ID.
+    :param tuple port: The port pins in **(rx, tx)** order.
+    :param int mode: CANUnit.NORMAL, CANUnit.NO_ACKNOWLEDGE, or CANUnit.LISTEN_ONLY.
+    :param int prescaler: Nominal bit-time prescaler for manual timing.
+    :param int sjw: Resynchronisation jump width in time quanta.
+    :param int bs1: Time segment before the sample point, in time quanta.
+    :param int bs2: Time segment after the sample point, in time quanta.
+    :param bool triple_sampling: Enable triple sampling.
+    :param int quantum_resolution_hz: Time-quanta clock frequency in Hz.
+    :param int baudrate: Bus bitrate in bits per second. Use a nonzero value for automatic timing.
+    :param bool verbose: Print the selected configuration.
 
     UiFlow2 Code Block:
 
         |init.png|
-
-    MicroPython Code Block:
-
-        .. code-block:: python
-
-            from unit import CANUnit
-
-            can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, baudrate=125000)
-
-    .. note::
-
-        CANUnit class inherits CAN class. See :class:`hardware.CAN <hardware.CAN>` for more details.
-
-
-.. class:: CANUnit(tx, rx, mode, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)
-    :no-index:
-
-    Initialise the CAN bus with the given parameters.
-
-    :param int id: The CAN ID.
-    :param tuple port: The port pins (tx, rx).
-    :param int mode: One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    :param int prescaler: The value by which the CAN input clock is divided to generate the nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive for classic CAN.
-    :param int sjw: The resynchronisation jump width in units of time quanta for nominal bits; it can be a value between 1 and 4 inclusive for classic CAN.
-    :param int bs1: Defines the location of the sample point in units of the time quanta for nominal bits; it can be a value between 1 and 16 inclusive for classic CAN.
-    :param int bs2: Defines the location of the transmit point in units of the time quanta for nominal bits; it can be a value between 1 and 8 inclusive for classic CAN.
-    :param bool triple_sampling: is Enables triple sampling when the TWAI controller samples a bit.
-
-    UiFlow2 Code Block:
-
         |init1.png|
 
     MicroPython Code Block:
@@ -140,8 +118,20 @@ CANUnit
 
             from unit import CANUnit
 
-            can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, prescaler=128, sjw=3, bs1=16, bs2=8, triple_sampling=False)
+            # Automatic timing, 125 kbit/s. Choose pins for your controller.
+            can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, baudrate=125000)
+
+    Alternatively, configure manual timing instead of setting ``baudrate``:
+
+        .. code-block:: python
+
+            can = CANUnit(
+                id=0, port=(13, 14), mode=CANUnit.NORMAL,
+                prescaler=128, sjw=3, bs1=16, bs2=8,
+                triple_sampling=False,
+            )
 
     .. note::
 
-        CANUnit class inherits CAN class. See :class:`hardware.CAN <hardware.CAN>` for more details.
+        CANUnit inherits CAN. See :class:`hardware.CAN <hardware.CAN>`
+        for timing constraints and supported controller IDs on each target.

@@ -277,7 +277,7 @@ Chat with the LTE module.
                      is the command. For example, (("OK", "AT").
 
 ```python
-comlte_0.chat((("OK", "AT"), ("OK", "AT+CGDCONT=1,"IP","CMNET""), ("OK", "ATD*99#")))
+comlte_0.chat((("OK", "AT"), ("OK", 'AT+CGDCONT=1,"IP","CMNET"'), ("OK", "ATD*99#")))
 ```
 
 ### `chat2`

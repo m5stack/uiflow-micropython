@@ -19,18 +19,18 @@ Micropython Example::
     op180_0 = None
 
     def setup():
-    global op180_0
+        global op180_0
 
-    op180_0 = OPUnit((8, 9), type=1)
-    M5.begin()
-    Widgets.fillScreen(0x222222)
+        op180_0 = OPUnit((8, 9), type=1)
+        M5.begin()
+        Widgets.fillScreen(0x222222)
 
-    print(op180_0.get_value)
-    time.sleep(1)
-    print(op180_0.count_value)
-    time.sleep(1)
-    op180_0.count_reset()
-    time.sleep(1)
+        print(op180_0.get_value)
+        time.sleep(1)
+        print(op180_0.count_value)
+        time.sleep(1)
+        op180_0.count_reset()
+        time.sleep(1)
 
 
 UIFLOW2 Example:

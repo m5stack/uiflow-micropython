@@ -59,15 +59,15 @@ if __name__ == "__main__":
 
     Play buzzer once.
 
-    - Parameter `freq` (`int`): The frequency of the vibration, range is 100 - 10000Hz.
+    - Parameter `freq` (`int`): The PWM frequency in Hz. Supported frequencies depend on the controller.
     - Parameter `duty` (`int`): The duty cycle of the vibration, range is 0 - 100.
-    - Parameter `duration` (`int`): The duration of the vibration, range is 0 - 10000ms.
+    - Parameter `duration` (`int`): The duration in milliseconds. The default is 50 ms.
 
 ### `BuzzerUnit.set_freq(freq: int)`
 
     Set the frequency of the buzzer.
 
-    - Parameter `freq` (`int`): The frequency of the vibration, range is 100 - 10000Hz.
+    - Parameter `freq` (`int`): The PWM frequency in Hz. Supported frequencies depend on the controller.
 
 ### `BuzzerUnit.set_duty(duty: int)`
 
@@ -79,6 +79,6 @@ if __name__ == "__main__":
 
     Turn off the buzzer.
 
-### `BuzzerUnit.deint()`
+### `BuzzerUnit.deinit()`
 
     Deinitialize the buzzer.

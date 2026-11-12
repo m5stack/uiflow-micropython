@@ -33,10 +33,10 @@ Constructors
 
 .. class:: ToFUnit(i2c: I2C, address: int = 0x29, io_timeout_ms: int = 0)
 
-    Create a DLight object.
+    Create a ToFUnit object backed by the VL53L0X driver.
 
     :param i2c: the I2C object.
-    :param address: the I2C address of the device. Default is 0x23.
+    :param address: the I2C address of the device. Default is 0x29.
     :param io_timeout_ms: the timeout of I2C communication. Default is 0ms.
 
     UIFLOW2:
@@ -53,7 +53,7 @@ Methods
 
     Get distance in centimeters.
 
-    :return: distance in millimeters.
+    :return: distance in centimeters.
 
     UIFLOW2:
 

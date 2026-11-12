@@ -65,14 +65,16 @@ if __name__ == "__main__":
 
     Gets the relay switch status.
 
-### `RealyUnit.on()`
+### `RelayUnit.on()`
 
-   turn on the relay.
+    Turn on the relay.
 
-### `RealyUnit.off()`
+### `RelayUnit.off()`
 
-   Turn off the relay.
+    Turn off the relay.
 
-### `RealyUnit.set_status()`
+### `RelayUnit.set_status(x: bool)`
 
-   Set the relay status (True or false).
+    Set the relay status.
+
+    - Parameter `x` (`bool`): `True` turns the relay on; `False` turns it off.

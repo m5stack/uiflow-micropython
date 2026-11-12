@@ -279,7 +279,7 @@ if __name__ == "__main__":
 
     - Returns: -1 if the command was unsuccessful, otherwise the permission of the user.
 
-### `FingerUnit.get_user_characteristics(id: int) -> Union[bytes, None]`
+### `FingerUnit.get_user_characteristic(id: int) -> Union[bytes, None]`
 
     Get the characteristics of the user with the specified id.
 

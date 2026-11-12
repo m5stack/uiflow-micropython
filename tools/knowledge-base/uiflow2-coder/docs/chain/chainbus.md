@@ -39,7 +39,7 @@ Send custom command to device.
 - Return type: bytes
 
 ```python
-chainbus_0.send(1, 0x20, b"ÿ", 3000)
+chainbus_0.send(1, 0x20, bytes((0x00, 0x01, 0xFF, 0x00, 0x00)), 3000)
 ```
 
 ### `get_device_num`

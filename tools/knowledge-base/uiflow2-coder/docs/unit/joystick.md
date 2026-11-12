@@ -119,7 +119,7 @@ if __name__ == "__main__":
 
 ## Constructors
 
-### `class JoystickUnit(i2c, address: int  list  tuple = 0x38)`
+### `class JoystickUnit(i2c, address: int  list  tuple = 0x52)`
 
     Create a new instance of the JoystickUnit class.
 

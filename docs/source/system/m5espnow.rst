@@ -36,7 +36,7 @@ ESPNOW example::
     espnow_0.set_irq_callback(espnow_recv_callback)
     espnow_0.set_add_peer('xxxxxxxxxxxx', 1, 0, False)
 
-    while True::
+    while True:
         espnow_0.send_data(1, random.randint(1000000, 9999999))
         time.sleep(2)
 

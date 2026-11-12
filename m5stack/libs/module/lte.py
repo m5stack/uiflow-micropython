@@ -129,7 +129,7 @@ class LTEModule:
 
             .. code-block:: python
 
-                comlte_0.chat((("OK", "AT"), ("OK", "AT+CGDCONT=1,\"IP\",\"CMNET\""), ("OK", "ATD*99#")))
+                comlte_0.chat((("OK", "AT"), ("OK", 'AT+CGDCONT=1,"IP","CMNET"'), ("OK", "ATD*99#")))
         """
         output = bytearray()
 

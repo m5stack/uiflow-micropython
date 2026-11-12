@@ -79,14 +79,14 @@ if __name__ == "__main__":
 
     Get the gain multiple of the data.
 
-### `ADCUnit.operating_mode()`
+### `ADCUnit.set_operating_mode(mode)`
 
-    Set working mode (single read or continuous read)
+    Set working mode: `0` for continuous conversion or `1` for single conversion.
 
-### `ADCUnit.data_rate()`
+### `ADCUnit.set_data_rate(data_rate)`
 
-    Set the data acquisition rate.
+    Set the data acquisition rate in samples per second: `8`, `16`, `32`, or `128`.
 
-### `ADCUnit.gain()`
+### `ADCUnit.set_gain(gain)`
 
-    Set the gain multiple for reading data.
+    Set the gain multiple for reading data: `1`, `2`, `4`, or `8`.

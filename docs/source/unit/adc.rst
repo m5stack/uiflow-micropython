@@ -93,27 +93,27 @@ Methods
         |get_gain.png|
 
 
-.. method:: ADCUnit.operating_mode()
+.. method:: ADCUnit.set_operating_mode(mode)
 
-    Set working mode (single read or continuous read)
+    Set working mode: ``0`` for continuous conversion or ``1`` for single conversion.
 
     UIFLOW2:
 
         |set_operating_mode.png|
 
 
-.. method:: ADCUnit.data_rate()
+.. method:: ADCUnit.set_data_rate(data_rate)
 
-    Set the data acquisition rate.
+    Set the data acquisition rate in samples per second: ``8``, ``16``, ``32``, or ``128``.
 
     UIFLOW2:
 
         |set_data_rate.png|
 
 
-.. method:: ADCUnit.gain()
+.. method:: ADCUnit.set_gain(gain)
 
-    Set the gain multiple for reading data.
+    Set the gain multiple for reading data: ``1``, ``2``, ``4``, or ``8``.
 
     UIFLOW2:
 

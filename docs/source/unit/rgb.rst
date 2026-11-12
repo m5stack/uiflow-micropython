@@ -12,10 +12,10 @@ Micropython Example::
 
     import M5
     from M5 import *
-    from unit import *
+    from unit import RGBUnit
 
     M5.begin()
-    rgb_0 = RGB((36, 26), 3)
+    rgb_0 = RGBUnit((36, 26), 3)
     Widgets.fillScreen(0x222222)
 
     rgb_0.set_brightness(80)
@@ -33,15 +33,15 @@ UIFLOW2 Example:
     |rgb_core_example.m5f2|
 
 
-class RGB
----------
+class RGBUnit
+-------------
 
 Constructors
 ------------
 
-.. class:: RGB(port, number)
+.. class:: RGBUnit(port, number)
 
-    Create an RGB object.
+    Create an RGBUnit object.
 
     parameter is:
         - ``port`` is the pins number of the port
@@ -55,7 +55,7 @@ Constructors
 Methods
 -------
 
-.. method:: RGB.set_brightness(br: int)
+.. method:: RGBUnit.set_brightness(br: int)
 
     This method is used to set the brightness of RGB lamp beads, and the setting range is 0-100.
 
@@ -64,7 +64,7 @@ Methods
         |set_brightness.png|
 
 
-.. method:: RGB.fill_color(c: int)
+.. method:: RGBUnit.fill_color(c: int)
 
     This method is used to set the color of all RGB lamp beads, and the input value is 3-byte RGB888.
 
@@ -73,7 +73,7 @@ Methods
         |fill_color.png|
 
 
-.. method:: RGB.set_color(i, c: int)
+.. method:: RGBUnit.set_color(i, c: int)
 
     This method is used to set the specified RGB lamp bead color. The input value is the lamp bead index and 3-byte RGB888.
 

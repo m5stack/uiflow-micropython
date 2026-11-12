@@ -383,10 +383,10 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
         Set the EPD mode for the display.
 
         :param int epd_mode: desired EPD mode
-            - 0: M5.Lcd.EPDMode.EPD_QUALITY
-            - 1: M5.Lcd.EPDMode.EPD_TEXT
-            - 2: M5.Lcd.EPDMode.EPD_FAST
-            - 3: M5.Lcd.EPDMode.EPD_FASTEST
+            - 1: M5.Lcd.EPDMode.EPD_QUALITY
+            - 2: M5.Lcd.EPDMode.EPD_TEXT
+            - 3: M5.Lcd.EPDMode.EPD_FAST
+            - 4: M5.Lcd.EPDMode.EPD_FASTEST
 
         Notes: Only applicable to devices with EPD capabilities.
 
@@ -398,7 +398,7 @@ sprites, gauges, or animation frames, prefer the canvas-and-single-``push()`` pa
 
             .. code-block:: python
 
-                Display.setEpdMode(2)
+                Display.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
 
     .. method:: isEPD()
 

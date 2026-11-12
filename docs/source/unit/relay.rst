@@ -55,27 +55,29 @@ Methods
         |get_status.png|
 
 
-.. method:: RealyUnit.on()
+.. method:: RelayUnit.on()
 
-   turn on the relay.
+    Turn on the relay.
 
     UIFLOW2:
 
         |on.png|
 
 
-.. method:: RealyUnit.off()
+.. method:: RelayUnit.off()
 
-   Turn off the relay.
+    Turn off the relay.
 
     UIFLOW2:
 
         |off.png|
 
 
-.. method:: RealyUnit.set_status()
+.. method:: RelayUnit.set_status(x: bool)
 
-   Set the relay status (True or false).
+    Set the relay status.
+
+    :param bool x: ``True`` turns the relay on; ``False`` turns it off.
 
     UIFLOW2:
 

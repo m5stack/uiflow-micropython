@@ -177,37 +177,37 @@ Example output:
 
 #### CANUnit
 
-### `class CANUnit(port, mode, baudrate=125000)`
+### `class CANUnit(id=0, port=None, mode=CANUnit.NORMAL, prescaler=0, sjw=0, bs1=0, bs2=0, triple_sampling=False, quantum_resolution_hz=0, baudrate=0, verbose=False)`
 
-    Create a CANUnit object.
+    Create a CANUnit object. Supply `port=(rx_pin, tx_pin)` for the connected
+    controller; the default `None` does not select pins automatically.
 
-    - Parameter `id` (`int`): The CAN ID.
-    - Parameter `port` (`tuple`): The port pins (tx, rx).
-    - Parameter `mode` (`int`): One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    - Parameter `baudrate` (`int`): The baudrate of CANUnit.
+    - Parameter `id` (`int`): The hardware CAN controller ID.
+    - Parameter `port` (`tuple`): The port pins in **(rx, tx)** order.
+    - Parameter `mode` (`int`): CANUnit.NORMAL, CANUnit.NO_ACKNOWLEDGE, or CANUnit.LISTEN_ONLY.
+    - Parameter `prescaler` (`int`): Nominal bit-time prescaler for manual timing.
+    - Parameter `sjw` (`int`): Resynchronisation jump width in time quanta.
+    - Parameter `bs1` (`int`): Time segment before the sample point, in time quanta.
+    - Parameter `bs2` (`int`): Time segment after the sample point, in time quanta.
+    - Parameter `triple_sampling` (`bool`): Enable triple sampling.
+    - Parameter `quantum_resolution_hz` (`int`): Time-quanta clock frequency in Hz.
+    - Parameter `baudrate` (`int`): Bus bitrate in bits per second. Use a nonzero value for automatic timing.
+    - Parameter `verbose` (`bool`): Print the selected configuration.
 
 ```python
 from unit import CANUnit
 
+# Automatic timing, 125 kbit/s. Choose pins for your controller.
 can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, baudrate=125000)
 ```
-> Note: CANUnit class inherits CAN class. See `hardware.CAN <hardware.CAN>` for more details.
-### `class CANUnit(tx, rx, mode, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
-
-    Initialise the CAN bus with the given parameters.
-
-    - Parameter `id` (`int`): The CAN ID.
-    - Parameter `port` (`tuple`): The port pins (tx, rx).
-    - Parameter `mode` (`int`): One of CAN.NORMAL, CAN.NO_ACKNOWLEDGE, CAN.LISTEN_ONLY.
-    - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive for classic CAN.
-    - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits; it can be a value between 1 and 4 inclusive for classic CAN.
-    - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits; it can be a value between 1 and 16 inclusive for classic CAN.
-    - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits; it can be a value between 1 and 8 inclusive for classic CAN.
-    - Parameter `triple_sampling` (`bool`): is Enables triple sampling when the TWAI controller samples a bit.
+    Alternatively, configure manual timing instead of setting `baudrate`:
 
 ```python
-from unit import CANUnit
-
-can = CANUnit(id=0, port=(13, 14), mode=CANUnit.NORMAL, prescaler=128, sjw=3, bs1=16, bs2=8, triple_sampling=False)
+can = CANUnit(
+    id=0, port=(13, 14), mode=CANUnit.NORMAL,
+    prescaler=128, sjw=3, bs1=16, bs2=8,
+    triple_sampling=False,
+)
 ```
-> Note: CANUnit class inherits CAN class. See `hardware.CAN <hardware.CAN>` for more details.
+> Note: CANUnit inherits CAN. See `hardware.CAN <hardware.CAN>`
+> for timing constraints and supported controller IDs on each target.

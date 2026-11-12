@@ -251,7 +251,7 @@ chart_0.toggle_flag(lv.obj.FLAG.HIDDEN)
 ```python
 def chart_0_value_changed_event(event_struct):
     global page0, button0
-    print("value changed)
+    print("value changed")
 
 def chart_0_event_handler(event_struct):
     global page0, button0

@@ -332,15 +332,15 @@ Display.setColorDepth(16)
         Set the EPD mode for the display.
 
         - Parameter `epd_mode` (`int`): desired EPD mode
-            - 0: M5.Lcd.EPDMode.EPD_QUALITY
-            - 1: M5.Lcd.EPDMode.EPD_TEXT
-            - 2: M5.Lcd.EPDMode.EPD_FAST
-            - 3: M5.Lcd.EPDMode.EPD_FASTEST
+            - 1: M5.Lcd.EPDMode.EPD_QUALITY
+            - 2: M5.Lcd.EPDMode.EPD_TEXT
+            - 3: M5.Lcd.EPDMode.EPD_FAST
+            - 4: M5.Lcd.EPDMode.EPD_FASTEST
 
         Notes: Only applicable to devices with EPD capabilities.
 
 ```python
-Display.setEpdMode(2)
+Display.setEpdMode(M5.Lcd.EPDMode.EPD_FAST)
 ```
 ### `isEPD()`
 

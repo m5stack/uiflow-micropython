@@ -523,7 +523,7 @@ class ChainBus:
 
             .. code-block:: python
 
-                chainbus_0.send(1, 0x20, b"\x00\x01\xFF\x00\x00", 3000)
+                chainbus_0.send(1, 0x20, bytes((0x00, 0x01, 0xFF, 0x00, 0x00)), 3000)
         """
         for _ in range(3):
             self.chainll._send_packet(device_id, cmd, payload)

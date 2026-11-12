@@ -28,7 +28,7 @@ Micropython Example::
     servo = Servos8Hat(i2c0, 0x36)
     servo.power_on()
     for i in range(1, 9):
-    servo.write_servo_angle(i, 90)
+        servo.write_servo_angle(i, 90)
     servo.power_off()
 
 
