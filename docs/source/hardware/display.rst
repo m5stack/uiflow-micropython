@@ -305,6 +305,10 @@ in the Canvas examples are separate drawing targets.
         - 2: 180° rotation
         - 3: 270° rotation
 
+        The value can also be 4~7 for M5GFX mirrored orientations; see
+        ``setRotation()`` below. Display dimensions alone do not identify
+        whether an orientation is mirrored.
+
         UiFlow2 Code Block:
 
             |getrotation.png|
@@ -360,6 +364,14 @@ in the Canvas examples are separate drawing targets.
             - 3: 270° rotation
 
         .. note::
+
+            The Python binding does not reject values outside 0~3.
+            Current M5GFX LCD/framebuffer drivers use the low three bits:
+            4~7 select mirrored orientations, and other integers wrap to
+            0~7 (for example, 8 becomes 0). A value of 4 can be returned by
+            ``getRotation()`` while width and height match rotation 0.
+            Use 0~3 for ordinary rotation and validate application input
+            before calling this method.
 
             See :ref:`display-rotation` for board-specific dimensions and migration from older examples. Set the desired rotation before initializing M5UI/LVGL.
 

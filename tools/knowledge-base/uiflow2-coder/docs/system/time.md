@@ -76,11 +76,14 @@ if __name__ == "__main__":
 
 ### `timezone([tz])`
 
-    When no parameters are passed in, get the current time zone and return the
-    string of the time zone.
+    With no argument, or with `tz=None`, return the current `TZ` string.
+    Return `None` if no time zone has been configured in the current runtime.
+    A time zone restored from saved settings also counts as configured.
 
     Pass in a time zone string to set the time zone. The value of `tz` can be
     found at this [link](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+    Setting the time zone returns `None` and saves the setting for later boots.
+    Passing `None` only reads the setting; it does not clear it.
 
 ### `gmtime([secs])`
               localtime([secs])

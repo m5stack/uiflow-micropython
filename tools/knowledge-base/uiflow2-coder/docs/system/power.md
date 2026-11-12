@@ -139,6 +139,10 @@
 
 ## Constants
 
+Access these masks through `M5.Power.PORT`. Physical port support depends
+on the controller. `PORT.HAT` and `PORT.ALL` are not exported by UiFlow2;
+do not use them as masks.
+
 ### `PORT.A`
 
     Port A.
@@ -162,11 +166,3 @@
 ### `PORT.USB`
 
     USB Port.
-
-### `PORT.HAT`
-
-    HAT Port.
-
-### `PORT.ALL`
-
-    All Ports.

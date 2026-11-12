@@ -255,42 +255,15 @@ print(uart1.txdone())
 
             - `UART.IRQ_RX` interrupt after each received character.
 
-            - `UART.IRQ_TXIDLE` interrupt after or while the last character(s) of a message are or have been sent.
-
             - `UART.IRQ_BREAK` interrupt when a break state is detected at RX
 
         - Parameter `hard` (`bool`): if true a hardware interrupt is used.  This reduces the delay between the pin change and the handler being called. Hard interrupt handlers may not allocate memory; see `isr_rules`.
 
         - Returns: Returns an irq object.
 
-        Due to limitations of the hardware not all trigger events are available on all ports.
-
-            Port / Trigger IRQ_RXIDLE IRQ_RX IRQ_TXIDLE IRQ_BREAK
-            CC3200                      yes
-            ESP32            yes        yes                yes
-            MIMXRT           yes                yes
-            NRF                         yes     yes
-            RENESAS-RA       yes        yes
-            RP2              yes                yes        yes
-            SAMD             yes        yes     yes
-            STM32            yes        yes
-
-> Note: - The ESP32 port does not support the option hard=True.
->
-> - The rp2 port's UART.IRQ_TXIDLE is only triggered when the message
->   is longer than 5 characters and the trigger happens when still 5 characters
->   are to be sent.
->
-> - The rp2 port's UART.IRQ_BREAK needs receiving valid characters for triggering
->   again.
->
-> - The SAMD port's UART.IRQ_TXIDLE is triggered while the last character is sent.
->
-> - On STM32F4xx MCU's, using the trigger UART.IRQ_RXIDLE the handler will be called once
->   after the first character and then after the end of the message, when the line is
->   idle.
-        Availability: cc3200, esp32, mimxrt, nrf, renesas-ra, rp2, samd, stm32.
-
+> Note: UiFlow2 uses the ESP32 port. Its UART IRQ sources are
+> `IRQ_RXIDLE`, `IRQ_RX`, and `IRQ_BREAK`; `IRQ_TXIDLE`
+> is not exported. The option `hard=True` is not supported.
 ### `UART.RTS`
 ### `UART.CTS`
 
@@ -306,7 +279,6 @@ print(uart1.txdone())
 
 ### `UART.IRQ_RXIDLE`
 ### `UART.IRQ_RX`
-### `UART.IRQ_TXIDLE`
 ### `UART.IRQ_BREAK`
 
-        IRQ trigger sources.
+        IRQ trigger sources supported by UiFlow2's ESP32 port.

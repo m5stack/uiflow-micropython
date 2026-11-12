@@ -248,6 +248,10 @@ class PORT
 Constants
 ---------
 
+Access these masks through ``M5.Power.PORT``. Physical port support depends
+on the controller. ``PORT.HAT`` and ``PORT.ALL`` are not exported by UiFlow2;
+do not use them as masks.
+
 .. data:: PORT.A
 
     Port A.
@@ -276,13 +280,3 @@ Constants
 .. data:: PORT.USB
 
     USB Port.
-
-
-.. data:: PORT.HAT
-
-    HAT Port.
-
-
-.. data:: PORT.ALL
-
-    All Ports.

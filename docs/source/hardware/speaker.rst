@@ -216,6 +216,11 @@ Methods
 
     Set the master volume level for audio output. ``volume`` accepts volume levels from 0 to 255.
 
+    The 0~255 range is not checked or clamped: the underlying volume is an
+    unsigned 8-bit value. For example, ``setVolume(300)`` stores 44,
+    and ``setVolume(-1)`` stores 255. Validate the range before calling;
+    this differs from ``setVolumePercentage()``, which clamps its ratio.
+
     UIFLOW2:
 
         |setVolume.png|
