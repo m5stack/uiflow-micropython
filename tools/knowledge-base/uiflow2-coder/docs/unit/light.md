@@ -43,27 +43,29 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class Light
+## class LightUnit
 
 ## Constructors
 
-### `class Light(IO1,IO2)`
+Import with `from unit import LightUnit`.
 
-    Create a Light object.
+### `class LightUnit(port)`
+
+    Create a LightUnit object.
 
     The parameters are:
-        - `IO1,IO2` Define digital and analog output pins.
+        - `port` is an (analog_pin, digital_pin) tuple.
 
 ## Methods
 
-### `Light.get_digital_value()`
+### `LightUnit.get_digital_value()`
 
     Define digital and analog output pins.
 
-### `Light.get_analog_value()`
+### `LightUnit.get_analog_value()`
 
     Gets the analog (returns 0-65535).
 
-### `Light.get_ohm()`
+### `LightUnit.get_ohm()`
 
     Gets the resistance value (returns an integer).

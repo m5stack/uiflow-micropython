@@ -18,11 +18,11 @@ Micropython Example::
     import M5
     from M5 import *
     from hardware import *
-    from unit import WEIGHT_I2CUnit
+    from unit import WeightI2CUnit
     import time
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    weight_i2c0 = WEIGHT_I2CUnit(i2c0)
+    weight_i2c_0 = WeightI2CUnit(i2c0)
     print(weight_i2c_0.get_adc_raw)
     print(weight_i2c_0.get_weight_float)
     time.sleep_ms(100)
@@ -37,17 +37,19 @@ UIFLOW2 Example:
     |weight-i2c-demo.m5f2|
 
 
-class WEIGHT_I2CUnit
---------------------
+class WeightI2CUnit
+-------------------
 
 Constructors
 ---------------------------
 
-.. class:: WEIGHT_I2CUnit(i2c0, 0x26)
+Import with ``from unit import WeightI2CUnit``.
 
-    Create an WEIGHT_I2CUnit object.
+.. class:: WeightI2CUnit(i2c, address=0x26)
 
-    - ``I2C0`` is I2C Port.
+    Create an WeightI2CUnit object.
+
+    - ``i2c`` is an initialized I2C bus or PAHUB port.
     - ``0x26`` is default I2C address
 
 
@@ -59,7 +61,7 @@ Constructors
 Methods
 ----------------------
 
-.. method:: WEIGHT_I2CUnit.get_adc_raw
+.. method:: WeightI2CUnit.get_adc_raw
 
 
     Gets the raw adc value.
@@ -68,7 +70,7 @@ Methods
 
         |get_adc_raw.png|
 
-.. method:: WEIGHT_I2CUnit.get_weight_float
+.. method:: WeightI2CUnit.get_weight_float
 
 
     Gets the weight in grams float value.
@@ -77,7 +79,7 @@ Methods
 
         |get_weight_float.png|
 
-.. method:: WEIGHT_I2CUnit.get_weight_int
+.. method:: WeightI2CUnit.get_weight_int
 
 
     Gets the weight in grams int value.
@@ -86,7 +88,7 @@ Methods
 
         |get_weight_int.png|
 
-.. method:: WEIGHT_I2CUnit.get_weight_str
+.. method:: WeightI2CUnit.get_weight_str
 
 
     Gets the weight in grams string value.
@@ -95,7 +97,7 @@ Methods
 
         |get_weight_str.png|
 
-.. method:: WEIGHT_I2CUnit.set_reset_offset()
+.. method:: WeightI2CUnit.set_reset_offset()
 
     Reset the offset value(Tare).
 
@@ -104,7 +106,7 @@ Methods
 
         |set_reset_offset.png|
 
-.. method:: WEIGHT_I2CUnit.set_calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)
+.. method:: WeightI2CUnit.set_calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)
 
 
     Calibrates the Load sensor.
@@ -125,7 +127,7 @@ Methods
 
         |set_calibration.png|
 
-.. method:: WEIGHT_I2CUnit.set_lowpass_filter(Enable)
+.. method:: WeightI2CUnit.set_lowpass_filter(Enable)
 
     Enable or disable the low pass filter.
 
@@ -135,7 +137,7 @@ Methods
         |set_lowpass_filter.png|
 
 
-.. method:: WEIGHT_I2CUnit.get_lowpass_filter
+.. method:: WeightI2CUnit.get_lowpass_filter
 
     Returns the status of the low pass filter (enable or disable).
 
@@ -144,7 +146,7 @@ Methods
 
         |get_lowpass_filter.png|
 
-.. method:: WEIGHT_I2CUnit.set_average_filter_level(level)
+.. method:: WeightI2CUnit.set_average_filter_level(level)
 
     Sets the level of the average filter.
 
@@ -154,7 +156,7 @@ Methods
 
         |set_average_filter_level.png|
 
-.. method:: WEIGHT_I2CUnit.get_average_filter_level
+.. method:: WeightI2CUnit.get_average_filter_level
 
     Returns the level of the average filter.
 
@@ -162,7 +164,7 @@ Methods
 
         |get_average_filter_level.png|
 
-.. method:: WEIGHT_I2CUnit.set_ema_filter_alpha(alpha)
+.. method:: WeightI2CUnit.set_ema_filter_alpha(alpha)
 
     Sets the alpha value for the EMA filter.
 
@@ -174,7 +176,7 @@ Methods
 
         |set_ema_filter_alpha.png|
 
-.. method:: WEIGHT_I2CUnit.get_ema_filter_alpha
+.. method:: WeightI2CUnit.get_ema_filter_alpha
 
     Returns the alpha value for the EMA filter.
 
@@ -182,7 +184,7 @@ Methods
 
         |get_ema_filter_alpha.png|
 
-.. method:: WEIGHT_I2CUnit.set_i2c_address(address)
+.. method:: WeightI2CUnit.set_i2c_address(address)
 
     The i2c address can be changed by the user and this address should be between 0x01 and 0x7F.
 
@@ -192,7 +194,7 @@ Methods
 
         |set_i2c_address.png|
 
-.. method:: WEIGHT_I2CUnit.get_device_spec(info)
+.. method:: WeightI2CUnit.get_device_spec(info)
 
     Get the firmware version details and I2c address of this device.
 

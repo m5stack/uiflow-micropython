@@ -25,15 +25,17 @@ UIFLOW2 Example:
 
     |weight_cores3_example.m5f2|
 
-class WEIGHTUnit
+class WeightUnit
 ----------------
 
 Constructors
 ------------
 
-.. class:: WEIGHTUnit(port)
+Import with ``from unit import WeightUnit``.
 
-    Initialize the WEIGHTUnit with specified port pins.
+.. class:: WeightUnit(port)
+
+    Initialize the WeightUnit with specified port pins.
 
     :param  port: A tuple containing data and clock pin numbers.
 
@@ -45,7 +47,7 @@ Constructors
 Methods
 -------
 
-.. method:: WEIGHTUnit.get_raw_weight()
+.. method:: WeightUnit.get_raw_weight()
 
     Read the raw weight value from the HX711.
 
@@ -54,7 +56,7 @@ Methods
 
         |get_raw_weight.png|
 
-.. method:: WEIGHTUnit.get_scale_weight()
+.. method:: WeightUnit.get_scale_weight()
 
     Get the scaled weight value based on calibration.
 
@@ -63,7 +65,7 @@ Methods
 
         |get_scale_weight.png|
 
-.. method:: WEIGHTUnit.set_tare()
+.. method:: WeightUnit.set_tare()
 
     Set the tare weight to zero out the scale.
 
@@ -72,7 +74,7 @@ Methods
 
         |set_tare.png|
 
-.. method:: WEIGHTUnit.set_calibrate_scale(weight)
+.. method:: WeightUnit.set_calibrate_scale(weight)
 
     Calibrate the scale with a known weight.
 
@@ -82,7 +84,7 @@ Methods
 
         |set_calibrate_scale.png|
 
-.. method:: WEIGHTUnit.is_ready_wait()
+.. method:: WeightUnit.is_ready_wait()
 
     Check if the HX711 is ready to provide data.
 
@@ -91,7 +93,7 @@ Methods
 
         |is_ready_wait.png|
 
-.. method:: WEIGHTUnit.set_channel(chan)
+.. method:: WeightUnit.set_channel(chan)
 
     Set the channel for the HX711.
 

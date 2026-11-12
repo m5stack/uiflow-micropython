@@ -25,18 +25,20 @@ UIFLOW2 Example:
     |light_core_example.m5f2|
 
 
-class Light
------------
+class LightUnit
+---------------
 
 Constructors
 ------------
 
-.. class:: Light(IO1,IO2)
+Import with ``from unit import LightUnit``.
 
-    Create a Light object.
+.. class:: LightUnit(port)
+
+    Create a LightUnit object.
 
     The parameters are:
-        - ``IO1,IO2`` Define digital and analog output pins.
+        - ``port`` is an (analog_pin, digital_pin) tuple.
 
     UIFLOW2:
 
@@ -46,7 +48,7 @@ Constructors
 Methods
 -------
 
-.. method:: Light.get_digital_value()
+.. method:: LightUnit.get_digital_value()
 
     Define digital and analog output pins.
 
@@ -55,7 +57,7 @@ Methods
         |get_digital_value.png|
 
 
-.. method:: Light.get_analog_value()
+.. method:: LightUnit.get_analog_value()
 
     Gets the analog (returns 0-65535).
 
@@ -64,7 +66,7 @@ Methods
         |get_analog_value.png|
 
 
-.. method:: Light.get_ohm()
+.. method:: LightUnit.get_ohm()
 
     Gets the resistance value (returns an integer).
 

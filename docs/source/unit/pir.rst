@@ -25,18 +25,20 @@ UIFLOW2 Example:
     |pir_core_example.m5f2|
 
 
-class PIR
----------
+class PIRUnit
+-------------
 
 Constructors
 ------------
 
-.. class:: PIR(IO1,IO2)
+Import with ``from unit import PIRUnit``.
 
-    Create a PIR object.
+.. class:: PIRUnit(port)
+
+    Create a PIRUnit object.
 
     The parameters are:
-        - ``IO1,IO2`` I2C pin.
+        - ``port`` is a pin tuple; port[0] is the digital input.
 
     UIFLOW2:
 
@@ -46,7 +48,7 @@ Constructors
 Methods
 -------
 
-.. method:: PIR.get_status()
+.. method:: PIRUnit.get_status()
 
     Get detection status.
 
@@ -55,7 +57,7 @@ Methods
         |get_status.png|
 
 
-.. method:: PIR.enable_irq()
+.. method:: PIRUnit.enable_irq()
 
    Enable Human detection function.
 
@@ -64,7 +66,7 @@ Methods
         |enable_irq.png|
 
 
-.. method:: PIR.disable_irq()
+.. method:: PIRUnit.disable_irq()
 
     Disable Human detection function.
 
@@ -73,7 +75,7 @@ Methods
         |disable_irq.png|
 
 
-.. method:: PIR.set_callback()
+.. method:: PIRUnit.set_callback()
 
     Polling method, placed in the loop function, constantly check.
 

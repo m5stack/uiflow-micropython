@@ -24,9 +24,9 @@ Micropython Example::
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
     kmeter_iso_0 = KMeterISOUnit(i2c0, 0x66)
     while True:
-        if kmeteriso_0.is_ready():
-            print(kmeteriso_0.get_thermocouple_temperature(0))
-            print(kmeteriso_0.get_internal_temperature(0))
+        if kmeter_iso_0.is_ready():
+            print(kmeter_iso_0.get_thermocouple_temperature(0))
+            print(kmeter_iso_0.get_internal_temperature(0))
         time.sleep_ms(250)
 
 
@@ -40,13 +40,15 @@ UIFLOW2 Example:
     |cores3_kmeteriso_example.m5f2|
 
 
-class KmeterISOUnit
+class KMeterISOUnit
 -------------------
 
 Constructors
 ------------
 
-.. class:: KmeterISOUnit(i2c, address=0x66)
+Import with ``from unit import KMeterISOUnit``.
+
+.. class:: KMeterISOUnit(i2c, address=0x66)
 
     :param object i2c: the I2C object.
     :param int address: 0x08 ~ 0x77.
@@ -59,29 +61,29 @@ Constructors
 Methods
 -------
 
-.. method:: KmeterISOUnit.get_thermocouple_temperature(scale=0) -> float
+.. method:: KMeterISOUnit.get_thermocouple_temperature(scale=0) -> float
 
     Get the temperature of the thermocouple in the KmeterISO Unit. Returns a float value.
 
-    ``scale`` accepts values of :py:data:`KmeterISO.CELSIUS` or :py:data:`KmeterISO.FAHRENHEIT`.
+    ``scale`` accepts values of :py:data:`KMeterISOUnit.CELSIUS` or :py:data:`KMeterISOUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_thermocouple_temperature.png|
 
 
-.. method:: KmeterISOUnit.get_internal_temperature(scale=0) -> float
+.. method:: KMeterISOUnit.get_internal_temperature(scale=0) -> float
 
     Get the internal temperature of the KmeterISO Unit. Returns a float value.
 
-    ``scale`` accepts values of :py:data:`KmeterISO.CELSIUS` or :py:data:`KmeterISO.FAHRENHEIT`.
+    ``scale`` accepts values of :py:data:`KMeterISOUnit.CELSIUS` or :py:data:`KMeterISOUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_internal_temperature.png|
 
 
-.. method:: KmeterISOUnit.is_ready() -> bool
+.. method:: KMeterISOUnit.is_ready() -> bool
 
     Check if the measurement result is ready.
 
@@ -90,29 +92,29 @@ Methods
         |is_ready.png|
 
 
-.. method:: KmeterISOUnit.get_thermocouple_temperature_string(scale=0) -> str
+.. method:: KMeterISOUnit.get_thermocouple_temperature_string(scale=0) -> str
 
     Get the temperature of the thermocouple in the KmeterISO Unit as a string with a sign.
 
-    ``scale`` accepts values of :py:data:`KmeterISO.CELSIUS` or :py:data:`KmeterISO.FAHRENHEIT`.
+    ``scale`` accepts values of :py:data:`KMeterISOUnit.CELSIUS` or :py:data:`KMeterISOUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_thermocouple_temperature_string.png|
 
 
-.. method:: KmeterISOUnit.get_internal_temperature_string(scale=0) -> str
+.. method:: KMeterISOUnit.get_internal_temperature_string(scale=0) -> str
 
     Get the internal temperature of the KmeterISO Unit as a string with a sign.
 
-    ``scale`` accepts values of :py:data:`KmeterISO.CELSIUS` or :py:data:`KmeterISO.FAHRENHEIT`.
+    ``scale`` accepts values of :py:data:`KMeterISOUnit.CELSIUS` or :py:data:`KMeterISOUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_internal_temperature_string.png|
 
 
-.. method:: KmeterISOUnit.get_device_spec(mode) -> int
+.. method:: KMeterISOUnit.get_device_spec(mode) -> int
 
     Get the firmware version of the KmeterISO Unit. Returns an integer version number.
 
@@ -129,7 +131,7 @@ Methods
         |get_device_spec.png|
 
 
-.. method:: KmeterISOUnit.set_i2c_address(address) -> int
+.. method:: KMeterISOUnit.set_i2c_address(address) -> int
 
     Set the i2c address can be changed by the user and this address should be between 0x08 and 0x77.
 
@@ -141,13 +143,13 @@ Methods
 Constants
 ---------
 
-.. data:: KmeterISOUnit.CELSIUS
+.. data:: KMeterISOUnit.CELSIUS
     :type: int
 
     Celsius scale.
 
 
-.. data:: KmeterISOUnit.FAHRENHEIT
+.. data:: KMeterISOUnit.FAHRENHEIT
     :type: int
 
     Fahrenheit scale.

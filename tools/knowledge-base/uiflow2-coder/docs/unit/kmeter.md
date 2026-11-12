@@ -24,60 +24,62 @@ while True:
     time.sleep_ms(250)
 ```
 
-## class KmeterUnit
+## class KMeterUnit
 
 ## Constructors
 
-### `class KmeterUnit(i2c, address)`
+Import with `from unit import KMeterUnit`.
+
+### `class KMeterUnit(i2c, address=0x66)`
 
     - Parameter `i2c` (`object`): the I2C object.
     - Parameter `address` (`int`): 0x08 ~ 0x77.
 
 ## Methods
 
-### `KmeterUnit.get_thermocouple_temperature(scale) -> float`
+### `KMeterUnit.get_thermocouple_temperature(scale) -> float`
 
     Get the temperature of the thermocouple in the Kmeter Unit. Returns a float value.
 
-    - Parameter `scale` (`bool`): accepts values of :py`KmeterUnit.CELSIUS` or :py`KmeterUnit.FAHRENHEIT`.
+    - Parameter `scale` (`bool`): accepts values of :py`KMeterUnit.CELSIUS` or :py`KMeterUnit.FAHRENHEIT`.
 
-### `KmeterUnit.get_internal_temperature(scale) -> float`
+### `KMeterUnit.get_internal_temperature(scale) -> float`
 
     Get the internal temperature of the Kmeter Unit. Returns a float value.
 
-    - Parameter `scale` (`bool`): accepts values of :py`KmeterUnit.CELSIUS` or :py`KmeterUnit.FAHRENHEIT`.
+    - Parameter `scale` (`bool`): accepts values of :py`KMeterUnit.CELSIUS` or :py`KMeterUnit.FAHRENHEIT`.
 
-### `KmeterUnit.get_sleep_time() -> int`
+### `KMeterUnit.get_sleep_time() -> int`
 
     Get the sleep time in seconds. Returns a int value.
 
     - Return: `int`: 0 ~ 65535.
 
-### `KmeterUnit.get_firmware_version() -> float`
+### `KMeterUnit.get_firmware_version() -> float`
 
     Get the firmware version of the Kmeter Unit. Returns an integer version number.
 
     - Return: `float`
 
-### `KmeterUnit.get_i2c_address() -> int`
+### `KMeterUnit.get_i2c_address() -> int`
 
     Get the i2c address of this device should be between 0x08 and 0x77.
 
     - Return: `int`: 0x08 ~ 0x77.
 
-### `KmeterUnit.set_sleep_time(sleep) -> None`
+### `KMeterUnit.set_sleep_time(sleep) -> None`
 
     Set the sleep time in seconds.
 
     - Parameter `sleep` (`int`): 0 ~ 65535
 
-### `KmeterUnit.set_wakeup_trigger(mode) -> str`
+### `KMeterUnit.set_wakeup_trigger(mode) -> str`
 
     set wakeup trigger mode in timer or i2c scl low level.
 
     - Parameter `mode` (`bool`): timer(True) or i2c scl low(False)
 
-### `KmeterUnit.set_i2c_address(address) -> int`
+### `KMeterUnit.set_i2c_address(address) -> int`
 
     Set the i2c address can be changed by the user and this address should be between 0x08 and 0x77.
 
@@ -85,10 +87,10 @@ while True:
 
 ## Constants
 
-### `KmeterUnit.CELSIUS`
+### `KMeterUnit.CELSIUS`
 
     Celsius scale.
 
-### `KmeterUnit.FAHRENHEIT`
+### `KMeterUnit.FAHRENHEIT`
 
     Fahrenheit scale.

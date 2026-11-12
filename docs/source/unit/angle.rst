@@ -11,11 +11,11 @@ Micropython Example::
 
     import M5
     from M5 import *
-    from unit import *
+    from unit import AngleUnit
 
     M5.begin()
 
-    angle_0 = Angle((8,9))
+    angle_0 = AngleUnit((8,9))
 
     while True:
         print(angle_0.get_voltage())
@@ -32,15 +32,17 @@ UIFLOW2 Example:
     |angle_core_example.m5f2|
 
 
-class Angle
------------
+class AngleUnit
+---------------
 
 Constructors
 ------------
 
-.. class:: Angle(port)
+Import with ``from unit import AngleUnit``.
 
-    Create an Angle object.
+.. class:: AngleUnit(port)
+
+    Create an AngleUnit object.
 
     parameter is:
         - ``port`` is the pins number of the port
@@ -53,7 +55,7 @@ Constructors
 Methods
 -------
 
-.. method:: Angle.get_value()
+.. method:: AngleUnit.get_value()
 
     This method allows reading the Angle's rotation value and returning an integer value. The range is 0-65535.
 
@@ -62,7 +64,7 @@ Methods
         |get_value.png|
 
 
-.. method:: Angle.get_voltage()
+.. method:: AngleUnit.get_voltage()
 
     This method allows reading the voltage value of Angle, and the return value is a floating point value.
 

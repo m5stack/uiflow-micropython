@@ -55,41 +55,43 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class WEIGHTUnit
+## class WeightUnit
 
 ## Constructors
 
-### `class WEIGHTUnit(port)`
+Import with `from unit import WeightUnit`.
 
-    Initialize the WEIGHTUnit with specified port pins.
+### `class WeightUnit(port)`
+
+    Initialize the WeightUnit with specified port pins.
 
     - Parameter `port`: A tuple containing data and clock pin numbers.
 
 ## Methods
 
-### `WEIGHTUnit.get_raw_weight()`
+### `WeightUnit.get_raw_weight()`
 
     Read the raw weight value from the HX711.
 
-### `WEIGHTUnit.get_scale_weight()`
+### `WeightUnit.get_scale_weight()`
 
     Get the scaled weight value based on calibration.
 
-### `WEIGHTUnit.set_tare()`
+### `WeightUnit.set_tare()`
 
     Set the tare weight to zero out the scale.
 
-### `WEIGHTUnit.set_calibrate_scale(weight)`
+### `WeightUnit.set_calibrate_scale(weight)`
 
     Calibrate the scale with a known weight.
 
     - Parameter `weight`: The known weight used for calibration.
 
-### `WEIGHTUnit.is_ready_wait()`
+### `WeightUnit.is_ready_wait()`
 
     Check if the HX711 is ready to provide data.
 
-### `WEIGHTUnit.set_channel(chan)`
+### `WeightUnit.set_channel(chan)`
 
     Set the channel for the HX711.
 

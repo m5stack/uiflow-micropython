@@ -12,50 +12,52 @@ import os, sys, io
 import M5
 from M5 import *
 from hardware import *
-from unit import WEIGHT_I2CUnit
+from unit import WeightI2CUnit
 import time
 
 i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-weight_i2c0 = WEIGHT_I2CUnit(i2c0)
+weight_i2c_0 = WeightI2CUnit(i2c0)
 print(weight_i2c_0.get_adc_raw)
 print(weight_i2c_0.get_weight_float)
 time.sleep_ms(100)
 ```
 
-## class WEIGHT_I2CUnit
+## class WeightI2CUnit
 
 ## Constructors
 
-### `class WEIGHT_I2CUnit(i2c0, 0x26)`
+Import with `from unit import WeightI2CUnit`.
 
-    Create an WEIGHT_I2CUnit object.
+### `class WeightI2CUnit(i2c, address=0x26)`
 
-    - `I2C0` is I2C Port.
+    Create an WeightI2CUnit object.
+
+    - `i2c` is an initialized I2C bus or PAHUB port.
     - `0x26` is default I2C address
 
 ## Methods
 
-### `WEIGHT_I2CUnit.get_adc_raw`
+### `WeightI2CUnit.get_adc_raw`
 
     Gets the raw adc value.
 
-### `WEIGHT_I2CUnit.get_weight_float`
+### `WeightI2CUnit.get_weight_float`
 
     Gets the weight in grams float value.
 
-### `WEIGHT_I2CUnit.get_weight_int`
+### `WeightI2CUnit.get_weight_int`
 
     Gets the weight in grams int value.
 
-### `WEIGHT_I2CUnit.get_weight_str`
+### `WeightI2CUnit.get_weight_str`
 
     Gets the weight in grams string value.
 
-### `WEIGHT_I2CUnit.set_reset_offset()`
+### `WeightI2CUnit.set_reset_offset()`
 
     Reset the offset value(Tare).
 
-### `WEIGHT_I2CUnit.set_calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)`
+### `WeightI2CUnit.set_calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)`
 
     Calibrates the Load sensor.
 
@@ -70,25 +72,25 @@ time.sleep_ms(100)
     2.Get the raw ADC value at no-load weight, this is the Raw ADC of zero weight in 0g.
     3.Put some weight on it, then get adc, this is the load weight adc value and the gram weight you put on it.
 
-### `WEIGHT_I2CUnit.set_lowpass_filter(Enable)`
+### `WeightI2CUnit.set_lowpass_filter(Enable)`
 
     Enable or disable the low pass filter.
 
-### `WEIGHT_I2CUnit.get_lowpass_filter`
+### `WeightI2CUnit.get_lowpass_filter`
 
     Returns the status of the low pass filter (enable or disable).
 
-### `WEIGHT_I2CUnit.set_average_filter_level(level)`
+### `WeightI2CUnit.set_average_filter_level(level)`
 
     Sets the level of the average filter.
 
     - `level`: Level of the average filter (0 - 50). Larger value for smoother result but more latency
 
-### `WEIGHT_I2CUnit.get_average_filter_level`
+### `WeightI2CUnit.get_average_filter_level`
 
     Returns the level of the average filter.
 
-### `WEIGHT_I2CUnit.set_ema_filter_alpha(alpha)`
+### `WeightI2CUnit.set_ema_filter_alpha(alpha)`
 
     Sets the alpha value for the EMA filter.
 
@@ -96,17 +98,17 @@ time.sleep_ms(100)
 
     - `alpha`: Alpha value for the EMA filter (0 - 99). Smaller value for smoother result but more latency
 
-### `WEIGHT_I2CUnit.get_ema_filter_alpha`
+### `WeightI2CUnit.get_ema_filter_alpha`
 
     Returns the alpha value for the EMA filter.
 
-### `WEIGHT_I2CUnit.set_i2c_address(address)`
+### `WeightI2CUnit.set_i2c_address(address)`
 
     The i2c address can be changed by the user and this address should be between 0x01 and 0x7F.
 
     - `address`: range of address(0x01 - 0x7F).
 
-### `WEIGHT_I2CUnit.get_device_spec(info)`
+### `WeightI2CUnit.get_device_spec(info)`
 
     Get the firmware version details and I2c address of this device.
 

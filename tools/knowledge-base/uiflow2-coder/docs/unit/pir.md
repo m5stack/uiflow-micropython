@@ -53,31 +53,33 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class PIR
+## class PIRUnit
 
 ## Constructors
 
-### `class PIR(IO1,IO2)`
+Import with `from unit import PIRUnit`.
 
-    Create a PIR object.
+### `class PIRUnit(port)`
+
+    Create a PIRUnit object.
 
     The parameters are:
-        - `IO1,IO2` I2C pin.
+        - `port` is a pin tuple; port[0] is the digital input.
 
 ## Methods
 
-### `PIR.get_status()`
+### `PIRUnit.get_status()`
 
     Get detection status.
 
-### `PIR.enable_irq()`
+### `PIRUnit.enable_irq()`
 
    Enable Human detection function.
 
-### `PIR.disable_irq()`
+### `PIRUnit.disable_irq()`
 
     Disable Human detection function.
 
-### `PIR.set_callback()`
+### `PIRUnit.set_callback()`
 
     Polling method, placed in the loop function, constantly check.

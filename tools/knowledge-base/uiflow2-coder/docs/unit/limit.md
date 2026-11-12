@@ -57,35 +57,37 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class LimitUnit
+## class LIMITUnit
 
 ## Constructors
 
-### `class LimitUnit(pin_num, active_low, pullup_active)`
+Import with `from unit import LIMITUnit`.
 
-    Initialize a Limit instance with the specified pin, active-low configuration, and pull-up resistor state.
+### `class LIMITUnit(port, active_low=True, type=1)`
 
-    - Parameter `pin_num`: The GPIO pin number connected to the limit.
+    Initialize a LIMITUnit with the specified port, active-low configuration, and operation mode.
+
+    - Parameter `port` (`tuple`): Pin tuple; port[0] is the GPIO connected to the limit switch.
     - Parameter `active_low` (`bool`): Determines whether the limit signal is active-low. Default is True.
-    - Parameter `pullup_active` (`bool`): Specifies whether the internal pull-up resistor is enabled. Default is True.
+    - Parameter `type` (`int`): Operation mode: 1 (switch, default) or 2 (edge counter).
 
 ## Methods
 
-### `LimitUnit.count_reset()`
+### `LIMITUnit.count_reset()`
 
     Reset the count value to zero.
 
-### `LimitUnit.isHolding()`
+### `LIMITUnit.isHolding()`
 
     Check if the limit is currently being held.
 
-### `LimitUnit.setCallback(type, cb)`
+### `LIMITUnit.setCallback(type, cb)`
 
     Set a callback function for a specified limit event type.
 
     - Parameter `type`: The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED).
     - Parameter `cb`: The callback function to be executed for the event.
 
-### `LimitUnit.tick(pin)`
+### `LIMITUnit.tick(pin)`
 
     Monitor the state transitions of a limit based on its pin state and trigger appropriate handlers.

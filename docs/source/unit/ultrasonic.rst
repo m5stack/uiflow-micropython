@@ -25,18 +25,21 @@ UIFLOW2 Example:
     |ultrasonic_core_example.m5f2|
 
 
-class ULTRASONIC_I2C
---------------------
+class UltrasoundI2CUnit
+-----------------------
 
 Constructors
 --------------
 
-.. class:: ULTRASONIC_I2C(PORT)
+Import with ``from unit import UltrasoundI2CUnit``.
+
+.. class:: UltrasoundI2CUnit(i2c, address=0x57)
 
     Create a ULTRASONIC I2C object.
 
     The parameters is:
-        - ``PORT`` Define an i2c port.
+        - ``i2c`` is an initialized I2C bus or PAHUB port.
+        - ``address`` is the I2C address (default 0x57).
 
     UIFLOW2:
 
@@ -46,7 +49,7 @@ Constructors
 Methods
 -------
 
-.. method:: ULTRASONIC_I2C.get_target_distance()
+.. method:: UltrasoundI2CUnit.get_target_distance()
 
     Acquire transmitting distance
 

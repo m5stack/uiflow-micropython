@@ -43,35 +43,37 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class Earth
+## class EarthUnit
 
 ## Constructors
 
-### `class Earth(port)`
+Import with `from unit import EarthUnit`.
 
-    Create an Earth object.
+### `class EarthUnit(port)`
+
+    Create an EarthUnit object.
 
     The parameters is:
         - `port` Is the pin number of the port
 
 ## Methods
 
-### `EARTH.get_analog_value()`
+### `EarthUnit.get_analog_value()`
 
     This method allows you to read the analog captured by EARTH and return an integer value. The value ranges from 0 to 65535.
 
-### `EARTH.get_digital_value()`
+### `EarthUnit.get_digital_value()`
 
     This method allows you to read the amount of numbers collected by EARTH and return an integer value. The value ranges from 0 to 1.
 
-### `EARTH.get_voltage_mv()`
+### `EarthUnit.get_voltage_mv()`
 
     This method allows you to read the voltage value collected by EARTH and return an integer value. It ranges from 0 to 3300.
 
-### `EARTH.humidity()`
+### `EarthUnit.humidity()`
 
     This method allows you to read the voltage value collected by EARTH and return a floating-point value. Range 0.0 to 1.0.
 
-### `EARTH.set_calibrate()`
+### `EarthUnit.set_calibrate()`
 
     This method allows setting the maximum (0-3300) and minimum (0-3300) values for calibrating the EARTH sensor.

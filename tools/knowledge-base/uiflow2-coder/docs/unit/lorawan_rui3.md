@@ -203,22 +203,23 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
-## class LoRaWAN_X
+## class LoRaWANUnit_RUI3
 
 ## Constructors
 
-### `class LoRaWAN_X(id, tx, rx, debug)`
+Import with `from unit import LoRaWANUnit_RUI3`.
 
-    Initialize the LoRaWAN_X module by setting up UART communication with the specified parameters.
+### `class LoRaWANUnit_RUI3(id=1, port=None, debug=False)`
+
+    Initialize the LoRaWANUnit_RUI3 module by setting up UART communication with the specified parameters.
 
     - Parameter `id`: The UART ID used for communication.
-    - Parameter `tx`: The UART TX pin.
-    - Parameter `rx`: The UART RX pin.
+    - Parameter `port` (`tuple`): UART pins as (rx, tx). Supply this tuple when constructing the Unit.
     - Parameter `debug` (`bool`): Enables debug mode to log additional details, default is False.
 
 ## Methods
 
-### `LoRaWAN_X.set_abp_config(dev_addr, apps_key, nwks_key)`
+### `LoRaWANUnit_RUI3.set_abp_config(dev_addr, apps_key, nwks_key)`
 
     Configure the device for ABP (Activation By Personalization) mode using the provided device address, application session key, and network session key.
 
@@ -226,13 +227,13 @@ if __name__ == "__main__":
     - Parameter `apps_key` (`str`): The application session key for encryption.
     - Parameter `nwks_key` (`str`): The network session key for communication.
 
-### `LoRaWAN_X.get_abp_config()`
+### `LoRaWANUnit_RUI3.get_abp_config()`
 
     Retrieve the current ABP configuration, including the device address, application session key, and network session key.
 
     - Returns: A tuple containing the device address, application session key, and network session key. Returns None or False for missing or invalid configurations.
 
-### `LoRaWAN_X.set_otaa_config(device_eui, app_eui, app_key)`
+### `LoRaWANUnit_RUI3.set_otaa_config(device_eui, app_eui, app_key)`
 
     Configure the device for OTAA (Over-The-Air Activation) mode using the provided device EUI, application EUI, and application key.
 
@@ -240,13 +241,13 @@ if __name__ == "__main__":
     - Parameter `app_eui`: The application EUI for OTAA configuration.
     - Parameter `app_key`: The application key for encryption.
 
-### `LoRaWAN_X.get_otaa_config()`
+### `LoRaWANUnit_RUI3.get_otaa_config()`
 
     Retrieve the current OTAA configuration, including the device EUI, application key, and application EUI.
 
     - Returns: A tuple containing the device EUI, application key, and application EUI.
 
-### `LoRaWAN_X.send_cmd(cmd, have_return, is_single, async_event, timeout)`
+### `LoRaWANUnit_RUI3.send_cmd(cmd, have_return, is_single, async_event, timeout)`
 
     Sends an AT command to the module and optionally reads the response.
 
@@ -258,7 +259,7 @@ if __name__ == "__main__":
 
     - Returns: The processed response from the module or None if no response is expected.
 
-### `LoRaWAN_X.read_response(cmd, is_single, async_event, timeout)`
+### `LoRaWANUnit_RUI3.read_response(cmd, is_single, async_event, timeout)`
 
     Reads and processes the module response to an AT command.
 
@@ -273,57 +274,57 @@ if __name__ == "__main__":
         - An event response string if async_event is enabled and an event is detected.
         - False if no valid response is received or an error occurs.
 
-### `LoRaWAN_X.get_commuinication_state()`
+### `LoRaWANUnit_RUI3.get_commuinication_state()`
 
     Checks the communication state by sending the AT command and expecting a response.
 
     - Returns: The response from the module indicating the communication state.
 
-### `LoRaWAN_X.reset_module()`
+### `LoRaWANUnit_RUI3.reset_module()`
 
     Resets the module using the ATZ command.
 
-### `LoRaWAN_X.reset_module_to_default()`
+### `LoRaWANUnit_RUI3.reset_module_to_default()`
 
     Resets the module to its default settings using the ATR command. Waits for the reset process to complete.
 
-### `LoRaWAN_X.get_serial_number()`
+### `LoRaWANUnit_RUI3.get_serial_number()`
 
     Retrieves the serial number of the module.
 
     - Returns: The serial number as a string.
 
-### `LoRaWAN_X.get_fireware_version()`
+### `LoRaWANUnit_RUI3.get_fireware_version()`
 
     Retrieves the firmware version of the module.
 
     - Returns: The firmware version as a string.
 
-### `LoRaWAN_X.get_at_version()`
+### `LoRaWANUnit_RUI3.get_at_version()`
 
     Retrieves the AT command version supported by the module.
 
     - Returns: The AT command version as a string.
 
-### `LoRaWAN_X.get_hardware_version()`
+### `LoRaWANUnit_RUI3.get_hardware_version()`
 
     Retrieves the hardware version of the module.
 
     - Returns: The hardware version as a string.
 
-### `LoRaWAN_X.get_hardware_id()`
+### `LoRaWANUnit_RUI3.get_hardware_id()`
 
     Retrieves the hardware ID of the module.
 
     - Returns: The hardware ID as a string.
 
-### `LoRaWAN_X.get_ble_mac()`
+### `LoRaWANUnit_RUI3.get_ble_mac()`
 
     Retrieves the Bluetooth MAC address of the module.
 
     - Returns: The BLE MAC address as a string.
 
-### `LoRaWAN_X.set_sleep_time(time)`
+### `LoRaWANUnit_RUI3.set_sleep_time(time)`
 
     Configures the sleep time for the module. If no time is provided, the module enters sleep mode.
 
@@ -331,13 +332,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.get_low_power_mode()`
+### `LoRaWANUnit_RUI3.get_low_power_mode()`
 
     Checks if the module is in low-power mode.
 
     - Returns: True if low-power mode is enabled, otherwise False.
 
-### `LoRaWAN_X.set_low_power_mode(mode)`
+### `LoRaWANUnit_RUI3.set_low_power_mode(mode)`
 
     Sets the module low-power mode.
 
@@ -345,7 +346,7 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.set_baud_rate(rate)`
+### `LoRaWANUnit_RUI3.set_baud_rate(rate)`
 
     Sets the baud rate for UART communication.
 
@@ -353,19 +354,19 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.get_baud_rate()`
+### `LoRaWANUnit_RUI3.get_baud_rate()`
 
     Retrieves the current UART baud rate setting.
 
     - Returns: The baud rate as an integer.
 
-### `LoRaWAN_X.get_device_eui()`
+### `LoRaWANUnit_RUI3.get_device_eui()`
 
     Retrieves the Device EUI for OTAA (Over-The-Air Activation) mode.
 
     - Returns: The Device EUI as a string.
 
-### `LoRaWAN_X.set_device_eui(eui)`
+### `LoRaWANUnit_RUI3.set_device_eui(eui)`
 
     Configures the Device EUI for OTAA mode.
 
@@ -373,13 +374,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.get_app_eui()`
+### `LoRaWANUnit_RUI3.get_app_eui()`
 
     Retrieves the Application EUI for OTAA mode.
 
     - Returns: The Application EUI as a string.
 
-### `LoRaWAN_X.set_app_eui(eui)`
+### `LoRaWANUnit_RUI3.set_app_eui(eui)`
 
     Configures the Application EUI for OTAA mode.
 
@@ -387,13 +388,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.get_app_key()`
+### `LoRaWANUnit_RUI3.get_app_key()`
 
     Retrieves the Application Key for OTAA mode.
 
     - Returns: The Application Key as a string.
 
-### `LoRaWAN_X.set_app_key(key)`
+### `LoRaWANUnit_RUI3.set_app_key(key)`
 
     Configures the Application Key for OTAA mode.
 
@@ -401,13 +402,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully sent, else False.
 
-### `LoRaWAN_X.get_device_address()`
+### `LoRaWANUnit_RUI3.get_device_address()`
 
     Retrieves the device address.
 
     - Returns: The device address as a string.
 
-### `LoRaWAN_X.set_device_address(address)`
+### `LoRaWANUnit_RUI3.set_device_address(address)`
 
     Sets the device address.
 
@@ -415,12 +416,12 @@ if __name__ == "__main__":
 
     - Returns: The application session key as a string.
 
-### `LoRaWAN_X.get_apps_key()`
+### `LoRaWANUnit_RUI3.get_apps_key()`
 
     Retrieves the application session key.
 
     - Returns: The result of the AT command execution
-### `LoRaWAN_X.set_apps_key(key)`
+### `LoRaWANUnit_RUI3.set_apps_key(key)`
 
     Sets the application session key. This operation is applicable only in ABP mode.
 
@@ -428,13 +429,13 @@ if __name__ == "__main__":
 
     - Returns: The network session key as a string.
 
-### `LoRaWAN_X.get_networks_key()`
+### `LoRaWANUnit_RUI3.get_networks_key()`
 
     Retrieves the network session key.
 
     - Returns: The result of the AT command execution
 
-### `LoRaWAN_X.set_networks_key(key)`
+### `LoRaWANUnit_RUI3.set_networks_key(key)`
 
     Sets the network session key. This operation is applicable only in ABP mode.
 
@@ -442,7 +443,7 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution
 
-### `LoRaWAN_X.set_network_id(id)`
+### `LoRaWANUnit_RUI3.set_network_id(id)`
 
     Sets the network ID.
 
@@ -450,25 +451,25 @@ if __name__ == "__main__":
 
     - Returns: The network ID as a string.
 
-### `LoRaWAN_X.get_network_id()`
+### `LoRaWANUnit_RUI3.get_network_id()`
 
     Retrieves the network ID.
 
     - Returns: The multicast root key as a string.
 
-### `LoRaWAN_X.get_mc_root_key()`
+### `LoRaWANUnit_RUI3.get_mc_root_key()`
 
     Retrieves the multicast root key.
 
     - Returns: True if confirmation mode is enabled; otherwise, False.
 
-### `LoRaWAN_X.get_confirm_mode()`
+### `LoRaWANUnit_RUI3.get_confirm_mode()`
 
     Retrieves the confirmation mode.
 
     - Returns: The result of the AT command execution
 
-### `LoRaWAN_X.set_confirm_mode(mode)`
+### `LoRaWANUnit_RUI3.set_confirm_mode(mode)`
 
     Sets the confirmation mode.
 
@@ -476,19 +477,19 @@ if __name__ == "__main__":
 
     - Returns: True if the last confirmed uplink succeeded; otherwise, False.
 
-### `LoRaWAN_X.get_confirm_state()`
+### `LoRaWANUnit_RUI3.get_confirm_state()`
 
     Retrieves the status of the last confirmed uplink.
 
     - Returns: A tuple containing state, auto_join, retry_interval, and max_retry as integers, or False if retrieval failed.
 
-### `LoRaWAN_X.get_join_config()`
+### `LoRaWANUnit_RUI3.get_join_config()`
 
     Retrieves the current join configuration for LoRa.
 
     - Returns: True if the module successfully joins the network, otherwise False
 
-### `LoRaWAN_X.set_join_config(state, auto_join, retry_interval, max_retry, timeout)`
+### `LoRaWANUnit_RUI3.set_join_config(state, auto_join, retry_interval, max_retry, timeout)`
 
     Configures the join parameters for LoRa. The configuration does not confirm network join success.
 
@@ -501,7 +502,7 @@ if __name__ == "__main__":
 
     - Returns: The join mode as an integer (0 for ABP, 1 for OTAA).
 
-### `LoRaWAN_X.join_network(timeout)`
+### `LoRaWANUnit_RUI3.join_network(timeout)`
 
     Joins the LoRa network using predefined join parameters.
 
@@ -509,13 +510,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully set, else False.
 
-### `LoRaWAN_X.get_join_mode()`
+### `LoRaWANUnit_RUI3.get_join_mode()`
 
     Retrieves the current join mode. 0 indicates ABP mode, 1 indicates OTAA mode.
 
     - Returns: True if joined, otherwise False.
 
-### `LoRaWAN_X.set_join_mode(mode)`
+### `LoRaWANUnit_RUI3.set_join_mode(mode)`
 
     Sets the join mode for the LoRa module.
 
@@ -523,19 +524,19 @@ if __name__ == "__main__":
 
     - Returns: The received data as a string.
 
-### `LoRaWAN_X.get_join_state()`
+### `LoRaWANUnit_RUI3.get_join_state()`
 
     Checks whether the module has successfully joined the network. 1 indicates joined, 0 indicates not joined.
 
     - Returns: True if the data was sent successfully, otherwise False.
 
-### `LoRaWAN_X.get_last_receive()`
+### `LoRaWANUnit_RUI3.get_last_receive()`
 
     Retrieves the data from the last received message.
 
     - Returns: True if the data was sent successfully, otherwise False.
 
-### `LoRaWAN_X.send_data(port, data, timeout)`
+### `LoRaWANUnit_RUI3.send_data(port, data, timeout)`
 
     Sends data through a specific port.
 
@@ -545,7 +546,7 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully set, else False.
 
-### `LoRaWAN_X.send_long_data(port, ack, data, timeout)`
+### `LoRaWANUnit_RUI3.send_long_data(port, ack, data, timeout)`
 
     Sends long data through a specific port with optional acknowledgment.
 
@@ -556,7 +557,7 @@ if __name__ == "__main__":
 
     - Returns: The retry cycle value as an integer.
 
-### `LoRaWAN_X.set_retry(retry)`
+### `LoRaWANUnit_RUI3.set_retry(retry)`
 
     Configures the retry cycle for transmissions.
 
@@ -564,19 +565,19 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully set, else False.
 
-### `LoRaWAN_X.get_retry()`
+### `LoRaWANUnit_RUI3.get_retry()`
 
     Retrieves the current retry cycle configuration.
 
     - Returns: The retry cycle value as an integer.
 
-### `LoRaWAN_X.get_adaptive_rate_state()`
+### `LoRaWANUnit_RUI3.get_adaptive_rate_state()`
 
     Checks whether adaptive data rate (ADR) is enabled. 1 indicates enabled, 0 indicates disabled.
 
     - Returns: True if ADR is enabled, otherwise False.
 
-### `LoRaWAN_X.set_adaptive_rate_state(state)`
+### `LoRaWANUnit_RUI3.set_adaptive_rate_state(state)`
 
     Configures the adaptive data rate (ADR) state.
 
@@ -584,13 +585,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully set, else False.
 
-### `LoRaWAN_X.get_lorawan_node_class()`
+### `LoRaWANUnit_RUI3.get_lorawan_node_class()`
 
     Retrieves the current LoRaWAN node class.
 
     - Returns: The LoRaWAN node class as a string.
 
-### `LoRaWAN_X.set_lorawan_node_class(node_class)`
+### `LoRaWANUnit_RUI3.set_lorawan_node_class(node_class)`
 
     Sets the LoRaWAN node class.
 
@@ -598,13 +599,13 @@ if __name__ == "__main__":
 
     - Returns: True if the command is successfully set, else False.
 
-### `LoRaWAN_X.get_duty_cycle_state()`
+### `LoRaWANUnit_RUI3.get_duty_cycle_state()`
 
     Checks whether the ETSI duty cycle is enabled. 1 indicates enabled, 0 indicates disabled.
 
     - Returns: True if the duty cycle is enabled, otherwise False.
 
-### `LoRaWAN_X.set_duty_cycle_state(state)`
+### `LoRaWANUnit_RUI3.set_duty_cycle_state(state)`
 
     Sets the ETSI duty cycle state, which can be enabled or disabled depending on the region.
 
@@ -612,13 +613,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_data_rate()`
+### `LoRaWANUnit_RUI3.get_data_rate()`
 
     Retrieves the current data rate configuration.
 
     - Returns: The data rate as an integer.
 
-### `LoRaWAN_X.set_data_rate(rate)`
+### `LoRaWANUnit_RUI3.set_data_rate(rate)`
 
     Sets the data rate for communication.
 
@@ -626,13 +627,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_join_delay_on_window1()`
+### `LoRaWANUnit_RUI3.get_join_delay_on_window1()`
 
     Retrieves the delay for the join procedure on window 1.
 
     - Returns: The join delay for window 1 as an integer.
 
-### `LoRaWAN_X.set_join_delay_on_window1(delay)`
+### `LoRaWANUnit_RUI3.set_join_delay_on_window1(delay)`
 
     Sets the join delay for window 1.
 
@@ -640,13 +641,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_join_delay_on_window2()`
+### `LoRaWANUnit_RUI3.get_join_delay_on_window2()`
 
     Retrieves the delay for the join procedure on window 2.
 
     - Returns: The join delay for window 2 as an integer.
 
-### `LoRaWAN_X.set_join_delay_on_window2(delay)`
+### `LoRaWANUnit_RUI3.set_join_delay_on_window2(delay)`
 
     Sets the join delay for window 2.
 
@@ -654,13 +655,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_public_network_mode()`
+### `LoRaWANUnit_RUI3.get_public_network_mode()`
 
     Retrieves the public network mode (enabled or disabled).
 
     - Returns: True if public network mode is enabled, False otherwise.
 
-### `LoRaWAN_X.set_public_network_mode(mode)`
+### `LoRaWANUnit_RUI3.set_public_network_mode(mode)`
 
     Sets the public network mode to enabled or disabled.
 
@@ -668,13 +669,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_rx_delay_on_window1()`
+### `LoRaWANUnit_RUI3.get_rx_delay_on_window1()`
 
     Retrieves the receive window 1 delay.
 
     - Returns: The receive window 1 delay as an integer.
 
-### `LoRaWAN_X.set_rx_delay_on_window1(delay)`
+### `LoRaWANUnit_RUI3.set_rx_delay_on_window1(delay)`
 
     Sets the receive delay for window 1.
 
@@ -682,13 +683,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_rx_delay_on_window2()`
+### `LoRaWANUnit_RUI3.get_rx_delay_on_window2()`
 
     Retrieves the receive window 2 delay.
 
     - Returns: The receive window 2 delay as an integer.
 
-### `LoRaWAN_X.set_rx_delay_on_window2(delay)`
+### `LoRaWANUnit_RUI3.set_rx_delay_on_window2(delay)`
 
     Sets the receive delay for window 2.
 
@@ -696,13 +697,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_rx_data_rate_on_windows2()`
+### `LoRaWANUnit_RUI3.get_rx_data_rate_on_windows2()`
 
     Retrieves the receive data rate for window 2.
 
     - Returns: The receive data rate for window 2 as an integer.
 
-### `LoRaWAN_X.set_rx_data_rate_on_windows2(rate)`
+### `LoRaWANUnit_RUI3.set_rx_data_rate_on_windows2(rate)`
 
     Sets the receive data rate for window 2.
 
@@ -710,19 +711,19 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_rx_frequency_on_windows2()`
+### `LoRaWANUnit_RUI3.get_rx_frequency_on_windows2()`
 
     Retrieves the receive frequency for window 2, based on regional frequency settings.
 
     - Returns: The receive frequency for window 2 as an integer.
 
-### `LoRaWAN_X.get_tx_power()`
+### `LoRaWANUnit_RUI3.get_tx_power()`
 
     Retrieves the current transmit power setting.
 
     - Returns: The transmit power setting as an integer.
 
-### `LoRaWAN_X.set_tx_power(power)`
+### `LoRaWANUnit_RUI3.set_tx_power(power)`
 
     Sets the transmit power.
 
@@ -730,13 +731,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_network_link_state()`
+### `LoRaWANUnit_RUI3.get_network_link_state()`
 
     Retrieves the network link state.
 
     - Returns: The network link state as a string.
 
-### `LoRaWAN_X.set_network_link_state(state)`
+### `LoRaWANUnit_RUI3.set_network_link_state(state)`
 
     - Parameter `state` (`int`): Sets the network link state for the device.
             0 - Disable Link Check
@@ -745,13 +746,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_listen_before_talk()`
+### `LoRaWANUnit_RUI3.get_listen_before_talk()`
 
     Retrieves the Listen Before Talk (LBT) state.
 
     - Returns: True if LBT is enabled, False if not.
 
-### `LoRaWAN_X.set_listen_before_talk(state)`
+### `LoRaWANUnit_RUI3.set_listen_before_talk(state)`
 
     Sets the Listen Before Talk (LBT) state.
 
@@ -759,7 +760,7 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.set_listen_before_talk_rssi(rssi)`
+### `LoRaWANUnit_RUI3.set_listen_before_talk_rssi(rssi)`
 
     Sets the RSSI threshold for Listen Before Talk (LBT).
 
@@ -767,19 +768,19 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_listen_before_talk_rssi()`
+### `LoRaWANUnit_RUI3.get_listen_before_talk_rssi()`
 
     Retrieves the RSSI threshold for Listen Before Talk (LBT).
 
     - Returns: The RSSI threshold as an integer.
 
-### `LoRaWAN_X.get_listen_before_talk_scan_time()`
+### `LoRaWANUnit_RUI3.get_listen_before_talk_scan_time()`
 
     Retrieves the scan time for Listen Before Talk (LBT).
 
     - Returns: The scan time for LBT as an integer.
 
-### `LoRaWAN_X.set_listen_before_talk_scan_time(time)`
+### `LoRaWANUnit_RUI3.set_listen_before_talk_scan_time(time)`
 
     Sets the scan time for Listen Before Talk (LBT).
 
@@ -787,13 +788,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_time_request()`
+### `LoRaWANUnit_RUI3.get_time_request()`
 
     Retrieves the time request state.
 
     - Returns: The time request state as an integer.
 
-### `LoRaWAN_X.set_time_request(state)`
+### `LoRaWANUnit_RUI3.set_time_request(state)`
 
     Sets the time request state.
 
@@ -801,19 +802,19 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_location_time()`
+### `LoRaWANUnit_RUI3.get_location_time()`
 
     Retrieves the location time in UTC+0.
 
     - Returns: The location time in UTC+0 as a string.
 
-### `LoRaWAN_X.get_unicast_ping_interval()`
+### `LoRaWANUnit_RUI3.get_unicast_ping_interval()`
 
     Retrieves the unicast ping interval in Class B mode.
 
     - Returns: The unicast ping interval as an integer.
 
-### `LoRaWAN_X.set_unicast_ping_interval(interval)`
+### `LoRaWANUnit_RUI3.set_unicast_ping_interval(interval)`
 
     Sets the unicast ping interval for the device.
 
@@ -821,49 +822,49 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_beacon_frequency()`
+### `LoRaWANUnit_RUI3.get_beacon_frequency()`
 
     Retrieves the beacon frequency.
 
     - Returns: The beacon frequency as an integer.
 
-### `LoRaWAN_X.get_beacon_time()`
+### `LoRaWANUnit_RUI3.get_beacon_time()`
 
     Retrieves the beacon time.
 
     - Returns: The beacon time as an integer.
 
-### `LoRaWAN_X.get_beacon_gateway_gps()`
+### `LoRaWANUnit_RUI3.get_beacon_gateway_gps()`
 
     Retrieves the beacon gateway GPS location.
 
     - Returns: The beacon gateway GPS information as a string.
 
-### `LoRaWAN_X.get_rssi()`
+### `LoRaWANUnit_RUI3.get_rssi()`
 
     Retrieves the Received Signal Strength Indicator (RSSI).
 
     - Returns: The RSSI value as a string.
 
-### `LoRaWAN_X.get_all_rssi()`
+### `LoRaWANUnit_RUI3.get_all_rssi()`
 
     Retrieves the RSSI values from all channels.
 
     - Returns: The RSSI values for all channels as a string.
 
-### `LoRaWAN_X.get_signal_noise_ratio()`
+### `LoRaWANUnit_RUI3.get_signal_noise_ratio()`
 
     Retrieves the Signal-to-Noise Ratio (SNR).
 
     - Returns: The SNR value as a string.
 
-### `LoRaWAN_X.get_channel_mask()`
+### `LoRaWANUnit_RUI3.get_channel_mask()`
 
     Retrieves the channel mask (only for US915, AU915, CN470).
 
     - Returns: The channel mask as a string.
 
-### `LoRaWAN_X.set_channel_mask(mask)`
+### `LoRaWANUnit_RUI3.set_channel_mask(mask)`
 
     Sets the channel mask to open or close specific channels (only for US915, AU915, CN470).
 
@@ -871,13 +872,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_eight_channel_mode_state()`
+### `LoRaWANUnit_RUI3.get_eight_channel_mode_state()`
 
     Retrieves the state of the eight-channel mode.
 
     - Returns: The state of the eight-channel mode as a string.
 
-### `LoRaWAN_X.set_eight_channel_mode_state(max_group)`
+### `LoRaWANUnit_RUI3.set_eight_channel_mode_state(max_group)`
 
     Sets the state of the eight-channel mode, with a group number between 1 and 12.
 
@@ -885,25 +886,25 @@ if __name__ == "__main__":
 
     - Returns: True if the AT command execution is successful, False otherwise.
 
-### `LoRaWAN_X.get_single_channel_mode()`
+### `LoRaWANUnit_RUI3.get_single_channel_mode()`
 
     Retrieves the single channel mode.
 
     - Returns: The single channel mode as a string.
 
-### `LoRaWAN_X.set_single_channel_mode()`
+### `LoRaWANUnit_RUI3.set_single_channel_mode()`
 
     Sets the single channel mode.
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_active_region()`
+### `LoRaWANUnit_RUI3.get_active_region()`
 
     Retrieves the active region for the device.
 
     - Returns: The active region as a string.
 
-### `LoRaWAN_X.set_active_region(region)`
+### `LoRaWANUnit_RUI3.set_active_region(region)`
 
     - Parameter `region` (`int`): Sets the active region for the device.
 
@@ -923,7 +924,7 @@ if __name__ == "__main__":
             - `AS923-4`: 11
             - `LA915`: 12
 
-### `LoRaWAN_X.add_multicast_group(Class, DevAddr, NwkSKey, AppSKey, Frequency, Datarate, Periodicit)`
+### `LoRaWANUnit_RUI3.add_multicast_group(Class, DevAddr, NwkSKey, AppSKey, Frequency, Datarate, Periodicit)`
 
     Adds a multicast group to the device.
 
@@ -937,7 +938,7 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.remove_multicast_group(DevAddr)`
+### `LoRaWANUnit_RUI3.remove_multicast_group(DevAddr)`
 
     Removes a multicast group by the given device address.
 
@@ -945,13 +946,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_multicast_list()`
+### `LoRaWANUnit_RUI3.get_multicast_list()`
 
     Retrieves the list of multicast groups.
 
     - Returns: The list of multicast groups as a string.
 
-### `LoRaWAN_X.get_network_mode()`
+### `LoRaWANUnit_RUI3.get_network_mode()`
 
     Retrieves the current network mode.
 
@@ -961,7 +962,7 @@ if __name__ == "__main__":
             - `LoRaWAN`: 1
             - `P2P_FSK`: 2
 
-### `LoRaWAN_X.set_network_mode(mode)`
+### `LoRaWANUnit_RUI3.set_network_mode(mode)`
 
     Sets the network mode for the device.
 
@@ -973,13 +974,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_frequency()`
+### `LoRaWANUnit_RUI3.get_p2p_frequency()`
 
     Retrieves the current P2P frequency.
 
     - Returns: The current P2P frequency as an integer.
 
-### `LoRaWAN_X.set_p2p_frequency(frequency)`
+### `LoRaWANUnit_RUI3.set_p2p_frequency(frequency)`
 
     Sets the P2P frequency for the device.
 
@@ -990,13 +991,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_spreading_factor()`
+### `LoRaWANUnit_RUI3.get_p2p_spreading_factor()`
 
     Retrieves the current P2P spreading factor.
 
     - Returns: The current P2P spreading factor as an integer.
 
-### `LoRaWAN_X.set_p2p_spreading_factor(spreading_factor)`
+### `LoRaWANUnit_RUI3.set_p2p_spreading_factor(spreading_factor)`
 
     Sets the P2P spreading factor.
 
@@ -1004,25 +1005,25 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_bandwidth()`
+### `LoRaWANUnit_RUI3.get_p2p_bandwidth()`
 
     Retrieves the current P2P bandwidth.
 
     - Returns: The current P2P bandwidth as an integer.
 
-### `LoRaWAN_X.set_p2p_bandwidth(bandwidth)`
+### `LoRaWANUnit_RUI3.set_p2p_bandwidth(bandwidth)`
 
     - Parameter `bandwidth` (`int`):
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_code_rate()`
+### `LoRaWANUnit_RUI3.get_p2p_code_rate()`
 
     Retrieves the current P2P code rate.
 
     - Returns: The current P2P code rate as an integer.
 
-### `LoRaWAN_X.set_p2p_code_rate(code_rate)`
+### `LoRaWANUnit_RUI3.set_p2p_code_rate(code_rate)`
 
     Sets the P2P code rate.
 
@@ -1030,13 +1031,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_preamble_length()`
+### `LoRaWANUnit_RUI3.get_p2p_preamble_length()`
 
     Retrieves the current P2P preamble length.
 
     - Returns: The current P2P preamble length as an integer.
 
-### `LoRaWAN_X.set_p2p_preamble_length(length)`
+### `LoRaWANUnit_RUI3.set_p2p_preamble_length(length)`
 
     Sets the P2P preamble length.
 
@@ -1044,13 +1045,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_tx_power()`
+### `LoRaWANUnit_RUI3.get_p2p_tx_power()`
 
     Retrieves the current P2P transmission power.
 
     - Returns: The current P2P transmission power as an integer.
 
-### `LoRaWAN_X.set_p2p_tx_power(power)`
+### `LoRaWANUnit_RUI3.set_p2p_tx_power(power)`
 
     Sets the P2P transmission power.
 
@@ -1058,13 +1059,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_fsk_bitrate()`
+### `LoRaWANUnit_RUI3.get_p2p_fsk_bitrate()`
 
     Retrieves the current P2P FSK bitrate.
 
     - Returns: The current P2P FSK bitrate as an integer.
 
-### `LoRaWAN_X.set_p2p_fsk_bitrate(bitrate)`
+### `LoRaWANUnit_RUI3.set_p2p_fsk_bitrate(bitrate)`
 
     Sets the P2P FSK bitrate.
 
@@ -1072,13 +1073,13 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.get_p2p_fsk_frequency_deviation()`
+### `LoRaWANUnit_RUI3.get_p2p_fsk_frequency_deviation()`
 
     Retrieves the current P2P FSK frequency deviation.
 
     - Returns: The current P2P FSK frequency deviation as an integer.
 
-### `LoRaWAN_X.set_p2p_fsk_frequency_deviation(deviation)`
+### `LoRaWANUnit_RUI3.set_p2p_fsk_frequency_deviation(deviation)`
 
     Sets the P2P FSK frequency deviation.
 
@@ -1086,7 +1087,7 @@ if __name__ == "__main__":
 
     - Returns: The result of the AT command execution.
 
-### `LoRaWAN_X.send_p2p_data(payload, timeout, to_hex=False)`
+### `LoRaWANUnit_RUI3.send_p2p_data(payload, timeout, to_hex=False)`
 
     Sends P2P data with a given payload.
 
@@ -1096,13 +1097,13 @@ if __name__ == "__main__":
 
     - Returns: True if the data was sent successfully ("TXFSK DONE" or "TXP2P DONE"), False otherwise.
 
-### `LoRaWAN_X.get_p2p_channel_activity()`
+### `LoRaWANUnit_RUI3.get_p2p_channel_activity()`
 
     Get the current channel activity status in P2P mode.
 
     - Returns: The channel activity status as an integer (0 or 1).
 
-### `LoRaWAN_X.set_p2p_channel_activity(state)`
+### `LoRaWANUnit_RUI3.set_p2p_channel_activity(state)`
 
     Enable or disable channel activity in P2P mode.
 
@@ -1110,7 +1111,7 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_receive_data(timeout=500, to_str=False)`
+### `LoRaWANUnit_RUI3.get_p2p_receive_data(timeout=500, to_str=False)`
 
     - Parameter `timeout` (`int`): Timeout for listening to P2P LoRa data packets.
                 Valid values are 1~65535, with special cases for continuous listening and no timeout.
@@ -1118,13 +1119,13 @@ if __name__ == "__main__":
 
     - Returns: A tuple (RSSI, SNR, Payload) if data is received; False if no data is received.
 
-### `LoRaWAN_X.get_p2p_encryption_state()`
+### `LoRaWANUnit_RUI3.get_p2p_encryption_state()`
 
     Get the current encryption state in P2P mode.
 
     - Returns: The encryption state as an integer (0 or 1).
 
-### `LoRaWAN_X.set_p2p_encryption_state(state)`
+### `LoRaWANUnit_RUI3.set_p2p_encryption_state(state)`
 
     Enable or disable encryption in P2P mode.
 
@@ -1132,13 +1133,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_encryption_key()`
+### `LoRaWANUnit_RUI3.get_p2p_encryption_key()`
 
     Get the current encryption key in P2P mode.
 
     - Returns: The encryption key as a string.
 
-### `LoRaWAN_X.set_p2p_encryption_key(key)`
+### `LoRaWANUnit_RUI3.set_p2p_encryption_key(key)`
 
     Set the encryption key in P2P mode.
 
@@ -1146,13 +1147,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_crypt_state()`
+### `LoRaWANUnit_RUI3.get_p2p_crypt_state()`
 
     Get the current cryptographic state in P2P mode (not supported on RAK3172).
 
     - Returns: The cryptographic state as an integer (0 or 1).
 
-### `LoRaWAN_X.set_p2p_crypt_state(state)`
+### `LoRaWANUnit_RUI3.set_p2p_crypt_state(state)`
 
     Enable or disable cryptographic state in P2P mode (not supported on RAK3172).
 
@@ -1160,13 +1161,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_crypt_key()`
+### `LoRaWANUnit_RUI3.get_p2p_crypt_key()`
 
     Get the cryptographic key in P2P mode (not supported on RAK3172).
 
     - Returns: The cryptographic key as a string.
 
-### `LoRaWAN_X.set_p2p_crypt_key(key)`
+### `LoRaWANUnit_RUI3.set_p2p_crypt_key(key)`
 
     Set the cryptographic key in P2P mode (not supported on RAK3172).
 
@@ -1174,13 +1175,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_encryption_iv()`
+### `LoRaWANUnit_RUI3.get_p2p_encryption_iv()`
 
     Get the encryption IV in P2P mode.
 
     - Returns: The encryption IV as a string.
 
-### `LoRaWAN_X.set_p2p_encryption_iv(iv)`
+### `LoRaWANUnit_RUI3.set_p2p_encryption_iv(iv)`
 
     Set the encryption IV in P2P mode.
 
@@ -1188,13 +1189,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_parameters()`
+### `LoRaWANUnit_RUI3.get_p2p_parameters()`
 
     Get the current P2P parameters.
 
     - Returns: The current P2P parameters as a string.
 
-### `LoRaWAN_X.set_p2p_parameters(frequency, spreading_factor, bandwidth, code_rate, preamble_length, tx_power)`
+### `LoRaWANUnit_RUI3.set_p2p_parameters(frequency, spreading_factor, bandwidth, code_rate, preamble_length, tx_power)`
 
     Set P2P LoRa parameters, including frequency, spreading factor, bandwidth, code rate, preamble length, and transmit power.
 
@@ -1207,13 +1208,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_iq_inversion()`
+### `LoRaWANUnit_RUI3.get_p2p_iq_inversion()`
 
     Get the current IQ inversion state in P2P mode.
 
     - Returns: The IQ inversion state as an integer (0 or 1).
 
-### `LoRaWAN_X.set_p2p_iq_inversion(state)`
+### `LoRaWANUnit_RUI3.set_p2p_iq_inversion(state)`
 
     Enable or disable IQ inversion in P2P mode.
 
@@ -1221,13 +1222,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_sync_word()`
+### `LoRaWANUnit_RUI3.get_p2p_sync_word()`
 
     Get the current sync word in P2P mode.
 
     - Returns: The sync word as a string.
 
-### `LoRaWAN_X.set_p2p_sync_word(sync_word)`
+### `LoRaWANUnit_RUI3.set_p2p_sync_word(sync_word)`
 
     Set the sync word in P2P mode.
 
@@ -1235,13 +1236,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_symbol_timeout()`
+### `LoRaWANUnit_RUI3.get_p2p_symbol_timeout()`
 
     Get the current symbol timeout in P2P mode.
 
     - Returns: The symbol timeout as an integer.
 
-### `LoRaWAN_X.set_p2p_symbol_timeout(timeout)`
+### `LoRaWANUnit_RUI3.set_p2p_symbol_timeout(timeout)`
 
     Set the symbol timeout in P2P mode.
 
@@ -1249,13 +1250,13 @@ if __name__ == "__main__":
 
     - Returns: The response from the command execution.
 
-### `LoRaWAN_X.get_p2p_fix_length_payload_state()`
+### `LoRaWANUnit_RUI3.get_p2p_fix_length_payload_state()`
 
     Get the current fixed length payload state in P2P mode.
 
     - Returns: The fixed length payload state as an integer (0 or 1).
 
-### `LoRaWAN_X.set_p2p_fix_length_payload_state(state)`
+### `LoRaWANUnit_RUI3.set_p2p_fix_length_payload_state(state)`
 
     Enable or disable fixed length payload in P2P mode.
 

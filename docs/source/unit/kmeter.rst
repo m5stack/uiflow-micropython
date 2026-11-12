@@ -38,13 +38,15 @@ UIFLOW2 Example:
     |cores3_kmeter_example.m5f2|
 
 
-class KmeterUnit
+class KMeterUnit
 ----------------
 
 Constructors
 ------------
 
-.. class:: KmeterUnit(i2c, address)
+Import with ``from unit import KMeterUnit``.
+
+.. class:: KMeterUnit(i2c, address=0x66)
 
     :param object i2c: the I2C object.
     :param int address: 0x08 ~ 0x77.
@@ -57,29 +59,29 @@ Constructors
 Methods
 -------
 
-.. method:: KmeterUnit.get_thermocouple_temperature(scale) -> float
+.. method:: KMeterUnit.get_thermocouple_temperature(scale) -> float
 
     Get the temperature of the thermocouple in the Kmeter Unit. Returns a float value.
 
-    :param bool scale: accepts values of :py:data:`KmeterUnit.CELSIUS` or :py:data:`KmeterUnit.FAHRENHEIT`.
+    :param bool scale: accepts values of :py:data:`KMeterUnit.CELSIUS` or :py:data:`KMeterUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_thermocouple_temperature.png|
 
 
-.. method:: KmeterUnit.get_internal_temperature(scale) -> float
+.. method:: KMeterUnit.get_internal_temperature(scale) -> float
 
     Get the internal temperature of the Kmeter Unit. Returns a float value.
 
-    :param bool scale: accepts values of :py:data:`KmeterUnit.CELSIUS` or :py:data:`KmeterUnit.FAHRENHEIT`.
+    :param bool scale: accepts values of :py:data:`KMeterUnit.CELSIUS` or :py:data:`KMeterUnit.FAHRENHEIT`.
 
     UIFLOW2:
 
         |get_internal_temperature.png|
 
 
-.. method:: KmeterUnit.get_sleep_time() -> int
+.. method:: KMeterUnit.get_sleep_time() -> int
 
     Get the sleep time in seconds. Returns a int value.
 
@@ -90,7 +92,7 @@ Methods
         |get_sleep_time.png|
 
 
-.. method:: KmeterUnit.get_firmware_version() -> float
+.. method:: KMeterUnit.get_firmware_version() -> float
 
     Get the firmware version of the Kmeter Unit. Returns an integer version number.
 
@@ -101,7 +103,7 @@ Methods
         |get_firmware_version.png|
 
 
-.. method:: KmeterUnit.get_i2c_address() -> int
+.. method:: KMeterUnit.get_i2c_address() -> int
 
     Get the i2c address of this device should be between 0x08 and 0x77.
 
@@ -112,7 +114,7 @@ Methods
         |get_i2c_address.png|
 
 
-.. method:: KmeterUnit.set_sleep_time(sleep) -> None
+.. method:: KMeterUnit.set_sleep_time(sleep) -> None
 
     Set the sleep time in seconds.
 
@@ -123,7 +125,7 @@ Methods
         |set_sleep_time.png|
 
 
-.. method:: KmeterUnit.set_wakeup_trigger(mode) -> str
+.. method:: KMeterUnit.set_wakeup_trigger(mode) -> str
 
     set wakeup trigger mode in timer or i2c scl low level.
 
@@ -134,7 +136,7 @@ Methods
         |set_wakeup_trigger.png|
 
 
-.. method:: KmeterUnit.set_i2c_address(address) -> int
+.. method:: KMeterUnit.set_i2c_address(address) -> int
 
     Set the i2c address can be changed by the user and this address should be between 0x08 and 0x77.
 
@@ -148,13 +150,13 @@ Methods
 Constants
 ---------
 
-.. data:: KmeterUnit.CELSIUS
+.. data:: KMeterUnit.CELSIUS
     :type: bool
 
     Celsius scale.
 
 
-.. data:: KmeterUnit.FAHRENHEIT
+.. data:: KMeterUnit.FAHRENHEIT
     :type: bool
 
     Fahrenheit scale.

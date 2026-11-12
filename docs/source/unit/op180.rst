@@ -14,7 +14,7 @@ Micropython Example::
     import M5
     from M5 import *
     import time
-    from unit import *
+    from unit import OPUnit
 
     op180_0 = None
 
@@ -49,12 +49,17 @@ class OPUnit
 Constructors
 ------------
 
-.. class:: OP180(io)
+Import with ``from unit import OPUnit``.
 
-    Create an OP180 object.
+.. class:: OPUnit(port, active_low=True, type=1)
+    :no-index:
+
+    Create an OPUnit object.
 
     The parameters is:
-        - ``io`` is the detection pin.
+        - ``port`` is a pin tuple; port[0] is the detection pin.
+        - ``active_low`` defaults to True.
+        - ``type`` is 1 (switch, default) or 2 (edge counter).
 
     UIFLOW2:
 
@@ -64,15 +69,17 @@ Constructors
 Methods
 -------
 
-.. method:: OP180.count_value()
+.. method:: OPUnit.count_value()
+    :no-index:
 
-   Get the count value.
+    Get the count value.
 
     UIFLOW2:
 
         |get_count_value.png|
 
-.. method:: OP108.count_reset()
+.. method:: OPUnit.count_reset()
+    :no-index:
 
     Reset the meter value.
 
