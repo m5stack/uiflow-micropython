@@ -45,18 +45,24 @@ Constructors
 Methods
 -------
 
-.. method:: IRUnit.tx()
+.. method:: IRUnit.tx(cmd, data)
 
     Sends an ir signal value to an address.
+
+    :param int cmd: NEC address byte (0-255).
+    :param int data: NEC command byte (0-255).
 
     UIFLOW2:
 
         |tx.png|
 
 
-.. method:: IRUnit.rx_event()
+.. method:: IRUnit.rx_cb(cb)
 
-    Determine when the infrared signal is read and start to do some processing procedures.
+    Register a callback for received NEC infrared data.
+
+    :param callable cb: Called as ``cb(data, addr, ctrl)`` with the command byte,
+        address byte, and control value (0 for a normal frame or -1 for a repeat).
 
     UIFLOW2:
 

@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 #### NCIR2Unit
 
-### `class unit.hbridge.NCIR2Unit`
+### `class unit.ncir2.NCIR2Unit`
 
     Create an NCIR2Unit object.
 
@@ -111,7 +111,7 @@ from unit import NCIR2Unit
 
 unit_ncir2_0 = NCIR2Unit(i2c0, 0x5A)
 ```
-### `get_temperature_value()`
+### `get_temperature_value`
 
         Get object temperature.
 
@@ -119,9 +119,9 @@ unit_ncir2_0 = NCIR2Unit(i2c0, 0x5A)
         - Return type: float
 
 ```python
-unit_ncir2_0.get_temperature_value()
+unit_ncir2_0.get_temperature_value
 ```
-### `get_emissivity_value()`
+### `get_emissivity_value`
 
         Get current emissivity.
 
@@ -129,7 +129,7 @@ unit_ncir2_0.get_temperature_value()
         - Return type: float
 
 ```python
-unit_ncir2_0.get_emissivity_value()
+unit_ncir2_0.get_emissivity_value
 ```
 ### `set_emissivity_value(emissive)`
 
@@ -234,7 +234,7 @@ unit_ncir2_0.get_temp_buzzer_duty(duty_reg)
 ```python
 unit_ncir2_0.set_temp_buzzer_duty(duty_reg, duty)
 ```
-### `get_buzzer_freq()`
+### `get_buzzer_freq`
 
         Get the frequeny of the buzzer signal.
 
@@ -242,7 +242,7 @@ unit_ncir2_0.set_temp_buzzer_duty(duty_reg, duty)
         - Return type: int
 
 ```python
-unit_ncir2_0.get_buzzer_freq()
+unit_ncir2_0.get_buzzer_freq
 ```
 ### `set_buzzer_freq(freq)`
 
@@ -251,7 +251,7 @@ unit_ncir2_0.get_buzzer_freq()
 ```python
 unit_ncir2_0.set_buzzer_freq(freq)
 ```
-### `get_buzzer_duty()`
+### `get_buzzer_duty`
 
         Get the duty cycle of the buzzer signal.
 
@@ -259,7 +259,7 @@ unit_ncir2_0.set_buzzer_freq(freq)
         - Return type: int
 
 ```python
-unit_ncir2_0.get_buzzer_duty()
+unit_ncir2_0.get_buzzer_duty
 ```
 ### `set_buzzer_duty(duty)`
 
@@ -268,7 +268,7 @@ unit_ncir2_0.get_buzzer_duty()
 ```python
 unit_ncir2_0.set_buzzer_duty(duty)
 ```
-### `get_buzzer_control()`
+### `get_buzzer_control`
 
         Get the buzzer control status
 
@@ -276,7 +276,7 @@ unit_ncir2_0.set_buzzer_duty(duty)
         - Return type: int
 
 ```python
-unit_ncir2_0.get_buzzer_control()
+unit_ncir2_0.get_buzzer_control
 ```
 ### `set_buzzer_control(ctrl)`
 
@@ -285,7 +285,7 @@ unit_ncir2_0.get_buzzer_control()
 ```python
 unit_ncir2_0.set_buzzer_control(ctrl)
 ```
-### `get_rgb_led()`
+### `get_rgb_led`
 
         Get the current RGB LED value
 
@@ -293,7 +293,7 @@ unit_ncir2_0.set_buzzer_control(ctrl)
         - Return type: list
 
 ```python
-unit_ncir2_0.get_rgb_led()
+unit_ncir2_0.get_rgb_led
 ```
 ### `set_rgb_led(rgb)`
 
@@ -302,7 +302,7 @@ unit_ncir2_0.get_rgb_led()
 ```python
 unit_ncir2_0.set_rgb_led(rgb)
 ```
-### `get_button_status()`
+### `get_button_status`
 
         Get the button status
 
@@ -310,16 +310,16 @@ unit_ncir2_0.set_rgb_led(rgb)
         - Return type: bool
 
 ```python
-unit_ncir2_0.get_button_status()
+unit_ncir2_0.get_button_status
 ```
-### `save_config_setting()`
+### `save_config_setting`
 
         Save configuration settings
 
 ```python
-unit_ncir2_0.save_config_setting()
+unit_ncir2_0.save_config_setting
 ```
-### `get_chip_temperature()`
+### `get_chip_temperature`
 
         Get the chip temperature
 
@@ -327,7 +327,7 @@ unit_ncir2_0.save_config_setting()
         - Return type: float
 
 ```python
-unit_ncir2_0.get_chip_temperature()
+unit_ncir2_0.get_chip_temperature
 ```
 ### `get_device_spec(mode)`
 

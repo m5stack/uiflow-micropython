@@ -110,7 +110,7 @@ if __name__ == "__main__":
 
 ## Methods
 
-### `ByteSwitchUnit.get_byte_switch_state() -> int`
+### `ByteSwitchUnit.get_byte_switch_status() -> int`
 
     Get the status of all switchs as an integer, where each bit represents the state of each switch.
 

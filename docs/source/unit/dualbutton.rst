@@ -84,7 +84,10 @@ DualButtonUnit
 
         |init.png|
 
-.. method:: Dual_Button.isHolding()
+The following methods belong to each returned ``hardware.Button`` object.
+
+.. method:: hardware.Button.isHolding()
+    :no-index:
 
     Return whether the button is currently being held.
 
@@ -92,7 +95,8 @@ DualButtonUnit
 
         |get_status.png|
 
-.. method:: Dual_Button.setCallback(type, cb)
+.. method:: hardware.Button.setCallback(type=None, cb=None)
+    :no-index:
 
     Register a callback for the specified button event.
 
@@ -103,7 +107,8 @@ DualButtonUnit
 
         |setCallback.png|
 
-.. method:: Dual_Button.tick(pin)
+.. method:: hardware.Button.tick(pin=None)
+    :no-index:
 
     Poll the button state machine. Call this method regularly in the loop.
 

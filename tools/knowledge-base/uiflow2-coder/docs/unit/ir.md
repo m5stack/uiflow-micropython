@@ -55,10 +55,16 @@ if __name__ == "__main__":
 
 ## Methods
 
-### `IRUnit.tx()`
+### `IRUnit.tx(cmd, data)`
 
     Sends an ir signal value to an address.
 
-### `IRUnit.rx_event()`
+    - Parameter `cmd` (`int`): NEC address byte (0-255).
+    - Parameter `data` (`int`): NEC command byte (0-255).
 
-    Determine when the infrared signal is read and start to do some processing procedures.
+### `IRUnit.rx_cb(cb)`
+
+    Register a callback for received NEC infrared data.
+
+    - Parameter `cb` (`callable`): Called as `cb(data, addr, ctrl)` with the command byte,
+        address byte, and control value (0 for a normal frame or -1 for a repeat).

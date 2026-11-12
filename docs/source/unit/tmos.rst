@@ -427,9 +427,8 @@ Methods
 
         |set_tambient_shock_hysteresis.png|
 
-.. method:: TMOSUnit.is_connected() -> None
-
-    Check whether the TMOSUnit is connected to the device.
+The constructor checks for the Unit on the I2C bus and raises
+``Exception("TMOS Unit not found on I2C bus.")`` if it is absent.
 
 .. method:: TMOSUnit.begin() -> None
 

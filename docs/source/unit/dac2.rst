@@ -4,7 +4,7 @@ DAC2 Unit
 .. include:: ../refs/unit.dac2.ref
 
 
-The `Dac2` class interfaces with a GP8413 15-bit Digital to
+The ``DAC2Unit`` class interfaces with a GP8413 15-bit Digital to
 Analog Converter (DAC), capable of converting digital signals into two channels
 of analog voltage output, ranging from 0-5V and 0-10V.
 
@@ -54,7 +54,7 @@ Constructors
 Methods
 -------
 
-.. method:: DAC2Unit.setDACOutputVoltageRange(_range)
+.. method:: DAC2Unit.set_dacoutput_voltage_range(_range=0)
 
 
     Sets the output voltage range of the DAC.
@@ -65,20 +65,27 @@ Methods
 
         |setDACOutputVoltageRange.png|
 
-.. method:: DAC2Unit.setVoltage(voltage, channel=Dac2.CHANNEL_BOTH)
+.. method:: DAC2Unit.set_voltage(voltage, channel=2)
 
 
     Sets the output voltage of the DAC.
 
     - ``voltage``  Desired output voltage from 0.0 to range maximum (5V or 10V).
-    - ``channel``  The DAC channel to set. Options are `Dac2.CHANNEL_0`, `Dac2.CHANNEL_1`, or `Dac2.CHANNEL_BOTH`.
+    - ``channel``  The DAC channel to set. Pass ``DAC2Unit.CHANNEL_0``, ``DAC2Unit.CHANNEL_1``, or ``DAC2Unit.CHANNEL_BOTH`` explicitly.
+
+    In the current driver, the numeric default ``2`` does not select an output
+    channel. Always supply a named channel constant, for example:
+
+    .. code-block:: python
+
+        dac2_0.set_voltage(1.0, channel=DAC2Unit.CHANNEL_BOTH)
 
     UIFLOW2:
 
         |setVoltage.png|
 
 
-.. method:: DAC2Unit.setVoltageBoth(voltage0, voltage1)
+.. method:: DAC2Unit.set_voltage_both(voltage0, voltage1)
 
 
     Sets the output voltage for both channels.

@@ -61,7 +61,7 @@ Import with ``from unit import WeightI2CUnit``.
 Methods
 ----------------------
 
-.. method:: WeightI2CUnit.get_adc_raw
+.. attribute:: WeightI2CUnit.get_adc_raw
 
 
     Gets the raw adc value.
@@ -70,7 +70,7 @@ Methods
 
         |get_adc_raw.png|
 
-.. method:: WeightI2CUnit.get_weight_float
+.. attribute:: WeightI2CUnit.get_weight_float
 
 
     Gets the weight in grams float value.
@@ -79,7 +79,7 @@ Methods
 
         |get_weight_float.png|
 
-.. method:: WeightI2CUnit.get_weight_int
+.. attribute:: WeightI2CUnit.get_weight_int
 
 
     Gets the weight in grams int value.
@@ -88,7 +88,7 @@ Methods
 
         |get_weight_int.png|
 
-.. method:: WeightI2CUnit.get_weight_str
+.. attribute:: WeightI2CUnit.get_weight_str
 
 
     Gets the weight in grams string value.
@@ -137,7 +137,7 @@ Methods
         |set_lowpass_filter.png|
 
 
-.. method:: WeightI2CUnit.get_lowpass_filter
+.. attribute:: WeightI2CUnit.get_lowpass_filter
 
     Returns the status of the low pass filter (enable or disable).
 
@@ -156,7 +156,7 @@ Methods
 
         |set_average_filter_level.png|
 
-.. method:: WeightI2CUnit.get_average_filter_level
+.. attribute:: WeightI2CUnit.get_average_filter_level
 
     Returns the level of the average filter.
 
@@ -176,7 +176,7 @@ Methods
 
         |set_ema_filter_alpha.png|
 
-.. method:: WeightI2CUnit.get_ema_filter_alpha
+.. attribute:: WeightI2CUnit.get_ema_filter_alpha
 
     Returns the alpha value for the EMA filter.
 

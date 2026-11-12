@@ -62,6 +62,10 @@ Constructors
 Methods
 -------
 
+``ACSSRUnit`` is a factory: it returns an ``ACSSRI2CUnit`` for an I2C bus or an
+``ACSSRModbusUnit`` for a Modbus bus. The methods below belong to the returned
+object and are available in both modes.
+
 .. method:: ACSSRUnit.on() -> None
 
     Turn on the relay.

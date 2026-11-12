@@ -288,9 +288,8 @@ if __name__ == "__main__":
 
     - Parameter `val` (`int`): ambient temperature shock hysteresis(0x0~0xFF)
 
-### `TMOSUnit.is_connected() -> None`
-
-    Check whether the TMOSUnit is connected to the device.
+The constructor checks for the Unit on the I2C bus and raises
+`Exception("TMOS Unit not found on I2C bus.")` if it is absent.
 
 ### `TMOSUnit.begin() -> None`
 

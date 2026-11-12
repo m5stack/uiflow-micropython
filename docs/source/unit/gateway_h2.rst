@@ -76,7 +76,7 @@ GatewayH2Unit
 
             gateway_h2_unit = GatewayH2Unit(2, port=(1, 2))
 
-    .. method:: create_switch_endpoint()
+    .. method:: create_switch_ep()
 
         Create Switch Endpoint.
 
@@ -91,6 +91,6 @@ GatewayH2Unit
 
             .. code-block:: python
 
-                h2_switch_endpoint = gateway_h2_unit.create_switch_endpoint()
+                h2_switch_endpoint = gateway_h2_unit.create_switch_ep()
 
 Refer to :ref:`switchendpoint` for more details about SwitchEndpoint.

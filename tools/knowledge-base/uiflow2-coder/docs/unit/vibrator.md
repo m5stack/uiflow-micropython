@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     - Parameter `freq` (`int`): The frequency of vibration ranges from 10-55Hz.
 
-### `VibratorUnit.set_duty(freq) -> None`
+### `VibratorUnit.set_duty(duty) -> None`
 
     Set the vibration duty cycle.
 
@@ -85,6 +85,6 @@ if __name__ == "__main__":
 
     Turn off the motor.
 
-### `VibratorUnit.deint() -> None`
+### `VibratorUnit.deinit() -> None`
 
     Deinitialize the motor.

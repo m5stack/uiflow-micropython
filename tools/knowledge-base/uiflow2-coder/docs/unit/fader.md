@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
 ## Constructors
 
-### `FaderUnit(port: tuple)`
+### `class FaderUnit(port: tuple)`
 
     Initialize the Fader.
 

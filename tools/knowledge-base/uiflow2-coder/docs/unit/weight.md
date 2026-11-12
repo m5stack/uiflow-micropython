@@ -69,11 +69,11 @@ Import with `from unit import WeightUnit`.
 
 ## Methods
 
-### `WeightUnit.get_raw_weight()`
+### `WeightUnit.get_raw_weight`
 
     Read the raw weight value from the HX711.
 
-### `WeightUnit.get_scale_weight()`
+### `WeightUnit.get_scale_weight`
 
     Get the scaled weight value based on calibration.
 

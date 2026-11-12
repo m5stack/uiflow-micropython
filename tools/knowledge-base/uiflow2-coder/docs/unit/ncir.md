@@ -58,10 +58,10 @@ if __name__ == "__main__":
 
 ## Methods
 
-### `ncir.get_ambient_temperature()`
+### `NCIRUnit.get_ambient_temperature()`
 
     Obtain the ambient temperature.
 
-### `ncir.get_object_temperature()`
+### `NCIRUnit.get_object_temperature()`
 
-   Get the temperature of the measured object.
+    Get the temperature of the measured object.

@@ -121,6 +121,9 @@ If address `0x27` is not detected, the example raises a connection error.
 
 ## class Pin
 
+The `Pin` interface below is `driver.pca9554.Pin`. Obtain a pin object
+from `extio_0.pin(id)` on an `EXTIOUnit` instance.
+
 ## Constructors
 
 ### `class Pin(port, id, mode, value)`

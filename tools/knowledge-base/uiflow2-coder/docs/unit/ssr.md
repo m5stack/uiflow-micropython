@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
 ## Constructors
 
-### `SSRUnit(port)`
+### `class SSRUnit(port)`
 
     Initialize the SSR.
 

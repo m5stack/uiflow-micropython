@@ -114,7 +114,7 @@ Methods
         |get_internal_temperature_string.png|
 
 
-.. method:: KMeterISOUnit.get_device_spec(mode) -> int
+.. method:: KMeterISOUnit.get_device_info(mode) -> int
 
     Get the firmware version of the KmeterISO Unit. Returns an integer version number.
 

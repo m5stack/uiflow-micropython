@@ -33,7 +33,7 @@ class SSRUnit
 Constructors
 ------------
 
-.. method:: SSRUnit(port)
+.. class:: SSRUnit(port)
 
     Initialize the SSR.
 

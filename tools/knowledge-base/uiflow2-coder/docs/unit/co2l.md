@@ -197,14 +197,4 @@ if __name__ == "__main__":
 
     - Parameter `num` (`int`): The number of bytes to read from the sensor.
 
-### `CO2LUnit.check_crc(buf)`
-
-    Check the CRC of the received data to ensure it is correct.
-
-    - Parameter `buf` (`bytearray`): The buffer of bytes to check the CRC.
-
-### `CO2LUnit.crc8(buffer)`
-
-    Calculate the CRC-8 checksum for a given buffer.
-
-    - Parameter `buffer` (`bytearray`): The buffer of bytes to calculate the CRC for.
+    CRC verification is performed internally when reading the response.

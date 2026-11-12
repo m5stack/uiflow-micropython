@@ -151,11 +151,11 @@ from unit import GatewayH2Unit
 
 gateway_h2_unit = GatewayH2Unit(2, port=(1, 2))
 ```
-### `create_switch_endpoint()`
+### `create_switch_ep()`
 
         Create Switch Endpoint.
 
 ```python
-h2_switch_endpoint = gateway_h2_unit.create_switch_endpoint()
+h2_switch_endpoint = gateway_h2_unit.create_switch_ep()
 ```
 Refer to `switchendpoint` for more details about SwitchEndpoint.

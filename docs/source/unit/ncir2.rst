@@ -54,7 +54,7 @@ Example output:
 NCIR2Unit
 ^^^^^^^^^
 
-.. class:: unit.hbridge.NCIR2Unit
+.. class:: unit.ncir2.NCIR2Unit
 
     Create an NCIR2Unit object.
 
@@ -73,7 +73,7 @@ NCIR2Unit
 
             unit_ncir2_0 = NCIR2Unit(i2c0, 0x5A)
  
-    .. method:: get_temperature_value()
+    .. attribute:: get_temperature_value
 
         Get object temperature. 
 
@@ -88,9 +88,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_temperature_value()
+                unit_ncir2_0.get_temperature_value
  
-     .. method:: get_emissivity_value()
+    .. attribute:: get_emissivity_value
 
         Get current emissivity. 
 
@@ -105,9 +105,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_emissivity_value()
+                unit_ncir2_0.get_emissivity_value
 
-     .. method:: set_emissivity_value(emissive)
+    .. method:: set_emissivity_value(emissive)
 
         Set the emissivity.
 
@@ -129,7 +129,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_emissivity_value(emissive)
 
-     .. method:: get_temperature_threshold(alarm_reg)
+    .. method:: get_temperature_threshold(alarm_reg)
 
         Get temperature alaram threshold. 
 
@@ -147,7 +147,7 @@ NCIR2Unit
 
                 unit_ncir2_0.get_temperature_threshold(alarm_reg)
 
-     .. method:: set_temperature_threshold(alarm_reg, temp)
+    .. method:: set_temperature_threshold(alarm_reg, temp)
 
         Set temperature alarm threshold. 
 
@@ -164,7 +164,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_temperature_threshold(alarm_reg, temp)
 
-     .. method:: get_temp_alarm_led(alarm_reg)
+    .. method:: get_temp_alarm_led(alarm_reg)
 
         Get temperature alaram RGB LED value. 
 
@@ -182,7 +182,7 @@ NCIR2Unit
 
                 unit_ncir2_0.get_temp_alarm_led(alarm_reg)
 
-     .. method:: set_temp_alarm_led(alarm_reg, rgb)
+    .. method:: set_temp_alarm_led(alarm_reg, rgb)
 
         Set temperature alaram RGB LED value. 
 
@@ -199,7 +199,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_temp_alarm_led(alarm_reg, rgb)
 
-     .. method:: get_temp_buzzer_freq(alarm_reg)
+    .. method:: get_temp_buzzer_freq(alarm_reg)
 
         Get the buzzer frequency for temperature alarm. 
 
@@ -217,7 +217,7 @@ NCIR2Unit
 
                 unit_ncir2_0.get_temp_buzzer_freq(alarm_reg)
 
-     .. method:: set_temp_buzzer_freq(alarm_reg, freq)
+    .. method:: set_temp_buzzer_freq(alarm_reg, freq)
 
         Set the buzzer frequency for temperature alarm.  
 
@@ -235,7 +235,7 @@ NCIR2Unit
                 unit_ncir2_0.set_temp_buzzer_freq(alarm_reg, freq)
 
 
-     .. method:: get_temp_alarm_interval(alarm_reg)
+    .. method:: get_temp_alarm_interval(alarm_reg)
 
         Get the buzzer alarm interval. 
 
@@ -253,7 +253,7 @@ NCIR2Unit
 
                 unit_ncir2_0.get_temp_alarm_interval(alarm_reg)
 
-     .. method:: set_temp_alarm_interval(alarm_reg, interval)
+    .. method:: set_temp_alarm_interval(alarm_reg, interval)
 
         Set the buzzer alarm interval. 
 
@@ -270,7 +270,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_temp_alarm_interval(alarm_reg, interval)
 
-     .. method:: get_temp_buzzer_duty(duty_reg)
+    .. method:: get_temp_buzzer_duty(duty_reg)
 
         Get the duty cycle of the temperature alarm buzzer signal.
 
@@ -288,7 +288,7 @@ NCIR2Unit
 
                 unit_ncir2_0.get_temp_buzzer_duty(duty_reg)
 
-     .. method:: set_temp_buzzer_duty(duty_reg, duty)
+    .. method:: set_temp_buzzer_duty(duty_reg, duty)
 
         Set the duty cycle of the temperature alarm buzzer signal.
 
@@ -305,7 +305,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_temp_buzzer_duty(duty_reg, duty)
 
-     .. method:: get_buzzer_freq()
+    .. attribute:: get_buzzer_freq
 
         Get the frequeny of the buzzer signal.
 
@@ -320,9 +320,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_buzzer_freq()
+                unit_ncir2_0.get_buzzer_freq
  
-     .. method:: set_buzzer_freq(freq)
+    .. method:: set_buzzer_freq(freq)
 
         Set the frequeny of the buzzer signal.
  
@@ -338,7 +338,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_buzzer_freq(freq)
 
-     .. method:: get_buzzer_duty()
+    .. attribute:: get_buzzer_duty
 
         Get the duty cycle of the buzzer signal.
 
@@ -353,9 +353,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_buzzer_duty()
+                unit_ncir2_0.get_buzzer_duty
 
-     .. method:: set_buzzer_duty(duty)
+    .. method:: set_buzzer_duty(duty)
 
         Set the duty cycle of the buzzer signal.
  
@@ -371,7 +371,7 @@ NCIR2Unit
 
                 unit_ncir2_0.set_buzzer_duty(duty)
 
-    .. method:: get_buzzer_control()
+    .. attribute:: get_buzzer_control
 
         Get the buzzer control status
 
@@ -386,7 +386,7 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_buzzer_control()
+                unit_ncir2_0.get_buzzer_control
 
     .. method:: set_buzzer_control(ctrl)
 
@@ -405,7 +405,7 @@ NCIR2Unit
                 unit_ncir2_0.set_buzzer_control(ctrl)
 
 
-    .. method:: get_rgb_led() 
+    .. attribute:: get_rgb_led
 
         Get the current RGB LED value
 
@@ -420,7 +420,7 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_rgb_led()
+                unit_ncir2_0.get_rgb_led
 
     .. method:: set_rgb_led(rgb) 
 
@@ -439,7 +439,7 @@ NCIR2Unit
                 unit_ncir2_0.set_rgb_led(rgb)
 
 
-    .. method:: get_button_status()
+    .. attribute:: get_button_status
 
         Get the button status
 
@@ -454,9 +454,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_button_status()
+                unit_ncir2_0.get_button_status
 
-    .. method:: save_config_setting()
+    .. attribute:: save_config_setting
 
         Save configuration settings
 
@@ -468,9 +468,9 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.save_config_setting()
+                unit_ncir2_0.save_config_setting
 
-    .. method:: get_chip_temperature()
+    .. attribute:: get_chip_temperature
 
         Get the chip temperature
 
@@ -485,7 +485,7 @@ NCIR2Unit
 
             .. code-block:: python
 
-                unit_ncir2_0.get_chip_temperature()
+                unit_ncir2_0.get_chip_temperature
 
     .. method:: get_device_spec(mode)
 
@@ -519,6 +519,3 @@ NCIR2Unit
             .. code-block:: python
 
                 unit_ncir2_0.set_i2c_address(addr)
-
-
- 

@@ -136,6 +136,9 @@ Methods
 class Pin
 ---------
 
+The ``Pin`` interface below is ``driver.pca9554.Pin``. Obtain a pin object
+from ``extio_0.pin(id)`` on an ``EXTIOUnit`` instance.
+
 Constructors
 ------------
 

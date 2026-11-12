@@ -70,7 +70,7 @@ Methods
         |set_freq.png|
 
 
-.. method:: VibratorUnit.set_duty(freq) -> None
+.. method:: VibratorUnit.set_duty(duty) -> None
 
     Set the vibration duty cycle.
 
@@ -90,7 +90,7 @@ Methods
         |turn_off.png|
 
 
-.. method:: VibratorUnit.deint() -> None
+.. method:: VibratorUnit.deinit() -> None
 
     Deinitialize the motor.
 

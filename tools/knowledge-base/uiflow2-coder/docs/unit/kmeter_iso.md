@@ -64,7 +64,7 @@ Import with `from unit import KMeterISOUnit`.
 
     `scale` accepts values of :py`KMeterISOUnit.CELSIUS` or :py`KMeterISOUnit.FAHRENHEIT`.
 
-### `KMeterISOUnit.get_device_spec(mode) -> int`
+### `KMeterISOUnit.get_device_info(mode) -> int`
 
     Get the firmware version of the KmeterISO Unit. Returns an integer version number.
 

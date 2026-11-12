@@ -136,18 +136,20 @@ Example output:
     - Returns: The blue and red `hardware.Button` objects.
     - Return type: tuple
 
-### `Dual_Button.isHolding()`
+The following methods belong to each returned `hardware.Button` object.
+
+### `hardware.Button.isHolding()`
 
     Return whether the button is currently being held.
 
-### `Dual_Button.setCallback(type, cb)`
+### `hardware.Button.setCallback(type=None, cb=None)`
 
     Register a callback for the specified button event.
 
     - Parameter `type` (`int`): Button event type.
     - Parameter `cb` (`callable`): Function called when the event occurs.
 
-### `Dual_Button.tick(pin)`
+### `hardware.Button.tick(pin=None)`
 
     Poll the button state machine. Call this method regularly in the loop.
 

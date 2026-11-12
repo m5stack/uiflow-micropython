@@ -106,7 +106,7 @@ class MiniScaleUnit
             i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
             miniscale_0 = MiniScaleUnit(i2c0)
 
-    .. method:: adc
+    .. attribute:: adc
 
         Read raw ADC value (unprocessed).
 
@@ -123,7 +123,7 @@ class MiniScaleUnit
 
                 adc_value = miniscale_0.adc
 
-    .. method:: weight
+    .. attribute:: weight
 
         Read current weight (grams).
 
@@ -140,7 +140,7 @@ class MiniScaleUnit
 
                 weight_value = miniscale_0.weight
 
-    .. method:: button
+    .. attribute:: button
 
         Read button state.
 

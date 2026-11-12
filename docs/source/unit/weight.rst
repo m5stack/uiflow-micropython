@@ -47,7 +47,7 @@ Import with ``from unit import WeightUnit``.
 Methods
 -------
 
-.. method:: WeightUnit.get_raw_weight()
+.. attribute:: WeightUnit.get_raw_weight
 
     Read the raw weight value from the HX711.
 
@@ -56,7 +56,7 @@ Methods
 
         |get_raw_weight.png|
 
-.. method:: WeightUnit.get_scale_weight()
+.. attribute:: WeightUnit.get_scale_weight
 
     Get the scaled weight value based on calibration.
 

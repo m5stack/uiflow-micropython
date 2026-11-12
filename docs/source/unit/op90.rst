@@ -67,9 +67,10 @@ Constructors
 Methods
 -------
 
-.. method:: OPUnit.count_value()
+.. attribute:: OPUnit.count_value
 
-   Get the count value.
+    Current integer edge count. Read ``op90_0.count_value`` without parentheses.
+    Edge counting is enabled by constructing the Unit with ``type=2``.
 
     UIFLOW2:
 

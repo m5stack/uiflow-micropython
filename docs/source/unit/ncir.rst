@@ -48,7 +48,7 @@ Constructors
 Methods
 -------
 
-.. method:: ncir.get_ambient_temperature()
+.. method:: NCIRUnit.get_ambient_temperature()
 
     Obtain the ambient temperature.
 
@@ -57,9 +57,9 @@ Methods
         |get_ambient_temperature.png|
 
 
-.. method:: ncir.get_object_temperature()
+.. method:: NCIRUnit.get_object_temperature()
 
-   Get the temperature of the measured object.
+    Get the temperature of the measured object.
 
     UIFLOW2:
 

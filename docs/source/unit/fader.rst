@@ -31,7 +31,7 @@ class FaderUnit
 Constructors
 ------------
 
-.. method:: FaderUnit(port: tuple)
+.. class:: FaderUnit(port: tuple)
 
     Initialize the Fader.
 
