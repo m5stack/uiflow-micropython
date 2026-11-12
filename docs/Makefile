@@ -5,6 +5,7 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
+PYTHON        ?= python3
 SPHINX_PARALLEL ?= 8
 SOURCEDIR     = source
 BUILDDIR      = build/$(SOURCEDIR)
@@ -20,12 +21,15 @@ help:
 doxygen:
 	doxygen
 
-.PHONY: help Makefile en zh #doxygen
+.PHONY: help Makefile en zh check-literalincludes #doxygen
 
-en:
+check-literalincludes:
+	@$(PYTHON) tools/check_literalincludes.py "$(SOURCEDIR)"
+
+en: check-literalincludes
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b html -D language=en "$(SOURCEDIR)" build/html/en $(SPHINXOPTS) $(O)
 
-zh:
+zh: check-literalincludes
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b gettext "$(SOURCEDIR)" build/gettext $(SPHINXOPTS) $(O)
 	@sphinx-intl update -p build/gettext -l zh_CN -d locales
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b html -D language=zh_CN "$(SOURCEDIR)" build/html/zh_CN $(SPHINXOPTS) $(O)

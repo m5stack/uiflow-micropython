@@ -4,6 +4,60 @@ Support the following products:
 
 EXTIOUnit
 
+## MicroPython Example
+
+#### Read IO0
+
+Connect a first-generation EXT.IO Unit (PCA9554, default address `0x27`)
+to PORT.A on a Core2. The example configures all eight expansion pins as
+inputs and prints the IO0 level to the serial terminal every 200 ms.
+It does not drive any expansion pin.
+
+The Core2 PORT.A pins are SCL=33 and SDA=32. For another controller,
+change the I2C pins to match its PORT.A connection. EXT.IO2 is a different
+product and requires `EXTIO2Unit` instead of this example.
+
+```python
+"""Read IO0 on a first-generation EXT.IO Unit connected to Core2 PORT.A."""
+
+import time
+
+import M5
+from hardware import I2C, Pin
+from unit import EXTIOUnit
+
+extio = None
+
+def setup():
+    global extio
+    M5.begin()
+    i2c = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+    if 0x27 not in i2c.scan():
+        raise RuntimeError("EXT.IO not found at 0x27; check PORT.A and the Unit address")
+    extio = EXTIOUnit(i2c, address=0x27)
+    extio.set_port_mode(EXTIOUnit.IN)
+
+def loop():
+    M5.update()
+    print("IO0:", extio.digit_read(0))
+    time.sleep_ms(200)
+
+if __name__ == "__main__":
+    setup()
+    while True:
+        loop()
+```
+
+Example output:
+
+```text
+IO0: 0
+IO0: 1
+```
+IO0 reads 0 when connected to GND, and 1 when connected to a common-ground
+3.3 V logic-high source. An unconnected input has no guaranteed level.
+If address `0x27` is not detected, the example raises a connection error.
+
 ## class EXTIOUnit
 
 ## Constructors

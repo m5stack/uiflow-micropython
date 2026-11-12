@@ -7,20 +7,37 @@ Support the following products:
 
 |EXTIOUnit|
 
-..
-    Micropython Example:
+MicroPython Example
+-------------------
 
-        .. literalinclude:: ../../../examples/unit/extio/extio_core2_example.py
-            :language: python
-            :linenos:
+Read IO0
+^^^^^^^^
 
-    UIFLOW2 Example:
+Connect a first-generation EXT.IO Unit (PCA9554, default address ``0x27``)
+to PORT.A on a Core2. The example configures all eight expansion pins as
+inputs and prints the IO0 level to the serial terminal every 200 ms.
+It does not drive any expansion pin.
 
-        |example.png|
+The Core2 PORT.A pins are SCL=33 and SDA=32. For another controller,
+change the I2C pins to match its PORT.A connection. EXT.IO2 is a different
+product and requires ``EXTIO2Unit`` instead of this example.
 
-    .. only:: builder_html
+MicroPython Code Block:
 
-        |extio_core2_example.m5f2|
+    .. literalinclude:: ../../../examples/unit/extio/extio_core2_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+.. code-block:: text
+
+    IO0: 0
+    IO0: 1
+
+IO0 reads 0 when connected to GND, and 1 when connected to a common-ground
+3.3 V logic-high source. An unconnected input has no guaranteed level.
+If address ``0x27`` is not detected, the example raises a connection error.
 
 
 class EXTIOUnit
