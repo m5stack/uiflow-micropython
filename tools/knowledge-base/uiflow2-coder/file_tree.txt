@@ -1,4 +1,4 @@
-docs/  (375 Markdown files, 22 directories; .md suffix omitted)
+docs/  (376 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -14,8 +14,8 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
                   dinmeter, dualkey, nesso-n1, paper, paperdiy, stackchan, stamplc, stampp4x, sticks3, stopwatch, tab5
                   tab5x, toughc5
   - get-started/: _overview
-  - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, scd40, sen55
-               sht30, sht4x, speaker, touch, uart, wdt
+  - hardware/: adc, als, button, can, display, i2c, imu, ir, lora, mic, nfc, pin, pwr485, pwrcan, rotary, rtc, scd40
+               sen55, sht30, sht4x, speaker, touch, uart, wdt
   - hat/: adc, cardkb, dac, dac2, dlight, env, finger, hat18650c, heart, joyc, joystick, mini_encoder, mini_joy, ncir
           neoflash, pir, servo, servo8, speaker, speaker2, thermal, tof, vibrator
   - iot-devices/: _overview, switchc6

@@ -19,6 +19,7 @@ Hardware
     pwr485.rst
     pwrcan.rst
     rotary.rst
+    rtc.rst
     scd40.rst
     sen55.rst
     sht30.rst

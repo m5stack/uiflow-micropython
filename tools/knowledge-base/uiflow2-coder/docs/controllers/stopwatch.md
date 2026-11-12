@@ -27,7 +27,7 @@ text respectively.
 
 StopWatch supports the following built-in functions and peripherals:
 
-- [RTC](../unit/rtc.md) date and time display and adjustment.
+- [RTC](../hardware/rtc.md) date and time display and adjustment.
 - Button input and round-display output.
 - USB, battery, and Grove voltage monitoring with charging and external-output control.
 - [Audio](../system/audio.md) recording and playback.

@@ -34,7 +34,7 @@ Board Features
 
 StopWatch supports the following built-in functions and peripherals:
 
-* `RTC <../unit/rtc.html>`_ date and time display and adjustment.
+* `RTC <../hardware/rtc.html>`_ date and time display and adjustment.
 * Button input and round-display output.
 * USB, battery, and Grove voltage monitoring with charging and external-output control.
 * `Audio <../system/audio.html>`_ recording and playback.
