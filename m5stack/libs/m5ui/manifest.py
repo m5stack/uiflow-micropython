@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
+include("../lv_utils/manifest.py")
+
 package(
     "m5ui",
     (
