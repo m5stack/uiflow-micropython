@@ -228,3 +228,32 @@ msgstr ""
 msgid "width.png"
 msgstr ""
 
+#: ../../source/hardware/adc.rst
+msgid ""
+"Import the ADC and pin classes explicitly. The ``hardware`` namespace "
+"exports the same classes as ``machine``."
+msgstr "请显式导入 ADC 和引脚类。``hardware`` 命名空间导出的类与 ``machine`` 相同。"
+
+#: ../../source/hardware/adc.rst
+msgid ""
+"The ``atten`` keyword is optional and defaults to ``ADC.ATTN_11DB`` on the "
+"ESP32 port. Pass an attenuation constant explicitly to choose another "
+"setting."
+msgstr ""
+"``atten`` 关键字为可选参数，在 ESP32 移植中默认为 ``ADC.ATTN_11DB``。需要其它衰减设置时，请显式传入对应常量。"
+
+#: ../../source/hardware/adc.rst
+msgid "Raw ADC reading."
+msgstr "ADC 原始读数。"
+
+#: ../../source/hardware/adc.rst
+msgid "Raw ADC reading scaled to 0-65535."
+msgstr "缩放到 0-65535 范围的 ADC 原始读数。"
+
+#: ../../source/hardware/adc.rst
+msgid "Calibrated input voltage in microvolts."
+msgstr "校准后的输入电压，单位为微伏。"
+
+#: ../../source/hardware/adc.rst
+msgid "If calibrated readings are unavailable on the port or chip."
+msgstr "移植或芯片无法提供校准读数时抛出此异常。"

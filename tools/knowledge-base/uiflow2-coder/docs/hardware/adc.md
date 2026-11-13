@@ -54,11 +54,23 @@ if __name__ == "__main__":
 
 ## class ADC
 
-### `class ADC(pin, *, atten)`
+Import the ADC and pin classes explicitly. The `hardware` namespace exports the same
+classes as `machine`.
+
+```python
+from hardware import ADC, Pin
+
+adc = ADC(Pin(6))
+adc_with_attenuation = ADC(Pin(6), atten=ADC.ATTN_11DB)
+```
+### `class ADC(pin, *, atten=ADC.ATTN_11DB)`
 
     Return the ADC object for the specified pin. ESP32 does not support
     different timings for ADC sampling and so the `sample_ns` keyword argument
     is not supported.
+
+    The `atten` keyword is optional and defaults to `ADC.ATTN_11DB` on the ESP32
+    port. Pass an attenuation constant explicitly to choose another setting.
 
     To read voltages above the reference voltage, apply input attenuation with
     the `atten` keyword argument. Valid values (and approximate linear
@@ -78,11 +90,17 @@ if __name__ == "__main__":
     This method returns the raw ADC value ranged according to the resolution of
     the block, e.g., 0-4095 for 12-bit resolution.
 
+    - Returns: Raw ADC reading.
+    - Return type: int
+
 ### `ADC.read_u16()`
 
-   Take an analog reading and return an integer in the range 0-65535.
-   The return value represents the raw reading taken by the ADC, scaled
-   such that the minimum value is 0 and the maximum value is 65535.
+    Take an analog reading and return an integer in the range 0-65535.
+    The return value represents the raw reading taken by the ADC, scaled
+    such that the minimum value is 0 and the maximum value is 65535.
+
+    - Returns: Raw ADC reading scaled to 0-65535.
+    - Return type: int
 
 ### `ADC.read_uv()`
 
@@ -95,6 +113,9 @@ if __name__ == "__main__":
     particular, an input tied to ground will read as a value above 0 microvolts.
     Within the linear range, however, more accurate and consistent results will
     be obtained than using `read_u16()` and scaling the result with a constant.
+
+    - Returns: Calibrated input voltage in microvolts.
+    - Return type: int
 
 ### `ADC.atten(atten)`
 

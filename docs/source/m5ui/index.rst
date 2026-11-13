@@ -6,11 +6,14 @@ M5UI
 
 M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and functions to create user interfaces for M5Stack devices.
 
-It has been adapted for M5Stack devices and you only need to call ``m5ui.init()`` to start using it.
+On M5Stack devices, ``m5ui.init()`` initializes the board, the display and LVGL.
 
 .. note::
 
-    Set the display rotation before calling ``m5ui.init()``. With the updated M5GFX, Core2, CoreS3 and StackChan use ``0`` for their normal 320 × 240 landscape layout. See :ref:`display-rotation` for other controllers and migration instructions.
+    To configure the display before LVGL is initialized, call ``M5.begin()``, set the
+    desired rotation, and then call ``m5ui.init()``. With the updated M5GFX, Core2,
+    CoreS3 and StackChan use ``0`` for their normal 320 × 240 landscape layout. See
+    :ref:`display-rotation` for other controllers and migration instructions.
 
 Supported Controllers
 ---------------------
@@ -132,9 +135,12 @@ For drawing text with ``M5.Lcd`` or widgets based on ``M5.Widgets``, use
 
 .. code-block:: python
 
+    import M5
     import m5ui
     import lvgl as lv
 
+    M5.begin()
+    M5.Lcd.setRotation(0)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
 
@@ -143,6 +149,7 @@ For drawing text with ``M5.Lcd`` or widgets based on ``M5.Widgets``, use
 
     optional_font = lv.font_montserrat_20 if hasattr(lv, "font_montserrat_20") else lv.font_montserrat_18
     value = m5ui.M5Label("123", x=10, y=80, font=optional_font, parent=page0)
+    page0.screen_load()
 
 
 Functions
@@ -150,7 +157,7 @@ Functions
 
 .. function:: m5ui.init()
 
-    Initialize the M5UI library. This function must be called before using any other M5UI functions.
+    Initialize the M5UI library. On M5Stack devices this also initializes the board and display. Call this function before creating M5UI widgets.
 
     Call this before creating raw ``lvgl`` widgets or accessing the active screen.
     Without an initialized display, these operations raise ``RuntimeError``.

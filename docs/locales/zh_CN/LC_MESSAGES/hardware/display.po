@@ -1744,3 +1744,265 @@ msgstr ""
 #~ "实际显示方向取决于主机型号和 M5GFX 版本，同一个旋转值并不总是表示横屏或竖屏。更新 M5GFX"
 #~ " 后，Core/Basic/Fire、Core2 和 CoreS3 的正常横屏方向使用 "
 #~ "0。迁移示例时，应同时更新 Python 文件和对应 .m5f2 的屏幕配置或旋转积木。"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"Parameters marked required must be supplied. Optional values are shown in "
+"the method signatures. Shape drawing methods and ``fillScreen()`` reuse the "
+"current drawing color when ``color`` is omitted or set to ``-1``. The "
+"``clear()`` method uses the current base color."
+msgstr ""
+"必须提供标为必填的参数。方法签名中列出了可选参数的默认值。绘制图元和调用 ``fillScreen()`` 时，省略 ``color`` 或传入 "
+"``-1`` 会复用当前绘图颜色。``clear()`` 使用当前底色。"
+
+#: ../../source/hardware/display.rst
+msgid "text color in RGB888 format (required)"
+msgstr "文本颜色，RGB888 格式（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "True to enable text scrolling, False to disable (required)"
+msgstr "设置为 True 启用文本滚动，设置为 False 禁用文本滚动（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "horizontal position of the cursor (required)"
+msgstr "光标的水平位置（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "vertical position of the cursor (required)"
+msgstr "光标的垂直位置（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"fill color in RGB888 format (optional, reuses the current color when omitted"
+" or set to -1)"
+msgstr "填充颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "horizontal coordinate of the pixel (required)"
+msgstr "像素的水平坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "vertical coordinate of the pixel (required)"
+msgstr "像素的垂直坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"pixel color in RGB888 format (optional, reuses the current color when "
+"omitted or set to -1)"
+msgstr "像素颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "x-coordinate of circle center (required)"
+msgstr "圆心的 x 坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "y-coordinate of circle center (required)"
+msgstr "圆心的 y 坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "radius of the circle (required)"
+msgstr "圆的半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"circle color in RGB888 format (optional, reuses the current color when "
+"omitted or set to -1)"
+msgstr "圆的颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "x-coordinate of ellipse center (required)"
+msgstr "椭圆中心的 x 坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "y-coordinate of ellipse center (required)"
+msgstr "椭圆中心的 y 坐标（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "horizontal radius (required)"
+msgstr "椭圆的水平半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "vertical radius (required)"
+msgstr "椭圆的垂直半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"ellipse color in RGB888 format (optional, reuses the current color when "
+"omitted or set to -1)"
+msgstr "椭圆颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "starting x-coordinate (required)"
+msgstr "直线起点坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "starting y-coordinate (required)"
+msgstr "直线起点坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "ending x-coordinate (required)"
+msgstr "直线终点坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "ending y-coordinate (required)"
+msgstr "直线终点坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"line color in RGB888 format (optional, reuses the current color when omitted"
+" or set to -1)"
+msgstr "线条颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "top-left x-coordinate (required)"
+msgstr "矩形左上角坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "top-left y-coordinate (required)"
+msgstr "矩形左上角坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "width of rectangle (required)"
+msgstr "矩形的宽度（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "height of rectangle (required)"
+msgstr "矩形的高度（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"rectangle color in RGB888 format (optional, reuses the current color when "
+"omitted or set to -1)"
+msgstr "矩形颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "corner radius (required)"
+msgstr "圆角半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "first vertex x-coordinate (required)"
+msgstr "第一个顶点的坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "first vertex y-coordinate (required)"
+msgstr "第一个顶点的坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "second vertex x-coordinate (required)"
+msgstr "第二个顶点的坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "second vertex y-coordinate (required)"
+msgstr "第二个顶点的坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "third vertex x-coordinate (required)"
+msgstr "第三个顶点的坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "third vertex y-coordinate (required)"
+msgstr "第三个顶点的坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"triangle color in RGB888 format (optional, reuses the current color when "
+"omitted or set to -1)"
+msgstr "三角形颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "center x-coordinate (required)"
+msgstr "弧线的中心坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "center y-coordinate (required)"
+msgstr "弧线的中心坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "first radius (required)"
+msgstr "第一个半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "second radius (required)"
+msgstr "第二个半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "starting angle in degrees (required)"
+msgstr "弧线的起始角度（单位：度）（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "ending angle in degrees (required)"
+msgstr "椭圆弧线的终止角度（单位：度）（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"arc color in RGB888 format (optional, reuses the current color when omitted "
+"or set to -1)"
+msgstr "圆弧颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前绘图颜色）"
+
+#: ../../source/hardware/display.rst
+msgid "first horizontal radius (required)"
+msgstr "第一个水平半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "second horizontal radius (required)"
+msgstr "第二个水平半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "first vertical radius (required)"
+msgstr "第一个垂直半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "second vertical radius (required)"
+msgstr "第二个垂直半径（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "x-coordinate to display (required)"
+msgstr "二维码显示的起始坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "y-coordinate to display (required)"
+msgstr "二维码显示的起始坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "QR code width (required)"
+msgstr "二维码的宽度（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "display x-coordinate (required)"
+msgstr "图片显示的起始坐标 x（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "display y-coordinate (required)"
+msgstr "图片显示的起始坐标 y（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "image width (required)"
+msgstr "图像宽（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "image height (required)"
+msgstr "图像高（必填）"
+
+#: ../../source/hardware/display.rst
+msgid "length of image data (required)"
+msgstr "图像大小（必填）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"color in RGB888 format (optional, keeps the current text color when omitted "
+"or set to -1)"
+msgstr "文字颜色，使用 RGB888 格式（可选，省略或设为 -1 时保留当前文字颜色）"
+
+#: ../../source/hardware/display.rst
+msgid ""
+"fill color in RGB888 format (optional, reuses the current base color when "
+"omitted or set to -1)"
+msgstr "填充颜色，使用 RGB888 格式（可选，省略或设为 -1 时复用当前底色）"
+
+#: ../../source/hardware/display.rst
+msgid "horizontal scale factor (default 1.0)"
+msgstr "水平缩放比例（默认为 1.0）"
+
+#: ../../source/hardware/display.rst
+msgid "vertical scale factor (default 0.0)"
+msgstr "垂直缩放比例（默认为 0.0）"

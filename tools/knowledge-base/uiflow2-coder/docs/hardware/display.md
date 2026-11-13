@@ -278,6 +278,11 @@ in the Canvas examples are separate drawing targets.
 
 ### `class M5.Display`
 
+    Parameters marked required must be supplied. Optional values are shown in the method
+    signatures. Shape drawing methods and `fillScreen()` reuse the current drawing
+    color when `color` is omitted or set to `-1`. The `clear()` method uses the
+    current base color.
+
 ### `width()`
 
         Get the horizontal resolution of the display.
@@ -482,11 +487,11 @@ print(width)
 height = M5.Lcd.fontHeight()
 print(height)
 ```
-### `setTextColor(fgcolor, bgcolor)`
+### `setTextColor(fgcolor, bgcolor=0x000000)`
 
         Set the text color and background color.
 
-        - Parameter `fgcolor` (`int`): text color in RGB888 format (default 0, black)
+        - Parameter `fgcolor` (`int`): text color in RGB888 format (required)
         - Parameter `bgcolor` (`int`): background color in RGB888 format (default 0, black)
 
 ```python
@@ -496,7 +501,7 @@ M5.Lcd.setTextColor(0xFF0000, 0x000000)
 
         Enable or disable text scrolling.
 
-        - Parameter `scroll` (`bool`): True to enable text scrolling, False to disable (default False)
+        - Parameter `scroll` (`bool`): True to enable text scrolling, False to disable (required)
 
 ```python
 M5.Lcd.setTextScroll(True)
@@ -514,17 +519,17 @@ M5.Lcd.setTextSize(2)
 
         Set the cursor position.
 
-        - Parameter `x` (`int`): horizontal position of the cursor (default 0)
-        - Parameter `y` (`int`): vertical position of the cursor (default 0)
+        - Parameter `x` (`int`): horizontal position of the cursor (required)
+        - Parameter `y` (`int`): vertical position of the cursor (required)
 
 ```python
 M5.Lcd.setCursor(10, 20)
 ```
-### `clear(color)`
+### `clear(color=-1)`
 
         Clear the display with a specific color.
 
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current base color when omitted or set to -1)
 
 > Warning: Avoid calling `clear()` inside a loop or event handler — it
 > redraws every pixel and causes visible flickering. For dynamic
@@ -534,11 +539,11 @@ M5.Lcd.setCursor(10, 20)
 ```python
 M5.Lcd.clear(0xFFFFFF)
 ```
-### `fillScreen(color)`
+### `fillScreen(color=-1)`
 
         Fill the entire screen with a specified color.
 
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 > Warning: Avoid calling `fillScreen()` inside a loop or event handler —
 > it redraws every pixel and causes visible flickering. Draw static
@@ -548,242 +553,242 @@ M5.Lcd.clear(0xFFFFFF)
 ```python
 M5.Lcd.fillScreen(0xFF0000)
 ```
-### `drawPixel(x, y, color)`
+### `drawPixel(x, y, color=-1)`
 
         Draw a single pixel on the screen.
 
-        - Parameter `x` (`int`): horizontal coordinate of the pixel (default -1)
-        - Parameter `y` (`int`): vertical coordinate of the pixel (default -1)
-        - Parameter `color` (`int`): pixel color in RGB888 format (default 0)
+        - Parameter `x` (`int`): horizontal coordinate of the pixel (required)
+        - Parameter `y` (`int`): vertical coordinate of the pixel (required)
+        - Parameter `color` (`int`): pixel color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawPixel(50, 50, 0x00FF00)
 ```
-### `drawCircle(x, y, r, color)`
+### `drawCircle(x, y, r, color=-1)`
 
         Draw an outline of a circle.
 
-        - Parameter `x` (`int`): x-coordinate of circle center (default -1)
-        - Parameter `y` (`int`): y-coordinate of circle center (default -1)
-        - Parameter `r` (`int`): radius of the circle (default -1)
-        - Parameter `color` (`int`): circle color in RGB888 format (default 0)
+        - Parameter `x` (`int`): x-coordinate of circle center (required)
+        - Parameter `y` (`int`): y-coordinate of circle center (required)
+        - Parameter `r` (`int`): radius of the circle (required)
+        - Parameter `color` (`int`): circle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawCircle(60, 60, 20, 0x0000FF)
 ```
-### `fillCircle(x, y, r, color)`
+### `fillCircle(x, y, r, color=-1)`
 
         Draw a filled circle.
 
-        - Parameter `x` (`int`): x-coordinate of circle center (default -1)
-        - Parameter `y` (`int`): y-coordinate of circle center (default -1)
-        - Parameter `r` (`int`): radius of the circle (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): x-coordinate of circle center (required)
+        - Parameter `y` (`int`): y-coordinate of circle center (required)
+        - Parameter `r` (`int`): radius of the circle (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillCircle(60, 60, 20, 0x00FFFF)
 ```
-### `drawEllipse(x, y, rx, ry, color)`
+### `drawEllipse(x, y, rx, ry, color=-1)`
 
         Draw an outline of an ellipse.
 
-        - Parameter `x` (`int`): x-coordinate of ellipse center (default -1)
-        - Parameter `y` (`int`): y-coordinate of ellipse center (default -1)
-        - Parameter `rx` (`int`): horizontal radius (default -1)
-        - Parameter `ry` (`int`): vertical radius (default -1)
-        - Parameter `color` (`int`): ellipse color in RGB888 format (default 0)
+        - Parameter `x` (`int`): x-coordinate of ellipse center (required)
+        - Parameter `y` (`int`): y-coordinate of ellipse center (required)
+        - Parameter `rx` (`int`): horizontal radius (required)
+        - Parameter `ry` (`int`): vertical radius (required)
+        - Parameter `color` (`int`): ellipse color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawEllipse(80, 40, 30, 20, 0xFF00FF)
 ```
-### `fillEllipse(x, y, rx, ry, color)`
+### `fillEllipse(x, y, rx, ry, color=-1)`
 
         Draw a filled ellipse.
 
-        - Parameter `x` (`int`): x-coordinate of ellipse center (default -1)
-        - Parameter `y` (`int`): y-coordinate of ellipse center (default -1)
-        - Parameter `rx` (`int`): horizontal radius (default -1)
-        - Parameter `ry` (`int`): vertical radius (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): x-coordinate of ellipse center (required)
+        - Parameter `y` (`int`): y-coordinate of ellipse center (required)
+        - Parameter `rx` (`int`): horizontal radius (required)
+        - Parameter `ry` (`int`): vertical radius (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillEllipse(80, 40, 30, 20, 0x00FF00)
 ```
-### `drawLine(x0, y0, x1, y1, color)`
+### `drawLine(x0, y0, x1, y1, color=-1)`
 
         Draw a line.
 
-        - Parameter `x0` (`int`): starting x-coordinate (default -1)
-        - Parameter `y0` (`int`): starting y-coordinate (default -1)
-        - Parameter `x1` (`int`): ending x-coordinate (default -1)
-        - Parameter `y1` (`int`): ending y-coordinate (default -1)
-        - Parameter `color` (`int`): line color in RGB888 format (default 0)
+        - Parameter `x0` (`int`): starting x-coordinate (required)
+        - Parameter `y0` (`int`): starting y-coordinate (required)
+        - Parameter `x1` (`int`): ending x-coordinate (required)
+        - Parameter `y1` (`int`): ending y-coordinate (required)
+        - Parameter `color` (`int`): line color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawLine(10, 10, 100, 100, 0xFF0000)
 ```
-### `drawRect(x, y, w, h, color)`
+### `drawRect(x, y, w, h, color=-1)`
 
         Draw a rectangle.
 
-        - Parameter `x` (`int`): top-left x-coordinate (default -1)
-        - Parameter `y` (`int`): top-left y-coordinate (default -1)
-        - Parameter `w` (`int`): width of rectangle (default -1)
-        - Parameter `h` (`int`): height of rectangle (default -1)
-        - Parameter `color` (`int`): rectangle color in RGB888 format (default 0)
+        - Parameter `x` (`int`): top-left x-coordinate (required)
+        - Parameter `y` (`int`): top-left y-coordinate (required)
+        - Parameter `w` (`int`): width of rectangle (required)
+        - Parameter `h` (`int`): height of rectangle (required)
+        - Parameter `color` (`int`): rectangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawRect(20, 20, 80, 50, 0x00FF00)
 ```
-### `fillRect(x, y, w, h, color)`
+### `fillRect(x, y, w, h, color=-1)`
 
         Draw a filled rectangle.
 
-        - Parameter `x` (`int`): top-left x-coordinate (default -1)
-        - Parameter `y` (`int`): top-left y-coordinate (default -1)
-        - Parameter `w` (`int`): width of rectangle (default -1)
-        - Parameter `h` (`int`): height of rectangle (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): top-left x-coordinate (required)
+        - Parameter `y` (`int`): top-left y-coordinate (required)
+        - Parameter `w` (`int`): width of rectangle (required)
+        - Parameter `h` (`int`): height of rectangle (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillRect(20, 20, 80, 50, 0x0000FF)
 ```
-### `drawRoundRect(x, y, w, h, r, color)`
+### `drawRoundRect(x, y, w, h, r, color=-1)`
 
         Draw a rounded rectangle.
 
-        - Parameter `x` (`int`): top-left x-coordinate (default -1)
-        - Parameter `y` (`int`): top-left y-coordinate (default -1)
-        - Parameter `w` (`int`): width of rectangle (default -1)
-        - Parameter `h` (`int`): height of rectangle (default -1)
-        - Parameter `r` (`int`): corner radius (default -1)
-        - Parameter `color` (`int`): rectangle color in RGB888 format (default 0)
+        - Parameter `x` (`int`): top-left x-coordinate (required)
+        - Parameter `y` (`int`): top-left y-coordinate (required)
+        - Parameter `w` (`int`): width of rectangle (required)
+        - Parameter `h` (`int`): height of rectangle (required)
+        - Parameter `r` (`int`): corner radius (required)
+        - Parameter `color` (`int`): rectangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
 ```
-### `fillRoundRect(x, y, w, h, r, color)`
+### `fillRoundRect(x, y, w, h, r, color=-1)`
 
         Draw a filled rounded rectangle.
 
-        - Parameter `x` (`int`): top-left x-coordinate (default -1)
-        - Parameter `y` (`int`): top-left y-coordinate (default -1)
-        - Parameter `w` (`int`): width of rectangle (default -1)
-        - Parameter `h` (`int`): height of rectangle (default -1)
-        - Parameter `r` (`int`): corner radius (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): top-left x-coordinate (required)
+        - Parameter `y` (`int`): top-left y-coordinate (required)
+        - Parameter `w` (`int`): width of rectangle (required)
+        - Parameter `h` (`int`): height of rectangle (required)
+        - Parameter `r` (`int`): corner radius (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
 ```
-### `drawTriangle(x0, y0, x1, y1, x2, y2, color)`
+### `drawTriangle(x0, y0, x1, y1, x2, y2, color=-1)`
 
         Draw a triangle.
 
-        - Parameter `x0` (`int`): first vertex x-coordinate (default -1)
-        - Parameter `y0` (`int`): first vertex y-coordinate (default -1)
-        - Parameter `x1` (`int`): second vertex x-coordinate (default -1)
-        - Parameter `y1` (`int`): second vertex y-coordinate (default -1)
-        - Parameter `x2` (`int`): third vertex x-coordinate (default -1)
-        - Parameter `y2` (`int`): third vertex y-coordinate (default -1)
-        - Parameter `color` (`int`): triangle color in RGB888 format (default 0)
+        - Parameter `x0` (`int`): first vertex x-coordinate (required)
+        - Parameter `y0` (`int`): first vertex y-coordinate (required)
+        - Parameter `x1` (`int`): second vertex x-coordinate (required)
+        - Parameter `y1` (`int`): second vertex y-coordinate (required)
+        - Parameter `x2` (`int`): third vertex x-coordinate (required)
+        - Parameter `y2` (`int`): third vertex y-coordinate (required)
+        - Parameter `color` (`int`): triangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
 ```
-### `fillTriangle(x0, y0, x1, y1, x2, y2, color)`
+### `fillTriangle(x0, y0, x1, y1, x2, y2, color=-1)`
 
         Draw a filled triangle.
 
-        - Parameter `x0` (`int`): first vertex x-coordinate (default -1)
-        - Parameter `y0` (`int`): first vertex y-coordinate (default -1)
-        - Parameter `x1` (`int`): second vertex x-coordinate (default -1)
-        - Parameter `y1` (`int`): second vertex y-coordinate (default -1)
-        - Parameter `x2` (`int`): third vertex x-coordinate (default -1)
-        - Parameter `y2` (`int`): third vertex y-coordinate (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x0` (`int`): first vertex x-coordinate (required)
+        - Parameter `y0` (`int`): first vertex y-coordinate (required)
+        - Parameter `x1` (`int`): second vertex x-coordinate (required)
+        - Parameter `y1` (`int`): second vertex y-coordinate (required)
+        - Parameter `x2` (`int`): third vertex x-coordinate (required)
+        - Parameter `y2` (`int`): third vertex y-coordinate (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
 ```
-### `drawArc(x, y, r0, r1, angle0, angle1, color)`
+### `drawArc(x, y, r0, r1, angle0, angle1, color=-1)`
 
         Draw an arc.
 
-        - Parameter `x` (`int`): center x-coordinate (default -1)
-        - Parameter `y` (`int`): center y-coordinate (default -1)
-        - Parameter `r0` (`int`): first radius (default -1)
-        - Parameter `r1` (`int`): second radius (default -1)
-        - Parameter `angle0` (`int`): starting angle in degrees (default -1)
-        - Parameter `angle1` (`int`): ending angle in degrees (default -1)
-        - Parameter `color` (`int`): arc color in RGB888 format (default 0)
+        - Parameter `x` (`int`): center x-coordinate (required)
+        - Parameter `y` (`int`): center y-coordinate (required)
+        - Parameter `r0` (`int`): first radius (required)
+        - Parameter `r1` (`int`): second radius (required)
+        - Parameter `angle0` (`int`): starting angle in degrees (required)
+        - Parameter `angle1` (`int`): ending angle in degrees (required)
+        - Parameter `color` (`int`): arc color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
 ```
-### `fillArc(x, y, r0, r1, angle0, angle1, color)`
+### `fillArc(x, y, r0, r1, angle0, angle1, color=-1)`
 
         Draw a filled arc.
 
-        - Parameter `x` (`int`): center x-coordinate (default -1)
-        - Parameter `y` (`int`): center y-coordinate (default -1)
-        - Parameter `r0` (`int`): first radius (default -1)
-        - Parameter `r1` (`int`): second radius (default -1)
-        - Parameter `angle0` (`int`): starting angle in degrees (default -1)
-        - Parameter `angle1` (`int`): ending angle in degrees (default -1)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): center x-coordinate (required)
+        - Parameter `y` (`int`): center y-coordinate (required)
+        - Parameter `r0` (`int`): first radius (required)
+        - Parameter `r1` (`int`): second radius (required)
+        - Parameter `angle0` (`int`): starting angle in degrees (required)
+        - Parameter `angle1` (`int`): ending angle in degrees (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
 ```
-### `drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)`
+### `drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color=-1)`
 
         Draw an elliptical arc.
 
-        - Parameter `x` (`int`): center x-coordinate (default -1)
-        - Parameter `y` (`int`): center y-coordinate (default -1)
-        - Parameter `r0x` (`int`): first horizontal radius (default -1)
-        - Parameter `r1x` (`int`): second horizontal radius (default -1)
-        - Parameter `r0y` (`int`): first vertical radius (default -1)
-        - Parameter `r1y` (`int`): second vertical radius (default -1)
-        - Parameter `angle0` (`int`): starting angle in degrees (default -1)
-        - Parameter `angle1` (`int`): ending angle in degrees (default 0)
-        - Parameter `color` (`int`): arc color in RGB888 format (default 0)
+        - Parameter `x` (`int`): center x-coordinate (required)
+        - Parameter `y` (`int`): center y-coordinate (required)
+        - Parameter `r0x` (`int`): first horizontal radius (required)
+        - Parameter `r1x` (`int`): second horizontal radius (required)
+        - Parameter `r0y` (`int`): first vertical radius (required)
+        - Parameter `r1y` (`int`): second vertical radius (required)
+        - Parameter `angle0` (`int`): starting angle in degrees (required)
+        - Parameter `angle1` (`int`): ending angle in degrees (required)
+        - Parameter `color` (`int`): arc color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
 ```
-### `fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)`
+### `fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color=-1)`
 
         Draw a filled elliptical arc.
 
-        - Parameter `x` (`int`): center x-coordinate (default -1)
-        - Parameter `y` (`int`): center y-coordinate (default -1)
-        - Parameter `r0x` (`int`): first horizontal radius (default -1)
-        - Parameter `r1x` (`int`): second horizontal radius (default -1)
-        - Parameter `r0y` (`int`): first vertical radius (default -1)
-        - Parameter `r1y` (`int`): second vertical radius (default -1)
-        - Parameter `angle0` (`int`): starting angle in degrees (default -1)
-        - Parameter `angle1` (`int`): ending angle in degrees (default 0)
-        - Parameter `color` (`int`): fill color in RGB888 format (default 0)
+        - Parameter `x` (`int`): center x-coordinate (required)
+        - Parameter `y` (`int`): center y-coordinate (required)
+        - Parameter `r0x` (`int`): first horizontal radius (required)
+        - Parameter `r1x` (`int`): second horizontal radius (required)
+        - Parameter `r0y` (`int`): first vertical radius (required)
+        - Parameter `r1y` (`int`): second vertical radius (required)
+        - Parameter `angle0` (`int`): starting angle in degrees (required)
+        - Parameter `angle1` (`int`): ending angle in degrees (required)
+        - Parameter `color` (`int`): fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
 ```python
 M5.Lcd.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
 ```
-### `drawQR(text, x, y, w, version)`
+### `drawQR(text, x, y, w, version=1)`
 
         Draw a QR code.
 
         - Parameter `text` (`str`): QR code content
-        - Parameter `x` (`int`): x-coordinate to display (default 0)
-        - Parameter `y` (`int`): y-coordinate to display (default 0)
-        - Parameter `w` (`int`): QR code width (default 0)
+        - Parameter `x` (`int`): x-coordinate to display (required)
+        - Parameter `y` (`int`): y-coordinate to display (required)
+        - Parameter `w` (`int`): QR code width (required)
         - Parameter `version` (`int`): QR code version (default 1, range: 0~38)
 
 ```python
 M5.Lcd.drawQR("Hello", 0, 0, 200)
 ```
-### `drawPng(img, x, y, maxW, maxH, offX, offY, scaleX, scaleY)`
+### `drawPng(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)`
 
         Draw a PNG image.
 
@@ -794,8 +799,8 @@ M5.Lcd.drawQR("Hello", 0, 0, 200)
         - Parameter `maxH` (`int`): max height to draw (default 0)
         - Parameter `offX` (`int`): x-offset in image (default 0)
         - Parameter `offY` (`int`): y-offset in image (default 0)
-        - Parameter `scaleX` (`bool`): scale horizontally (default True)
-        - Parameter `scaleY` (`bool`): scale vertically (default False)
+        - Parameter `scaleX` (`float`): horizontal scale factor (default 1.0)
+        - Parameter `scaleY` (`float`): vertical scale factor (default 0.0)
 
 ```python
 M5.Lcd.drawPng("res/img/uiflow.png", 0, 0)
@@ -809,7 +814,7 @@ img.seek(0)
 M5.Lcd.drawPng(img.read(), 0, 100)
 img.close()
 ```
-### `drawJpg(img, x, y, maxW, maxH, offX, offY)`
+### `drawJpg(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)`
 
         Draw a JPG image.
 
@@ -820,6 +825,8 @@ img.close()
         - Parameter `maxH` (`int`): max height to draw (default 0)
         - Parameter `offX` (`int`): x-offset in image (default 0)
         - Parameter `offY` (`int`): y-offset in image (default 0)
+        - Parameter `scaleX` (`float`): horizontal scale factor (default 1.0)
+        - Parameter `scaleY` (`float`): vertical scale factor (default 0.0)
 
 ```python
 M5.Lcd.drawJpg("res/img/uiflow.jpg", 0, 0)
@@ -833,7 +840,7 @@ img.seek(0)
 M5.Lcd.drawJpg(img.read(), 0, 100)
 img.close()
 ```
-### `drawBmp(img, x, y, maxW, maxH, offX, offY)`
+### `drawBmp(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)`
 
         Draw a BMP image.
 
@@ -844,6 +851,8 @@ img.close()
         - Parameter `maxH` (`int`): max height to draw (default 0)
         - Parameter `offX` (`int`): x-offset in image (default 0)
         - Parameter `offY` (`int`): y-offset in image (default 0)
+        - Parameter `scaleX` (`float`): horizontal scale factor (default 1.0)
+        - Parameter `scaleY` (`float`): vertical scale factor (default 0.0)
 
 ```python
 M5.Lcd.drawBmp("res/img/uiflow.bmp", 0, 0)
@@ -857,7 +866,7 @@ img.seek(0)
 M5.Lcd.drawBmp(img.read(), 0, 100)
 img.close()
 ```
-### `drawImage(img, x, y, maxW, maxH, offX, offY)`
+### `drawImage(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)`
 
         Draw an image.
 
@@ -868,6 +877,8 @@ img.close()
         - Parameter `maxH` (`int`): max height to draw (default 0)
         - Parameter `offX` (`int`): x-offset in image (default 0)
         - Parameter `offY` (`int`): y-offset in image (default 0)
+        - Parameter `scaleX` (`float`): horizontal scale factor (default 1.0)
+        - Parameter `scaleY` (`float`): vertical scale factor (default 0.0)
 
 ```python
 img = open("res/img/uiflow.jpg", "b")
@@ -880,16 +891,16 @@ img.seek(0)
 M5.Lcd.drawImage(img.read(), 0, 0)
 img.close()
 ```
-### `drawRawBuf(buf, x, y, w, h, len, swap)`
+### `drawRawBuf(buf, x, y, w, h, len, swap=False)`
 
         Draw an image from raw buffer data.
 
         - Parameter `buf`: image buffer
-        - Parameter `x` (`int`): display x-coordinate (default 0)
-        - Parameter `y` (`int`): display y-coordinate (default 0)
-        - Parameter `w` (`int`): image width (default 0)
-        - Parameter `h` (`int`): image height (default 0)
-        - Parameter `len` (`int`): length of image data (default 0)
+        - Parameter `x` (`int`): display x-coordinate (required)
+        - Parameter `y` (`int`): display y-coordinate (required)
+        - Parameter `w` (`int`): image width (required)
+        - Parameter `h` (`int`): image height (required)
+        - Parameter `len` (`int`): length of image data (required)
         - Parameter `swap` (`bool`): inverted display (default False)
 
 ```python
@@ -906,12 +917,12 @@ for i in range(width * height):
     raw_buf[2*i+1] = green565 & 0xFF
 M5.Lcd.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
 ```
-### `print(text, color)`
+### `print(text, color=-1)`
 
         Display a string (no formatting support).
 
         - Parameter `text` (`str`): text to display
-        - Parameter `color` (`int`): color in RGB888 format (default 0)
+        - Parameter `color` (`int`): color in RGB888 format (optional, keeps the current text color when omitted or set to -1)
 
 ```python
 M5.Lcd.print("Hello World", color=0xFF0000)
@@ -925,7 +936,7 @@ M5.Lcd.print("Hello World", color=0xFF0000)
 ```python
 M5.Lcd.printf("Value: %d" % 100)
 ```
-### `newCanvas(w, h, bpp, psram)`
+### `newCanvas(w, h, bpp=-1, psram=False)`
 
         Create an off-screen canvas. Use it to compose a complete animation frame before
         presenting the frame with a single `push(x, y)` call. Reuse the returned object

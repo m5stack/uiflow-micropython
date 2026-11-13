@@ -541,3 +541,27 @@ msgid ""
 msgstr ""
 "请在调用 ``m5ui.init()`` 前设置屏幕旋转方向。更新 M5GFX 后，Core2、CoreS3 和 StackChan 的正常 320 "
 "× 240 横屏布局使用 ``0``。其他主机及旧工程的迁移方法见 :ref:`display-rotation`。"
+
+#: ../../source/m5ui/index.rst
+msgid ""
+"On M5Stack devices, ``m5ui.init()`` initializes the board, the display and "
+"LVGL."
+msgstr "在 M5Stack 设备上，``m5ui.init()`` 会初始化主机、显示屏和 LVGL。"
+
+#: ../../source/m5ui/index.rst
+msgid ""
+"To configure the display before LVGL is initialized, call ``M5.begin()``, "
+"set the desired rotation, and then call ``m5ui.init()``. With the updated "
+"M5GFX, Core2, CoreS3 and StackChan use ``0`` for their normal 320 × 240 "
+"landscape layout. See :ref:`display-rotation` for other controllers and "
+"migration instructions."
+msgstr ""
+"如需在 LVGL 初始化前配置显示屏，请先调用 ``M5.begin()``，设置所需旋转方向，再调用 ``m5ui.init()``。在更新后的 "
+"M5GFX 中，Core2、CoreS3 和 StackChan 的正常 320 × 240 横屏布局使用 ``0``。其它主机和迁移说明见 "
+":ref:`display-rotation`。"
+
+#: ../../source/m5ui/index.rst
+msgid ""
+"Initialize the M5UI library. On M5Stack devices this also initializes the "
+"board and display. Call this function before creating M5UI widgets."
+msgstr "初始化 M5UI 库。在 M5Stack 设备上，此函数还会初始化主机和显示屏。请在创建 M5UI 控件前调用此函数。"

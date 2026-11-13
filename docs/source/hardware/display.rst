@@ -264,6 +264,11 @@ in the Canvas examples are separate drawing targets.
 
 .. class:: M5.Display
 
+    Parameters marked required must be supplied. Optional values are shown in the method
+    signatures. Shape drawing methods and ``fillScreen()`` reuse the current drawing
+    color when ``color`` is omitted or set to ``-1``. The ``clear()`` method uses the
+    current base color.
+
     .. method:: width()
 
         Get the horizontal resolution of the display.
@@ -593,11 +598,11 @@ in the Canvas examples are separate drawing targets.
                 height = M5.Lcd.fontHeight()
                 print(height)
 
-    .. method:: setTextColor(fgcolor, bgcolor)
+    .. method:: setTextColor(fgcolor, bgcolor=0x000000)
 
         Set the text color and background color.
 
-        :param int fgcolor: text color in RGB888 format (default 0, black)
+        :param int fgcolor: text color in RGB888 format (required)
         :param int bgcolor: background color in RGB888 format (default 0, black)
 
         UiFlow2 Code Block:
@@ -614,7 +619,7 @@ in the Canvas examples are separate drawing targets.
 
         Enable or disable text scrolling.
 
-        :param bool scroll: True to enable text scrolling, False to disable (default False)
+        :param bool scroll: True to enable text scrolling, False to disable (required)
 
         UiFlow2 Code Block:
 
@@ -646,8 +651,8 @@ in the Canvas examples are separate drawing targets.
 
         Set the cursor position.
 
-        :param int x: horizontal position of the cursor (default 0)
-        :param int y: vertical position of the cursor (default 0)
+        :param int x: horizontal position of the cursor (required)
+        :param int y: vertical position of the cursor (required)
 
         UiFlow2 Code Block:
 
@@ -659,11 +664,11 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.setCursor(10, 20)
 
-    .. method:: clear(color)
+    .. method:: clear(color=-1)
 
         Clear the display with a specific color.
 
-        :param int color: fill color in RGB888 format (default 0)
+        :param int color: fill color in RGB888 format (optional, reuses the current base color when omitted or set to -1)
 
         .. warning::
 
@@ -682,11 +687,11 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.clear(0xFFFFFF)
 
-    .. method:: fillScreen(color)
+    .. method:: fillScreen(color=-1)
 
         Fill the entire screen with a specified color.
 
-        :param int color: fill color in RGB888 format (default 0)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         .. warning::
 
@@ -705,13 +710,13 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillScreen(0xFF0000)
 
-    .. method:: drawPixel(x, y, color)
+    .. method:: drawPixel(x, y, color=-1)
 
         Draw a single pixel on the screen.
 
-        :param int x: horizontal coordinate of the pixel (default -1)
-        :param int y: vertical coordinate of the pixel (default -1)
-        :param int color: pixel color in RGB888 format (default 0)
+        :param int x: horizontal coordinate of the pixel (required)
+        :param int y: vertical coordinate of the pixel (required)
+        :param int color: pixel color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -723,14 +728,14 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawPixel(50, 50, 0x00FF00)
 
-    .. method:: drawCircle(x, y, r, color)
+    .. method:: drawCircle(x, y, r, color=-1)
 
         Draw an outline of a circle.
 
-        :param int x: x-coordinate of circle center (default -1)
-        :param int y: y-coordinate of circle center (default -1)
-        :param int r: radius of the circle (default -1)
-        :param int color: circle color in RGB888 format (default 0)
+        :param int x: x-coordinate of circle center (required)
+        :param int y: y-coordinate of circle center (required)
+        :param int r: radius of the circle (required)
+        :param int color: circle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -742,14 +747,14 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawCircle(60, 60, 20, 0x0000FF)
 
-    .. method:: fillCircle(x, y, r, color)
+    .. method:: fillCircle(x, y, r, color=-1)
 
         Draw a filled circle.
 
-        :param int x: x-coordinate of circle center (default -1)
-        :param int y: y-coordinate of circle center (default -1)
-        :param int r: radius of the circle (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: x-coordinate of circle center (required)
+        :param int y: y-coordinate of circle center (required)
+        :param int r: radius of the circle (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -761,15 +766,15 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillCircle(60, 60, 20, 0x00FFFF)
 
-    .. method:: drawEllipse(x, y, rx, ry, color)
+    .. method:: drawEllipse(x, y, rx, ry, color=-1)
 
         Draw an outline of an ellipse.
 
-        :param int x: x-coordinate of ellipse center (default -1)
-        :param int y: y-coordinate of ellipse center (default -1)
-        :param int rx: horizontal radius (default -1)
-        :param int ry: vertical radius (default -1)
-        :param int color: ellipse color in RGB888 format (default 0)
+        :param int x: x-coordinate of ellipse center (required)
+        :param int y: y-coordinate of ellipse center (required)
+        :param int rx: horizontal radius (required)
+        :param int ry: vertical radius (required)
+        :param int color: ellipse color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -781,15 +786,15 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawEllipse(80, 40, 30, 20, 0xFF00FF)
 
-    .. method:: fillEllipse(x, y, rx, ry, color)
+    .. method:: fillEllipse(x, y, rx, ry, color=-1)
 
         Draw a filled ellipse.
 
-        :param int x: x-coordinate of ellipse center (default -1)
-        :param int y: y-coordinate of ellipse center (default -1)
-        :param int rx: horizontal radius (default -1)
-        :param int ry: vertical radius (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: x-coordinate of ellipse center (required)
+        :param int y: y-coordinate of ellipse center (required)
+        :param int rx: horizontal radius (required)
+        :param int ry: vertical radius (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -801,15 +806,15 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillEllipse(80, 40, 30, 20, 0x00FF00)
 
-    .. method:: drawLine(x0, y0, x1, y1, color)
+    .. method:: drawLine(x0, y0, x1, y1, color=-1)
 
         Draw a line.
 
-        :param int x0: starting x-coordinate (default -1)
-        :param int y0: starting y-coordinate (default -1)
-        :param int x1: ending x-coordinate (default -1)
-        :param int y1: ending y-coordinate (default -1)
-        :param int color: line color in RGB888 format (default 0)
+        :param int x0: starting x-coordinate (required)
+        :param int y0: starting y-coordinate (required)
+        :param int x1: ending x-coordinate (required)
+        :param int y1: ending y-coordinate (required)
+        :param int color: line color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -821,15 +826,15 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawLine(10, 10, 100, 100, 0xFF0000)
 
-    .. method:: drawRect(x, y, w, h, color)
+    .. method:: drawRect(x, y, w, h, color=-1)
 
         Draw a rectangle.
 
-        :param int x: top-left x-coordinate (default -1)
-        :param int y: top-left y-coordinate (default -1)
-        :param int w: width of rectangle (default -1)
-        :param int h: height of rectangle (default -1)
-        :param int color: rectangle color in RGB888 format (default 0)
+        :param int x: top-left x-coordinate (required)
+        :param int y: top-left y-coordinate (required)
+        :param int w: width of rectangle (required)
+        :param int h: height of rectangle (required)
+        :param int color: rectangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -841,15 +846,15 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawRect(20, 20, 80, 50, 0x00FF00)
 
-    .. method:: fillRect(x, y, w, h, color)
+    .. method:: fillRect(x, y, w, h, color=-1)
 
         Draw a filled rectangle.
 
-        :param int x: top-left x-coordinate (default -1)
-        :param int y: top-left y-coordinate (default -1)
-        :param int w: width of rectangle (default -1)
-        :param int h: height of rectangle (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: top-left x-coordinate (required)
+        :param int y: top-left y-coordinate (required)
+        :param int w: width of rectangle (required)
+        :param int h: height of rectangle (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -861,16 +866,16 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillRect(20, 20, 80, 50, 0x0000FF)
 
-    .. method:: drawRoundRect(x, y, w, h, r, color)
+    .. method:: drawRoundRect(x, y, w, h, r, color=-1)
 
         Draw a rounded rectangle.
 
-        :param int x: top-left x-coordinate (default -1)
-        :param int y: top-left y-coordinate (default -1)
-        :param int w: width of rectangle (default -1)
-        :param int h: height of rectangle (default -1)
-        :param int r: corner radius (default -1)
-        :param int color: rectangle color in RGB888 format (default 0)
+        :param int x: top-left x-coordinate (required)
+        :param int y: top-left y-coordinate (required)
+        :param int w: width of rectangle (required)
+        :param int h: height of rectangle (required)
+        :param int r: corner radius (required)
+        :param int color: rectangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -882,16 +887,16 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
 
-    .. method:: fillRoundRect(x, y, w, h, r, color)
+    .. method:: fillRoundRect(x, y, w, h, r, color=-1)
 
         Draw a filled rounded rectangle.
 
-        :param int x: top-left x-coordinate (default -1)
-        :param int y: top-left y-coordinate (default -1)
-        :param int w: width of rectangle (default -1)
-        :param int h: height of rectangle (default -1)
-        :param int r: corner radius (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: top-left x-coordinate (required)
+        :param int y: top-left y-coordinate (required)
+        :param int w: width of rectangle (required)
+        :param int h: height of rectangle (required)
+        :param int r: corner radius (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -903,17 +908,17 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
 
-    .. method:: drawTriangle(x0, y0, x1, y1, x2, y2, color)
+    .. method:: drawTriangle(x0, y0, x1, y1, x2, y2, color=-1)
 
         Draw a triangle.
 
-        :param int x0: first vertex x-coordinate (default -1)
-        :param int y0: first vertex y-coordinate (default -1)
-        :param int x1: second vertex x-coordinate (default -1)
-        :param int y1: second vertex y-coordinate (default -1)
-        :param int x2: third vertex x-coordinate (default -1)
-        :param int y2: third vertex y-coordinate (default -1)
-        :param int color: triangle color in RGB888 format (default 0)
+        :param int x0: first vertex x-coordinate (required)
+        :param int y0: first vertex y-coordinate (required)
+        :param int x1: second vertex x-coordinate (required)
+        :param int y1: second vertex y-coordinate (required)
+        :param int x2: third vertex x-coordinate (required)
+        :param int y2: third vertex y-coordinate (required)
+        :param int color: triangle color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -925,17 +930,17 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
 
-    .. method:: fillTriangle(x0, y0, x1, y1, x2, y2, color)
+    .. method:: fillTriangle(x0, y0, x1, y1, x2, y2, color=-1)
 
         Draw a filled triangle.
 
-        :param int x0: first vertex x-coordinate (default -1)
-        :param int y0: first vertex y-coordinate (default -1)
-        :param int x1: second vertex x-coordinate (default -1)
-        :param int y1: second vertex y-coordinate (default -1)
-        :param int x2: third vertex x-coordinate (default -1)
-        :param int y2: third vertex y-coordinate (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x0: first vertex x-coordinate (required)
+        :param int y0: first vertex y-coordinate (required)
+        :param int x1: second vertex x-coordinate (required)
+        :param int y1: second vertex y-coordinate (required)
+        :param int x2: third vertex x-coordinate (required)
+        :param int y2: third vertex y-coordinate (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -947,17 +952,17 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
 
-    .. method:: drawArc(x, y, r0, r1, angle0, angle1, color)
+    .. method:: drawArc(x, y, r0, r1, angle0, angle1, color=-1)
 
         Draw an arc.
 
-        :param int x: center x-coordinate (default -1)
-        :param int y: center y-coordinate (default -1)
-        :param int r0: first radius (default -1)
-        :param int r1: second radius (default -1)
-        :param int angle0: starting angle in degrees (default -1)
-        :param int angle1: ending angle in degrees (default -1)
-        :param int color: arc color in RGB888 format (default 0)
+        :param int x: center x-coordinate (required)
+        :param int y: center y-coordinate (required)
+        :param int r0: first radius (required)
+        :param int r1: second radius (required)
+        :param int angle0: starting angle in degrees (required)
+        :param int angle1: ending angle in degrees (required)
+        :param int color: arc color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -969,17 +974,17 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
 
-    .. method:: fillArc(x, y, r0, r1, angle0, angle1, color)
+    .. method:: fillArc(x, y, r0, r1, angle0, angle1, color=-1)
 
         Draw a filled arc.
 
-        :param int x: center x-coordinate (default -1)
-        :param int y: center y-coordinate (default -1)
-        :param int r0: first radius (default -1)
-        :param int r1: second radius (default -1)
-        :param int angle0: starting angle in degrees (default -1)
-        :param int angle1: ending angle in degrees (default -1)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: center x-coordinate (required)
+        :param int y: center y-coordinate (required)
+        :param int r0: first radius (required)
+        :param int r1: second radius (required)
+        :param int angle0: starting angle in degrees (required)
+        :param int angle1: ending angle in degrees (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -991,19 +996,19 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
 
-    .. method:: drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
+    .. method:: drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color=-1)
 
         Draw an elliptical arc.
 
-        :param int x: center x-coordinate (default -1)
-        :param int y: center y-coordinate (default -1)
-        :param int r0x: first horizontal radius (default -1)
-        :param int r1x: second horizontal radius (default -1)
-        :param int r0y: first vertical radius (default -1)
-        :param int r1y: second vertical radius (default -1)
-        :param int angle0: starting angle in degrees (default -1)
-        :param int angle1: ending angle in degrees (default 0)
-        :param int color: arc color in RGB888 format (default 0)
+        :param int x: center x-coordinate (required)
+        :param int y: center y-coordinate (required)
+        :param int r0x: first horizontal radius (required)
+        :param int r1x: second horizontal radius (required)
+        :param int r0y: first vertical radius (required)
+        :param int r1y: second vertical radius (required)
+        :param int angle0: starting angle in degrees (required)
+        :param int angle1: ending angle in degrees (required)
+        :param int color: arc color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -1015,19 +1020,19 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
 
-    .. method:: fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
+    .. method:: fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color=-1)
 
         Draw a filled elliptical arc.
 
-        :param int x: center x-coordinate (default -1)
-        :param int y: center y-coordinate (default -1)
-        :param int r0x: first horizontal radius (default -1)
-        :param int r1x: second horizontal radius (default -1)
-        :param int r0y: first vertical radius (default -1)
-        :param int r1y: second vertical radius (default -1)
-        :param int angle0: starting angle in degrees (default -1)
-        :param int angle1: ending angle in degrees (default 0)
-        :param int color: fill color in RGB888 format (default 0)
+        :param int x: center x-coordinate (required)
+        :param int y: center y-coordinate (required)
+        :param int r0x: first horizontal radius (required)
+        :param int r1x: second horizontal radius (required)
+        :param int r0y: first vertical radius (required)
+        :param int r1y: second vertical radius (required)
+        :param int angle0: starting angle in degrees (required)
+        :param int angle1: ending angle in degrees (required)
+        :param int color: fill color in RGB888 format (optional, reuses the current color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -1039,14 +1044,14 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
 
-    .. method:: drawQR(text, x, y, w, version)
+    .. method:: drawQR(text, x, y, w, version=1)
 
         Draw a QR code.
 
         :param str text: QR code content
-        :param int x: x-coordinate to display (default 0)
-        :param int y: y-coordinate to display (default 0)
-        :param int w: QR code width (default 0)
+        :param int x: x-coordinate to display (required)
+        :param int y: y-coordinate to display (required)
+        :param int w: QR code width (required)
         :param int version: QR code version (default 1, range: 0~38)
 
         UiFlow2 Code Block:
@@ -1059,7 +1064,7 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.drawQR("Hello", 0, 0, 200)
 
-    .. method:: drawPng(img, x, y, maxW, maxH, offX, offY, scaleX, scaleY)
+    .. method:: drawPng(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)
 
         Draw a PNG image.
 
@@ -1070,8 +1075,8 @@ in the Canvas examples are separate drawing targets.
         :param int maxH: max height to draw (default 0)
         :param int offX: x-offset in image (default 0)
         :param int offY: y-offset in image (default 0)
-        :param bool scaleX: scale horizontally (default True)
-        :param bool scaleY: scale vertically (default False)
+        :param float scaleX: horizontal scale factor (default 1.0)
+        :param float scaleY: vertical scale factor (default 0.0)
 
         UiFlow2 Code Block:
 
@@ -1093,7 +1098,7 @@ in the Canvas examples are separate drawing targets.
                 M5.Lcd.drawPng(img.read(), 0, 100)
                 img.close()
 
-    .. method:: drawJpg(img, x, y, maxW, maxH, offX, offY)
+    .. method:: drawJpg(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)
 
         Draw a JPG image.
 
@@ -1104,6 +1109,8 @@ in the Canvas examples are separate drawing targets.
         :param int maxH: max height to draw (default 0)
         :param int offX: x-offset in image (default 0)
         :param int offY: y-offset in image (default 0)
+        :param float scaleX: horizontal scale factor (default 1.0)
+        :param float scaleY: vertical scale factor (default 0.0)
 
         UiFlow2 Code Block:
 
@@ -1125,7 +1132,7 @@ in the Canvas examples are separate drawing targets.
                 M5.Lcd.drawJpg(img.read(), 0, 100)
                 img.close()
 
-    .. method:: drawBmp(img, x, y, maxW, maxH, offX, offY)
+    .. method:: drawBmp(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)
 
         Draw a BMP image.
 
@@ -1136,6 +1143,8 @@ in the Canvas examples are separate drawing targets.
         :param int maxH: max height to draw (default 0)
         :param int offX: x-offset in image (default 0)
         :param int offY: y-offset in image (default 0)
+        :param float scaleX: horizontal scale factor (default 1.0)
+        :param float scaleY: vertical scale factor (default 0.0)
 
         UiFlow2 Code Block:
 
@@ -1157,7 +1166,7 @@ in the Canvas examples are separate drawing targets.
                 M5.Lcd.drawBmp(img.read(), 0, 100)
                 img.close()
 
-    .. method:: drawImage(img, x, y, maxW, maxH, offX, offY)
+    .. method:: drawImage(img, x=0, y=0, maxW=0, maxH=0, offX=0, offY=0, scaleX=1.0, scaleY=0.0)
 
         Draw an image.
 
@@ -1168,6 +1177,8 @@ in the Canvas examples are separate drawing targets.
         :param int maxH: max height to draw (default 0)
         :param int offX: x-offset in image (default 0)
         :param int offY: y-offset in image (default 0)
+        :param float scaleX: horizontal scale factor (default 1.0)
+        :param float scaleY: vertical scale factor (default 0.0)
 
         UiFlow2 Code Block:
 
@@ -1188,16 +1199,16 @@ in the Canvas examples are separate drawing targets.
                 M5.Lcd.drawImage(img.read(), 0, 0)
                 img.close()
 
-    .. method:: drawRawBuf(buf, x, y, w, h, len, swap)
+    .. method:: drawRawBuf(buf, x, y, w, h, len, swap=False)
 
         Draw an image from raw buffer data.
 
         :param buf: image buffer
-        :param int x: display x-coordinate (default 0)
-        :param int y: display y-coordinate (default 0)
-        :param int w: image width (default 0)
-        :param int h: image height (default 0)
-        :param int len: length of image data (default 0)
+        :param int x: display x-coordinate (required)
+        :param int y: display y-coordinate (required)
+        :param int w: image width (required)
+        :param int h: image height (required)
+        :param int len: length of image data (required)
         :param bool swap: inverted display (default False)
 
         UiFlow2 Code Block:
@@ -1222,12 +1233,12 @@ in the Canvas examples are separate drawing targets.
                     raw_buf[2*i+1] = green565 & 0xFF
                 M5.Lcd.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
 
-    .. method:: print(text, color)
+    .. method:: print(text, color=-1)
 
         Display a string (no formatting support).
 
         :param str text: text to display
-        :param int color: color in RGB888 format (default 0)
+        :param int color: color in RGB888 format (optional, keeps the current text color when omitted or set to -1)
 
         UiFlow2 Code Block:
 
@@ -1255,7 +1266,7 @@ in the Canvas examples are separate drawing targets.
 
                 M5.Lcd.printf("Value: %d" % 100)
 
-    .. method:: newCanvas(w, h, bpp, psram)
+    .. method:: newCanvas(w, h, bpp=-1, psram=False)
 
         Create an off-screen canvas. Use it to compose a complete animation frame before
         presenting the frame with a single ``push(x, y)`` call. Reuse the returned object
