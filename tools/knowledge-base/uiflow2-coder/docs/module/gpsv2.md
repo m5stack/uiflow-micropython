@@ -182,7 +182,7 @@ if __name__ == "__main__":
 
     - Returns: The position quality indicator.
 
-### `GPSV2Module.get_corse_over_ground()`
+### `GPSV2Module.get_course_over_ground()`
 
     Get the course over ground (COG).
 

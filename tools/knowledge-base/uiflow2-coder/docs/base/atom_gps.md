@@ -182,13 +182,15 @@ gps.get_pos_quality()
 ```
 
 ### `get_corse_over_ground`
+
+### `get_course_over_ground`
 Get the course over ground (COG).
 
 - Returns: The course over ground in degrees.
 - Return type: str
 
 ```python
-gps.get_corse_over_ground()
+gps.get_course_over_ground()
 ```
 
 ### `get_speed_over_ground`
