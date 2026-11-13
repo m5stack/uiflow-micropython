@@ -1,0 +1,39 @@
+--- a/gen/gen_mpy.py
++++ b/gen/gen_mpy.py
+@@ -1085,11 +1085,28 @@
+     buffer, mp_func_get_buffer
+ );
+ 
++#ifdef LV_OBJ_T
++static void mp_lv_require_display(void) {
++    if (!lv_is_initialized() || lv_display_get_default() == NULL) {
++        mp_raise_msg(&mp_type_RuntimeError,
++            MP_ERROR_TEXT("LVGL display not initialized; call m5ui.init() first"));
++    }
++}
++#endif
++
+ static mp_obj_t lv_fun_builtin_var_call(mp_obj_t self_in, size_t n_args, size_t n_kw, const mp_obj_t *args) {
+     assert(MP_OBJ_IS_TYPE(self_in, &mp_lv_type_fun_builtin_var) ||
+            MP_OBJ_IS_TYPE(self_in, &mp_lv_type_fun_builtin_static_var));
+     mp_lv_obj_fun_builtin_var_t *self = MP_OBJ_TO_PTR(self_in);
+     mp_arg_check_num(n_args, n_kw, self->n_args, self->n_args, false);
++#ifdef LV_OBJ_T
++    if (self->lv_fun == (void *)lv_screen_active ||
++        self->lv_fun == (void *)lv_layer_top ||
++        self->lv_fun == (void *)lv_layer_sys ||
++        self->lv_fun == (void *)lv_layer_bottom) {
++        mp_lv_require_display();
++    }
++#endif
+     return self->mp_fun(n_args, args, self->lv_fun);
+ }
+ 
+@@ -1287,6 +1304,7 @@
+     size_t n_kw,
+     const mp_obj_t *args)
+ {
++    mp_lv_require_display();
+     mp_obj_t lv_obj;
+     if (n_args == 0 && n_kw == 0) // allow no args, and pass NULL as parent in such case
+     {

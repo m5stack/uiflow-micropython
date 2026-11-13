@@ -359,7 +359,8 @@ LV_BINDING_PATCH_SERIES = \
 	6000-avoid-lv_bindings-compile-error.patch \
 	6001-avoid-lvgl-font-redefine.patch \
 	6002-add-lvgl-usr-font.patch \
-	6003-fix-tjpgd-rom-symbol-collision.patch
+	6003-fix-tjpgd-rom-symbol-collision.patch \
+	6004-Check-LVGL-display-before-widget-access.patch
 
 MICROPYTHON_PATCH_SERIES = \
 	0022-micropython-1.27.0-modtime.patch \

@@ -135,6 +135,9 @@ value = m5ui.M5Label("123", x=10, y=80, font=optional_font, parent=page0)
 
     Initialize the M5UI library. This function must be called before using any other M5UI functions.
 
+    Call this before creating raw `lvgl` widgets or accessing the active screen.
+    Without an initialized display, these operations raise `RuntimeError`.
+
     - Returns: None
 
 ### `m5ui.deinit()`

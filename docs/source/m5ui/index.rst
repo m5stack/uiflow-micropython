@@ -152,6 +152,9 @@ Functions
 
     Initialize the M5UI library. This function must be called before using any other M5UI functions.
 
+    Call this before creating raw ``lvgl`` widgets or accessing the active screen.
+    Without an initialized display, these operations raise ``RuntimeError``.
+
     :return: None
 
 
