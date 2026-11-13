@@ -7,7 +7,8 @@ Use it to communicate with Unit, Hat, and other I2C peripherals.
 MicroPython Example
 -------------------
 
-Scan PORT.A on a CoreS3 or most S3-based controllers.
+Scan PORT.A on CoreS3. GPIO assignments are board-specific; do not copy
+this GPIO1/GPIO2 pair to every ESP32-S3 controller.
 
 .. code-block:: python
 
@@ -24,6 +25,24 @@ Scan PORT.A on Tough.
 
     i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
     print(i2c0.scan())
+
+StickS3 uses Grove SDA GPIO9 and SCL GPIO10. The built-in system bus is
+SDA GPIO47 / SCL GPIO48 and is managed by M5Unified; do not reinitialize it
+to access external Units. For the external Grove bus:
+
+.. code-block:: python
+
+    import M5
+    from hardware import I2C, Pin
+
+    M5.begin()
+    M5.Power.setExtOutput(True)
+    grove = I2C(1, scl=Pin(10), sda=Pin(9), freq=100000)
+    print(grove.scan())  # An empty list is normal when no I2C Unit is attached.
+
+See the `StopWatch pin table <../controllers/stopwatch.html>`_ for its
+different Grove signals. Bus id, connector pins and supply must match the
+target board and connected peripheral.
 
 **API**
 -------

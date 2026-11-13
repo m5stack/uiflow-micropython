@@ -68,6 +68,23 @@ Below is the detailed support for Speaker on the host:
     | TOUGH           | |S|     |         |         |
     +-----------------+---------+---------+---------+
 
+Additional controller support:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Controller
+      - Speaker path
+    * - StopWatch
+      - ES8311 codec and AW8737A amplifier; ``M5.Speaker``.
+    * - StickS3
+      - ES8311 codec and AW8737A amplifier; ``M5.Speaker``.
+
+Upload ``poweron_2_5s.wav`` to
+``/flash/res/audio/`` before running the example, or change its path to an
+existing compatible WAV. See
+`Resource Files and Paths <../quick-reference/resource-files.html>`_.
+
 .. |S| unicode:: U+2714
 
 
@@ -346,7 +363,8 @@ Methods
 
 .. method:: Speaker.playWavFile(path: str[, repeat: int[, channel: int[, stop_current_sound: bool]]]) -> None
 
-    Play audio data in WAV format. Requires passing the raw data of the entire audio file.
+    Play a WAV file from a filesystem path. The file must already exist;
+    this method does not download the resource.
 
     Parameters:
 

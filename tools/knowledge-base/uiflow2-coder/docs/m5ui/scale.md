@@ -81,7 +81,7 @@ Create a scale object.
 - Parameter `end_pos` (`int`): The ending position of the scale.
 - Parameter `tick_count` (`int`): The total number of ticks on the scale.
 - Parameter `tick_every` (`int`): The interval between major ticks on the scale.
-- Parameter `mode` (`int`): The mode of the scale. It can be one of the following:
+- Parameter `show_mode` (`int`): The mode of the scale. It can be one of the following:
 
     Options:
 
@@ -95,11 +95,13 @@ Create a scale object.
 - Parameter `parent` (`lv.obj`): The parent object to attach the scale to. If not specified, the scale will be attached to the default screen.
 
 ```python
+import m5ui
 from m5ui import M5Scale
 import lvgl as lv
 
 m5ui.init()
-scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
+page0 = m5ui.M5Page()
+scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, show_mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
 ```
 
 ### `set_mode`

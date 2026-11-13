@@ -1,6 +1,10 @@
 Module
 ======
 
+
+For compatible firmware and host interfaces, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.
+
 .. toctree::
     :maxdepth: 1
 

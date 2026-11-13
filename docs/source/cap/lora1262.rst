@@ -1,6 +1,10 @@
 LoRa1262 Cap
 ============
 
+
+For compatible firmware and host interfaces, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.
+
 .. sku: U214
 
 .. include:: ../refs/cap.lora1262.ref

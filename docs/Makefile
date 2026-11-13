@@ -21,15 +21,18 @@ help:
 doxygen:
 	doxygen
 
-.PHONY: help Makefile en zh check-literalincludes #doxygen
+.PHONY: help Makefile en zh check-literalincludes check-python-examples #doxygen
 
 check-literalincludes:
 	@$(PYTHON) tools/check_literalincludes.py "$(SOURCEDIR)"
 
-en: check-literalincludes
+check-python-examples:
+	@$(PYTHON) tools/check_python_examples.py
+
+en: check-literalincludes check-python-examples
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b html -D language=en "$(SOURCEDIR)" build/html/en $(SPHINXOPTS) $(O)
 
-zh: check-literalincludes
+zh: check-literalincludes check-python-examples
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b gettext "$(SOURCEDIR)" build/gettext $(SPHINXOPTS) $(O)
 	@sphinx-intl update -p build/gettext -l zh_CN -d locales
 	@$(SPHINXBUILD) -W $(SPHINX_PARALLEL_FLAG) -b html -D language=zh_CN "$(SOURCEDIR)" build/html/zh_CN $(SPHINXOPTS) $(O)

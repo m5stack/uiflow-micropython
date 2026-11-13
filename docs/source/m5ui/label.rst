@@ -19,6 +19,19 @@ M5Label is a widget that can be used to create labels in the user interface. It 
     ``lv.font_montserrat_*`` objects.
 
 
+Width, Wrapping and Changing Text
+---------------------------------
+
+The constructor follows the initial text's content size and has no ``w`` or
+``h`` keywords. Use ``set_width()`` to reserve a bounded area, then select
+``set_long_mode(lv.label.LONG_MODE.WRAP)`` for multiple lines or ``DOTS`` for
+an intentional one-line summary. ``CLIP`` hides excess text. After
+``set_text()``, call ``update_layout()`` before reading the resulting height
+or placing another widget below it. Verify the bottom edge against the
+parent's content area and the visible screen. See
+`Text Layout <../quick-reference/text-layout.html>`_ for complete examples
+and 135 x 240 / 320 x 240 viewport guidance.
+
 UiFlow2 Example
 ---------------
 

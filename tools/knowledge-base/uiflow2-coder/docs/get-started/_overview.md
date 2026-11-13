@@ -24,3 +24,10 @@ M5StickC PLUS     M5StickC PLUS2
 
 AtomS3            AtomS3 Lite       AtomS3U
 `AtomS3`_           `AtomS3 Lite`_      `AtomS3U`_
+
+## Additional Controller Guides
+
+See the [StopWatch](../controllers/stopwatch.md) and
+[StickS3](../controllers/sticks3.md) guides for firmware requirements
+and Grove pins. For optional drivers and UI frameworks, see
+[Board Capabilities](../quick-reference/board-capabilities.md).

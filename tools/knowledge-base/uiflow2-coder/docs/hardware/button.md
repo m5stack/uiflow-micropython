@@ -11,6 +11,7 @@ the detailed Button support for the host:
      CoreS3                             S            |
      Core2            S   S   S                  |
      TOUGH                                             |
+     StopWatch        S   S                        |
 
 Micropython Example:
 ```python

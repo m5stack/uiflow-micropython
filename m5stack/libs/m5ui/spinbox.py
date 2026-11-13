@@ -228,15 +228,15 @@ class M5Spinbox(lv.obj):
             .. code-block:: python
 
                 def spinbox0_value_changed_event(event_struct):
-                    global page0, spinbox0
-                    print("value changed:", spinbox0.get_value())
+                    global page0, spinbox_0
+                    print("value changed:", spinbox_0.get_value())
 
                 def spinbox0_event_handler(event_struct):
-                global page0, spinbox0
-                event = event_struct.code
-                if event == lv.EVENT.VALUE_CHANGED and True:
-                    spinbox0_value_changed_event(event_struct)
-                return
+                    global page0, spinbox_0
+                    event = event_struct.code
+                    if event == lv.EVENT.VALUE_CHANGED and True:
+                        spinbox0_value_changed_event(event_struct)
+                    return
 
                 spinbox_0.add_event_cb(spinbox0_event_handler, lv.EVENT.ALL, None)
         """
@@ -422,7 +422,7 @@ class M5Spinbox(lv.obj):
 
             .. code-block:: python
 
-                spinbox0.get_value()
+                spinbox_0.get_value()
         """
         return self.raw2value(self._spinbox.get_value(), self._digit_count, self._sep_pos)
 

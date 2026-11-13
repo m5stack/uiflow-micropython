@@ -30,7 +30,33 @@ StopWatch supports the following built-in functions and peripherals:
 - [RTC](../hardware/rtc.md) date and time display and adjustment.
 - Button input and round-display output.
 - USB, battery, and Grove voltage monitoring with charging and external-output control.
-- [Audio](../system/audio.md) recording and playback.
+- [Microphone](../hardware/mic.md) and [Speaker](../hardware/speaker.md) through ES8311.
+- BMI270 IMU via `M5.Imu`.
+
+## Pins and Grove
+
+| Function | Pins / ownership |
+| --- | --- |
+| Internal I2C | SDA GPIO47, SCL GPIO48; managed by M5Unified for PMIC/IMU/RTC/etc. |
+| Grove J3 pin 1 / 2 | GND / GROVE_5V (controlled external power). |
+| Grove J3 pin 3 / 4 | GPIO10 / GPIO11, respectively; wire SDA/SCL or other signals explicitly. |
+| User buttons KEY1 / KEY2 | GPIO2 / GPIO1; use `M5.BtnA` / `M5.BtnB`. |
+| Native USB | D- GPIO19, D+ GPIO20; do not reuse while USB is active. |
+
+The table follows the
+[official StopWatch schematic/pin map](https://docs.m5stack.com/en/core/StopWatch).
+The Grove signals are different from StickS3's GPIO9/GPIO10. Do not
+reinitialize the internal system bus or use internal audio/display pins for
+external Units. Select bus id and SDA/SCL to match the actual peripheral's
+wiring, and enable external output when its power supply requires it.
+
+## Resources and Firmware Contents
+
+The current build includes `m5ui` / LVGL, `unit`, `chain` and
+`usb.device`. See [Board Capabilities](../quick-reference/board-capabilities.md)
+for firmware-version conditions. Example WAV files are not guaranteed to be
+preinstalled. Upload them or make a new recording in a prepared directory;
+see [Resource Files and Paths](../quick-reference/resource-files.md).
 
 ## MicroPython Example
 

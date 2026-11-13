@@ -13,6 +13,7 @@ device. Below is the detailed IMU support for the host:
      TOUGH                                    |
      StickC Plus      S                     |
      StickC Plus2     S                     |
+     StopWatch                 S            |
 
 Micropython Example:
 
@@ -75,7 +76,8 @@ if __name__ == "__main__":
 
 ### `IMU.getAccel() -> tuple[float, float, float]`
 
-    Get the tuple of x, y, and z values of the accelerometer.
+    Get the tuple of x, y, and z acceleration values in g (standard gravity),
+    not m/s². Multiply each value by 9.80665 for m/s².
 
 ### `IMU.getGyro() -> tuple[float, float, float]`
 

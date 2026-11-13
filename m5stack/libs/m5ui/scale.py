@@ -17,7 +17,7 @@ class M5Scale(lv.scale):
     :param int end_pos: The ending position of the scale.
     :param int tick_count: The total number of ticks on the scale.
     :param int tick_every: The interval between major ticks on the scale.
-    :param int mode: The mode of the scale. It can be one of the following:
+    :param int show_mode: The mode of the scale. It can be one of the following:
 
         Options:
 
@@ -34,11 +34,13 @@ class M5Scale(lv.scale):
 
         .. code-block:: python
 
+            import m5ui
             from m5ui import M5Scale
             import lvgl as lv
 
             m5ui.init()
-            scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
+            page0 = m5ui.M5Page()
+            scale_0 = M5Scale(x=10, y=10, w=200, h=20, start_pos=0, end_pos=100, tick_count=11, tick_every=2, show_mode=lv.scale.MODE.HORIZONTAL_TOP, parent=page0)
     """
 
     def __init__(

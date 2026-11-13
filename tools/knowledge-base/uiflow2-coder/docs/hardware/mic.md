@@ -13,6 +13,16 @@ the detailed Mic support for the host:
      Core2            S
      TOUGH
 
+Additional controller support:
+
+| Controller | Microphone path |
+| --- | --- |
+| StopWatch | Analog MEMS microphone through ES8311; `M5.Mic`. |
+| StickS3 | Analog MEMS microphone through ES8311; `M5.Mic`. |
+
+For writable recording paths, see
+[Resource Files and Paths](../quick-reference/resource-files.md).
+
 Micropython Example:
 
 ```python
@@ -224,3 +234,26 @@ Mic.config(pin_data_in=1)
 ### `mic_config_t.i2s_port`
 
     I2S port.
+
+### `Mic.recordWavFile(path, rate=16000, time=5, stereo=False) -> bool`
+
+    Record 16-bit PCM audio to a WAV file, including its header. `path` is
+    a writable filesystem path, `rate` is the sample rate in Hz and
+    `time` is the duration in seconds. `stereo=False` selects mono.
+    This call blocks while recording and returns `True` on completion;
+    filesystem failures raise `OSError`. It requires working microphone
+    initialization; it is not the ADF `audio.Recorder` API.
+
+    Use keywords for the duration: `recordWavFile(path, 1)` sets a 1 Hz
+    sample rate, not a one-second recording. A one-second, 16 kHz, mono
+    recording contains 32,000 PCM bytes plus the WAV header (32,044 bytes
+    for this implementation). The parent directory must already exist.
+    Recording opens the destination for writing and replaces its contents.
+
+```python
+import M5
+
+M5.begin()
+# Prepare /flash/res/audio first; choose a new destination filename.
+M5.Mic.recordWavFile("/flash/res/audio/recording.wav", rate=16000, time=1)
+```

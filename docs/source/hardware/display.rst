@@ -11,6 +11,13 @@ A lcd display library
     :synopsis: A lcd display library
 
 
+StopWatch includes a built-in round AMOLED display accessed through
+``M5.Lcd`` / ``M5.Display`` after ``M5.begin()``.
+Read `Text Layout <../quick-reference/text-layout.html>`_ for measured
+width, overflow and vertical bounds, and
+`Resource Files and Paths <../quick-reference/resource-files.html>`_ before
+loading an image or font file.
+
 M5 Series Display Libraries
 ---------------------------
 

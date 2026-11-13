@@ -1,6 +1,10 @@
 LoRa868 Cap
 ===========
 
+
+For compatible firmware and host interfaces, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.
+
 .. sku: U201
 
 .. include:: ../refs/cap.lora868.ref

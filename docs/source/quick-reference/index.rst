@@ -6,3 +6,7 @@ Quick Reference
 
     get-started.rst
     usb-mode.rst
+    board-capabilities.rst
+    memory-budget.rst
+    resource-files.rst
+    text-layout.rst

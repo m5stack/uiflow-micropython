@@ -1,5 +1,8 @@
 # LoRa868 Cap
 
+For compatible firmware and host interfaces, see
+[Board Capabilities](../quick-reference/board-capabilities.md).
+
 Cap LoRa868 is a high-performance LoRa communication and GNSS global navigation expansion module designed for the Cardputer-Adv.
 
 Support the following products:

@@ -2,7 +2,8 @@
 
 usb device keyboard
 
-> Note: This module is only applicable to the CoreS3 Controller
+> Note: Requires native USB device support and the `usb.device` package.
+> See [Board Capabilities](../../../quick-reference/board-capabilities.md).
 Key codes are imported from `usb.device.hid`, not `unit` or
 `usb.device.keyboard`. See [Keyboard key codes](../../../hardware/keycode.md) for the
 complete `usb.device.hid.KeyCode` list and the distinction from CardKB

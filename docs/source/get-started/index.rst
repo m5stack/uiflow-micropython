@@ -50,3 +50,12 @@ ATOM
 ------------------  ------------------  ------------------
 `AtomS3`_           `AtomS3 Lite`_      `AtomS3U`_
 ==================  ==================  ==================
+
+
+Additional Controller Guides
+-----------------------------
+
+See the `StopWatch <../controllers/stopwatch.html>`_ and
+`StickS3 <../controllers/sticks3.html>`_ guides for firmware requirements
+and Grove pins. For optional drivers and UI frameworks, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.

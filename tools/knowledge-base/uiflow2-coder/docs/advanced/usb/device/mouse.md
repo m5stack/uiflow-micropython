@@ -2,7 +2,8 @@
 
 usb device mouse
 
-> Note: This module is only applicable to the CoreS3 Controller
+> Note: Requires native USB device support and the `usb.device` package.
+> See [Board Capabilities](../../../quick-reference/board-capabilities.md).
 ## Micropython Example
 
 ### USB Mouse

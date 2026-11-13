@@ -76,7 +76,7 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (377 Markdown files, 22 directories; .md suffix omitted)
+docs/  (384 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -86,7 +86,7 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
   - base/: atom_can, atom_gps, atom_socket, audio35, display, dtu_lorawan, dtu_lorawan_rui3, dtu_nbiot, dtu_nbiot2
            dtu_nbiot2v11, echo, echo_pyramid, gpsv2, hdriver, motion, pwm, qrcode, qrcode2, rs232, rs485, speaker
            stepmotor, tfcard
-  - cap/: cc1101, lora1262, lora868
+  - cap/: _overview, cc1101, lora1262, lora868
   - chain/: angle, buzzer, chainbus, encoder, joystick, key, mic, mono, pir, rgb, servos8_v2, switch, tof, unit_bus
   - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer-adv, cardputer, coreink, corematrix, corep4x, cores3
                   dinmeter, dualkey, nesso-n1, paper, paperdiy, stackchan, stamplc, stampp4x, sticks3, stopwatch, tab5
@@ -100,12 +100,13 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
   - m5ui/: _overview, arc, bar, button, buttonmatrix, calendar, canvas, chart, checkbox, dropdown, image, keyboard
            label, led, line, list, menu, msgbox, page, roller, scale, slider, spinbox, spinner, switch, table, tabview
            textarea, win
-  - module/: 4in8out, ain4, asr, audio, bala2, basex, cc1101, commu, dc_motor, display, dmx, dualkmeter, ecg
-             encoder4_motor, faces_calculator3, faces_gamepad3, faces_keyboard3, fan, gateway_h2, gnss, goplus2, gps
-             gpsv2, grbl, hmi, lan, llm, lora, lora1262, lora868_v12, lorawan868, lorawan_rui3, lte, module16340
+  - module/: 4in8out, _overview, ain4, asr, audio, bala2, basex, cc1101, commu, dc_motor, display, dmx, dualkmeter
+             ecg, encoder4_motor, faces_calculator3, faces_gamepad3, faces_keyboard3, fan, gateway_h2, gnss, goplus2
+             gps, gpsv2, grbl, hmi, lan, llm, lora, lora1262, lora868_v12, lorawan868, lorawan_rui3, lte, module16340
              nbiot, odrive, plus, pm25, pps, pwrcan, qrcode, rca, relay_2, rs232, servo2, step_motor_driver, usb
              zigbee
-  - quick-reference/: get-started, usb-mode
+  - quick-reference/: board-capabilities.json, board-capabilities, get-started, memory-budget, resource-files
+                      text-layout, usb-mode
   - software/: easysocket, modbus, modbus.rtu.master, modbus.rtu.slave, modbus.tcp.client, modbus.tcp.server
                requests2, tcp.client, tcp.server, udp.client, udp.server, umqtt.default, umqtt
   - stamp/: cam0308, f12, lora1262, stp2, uwb
@@ -113,17 +114,18 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
   - system/: audio, audio.player, audio.recorder, bleuart.client, bleuart, bleuart.server, m5ble, m5espnow, power
              time, wlan.ap, wlan.sta
   - tab5/: keyboard
-  - unit/: ac_measure, accel, acssr, adc, adc_v11, ain4, angle, angle8, asr, audioplayer, bldc_driver, bmm350, bps
-           button, buzzer, bytebutton, byteswitch, can, cardkb, cardkb2, cat1cn, catch, co2, co2l, color, dac, dac2
-           dcssr, dds, digi_clock, dlight, dmx, dof10, dof6, dof9, dualbutton, earth, encoder, encoder4_motor_driver
-           encoder8, encoder_motor_driver, env, envpro, extencoder, extio, extio2, fader, finger, fingerprint2
-           flash_light, gateway_h2, glass, glass2, gps_v11, grove2grove, hall_effect, hbridge, heart, id, imu, imupro
-           ina226, ir, joystick, joystick2, key, kmeter, kmeter_iso, laser_rx, laser_tx, lcd, light, limit, lora_e220
-           lora_e220_433, lorawan_rui3, midi, minioled, miniscale, mq, mqtt, mqttpoe, nbiot, nbiot2, ncir, ncir2, neco
-           nfc, oled, op180, op90, pahub, pdm, pir, puzzle, qrcode, rca, reflective_ir, relay, relay2, relay4, rf433r
-           rf433t, rfid, rgb, roller485, rollercan, rtc, scales, scroll, servo180, servo360, servos8, servos8_v2, ssr
-           step16, synth, thermal, timerpwr, tmos, tof, tof4m, tof90, tube_pressure, tvoc, uhf_rfid, ultrasonic
-           ultrasonic_io, uwb, vibrator, watering, weight, weight_i2c, zigbee
+  - unit/: _overview, ac_measure, accel, acssr, adc, adc_v11, ain4, angle, angle8, asr, audioplayer, bldc_driver
+           bmm350, bps, button, buzzer, bytebutton, byteswitch, can, cardkb, cardkb2, cat1cn, catch, co2, co2l, color
+           dac, dac2, dcssr, dds, digi_clock, dlight, dmx, dof10, dof6, dof9, dualbutton, earth, encoder
+           encoder4_motor_driver, encoder8, encoder_motor_driver, env, envpro, extencoder, extio, extio2, fader
+           finger, fingerprint2, flash_light, gateway_h2, glass, glass2, gps_v11, grove2grove, hall_effect, hbridge
+           heart, id, imu, imupro, ina226, ir, joystick, joystick2, key, kmeter, kmeter_iso, laser_rx, laser_tx, lcd
+           light, limit, lora_e220, lora_e220_433, lorawan_rui3, midi, minioled, miniscale, mq, mqtt, mqttpoe, nbiot
+           nbiot2, ncir, ncir2, neco, nfc, oled, op180, op90, pahub, pdm, pir, puzzle, qrcode, rca, reflective_ir
+           relay, relay2, relay4, rf433r, rf433t, rfid, rgb, roller485, rollercan, rtc, scales, scroll, servo180
+           servo360, servos8, servos8_v2, ssr, step16, synth, thermal, timerpwr, tmos, tof, tof4m, tof90
+           tube_pressure, tvoc, uhf_rfid, ultrasonic, ultrasonic_io, uwb, vibrator, watering, weight, weight_i2c
+           zigbee
   - widgets/: _overview, circle, image+, image, label+, label
 ```
 <!-- END_DOC_TREE -->
@@ -180,6 +182,9 @@ if __name__ == "__main__":
 - 遇到 `I2C.scan()` 为空、SDIO 报错、`ETIMEDOUT` 或总线异常时，先判断是否误用了系统占用的总线或目标设备类型。
 - 需要摄像头时先确认目标板支持；不要给非摄像头设备生成 camera 示例。
 
+- 按板卡选择可选模块前读取 `docs/quick-reference/board-capabilities.md`；区分固件打包、物理接口和外设已连接。当前 `unit` 的公开名是 `RGBUnit`；Cardputer Adv 的 Cap 和原始 Cardputer 不同；USB HID 需要原生 USB device 支持和对应 Python 包。
+- 资源文件先确认已上传、父目录存在和实际路径；读取 `docs/quick-reference/resource-files.md`。`res/` 是相对目录，不是独立只读区；M5Image 传绝对 VFS 路径，不自行加 `S:`。
+
 ## 网络连接策略
 
 - UIFlow2 设备通常已由系统使用保存的网络配置完成联网。网络应用先获取 STA 接口并检查 `isconnected()`，已连接时直接复用，不要重复设置 Wi-Fi。
@@ -204,6 +209,9 @@ if __name__ == "__main__":
 - 高频数据处理优先复用 buffer、list、对象；避免循环中重复分配大块内存。
 - 处理二进制数据时优先 `memoryview`、批量 `struct.unpack()`，避免大量切片拷贝。
 - 图表刷新优先查 `docs/m5ui/chart.md`，能追加就不要全量重设。
+
+- 固定坐标或居中文本先用同一绘制 API/字体量宽；M5GFX 使用 `textWidth`/`fontHeight`，M5UI 使用 LVGL 布局。超出可用宽度必须有明确的截断省略号、换行或可读字号策略，并检查 `y + 字高`、父容器及圆屏边界；变长状态更新后重新检查。参考 `docs/quick-reference/text-layout.md`，不要混用两套字体量宽。
+- 多功能或大资源应用先读取 `docs/quick-reference/memory-budget.md`，按导入、UI、联网和功能切换阶段测量实际堆；没有实测数据时不编造 RAM/源码行数上限。资源外置，复用缓冲区，限制历史与响应大小。
 
 ## 返回值和错误处理
 

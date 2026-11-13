@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "boards": [
+    {
+      "board": "M5STACK_Cardputer",
+      "manifest": "m5stack/boards/M5STACK_Cardputer/manifest.py",
+      "packages": {
+        "unit": true,
+        "module": false,
+        "cap": false,
+        "m5ui": false,
+        "usb/device": true
+      },
+      "rgb_unit": true,
+      "lvgl_configured": false,
+      "adf_compiled": false
+    },
+    {
+      "board": "M5STACK_CardputerADV",
+      "manifest": "m5stack/boards/M5STACK_CardputerADV/manifest.py",
+      "packages": {
+        "unit": true,
+        "module": false,
+        "cap": true,
+        "m5ui": false,
+        "usb/device": true
+      },
+      "rgb_unit": true,
+      "lvgl_configured": false,
+      "adf_compiled": false
+    },
+    {
+      "board": "M5STACK_CoreS3",
+      "manifest": "m5stack/boards/M5STACK_CoreS3/manifest.py",
+      "packages": {
+        "unit": true,
+        "module": true,
+        "cap": false,
+        "m5ui": true,
+        "usb/device": true
+      },
+      "rgb_unit": true,
+      "lvgl_configured": true,
+      "adf_compiled": true
+    },
+    {
+      "board": "M5STACK_StickS3",
+      "manifest": "m5stack/boards/M5STACK_StickS3/manifest.py",
+      "packages": {
+        "unit": true,
+        "module": false,
+        "cap": false,
+        "m5ui": false,
+        "usb/device": true
+      },
+      "rgb_unit": true,
+      "lvgl_configured": false,
+      "adf_compiled": true
+    },
+    {
+      "board": "M5STACK_StopWatch",
+      "manifest": "m5stack/boards/M5STACK_StopWatch/manifest.py",
+      "packages": {
+        "unit": true,
+        "module": false,
+        "cap": false,
+        "m5ui": true,
+        "usb/device": true
+      },
+      "rgb_unit": true,
+      "lvgl_configured": true,
+      "adf_compiled": true
+    }
+  ]
+}

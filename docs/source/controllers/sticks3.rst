@@ -23,10 +23,8 @@ StickS3 supports the following components:
 Supported Display Fonts
 -----------------------
 
-The StickS3 firmware includes the following Montserrat fonts for LVGL and M5UI:
-``lv.font_montserrat_12``, ``lv.font_montserrat_14``, ``lv.font_montserrat_16``,
-``lv.font_montserrat_18``, ``lv.font_montserrat_24``, ``lv.font_montserrat_40``,
-``lv.font_montserrat_44``, and ``lv.font_montserrat_48``.
+Use ``M5.Lcd`` and ``M5.Widgets`` fonts for the StickS3 display.
+The firmware does not include M5UI/LVGL.
 
 For ``M5.Lcd.FONTS``, the firmware also provides ``AlibabaPuHuiTiCN24``,
 ``AlibabaSansJA24``, and ``AlibabaSansKR24`` for Chinese, Japanese, and Korean
@@ -41,12 +39,33 @@ StickS3 supports the following built-in functions and connected peripherals:
 * `IMU <../hardware/imu.html>`_ accelerometer and gyroscope readings.
 * Battery, VBUS, charging, and external output power management.
 * `Infrared <../hardware/ir.html>`_ transmit and receive.
-* `Audio <../system/audio.html>`_ recording and playback.
+* `Microphone <../hardware/mic.html>`_ / `Speaker <../hardware/speaker.html>`_ WAV recording and playback.
 * `RTC <../unit/rtc.html>`_ date and time functions (supported on StickS3 Lite and StickS3 v1.1 or later).
 * `ToF HAT <../hat/tof.html>`_ distance measurement.
 
+Grove and System I2C
+---------------------
+
+Grove uses SDA GPIO9 and SCL GPIO10. The internal system I2C bus uses
+SDA GPIO47 / SCL GPIO48 and is managed by M5Unified. Use ``I2C(1, ...)`` with
+the external Grove pins, not a new bus on GPIO1/GPIO2 or the internal pins.
+Enable Grove power when the connected peripheral needs the board's 5V output.
+See the `I2C scan example <../hardware/i2c.html>`_ and the
+`official StickS3 pin map <https://docs.m5stack.com/en/core/StickS3>`_.
+
+Audio Compatibility
+--------------------
+
+For WAV recording and playback, use
+``M5.Mic.recordWavFile(..., rate=16000, time=1)`` and
+``M5.Speaker.playWavFile(...)``. Create the recording directory first; see
+`Resource Files and Paths <../quick-reference/resource-files.html>`_.
+
+.. note::
+   The ADF ``sticks3_audio_example`` may hang during codec/I2S initialization.
+
 UiFlow2 Example 
----------------
+----------------
 
 Button Control
 ^^^^^^^^^^^^^^
@@ -68,7 +87,7 @@ IMU Sensor
 
 Open the |sticks3_imu_example.m5f2| project in UiFlow2.
 
-This example demonstrates the built-in IMU (Inertial Measurement Unit) sensor functionality. It reads and displays accelerometer and gyroscope data in real-time, showing acceleration values in m/s² and gyroscope values in degrees per second (dps).
+This example demonstrates the built-in IMU (Inertial Measurement Unit) sensor functionality. It reads and displays accelerometer and gyroscope data in real-time, showing acceleration values in g and gyroscope values in degrees per second (dps).
 
 UiFlow2 Code Block:
 
@@ -182,7 +201,7 @@ Example output:
     None
 
 MicroPython Example 
--------------------
+--------------------
 
 Button Control
 ^^^^^^^^^^^^^^
@@ -202,7 +221,7 @@ Example output:
 IMU Sensor
 ^^^^^^^^^^
 
-This example demonstrates the built-in IMU (Inertial Measurement Unit) sensor functionality. It reads and displays accelerometer and gyroscope data in real-time, showing acceleration values in m/s² and gyroscope values in degrees per second (dps).
+This example demonstrates the built-in IMU (Inertial Measurement Unit) sensor functionality. It reads and displays accelerometer and gyroscope data in real-time, showing acceleration values in g and gyroscope values in degrees per second (dps).
 
 MicroPython Code Block:
 

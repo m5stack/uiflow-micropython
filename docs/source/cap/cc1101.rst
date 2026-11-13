@@ -1,6 +1,10 @@
 CC1101 Cap
 ==========
 
+
+For compatible firmware and host interfaces, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.
+
 .. sku:
 
 .. include:: ../refs/cap.cc1101.ref

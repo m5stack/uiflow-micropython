@@ -1,6 +1,10 @@
 RGB Unit
 ========
 
+
+For compatible firmware and host interfaces, see
+`Board Capabilities <../quick-reference/board-capabilities.html>`_.
+
 .. include:: ../refs/unit.rgb.ref
 
 The following products are supported:

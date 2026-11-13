@@ -124,7 +124,9 @@ def module_name_from_file(python_file: str) -> str:
     return os.path.splitext(rel)[0].replace(os.path.sep, ".")
 
 
-def resolve_relative_module(current_module: str, level: int, module: Optional[str]) -> Optional[str]:
+def resolve_relative_module(
+    current_module: str, level: int, module: Optional[str]
+) -> Optional[str]:
     if level <= 0:
         return module
 
@@ -294,7 +296,9 @@ def read_example_code(file_path: str, current_rst_path: Optional[str] = None) ->
     candidates.append(os.path.join(project_root, file_path.lstrip(".").lstrip(os.path.sep)))
 
     if current_rst_path:
-        candidates.append(os.path.abspath(os.path.join(os.path.dirname(current_rst_path), file_path)))
+        candidates.append(
+            os.path.abspath(os.path.join(os.path.dirname(current_rst_path), file_path))
+        )
 
     for candidate in candidates:
         if os.path.exists(candidate):
@@ -318,14 +322,20 @@ def dedent_rst_block(block_lines: Sequence[str]) -> List[str]:
     return [line[min_indent:] if len(line) >= min_indent else "" for line in lines]
 
 
-def collect_indented_block(lines: Sequence[str], start: int, base_indent: int) -> Tuple[List[str], int]:
+def collect_indented_block(
+    lines: Sequence[str], start: int, base_indent: int, keep_options: bool = False
+) -> Tuple[List[str], int]:
     i = start
     while i < len(lines):
         stripped = lines[i].strip()
         if not stripped:
             i += 1
             continue
-        if leading_spaces(lines[i]) > base_indent and stripped.startswith(":"):
+        if (
+            not keep_options
+            and leading_spaces(lines[i]) > base_indent
+            and stripped.startswith(":")
+        ):
             i += 1
             continue
         break
@@ -392,6 +402,7 @@ def convert_inline_rst(text: str) -> str:
             target = target_path + (separator + fragment if separator else "")
         return f"[{label}]({target})"
 
+    text = re.sub(r":download:`([^`<>]+?)\s*<([^<>]+)>`", replace_explicit_link, text)
     text = re.sub(r"`([^`<>]+?)\s*<([^<>]+)>`_", replace_explicit_link, text)
     text = re.sub(r":(?:mod|class|func|meth|attr|data|ref):`([^`]+)`", r"`\1`", text)
     text = re.sub(r"``([^`]+)``", r"`\1`", text)
@@ -471,6 +482,20 @@ def should_skip_index_rst(rst_text: str) -> bool:
 
 
 def cleanup_md_text(md_text: str, image_map: Dict[str, str], link_map: Dict[str, str]) -> str:
+    tables: Dict[str, str] = {}
+
+    def protect_table(match: re.Match[str]) -> str:
+        token = "CODER_MARKDOWN_TABLE_" + str(len(tables))
+        tables[token] = match.group(0).rstrip()
+        return token + "\n"
+
+    # RST substitution cleanup must not treat Markdown cell boundaries as |refs|.
+    md_text = re.sub(
+        r"^\|[^\n]*\|\n\|(?:\s*:?-{3,}:?\s*\|)+\n(?:\|[^\n]*\|(?:\n|$))*",
+        protect_table,
+        md_text,
+        flags=re.MULTILINE,
+    )
     md_text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", md_text)
     md_text = re.sub(
         r"[\[\]]\s*[^\n\[\]]+\." + IMAGE_EXT_PATTERN + r"\s*[\[\]|]?",
@@ -495,6 +520,8 @@ def cleanup_md_text(md_text: str, image_map: Dict[str, str], link_map: Dict[str,
     md_text = "".join(ch for ch in md_text if ch in "\n\r\t" or ord(ch) >= 32)
     md_text = remove_non_programming_noise(md_text)
     md_text = remove_empty_uiflow_sections(md_text)
+    for token, table in tables.items():
+        md_text = md_text.replace(token, table)
     md_text = re.sub(r"\n\s*\n\s*\n+", "\n\n", md_text)
     lines = [line.rstrip() for line in md_text.splitlines()]
     while lines and not lines[-1].strip():
@@ -504,6 +531,38 @@ def cleanup_md_text(md_text: str, image_map: Dict[str, str], link_map: Dict[str,
         while lines and not lines[-1].strip():
             lines.pop()
     return "\n".join(lines) + "\n"
+
+
+def list_table_to_md(block: List[str]) -> List[str]:
+    """Convert a rectangular RST list-table without losing cell boundaries."""
+    rows: List[List[str]] = []
+    header_rows = 0
+    for line in block:
+        stripped = line.strip()
+        if stripped.startswith(":header-rows:"):
+            header_rows = int(stripped.split(":", 2)[2].strip())
+        elif stripped.startswith(":") or not stripped:
+            continue
+        elif re.match(r"^\*\s+-\s*", line):
+            rows.append([re.sub(r"^\*\s+-\s*", "", line)])
+        elif re.match(r"^  -\s*", line):
+            if not rows:
+                return []
+            rows[-1].append(re.sub(r"^  -\s*", "", line))
+        elif rows:
+            rows[-1][-1] += " " + stripped
+        else:
+            return []
+    if not rows or any(len(row) != len(rows[0]) for row in rows) or header_rows not in (0, 1):
+        return []
+    if not header_rows:
+        rows.insert(0, ["Column " + str(i + 1) for i in range(len(rows[0]))])
+    rendered = [
+        "| " + " | ".join(convert_inline_rst(cell).replace("|", "\\|") for cell in row) + " |"
+        for row in rows
+    ]
+    rendered.insert(1, "| " + " | ".join("---" for cell in rows[0]) + " |")
+    return rendered
 
 
 def is_table_border(line: str) -> bool:
@@ -537,15 +596,19 @@ def is_visual_example_heading(line: str) -> bool:
     if heading is None:
         return False
     title = heading[1].rstrip(":").lower()
-    return "example" in title and "micropython" not in title and (
-        "uiflow" in title or "blockly" in title
+    return (
+        "example" in title
+        and "micropython" not in title
+        and ("uiflow" in title or "blockly" in title)
     )
 
 
 def is_visual_example_label(stripped: str) -> bool:
     title = stripped.rstrip(":").lower()
-    return "example" in title and "micropython" not in title and (
-        "uiflow" in title or "blockly" in title
+    return (
+        "example" in title
+        and "micropython" not in title
+        and ("uiflow" in title or "blockly" in title)
     )
 
 
@@ -668,7 +731,11 @@ def remove_empty_uiflow_sections(md_text: str) -> str:
             j = i + 1
             while j < len(lines) and not lines[j].strip():
                 j += 1
-            if j >= len(lines) or lines[j].lstrip().startswith("#") or lines[j].lstrip().startswith("### `"):
+            if (
+                j >= len(lines)
+                or lines[j].lstrip().startswith("#")
+                or lines[j].lstrip().startswith("### `")
+            ):
                 i += 1
                 continue
         out.append(lines[i])
@@ -750,14 +817,20 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
             i += 1
             continue
 
-        admonition = re.match(r"^\s*\.\.\s+(note|warning|important|tip|admonition)::\s*(.*)$", line, re.IGNORECASE)
+        admonition = re.match(
+            r"^\s*\.\.\s+(note|warning|important|tip|admonition)::\s*(.*)$", line, re.IGNORECASE
+        )
         if admonition:
             kind, text = admonition.groups()
             body, i = collect_indented_block(lines, i + 1, base_indent)
-            append_admonition(md, kind, convert_inline_rst(text), [convert_inline_rst(x) for x in body])
+            append_admonition(
+                md, kind, convert_inline_rst(text), [convert_inline_rst(x) for x in body]
+            )
             continue
 
-        version_marker = re.match(r"^\s*\.\.\s+(deprecated|versionadded|versionchanged)::\s*(.*)$", line, re.IGNORECASE)
+        version_marker = re.match(
+            r"^\s*\.\.\s+(deprecated|versionadded|versionchanged)::\s*(.*)$", line, re.IGNORECASE
+        )
         if version_marker:
             kind, text = version_marker.groups()
             label = {
@@ -766,7 +839,9 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
                 "versionchanged": "Version changed",
             }[kind.lower()]
             body, i = collect_indented_block(lines, i + 1, base_indent)
-            append_admonition(md, label, convert_inline_rst(text), [convert_inline_rst(x) for x in body])
+            append_admonition(
+                md, label, convert_inline_rst(text), [convert_inline_rst(x) for x in body]
+            )
             continue
 
         if stripped.startswith(".. toctree::"):
@@ -780,11 +855,30 @@ def rst_to_md(rst_text: str, current_rst_path: Optional[str] = None) -> str:
                 md.extend(useful_body)
             continue
 
-        if stripped.startswith((".. list-table::", ".. csv-table::")):
+        if stripped.startswith(".. list-table::"):
+            block, i = collect_indented_block(lines, i + 1, base_indent, keep_options=True)
+            table = list_table_to_md(block)
+            if table:
+                md.extend(["", *table, ""])
+            else:
+                md.extend(
+                    convert_inline_rst(row) for row in block if not row.strip().startswith(":")
+                )
+            continue
+
+        if stripped.startswith(".. csv-table::"):
             i += 1
             continue
 
-        if stripped.startswith((".. only::", ".. module::", ".. py:module::", ".. currentmodule::", ".. py:currentmodule::")):
+        if stripped.startswith(
+            (
+                ".. only::",
+                ".. module::",
+                ".. py:module::",
+                ".. currentmodule::",
+                ".. py:currentmodule::",
+            )
+        ):
             i += 1
             continue
 

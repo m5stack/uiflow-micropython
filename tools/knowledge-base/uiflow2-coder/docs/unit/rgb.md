@@ -1,5 +1,8 @@
 # RGB Unit
 
+For compatible firmware and host interfaces, see
+[Board Capabilities](../quick-reference/board-capabilities.md).
+
 The following products are supported:
 
     RGB

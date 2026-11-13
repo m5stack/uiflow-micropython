@@ -32,6 +32,8 @@ device. Below is the detailed IMU support for the host:
     +-----------------+---------+--------+--------+
     | StickC Plus2    | |S|     |        |        |
     +-----------------+---------+--------+--------+
+    | StopWatch       |         | |S|    |        |
+    +-----------------+---------+--------+--------+
 
 .. |S| unicode:: U+2714
 
@@ -66,7 +68,8 @@ Methods
 
 .. method:: IMU.getAccel() -> tuple[float, float, float]
 
-    Get the tuple of x, y, and z values of the accelerometer.
+    Get the tuple of x, y, and z acceleration values in g (standard gravity),
+    not m/s². Multiply each value by 9.80665 for m/s².
 
     UIFLOW2:
 

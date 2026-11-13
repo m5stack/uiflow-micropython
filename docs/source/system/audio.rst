@@ -11,6 +11,11 @@ This module implements player and recorder
 - player: encapsulates the ADF esp_audio, support local and online resources.
 - recorder: record and encoding the voice into file.
 
+Create the recording directory and upload playback files before use.
+See `Resource Files and Paths <../quick-reference/resource-files.html>`_
+for ADF URI syntax. On StickS3, use ``M5.Mic`` and ``M5.Speaker`` for WAV
+recording and playback; the ADF path may hang during codec/I2S initialization.
+
 Below is the detailed audio support for the host:
 
 .. table::

@@ -7,6 +7,16 @@ M5Image
 
 M5Image is a widget that can be used to create image in the user interface.
 
+Image Files
+-----------
+
+Upload the image before creating the widget. Pass an absolute VFS path such
+as ``/flash/res/img/photo.jpg``; ``M5Image`` adds LVGL's ``S:`` prefix itself.
+Do not pass ``S:/flash/...`` to ``M5Image``. Missing/invalid image data can
+leave a zero-size image without a Python exception; check file existence,
+format and decoded width/height. See
+`Resource Files and Paths <../quick-reference/resource-files.html>`_.
+
 UiFlow2 Example
 ---------------
 

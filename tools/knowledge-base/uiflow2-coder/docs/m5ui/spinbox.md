@@ -168,15 +168,15 @@ Add an event callback to the spinbox.
 
 ```python
 def spinbox0_value_changed_event(event_struct):
-    global page0, spinbox0
-    print("value changed:", spinbox0.get_value())
+    global page0, spinbox_0
+    print("value changed:", spinbox_0.get_value())
 
 def spinbox0_event_handler(event_struct):
-global page0, spinbox0
-event = event_struct.code
-if event == lv.EVENT.VALUE_CHANGED and True:
-    spinbox0_value_changed_event(event_struct)
-return
+    global page0, spinbox_0
+    event = event_struct.code
+    if event == lv.EVENT.VALUE_CHANGED and True:
+        spinbox0_value_changed_event(event_struct)
+    return
 
 spinbox_0.add_event_cb(spinbox0_event_handler, lv.EVENT.ALL, None)
 ```
@@ -263,7 +263,7 @@ Get the current value of the spinbox.
 - Return type: float | int
 
 ```python
-spinbox0.get_value()
+spinbox_0.get_value()
 ```
 
 ### `set_step`

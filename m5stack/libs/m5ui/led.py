@@ -25,11 +25,13 @@ class M5LED(lv.led):
 
         .. code-block:: python
 
-            from m5ui import M5Led
+            import m5ui
+            from m5ui import M5LED
             import lvgl as lv
 
             m5ui.init()
-            led_0 = M5Led(x=50, y=50, size=50, color=0x00FF00, on=True, parent=page0)
+            page0 = m5ui.M5Page()
+            led_0 = M5LED(x=50, y=50, size=50, color=0x00FF00, on=True, parent=page0)
     """
 
     def __init__(self, x=0, y=0, size=50, color=0x00FF00, on=True, parent=None):
