@@ -385,7 +385,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2017-Fix-INA226-Data-For-StamPLC.patch \
 	2023-Add-CoreMatrix-PWM-speaker-support.patch \
 	2024-Add-ToughC5-PWM-speaker-support.patch \
-	2026-Enable-StampS3Bat-camera-power.patch
+	2026-Enable-StampS3Bat-camera-power.patch \
+	2027-Fix-M5PM1-external-current-reading.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch

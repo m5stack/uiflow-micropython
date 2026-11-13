@@ -16,7 +16,7 @@
 > initialized via `from unit import INA226Unit` with user-created I2C.
 ## Methods
 
-### `Power.setExtOutput(enable: bool, port: int=0xFF) -> None`
+### `Power.setExtOutput(enable: bool, port_mask: int=0xFF) -> None`
 
     Set power output of the external ports.
 
@@ -24,8 +24,62 @@
     mode. When `enable` is False, the power output of the external ports is
     in input mode.
 
-    `port` is the port number, optional values are available in `class PORT`,
-    only valid for M5Stack Station.
+    `port_mask` selects external outputs using `class PORT` masks.
+    Individual port selection depends on the controller.
+
+### `Power.getType() -> int`
+
+    Return the power-management type as an integer.
+
+| Value | Type |
+| --- | --- |
+| 0 | Unknown |
+| 1 | ADC |
+| 2 | AXP192 |
+| 3 | IP5306 |
+| 4 | AXP2101 |
+| 5 | AW32001 |
+| 6 | M5PM1 |
+
+### `Power.getVBUSVoltage() -> int`
+
+    Return the USB VBUS voltage in millivolts, or `-1` when unsupported.
+
+### `Power.getExtVoltage(ext_port: int) -> float`
+
+    Return the external-port voltage in millivolts. `ext_port` is a
+    `class PORT` mask. Unsupported measurements return `0.0`.
+
+### `Power.getExtCurrent(ext_port: int) -> float`
+
+    Return the external-port current in milliamps. `ext_port` is a
+    `class PORT` mask. Unsupported measurements return `0.0`.
+    StopWatch, StickS3 and StampS3Bat have no external-current measurement;
+    their `0.0` result does not indicate a measured zero current.
+
+### `Power.getPortVbus(port: int)`
+
+    Return an INA3221 channel voltage in volts on M5Station.
+    `port` is a channel index from 0 to 5, independent of `class PORT`
+    masks. ESP32-S3 and other non-ESP32 targets return `None`.
+
+### `Power.getPortCurrent(port: int)`
+
+    Return an INA3221 channel current in amperes on M5Station.
+    `port` is a channel index from 0 to 5, independent of `class PORT`
+    masks. ESP32-S3 and other non-ESP32 targets return `None`.
+
+### `Power.setExtPortBusConfig(direction: int, output_enable: int=1, voltage: int=3000, current_limit: int=232) -> None`
+
+    Configure the M5PowerHub external CAN power bus.
+
+    `direction`: `0` for input, `1` for output.
+
+    `output_enable`: `0` to disable output, `1` to enable output.
+
+    `voltage`: Output voltage in millivolts, from 3000 to 20000 in steps of 20.
+
+    `current_limit`: Output current limit in milliamps, from 0 to 232.
 
 ### `Power.getExtOutput() -> bool`
 
@@ -50,11 +104,11 @@
     Returns `True` if the power output of the main USB port is in output mode.
     Returns `False` if the power output of the main USB port is in input mode.
 
-### `Power.setLed(brightness=255) -> None`
+### `Power.setLed(br=255) -> None`
 
     Turn on/off the power LED.
 
-    `brightness` is the brightness value, ranging from 0 to 255. 0 is off,
+    `br` is the brightness value, ranging from 0 to 255. 0 is off,
     255 is the maximum brightness.
 
 ### `Power.powerOff()`
@@ -77,21 +131,21 @@
 
     `weekDay`: Range is 0 - 6.
 
-### `Power.deepSleep(micro_seconds: int=0, wakeup: bool=True)`
+### `Power.deepSleep(micro_seconds: int=0, touch_wakeup: bool=True)`
 
     ESP32 deepsleep.
 
     `micro_seconds`: Number of micro seconds to wakeup.
 
-    `wakeup`: Whether to wake up.
+    `touch_wakeup`: Whether to enable touch wake-up on supported controllers.
 
-### `Power.lightSleep(micro_seconds: int=0, wakeup: bool=True)`
+### `Power.lightSleep(micro_seconds: int=0, touch_wakeup: bool=True)`
 
     ESP32 lightsleep.
 
     `micro_seconds`: Number of micro seconds to wakeup.
 
-    `wakeup`: Whether to wake up.
+    `touch_wakeup`: Whether to enable touch wake-up on supported controllers.
 
 ### `Power.getBatteryLevel() -> int`
 
@@ -101,17 +155,17 @@
 
     Set battery charging enable.
 
-### `Power.setChargeCurrent(max_mA: int) -> None`
+### `Power.setChargeCurrent(ma: int) -> None`
 
     Set battery charge current.
 
-    `max_mA`: Range is 0-2000, in milliamps.
+    `ma`: Requested charge current in milliamps. Supported values depend on the controller.
 
-### `Power.setChargeVoltage(max_mV: int) -> None`
+### `Power.setChargeVoltage(max_mv: int) -> None`
 
     Set battery charge voltage.
 
-    `max_mV`: Range is 4100-4600, in millivolts.
+    `max_mv`: Requested charge voltage in millivolts. Supported values depend on the controller.
 
 ### `Power.isCharging() -> bool`
 
@@ -123,7 +177,9 @@
 
 ### `Power.getBatteryCurrent() -> int`
 
-    Get battery current. Unit is milliamps.
+    Get battery current in milliamps. Positive values indicate charging and
+    negative values indicate discharging. Controllers without a current
+    measurement return `0`.
 
 ### `Power.getKeyState() -> int`
 
@@ -166,3 +222,19 @@ do not use them as masks.
 ### `PORT.USB`
 
     USB Port.
+
+### `PORT.PWR485`
+
+    External RS485 power on M5PowerHub.
+
+### `PORT.PWRCAN`
+
+    External CAN power on M5PowerHub.
+
+### `PORT.EXT`
+
+    External power port on supported controllers.
+
+### `PORT.MAIN`
+
+    Main power port on supported controllers.

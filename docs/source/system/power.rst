@@ -29,7 +29,7 @@ class Power
 Methods
 -------
 
-.. method:: Power.setExtOutput(enable: bool, port: int=0xFF) -> None
+.. method:: Power.setExtOutput(enable: bool, port_mask: int=0xFF) -> None
 
     Set power output of the external ports.
 
@@ -37,13 +37,84 @@ Methods
     mode. When ``enable`` is False, the power output of the external ports is
     in input mode.
 
-    ``port`` is the port number, optional values are available in :ref:`class PORT`,
-    only valid for M5Stack Station.
+    ``port_mask`` selects external outputs using :ref:`class PORT` masks.
+    Individual port selection depends on the controller.
 
     UIFLOW2:
 
         |setExtOutput1.png|
         |setExtOutput2.png|
+
+
+.. method:: Power.getType() -> int
+
+    Return the power-management type as an integer.
+
+    .. list-table::
+        :header-rows: 1
+
+        * - Value
+          - Type
+        * - 0
+          - Unknown
+        * - 1
+          - ADC
+        * - 2
+          - AXP192
+        * - 3
+          - IP5306
+        * - 4
+          - AXP2101
+        * - 5
+          - AW32001
+        * - 6
+          - M5PM1
+
+
+.. method:: Power.getVBUSVoltage() -> int
+
+    Return the USB VBUS voltage in millivolts, or ``-1`` when unsupported.
+
+
+.. method:: Power.getExtVoltage(ext_port: int) -> float
+
+    Return the external-port voltage in millivolts. ``ext_port`` is a
+    :ref:`class PORT` mask. Unsupported measurements return ``0.0``.
+
+
+.. method:: Power.getExtCurrent(ext_port: int) -> float
+
+    Return the external-port current in milliamps. ``ext_port`` is a
+    :ref:`class PORT` mask. Unsupported measurements return ``0.0``.
+    StopWatch, StickS3 and StampS3Bat have no external-current measurement;
+    their ``0.0`` result does not indicate a measured zero current.
+
+
+.. method:: Power.getPortVbus(port: int)
+
+    Return an INA3221 channel voltage in volts on M5Station.
+    ``port`` is a channel index from 0 to 5, independent of :ref:`class PORT`
+    masks. ESP32-S3 and other non-ESP32 targets return ``None``.
+
+
+.. method:: Power.getPortCurrent(port: int)
+
+    Return an INA3221 channel current in amperes on M5Station.
+    ``port`` is a channel index from 0 to 5, independent of :ref:`class PORT`
+    masks. ESP32-S3 and other non-ESP32 targets return ``None``.
+
+
+.. method:: Power.setExtPortBusConfig(direction: int, output_enable: int=1, voltage: int=3000, current_limit: int=232) -> None
+
+    Configure the M5PowerHub external CAN power bus.
+
+    ``direction``: ``0`` for input, ``1`` for output.
+
+    ``output_enable``: ``0`` to disable output, ``1`` to enable output.
+
+    ``voltage``: Output voltage in millivolts, from 3000 to 20000 in steps of 20.
+
+    ``current_limit``: Output current limit in milliamps, from 0 to 232.
 
 
 .. method:: Power.getExtOutput() -> bool
@@ -84,11 +155,11 @@ Methods
         |getUsbOutput.png|
 
 
-.. method:: Power.setLed(brightness=255) -> None
+.. method:: Power.setLed(br=255) -> None
 
     Turn on/off the power LED.
 
-    ``brightness`` is the brightness value, ranging from 0 to 255. 0 is off,
+    ``br`` is the brightness value, ranging from 0 to 255. 0 is off,
     255 is the maximum brightness.
 
     UIFLOW2:
@@ -128,26 +199,26 @@ Methods
         |timerSleep3.png|
 
 
-.. method:: Power.deepSleep(micro_seconds: int=0, wakeup: bool=True)
+.. method:: Power.deepSleep(micro_seconds: int=0, touch_wakeup: bool=True)
 
     ESP32 deepsleep.
 
     ``micro_seconds``: Number of micro seconds to wakeup.
 
-    ``wakeup``: Whether to wake up.
+    ``touch_wakeup``: Whether to enable touch wake-up on supported controllers.
 
     UIFLOW2:
 
         |deepSleep.png|
 
 
-.. method:: Power.lightSleep(micro_seconds: int=0, wakeup: bool=True)
+.. method:: Power.lightSleep(micro_seconds: int=0, touch_wakeup: bool=True)
 
     ESP32 lightsleep.
 
     ``micro_seconds``: Number of micro seconds to wakeup.
 
-    ``wakeup``: Whether to wake up.
+    ``touch_wakeup``: Whether to enable touch wake-up on supported controllers.
 
     UIFLOW2:
 
@@ -172,22 +243,22 @@ Methods
         |setBatteryCharge.png|
 
 
-.. method:: Power.setChargeCurrent(max_mA: int) -> None
+.. method:: Power.setChargeCurrent(ma: int) -> None
 
     Set battery charge current.
 
-    ``max_mA``: Range is 0-2000, in milliamps.
+    ``ma``: Requested charge current in milliamps. Supported values depend on the controller.
 
     UIFLOW2:
 
         |setChargeCurrent.png|
 
 
-.. method:: Power.setChargeVoltage(max_mV: int) -> None
+.. method:: Power.setChargeVoltage(max_mv: int) -> None
 
     Set battery charge voltage.
 
-    ``max_mV``: Range is 4100-4600, in millivolts.
+    ``max_mv``: Requested charge voltage in millivolts. Supported values depend on the controller.
 
     UIFLOW2:
 
@@ -214,7 +285,9 @@ Methods
 
 .. method:: Power.getBatteryCurrent() -> int
 
-    Get battery current. Unit is milliamps.
+    Get battery current in milliamps. Positive values indicate charging and
+    negative values indicate discharging. Controllers without a current
+    measurement return ``0``.
 
     UIFLOW2:
 
@@ -280,3 +353,23 @@ do not use them as masks.
 .. data:: PORT.USB
 
     USB Port.
+
+
+.. data:: PORT.PWR485
+
+    External RS485 power on M5PowerHub.
+
+
+.. data:: PORT.PWRCAN
+
+    External CAN power on M5PowerHub.
+
+
+.. data:: PORT.EXT
+
+    External power port on supported controllers.
+
+
+.. data:: PORT.MAIN
+
+    Main power port on supported controllers.

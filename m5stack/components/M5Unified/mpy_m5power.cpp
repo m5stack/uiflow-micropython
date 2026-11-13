@@ -263,7 +263,7 @@ namespace m5
     }
 
     mp_obj_t power_getType(mp_obj_t self) {
-        return mp_obj_new_bool(getPower(self)->getType());
+        return mp_obj_new_int(getPower(self)->getType());
     }
 
     mp_obj_t power_getPortVbus(mp_obj_t self, mp_obj_t port) {

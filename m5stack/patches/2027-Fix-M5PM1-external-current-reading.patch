@@ -1,0 +1,11 @@
+--- M5Unified.orig/src/utility/Power_Class.inl
++++ M5Unified/src/utility/Power_Class.inl
+@@ -4008,7 +4008,7 @@
+       case board_t::board_M5StampS3Bat:
+       case board_t::board_M5StopWatch:
+       case board_t::board_M5StickS3: {
+-        return M5pm1.get5VoutVoltage();
++        return is_voltage ? M5pm1.get5VoutVoltage() : 0.0f;
+       } break;
+ 
+       case board_t::board_M5ChainCaptain: {
