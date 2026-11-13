@@ -5,7 +5,7 @@ M5Scale is a widget that can be used to create scales in the user interface. Sca
 
 ## MicroPython Example
 
-#### scroll example
+#### scale example
 
 This example demonstrates how to create a scale widget with a range of values and custom styling.
 
@@ -94,6 +94,8 @@ Create a scale object.
 
 - Parameter `parent` (`lv.obj`): The parent object to attach the scale to. If not specified, the scale will be attached to the default screen.
 
+An unsupported `show_mode` raises `ValueError`.
+
 ```python
 import m5ui
 from m5ui import M5Scale
@@ -163,11 +165,11 @@ scale_0.set_total_tick_count(11)
 ```python
 scale_0.set_label_show(True)
 ```
-### `set_mode(show_mode)`
+### `set_mode(mode)`
 
         Set the display mode of the scale.
 
-        - Parameter `show_mode` (`int`): The display mode.
+        - Parameter `mode` (`int`): The display mode.
 
             Optional:
 
@@ -178,8 +180,10 @@ scale_0.set_label_show(True)
                 - `lv.scale.MODE.ROUND_INNER`: Round inner scale.
                 - `lv.scale.MODE.ROUND_OUTER`: Round outer scale.
 
+        An unsupported mode raises `ValueError`.
+
 ```python
-scale_0.set_mode(lv.SCALE.MODE.HORIZONTAL_TOP)
+scale_0.set_mode(lv.scale.MODE.HORIZONTAL_TOP)
 ```
 ### `set_text_src(text_src)`
 

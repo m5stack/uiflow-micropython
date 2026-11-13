@@ -30,6 +30,8 @@ class M5Scale(lv.scale):
 
     :param lv.obj parent: The parent object to attach the scale to. If not specified, the scale will be attached to the default screen.
 
+    An unsupported ``show_mode`` raises ``ValueError``.
+
     MicroPython Code Block:
 
         .. code-block:: python
@@ -56,6 +58,16 @@ class M5Scale(lv.scale):
         show_mode=lv.scale.MODE.HORIZONTAL_BOTTOM,
         parent=None,
     ):
+        self._positions = {
+            lv.scale.MODE.HORIZONTAL_TOP: (10, 10),
+            lv.scale.MODE.HORIZONTAL_BOTTOM: (10, 8),
+            lv.scale.MODE.VERTICAL_LEFT: (10, 10),
+            lv.scale.MODE.VERTICAL_RIGHT: (8, 10),
+            lv.scale.MODE.ROUND_INNER: (30, 20),
+            lv.scale.MODE.ROUND_OUTER: (30, 20),
+        }
+        if show_mode not in self._positions:
+            raise ValueError("Unsupported scale mode")
         if parent is None:
             parent = lv.screen_active()
         self.mode = show_mode
@@ -68,13 +80,6 @@ class M5Scale(lv.scale):
         # self.wrapper.set_style_bg_color(lv.color_hex(0xF00000), 0)   # 红色
 
         super().__init__(self.wrapper)
-        self._positions = {
-            lv.scale.MODE.HORIZONTAL_TOP: (10, 10),
-            lv.scale.MODE.HORIZONTAL_BOTTOM: (10, 8),
-            lv.scale.MODE.VERTICAL_LEFT: (10, 10),
-            lv.scale.MODE.VERTICAL_RIGHT: (8, 10),
-            lv.scale.MODE.ROUND_OUTER: (30, 20),
-        }
         super().set_pos(*self._positions[self.mode])
         self.set_range(start_pos, end_pos)
         self.set_total_tick_count(tick_count)
@@ -84,6 +89,8 @@ class M5Scale(lv.scale):
         self.set_pos(x, y)
 
     def set_mode(self, mode: int) -> None:
+        if mode not in self._positions:
+            raise ValueError("Unsupported scale mode")
         self.mode = mode
         return super().set_mode(mode)
 

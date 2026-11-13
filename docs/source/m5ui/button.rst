@@ -6,7 +6,10 @@ M5Button
 
 .. include:: ../refs/m5ui.button.ref
 
-M5Button is a widget that can be used to create buttons in the user interface. It can be used to trigger actions when clicked.
+M5Button creates buttons that trigger actions when clicked.
+
+``set_pressed_effect()`` supports ``EFFECT_SIMPLE`` and ``EFFECT_GUMMY``.
+``set_pressed_effect(EFFECT_WAVE)`` and ``unset_shadow()`` raise ``NotImplementedError``.
 
 .. important::
 

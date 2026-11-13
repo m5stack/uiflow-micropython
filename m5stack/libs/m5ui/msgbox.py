@@ -21,10 +21,12 @@ class M5Msgbox(lv.msgbox):
 
         .. code-block:: python
 
+            import m5ui
             from m5ui import M5Msgbox
             import lvgl as lv
 
             m5ui.init()
+            page0 = m5ui.M5Page()
             msgbox_0 = M5Msgbox(
                 title="msgbox",
                 x=0,

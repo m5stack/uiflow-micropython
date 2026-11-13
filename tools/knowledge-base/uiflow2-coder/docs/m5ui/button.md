@@ -1,7 +1,10 @@
 
 # M5Button
 
-M5Button is a widget that can be used to create buttons in the user interface. It can be used to trigger actions when clicked.
+M5Button creates buttons that trigger actions when clicked.
+
+`set_pressed_effect()` supports `EFFECT_SIMPLE` and `EFFECT_GUMMY`.
+`set_pressed_effect(EFFECT_WAVE)` and `unset_shadow()` raise `NotImplementedError`.
 
 > Important: **Available Fonts**: For `m5ui` widgets, use LVGL fonts such as `lv.font_montserrat_12`, `14`, `16`, `18`, `24`, `40`, `44`, and `48`. Some builds, such as Tab5, also include `20`, `22`, `30`, and `36`. Check optional sizes with `hasattr()` before using them in cross-board examples. The Alibaba CJK fonts are `M5.Lcd.FONTS` fonts for `M5.Lcd` / `M5.Widgets` drawing.
 ## MicroPython Example
@@ -109,10 +112,12 @@ Create a button object.
     None
 
 ```python
+import m5ui
 from m5ui import M5Button
 import lvgl as lv
 
 m5ui.init()
+page0 = m5ui.M5Page()
 button_0 = M5Button(text="Click Me", x=10, y=10, bg_c=0x2196F3, text_c=0xFFFFFF, parent=page0)
 ```
 

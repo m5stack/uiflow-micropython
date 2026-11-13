@@ -27,10 +27,12 @@ class M5Button(lv.button):
 
         .. code-block:: python
 
+            import m5ui
             from m5ui import M5Button
             import lvgl as lv
 
             m5ui.init()
+            page0 = m5ui.M5Page()
             button_0 = M5Button(text="Click Me", x=10, y=10, bg_c=0x2196F3, text_c=0xFFFFFF, parent=page0)
     """
 

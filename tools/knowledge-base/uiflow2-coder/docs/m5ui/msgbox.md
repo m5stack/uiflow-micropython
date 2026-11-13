@@ -1,8 +1,27 @@
 
 # M5Msgbox
 
-M5Msgbox is a widget that can be used to create msgboxes in the user interface.
+M5Msgbox provides a container for labels and buttons.
 
+Use the label and button returned by `add_text()` and `add_button()`
+to update their contents:
+
+```python
+import M5
+import m5ui
+import lvgl as lv
+
+M5.begin()
+m5ui.init()
+page0 = m5ui.M5Page()
+msgbox_0 = m5ui.M5Msgbox(title="Message", w=240, h=180, parent=page0)
+label_0 = msgbox_0.add_text("Ready")
+label_0.set_text("Complete")
+label_0.set_long_mode(lv.label.LONG_MODE.WRAP)
+button_0 = msgbox_0.add_button(text="OK")
+button_0.set_btn_text("Close")
+page0.screen_load()
+```
 ## MicroPython Example
 
 #### msgbox event
@@ -100,10 +119,12 @@ Create a msgbox object.
 - Parameter `parent` (`lv.obj`): The parent object to attach the msgbox to. If not specified, the msgbox will be attached to the default screen.
 
 ```python
+import m5ui
 from m5ui import M5Msgbox
 import lvgl as lv
 
 m5ui.init()
+page0 = m5ui.M5Page()
 msgbox_0 = M5Msgbox(
     title="msgbox",
     x=0,
@@ -168,49 +189,35 @@ button0 = msgbox_0.add_button(
 
 ### `add_close_button()`
 
-        Add a close button to the msgboxheader.
+        Add a close button to the msgbox header.
 
-        - Returns: None
+        - Returns: The close button.
+        - Return type: lv.obj
 
 ```python
 msgbox_0.add_close_button()
 ```
 ### `delete()`
 
-        Delete the item from the msgbox.
+        Delete the msgbox and its child widgets.
 
 ```python
-button_0.delete()
-text_0.delete()
-```
-### `set_text(txt)`
-
-        Set text of the msgbox button/label.
-
-        - Parameter `txt` (`str`): The text to set for the msgbox button/label.
-        - Returns: None
-
-```python
-button_0.set_text("Select an option")
-
-label_0.set_text("M5Stack")
+msgbox_0.delete()
 ```
 ### `set_style_text_font(font, part)`
 
-        Set the font of the msgbox button/label text.
+        Set the default text font for the msgbox.
 
         - Parameter `font` (`lv.lv_font_t`): The font to set.
         - Parameter `part` (`int`): The part of the object to apply the style to (e.g., lv.PART.MAIN).
         - Returns: None
 
 ```python
-label_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-button_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
+msgbox_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
 ```
 ### `set_text_color(color, opa, part)`
 
-        Set the color of the msgbox button/label.
+        Set the default text color for the msgbox.
 
         - Parameter `color` (`int`): The color to set.
         - Parameter `opa` (`int`): The opacity of the color.
@@ -218,13 +225,11 @@ button_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFA
         - Returns: None
 
 ```python
-button_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-label_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+msgbox_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
 ```
 ### `set_bg_color(color, opa, part)`
 
-        Set the background color of the msgbox label.
+        Set the background color of the msgbox.
 
         - Parameter `color` (`int`): The color to set.
         - Parameter `opa` (`int`): The opacity of the color.
@@ -232,18 +237,7 @@ label_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFA
         - Returns: None
 
 ```python
-button_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-label_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-```
-### `set_long_mode(mode)`
-
-        Set the long mode of the msgbox label.
-
-        - Parameter `mode` (`int`): The long mode to set.
-
-```python
-label_0.set_long_mode(lv.label.LONG_MODE.WRAP)
+msgbox_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
 ```
 ### `set_flag(flag, value)`
 
@@ -296,7 +290,7 @@ msgbox_0.set_size(100, 50)
 ```
 ### `align_to(obj, align, x, y)`
 
-        Align the msgboxto another object.
+        Align the msgbox to another object.
 
         - Parameter `obj` (`lv.obj`): The object to align to.
         - Parameter `align` (`int`): The alignment type.
@@ -304,11 +298,11 @@ msgbox_0.set_size(100, 50)
         - Parameter `y` (`int`): The y-offset from the aligned object.
 
 ```python
-msgbox_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+msgbox_0.align_to(page0, lv.ALIGN.CENTER, 0, 0)
 ```
 ### `set_state(state, value)`
 
-        Set the state of the bar. If `value` is True, the state is set; if False, the state is unset.
+        Set the state of the msgbox. If `value` is True, the state is set; if False, the state is unset.
 
         - Parameter `state` (`int`): The state to set.
         - Parameter `value` (`bool`): If True, the state is set; if False, the state is unset.
@@ -329,60 +323,28 @@ msgbox_0.toggle_flag(lv.obj.FLAG.HIDDEN)
 ```
 ### `set_style_radius(radius, part)`
 
-        Set the corner radius of the msgbox button.
+        Set the corner radius of the msgbox.
 
         - Parameter `radius` (`int`): The radius to set.
         - Parameter `part` (`int`): The part of the object to apply the style to (e.g., lv.PART.MAIN).
         - Returns: None
 
 ```python
-button_0.set_style_radius(10, lv.PART.MAIN | lv.STATE.DEFAULT)
-```
-### `set_shadow(color, opa, align, offset_x, offset_y)`
-
-        Set a shadow for the label.
-
-        - Parameter `color` (`int`): The color of the shadow in hexadecimal format or an integer.
-        - Parameter `opa` (`int`): The opacity of the shadow (0-255).
-        - Parameter `align` (`int`): The alignment of the shadow relative to the label.
-        - Parameter `offset_x` (`int`): The horizontal offset of the shadow.
-        - Parameter `offset_y` (`int`): The vertical offset of the shadow.
-        - Returns: None
-
-```python
-label_0.set_shadow(color=0x000000, opa=128, align=lv.ALIGN.BOTTOM_RIGHT, offset_x=5, offset_y=5)
-```
-### `unset_shadow()`
-
-        Remove the shadow from the label.
-
-```python
-label_0.unset_shadow()
-```
-### `get_text()`
-
-        Get the text of the label.
-
-        - Returns: The text of the label.
-        - Return type: str
-
-```python
-label_0.get_text()
-button_0.get_text()
+msgbox_0.set_style_radius(10, lv.PART.MAIN | lv.STATE.DEFAULT)
 ```
 ### `toggle_state(state)`
 
-        Toggle the state of the button. If the state is set, it is unset; if not set, it is set.
+        Toggle the state of the msgbox. If the state is set, it is unset; if not set, it is set.
 
         - Parameter `state` (`int`): The state to toggle.
         - Returns: None
 
 ```python
-button_0.toggle_state(lv.STATE.PRESSED)
+msgbox_0.toggle_state(lv.STATE.PRESSED)
 ```
 ### `add_event_cb(handler, event, user_data)`
 
-        Add an event callback to the button. The callback will be called when the specified event occurs.
+        Add an event callback to the msgbox. The callback will be called when the specified event occurs.
 
         - Parameter `handler` (`function`): The callback function to call.
         - Parameter `event` (`int`): The event to listen for.
@@ -390,17 +352,8 @@ button_0.toggle_state(lv.STATE.PRESSED)
         - Returns: None
 
 ```python
-def btn_ono_clicked_event(event_struct):
-    global page0, msgbox_0, label_lkg, btn_ono, btn_pjm, label0
+def on_clicked(event):
+    print("Clicked")
 
-    print('hello M5')
-
-def btn_ono_event_handler(event_struct):
-    global page0, msgbox_0, label_lkg, btn_ono, btn_pjm, label0
-    event = event_struct.code
-    if event == lv.EVENT.CLICKED and True:
-        btn_ono_clicked_event(event_struct)
-    return
-
-btn_ono.add_event_cb(btn_ono_event_handler, lv.EVENT.ALL, None)
+msgbox_0.add_event_cb(on_clicked, lv.EVENT.CLICKED, None)
 ```

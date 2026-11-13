@@ -30,8 +30,8 @@ Example output:
 MicroPython Example
 -------------------
 
-scroll example
-^^^^^^^^^^^^^^^
+scale example
+^^^^^^^^^^^^^^
 
 This example demonstrates how to create a scale widget with a range of values and custom styling.
 
@@ -138,11 +138,11 @@ M5Scale
                 scale_0.set_label_show(True)
 
 
-    .. py:method:: set_mode(show_mode)
+    .. py:method:: set_mode(mode)
 
         Set the display mode of the scale.
 
-        :param int show_mode: The display mode.
+        :param int mode: The display mode.
 
             Optional: 
 
@@ -153,6 +153,8 @@ M5Scale
                 - `lv.scale.MODE.ROUND_INNER`: Round inner scale.
                 - `lv.scale.MODE.ROUND_OUTER`: Round outer scale.
 
+        An unsupported mode raises ``ValueError``.
+
         UiFlow2 Code Block:
 
             |set_mode.png|
@@ -161,7 +163,7 @@ M5Scale
 
             .. code-block:: python
 
-                scale_0.set_mode(lv.SCALE.MODE.HORIZONTAL_TOP)
+                scale_0.set_mode(lv.scale.MODE.HORIZONTAL_TOP)
 
     .. py:method:: set_text_src(text_src)
 

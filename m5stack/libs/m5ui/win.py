@@ -29,10 +29,12 @@ class M5Win(lv.win):
 
         .. code-block:: python
 
+            import m5ui
             from m5ui import M5Win
             import lvgl as lv
 
             m5ui.init()
+            page0 = m5ui.M5Page()
             win0 = M5Win(x=120, y=80, w=60, h=30, parent=page0)
     """
 
@@ -159,7 +161,7 @@ class M5Win(lv.win):
 
         :param int icon: The icon to display on the button.
         :param str text: The text to display on the button.
-        :param int h: The height of the button.
+        :param int w: The width of the button.
         :param int bg_c: The background color of the button in hexadecimal format.
         :param int bg_opa: The background opacity of the button (0-255).
         :param int text_c: The text color of the button in hexadecimal format.

@@ -5,7 +5,27 @@ M5Msgbox
 
 .. include:: ../refs/m5ui.msgbox.ref
 
-M5Msgbox is a widget that can be used to create msgboxes in the user interface.
+M5Msgbox provides a container for labels and buttons.
+
+Use the label and button returned by ``add_text()`` and ``add_button()``
+to update their contents:
+
+.. code-block:: python
+
+    import M5
+    import m5ui
+    import lvgl as lv
+
+    M5.begin()
+    m5ui.init()
+    page0 = m5ui.M5Page()
+    msgbox_0 = m5ui.M5Msgbox(title="Message", w=240, h=180, parent=page0)
+    label_0 = msgbox_0.add_text("Ready")
+    label_0.set_text("Complete")
+    label_0.set_long_mode(lv.label.LONG_MODE.WRAP)
+    button_0 = msgbox_0.add_button(text="OK")
+    button_0.set_btn_text("Close")
+    page0.screen_load()
 
 UiFlow2 Example
 ---------------
@@ -25,7 +45,6 @@ Example output:
 
     None
 
-
 MicroPython Example
 -------------------
 
@@ -44,7 +63,6 @@ Example output:
 
     None
 
-
 **API**
 -------
 M5Msgbox
@@ -55,9 +73,10 @@ M5Msgbox
 
     .. py:method:: add_close_button()
 
-        Add a close button to the msgboxheader.
+        Add a close button to the msgbox header.
 
-        :return: None
+        :return: The close button.
+        :rtype: lv.obj
 
         UiFlow2 Code Block:
 
@@ -71,7 +90,7 @@ M5Msgbox
 
     .. py:method:: delete()
 
-        Delete the item from the msgbox.
+        Delete the msgbox and its child widgets.
 
         UiFlow2 Code Block:
 
@@ -83,35 +102,11 @@ M5Msgbox
 
             .. code-block:: python
 
-                button_0.delete()
-                text_0.delete()
-
-    
-    .. py:method:: set_text(txt)
-
-        Set text of the msgbox button/label.
-
-        :param str txt: The text to set for the msgbox button/label.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |button_set_text.png|
-
-            |label_set_text.png|
-
-
-        MicroPython Code Block:
-    
-            .. code-block:: python
-
-                button_0.set_text("Select an option")
-
-                label_0.set_text("M5Stack")
+                msgbox_0.delete()
 
     .. py:method:: set_style_text_font(font, part)
 
-        Set the font of the msgbox button/label text.
+        Set the default text font for the msgbox.
 
         :param lv.lv_font_t font: The font to set.
         :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
@@ -127,13 +122,11 @@ M5Msgbox
 
             .. code-block:: python
 
-                label_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-                button_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
+                msgbox_0.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN | lv.STATE.DEFAULT)
 
     .. py:method:: set_text_color(color, opa, part)
 
-        Set the color of the msgbox button/label.
+        Set the default text color for the msgbox.
 
         :param int color: The color to set.
         :param int opa: The opacity of the color.
@@ -146,18 +139,15 @@ M5Msgbox
 
             |label_set_text_color.png|
 
-
         MicroPython Code Block:
 
             .. code-block:: python
 
-                button_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-                label_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+                msgbox_0.set_text_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
 
     .. py:method:: set_bg_color(color, opa, part)
 
-        Set the background color of the msgbox label.
+        Set the background color of the msgbox.
 
         :param int color: The color to set.
         :param int opa: The opacity of the color.
@@ -174,25 +164,7 @@ M5Msgbox
 
             .. code-block:: python
 
-                button_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-                label_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-    .. py:method:: set_long_mode(mode)
-
-        Set the long mode of the msgbox label.
-
-        :param int mode: The long mode to set.
-
-        UiFlow2 Code Block:
-
-            |label_set_long_mode.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                label_0.set_long_mode(lv.label.LONG_MODE.WRAP)
+                msgbox_0.set_bg_color(lv.color_hex(0x000000), 255, lv.PART.MAIN | lv.STATE.DEFAULT)
 
     .. py:method:: set_flag(flag, value)
 
@@ -282,10 +254,9 @@ M5Msgbox
 
                 msgbox_0.set_size(100, 50)
 
-
     .. py:method:: align_to(obj, align, x, y)
 
-        Align the msgboxto another object.
+        Align the msgbox to another object.
 
         :param lv.obj obj: The object to align to.
         :param int align: The alignment type.
@@ -300,11 +271,11 @@ M5Msgbox
 
             .. code-block:: python
 
-                msgbox_0.align_to(page_0, lv.ALIGN.CENTER, 0, 0)
+                msgbox_0.align_to(page0, lv.ALIGN.CENTER, 0, 0)
 
     .. py:method:: set_state(state, value)
 
-        Set the state of the bar. If ``value`` is True, the state is set; if False, the state is unset.
+        Set the state of the msgbox. If ``value`` is True, the state is set; if False, the state is unset.
 
         :param int state: The state to set.
         :param bool value: If True, the state is set; if False, the state is unset.
@@ -337,10 +308,9 @@ M5Msgbox
 
                 msgbox_0.toggle_flag(lv.obj.FLAG.HIDDEN)
 
-
     .. py:method:: set_style_radius(radius, part)
 
-        Set the corner radius of the msgbox button.
+        Set the corner radius of the msgbox.
 
         :param int radius: The radius to set.
         :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
@@ -354,67 +324,11 @@ M5Msgbox
 
             .. code-block:: python
 
-                button_0.set_style_radius(10, lv.PART.MAIN | lv.STATE.DEFAULT)
-
-    .. py:method:: set_shadow(color, opa, align, offset_x, offset_y)
-        
-        Set a shadow for the label.
-
-        :param int color: The color of the shadow in hexadecimal format or an integer.
-        :param int opa: The opacity of the shadow (0-255).
-        :param int align: The alignment of the shadow relative to the label.
-        :param int offset_x: The horizontal offset of the shadow.
-        :param int offset_y: The vertical offset of the shadow.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |label_set_shadow.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                label_0.set_shadow(color=0x000000, opa=128, align=lv.ALIGN.BOTTOM_RIGHT, offset_x=5, offset_y=5)
-
-    .. py:method:: unset_shadow()
-
-        Remove the shadow from the label.
-
-        UiFlow2 Code Block:
-
-            |label_unset_shadow.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                label_0.unset_shadow()
-
-    .. py:method:: get_text()
-
-        Get the text of the label.
-
-        :return: The text of the label.
-        :rtype: str
-
-        UiFlow2 Code Block:
-
-            |button_get_text.png|
-
-            |label_get_text.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                label_0.get_text()
-                button_0.get_text()
-
+                msgbox_0.set_style_radius(10, lv.PART.MAIN | lv.STATE.DEFAULT)
 
     .. py:method:: toggle_state(state)
 
-        Toggle the state of the button. If the state is set, it is unset; if not set, it is set.
+        Toggle the state of the msgbox. If the state is set, it is unset; if not set, it is set.
 
         :param int state: The state to toggle.
         :return: None
@@ -427,11 +341,11 @@ M5Msgbox
 
             .. code-block:: python
 
-                button_0.toggle_state(lv.STATE.PRESSED)
+                msgbox_0.toggle_state(lv.STATE.PRESSED)
 
     .. py:method:: add_event_cb(handler, event, user_data)
 
-        Add an event callback to the button. The callback will be called when the specified event occurs.
+        Add an event callback to the msgbox. The callback will be called when the specified event occurs.
 
         :param function handler: The callback function to call.
         :param int event: The event to listen for.
@@ -446,18 +360,7 @@ M5Msgbox
 
             .. code-block:: python
 
-                def btn_ono_clicked_event(event_struct):
-                    global page0, msgbox_0, label_lkg, btn_ono, btn_pjm, label0
+                def on_clicked(event):
+                    print("Clicked")
 
-                    print('hello M5')
-
-
-                def btn_ono_event_handler(event_struct):
-                    global page0, msgbox_0, label_lkg, btn_ono, btn_pjm, label0
-                    event = event_struct.code
-                    if event == lv.EVENT.CLICKED and True:
-                        btn_ono_clicked_event(event_struct)
-                    return
-
-                btn_ono.add_event_cb(btn_ono_event_handler, lv.EVENT.ALL, None)
-
+                msgbox_0.add_event_cb(on_clicked, lv.EVENT.CLICKED, None)
