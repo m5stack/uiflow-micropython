@@ -65,7 +65,7 @@ class DAC2Unit:
             data = 0x11
             self.i2c.writeto_mem(self.addr, 0x01, struct.pack("b", data))
 
-    def set_voltage(self, voltage: float, channel: int = 2):
+    def set_voltage(self, voltage: float, channel: tuple = CHANNEL_BOTH):
         """!
         @en Set %1 channel %3 to %2 V.
         @cn 设置DAC %1 通道 %3 的输出电压为 %1 V。

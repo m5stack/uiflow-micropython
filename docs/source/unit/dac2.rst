@@ -65,20 +65,17 @@ Methods
 
         |setDACOutputVoltageRange.png|
 
-.. method:: DAC2Unit.set_voltage(voltage, channel=2)
+.. method:: DAC2Unit.set_voltage(voltage, channel=CHANNEL_BOTH)
 
 
-    Sets the output voltage of the DAC.
+    Sets the output voltage of the DAC. Both channels are selected by default.
 
     - ``voltage``  Desired output voltage from 0.0 to range maximum (5V or 10V).
-    - ``channel``  The DAC channel to set. Pass ``DAC2Unit.CHANNEL_0``, ``DAC2Unit.CHANNEL_1``, or ``DAC2Unit.CHANNEL_BOTH`` explicitly.
-
-    In the current driver, the numeric default ``2`` does not select an output
-    channel. Always supply a named channel constant, for example:
+    - ``channel``  ``DAC2Unit.CHANNEL_0``, ``DAC2Unit.CHANNEL_1``, or ``DAC2Unit.CHANNEL_BOTH``.
 
     .. code-block:: python
 
-        dac2_0.set_voltage(1.0, channel=DAC2Unit.CHANNEL_BOTH)
+        dac2_0.set_voltage(1.0)
 
     UIFLOW2:
 
