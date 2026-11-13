@@ -51,6 +51,14 @@ if __name__ == "__main__":
             print("please update to latest firmware")
 ```
 
+## Key codes
+
+Import the CardKB character constants with `from unit import KeyCode`.
+For example, `KeyCode.KEYCODE_ENTER` is 10 (0x0A). These names exist in
+UiFlow2 and differ from `usb.device.hid.KeyCode`. See
+[Keyboard key codes](../hardware/keycode.md) for the complete list and the I2C versus
+UART/ESP-NOW return-value distinction.
+
 ## class CardKBUnit
 
 ## Constructors
@@ -102,6 +110,11 @@ cardkb = CardKBUnit(mode=CardKBUnit.CardKB_ESP_NOW_MODE)
     - Returns: An integer key code in I2C mode, or a `(key_id, key_state)`
         tuple in UART and ESP-NOW modes. Returns `None` when no key is available.
         The state is `CardKBUnit.KEY_STATE_PRESS` or `CardKBUnit.KEY_STATE_RELEASE`.
+
+    In I2C mode the integer is a character/special-key value compatible
+    with the CardKB `KeyCode.KEYCODE_*` constants. V2 UART/ESP-NOW key IDs
+    are raw HID usage IDs; see [Keyboard key codes](../hardware/keycode.md) before converting
+    or comparing them.
 
 ### `CardKBUnit.get_string() -> str`
 

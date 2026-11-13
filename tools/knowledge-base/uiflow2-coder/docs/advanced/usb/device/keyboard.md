@@ -3,6 +3,20 @@
 usb device keyboard
 
 > Note: This module is only applicable to the CoreS3 Controller
+Key codes are imported from `usb.device.hid`, not `unit` or
+`usb.device.keyboard`. See [Keyboard key codes](../../../hardware/keycode.md) for the
+complete `usb.device.hid.KeyCode` list and the distinction from CardKB
+character codes. In this namespace, Enter is `KeyCode.ENTER` (40) and
+Escape is `KeyCode.ESCAPE` (41); `KeyCode.KEYCODE_ENTER` does not exist.
+
+```python
+from usb.device.keyboard import Keyboard
+from usb.device.hid import KeyCode
+
+keyboard = Keyboard()
+```
+The examples below use this `keyboard` instance.
+
 ## Micropython Example
 
 ### USB keyboard
@@ -90,23 +104,23 @@ if __name__ == "__main__":
 
     Press specified keys (up to 6 key values at a time)
 
-    - `k0~k5` The input is a standard HID key value. For details, refer to the KeyCode() class.
+    - `k0~k5` The input is a standard HID key value. For details, see [Keyboard key codes](../../../hardware/keycode.md). Use nonnegative HID usage IDs here; set modifiers separately with `set_modifiers()`.
 
     example: Press the lowercase 'a'
 
-        Keyboard.set_keys(k0=KeyCode.A)
-        Keyboard.send_report()
-        Keyboard.set_keys(k0=0)
-        Keyboard.send_report()
+        keyboard.set_keys(k0=KeyCode.A)
+        keyboard.send_report()
+        keyboard.set_keys(k0=0)
+        keyboard.send_report()
 
     example: Press the uppercase 'A'
 
-        Keyboard.set_modifiers(right_shift=True)
-        Keyboard.set_keys(k0=KeyCode.A)
-        Keyboard.send_report()
-        Keyboard.set_modifiers(right_shift=False)
-        Keyboard.set_keys(k0=0)
-        Keyboard.send_report()
+        keyboard.set_modifiers(right_shift=True)
+        keyboard.set_keys(k0=KeyCode.A)
+        keyboard.send_report()
+        keyboard.set_modifiers(right_shift=False)
+        keyboard.set_keys(k0=0)
+        keyboard.send_report()
 
     UIFlow2.0
 
@@ -120,11 +134,28 @@ if __name__ == "__main__":
 
     input key
 
-    - `key` The input can be a string within the ASCII range or a value from KeyCode.
+    - `key` A supported ASCII string, or a nonnegative USB HID usage ID from `usb.device.hid.KeyCode`. An integer is a HID ID, not an ASCII character code. For modifiers, use `set_modifiers()` or `send_keys()` instead.
 
     example:
 ```
-Keyboard.input("Hello M5")
-Keyboard.input(KeyCode.A)
+keyboard.input("Hello M5")
+keyboard.input(KeyCode.A)
 ```
     UIFlow2.0
+
+### `Keyboard.send_keys(down_keys, timeout_ms=100)`
+
+    Send a report for an iterable of HID key values. Nonnegative values
+    occupy the six key slots; negative `KeyCode` modifier constants
+    contribute their mask to the modifier byte. This method sends its
+    own report and does not use the state set by `set_keys()` or
+    `set_modifiers()`.
+
+    - Parameter `down_keys`: Iterable of USB HID usage IDs and/or negative modifiers.
+    - Parameter `timeout_ms` (`int`): Maximum wait for a previous pending report.
+    - Returns: `True` when queued, or `False` on timeout/failure.
+
+```python
+keyboard.send_keys([KeyCode.LEFT_SHIFT, KeyCode.A])
+keyboard.send_keys([])  # Release all keys.
+```

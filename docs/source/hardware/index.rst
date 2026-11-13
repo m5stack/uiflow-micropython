@@ -12,6 +12,7 @@ Hardware
     imu.rst
     i2c.rst
     ir.rst
+    keycode.rst
     lora.rst
     mic.rst
     nfc.rst
