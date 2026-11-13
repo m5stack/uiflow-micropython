@@ -383,8 +383,11 @@ static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickTyp
 #endif
 
 static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, int format, int sample, int bits, int channels) {
-    // init audio board
-    board_codec_init();
+    // Initialize the codec before allocating the recording pipeline.
+    if (board_codec_init() == NULL) {
+        mp_raise_msg(&mp_type_OSError,
+            MP_ERROR_TEXT("audio: codec/I2S init failed (ES8311/I2S unavailable)"));
+    }
 
     if (format == UNKNOW) {
         format = get_type(uri);
