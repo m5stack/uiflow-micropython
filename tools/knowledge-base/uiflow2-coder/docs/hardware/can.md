@@ -1,201 +1,205 @@
 
 # CAN
 
-CAN currently only supports the classic CAN controller on ESP32 series.
-At the physical level CAN bus consists of 2 lines: RX and TX.  Note that to connect the M5Stack device
-to a CAN bus you must use a CAN transceiver to convert the CAN logic signals from the MCU to the
-correct voltage levels on the bus.
-
-For detailed examples, please refer to: `unit.CANUnit <unit.CANUnit>`
+CAN provides the ESP32 classic CAN controller interface. Connect the MCU's
+RX/TX pins to a CAN transceiver, then connect its CAN_H/CAN_L lines to the bus.
+For CAN Unit examples, see `unit.CANUnit <unit.CANUnit>`.
 
 ## API
 
 #### CAN
 
-### `class CAN(bus, mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
+### `class CAN(id=0, port=None, mode=CAN.NORMAL, prescaler=0, sjw=0, bs1=0, bs2=0, triple_sampling=False, quantum_resolution_hz=0, baudrate=0, verbose=False)`
 
-    Construct a CAN object on the given bus.
+    Construct and start the CAN controller.
 
-    - Parameter `bus` (`int`): must be 0.
-    - Parameter `mode` (`int`): One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
-    - Parameter `tx` (`int`): The pin to use for transmitting data.
-    - Parameter `rx` (`int`): The pin to use for receiving data.
-    - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta. Value between 1 and 1024 inclusive for classic CAN.
-    - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits; value between 1 and 4 inclusive for classic CAN.
-    - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits; value between 1 and 16 inclusive for classic CAN.
-    - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits; value between 1 and 8 inclusive for classic CAN.
-    - Parameter `triple_sampling` (`bool`): Enables triple sampling when the TWAI controller samples a bit.
+    - Parameter `id` (`int`): Controller ID. The current binding accepts only `0`.
+    - Parameter `port` (`tuple`): Required pin selection in `(rx_pin, tx_pin)` order.
+        The default `None` does not select pins automatically.
+    - Parameter `mode` (`int`): `CAN.NORMAL`, `CAN.NO_ACKNOWLEDGE`, or `CAN.LISTEN_ONLY`.
+    - Parameter `prescaler` (`int`): Clock divider for manual timing.
+    - Parameter `sjw` (`int`): Resynchronisation jump width in time quanta.
+    - Parameter `bs1` (`int`): Time segment before the sample point, in time quanta.
+    - Parameter `bs2` (`int`): Time segment after the sample point, in time quanta.
+    - Parameter `triple_sampling` (`bool`): Enable triple sampling.
+    - Parameter `quantum_resolution_hz` (`int`): Time-quanta clock frequency in Hz.
+    - Parameter `baudrate` (`int`): Bitrate in **bits per second**. A nonzero value selects
+        automatic timing; otherwise supply valid manual timing parameters.
+    - Parameter `verbose` (`bool`): Print the selected configuration.
+
+    Raises `ValueError`: Unsupported controller ID or automatic bitrate.
+
+    Raises `OSError`: Controller initialization fails.
 
 ```python
 from hardware import CAN
-can = CAN(0, CAN.NORMAL, 0, 0, 25000)
+
+# Choose RX/TX pins for the connected controller and transceiver.
+can = CAN(id=0, port=(13, 14), mode=CAN.NORMAL, baudrate=125000)
 ```
-### `CAN.init(mode, tx, rx, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)`
+#### Methods
 
-        Initialise the CAN bus with the given parameters.
+### `CAN.init(mode, tx, rx, quanta_resolution_hz=2500000, brp=0, tseg_1=15, tseg_2=4, sjw=3, triple_sampling=False, baudrate=0)`
 
-        - Parameter `mode` (`int`): One of NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY.
-        - Parameter `tx` (`int`): The pin to use for transmitting data.
-        - Parameter `rx` (`int`): The pin to use for receiving data.
-        - Parameter `prescaler` (`int`): The value by which the CAN input clock is divided to generate the nominal bit time quanta.
-        - Parameter `sjw` (`int`): The resynchronisation jump width in units of time quanta for nominal bits.
-        - Parameter `bs1` (`int`): Defines the location of the sample point in units of the time quanta for nominal bits.
-        - Parameter `bs2` (`int`): Defines the location of the transmit point in units of the time quanta for nominal bits.
-        - Parameter `triple_sampling` (`bool`): Enables triple sampling when the TWAI controller samples a bit.
+    Start a deinitialized controller. Call `deinit()` before using this method
+    on an active controller.
 
-        The time quanta tq is the basic unit of time for the CAN bus.  tq is the CAN
-        prescaler value divided by APB_CLK clock source (typically 80 MHz);
+    This inherited native method takes separate `tx` and `rx` pins. Its
+    `baudrate` is in **kbit/s**; the constructor takes bits per second.
+    `quanta_resolution_hz`, `brp`, `tseg_1` and `tseg_2` correspond to
+    the constructor's `quantum_resolution_hz`, `prescaler`, `bs1` and `bs2`.
 
-        A single bit is made up of the synchronisation segment, which is always 1 tq.
-        Then follows bit segment 1, then bit segment 2.  The sample point is after bit
-        segment 1 finishes.  The transmit point is after bit segment 2 finishes.
-        The baud rate will be 1/bittime, where the bittime is 1 + BS1 + BS2 multiplied
-        by the time quanta tq.
+    - Parameter `mode` (`int`): Controller mode.
+    - Parameter `tx` (`int`): Transmit GPIO.
+    - Parameter `rx` (`int`): Receive GPIO.
+    - Parameter `quanta_resolution_hz` (`int`): Time-quanta clock frequency in Hz.
+    - Parameter `brp` (`int`): Clock divider; used when `quanta_resolution_hz=0`.
+    - Parameter `tseg_1` (`int`): Time quanta before the sample point.
+    - Parameter `tseg_2` (`int`): Time quanta after the sample point.
+    - Parameter `sjw` (`int`): Resynchronisation jump width in time quanta.
+    - Parameter `triple_sampling` (`bool`): Enable triple sampling.
+    - Parameter `baudrate` (`int`): Automatic bitrate in kbit/s. Use `0` for manual timing.
+    - Returns: `None`.
 
-        For example, with APB_CLK=80MHz, prescaler=32, sjw=3, bs1=15, bs2=4, the value of
-        tq is 0.4 microseconds.  The bittime is 8 microseconds, and the baudrate
-        is 125kHz.
+    Raises `ValueError`: Unsupported automatic bitrate.
 
-        See esp32 technical reference manual for more details.
-
-```python
-can.init(CAN.NORMAL, 0, 0, 25000)
-```
-### `CAN.deinit()`
-
-        Turn off the CAN bus.
+    Raises `OSError`: Controller initialization fails.
 
 ```python
 can.deinit()
+can.init(CAN.NORMAL, tx=14, rx=13, baudrate=125)
 ```
+### `CAN.deinit()`
+
+    Stop the controller and release its driver.
+
+    - Returns: `None`.
+
+    Raises `OSError`: Driver removal fails.
+
 ### `CAN.restart()`
 
-        Force a software restart of the CAN controller without resetting its configuration.
+    Stop and start an enabled controller with its existing configuration.
+    A deinitialized controller is left disabled.
 
-        If the controller enters the bus-off state then it will no longer participate
-        in bus activity.  If the controller is not configured to automatically restart
-        (see :meth:\`~CAN.init()\`) then this method can be used to trigger a restart,
-        and the controller will follow the CAN protocol to leave the bus-off state and
-        go into the error active state.
+    - Returns: `None`.
 
-```python
-can.restart()
-```
+    Raises `OSError`: The controller cannot be started.
+
 ### `CAN.state()`
 
-        Return the state of the controller.
+    - Returns: `CAN.STOPPED` (0), `CAN.BUS_OFF` (4), `CAN.RECOVERING` (5),
+        or `CAN.RUNNING` (6). A deinitialized controller returns `CAN.STOPPED`.
+    - Return type: int
 
-        - Returns: int
+    Raises `OSError`: Reading the controller status fails.
 
-        - \`\`0\`\` -- \`\`CAN.STOPPED\`\` : the controller is completely off and reset;
-        - \`\`4\`\` -- \`\`CAN.BUS_OFF\`\` : the controller is on but not participating in bus activity (TEC overflowed beyond 255);
-        - \`\`5\`\` -- \`\`CAN.RECOVERING\`\` -- The controller is undergoing bus recovery.
-        - \`\`6\`\` -- \`\`CAN.RUNNING\`\` : The controller can transmit and receive messages;
-
-```python
-status = can.state()
-```
 ### `CAN.info([list])`
 
-        Get information about the controller's error states and TX and RX buffers.
+    Read `[TEC, REC, 0, 0, 0, pending_tx, pending_rx, 0]` while enabled.
+    The zero fields are compatibility placeholders. Call this while the controller
+    is initialized; status entries are not populated after `deinit()`.
 
-        - Parameter `list` (`list`): Optional list object with at least 8 entries.
-        - Returns: list
+    - Parameter `list` (`list`): Optional list with at least eight entries, updated in place.
+    - Returns: The supplied list, or a new eight-element list.
 
-        The values in the list are:
+    Raises `TypeError`: The supplied argument is not a list. Omit it to allocate a list.
 
-        - TEC value
-        - REC value
-        - number of times the controller enterted the Error Warning state(ignored for now, compatible with pyb.CAN)
-        - number of times the controller enterted the Error Passive state(ignored for now, compatible with pyb.CAN)
-        - number of times the controller enterted the Bus Off state(ignored for now, compatible with pyb.CAN)
-        - number of pending TX messages
-        - number of pending RX messages
-        - number of pending RX messages on fifo 1(ignored for now, compatible with pyb.CAN)
+    Raises `ValueError`: The supplied list has fewer than eight entries.
 
-```python
-info = can.info()
-```
+    Raises `OSError`: Reading the controller status fails.
+
 ### `CAN.any(fifo)`
 
-        Return \`\`True\`\` if any message waiting on the FIFO, else \`\`False\`\`.
+    - Parameter `fifo` (`int`): Compatibility argument; use `0`. The controller has one RX queue.
+    - Returns: `True` if a frame is waiting, otherwise `False`.
+        A deinitialized controller returns `False`.
 
-        - Parameter `fifo` (`int`): FIFO index.
-        - Returns: bool
+    Raises `OSError`: Reading the controller status fails.
+
+### `CAN.send(data, id, *, timeout=0, rtr=False, extframe=False)`
+
+    Queue a CAN frame. Success means the frame was queued for transmission;
+    it does not confirm receipt by another node.
+
+    - Parameter `data`: A readable buffer such as `bytes` or `bytearray`, up to eight bytes.
+        To send a single byte, use `bytes([value])`.
+    - Parameter `id` (`int`): Standard 11-bit identifier, or extended 29-bit identifier
+        when `extframe=True`.
+    - Parameter `timeout` (`int`): Maximum wait for space in the TX queue. The binding passes
+        FreeRTOS ticks; standard UiFlow2 builds use a 1 ms tick. `0` does not wait.
+    - Parameter `rtr` (`bool`): Send a remote request; only the buffer length supplies the DLC.
+    - Parameter `extframe` (`bool`): Use an extended identifier.
+    - Returns: `None`.
+
+    Raises `TypeError`: `data` does not support the buffer protocol.
+
+    Raises `ValueError`: The buffer is longer than eight bytes.
+
+    Raises `OSError`: The driver rejects an argument, or queueing fails or times out.
 
 ```python
-if can.any(0):
-    print("Message waiting")
+can.send(b"\x01\x02", 0x123, timeout=0)
 ```
 ### `CAN.recv(fifo, list=None, *, timeout=5000)`
 
-        Receive data on the bus.
+    - Parameter `fifo` (`int`): Compatibility argument; use `0`.
+    - Parameter `list` (`list`): Optional list with at least five entries. Its fifth entry
+        must be a writable byte-oriented `memoryview` backed by at least eight bytes.
+    - Parameter `timeout` (`int`): Maximum wait for a frame, in FreeRTOS ticks
+        (1 ms per tick in standard UiFlow2 builds). `0` does not wait.
+    - Returns: `(id, extframe, rtr, 255, data)` with `data` as `bytes`,
+        or the supplied list updated in place. Returns `None` on timeout or
+        receive failure. The fourth field is a fixed compatibility value.
 
-        - Parameter `fifo` (`int`): fifo is an integer, it can be any number and compatible with pyb.CAN
-        - Parameter `list` (`list`): optional list object to be used as the return value
-        - Parameter `timeout` (`int`): timeout in milliseconds to wait for the receive.
-        - Returns: tuple
+    Raises `TypeError`: On receipt of a frame, `list` is not a list or its
+        fifth entry is not a memoryview.
 
-        Return value: A tuple containing five values.
-
-        - The id of the message.
-        - A boolean that indicates if the message ID is standard or extended.
-        - A boolean that indicates if the message is an RTR message.
-        - The FMI (Filter Match Index) value.
-        - An array containing the data.
-
-        If *list* is \`\`None\`\` then a new tuple will be allocated, as well as a new
-        bytes object to contain the data (as the fifth element in the tuple).
-
-        If *list* is not \`\`None\`\` then it should be a list object with a least five
-        elements.  The fifth element should be a memoryview object which is created
-        from either a bytearray or an array of type 'B' or 'b', and this array must
-        have enough room for at least 8 bytes.  The list object will then be
-        populated with the first four return values above, and the memoryview object
-        will be resized inplace to the size of the data and filled in with that data.
-        The same list and memoryview objects can be reused in subsequent calls to
-        this method, providing a way of receiving data without using the heap.
-        For example:
-```
-buf = bytearray(8)
-lst = [0, 0, 0, 0, memoryview(buf)]
-# No heap memory is allocated in the following call
-can.recv(0, lst)
-```
+    Raises `ValueError`: On receipt of a frame, the list is too short or its
+        memoryview is not writable and byte-oriented.
 
 ```python
-can.recv(0)
+frame = can.recv(0, timeout=0)
+if frame is not None:
+    identifier, extended, remote, fmi, payload = frame
+    print(identifier, payload)
+
+buffer = bytearray(8)
+frame_buffer = [0, False, False, 0, memoryview(buffer)]
+frame = can.recv(0, frame_buffer, timeout=0)
 ```
-### `CAN.send(data, id, *, timeout=0, rtr=False, extframe=False)`
+### `CAN.setfilter(bank, mode, fifo, params, *, rtr=None, extframe=False)`
 
-        Send a message on the bus.
+    Compatibility placeholder. The arguments are parsed, but reception filters
+    are not applied. The controller accepts all identifiers.
 
-        - Parameter `data`: data is the data to send (an integer to send, or a buffer object).
-        - Parameter `id` (`int`): id is the id of the message to be sent.
-        - Parameter `timeout` (`int`): timeout is the timeout in milliseconds to wait for the send.
-        - Parameter `rtr` (`bool`): rtr is a boolean that specifies if the message shall be sent as a remote transmission request. If rtr is True then only the length of data is used to fill in the DLC slot of the frame; the actual bytes in data are unused.
-        - Parameter `extframe` (`bool`): extframe if True the frame will have an extended identifier (29 bits), otherwise a standard identifier (11 bits) is used.
+    - Returns: `None`.
 
-        If timeout is 0 the message is placed in a buffer in one of three hardware
-        buffers and the method returns immediately. If all three buffers are in use
-        an exception is thrown. If timeout is not 0, the method waits until the
-        message is transmitted. If the message can't be transmitted within the
-        specified time an exception is thrown.
+### `CAN.clearfilter(bank, extframe=False)`
 
-        - Returns: None
+    Compatibility placeholder. `bank` is positional. This method does not
+    change the receive filter.
 
-```python
-can.send('message!', 123)
-```
+    - Returns: `None`.
+
+#### Constants
+
 ### `CAN.NORMAL`
-            CAN.NO_ACKNOWLEDGE
-            CAN.LISTEN_ONLY
+          CAN.NO_ACKNOWLEDGE
+          CAN.LISTEN_ONLY
 
-        The mode of the CAN bus used in :meth:\`~CAN.init()\`.
+    Controller modes accepted by the constructor and `init()`.
 
 ### `CAN.STOPPED`
-            CAN.RUNNING
-            CAN.BUS_OFF
-            CAN.RECOVERING
+          CAN.BUS_OFF
+          CAN.RECOVERING
+          CAN.RUNNING
 
-        Possible states of the CAN controller returned from :meth:\`~CAN.state()\`.
+    Controller states returned by `state()`.
+
+### `CAN.MASK16`
+          CAN.LIST16
+          CAN.MASK32
+          CAN.LIST32
+
+    Compatibility filter constants. Filter programming is not implemented.

@@ -62,7 +62,7 @@ For WAV recording and playback, use
 `Resource Files and Paths <../quick-reference/resource-files.html>`_.
 
 .. note::
-   The ADF ``sticks3_audio_example`` may hang during codec/I2S initialization.
+   ADF player and recorder operations raise ``OSError`` if codec/I2S initialization fails.
 
 UiFlow2 Example 
 ----------------

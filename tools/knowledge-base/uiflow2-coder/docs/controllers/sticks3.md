@@ -50,7 +50,7 @@ For WAV recording and playback, use
 `M5.Speaker.playWavFile(...)`. Create the recording directory first; see
 [Resource Files and Paths](../quick-reference/resource-files.md).
 
-> Note: The ADF `sticks3_audio_example` may hang during codec/I2S initialization.
+> Note: ADF player and recorder operations raise `OSError` if codec/I2S initialization fails.
 ## MicroPython Example
 
 #### Button Control

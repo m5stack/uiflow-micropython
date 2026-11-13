@@ -182,7 +182,7 @@ Example output:
     Create a CANUnit object. Supply `port=(rx_pin, tx_pin)` for the connected
     controller; the default `None` does not select pins automatically.
 
-    - Parameter `id` (`int`): The hardware CAN controller ID.
+    - Parameter `id` (`int`): The hardware CAN controller ID; the current binding accepts only `0`.
     - Parameter `port` (`tuple`): The port pins in **(rx, tx)** order.
     - Parameter `mode` (`int`): CANUnit.NORMAL, CANUnit.NO_ACKNOWLEDGE, or CANUnit.LISTEN_ONLY.
     - Parameter `prescaler` (`int`): Nominal bit-time prescaler for manual timing.
@@ -211,3 +211,113 @@ can = CANUnit(
 ```
 > Note: CANUnit inherits CAN. See `hardware.CAN <hardware.CAN>`
 > for timing constraints and supported controller IDs on each target.
+#### Methods
+
+CANUnit and MiniCANUnit inherit the following methods from `m5can.CAN`.
+`MiniCANUnit` is an alias of `CANUnit`.
+
+### `CANUnit.init(mode, tx, rx, quanta_resolution_hz=2500000, brp=0, tseg_1=15, tseg_2=4, sjw=3, triple_sampling=False, baudrate=0)`
+
+    Start a deinitialized controller. Call `deinit()` first when it is active.
+    This method uses separate `tx`/`rx` pins and `baudrate` in **kbit/s**.
+    The constructor uses `port=(rx, tx)` and baudrate in **bits per second**.
+    See `hardware.CAN.init` for native timing parameters.
+
+    - Returns: `None`.
+
+    Raises `ValueError`: Unsupported automatic bitrate.
+
+    Raises `OSError`: Controller initialization fails.
+
+### `CANUnit.deinit()`
+
+    Stop the controller and release its driver.
+
+    - Returns: `None`.
+
+    Raises `OSError`: Driver removal fails.
+
+### `CANUnit.restart()`
+
+    Stop and start an enabled controller with its existing configuration.
+    A deinitialized controller stays disabled.
+
+    - Returns: `None`.
+
+    Raises `OSError`: The controller cannot be started.
+
+### `CANUnit.state()`
+
+    - Returns: `STOPPED` (0), `BUS_OFF` (4), `RECOVERING` (5), or `RUNNING` (6).
+    - Return type: int
+
+    Raises `OSError`: Reading controller status fails.
+
+### `CANUnit.info([list])`
+
+    - Parameter `list` (`list`): Optional list of at least eight entries, updated in place.
+        Omit this argument to allocate a list.
+    - Returns: `[TEC, REC, 0, 0, 0, pending_tx, pending_rx, 0]` while enabled.
+        See `hardware.CAN.info` for behavior after deinitialization.
+
+    Raises `TypeError`: The supplied argument is not a list.
+
+    Raises `ValueError`: The supplied list has fewer than eight entries.
+
+    Raises `OSError`: Reading controller status fails.
+
+### `CANUnit.any(fifo)`
+
+    - Parameter `fifo` (`int`): Compatibility argument; use `0`.
+    - Returns: `True` if a frame is waiting, otherwise `False`.
+
+    Raises `OSError`: Reading controller status fails.
+
+### `CANUnit.send(data, id, *, timeout=0, rtr=False, extframe=False)`
+
+    - Parameter `data`: Readable buffer of at most eight bytes, such as `bytes` or `bytearray`.
+    - Parameter `id` (`int`): Standard 11-bit identifier, or 29-bit identifier with `extframe=True`.
+    - Parameter `timeout` (`int`): TX queue wait in FreeRTOS ticks; standard UiFlow2 builds use 1 ms ticks.
+    - Parameter `rtr` (`bool`): Send a remote request, using the buffer length as DLC.
+    - Parameter `extframe` (`bool`): Use an extended identifier.
+    - Returns: `None` after queueing; receipt by another node is not confirmed.
+
+    Raises `TypeError`: `data` does not support the buffer protocol.
+
+    Raises `ValueError`: The buffer exceeds eight bytes.
+
+    Raises `OSError`: The driver rejects an argument, or queueing fails or times out.
+
+### `CANUnit.recv(fifo, list=None, *, timeout=5000)`
+
+    - Parameter `fifo` (`int`): Compatibility argument; use `0`.
+    - Parameter `list` (`list`): Optional reusable list with at least five entries; its
+        fifth entry must be a writable byte-oriented memoryview backed by at least eight bytes.
+    - Parameter `timeout` (`int`): RX wait in FreeRTOS ticks; standard UiFlow2 builds use 1 ms ticks.
+    - Returns: `(id, extframe, rtr, 255, data)` or the updated supplied list.
+        Returns `None` on timeout or receive failure.
+
+    Raises `TypeError`: On receipt of a frame, the supplied list or memoryview has the wrong type.
+
+    Raises `ValueError`: On receipt of a frame, the list is too short or the memoryview has an invalid format.
+
+```python
+can.send(b"\x01\x02", 0x123, timeout=0)
+frame = can.recv(0, timeout=0)
+if frame is not None:
+    identifier, extended, remote, fmi, payload = frame
+    print(identifier, payload)
+```
+### `CANUnit.setfilter(bank, mode, fifo, params, *, rtr=None, extframe=False)`
+
+    Compatibility placeholder: arguments are parsed but filters are not applied.
+    The controller accepts all identifiers.
+
+    - Returns: `None`.
+
+### `CANUnit.clearfilter(bank, extframe=False)`
+
+    Compatibility placeholder; it does not change the receive filter.
+    `bank` is positional.
+
+    - Returns: `None`.
