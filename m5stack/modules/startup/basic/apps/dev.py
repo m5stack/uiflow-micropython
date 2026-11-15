@@ -115,13 +115,12 @@ class DevApp(app_base.AppBase):
         self._battery_label = widgets.Label(
             "0%",
             320 - 56 + 22,
-            220 + 6,
-            w=22,
-            h=10,
+            220 + 3,
+            w=32,
+            h=16,
             font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=Widgets.FONTS.Montserrat12,
         )
         self._battery_label.set_text(self._battery_text)
 
@@ -159,6 +158,18 @@ class DevApp(app_base.AppBase):
                 self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
             elif refresh_bar:
                 self._cloud_img._draw(False)
+
+            refresh_battery = False
+            t = self._get_battery_src(M5.Power.getBatteryLevel(), M5.Power.isCharging())
+            if t != self._battery_src:
+                self._battery_src = t
+                self._bar_img._draw(False)
+                self._network_img._draw(False)
+                self._cloud_img._draw(False)
+                self._battery_img.set_src(self._battery_src)
+                refresh_battery = True
+            elif refresh_bar:
+                self._battery_img._draw(False)
 
             t = self._get_battery_src(M5.Power.getBatteryLevel(), M5.Power.isCharging())
             if t != self._battery_src:
