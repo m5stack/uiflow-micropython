@@ -121,6 +121,7 @@ class DevApp(app_base.AppBase):
             font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
+            font=Widgets.FONTS.Montserrat12,
         )
         self._battery_label.set_text(self._battery_text)
 
