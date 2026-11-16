@@ -7,6 +7,7 @@ import sys
 import lv_utils
 import micropython
 import time
+import gc
 
 _event_loop_instance = None
 
@@ -98,6 +99,29 @@ def _sdl_init(width=320, height=240):
         print("Event loop already running, skip creating new one")
 
 
+def _create_draw_buffers(width, height):
+    # File images can be decoded again for each drawing strip. Prefer a full
+    # screen on every M5UI host, and retain small buffers when memory is tight.
+    for rows in (height, min(10, height)):
+        buf0 = buf1 = None
+        try:
+            buf0 = lv.draw_buf_create(width, rows, lv.COLOR_FORMAT.RGB565, 0)
+            if buf0 is None:
+                raise MemoryError
+            buf1 = lv.draw_buf_create(width, rows, lv.COLOR_FORMAT.RGB565, 0)
+            if buf1 is None:
+                raise MemoryError
+            return buf0, buf1
+        except MemoryError:
+            if buf1 is not None:
+                buf1.destroy()
+            if buf0 is not None:
+                buf0.destroy()
+            buf0 = buf1 = None
+            gc.collect()
+    raise MemoryError("Unable to allocate M5UI display buffers")
+
+
 def _m5_init():
     import M5
 
@@ -107,8 +131,9 @@ def _m5_init():
     M5.Lcd.lvgl_init()
 
     # built-in display
-    disp_buf0 = lv.draw_buf_create(M5.getDisplay(0).width(), 10, lv.COLOR_FORMAT.RGB565, 0)
-    disp_buf1 = lv.draw_buf_create(M5.getDisplay(0).width(), 10, lv.COLOR_FORMAT.RGB565, 0)
+    disp_buf0, disp_buf1 = _create_draw_buffers(
+        M5.getDisplay(0).width(), M5.getDisplay(0).height()
+    )
 
     disp_drv = lv.display_create(M5.getDisplay(0).width(), M5.getDisplay(0).height())
     disp_drv.set_color_format(lv.COLOR_FORMAT.RGB565)
