@@ -148,6 +148,7 @@ def _is_psram():
 
 
 def _detect_boot_override(board_id):
+    """Detect a held recovery input during the shared startup window."""
     keyboard = None
     if board_id == M5.BOARD.M5CardputerADV:
         from hardware import MatrixKeyboard
@@ -155,6 +156,7 @@ def _detect_boot_override(board_id):
         keyboard = MatrixKeyboard()
     elif board_id not in (
         M5.BOARD.M5StickS3,
+        M5.BOARD.M5StopWatch,
         M5.BOARD.M5StackChan,
         M5.BOARD.M5CoreMatrix,
     ):
@@ -169,6 +171,8 @@ def _detect_boot_override(board_id):
                 pressed = keyboard.is_key_pressed(_CARDPUTER_ADV_BOOT_KEYCODE)
             elif board_id == M5.BOARD.M5StickS3:
                 pressed = M5.BtnA.isPressed()
+            elif board_id == M5.BOARD.M5StopWatch:
+                pressed = M5.BtnA.isPressed() or M5.BtnB.isPressed()
             elif board_id == M5.BOARD.M5CoreMatrix:
                 pressed = M5.BtnA.isPressed() or M5.BtnB.isPressed() or M5.BtnC.isPressed()
             else:
@@ -193,6 +197,7 @@ def _detect_boot_override(board_id):
 
 
 def _apply_boot_input_override(boot_opt, board_id, nvs):
+    """Save menu startup when the board recovery input is held."""
     if boot_opt != BOOT_OPT_MENU_NET and _detect_boot_override(board_id):
         try:
             nvs.set_u8("boot_option", BOOT_OPT_MENU_NET)

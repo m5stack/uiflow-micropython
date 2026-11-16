@@ -17,10 +17,11 @@ Quick reference:
     download code done, device will auto reboot and won't show startup menu, 
     only do the network connect, but after network connect success, you can
     still download or run workspace code. If you don't want do anything after
-    boot, you can delete this whole file. Cardputer Adv, StickS3, and StackChan
-    provide a startup override. During the 100ms detection window, hold the
-    Cardputer Adv top-left ESC-labeled key, StickS3 BtnA, or touch the StackChan
-    screen for at least 30ms. The device enters the startup menu without
+    boot, you can delete this whole file. Cardputer Adv, StickS3, StopWatch,
+    and StackChan provide a startup override. During the 100ms detection
+    window, hold the Cardputer Adv top-left ESC-labeled key, StickS3 BtnA,
+    either StopWatch BtnA or BtnB, or touch the StackChan screen for at
+    least 30ms. The device enters the startup menu without
     deleting main.py and saves boot_option 1, so later boots continue to enter
     startup until the boot option is changed.
 

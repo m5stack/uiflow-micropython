@@ -9,7 +9,6 @@ import M5
 from M5 import Speaker, Widgets
 import esp32
 import time
-import machine
 
 
 _SERVO_NVS_NS = "servo"
@@ -139,62 +138,57 @@ def _run_servo_zero_calibration_if_needed():
         stackchan = StackChan(i2c=1, uart=1)
         stackchan.set_servo_power(enable=True)
         time.sleep_ms(500)
-        stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
-        stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
+        for servo_id in (stackchan.SERVO_ID_X, stackchan.SERVO_ID_Y):
+            if not stackchan.set_servo_torque(servo_id, enable=False):
+                raise RuntimeError("servo %s did not acknowledge torque release" % servo_id)
         Speaker.begin()
         Speaker.setVolumePercentage(0.6)
         _calibration_tone(1000, 100)
-    except Exception as e:
-        print("[StackChan] servo calibration init failed: %s" % e)
 
-    last_refresh = 0
-    hold_start = None
-    hold_ms = 0
-    while True:
-        M5.update()
-        now = time.ticks_ms()
-        touching_save = False
-        if M5.Touch.getCount() > 0:
-            x = M5.Touch.getX()
-            y = M5.Touch.getY()
-            touching_save = _touch_box_hit(_HOLD_BOX, x, y)
+        last_refresh = 0
+        hold_start = None
+        hold_ms = 0
+        while True:
+            M5.update()
+            now = time.ticks_ms()
+            touching_save = False
+            if M5.Touch.getCount() > 0:
+                x = M5.Touch.getX()
+                y = M5.Touch.getY()
+                touching_save = _touch_box_hit(_HOLD_BOX, x, y)
 
-        if touching_save:
-            if hold_start is None:
-                hold_start = now
-                _calibration_tone(880, 40)
-            hold_ms = time.ticks_diff(now, hold_start)
-        else:
-            hold_start = None
-            hold_ms = 0
-
-        if hold_ms >= _HOLD_SAVE_MS:
-            if stackchan is None:
-                print("[StackChan] servo calibration is unavailable")
-                _calibration_tone(400, 180)
+            if touching_save:
+                if hold_start is None:
+                    hold_start = now
+                    _calibration_tone(880, 40)
+                hold_ms = time.ticks_diff(now, hold_start)
+            else:
                 hold_start = None
                 hold_ms = 0
-                _draw_hold_progress(0)
-                continue
-            if stackchan.set_servo_zero():
+
+            if hold_ms >= _HOLD_SAVE_MS:
+                if not stackchan.set_servo_zero():
+                    raise RuntimeError("servo zero save failed")
                 _calibration_tone(1200, 100)
-                # _draw_servo_zero_calibration(tip="Calibration saved", hold_ms=_HOLD_SAVE_MS)
                 time.sleep(0.3)
-                stackchan.set_servo_power(False)
                 return
-            _calibration_tone(400, 180)
-            _draw_calibration_tip("Save failed, retry")
-            machine.soft_reset()
-            time.sleep(0.5)
-            hold_start = None
-            hold_ms = 0
-            _draw_hold_progress(0)
 
-        if time.ticks_diff(now, last_refresh) >= 100:
-            last_refresh = now
-            _update_servo_zero_calibration(hold_ms)
+            if time.ticks_diff(now, last_refresh) >= 100:
+                last_refresh = now
+                _update_servo_zero_calibration(hold_ms)
 
-        time.sleep_ms(20)
+            time.sleep_ms(20)
+    except Exception as e:
+        print("[StackChan] servo calibration skipped, continuing startup: %s" % e)
+        _calibration_tone(400, 180)
+        _draw_calibration_tip("Calibration skipped")
+        time.sleep_ms(1000)
+    finally:
+        if stackchan is not None:
+            try:
+                stackchan.set_servo_power(False)
+            except Exception as e:
+                print("[StackChan] servo power off failed: %s" % e)
 
 
 class StackChan_Startup:
