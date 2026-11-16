@@ -63,7 +63,7 @@ esp_err_t uiflow_usb_bus_claim(unsigned owner) {
     const usb_host_config_t config = {
         .intr_flags = ESP_INTR_FLAG_LEVEL1,
         .root_port_unpowered = true,
-        // IDF peripheral 0 is the P4 high-speed controller on Tab5 USB-A.
+        // IDF peripheral 0 is the P4 high-speed controller on Tab5/Tab5X USB-A.
         .peripheral_map = 1 << 0,
     };
     esp_err_t err = usb_host_install(&config);

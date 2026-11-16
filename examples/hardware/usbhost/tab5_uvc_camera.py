@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
 # SPDX-License-Identifier: MIT
-"""Tab5 USB-A UVC MJPEG/YUY2 preview and capture. Launch manually."""
+"""Tab5/Tab5X USB-A UVC MJPEG/YUY2 preview and capture. Launch manually."""
 
 import os
 import struct
@@ -41,7 +41,7 @@ def run(width=640, height=480, fps=0, frame_size=0, format="mjpeg"):
     lcd.fillScreen(background)
     lcd.setTextSize(2)
     lcd.setTextColor(0xFFFFFF)
-    lcd.drawString("TAB5 / USB-A UVC CAMERA", 16, 16)
+    lcd.drawString("TAB5 / TAB5X / USB-A UVC CAMERA", 16, 16)
     lcd.drawString("Direct USB camera / " + format.upper(), 16, 48)
     buttons = {
         "capture": (16, h - 70, (w - 48) // 2, 52),

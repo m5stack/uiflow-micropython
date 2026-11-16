@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
 # SPDX-License-Identifier: MIT
-"""Tab5: USB-A mouse dashboard + USB-C touchscreen mouse, with CDC retained.
+"""Tab5/Tab5X: USB-A mouse dashboard + USB-C touchscreen mouse, with CDC retained.
 
 Copy this file and tab5_mouse_transport.py to the device, then import this module.
 USB HID is added alongside CDC. Touch STOP to release and exit.
@@ -39,7 +39,7 @@ def run():
     w, h = lcd.width(), lcd.height()
     margin = 20
     lcd.fillScreen(BG)
-    text("TAB5 / USB MOUSE LAB", 24, 26, INK, 3)
+    text("TAB5 / TAB5X / USB MOUSE", 24, 26, INK, 3)
     text("A: physical mouse   C: touchpad + CDC", 24, 66, MUTED)
     if h >= w:
         host_rect = (margin, 105, w - 40, 430)
@@ -64,7 +64,7 @@ def run():
     import usb.device
 
     try:
-        mouse = Mouse(interface_str="Tab5 Touchpad", builtin_driver=True)
+        mouse = Mouse(interface_str="M5 Touchpad", builtin_driver=True)
         host = usbhost.HIDHost()
     except Exception:
         try:

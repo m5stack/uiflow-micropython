@@ -70,6 +70,6 @@ include(${CMAKE_CURRENT_LIST_DIR}/lv_binding_micropython/micropython.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/lv_utils/lv_utils.cmake)
 endif()
 
-if(BOARD_TYPE STREQUAL "tab5")
+if(BOARD_TYPE STREQUAL "tab5" OR BOARD_TYPE STREQUAL "tab5x")
     include(${CMAKE_CURRENT_LIST_DIR}/usbhost/micropython.cmake)
 endif()

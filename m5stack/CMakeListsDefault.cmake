@@ -324,7 +324,7 @@ if (UPDATE_SUBMODULES)
     unset(MICROPY_INC_CORE)
 endif()
 
-if(BOARD_TYPE STREQUAL "tab5")
+if(BOARD_TYPE STREQUAL "tab5" OR BOARD_TYPE STREQUAL "tab5x")
     list(APPEND IDF_COMPONENTS espressif__usb_host_hid espressif__usb_host_uvc)
 endif()
 

@@ -2,13 +2,13 @@ USB Host
 ========
 
 .. module:: usbhost
-   :synopsis: Native USB-A HID input and MJPEG/YUY2 UVC cameras on Tab5
+   :synopsis: Native USB-A HID input and MJPEG/YUY2 UVC cameras on Tab5 and Tab5X
 
-This module is available on Tab5. The USB-A connector uses the ESP32-P4
+This module is available on Tab5 and Tab5X. The USB-A connector uses the ESP32-P4
 high-speed OTG controller as Host. USB-C uses the separate full-speed OTG
 controller for CDC/REPL and ``machine.USBDevice``. ROM download mode is retained.
 After installing this firmware, reconnect the computer's serial terminal to
-the Tab5 CDC port; its identity differs from the previous Serial/JTAG port.
+the board's CDC port; its identity differs from the previous Serial/JTAG port.
 
 Call ``M5.begin()`` before constructing ``HIDHost``. The host enables USB-A
 VBUS through the board's IO expander. ``deinit()`` disables that supply and
@@ -50,7 +50,7 @@ Copy both ``examples/hardware/usbhost/tab5_usb_mouse_demo.py`` and
 
 The upper panel displays the USB-A mouse cursor, left/right/middle click counts,
 relative movement, received reports, dropped reports and driver errors.
-The lower panel turns the Tab5 touchscreen into a USB-C mouse using the existing
+The lower panel turns the board's touchscreen into a USB-C mouse using the existing
 ``usb.device.mouse.Mouse`` implementation, while retaining built-in CDC.
 
 Slide one finger to move the computer pointer, tap briefly for a left click,
