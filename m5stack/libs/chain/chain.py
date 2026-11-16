@@ -42,6 +42,9 @@ CHAIN_DEVICE_TYPE_MIC = 0x000A  # Microphone device type
 CHAIN_DEVICE_TYPE_8SERVOS2 = 0x000C  # Unit 8Servos2 device type
 CHAIN_DEVICE_TYPE_MONO = 0x000D  # Mono display device type
 CHAIN_DEVICE_TYPE_RGB = 0x000E  # RGB display device type
+CHAIN_DEVICE_TYPE_ENV = 0x000F  # Environment sensor device type
+CHAIN_DEVICE_TYPE_IMU = 0x0010  # IMU device type
+CHAIN_DEVICE_TYPE_DLIGHT = 0x0011  # Digital light sensor device type
 
 
 class RecvData:
@@ -498,6 +501,8 @@ class ChainBus:
         self._device.append(device)
 
     def register_event(self, device, cmd, payload, callback):
+        # A None payload is a fallback for variable event data. Existing exact
+        # payload callbacks retain their None argument and take precedence.
         if device not in self._event:
             self._event[device] = {}
         if cmd not in self._event[device]:
@@ -575,16 +580,14 @@ class ChainBus:
             # handle registered events
             if decoded and self._event:
                 # 遍历嵌套结构: device -> cmd -> payload(bytes) -> callback
-                for device, cmd_map in self._event.items():
-                    for cmd, payload_map in cmd_map.items():
+                for device, cmd_map in list(self._event.items()):
+                    for cmd, payload_map in list(cmd_map.items()):
                         # 只取一次响应，保持与旧实现行为一致（旧实现会消费一条匹配 device/cmd 的数据包）
                         state, response = self.chainll.receive_packet(device.device_id, cmd)
                         if not state:
                             continue
                         # 匹配注册的 payload，命中后调度对应 callback
-                        cb = payload_map.get(bytes(response))
-                        if cb:
-                            micropython.schedule(cb, None)
+                        self._dispatch_event(payload_map, response)
 
             # 5s clear old packets in queue
             if time.ticks_ms() - last_clear_time > 5000:
@@ -592,6 +595,16 @@ class ChainBus:
                 last_clear_time = time.ticks_ms()
 
             time.sleep_ms(10)
+
+    def _dispatch_event(self, payload_map, response):
+        payload = bytes(response)
+        callback = payload_map.get(payload)
+        if callback:
+            micropython.schedule(callback, None)
+        else:
+            callback = payload_map.get(None)
+            if callback:
+                micropython.schedule(callback, payload)
 
     def _device_connect_task(self, timer):
         new_device_num = self.chainll.get_device_num()

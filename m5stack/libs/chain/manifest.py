@@ -7,8 +7,12 @@ package(
     (
         "__init__.py",
         "angle.py",
+        "base.py",
         "buzzer.py",
         "chain.py",
+        "dlight.py",
+        "env.py",
+        "imu.py",
         "encoder.py",
         "joystick.py",
         "key.py",

@@ -1,0 +1,736 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-14 21:29+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../docs/source/chain/dlight.rst:2 ../docs/source/refs/chain.dlight.ref:1
+msgid "Chain DLight"
+msgstr "Chain DLight"
+
+#: ../docs/source/chain/dlight.rst:8
+msgid "This library is the driver for Chain DLight."
+msgstr "此库是 Chain DLight 的驱动。"
+
+#: ../docs/source/chain/dlight.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../docs/source/chain/dlight.rst:12
+msgid "|Chain DLight|"
+msgstr "|Chain DLight|"
+
+#: ../docs/source/chain/dlight.rst:15
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../docs/source/chain/dlight.rst:18
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../docs/source/chain/dlight.rst:21
+msgid "Read sensor values"
+msgstr "读取传感器数值"
+
+#: ../docs/source/chain/dlight.rst:23
+msgid ""
+"Use M5Stack Basic with UART2 TX=21 and RX=22, as in the existing Chain examples. Connect the "
+"module as the first device through the matching Chain interface and observe the serial console. "
+"Press BtnA to stop and run the cleanup code after the loop."
+msgstr ""
+"使用 M5Stack Basic，UART2 的 TX=21、RX=22，与现有 Chain 示例一致。通过匹配的 Chain 接口将模块接为第一个设备，观察串口输出。按 BtnA "
+"停止循环，并执行循环后的清理代码。"
+
+#: ../docs/source/chain/dlight.rst:25 ../docs/source/chain/dlight.rst:40
+#: ../docs/source/chain/dlight.rst:144 ../docs/source/chain/dlight.rst:166
+#: ../docs/source/chain/dlight.rst:184 ../docs/source/chain/dlight.rst:202
+#: ../docs/source/chain/dlight.rst:220 ../docs/source/chain/dlight.rst:244
+#: ../docs/source/chain/dlight.rst:262 ../docs/source/chain/dlight.rst:284
+#: ../docs/source/chain/dlight.rst:302 ../docs/source/chain/dlight.rst:324
+#: ../docs/source/chain/dlight.rst:343 ../docs/source/chain/dlight.rst:365
+#: ../docs/source/chain/dlight.rst:383 ../docs/source/chain/dlight.rst:401
+#: ../docs/source/chain/dlight.rst:419 ../docs/source/chain/dlight.rst:437
+#: ../docs/source/chain/dlight.rst:458 ../docs/source/chain/dlight.rst:486
+#: ../docs/source/chain/dlight.rst:514 ../docs/source/chain/dlight.rst:530
+#: ../docs/source/chain/dlight.rst:554 ../docs/source/chain/dlight.rst:576
+#: ../docs/source/chain/dlight.rst:600 ../docs/source/chain/dlight.rst:618
+#: ../docs/source/chain/dlight.rst:640 ../docs/source/chain/dlight.rst:658
+#: ../docs/source/chain/dlight.rst:676 ../docs/source/chain/dlight.rst:694
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码："
+
+#: ../docs/source/chain/dlight.rst:31 ../docs/source/chain/dlight.rst:46
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../docs/source/chain/dlight.rst:33 ../docs/source/chain/dlight.rst:48
+msgid "None"
+msgstr "None"
+
+#: ../docs/source/chain/dlight.rst:36
+msgid "Receive events"
+msgstr "接收事件"
+
+#: ../docs/source/chain/dlight.rst:38
+msgid ""
+"Use M5Stack Basic with UART2 TX=21 and RX=22, as in the existing Chain examples. Connect the "
+"module as the first device through the matching Chain interface and observe the serial console. "
+"Press BtnA to stop and run the cleanup code after the loop. The example temporarily enables "
+"reporting and restores its changed settings after BtnA stops the loop. No settings are saved to "
+"flash."
+msgstr ""
+"使用 M5Stack Basic，UART2 的 TX=21、RX=22，与现有 Chain 示例一致。通过匹配的 Chain 接口将模块接为第一个设备，观察串口输出。按 BtnA "
+"停止循环，并执行循环后的清理代码。 示例临时启用事件上报，并在按 BtnA 停止循环后恢复其更改的设置，不保存到 Flash。"
+
+#: ../docs/source/chain/dlight.rst:51
+msgid "**API**"
+msgstr "**API**"
+
+#: ../docs/source/chain/dlight.rst:54
+msgid "DLightChain"
+msgstr "DLightChain"
+
+#: ../docs/source/chain/dlight.rst:57
+msgid "Constants"
+msgstr "常量"
+
+#: ../docs/source/chain/dlight.rst:63
+msgid "Constant"
+msgstr "常量"
+
+#: ../docs/source/chain/dlight.rst:64
+msgid "Value"
+msgstr "值"
+
+#: ../docs/source/chain/dlight.rst:65
+msgid "Description"
+msgstr "说明"
+
+#: ../docs/source/chain/dlight.rst:66
+msgid "``GAIN_1X``"
+msgstr "``GAIN_1X``"
+
+#: ../docs/source/chain/dlight.rst:67 ../docs/source/chain/dlight.rst:115
+#: ../docs/source/chain/dlight.rst:121
+msgid "``1``"
+msgstr "``1``"
+
+#: ../docs/source/chain/dlight.rst:68
+msgid "Gain: 1 x."
+msgstr "增益：1 x。"
+
+#: ../docs/source/chain/dlight.rst:69
+msgid "``GAIN_3X``"
+msgstr "``GAIN_3X``"
+
+#: ../docs/source/chain/dlight.rst:70
+msgid "``3``"
+msgstr "``3``"
+
+#: ../docs/source/chain/dlight.rst:71
+msgid "Gain: 3 x."
+msgstr "增益：3 x。"
+
+#: ../docs/source/chain/dlight.rst:72
+msgid "``GAIN_6X``"
+msgstr "``GAIN_6X``"
+
+#: ../docs/source/chain/dlight.rst:73
+msgid "``6``"
+msgstr "``6``"
+
+#: ../docs/source/chain/dlight.rst:74
+msgid "Gain: 6 x."
+msgstr "增益：6 x。"
+
+#: ../docs/source/chain/dlight.rst:75
+msgid "``GAIN_9X``"
+msgstr "``GAIN_9X``"
+
+#: ../docs/source/chain/dlight.rst:76
+msgid "``9``"
+msgstr "``9``"
+
+#: ../docs/source/chain/dlight.rst:77
+msgid "Gain: 9 x."
+msgstr "增益：9 x。"
+
+#: ../docs/source/chain/dlight.rst:78
+msgid "``GAIN_18X``"
+msgstr "``GAIN_18X``"
+
+#: ../docs/source/chain/dlight.rst:79 ../docs/source/chain/dlight.rst:88
+msgid "``18``"
+msgstr "``18``"
+
+#: ../docs/source/chain/dlight.rst:80
+msgid "Gain: 18 x."
+msgstr "增益：18 x。"
+
+#: ../docs/source/chain/dlight.rst:81
+msgid "``RESOLUTION_16BIT``"
+msgstr "``RESOLUTION_16BIT``"
+
+#: ../docs/source/chain/dlight.rst:82
+msgid "``16``"
+msgstr "``16``"
+
+#: ../docs/source/chain/dlight.rst:83
+msgid "Resolution: 16 bit."
+msgstr "分辨率：16 bit。"
+
+#: ../docs/source/chain/dlight.rst:84
+msgid "``RESOLUTION_17BIT``"
+msgstr "``RESOLUTION_17BIT``"
+
+#: ../docs/source/chain/dlight.rst:85
+msgid "``17``"
+msgstr "``17``"
+
+#: ../docs/source/chain/dlight.rst:86
+msgid "Resolution: 17 bit."
+msgstr "分辨率：17 bit。"
+
+#: ../docs/source/chain/dlight.rst:87
+msgid "``RESOLUTION_18BIT``"
+msgstr "``RESOLUTION_18BIT``"
+
+#: ../docs/source/chain/dlight.rst:89
+msgid "Resolution: 18 bit."
+msgstr "分辨率：18 bit。"
+
+#: ../docs/source/chain/dlight.rst:90
+msgid "``RESOLUTION_19BIT``"
+msgstr "``RESOLUTION_19BIT``"
+
+#: ../docs/source/chain/dlight.rst:91
+msgid "``19``"
+msgstr "``19``"
+
+#: ../docs/source/chain/dlight.rst:92
+msgid "Resolution: 19 bit."
+msgstr "分辨率：19 bit。"
+
+#: ../docs/source/chain/dlight.rst:93
+msgid "``RESOLUTION_20BIT``"
+msgstr "``RESOLUTION_20BIT``"
+
+#: ../docs/source/chain/dlight.rst:94
+msgid "``20``"
+msgstr "``20``"
+
+#: ../docs/source/chain/dlight.rst:95
+msgid "Resolution: 20 bit."
+msgstr "分辨率：20 bit。"
+
+#: ../docs/source/chain/dlight.rst:96
+msgid "``MEASUREMENT_INTERVAL_50MS``"
+msgstr "``MEASUREMENT_INTERVAL_50MS``"
+
+#: ../docs/source/chain/dlight.rst:97
+msgid "``50``"
+msgstr "``50``"
+
+#: ../docs/source/chain/dlight.rst:98
+msgid "Measurement interval: 50 ms."
+msgstr "测量间隔：50 ms。"
+
+#: ../docs/source/chain/dlight.rst:99
+msgid "``MEASUREMENT_INTERVAL_100MS``"
+msgstr "``MEASUREMENT_INTERVAL_100MS``"
+
+#: ../docs/source/chain/dlight.rst:100
+msgid "``100``"
+msgstr "``100``"
+
+#: ../docs/source/chain/dlight.rst:101
+msgid "Measurement interval: 100 ms."
+msgstr "测量间隔：100 ms。"
+
+#: ../docs/source/chain/dlight.rst:102
+msgid "``MEASUREMENT_INTERVAL_500MS``"
+msgstr "``MEASUREMENT_INTERVAL_500MS``"
+
+#: ../docs/source/chain/dlight.rst:103
+msgid "``500``"
+msgstr "``500``"
+
+#: ../docs/source/chain/dlight.rst:104
+msgid "Measurement interval: 500 ms."
+msgstr "测量间隔：500 ms。"
+
+#: ../docs/source/chain/dlight.rst:105
+msgid "``MEASUREMENT_INTERVAL_1000MS``"
+msgstr "``MEASUREMENT_INTERVAL_1000MS``"
+
+#: ../docs/source/chain/dlight.rst:106
+msgid "``1000``"
+msgstr "``1000``"
+
+#: ../docs/source/chain/dlight.rst:107
+msgid "Measurement interval: 1000 ms."
+msgstr "测量间隔：1000 ms。"
+
+#: ../docs/source/chain/dlight.rst:108
+msgid "``MEASUREMENT_INTERVAL_2000MS``"
+msgstr "``MEASUREMENT_INTERVAL_2000MS``"
+
+#: ../docs/source/chain/dlight.rst:109
+msgid "``2000``"
+msgstr "``2000``"
+
+#: ../docs/source/chain/dlight.rst:110
+msgid "Measurement interval: 2000 ms."
+msgstr "测量间隔：2000 ms。"
+
+#: ../docs/source/chain/dlight.rst:111
+msgid "``EVENT_LOW``"
+msgstr "``EVENT_LOW``"
+
+#: ../docs/source/chain/dlight.rst:112 ../docs/source/chain/dlight.rst:118
+msgid "``0``"
+msgstr "``0``"
+
+#: ../docs/source/chain/dlight.rst:113
+msgid "Low illuminance event."
+msgstr "低照度事件。"
+
+#: ../docs/source/chain/dlight.rst:114
+msgid "``EVENT_HIGH``"
+msgstr "``EVENT_HIGH``"
+
+#: ../docs/source/chain/dlight.rst:116
+msgid "High illuminance event."
+msgstr "高照度事件。"
+
+#: ../docs/source/chain/dlight.rst:117
+msgid "``UID_4_BYTES``"
+msgstr "``UID_4_BYTES``"
+
+#: ../docs/source/chain/dlight.rst:119
+msgid "Four-byte UID."
+msgstr "4 字节 UID。"
+
+#: ../docs/source/chain/dlight.rst:120
+msgid "``UID_12_BYTES``"
+msgstr "``UID_12_BYTES``"
+
+#: ../docs/source/chain/dlight.rst:122
+msgid "Twelve-byte UID."
+msgstr "12 字节 UID。"
+
+#: ../docs/source/chain/dlight.rst:125
+msgid "Constructors"
+msgstr "构造函数"
+
+#: ../docs/source/chain/dlight.rst:130
+msgid ""
+"Create a DLightChain on an existing ChainBus. Registration performs no device configuration. The "
+"caller owns the bus and must close it after all devices are detached."
+msgstr "在已有 ChainBus 上创建 DLightChain。注册过程不改变设备配置。总线由调用者管理，所有设备注销后由调用者关闭。"
+
+#: ../docs/source/chain/dlight.rst
+msgid "Parameters"
+msgstr "参数"
+
+#: ../docs/source/chain/dlight.rst:132
+msgid "An open shared ChainBus instance."
+msgstr "已打开的共享 ChainBus 实例。"
+
+#: ../docs/source/chain/dlight.rst:134
+msgid "Enumerated Chain position, 1..254."
+msgstr "枚举得到的 Chain 位置，范围 1..254。"
+
+#: ../docs/source/chain/dlight.rst
+msgid "Returns"
+msgstr "返回值"
+
+#: ../docs/source/chain/dlight.rst:136
+msgid "A registered DLightChain object."
+msgstr "已注册的 DLightChain 对象。"
+
+#: ../docs/source/chain/dlight.rst
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../docs/source/chain/dlight.rst
+msgid "Raises"
+msgstr "异常"
+
+#: ../docs/source/chain/dlight.rst:138 ../docs/source/chain/dlight.rst:237
+#: ../docs/source/chain/dlight.rst:277 ../docs/source/chain/dlight.rst:317
+#: ../docs/source/chain/dlight.rst:358 ../docs/source/chain/dlight.rst:452
+#: ../docs/source/chain/dlight.rst:479 ../docs/source/chain/dlight.rst:507
+#: ../docs/source/chain/dlight.rst:547 ../docs/source/chain/dlight.rst:569
+#: ../docs/source/chain/dlight.rst:593 ../docs/source/chain/dlight.rst:633
+msgid "An argument has an invalid type."
+msgstr "参数类型不正确。"
+
+#: ../docs/source/chain/dlight.rst:139 ../docs/source/chain/dlight.rst:238
+#: ../docs/source/chain/dlight.rst:278 ../docs/source/chain/dlight.rst:318
+#: ../docs/source/chain/dlight.rst:359 ../docs/source/chain/dlight.rst:453
+#: ../docs/source/chain/dlight.rst:480 ../docs/source/chain/dlight.rst:508
+#: ../docs/source/chain/dlight.rst:548 ../docs/source/chain/dlight.rst:570
+#: ../docs/source/chain/dlight.rst:594 ../docs/source/chain/dlight.rst:634
+msgid "An argument is outside its documented range or resolution."
+msgstr "参数超出说明的范围或不符合分辨率要求。"
+
+#: ../docs/source/chain/dlight.rst:140 ../docs/source/chain/dlight.rst:162
+#: ../docs/source/chain/dlight.rst:180 ../docs/source/chain/dlight.rst:198
+#: ../docs/source/chain/dlight.rst:216 ../docs/source/chain/dlight.rst:240
+#: ../docs/source/chain/dlight.rst:258 ../docs/source/chain/dlight.rst:280
+#: ../docs/source/chain/dlight.rst:298 ../docs/source/chain/dlight.rst:320
+#: ../docs/source/chain/dlight.rst:339 ../docs/source/chain/dlight.rst:361
+#: ../docs/source/chain/dlight.rst:379 ../docs/source/chain/dlight.rst:397
+#: ../docs/source/chain/dlight.rst:415 ../docs/source/chain/dlight.rst:433
+#: ../docs/source/chain/dlight.rst:454 ../docs/source/chain/dlight.rst:482
+#: ../docs/source/chain/dlight.rst:510 ../docs/source/chain/dlight.rst:550
+#: ../docs/source/chain/dlight.rst:572 ../docs/source/chain/dlight.rst:596
+#: ../docs/source/chain/dlight.rst:614 ../docs/source/chain/dlight.rst:636
+#: ../docs/source/chain/dlight.rst:654 ../docs/source/chain/dlight.rst:672
+#: ../docs/source/chain/dlight.rst:690
+msgid "The device or its shared bus has been closed."
+msgstr "设备或其共享总线已关闭。"
+
+#: ../docs/source/chain/dlight.rst:142 ../docs/source/chain/dlight.rst:164
+#: ../docs/source/chain/dlight.rst:182 ../docs/source/chain/dlight.rst:200
+#: ../docs/source/chain/dlight.rst:218 ../docs/source/chain/dlight.rst:242
+#: ../docs/source/chain/dlight.rst:260 ../docs/source/chain/dlight.rst:282
+#: ../docs/source/chain/dlight.rst:300 ../docs/source/chain/dlight.rst:322
+#: ../docs/source/chain/dlight.rst:341 ../docs/source/chain/dlight.rst:363
+#: ../docs/source/chain/dlight.rst:381 ../docs/source/chain/dlight.rst:399
+#: ../docs/source/chain/dlight.rst:417 ../docs/source/chain/dlight.rst:435
+#: ../docs/source/chain/dlight.rst:456 ../docs/source/chain/dlight.rst:484
+#: ../docs/source/chain/dlight.rst:512 ../docs/source/chain/dlight.rst:528
+#: ../docs/source/chain/dlight.rst:552 ../docs/source/chain/dlight.rst:574
+#: ../docs/source/chain/dlight.rst:598 ../docs/source/chain/dlight.rst:616
+#: ../docs/source/chain/dlight.rst:638 ../docs/source/chain/dlight.rst:656
+#: ../docs/source/chain/dlight.rst:674 ../docs/source/chain/dlight.rst:692
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 积木："
+
+#: ../docs/source/chain/dlight.rst:152
+msgid "Methods"
+msgstr "方法"
+
+#: ../docs/source/chain/dlight.rst:157
+msgid "Read the most recent illuminance sample. The firmware returns its cached sample."
+msgstr "读取最新照度采样值，固件返回缓存的测量结果。"
+
+#: ../docs/source/chain/dlight.rst:159
+msgid "Illuminance in lux, 0..2516580."
+msgstr "照度，单位 lux，范围 0..2516580。"
+
+#: ../docs/source/chain/dlight.rst:161 ../docs/source/chain/dlight.rst:179
+#: ../docs/source/chain/dlight.rst:197 ../docs/source/chain/dlight.rst:215
+#: ../docs/source/chain/dlight.rst:239 ../docs/source/chain/dlight.rst:257
+#: ../docs/source/chain/dlight.rst:279 ../docs/source/chain/dlight.rst:297
+#: ../docs/source/chain/dlight.rst:319 ../docs/source/chain/dlight.rst:338
+#: ../docs/source/chain/dlight.rst:360 ../docs/source/chain/dlight.rst:378
+#: ../docs/source/chain/dlight.rst:396 ../docs/source/chain/dlight.rst:414
+#: ../docs/source/chain/dlight.rst:432 ../docs/source/chain/dlight.rst:481
+#: ../docs/source/chain/dlight.rst:509 ../docs/source/chain/dlight.rst:549
+#: ../docs/source/chain/dlight.rst:571 ../docs/source/chain/dlight.rst:595
+#: ../docs/source/chain/dlight.rst:613 ../docs/source/chain/dlight.rst:635
+#: ../docs/source/chain/dlight.rst:653 ../docs/source/chain/dlight.rst:671
+#: ../docs/source/chain/dlight.rst:689
+msgid "Communication failed, the response is malformed, or the device rejected the command."
+msgstr "通信失败、应答格式不正确或设备拒绝命令。"
+
+#: ../docs/source/chain/dlight.rst:175
+msgid ""
+"Enable sensor threshold detection; changing this gate resets the firmware threshold history. "
+"Repeated calls are safe. The setting is volatile."
+msgstr "启用传感器阈值检测；更改此开关会重置固件阈值历史，可重复调用，设置不写入 Flash。"
+
+#: ../docs/source/chain/dlight.rst:177 ../docs/source/chain/dlight.rst:195
+#: ../docs/source/chain/dlight.rst:235 ../docs/source/chain/dlight.rst:275
+#: ../docs/source/chain/dlight.rst:315 ../docs/source/chain/dlight.rst:356
+#: ../docs/source/chain/dlight.rst:394 ../docs/source/chain/dlight.rst:412
+#: ../docs/source/chain/dlight.rst:450 ../docs/source/chain/dlight.rst:505
+#: ../docs/source/chain/dlight.rst:525 ../docs/source/chain/dlight.rst:545
+#: ../docs/source/chain/dlight.rst:591
+msgid "No return value."
+msgstr "无返回值。"
+
+#: ../docs/source/chain/dlight.rst:193
+msgid ""
+"Disable sensor threshold detection; changing this gate resets the firmware threshold history. "
+"Repeated calls are safe. The setting is volatile."
+msgstr "禁用传感器阈值检测；更改此开关会重置固件阈值历史，可重复调用，设置不写入 Flash。"
+
+#: ../docs/source/chain/dlight.rst:211
+msgid "Check whether sensor threshold detection is enabled."
+msgstr "查询传感器阈值检测是否已启用。"
+
+#: ../docs/source/chain/dlight.rst:213 ../docs/source/chain/dlight.rst:430
+msgid "True if enabled, otherwise False."
+msgstr "启用时返回 True，否则返回 False。"
+
+#: ../docs/source/chain/dlight.rst:229
+msgid ""
+"Set the illuminance threshold window. The firmware briefly restarts measurement and resets the "
+"threshold history. The setting is volatile."
+msgstr "设置照度阈值窗口。固件会短暂重启测量并重置阈值历史；设置不写入 Flash。"
+
+#: ../docs/source/chain/dlight.rst:231
+msgid "Lower threshold in lux, 0..2516580; must be less than high."
+msgstr "照度下限，单位 lux，范围 0..2516580，必须小于 high。"
+
+#: ../docs/source/chain/dlight.rst:233
+msgid "Upper threshold in lux, 0..2516580; must be greater than low."
+msgstr "照度上限，单位 lux，范围 0..2516580，必须大于 low。"
+
+#: ../docs/source/chain/dlight.rst:253
+msgid "Get the configured illuminance threshold window."
+msgstr "读取配置的照度阈值窗口。"
+
+#: ../docs/source/chain/dlight.rst:255
+msgid "Tuple (low, high), in lux."
+msgstr "元组 (low, high)，单位 lux。"
+
+#: ../docs/source/chain/dlight.rst:271
+msgid "Set measurement gain. The setting is volatile. Measurement restarts and thresholds are reapplied."
+msgstr "设置测量增益，设置不写入 Flash。测量会重启，并重新应用阈值。"
+
+#: ../docs/source/chain/dlight.rst:273 ../docs/source/chain/dlight.rst:295
+msgid "Gain multiplier: GAIN_1X, GAIN_3X, GAIN_6X, GAIN_9X or GAIN_18X."
+msgstr "增益倍数：GAIN_1X、GAIN_3X、GAIN_6X、GAIN_9X 或 GAIN_18X。"
+
+#: ../docs/source/chain/dlight.rst:293
+msgid "Get measurement gain."
+msgstr "读取测量增益。"
+
+#: ../docs/source/chain/dlight.rst:311
+msgid ""
+"Set measurement resolution. The setting is volatile. The current interval must strictly exceed "
+"the conversion time: 16/17/18/19/20 bits require 25/50/100/200/400 ms respectively. The firmware "
+"rejects incompatible combinations."
+msgstr "设置测量分辨率，掉电不保存。当前测量间隔必须严格大于转换时间：16/17/18/19/20 bit 分别对应 25/50/100/200/400 ms。固件会拒绝不兼容的组合。"
+
+#: ../docs/source/chain/dlight.rst:313 ../docs/source/chain/dlight.rst:336
+msgid "A RESOLUTION_*BIT constant, in bits: 16, 17, 18, 19 or 20."
+msgstr "RESOLUTION_*BIT 常量，单位 bit：16、17、18、19 或 20。"
+
+#: ../docs/source/chain/dlight.rst:334
+msgid "Get measurement resolution."
+msgstr "读取测量分辨率。"
+
+#: ../docs/source/chain/dlight.rst:352
+msgid ""
+"Set measurement interval. The setting is volatile. The interval must strictly exceed the "
+"conversion time: 20/19/18/17/16 bits require 400/200/100/50/25 ms respectively. Use 500 ms or "
+"longer for any resolution. The unsupported 25 ms setting is rejected before I/O."
+msgstr ""
+"设置测量间隔，掉电不保存。间隔必须严格大于转换时间：20/19/18/17/16 bit 分别对应 400/200/100/50/25 ms。500 ms 及以上适用于所有分辨率。不支持的 25"
+" ms 设置会在通信前被拒绝。"
+
+#: ../docs/source/chain/dlight.rst:354
+msgid "A MEASUREMENT_INTERVAL_*MS constant: 50, 100, 500, 1000 or 2000 ms."
+msgstr "MEASUREMENT_INTERVAL_*MS 常量：50、100、500、1000 或 2000 ms。"
+
+#: ../docs/source/chain/dlight.rst:374
+msgid "Get measurement interval."
+msgstr "读取测量间隔。"
+
+#: ../docs/source/chain/dlight.rst:376
+msgid "Interval in milliseconds. Allowed: (25, 50, 100, 500, 1000, 2000)."
+msgstr "间隔，单位毫秒。可选值：(25, 50, 100, 500, 1000, 2000)。"
+
+#: ../docs/source/chain/dlight.rst:392
+msgid ""
+"Enable threshold event reporting; sensor threshold detection must also be enabled. Repeated calls"
+" are safe. The setting is volatile."
+msgstr "启用阈值事件上报；还需要启用传感器阈值检测，可重复调用，设置不写入 Flash。"
+
+#: ../docs/source/chain/dlight.rst:410
+msgid "Disable threshold event reporting. Repeated calls are safe. The setting is volatile."
+msgstr "禁用阈值事件上报，可重复调用，掉电不保存。"
+
+#: ../docs/source/chain/dlight.rst:428
+msgid ""
+"Check whether threshold event reporting is enabled. Events require both reporting and threshold "
+"detection to be enabled."
+msgstr "查询阈值事件上报是否已启用。产生事件需要同时启用上报和阈值检测。"
+
+#: ../docs/source/chain/dlight.rst:446
+msgid ""
+"Register one event callback, replacing the previous callback. Registration does not change device"
+" reporting settings. The callback receives one integer. Do not call Chain methods inside the "
+"callback; record the event for the main loop. Events: 0 means below the lower threshold, 1 means "
+"above the upper threshold. Returning inside the window does not emit a recovery event."
+msgstr ""
+"注册一个事件回调并替换此前的回调，不改变设备上报设置。回调接收一个整数参数。请在回调中记录事件，由主循环处理，不要在回调内调用 Chain 方法。事件值：0 为低于下限，1 "
+"为高于上限。回到阈值窗口内不会发送恢复事件。"
+
+#: ../docs/source/chain/dlight.rst:448
+msgid "Function called with the event integer; None unregisters it."
+msgstr "接收事件整数的函数；None 表示注销回调。"
+
+#: ../docs/source/chain/dlight.rst:467
+msgid "Read the internal sensor I2C register space through Chain. This may clear sensor status registers."
+msgstr "通过 Chain 读取内部传感器 I2C 寄存器；读取操作可能清除传感器状态位。"
+
+#: ../docs/source/chain/dlight.rst:469 ../docs/source/chain/dlight.rst:497
+msgid "Seven-bit internal I2C address, 0x08..0x77."
+msgstr "内部 I2C 七位地址，范围 0x08..0x77。"
+
+#: ../docs/source/chain/dlight.rst:471 ../docs/source/chain/dlight.rst:499
+msgid "Register address, 0..255 for addrsize=8 or 0..65535 for addrsize=16."
+msgstr "寄存器地址：addrsize=8 时为 0..255，addrsize=16 时为 0..65535。"
+
+#: ../docs/source/chain/dlight.rst:473
+msgid "Number of bytes, 1..64."
+msgstr "读取字节数，范围 1..64。"
+
+#: ../docs/source/chain/dlight.rst:475 ../docs/source/chain/dlight.rst:503
+msgid "Register address width in bits, 8 or 16. Default: 8."
+msgstr "寄存器地址位宽，8 或 16；默认为 8。"
+
+#: ../docs/source/chain/dlight.rst:477
+msgid "Requested register bytes."
+msgstr "请求的寄存器字节。"
+
+#: ../docs/source/chain/dlight.rst:495
+msgid ""
+"Write the internal sensor I2C register space through Chain. Direct register writes can change "
+"measurement and alarm configuration; use sensor-specific configuration methods for normal "
+"operation."
+msgstr "通过 Chain 写入内部传感器 I2C 寄存器。直接写寄存器可能改变测量和告警配置；常规操作请使用传感器专用配置方法。"
+
+#: ../docs/source/chain/dlight.rst:501
+msgid "Buffer containing 1..64 bytes."
+msgstr "包含 1..64 字节的缓冲区。"
+
+#: ../docs/source/chain/dlight.rst:523
+msgid ""
+"Detach this object and its callbacks. Repeated calls are safe. Hardware configuration and the "
+"shared ChainBus remain active."
+msgstr "注销此对象及其回调，可重复调用。硬件配置和共享 ChainBus 保持运行。"
+
+#: ../docs/source/chain/dlight.rst:539
+msgid ""
+"Set the base RGB color. Firmware alarm or Pedal overlays can temporarily cover this color. This "
+"setting is volatile."
+msgstr "设置基础 RGB 颜色。固件告警或踏板叠加灯效可能暂时覆盖此颜色；此设置不写入 Flash。"
+
+#: ../docs/source/chain/dlight.rst:541 ../docs/source/chain/dlight.rst:567
+msgid "RGB888 color, 0x000000..0xFFFFFF."
+msgstr "RGB888 颜色，范围 0x000000..0xFFFFFF。"
+
+#: ../docs/source/chain/dlight.rst:543 ../docs/source/chain/dlight.rst:565
+msgid "Base LED index; 0 for sensors, 0..3 for Pedal. Default: 0."
+msgstr "基础灯索引：传感器为 0，Pedal 为 0..3；默认为 0。"
+
+#: ../docs/source/chain/dlight.rst:563
+msgid "Get the configured base RGB color, excluding firmware overlays."
+msgstr "读取配置的基础 RGB 颜色，不包含固件叠加灯效。"
+
+#: ../docs/source/chain/dlight.rst:585
+msgid "Set the global RGB brightness. Saving writes device flash."
+msgstr "设置全局 RGB 亮度，保存操作会写入设备 Flash。"
+
+#: ../docs/source/chain/dlight.rst:587 ../docs/source/chain/dlight.rst:611
+msgid "Brightness in percent, 0..100."
+msgstr "亮度百分比，范围 0..100。"
+
+#: ../docs/source/chain/dlight.rst:589
+msgid "Save this setting to device flash. Default: False."
+msgstr "是否将此设置保存到设备 Flash；默认为 False。"
+
+#: ../docs/source/chain/dlight.rst:609
+msgid "Get the global RGB brightness."
+msgstr "读取全局 RGB 亮度。"
+
+#: ../docs/source/chain/dlight.rst:627
+msgid "Get the device UID."
+msgstr "读取设备 UID。"
+
+#: ../docs/source/chain/dlight.rst:629
+msgid "UID_4_BYTES (0) or UID_12_BYTES (1). Default: UID_4_BYTES (0)."
+msgstr "UID_4_BYTES（0，4 字节）或 UID_12_BYTES（1，12 字节）。默认：UID_4_BYTES（0）。"
+
+#: ../docs/source/chain/dlight.rst:631
+msgid "Four or twelve UID bytes."
+msgstr "四个或十二个 UID 字节。"
+
+#: ../docs/source/chain/dlight.rst:649
+msgid "Get the bootloader version."
+msgstr "读取引导程序版本。"
+
+#: ../docs/source/chain/dlight.rst:651 ../docs/source/chain/dlight.rst:669
+#: ../docs/source/chain/dlight.rst:687
+msgid "Device-reported numeric identifier."
+msgstr "设备返回的数值标识。"
+
+#: ../docs/source/chain/dlight.rst:667
+msgid "Get the firmware version."
+msgstr "读取固件版本。"
+
+#: ../docs/source/chain/dlight.rst:685
+msgid "Get the device type."
+msgstr "读取设备类型。"
+
+msgid "DLight illuminance display"
+msgstr "DLight 照度显示"
+
+msgid "Open the |m5core_chain_dlight_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_dlight_basic_example.m5f2| 项目。"
+
+msgid ""
+"Connect Chain DLight as the first device on M5Stack Basic UART2 (TX=21, RX=22). The screen "
+"displays the live illuminance in lux."
+msgstr "将 Chain DLight 接为 M5Stack Basic UART2（TX=21、RX=22）上的第一个设备。屏幕实时显示照度值，单位 lux。"
+
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+msgid "Driver for Chain DLight."
+msgstr "Chain DLight 驱动。"
+
+msgid "Detach the device and release all callbacks; the shared bus stays open."
+msgstr "注销设备并清除全部回调，保留共享总线。"
+
+msgid "Repeated calls are safe. Returns None."
+msgstr "可重复调用，无返回值。"
+
+msgid ""
+"Set the illuminance alarm threshold window. The firmware briefly restarts measurement and resets "
+"the threshold history. The setting is volatile."
+msgstr "设置照度报警阈值。设置时会短暂重新启动测量，并清除阈值状态记录；设置不保存到 Flash。"
+
+msgid "Get the configured illuminance alarm threshold window."
+msgstr "读取当前照度报警阈值。"
+
+msgid "Register a threshold callback without changing hardware reporting gates."
+msgstr "注册阈值事件回调，不改变硬件事件上报设置。"
+
+msgid ""
+"set_event_callback(EVENT_LOW/HIGH, callback) replaces only that event's handler; None removes it."
+" Callbacks receive the event integer. The legacy set_event_callback(callback) form replaces all "
+"handlers with one handler for both events; set_event_callback(None) removes all handlers. The two"
+" forms replace one another. Do not call Chain methods inside a callback."
+msgstr ""
+"set_event_callback(EVENT_LOW/HIGH, callback) 仅替换所选事件的回调，传入 None 可注销该回调。回调参数为事件整数。旧形式 "
+"set_event_callback(callback) 使用一个回调处理两种事件，并替换全部已有回调；set_event_callback(None) "
+"注销全部回调。两种注册形式会相互替换。请勿在回调中调用 Chain 设备接口。"
+
+msgid "EVENT_LOW (0), EVENT_HIGH (1), or a legacy callback/None."
+msgstr "EVENT_LOW（0）、EVENT_HIGH（1），或旧形式的回调函数/None。"
+
+msgid "Event handler, or the legacy keyword handler when event is None."
+msgstr "事件回调函数；event 为 None 时，也可用于旧形式的关键字回调参数。"

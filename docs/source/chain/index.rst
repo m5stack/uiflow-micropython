@@ -8,6 +8,9 @@ Chain
     buzzer.rst
     encoder.rst
     chainbus.rst
+    dlight.rst
+    env.rst
+    imu.rst
     joystick.rst
     key.rst
     mic.rst

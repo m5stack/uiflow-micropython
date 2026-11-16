@@ -1,0 +1,871 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-14 21:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../docs/source/chain/imu.rst:2 ../docs/source/refs/chain.imu.ref:1
+msgid "Chain IMU"
+msgstr "Chain IMU"
+
+#: ../docs/source/chain/imu.rst:8
+msgid "This library is the driver for Chain IMU."
+msgstr "此库是 Chain IMU 的驱动。"
+
+#: ../docs/source/chain/imu.rst:10
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../docs/source/chain/imu.rst:12
+msgid "|Chain IMU|"
+msgstr "|Chain IMU|"
+
+#: ../docs/source/chain/imu.rst:15
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../docs/source/chain/imu.rst:18
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../docs/source/chain/imu.rst:25 ../docs/source/chain/imu.rst:40 ../docs/source/chain/imu.rst:183
+#: ../docs/source/chain/imu.rst:205 ../docs/source/chain/imu.rst:223 ../docs/source/chain/imu.rst:241
+#: ../docs/source/chain/imu.rst:259 ../docs/source/chain/imu.rst:277 ../docs/source/chain/imu.rst:299
+#: ../docs/source/chain/imu.rst:317 ../docs/source/chain/imu.rst:339 ../docs/source/chain/imu.rst:357
+#: ../docs/source/chain/imu.rst:379 ../docs/source/chain/imu.rst:397 ../docs/source/chain/imu.rst:419
+#: ../docs/source/chain/imu.rst:437 ../docs/source/chain/imu.rst:459 ../docs/source/chain/imu.rst:477
+#: ../docs/source/chain/imu.rst:501 ../docs/source/chain/imu.rst:519 ../docs/source/chain/imu.rst:543
+#: ../docs/source/chain/imu.rst:561 ../docs/source/chain/imu.rst:582 ../docs/source/chain/imu.rst:610
+#: ../docs/source/chain/imu.rst:638 ../docs/source/chain/imu.rst:654 ../docs/source/chain/imu.rst:678
+#: ../docs/source/chain/imu.rst:700 ../docs/source/chain/imu.rst:724 ../docs/source/chain/imu.rst:742
+#: ../docs/source/chain/imu.rst:764 ../docs/source/chain/imu.rst:782 ../docs/source/chain/imu.rst:800
+#: ../docs/source/chain/imu.rst:818
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码："
+
+#: ../docs/source/chain/imu.rst:31 ../docs/source/chain/imu.rst:46
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../docs/source/chain/imu.rst:33 ../docs/source/chain/imu.rst:48
+msgid "None"
+msgstr "None"
+
+#: ../docs/source/chain/imu.rst:51
+msgid "**API**"
+msgstr "**API**"
+
+#: ../docs/source/chain/imu.rst:54
+msgid "IMUChain"
+msgstr "IMUChain"
+
+#: ../docs/source/chain/imu.rst:57
+msgid "Constants"
+msgstr "常量"
+
+#: ../docs/source/chain/imu.rst:63
+msgid "Constant"
+msgstr "常量"
+
+#: ../docs/source/chain/imu.rst:64
+msgid "Value"
+msgstr "值"
+
+#: ../docs/source/chain/imu.rst:65
+msgid "Description"
+msgstr "说明"
+
+#: ../docs/source/chain/imu.rst:66
+msgid "``ACCEL_RANGE_2G``"
+msgstr "``ACCEL_RANGE_2G``"
+
+#: ../docs/source/chain/imu.rst:67 ../docs/source/chain/imu.rst:148
+msgid "``2``"
+msgstr "``2``"
+
+#: ../docs/source/chain/imu.rst:68
+msgid "Acceleration full-scale magnitude: 2 g."
+msgstr "加速度满量程幅值：2 g。"
+
+#: ../docs/source/chain/imu.rst:69
+msgid "``ACCEL_RANGE_4G``"
+msgstr "``ACCEL_RANGE_4G``"
+
+#: ../docs/source/chain/imu.rst:70 ../docs/source/chain/imu.rst:151
+msgid "``4``"
+msgstr "``4``"
+
+#: ../docs/source/chain/imu.rst:71
+msgid "Acceleration full-scale magnitude: 4 g."
+msgstr "加速度满量程幅值：4 g。"
+
+#: ../docs/source/chain/imu.rst:72
+msgid "``ACCEL_RANGE_8G``"
+msgstr "``ACCEL_RANGE_8G``"
+
+#: ../docs/source/chain/imu.rst:73
+msgid "``8``"
+msgstr "``8``"
+
+#: ../docs/source/chain/imu.rst:74
+msgid "Acceleration full-scale magnitude: 8 g."
+msgstr "加速度满量程幅值：8 g。"
+
+#: ../docs/source/chain/imu.rst:75
+msgid "``ACCEL_RANGE_16G``"
+msgstr "``ACCEL_RANGE_16G``"
+
+#: ../docs/source/chain/imu.rst:76
+msgid "``16``"
+msgstr "``16``"
+
+#: ../docs/source/chain/imu.rst:77
+msgid "Acceleration full-scale magnitude: 16 g."
+msgstr "加速度满量程幅值：16 g。"
+
+#: ../docs/source/chain/imu.rst:78
+msgid "``GYRO_RANGE_125DPS``"
+msgstr "``GYRO_RANGE_125DPS``"
+
+#: ../docs/source/chain/imu.rst:79
+msgid "``125``"
+msgstr "``125``"
+
+#: ../docs/source/chain/imu.rst:80
+msgid "Gyroscope full-scale magnitude: 125 degrees/s."
+msgstr "陀螺仪满量程幅值：125 degrees/s。"
+
+#: ../docs/source/chain/imu.rst:81
+msgid "``GYRO_RANGE_250DPS``"
+msgstr "``GYRO_RANGE_250DPS``"
+
+#: ../docs/source/chain/imu.rst:82
+msgid "``250``"
+msgstr "``250``"
+
+#: ../docs/source/chain/imu.rst:83
+msgid "Gyroscope full-scale magnitude: 250 degrees/s."
+msgstr "陀螺仪满量程幅值：250 degrees/s。"
+
+#: ../docs/source/chain/imu.rst:84
+msgid "``GYRO_RANGE_500DPS``"
+msgstr "``GYRO_RANGE_500DPS``"
+
+#: ../docs/source/chain/imu.rst:85
+msgid "``500``"
+msgstr "``500``"
+
+#: ../docs/source/chain/imu.rst:86
+msgid "Gyroscope full-scale magnitude: 500 degrees/s."
+msgstr "陀螺仪满量程幅值：500 degrees/s。"
+
+#: ../docs/source/chain/imu.rst:87
+msgid "``GYRO_RANGE_1000DPS``"
+msgstr "``GYRO_RANGE_1000DPS``"
+
+#: ../docs/source/chain/imu.rst:88
+msgid "``1000``"
+msgstr "``1000``"
+
+#: ../docs/source/chain/imu.rst:89
+msgid "Gyroscope full-scale magnitude: 1000 degrees/s."
+msgstr "陀螺仪满量程幅值：1000 degrees/s。"
+
+#: ../docs/source/chain/imu.rst:90
+msgid "``GYRO_RANGE_2000DPS``"
+msgstr "``GYRO_RANGE_2000DPS``"
+
+#: ../docs/source/chain/imu.rst:91
+msgid "``2000``"
+msgstr "``2000``"
+
+#: ../docs/source/chain/imu.rst:92
+msgid "Gyroscope full-scale magnitude: 2000 degrees/s."
+msgstr "陀螺仪满量程幅值：2000 degrees/s。"
+
+#: ../docs/source/chain/imu.rst:93
+msgid "``ODR_POWER_DOWN``"
+msgstr "``ODR_POWER_DOWN``"
+
+#: ../docs/source/chain/imu.rst:94 ../docs/source/chain/imu.rst:142 ../docs/source/chain/imu.rst:157
+msgid "``0``"
+msgstr "``0``"
+
+#: ../docs/source/chain/imu.rst:95
+msgid "Disable sampling on the selected accel or gyro channel."
+msgstr "关闭所选 accel 或 gyro 通道的采样。"
+
+#: ../docs/source/chain/imu.rst:96
+msgid "``ODR_1_6HZ``"
+msgstr "``ODR_1_6HZ``"
+
+#: ../docs/source/chain/imu.rst:97
+msgid "``1.6``"
+msgstr "``1.6``"
+
+#: ../docs/source/chain/imu.rst:98
+msgid "Sampling frequency: 1.6 Hz (accel only)."
+msgstr "采样频率：1.6 Hz，仅适用于 accel。"
+
+#: ../docs/source/chain/imu.rst:99
+msgid "``ODR_12_5HZ``"
+msgstr "``ODR_12_5HZ``"
+
+#: ../docs/source/chain/imu.rst:100
+msgid "``12.5``"
+msgstr "``12.5``"
+
+#: ../docs/source/chain/imu.rst:101
+msgid "Sampling frequency: 12.5 Hz."
+msgstr "采样频率：12.5 Hz。"
+
+#: ../docs/source/chain/imu.rst:102
+msgid "``ODR_26HZ``"
+msgstr "``ODR_26HZ``"
+
+#: ../docs/source/chain/imu.rst:103
+msgid "``26``"
+msgstr "``26``"
+
+#: ../docs/source/chain/imu.rst:104
+msgid "Sampling frequency: 26 Hz."
+msgstr "采样频率：26 Hz。"
+
+#: ../docs/source/chain/imu.rst:105
+msgid "``ODR_52HZ``"
+msgstr "``ODR_52HZ``"
+
+#: ../docs/source/chain/imu.rst:106
+msgid "``52``"
+msgstr "``52``"
+
+#: ../docs/source/chain/imu.rst:107
+msgid "Sampling frequency: 52 Hz."
+msgstr "采样频率：52 Hz。"
+
+#: ../docs/source/chain/imu.rst:108
+msgid "``ODR_104HZ``"
+msgstr "``ODR_104HZ``"
+
+#: ../docs/source/chain/imu.rst:109
+msgid "``104``"
+msgstr "``104``"
+
+#: ../docs/source/chain/imu.rst:110
+msgid "Sampling frequency: 104 Hz."
+msgstr "采样频率：104 Hz。"
+
+#: ../docs/source/chain/imu.rst:111
+msgid "``ODR_208HZ``"
+msgstr "``ODR_208HZ``"
+
+#: ../docs/source/chain/imu.rst:112
+msgid "``208``"
+msgstr "``208``"
+
+#: ../docs/source/chain/imu.rst:113
+msgid "Sampling frequency: 208 Hz."
+msgstr "采样频率：208 Hz。"
+
+#: ../docs/source/chain/imu.rst:114
+msgid "``ODR_416HZ``"
+msgstr "``ODR_416HZ``"
+
+#: ../docs/source/chain/imu.rst:115
+msgid "``416``"
+msgstr "``416``"
+
+#: ../docs/source/chain/imu.rst:116
+msgid "Sampling frequency: 416 Hz."
+msgstr "采样频率：416 Hz。"
+
+#: ../docs/source/chain/imu.rst:117
+msgid "``ODR_833HZ``"
+msgstr "``ODR_833HZ``"
+
+#: ../docs/source/chain/imu.rst:118
+msgid "``833``"
+msgstr "``833``"
+
+#: ../docs/source/chain/imu.rst:119
+msgid "Sampling frequency: 833 Hz."
+msgstr "采样频率：833 Hz。"
+
+#: ../docs/source/chain/imu.rst:120
+msgid "``ODR_1660HZ``"
+msgstr "``ODR_1660HZ``"
+
+#: ../docs/source/chain/imu.rst:121
+msgid "``1660``"
+msgstr "``1660``"
+
+#: ../docs/source/chain/imu.rst:122
+msgid "Sampling frequency: 1660 Hz."
+msgstr "采样频率：1660 Hz。"
+
+#: ../docs/source/chain/imu.rst:123
+msgid "``ODR_3330HZ``"
+msgstr "``ODR_3330HZ``"
+
+#: ../docs/source/chain/imu.rst:124
+msgid "``3330``"
+msgstr "``3330``"
+
+#: ../docs/source/chain/imu.rst:125
+msgid "Sampling frequency: 3330 Hz."
+msgstr "采样频率：3330 Hz。"
+
+#: ../docs/source/chain/imu.rst:126
+msgid "``ODR_6660HZ``"
+msgstr "``ODR_6660HZ``"
+
+#: ../docs/source/chain/imu.rst:127
+msgid "``6660``"
+msgstr "``6660``"
+
+#: ../docs/source/chain/imu.rst:128
+msgid "Sampling frequency: 6660 Hz."
+msgstr "采样频率：6660 Hz。"
+
+#: ../docs/source/chain/imu.rst:129
+msgid "``ACCEL_RANGES``"
+msgstr "``ACCEL_RANGES``"
+
+#: ../docs/source/chain/imu.rst:130
+msgid "``(2, 4, 8, 16)``"
+msgstr "``(2, 4, 8, 16)``"
+
+#: ../docs/source/chain/imu.rst:131
+msgid "Supported accel ranges in g."
+msgstr "支持的加速度量程，单位 g。"
+
+#: ../docs/source/chain/imu.rst:132
+msgid "``GYRO_RANGES``"
+msgstr "``GYRO_RANGES``"
+
+#: ../docs/source/chain/imu.rst:133
+msgid "``(125, 250, 500, 1000, 2000)``"
+msgstr "``(125, 250, 500, 1000, 2000)``"
+
+#: ../docs/source/chain/imu.rst:134
+msgid "Supported gyro ranges in degrees/s."
+msgstr "支持的陀螺仪量程，单位 °/s。"
+
+#: ../docs/source/chain/imu.rst:135
+msgid "``ACCEL_ODR_VALUES``"
+msgstr "``ACCEL_ODR_VALUES``"
+
+#: ../docs/source/chain/imu.rst:136
+msgid "``(0, 1.6, 12.5, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660)``"
+msgstr "``(0, 1.6, 12.5, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660)``"
+
+#: ../docs/source/chain/imu.rst:137
+msgid "Supported accel sampling frequencies in Hz; 0 disables sampling."
+msgstr "支持的加速度采样率，单位 Hz；0 关闭采样。"
+
+#: ../docs/source/chain/imu.rst:138
+msgid "``GYRO_ODR_VALUES``"
+msgstr "``GYRO_ODR_VALUES``"
+
+#: ../docs/source/chain/imu.rst:139
+msgid "``(0, 12.5, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660)``"
+msgstr "``(0, 12.5, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660)``"
+
+#: ../docs/source/chain/imu.rst:140
+msgid "Supported gyro sampling frequencies in Hz; 0 disables sampling."
+msgstr "支持的陀螺仪采样率，单位 Hz；0 关闭采样。"
+
+#: ../docs/source/chain/imu.rst:141
+msgid "``ALARM_NONE``"
+msgstr "``ALARM_NONE``"
+
+#: ../docs/source/chain/imu.rst:143
+msgid "Disable all alarms."
+msgstr "关闭全部告警。"
+
+#: ../docs/source/chain/imu.rst:144
+msgid "``ALARM_ACCEL``"
+msgstr "``ALARM_ACCEL``"
+
+#: ../docs/source/chain/imu.rst:145 ../docs/source/chain/imu.rst:160
+msgid "``1``"
+msgstr "``1``"
+
+#: ../docs/source/chain/imu.rst:146
+msgid "Accel alarm bit."
+msgstr "加速度告警位。"
+
+#: ../docs/source/chain/imu.rst:147
+msgid "``ALARM_GYRO``"
+msgstr "``ALARM_GYRO``"
+
+#: ../docs/source/chain/imu.rst:149
+msgid "Gyro alarm bit."
+msgstr "角速度告警位。"
+
+#: ../docs/source/chain/imu.rst:150
+msgid "``ALARM_TEMPERATURE``"
+msgstr "``ALARM_TEMPERATURE``"
+
+#: ../docs/source/chain/imu.rst:152
+msgid "Temperature alarm bit."
+msgstr "温度告警位。"
+
+#: ../docs/source/chain/imu.rst:153
+msgid "``ALARM_ALL``"
+msgstr "``ALARM_ALL``"
+
+#: ../docs/source/chain/imu.rst:154
+msgid "``7``"
+msgstr "``7``"
+
+#: ../docs/source/chain/imu.rst:155
+msgid "Enable all alarm sources."
+msgstr "启用全部告警来源。"
+
+#: ../docs/source/chain/imu.rst:156
+msgid "``UID_4_BYTES``"
+msgstr "``UID_4_BYTES``"
+
+#: ../docs/source/chain/imu.rst:158
+msgid "Four-byte UID."
+msgstr "4 字节 UID。"
+
+#: ../docs/source/chain/imu.rst:159
+msgid "``UID_12_BYTES``"
+msgstr "``UID_12_BYTES``"
+
+#: ../docs/source/chain/imu.rst:161
+msgid "Twelve-byte UID."
+msgstr "12 字节 UID。"
+
+#: ../docs/source/chain/imu.rst:164
+msgid "Constructors"
+msgstr "构造函数"
+
+#: ../docs/source/chain/imu.rst:169
+msgid ""
+"Create a IMUChain on an existing ChainBus. Registration performs no device configuration. The "
+"caller owns the bus and must close it after all devices are detached."
+msgstr "在已有 ChainBus 上创建 IMUChain。注册过程不改变设备配置。总线由调用者管理，所有设备注销后由调用者关闭。"
+
+#: ../docs/source/chain/imu.rst
+msgid "Parameters"
+msgstr "参数"
+
+#: ../docs/source/chain/imu.rst:171
+msgid "An open shared ChainBus instance."
+msgstr "已打开的共享 ChainBus 实例。"
+
+#: ../docs/source/chain/imu.rst:173
+msgid "Enumerated Chain position, 1..254."
+msgstr "枚举得到的 Chain 位置，范围 1..254。"
+
+#: ../docs/source/chain/imu.rst
+msgid "Returns"
+msgstr "返回值"
+
+#: ../docs/source/chain/imu.rst:175
+msgid "A registered IMUChain object."
+msgstr "已注册的 IMUChain 对象。"
+
+#: ../docs/source/chain/imu.rst
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../docs/source/chain/imu.rst
+msgid "Raises"
+msgstr "异常"
+
+#: ../docs/source/chain/imu.rst:177 ../docs/source/chain/imu.rst:292 ../docs/source/chain/imu.rst:332
+#: ../docs/source/chain/imu.rst:372 ../docs/source/chain/imu.rst:412 ../docs/source/chain/imu.rst:452
+#: ../docs/source/chain/imu.rst:494 ../docs/source/chain/imu.rst:536 ../docs/source/chain/imu.rst:576
+#: ../docs/source/chain/imu.rst:603 ../docs/source/chain/imu.rst:631 ../docs/source/chain/imu.rst:671
+#: ../docs/source/chain/imu.rst:693 ../docs/source/chain/imu.rst:717 ../docs/source/chain/imu.rst:757
+msgid "An argument has an invalid type."
+msgstr "参数类型不正确。"
+
+#: ../docs/source/chain/imu.rst:178 ../docs/source/chain/imu.rst:293 ../docs/source/chain/imu.rst:333
+#: ../docs/source/chain/imu.rst:373 ../docs/source/chain/imu.rst:413 ../docs/source/chain/imu.rst:453
+#: ../docs/source/chain/imu.rst:495 ../docs/source/chain/imu.rst:537 ../docs/source/chain/imu.rst:577
+#: ../docs/source/chain/imu.rst:604 ../docs/source/chain/imu.rst:632 ../docs/source/chain/imu.rst:672
+#: ../docs/source/chain/imu.rst:694 ../docs/source/chain/imu.rst:718 ../docs/source/chain/imu.rst:758
+msgid "An argument is outside its documented range or resolution."
+msgstr "参数超出说明的范围或不符合分辨率要求。"
+
+#: ../docs/source/chain/imu.rst:179 ../docs/source/chain/imu.rst:201 ../docs/source/chain/imu.rst:219
+#: ../docs/source/chain/imu.rst:237 ../docs/source/chain/imu.rst:255 ../docs/source/chain/imu.rst:273
+#: ../docs/source/chain/imu.rst:295 ../docs/source/chain/imu.rst:313 ../docs/source/chain/imu.rst:335
+#: ../docs/source/chain/imu.rst:353 ../docs/source/chain/imu.rst:375 ../docs/source/chain/imu.rst:393
+#: ../docs/source/chain/imu.rst:415 ../docs/source/chain/imu.rst:433 ../docs/source/chain/imu.rst:455
+#: ../docs/source/chain/imu.rst:473 ../docs/source/chain/imu.rst:497 ../docs/source/chain/imu.rst:515
+#: ../docs/source/chain/imu.rst:539 ../docs/source/chain/imu.rst:557 ../docs/source/chain/imu.rst:578
+#: ../docs/source/chain/imu.rst:606 ../docs/source/chain/imu.rst:634 ../docs/source/chain/imu.rst:674
+#: ../docs/source/chain/imu.rst:696 ../docs/source/chain/imu.rst:720 ../docs/source/chain/imu.rst:738
+#: ../docs/source/chain/imu.rst:760 ../docs/source/chain/imu.rst:778 ../docs/source/chain/imu.rst:796
+#: ../docs/source/chain/imu.rst:814
+msgid "The device or its shared bus has been closed."
+msgstr "设备或其共享总线已关闭。"
+
+#: ../docs/source/chain/imu.rst:181 ../docs/source/chain/imu.rst:203 ../docs/source/chain/imu.rst:221
+#: ../docs/source/chain/imu.rst:239 ../docs/source/chain/imu.rst:257 ../docs/source/chain/imu.rst:275
+#: ../docs/source/chain/imu.rst:297 ../docs/source/chain/imu.rst:315 ../docs/source/chain/imu.rst:337
+#: ../docs/source/chain/imu.rst:355 ../docs/source/chain/imu.rst:377 ../docs/source/chain/imu.rst:395
+#: ../docs/source/chain/imu.rst:417 ../docs/source/chain/imu.rst:435 ../docs/source/chain/imu.rst:457
+#: ../docs/source/chain/imu.rst:475 ../docs/source/chain/imu.rst:499 ../docs/source/chain/imu.rst:517
+#: ../docs/source/chain/imu.rst:541 ../docs/source/chain/imu.rst:559 ../docs/source/chain/imu.rst:580
+#: ../docs/source/chain/imu.rst:608 ../docs/source/chain/imu.rst:636 ../docs/source/chain/imu.rst:652
+#: ../docs/source/chain/imu.rst:676 ../docs/source/chain/imu.rst:698 ../docs/source/chain/imu.rst:722
+#: ../docs/source/chain/imu.rst:740 ../docs/source/chain/imu.rst:762 ../docs/source/chain/imu.rst:780
+#: ../docs/source/chain/imu.rst:798 ../docs/source/chain/imu.rst:816
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 积木："
+
+#: ../docs/source/chain/imu.rst:191
+msgid "Methods"
+msgstr "方法"
+
+#: ../docs/source/chain/imu.rst:196
+msgid "Read three-axis acceleration in m/s^2, using standard gravity 9.80665 m/s^2."
+msgstr "读取三轴加速度，单位 m/s²，采用标准重力加速度 9.80665 m/s² 换算。"
+
+#: ../docs/source/chain/imu.rst:198
+msgid "Tuple (x, y, z) of floats in m/s^2, resolution 0.00980665 m/s^2."
+msgstr "浮点数元组 (x, y, z)，单位 m/s²，分辨率为 0.00980665 m/s²。"
+
+#: ../docs/source/chain/imu.rst:200 ../docs/source/chain/imu.rst:218 ../docs/source/chain/imu.rst:236
+#: ../docs/source/chain/imu.rst:254 ../docs/source/chain/imu.rst:272 ../docs/source/chain/imu.rst:294
+#: ../docs/source/chain/imu.rst:312 ../docs/source/chain/imu.rst:334 ../docs/source/chain/imu.rst:352
+#: ../docs/source/chain/imu.rst:374 ../docs/source/chain/imu.rst:392 ../docs/source/chain/imu.rst:414
+#: ../docs/source/chain/imu.rst:432 ../docs/source/chain/imu.rst:454 ../docs/source/chain/imu.rst:472
+#: ../docs/source/chain/imu.rst:496 ../docs/source/chain/imu.rst:514 ../docs/source/chain/imu.rst:538
+#: ../docs/source/chain/imu.rst:556 ../docs/source/chain/imu.rst:605 ../docs/source/chain/imu.rst:633
+#: ../docs/source/chain/imu.rst:673 ../docs/source/chain/imu.rst:695 ../docs/source/chain/imu.rst:719
+#: ../docs/source/chain/imu.rst:737 ../docs/source/chain/imu.rst:759 ../docs/source/chain/imu.rst:777
+#: ../docs/source/chain/imu.rst:795 ../docs/source/chain/imu.rst:813
+msgid "Communication failed, the response is malformed, or the device rejected the command."
+msgstr "通信失败、应答格式不正确或设备拒绝命令。"
+
+#: ../docs/source/chain/imu.rst:214 ../docs/source/chain/imu.rst:232 ../docs/source/chain/imu.rst:250
+msgid ""
+"Read the latest IMU sample. Firmware refreshes the sensor but can return the previous sample if "
+"that refresh fails."
+msgstr "读取最新 IMU 采样值。固件会刷新传感器，但刷新失败时可能返回上一次采样。"
+
+#: ../docs/source/chain/imu.rst:216
+msgid "Tuple (x, y, z) of floats in rad/s, resolution pi/180 rad/s (about 0.0174533 rad/s)."
+msgstr "浮点数元组 (x, y, z)，单位 rad/s，分辨率为 π/180 rad/s（约 0.0174533 rad/s）。"
+
+#: ../docs/source/chain/imu.rst:234 ../docs/source/chain/imu.rst:252
+msgid "Tuple (x, y, z) of signed 16-bit raw sensor counts."
+msgstr "元组 (x, y, z)，均为有符号 16 位传感器原始计数。"
+
+#: ../docs/source/chain/imu.rst:268
+msgid ""
+"Read IMU temperature. Firmware clamps temperatures below zero to 0 degrees Celsius; negative "
+"temperatures cannot be recovered through this command."
+msgstr "读取 IMU 温度。固件将零下温度截为 0 摄氏度，此命令无法还原负温度。"
+
+#: ../docs/source/chain/imu.rst:270
+msgid "Temperature in degrees Celsius, 0..655.35, resolution 0.01 degrees."
+msgstr "温度，单位摄氏度，范围 0..655.35，分辨率 0.01 度。"
+
+#: ../docs/source/chain/imu.rst:286
+msgid "Set acceleration full-scale range. The setting is volatile."
+msgstr "设置加速度满量程，设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:288 ../docs/source/chain/imu.rst:310
+msgid ""
+"An ACCEL_RANGE_* constant in ACCEL_RANGES, in g (2, 4, 8 or 16). Samples from read_accel() remain"
+" in m/s^2."
+msgstr "ACCEL_RANGES 中的 ACCEL_RANGE_* 常量，单位 g（2、4、8 或 16）；read_accel() 的采样单位仍为 m/s²。"
+
+#: ../docs/source/chain/imu.rst:290 ../docs/source/chain/imu.rst:330 ../docs/source/chain/imu.rst:370
+#: ../docs/source/chain/imu.rst:410 ../docs/source/chain/imu.rst:450 ../docs/source/chain/imu.rst:492
+#: ../docs/source/chain/imu.rst:534 ../docs/source/chain/imu.rst:574 ../docs/source/chain/imu.rst:629
+#: ../docs/source/chain/imu.rst:649 ../docs/source/chain/imu.rst:669 ../docs/source/chain/imu.rst:715
+msgid "No return value."
+msgstr "无返回值。"
+
+#: ../docs/source/chain/imu.rst:308
+msgid "Get acceleration full-scale range."
+msgstr "读取加速度满量程。"
+
+#: ../docs/source/chain/imu.rst:326
+msgid "Set the gyroscope full-scale range. The setting is volatile."
+msgstr "设置陀螺仪满量程，设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:328
+msgid ""
+"A GYRO_RANGE_* constant in GYRO_RANGES, in degrees/s (125, 250, 500, 1000 or 2000). Samples from "
+"read_gyro() remain in rad/s."
+msgstr "GYRO_RANGES 中的 GYRO_RANGE_* 常量，单位 °/s（125、250、500、1000 或 2000）；read_gyro() 的采样单位仍为 rad/s。"
+
+#: ../docs/source/chain/imu.rst:348
+msgid "Get the gyroscope full-scale range."
+msgstr "读取陀螺仪满量程。"
+
+#: ../docs/source/chain/imu.rst:350
+msgid "Full-scale magnitude in degrees per second."
+msgstr "满量程幅度，单位度每秒。"
+
+#: ../docs/source/chain/imu.rst:366
+msgid "Set acceleration sampling rate. The setting is volatile."
+msgstr "设置加速度采样率，设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:368 ../docs/source/chain/imu.rst:390
+msgid "An ODR_* constant in ACCEL_ODR_VALUES, in Hz; ODR_POWER_DOWN (0) disables this channel."
+msgstr "ACCEL_ODR_VALUES 中的 ODR_* 常量，单位 Hz；ODR_POWER_DOWN（0）关闭该通道采样。"
+
+#: ../docs/source/chain/imu.rst:388
+msgid "Get acceleration sampling rate."
+msgstr "读取加速度采样率。"
+
+#: ../docs/source/chain/imu.rst:406
+msgid "Set gyroscope sampling rate. The setting is volatile."
+msgstr "设置陀螺仪采样率，设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:408 ../docs/source/chain/imu.rst:430
+msgid "An ODR_* constant in GYRO_ODR_VALUES, in Hz; ODR_POWER_DOWN (0) disables this channel."
+msgstr "GYRO_ODR_VALUES 中的 ODR_* 常量，单位 Hz；ODR_POWER_DOWN（0）关闭该通道采样。"
+
+#: ../docs/source/chain/imu.rst:428
+msgid "Get gyroscope sampling rate."
+msgstr "读取陀螺仪采样率。"
+
+#: ../docs/source/chain/imu.rst:446
+msgid ""
+"Select the enabled alarm sources. Zero disables all alarms. The setting is volatile. Bits: 1 "
+"acceleration, 2 gyroscope, 4 temperature."
+msgstr "选择启用的告警来源，0 禁用全部告警，设置不写入 Flash。各位：1 加速度、2 陀螺仪、4 温度。"
+
+#: ../docs/source/chain/imu.rst:448 ../docs/source/chain/imu.rst:470
+msgid ""
+"Alarm bitmask, 0..7; combine ALARM_* bits with ``|``, use ALARM_NONE to disable or ALARM_ALL to "
+"enable all sources."
+msgstr "告警掩码，范围 0..7；用 ``|`` 组合 ALARM_* 位，ALARM_NONE 关闭全部来源，ALARM_ALL 启用全部来源。"
+
+#: ../docs/source/chain/imu.rst:468
+msgid "Get the enabled alarm sources."
+msgstr "读取启用的告警来源。"
+
+#: ../docs/source/chain/imu.rst:486
+msgid ""
+"Set motion delta thresholds. Firmware compares each axis against its moving reference and "
+"debounces transitions over five samples. The setting is volatile."
+msgstr "设置运动变化阈值。固件将各轴与动态参考值比较，并对状态变化进行五次采样消抖；设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:488
+msgid "Acceleration delta in mg, 0..255."
+msgstr "加速度变化量，单位 mg，范围 0..255。"
+
+#: ../docs/source/chain/imu.rst:490
+msgid "Angular velocity delta in degrees per second, 0..255."
+msgstr "角速度变化量，单位度每秒，范围 0..255。"
+
+#: ../docs/source/chain/imu.rst:510
+msgid "Get motion delta thresholds."
+msgstr "读取运动变化阈值。"
+
+#: ../docs/source/chain/imu.rst:512
+msgid "Tuple (accel_mg, gyro_dps), each 0..255."
+msgstr "元组 (accel_mg, gyro_dps)，各项范围 0..255。"
+
+#: ../docs/source/chain/imu.rst:528
+msgid "Set the temperature alarm window. The setting is volatile."
+msgstr "设置温度告警窗口，设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:530 ../docs/source/chain/imu.rst:532
+msgid "Temperature in degrees Celsius. Range: 0..255; low must be less than high."
+msgstr "温度，单位摄氏度。范围 0..255，low 必须小于 high。"
+
+#: ../docs/source/chain/imu.rst:552
+msgid "Get the temperature alarm window."
+msgstr "读取温度告警窗口。"
+
+#: ../docs/source/chain/imu.rst:554
+msgid "Tuple (low, high). Temperature in degrees Celsius."
+msgstr "元组 (low, high)。温度，单位摄氏度。"
+
+#: ../docs/source/chain/imu.rst:570
+msgid ""
+"Register one event callback, replacing the previous callback. Registration does not change device"
+" reporting settings. The callback receives one integer. Do not call Chain methods inside the "
+"callback; record the event for the main loop. Bits 0 and 1 indicate acceleration and gyroscope "
+"alarms. Bits 2..3: 0 normal or high-temperature alarm cleared, 1 high-temperature alarm, 2 low-"
+"temperature alarm, 3 low-temperature alarm cleared. Preserve combinations; 0 is a valid recovery "
+"event."
+msgstr ""
+"注册一个事件回调并替换此前的回调，不改变设备上报设置。回调接收一个整数参数。请在回调中记录事件，由主循环处理，不要在回调内调用 Chain 方法。位 0 和位 1 分别表示加速度与陀螺仪告警。位"
+" 2..3：0 正常或高温告警解除，1 高温告警，2 低温告警，3 低温告警解除。应保留组合状态，0 也是有效的恢复事件。"
+
+#: ../docs/source/chain/imu.rst:572
+msgid "Function called with the event integer; None unregisters it."
+msgstr "接收事件整数的函数；None 表示注销回调。"
+
+#: ../docs/source/chain/imu.rst:591
+msgid "Read the internal sensor I2C register space through Chain. This may clear sensor status registers."
+msgstr "通过 Chain 读取内部传感器 I2C 寄存器；读取操作可能清除传感器状态位。"
+
+#: ../docs/source/chain/imu.rst:593 ../docs/source/chain/imu.rst:621
+msgid "Seven-bit internal I2C address, 0x08..0x77."
+msgstr "内部 I2C 七位地址，范围 0x08..0x77。"
+
+#: ../docs/source/chain/imu.rst:595 ../docs/source/chain/imu.rst:623
+msgid "Register address, 0..255 for addrsize=8 or 0..65535 for addrsize=16."
+msgstr "寄存器地址：addrsize=8 时为 0..255，addrsize=16 时为 0..65535。"
+
+#: ../docs/source/chain/imu.rst:597
+msgid "Number of bytes, 1..64."
+msgstr "读取字节数，范围 1..64。"
+
+#: ../docs/source/chain/imu.rst:599 ../docs/source/chain/imu.rst:627
+msgid "Register address width in bits, 8 or 16. Default: 8."
+msgstr "寄存器地址位宽，8 或 16；默认为 8。"
+
+#: ../docs/source/chain/imu.rst:601
+msgid "Requested register bytes."
+msgstr "请求的寄存器字节。"
+
+#: ../docs/source/chain/imu.rst:619
+msgid ""
+"Write the internal sensor I2C register space through Chain. Direct register writes can change "
+"measurement and alarm configuration; use sensor-specific configuration methods for normal "
+"operation."
+msgstr "通过 Chain 写入内部传感器 I2C 寄存器。直接写寄存器可能改变测量和告警配置；常规操作请使用传感器专用配置方法。"
+
+#: ../docs/source/chain/imu.rst:625
+msgid "Buffer containing 1..64 bytes."
+msgstr "包含 1..64 字节的缓冲区。"
+
+#: ../docs/source/chain/imu.rst:647
+msgid ""
+"Detach this object and its callbacks. Repeated calls are safe. Hardware configuration and the "
+"shared ChainBus remain active."
+msgstr "注销此对象及其回调，可重复调用。硬件配置和共享 ChainBus 保持运行。"
+
+#: ../docs/source/chain/imu.rst:663
+msgid ""
+"Set the base RGB color. Firmware alarm or Pedal overlays can temporarily cover this color. This "
+"setting is volatile."
+msgstr "设置基础 RGB 颜色。固件告警或踏板叠加灯效可能暂时覆盖此颜色；此设置不写入 Flash。"
+
+#: ../docs/source/chain/imu.rst:665 ../docs/source/chain/imu.rst:691
+msgid "RGB888 color, 0x000000..0xFFFFFF."
+msgstr "RGB888 颜色，范围 0x000000..0xFFFFFF。"
+
+#: ../docs/source/chain/imu.rst:667 ../docs/source/chain/imu.rst:689
+msgid "Base LED index; 0 for sensors, 0..3 for Pedal. Default: 0."
+msgstr "基础灯索引：传感器为 0，Pedal 为 0..3；默认为 0。"
+
+#: ../docs/source/chain/imu.rst:687
+msgid "Get the configured base RGB color, excluding firmware overlays."
+msgstr "读取配置的基础 RGB 颜色，不包含固件叠加灯效。"
+
+#: ../docs/source/chain/imu.rst:709
+msgid "Set the global RGB brightness. Saving writes device flash."
+msgstr "设置全局 RGB 亮度，保存操作会写入设备 Flash。"
+
+#: ../docs/source/chain/imu.rst:711 ../docs/source/chain/imu.rst:735
+msgid "Brightness in percent, 0..100."
+msgstr "亮度百分比，范围 0..100。"
+
+#: ../docs/source/chain/imu.rst:713
+msgid "Save this setting to device flash. Default: False."
+msgstr "是否将此设置保存到设备 Flash；默认为 False。"
+
+#: ../docs/source/chain/imu.rst:733
+msgid "Get the global RGB brightness."
+msgstr "读取全局 RGB 亮度。"
+
+#: ../docs/source/chain/imu.rst:751
+msgid "Get the device UID."
+msgstr "读取设备 UID。"
+
+#: ../docs/source/chain/imu.rst:753
+msgid "UID_4_BYTES (0) or UID_12_BYTES (1). Default: UID_4_BYTES (0)."
+msgstr "UID_4_BYTES（0，4 字节）或 UID_12_BYTES（1，12 字节）。默认：UID_4_BYTES（0）。"
+
+#: ../docs/source/chain/imu.rst:755
+msgid "Four or twelve UID bytes."
+msgstr "四个或十二个 UID 字节。"
+
+#: ../docs/source/chain/imu.rst:773
+msgid "Get the bootloader version."
+msgstr "读取引导程序版本。"
+
+#: ../docs/source/chain/imu.rst:775 ../docs/source/chain/imu.rst:793 ../docs/source/chain/imu.rst:811
+msgid "Device-reported numeric identifier."
+msgstr "设备返回的数值标识。"
+
+#: ../docs/source/chain/imu.rst:791
+msgid "Get the firmware version."
+msgstr "读取固件版本。"
+
+#: ../docs/source/chain/imu.rst:809
+msgid "Get the device type."
+msgstr "读取设备类型。"
+
+#: ../../source/chain/imu.rst
+msgid "IMU sensor display"
+msgstr "IMU 数据显示"
+
+#: ../../source/chain/imu.rst
+msgid "Open the |m5core_chain_imu_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_imu_basic_example.m5f2| 项目。"
+
+#: ../../source/chain/imu.rst
+msgid ""
+"Connect Chain IMU as the first device on M5Stack Basic UART2 (TX=21, RX=22). The screen has a "
+"centered \"Chain IMU\" title, three X/Y/Z columns for acceleration (m/s2) and angular velocity "
+"(rad/s), and a temperature reading (degrees Celsius) at the bottom. Readings refresh every 100 "
+"ms. Acceleration and angular velocity are rounded to two decimal places, and temperature to one "
+"decimal place."
+msgstr ""
+"将 Chain IMU 接为 M5Stack Basic UART2（TX=21、RX=22）上的第一个设备。屏幕顶部居中显示“Chain IMU”标题，中间按 X/Y/Z "
+"三列显示加速度（m/s²）和角速度（rad/s），底部显示温度（°C）。数值每 100 ms 刷新，加速度和角速度四舍五入到两位小数，温度到一位小数。"
+
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+msgid "Driver for Chain IMU."
+msgstr "Chain IMU 驱动。"
+
+msgid "Detach the device and release all event callbacks; the shared bus stays open."
+msgstr "注销设备并清除全部事件回调，保留共享总线。"
+
+msgid "Register a specific IMU alarm or recovery callback."
+msgstr "注册 IMU 报警或解除报警的回调函数。"
+
+msgid ""
+"Use EVENT_ACCEL_TRIGGER/CLEAR, EVENT_GYRO_TRIGGER/CLEAR, or "
+"EVENT_TEMPERATURE_HIGH/LOW/HIGH_CLEAR/LOW_CLEAR. Each handler receives its selected event "
+"constant. None removes only that event handler. Registration does not change alarm reporting. "
+"Enable alarms afterwards. State tracking starts at zero when the first source is registered. "
+"Recovery requires a prior alarm report, except explicit low recovery. Legacy source selectors and"
+" the single-callback form receive raw status. set_event_callback(None) removes all handlers."
+msgstr ""
+"使用 EVENT_ACCEL_TRIGGER/CLEAR、EVENT_GYRO_TRIGGER/CLEAR 或 "
+"EVENT_TEMPERATURE_HIGH/LOW/HIGH_CLEAR/LOW_CLEAR 选择事件。回调参数为所选事件常量。传入 None "
+"可注销该事件的回调。注册回调不会改变报警设置，请在注册后开启报警。首次注册时，报警状态从零开始记录；除明确的低温解除事件外，解除报警需要先收到对应的报警。旧事件来源选择器和单回调形式接收原始状态值。set_event_callback(None)"
+" 注销全部回调。"
+
+msgid "An EVENT_* constant, legacy callback or None. Default: None."
+msgstr "EVENT_* 事件常量、旧形式的回调函数或 None，默认 None。"
+
+msgid "Handler receiving the selected event constant. Default: None."
+msgstr "接收所选事件常量的回调函数，默认 None。"
