@@ -1,0 +1,21 @@
+diff --git a/micropython.cmake b/micropython.cmake
+index 12f835c..87e8d0e 100644
+--- a/micropython.cmake
++++ b/micropython.cmake
+@@ -50,5 +50,15 @@ if (DEFINED LV_CONF_DIR)
+ endif()
+
+-file(WRITE ${LV_MP} "")
++# ESP-IDF consumers in other directories need the source to exist at configure
++# time. Preserve valid bindings; invalidate preprocessing before making an empty
++# placeholder so Ninja regenerates missing or previously truncated bindings.
++set(LV_MP_SIZE 0)
++if(EXISTS "${LV_MP}")
++    file(SIZE "${LV_MP}" LV_MP_SIZE)
++endif()
++if(LV_MP_SIZE EQUAL 0)
++    file(REMOVE "${LV_MP}.pp")
++    file(WRITE "${LV_MP}" "")
++endif()
+
+ target_link_libraries(usermod_lvgl INTERFACE lvgl_interface)
