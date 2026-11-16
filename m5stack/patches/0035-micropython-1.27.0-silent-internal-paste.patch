@@ -1,0 +1,109 @@
+--- a/shared/runtime/pyexec.c
++++ b/shared/runtime/pyexec.c
+@@ -42,6 +42,10 @@
+
+ pyexec_mode_kind_t pyexec_mode_kind = PYEXEC_MODE_FRIENDLY_REPL;
+
++MP_WEAK bool pyexec_friendly_repl_silent_paste(void) {
++    return false;
++}
++
+ #if MICROPY_REPL_INFO
+ static bool repl_display_debugging_info = 0;
+ #endif
+@@ -334,6 +338,7 @@
+     // vstr_t line;
+     bool cont_line;
+     bool paste_mode;
++    bool paste_echo;
+ } repl_t;
+
+ repl_t repl;
+@@ -412,11 +417,15 @@
+     if (repl.paste_mode) {
+         if (c == CHAR_CTRL_C) {
+             // cancel everything
+-            mp_hal_stdout_tx_str("\r\n");
++            if (repl.paste_echo) {
++                mp_hal_stdout_tx_str("\r\n");
++            }
+             goto input_restart;
+         } else if (c == CHAR_CTRL_D) {
+             // end of input
+-            mp_hal_stdout_tx_str("\r\n");
++            if (repl.paste_echo) {
++                mp_hal_stdout_tx_str("\r\n");
++            }
+             int ret = parse_compile_execute(MP_STATE_VM(repl_line), MP_PARSE_FILE_INPUT, EXEC_FLAG_ALLOW_DEBUGGING | EXEC_FLAG_IS_REPL | EXEC_FLAG_SOURCE_IS_VSTR);
+             if (ret & PYEXEC_FORCED_EXIT) {
+                 return ret;
+@@ -425,7 +434,9 @@
+         } else {
+             // add char to buffer and echo
+             vstr_add_byte(MP_STATE_VM(repl_line), c);
+-            if (c == '\r') {
++            if (!repl.paste_echo) {
++                return 0;
++            } else if (c == '\r') {
+                 mp_hal_stdout_tx_str("\r\n=== ");
+             } else {
+                 char buf[1] = {c};
+@@ -466,7 +477,10 @@
+             return PYEXEC_FORCED_EXIT;
+         } else if (ret == CHAR_CTRL_E) {
+             // paste mode
+-            mp_hal_stdout_tx_str("\r\npaste mode; Ctrl-C to cancel, Ctrl-D to finish\r\n=== ");
++            repl.paste_echo = !pyexec_friendly_repl_silent_paste();
++            if (repl.paste_echo) {
++                mp_hal_stdout_tx_str("\r\npaste mode; Ctrl-C to cancel, Ctrl-D to finish\r\n=== ");
++            }
+             vstr_reset(MP_STATE_VM(repl_line));
+             repl.paste_mode = true;
+             return 0;
+@@ -682,22 +696,31 @@
+             return PYEXEC_FORCED_EXIT;
+         } else if (ret == CHAR_CTRL_E) {
+             // paste mode
+-            mp_hal_stdout_tx_str("\r\npaste mode; Ctrl-C to cancel, Ctrl-D to finish\r\n=== ");
++            bool paste_echo = !pyexec_friendly_repl_silent_paste();
++            if (paste_echo) {
++                mp_hal_stdout_tx_str("\r\npaste mode; Ctrl-C to cancel, Ctrl-D to finish\r\n=== ");
++            }
+             vstr_reset(&line);
+             for (;;) {
+                 char c = mp_hal_stdin_rx_chr();
+                 if (c == CHAR_CTRL_C) {
+                     // cancel everything
+-                    mp_hal_stdout_tx_str("\r\n");
++                    if (paste_echo) {
++                        mp_hal_stdout_tx_str("\r\n");
++                    }
+                     goto input_restart;
+                 } else if (c == CHAR_CTRL_D) {
+                     // end of input
+-                    mp_hal_stdout_tx_str("\r\n");
++                    if (paste_echo) {
++                        mp_hal_stdout_tx_str("\r\n");
++                    }
+                     break;
+                 } else {
+                     // add char to buffer and echo
+                     vstr_add_byte(&line, c);
+-                    if (c == '\r') {
++                    if (!paste_echo) {
++                        continue;
++                    } else if (c == '\r') {
+                         mp_hal_stdout_tx_str("\r\n=== ");
+                     } else {
+                         mp_hal_stdout_tx_strn(&c, 1);
+--- a/shared/runtime/pyexec.h
++++ b/shared/runtime/pyexec.h
+@@ -50,6 +50,8 @@
+
+ int pyexec_raw_repl(void);
+ int pyexec_friendly_repl(void);
++// Ports may hide transport-generated paste input while preserving program output.
++bool pyexec_friendly_repl_silent_paste(void);
+ int pyexec_file(const char *filename);
+ int pyexec_file_if_exists(const char *filename);
+ int pyexec_frozen_module(const char *name, bool allow_keyboard_interrupt);

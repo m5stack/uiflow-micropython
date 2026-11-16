@@ -377,7 +377,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0031-micropython-1.27.0-support-esp32c61.patch \
 	0032-micropython-1.27.0-fix-esp-hosted-ble-lifecycle.patch \
 	0033-micropython-1.27.0-release-repl-source.patch \
-	0034-micropython-1.27.0-bound-split-heap-growth.patch
+	0034-micropython-1.27.0-bound-split-heap-growth.patch \
+	0035-micropython-1.27.0-silent-internal-paste.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch
