@@ -1,0 +1,31 @@
+--- a/py/gc.c
++++ b/py/gc.c
+@@ -319,6 +319,10 @@
+
+     DEBUG_printf("total_heap " UINT_FMT " bytes\n", total_heap);
+
++    #ifdef MICROPY_GC_SPLIT_HEAP_MAX_GROWTH
++    // Bound speculative growth, while still allowing larger individual objects.
++    total_heap = MIN(total_heap, MICROPY_GC_SPLIT_HEAP_MAX_GROWTH);
++    #endif
+     size_t to_alloc = MIN(avail, MAX(total_heap, needed));
+
+     mp_state_mem_area_t *new_heap = MP_PLAT_ALLOC_HEAP(to_alloc);
+--- a/ports/esp32/mpconfigport.h
++++ b/ports/esp32/mpconfigport.h
+@@ -35,6 +35,15 @@
+ #else
+ #define MICROPY_GC_INITIAL_HEAP_SIZE        (64 * 1024)
+ #endif
++#endif
++
++// Limit speculative growth on boards sharing internal RAM with network
++// tasks. Empty small areas can return to the system heap after collection.
++// Do not withhold a fixed TLS budget: once the connection closes Python must
++// be able to reuse that memory for parsing and execution. PSRAM boards keep
++// the normal growth policy, and large objects can request larger areas.
++#if !CONFIG_SPIRAM && !defined(MICROPY_GC_SPLIT_HEAP_MAX_GROWTH)
++#define MICROPY_GC_SPLIT_HEAP_MAX_GROWTH (4 * 1024)
+ #endif
+
+ // emitters

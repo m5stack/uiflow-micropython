@@ -1,0 +1,9 @@
+--- a/shared/runtime/pyexec.c
++++ b/shared/runtime/pyexec.c
+@@ -655,2 +655,5 @@
+-        vstr_reset(&line);
++        // Release pasted source before waiting for the next command. Keeping
++        // its capacity pins a split GC heap and starves native TLS downloads.
++        vstr_clear(&line);
++        vstr_init(&line, 32);
+         int ret = readline(&line, mp_repl_get_ps1());

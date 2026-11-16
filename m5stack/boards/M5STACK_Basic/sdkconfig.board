@@ -8,6 +8,9 @@ CONFIG_CODEC_I2C_BACKWARD_COMPATIBLE=n
 # SSL
 CONFIG_MBEDTLS_INTERNAL_MEM_ALLOC=n
 CONFIG_MBEDTLS_CUSTOM_MEM_ALLOC=y
+# TLS can fragment outgoing application data; retain full-size RX records while
+# leaving more internal RAM for certificate-chain RSA verification on Basic.
+CONFIG_MBEDTLS_SSL_OUT_CONTENT_LEN=1024
 
 # Flash
 CONFIG_ESPTOOLPY_FLASHFREQ_80M=y

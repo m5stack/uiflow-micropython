@@ -118,7 +118,9 @@ static time_t platform_mbedtls_time(time_t *timer) {
     struct timeval tv;
     gettimeofday(&tv, NULL);
 
-    return tv.tv_sec + TIMEUTILS_SECONDS_1970_TO_2000;
+    // ESP-IDF gettimeofday() already uses the Unix epoch, independently of
+    // MicroPython's epoch. Adding the 2000 offset makes certificates expired.
+    return tv.tv_sec;
 }
 #endif
 
