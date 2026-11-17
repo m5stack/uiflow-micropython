@@ -1,5 +1,8 @@
 ## IDF Component Manager Manifest File
 dependencies:
+  m5stack/m5gfx:
+    git: https://github.com/m5stack/M5GFX.git
+    version: 21213080fba00c675d5dcca0ef2abd4b349e3cef
   espressif/mdns: "~1.1.0"
   espressif/tinyusb:
     rules:

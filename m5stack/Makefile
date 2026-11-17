@@ -387,14 +387,13 @@ M5UNIFIED_PATCH_SERIES = \
 	2023-Add-CoreMatrix-PWM-speaker-support.patch \
 	2024-Add-ToughC5-PWM-speaker-support.patch \
 	2026-Enable-StampS3Bat-camera-power.patch \
-	2027-Fix-M5PM1-external-current-reading.patch
+	2027-Fix-M5PM1-external-current-reading.patch \
+	2028-Pin-M5GFX-git-dependency.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch
 
-# M5GFX 9bcedf4 includes the I2C bus-sharing and VLW space fixes.
-M5GFX_PATCH_SERIES = \
-	4005-M5GFX-declare-esp-psram-dependency.patch
+M5GFX_PATCH_SERIES =
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch

@@ -184,14 +184,14 @@ Route Speaker tones through IOE GPIO11 PWM3 and control buzzer power through IOE
      if (res)
      {
        _task_running.store(true, std::memory_order_release);
-@@ -1088,6 +1144,25 @@ label_continue_sample:
+@@ -1088,7 +1144,26 @@ label_continue_sample:
        _task_thread_id.store(handle ? SDL_GetThreadID(handle) : 0, std::memory_order_release);
        _task_handle.store(handle, std::memory_order_release);
        res = (handle != nullptr);
 +#elif defined (CONFIG_IDF_TARGET_ESP32C61) || defined (CONFIG_IDF_TARGET_ESP32C5)
 +      _lock_external_tone();
 +      _external_tone_stopping = false;
-+      size_t stack_size = external_tone ? 2048 : 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
++      size_t stack_size = external_tone ? 2048 : 1536 + (_cfg.dma_buf_len * sizeof(uint32_t));
 +      TaskHandle_t handle = nullptr;
 +      auto task_func = external_tone ? external_tone_task : spk_task;
 +
@@ -208,7 +208,8 @@ Route Speaker tones through IOE GPIO11 PWM3 and control buzzer power through IOE
 +      _task_handle.store(handle, std::memory_order_release);
 +      _external_tone_lock.clear(std::memory_order_release);
  #else
-       size_t stack_size = 1280 + (_cfg.dma_buf_len * sizeof(uint32_t));
+       // 1280 overflowed when built without optimization (-O0)
+       size_t stack_size = 1536 + (_cfg.dma_buf_len * sizeof(uint32_t));
  
 @@ -1138,6 +1213,15 @@ label_continue_sample:
  
@@ -297,7 +298,7 @@ Route Speaker tones through IOE GPIO11 PWM3 and control buzzer power through IOE
      if ((size_t)ch >= sound_channel_max)
      {
        stop();
-@@ -1310,6 +1438,43 @@ label_continue_sample:
+@@ -1310,5 +1438,42 @@ label_continue_sample:
  
    bool Speaker_Class::_play_raw(const void* data, size_t array_len, bool flg_16bit, bool flg_signed, float sample_rate, bool flg_stereo, uint32_t repeat_count, int channel, bool stop_current_sound, bool no_clear_index)
    {
@@ -339,8 +340,7 @@ Route Speaker tones through IOE GPIO11 PWM3 and control buzzer power through IOE
 +#endif
 +
      // Only a queued request produces a release callback, so the answer is
-     // false whenever nothing was queued (this used to say true for a speaker
-     // that could not start and for an empty request).
+     // false whenever nothing was queued.
 --- M5Unified.orig/src/utility/Speaker_Class.hpp
 +++ M5Unified/src/utility/Speaker_Class.hpp
 @@ -97,7 +97,11 @@ namespace m5

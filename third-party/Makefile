@@ -254,7 +254,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2009-fix-SoftI2C.patch \
 	2010-Support-Nesso-N1.patch \
 	2011-Fix-PowerHub-Charge-Status-Detection.patch \
-	2018-fix-Rtc-setAlarmIRQ.patch
+	2018-fix-Rtc-setAlarmIRQ.patch \
+	2028-Pin-M5GFX-git-dependency.patch
 
 ADF_PATCH_SERIES = \
 	3003-modify-i2s_stream_idf5.5.patch

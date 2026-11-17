@@ -1,0 +1,9 @@
+--- a/idf_component.yml
++++ b/idf_component.yml
+@@ -5,4 +5,5 @@
+ version: 0.3.0
+ dependencies:
+   m5stack/m5gfx:
+-    version: ">=0.3.0"
++    git: https://github.com/m5stack/M5GFX.git
++    version: 21213080fba00c675d5dcca0ef2abd4b349e3cef
