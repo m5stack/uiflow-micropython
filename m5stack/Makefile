@@ -382,7 +382,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0035-micropython-1.27.0-silent-internal-paste.patch \
 	0036-micropython-1.27.0-select-esp32p4-fs-pads.patch \
 	0040-micropython-1.27.0-native-internal-paste.patch \
-	0041-micropython-1.27.0-detect-heap-memory.patch
+	0041-micropython-1.27.0-detect-heap-memory.patch \
+	0042-micropython-1.27.0-add-repl-device-info.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch \

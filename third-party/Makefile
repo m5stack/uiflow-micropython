@@ -244,7 +244,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0025-micropython-1.27.0-add-uart-mode.patch \
 	0026-micropython-1.27.0-add-getsockname.patch \
 	0027-micropython-1.27.0-fix-mpnimbleport.patch \
-	0034-micropython-1.27.0-bound-split-heap-growth.patch
+	0034-micropython-1.27.0-bound-split-heap-growth.patch \
+	0042-micropython-1.27.0-add-repl-device-info.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch \
