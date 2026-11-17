@@ -380,10 +380,13 @@ MICROPYTHON_PATCH_SERIES = \
 	0033-micropython-1.27.0-release-repl-source.patch \
 	0034-micropython-1.27.0-bound-split-heap-growth.patch \
 	0035-micropython-1.27.0-silent-internal-paste.patch \
-	0036-micropython-1.27.0-select-esp32p4-fs-pads.patch
+	0036-micropython-1.27.0-select-esp32p4-fs-pads.patch \
+	0040-micropython-1.27.0-native-internal-paste.patch \
+	0041-micropython-1.27.0-detect-heap-memory.patch
 
 IDF_PATH_PATCH_SERIES = \
-	1005-idf_v5.5_freertos.patch
+	1005-idf_v5.5_freertos.patch \
+	1006-mbedtls-reduce-tx-buffer-without-psram.patch
 
 M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \

@@ -243,10 +243,12 @@ MICROPYTHON_PATCH_SERIES = \
 	0024-micropython-1.27.0-i2c-probe.patch \
 	0025-micropython-1.27.0-add-uart-mode.patch \
 	0026-micropython-1.27.0-add-getsockname.patch \
-	0027-micropython-1.27.0-fix-mpnimbleport.patch
+	0027-micropython-1.27.0-fix-mpnimbleport.patch \
+	0034-micropython-1.27.0-bound-split-heap-growth.patch
 
 IDF_PATH_PATCH_SERIES = \
-	1005-idf_v5.5_freertos.patch
+	1005-idf_v5.5_freertos.patch \
+	1006-mbedtls-reduce-tx-buffer-without-psram.patch
 
 M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \
