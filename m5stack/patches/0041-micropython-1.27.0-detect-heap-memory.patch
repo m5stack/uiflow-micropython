@@ -1,0 +1,46 @@
+--- a/ports/esp32/mpconfigport.h
++++ b/ports/esp32/mpconfigport.h
+@@ -6,6 +6,7 @@
+
+ #include <stdint.h>
+ #include <alloca.h>
++#include "esp_heap_caps.h"
+ #include "esp_random.h"
+ #include "esp_system.h"
+ #include "freertos/FreeRTOS.h"
+@@ -28,14 +29,14 @@
+ // different for different MCUs and is chosen so they can grow the heap once (double it)
+ // and still have enough internal RAM to start WiFi and make a HTTPS request.
+ #ifndef MICROPY_GC_INITIAL_HEAP_SIZE
+-#if !CONFIG_SPIRAM
++#if CONFIG_IDF_TARGET_ESP32
++#define MICROPY_GC_INITIAL_HEAP_SIZE \
++    (heap_caps_get_total_size(MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT) == 0 ? 36 * 1024 : 56 * 1024)
++#elif CONFIG_IDF_TARGET_ESP32C2
+ #define MICROPY_GC_INITIAL_HEAP_SIZE        (36 * 1024)
+-#elif CONFIG_IDF_TARGET_ESP32
+-#define MICROPY_GC_INITIAL_HEAP_SIZE        (56 * 1024)
+-#elif CONFIG_IDF_TARGET_ESP32C2 || (CONFIG_IDF_TARGET_ESP32S2 && !CONFIG_SPIRAM)
+-#define MICROPY_GC_INITIAL_HEAP_SIZE        (36 * 1024)
+-#else
+-#define MICROPY_GC_INITIAL_HEAP_SIZE        (64 * 1024)
++#else
++#define MICROPY_GC_INITIAL_HEAP_SIZE \
++    (heap_caps_get_total_size(MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT) == 0 ? 36 * 1024 : 64 * 1024)
+ #endif
+ #endif
+
+@@ -44,8 +45,11 @@
+ // Do not withhold a fixed TLS budget: once the connection closes Python must
+ // be able to reuse that memory for parsing and execution. PSRAM boards keep
+ // the normal growth policy, and large objects can request larger areas.
+-#if !CONFIG_SPIRAM && !defined(MICROPY_GC_SPLIT_HEAP_MAX_GROWTH)
+-#define MICROPY_GC_SPLIT_HEAP_MAX_GROWTH (4 * 1024)
++#ifndef MICROPY_GC_SPLIT_HEAP_MAX_GROWTH
++// Inspect initialized, byte-addressable PSRAM rather than its build switch.
++// SIZE_MAX preserves normal growth when external RAM is actually available.
++#define MICROPY_GC_SPLIT_HEAP_MAX_GROWTH \
++    (heap_caps_get_total_size(MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT) == 0 ? 2 * 1024 : SIZE_MAX)
+ #endif
+
+ // emitters

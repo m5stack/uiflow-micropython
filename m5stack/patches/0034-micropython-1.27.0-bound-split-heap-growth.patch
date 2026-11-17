@@ -13,7 +13,17 @@
      mp_state_mem_area_t *new_heap = MP_PLAT_ALLOC_HEAP(to_alloc);
 --- a/ports/esp32/mpconfigport.h
 +++ b/ports/esp32/mpconfigport.h
-@@ -35,6 +35,15 @@
+@@ -28,13 +28,24 @@
+ // different for different MCUs and is chosen so they can grow the heap once (double it)
+ // and still have enough internal RAM to start WiFi and make a HTTPS request.
+ #ifndef MICROPY_GC_INITIAL_HEAP_SIZE
+-#if CONFIG_IDF_TARGET_ESP32
++#if !CONFIG_SPIRAM
++#define MICROPY_GC_INITIAL_HEAP_SIZE        (36 * 1024)
++#elif CONFIG_IDF_TARGET_ESP32
+ #define MICROPY_GC_INITIAL_HEAP_SIZE        (56 * 1024)
+ #elif CONFIG_IDF_TARGET_ESP32C2 || (CONFIG_IDF_TARGET_ESP32S2 && !CONFIG_SPIRAM)
+ #define MICROPY_GC_INITIAL_HEAP_SIZE        (36 * 1024)
  #else
  #define MICROPY_GC_INITIAL_HEAP_SIZE        (64 * 1024)
  #endif

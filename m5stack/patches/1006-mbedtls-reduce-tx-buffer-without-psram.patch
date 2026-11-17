@@ -1,0 +1,11 @@
+--- a/components/mbedtls/Kconfig
++++ b/components/mbedtls/Kconfig
+@@ -90,6 +90,8 @@
+
+     config MBEDTLS_SSL_OUT_CONTENT_LEN
+         int "TLS maximum outgoing fragment length"
++        # Leave internal RAM for certificate-chain verification without PSRAM.
++        default 1024 if !SPIRAM
+         default 4096
+         range 512 16384
+         depends on MBEDTLS_ASYMMETRIC_CONTENT_LEN
