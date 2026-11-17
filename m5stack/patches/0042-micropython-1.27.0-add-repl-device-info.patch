@@ -1,0 +1,131 @@
+diff --git a/py/mpconfig.h b/py/mpconfig.h
+index 798d4089a..39d5783b1 100644
+--- a/py/mpconfig.h
++++ b/py/mpconfig.h
+@@ -836,6 +836,11 @@ typedef uint64_t mp_uint_t;
+ #define MICROPY_REPL_INFO (0)
+ #endif
+
++// Enable native device-info and connection-info queries on ports providing their hooks.
++#ifndef MICROPY_REPL_DEVICE_INFO
++#define MICROPY_REPL_DEVICE_INFO (0)
++#endif
++
+ // Whether to include emacs-style readline behavior in REPL
+ #ifndef MICROPY_REPL_EMACS_KEYS
+ #define MICROPY_REPL_EMACS_KEYS (MICROPY_CONFIG_ROM_LEVEL_AT_LEAST_EXTRA_FEATURES)
+diff --git a/shared/readline/readline.c b/shared/readline/readline.c
+index c9386f16b..10be106db 100644
+--- a/shared/readline/readline.c
++++ b/shared/readline/readline.c
+@@ -144,6 +144,11 @@ int readline_process_char(int c) {
+     bool redraw_from_cursor = false;
+     int redraw_step_forward = 0;
+     if (rl.escape_seq == ESEQ_NONE) {
++        #if MICROPY_REPL_DEVICE_INFO
++        if ((c == CHAR_CTRL_G || c == CHAR_CTRL_O) && vstr_len(rl.line) == 0) {
++            return c;
++        }
++        #endif
+         if (CHAR_CTRL_A <= c && c <= CHAR_CTRL_E && vstr_len(rl.line) == rl.orig_line_len) {
+             // control character with empty line
+             return c;
+diff --git a/shared/readline/readline.h b/shared/readline/readline.h
+index a19e1209a..08c1f2765 100644
+--- a/shared/readline/readline.h
++++ b/shared/readline/readline.h
+@@ -32,8 +32,10 @@
+ #define CHAR_CTRL_D (4)
+ #define CHAR_CTRL_E (5)
+ #define CHAR_CTRL_F (6)
++#define CHAR_CTRL_G (7)
+ #define CHAR_CTRL_K (11)
+ #define CHAR_CTRL_N (14)
++#define CHAR_CTRL_O (15)
+ #define CHAR_CTRL_P (16)
+ #define CHAR_CTRL_U (21)
+ #define CHAR_CTRL_W (23)
+diff --git a/shared/runtime/pyexec.c b/shared/runtime/pyexec.c
+index 867bf58ab..09212bca4 100644
+--- a/shared/runtime/pyexec.c
++++ b/shared/runtime/pyexec.c
+@@ -378,6 +378,15 @@ static int pyexec_raw_repl_process_char(int c) {
+         // clear line
+         vstr_reset(MP_STATE_VM(repl_line));
+         return 0;
++    #if MICROPY_REPL_DEVICE_INFO
++    } else if ((c == CHAR_CTRL_G || c == CHAR_CTRL_O) && vstr_len(MP_STATE_VM(repl_line)) == 0) {
++        if (c == CHAR_CTRL_G) {
++            mp_hal_repl_device_info();
++        } else {
++            mp_hal_repl_connection_info();
++        }
++        goto reset;
++    #endif
+     } else if (c == CHAR_CTRL_D) {
+         // input finished
+     } else {
+@@ -459,6 +468,15 @@ static int pyexec_friendly_repl_process_char(int c) {
+             // break
+             mp_hal_stdout_tx_str("\r\n");
+             goto input_restart;
++        #if MICROPY_REPL_DEVICE_INFO
++        } else if (ret == CHAR_CTRL_G || ret == CHAR_CTRL_O) {
++            if (ret == CHAR_CTRL_G) {
++                mp_hal_repl_device_info();
++            } else {
++                mp_hal_repl_connection_info();
++            }
++            goto input_restart;
++        #endif
+         } else if (ret == CHAR_CTRL_D) {
+             // exit for a soft reset
+             mp_hal_stdout_tx_str("\r\n");
+@@ -584,6 +602,15 @@ raw_repl_reset:
+             } else if (c == CHAR_CTRL_C) {
+                 // clear line
+                 vstr_reset(&line);
++            #if MICROPY_REPL_DEVICE_INFO
++            } else if ((c == CHAR_CTRL_G || c == CHAR_CTRL_O) && vstr_len(&line) == 0) {
++                if (c == CHAR_CTRL_G) {
++                    mp_hal_repl_device_info();
++                } else {
++                    mp_hal_repl_connection_info();
++                }
++                mp_hal_stdout_tx_str(">");
++            #endif
+             } else if (c == CHAR_CTRL_D) {
+                 // input finished
+                 break;
+@@ -671,6 +698,15 @@ friendly_repl_reset:
+             // break
+             mp_hal_stdout_tx_str("\r\n");
+             continue;
++        #if MICROPY_REPL_DEVICE_INFO
++        } else if (ret == CHAR_CTRL_G || ret == CHAR_CTRL_O) {
++            if (ret == CHAR_CTRL_G) {
++                mp_hal_repl_device_info();
++            } else {
++                mp_hal_repl_connection_info();
++            }
++            continue;
++        #endif
+         } else if (ret == CHAR_CTRL_D) {
+             // exit for a soft reset
+             mp_hal_stdout_tx_str("\r\n");
+diff --git a/shared/runtime/pyexec.h b/shared/runtime/pyexec.h
+index fb52c09b1..6c8536540 100644
+--- a/shared/runtime/pyexec.h
++++ b/shared/runtime/pyexec.h
+@@ -59,6 +59,11 @@
+ int pyexec_event_repl_process_char(int c);
+ extern uint8_t pyexec_repl_active;
+
++#if MICROPY_REPL_DEVICE_INFO
++void mp_hal_repl_device_info(void);
++void mp_hal_repl_connection_info(void);
++#endif
++
+ #if MICROPY_REPL_INFO
+ mp_obj_t pyb_set_repl_info(mp_obj_t o_value);
+ MP_DECLARE_CONST_FUN_OBJ_1(pyb_set_repl_info_obj);
