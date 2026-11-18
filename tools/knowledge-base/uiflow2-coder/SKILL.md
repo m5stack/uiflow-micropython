@@ -76,7 +76,7 @@ description: UIFlow2 MicroPython coding assistant. Use when writing, debugging, 
 
 <!-- BEGIN_DOC_TREE -->
 ```text
-docs/  (387 Markdown files, 22 directories; .md suffix omitted)
+docs/  (388 Markdown files, 22 directories; .md suffix omitted)
 Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are directories.
 - root: COPYRIGHT
   - addon/: display_in, display_out
@@ -87,8 +87,8 @@ Rule: an entry like unit/env means docs/unit/env.md; entries ending in / are dir
            dtu_nbiot2v11, echo, echo_pyramid, gpsv2, hdriver, motion, pwm, qrcode, qrcode2, rs232, rs485, speaker
            stepmotor, tfcard
   - cap/: _overview, cc1101, lora1262, lora868
-  - chain/: angle, buzzer, chainbus, dlight, encoder, env, imu, joystick, key, mic, mono, pir, rgb, servos8_v2, switch
-            tof, unit_bus
+  - chain/: angle, buzzer, chainbus, dlight, encoder, env, imu, joystick, key, mic, mono, pedal, pir, rgb, servos8_v2
+            switch, tof, unit_bus
   - controllers/: airq, atoms3-lite, atoms3r_cam, cardputer-adv, cardputer, coreink, corematrix, corep4x, cores3
                   dinmeter, dualkey, nesso-n1, paper, paperdiy, stackchan, stamplc, stampp4x, sticks3, stopwatch, tab5
                   tab5x, toughc5
