@@ -16,11 +16,17 @@ on:
 
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       cache-hit: ${{ steps.cache-esp-idf.outputs.cache-hit }}
     steps:
       - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        id: python
+        with:
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -35,19 +41,15 @@ jobs:
           path: |
             ~/.espressif
             ${{ github.workspace }}/esp-idf
-          key: ${{ runner.os }}-idf-v5.5.5
+          key: ${{ runner.os }}-${{ runner.arch }}-ubuntu24.04-idf-v5.5.5-py${{ steps.python.outputs.python-version }}
 
       - name: Install ESP-IDF
-        if: steps.cache-esp-idf.outputs.cache-hit != 'true'
         run: |
-          git clone --depth=1 -b $IDF_VERSION https://github.com/espressif/esp-idf.git
-          ./esp-idf/install.sh
-        env:
-          IDF_VERSION: "v5.5.5"
+          source tools/ci.sh
+          ci_esp32_idf555_setup
 
       - name: Setup environment
         run: |
-          source tools/ci.sh && ci_esp32_idf555_setup
           source esp-idf/export.sh
           pip install future
           make -C m5stack submodules
@@ -56,7 +58,7 @@ jobs:
 
   build:
     needs: setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         board:
@@ -122,6 +124,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        id: python
+        with:
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -134,10 +142,12 @@ jobs:
           path: |
             ~/.espressif
             ${{ github.workspace }}/esp-idf
-          key: ${{ runner.os }}-idf-v5.5.5
+          key: ${{ runner.os }}-${{ runner.arch }}-ubuntu24.04-idf-v5.5.5-py${{ steps.python.outputs.python-version }}
 
       - name: Prepare environment
         run: |
+          source tools/ci.sh
+          ci_esp32_idf555_setup
           source esp-idf/export.sh
 
       - name: Build M5Stack ${{ matrix.board }}

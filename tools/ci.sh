@@ -189,7 +189,9 @@ function ci_esp32_idf_tag_setup {
         echo "esp-idf is already cloned."
         if [ "$(git -C esp-idf describe --tags)" == "$idf_tag" ]; then
             echo "esp-idf is on $idf_tag branch."
-            return 0
+            # A matching SDK cache may still lack this Python environment.
+            ./esp-idf/install.sh
+            return $?
         else
             echo "esp-idf is not on $idf_tag branch."
             rm -rf esp-idf

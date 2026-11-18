@@ -12,6 +12,11 @@ git -C esp-idf submodule update --init --recursive
 . ./esp-idf/export.sh
 ```
 
+GitHub firmware builds use Ubuntu 24.04, Python 3.11, and ESP-IDF v5.5.5.
+The SDK cache key includes the operating system, architecture, and exact Python
+version. Setup and board jobs run the IDF installer after restoring the cache,
+so a cached SDK with a missing Python environment can be repaired before export.
+
 ### Building the firmware
 
 ```shell
