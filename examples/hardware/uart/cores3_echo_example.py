@@ -30,7 +30,7 @@ def setup():
 def loop():
     global label0, uart1, i
     M5.update()
-    uart1.write(i)
+    uart1.write(f"{i}\n".encode())
     if uart1.any():
         label0.setText(str(uart1.read()))
     i = (i if isinstance(i, (int, float)) else 0) + 1
