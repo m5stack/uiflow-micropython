@@ -68,7 +68,7 @@ class UART
 
         .. code-block:: python
 
-            from hadrware import UART
+            from hardware import UART
 
             uart1 = UART(1, baudrate=115200, bits=8, parity=None, stop=1, tx=9, rx=10)
 
