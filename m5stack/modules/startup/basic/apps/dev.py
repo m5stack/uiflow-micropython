@@ -115,15 +115,18 @@ class DevApp(app_base.AppBase):
         self._battery_label = widgets.Label(
             "0%",
             320 - 56 + 22,
-            220 + 6,
-            w=22,
-            h=10,
+            220 + 3,
+            w=32,
+            h=16,
             font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
             font=Widgets.FONTS.Montserrat12,
         )
-        self._battery_label.set_text(self._battery_text)
+        if self._battery_text:
+            self._battery_label.set_text(self._battery_text)
+            self._restore_battery_border()
+
 
     async def on_run(self):
         refresh_bar = False
@@ -160,17 +163,24 @@ class DevApp(app_base.AppBase):
             elif refresh_bar:
                 self._cloud_img._draw(False)
 
+            refresh_battery = False
             t = self._get_battery_src(M5.Power.getBatteryLevel(), M5.Power.isCharging())
             if t != self._battery_src:
                 self._battery_src = t
+                self._bar_img._draw(False)
+                self._network_img._draw(False)
+                self._cloud_img._draw(False)
                 self._battery_img.set_src(self._battery_src)
+                refresh_battery = True
             elif refresh_bar:
                 self._battery_img._draw(False)
 
             t = self._get_battery_text(M5.Power.getBatteryLevel())
-            if t != self._battery_text or refresh_bar:
+            if t != self._battery_text or refresh_bar or refresh_battery:
                 self._battery_text = t
-                self._battery_label.set_text(self._battery_text)
+                if self._battery_text:
+                    self._battery_label.set_text(self._battery_text)
+                    self._restore_battery_border()
 
             refresh_bar = False
             await asyncio.sleep_ms(1500)
@@ -324,6 +334,11 @@ class DevApp(app_base.AppBase):
         else:
             src = res.BATTERY_BLACK_CHARGE_IMG if charging else res.BATTERY_BLACK_IMG
         return src
+
+    def _restore_battery_border(self):
+        if not self._battery_src:
+            return
+        M5.Lcd.drawJpg(self._battery_src, 320 - 56, 220 + 16, 0, 4, 0, 20 - 4)
 
     @staticmethod
     def _get_battery_text(battery):
