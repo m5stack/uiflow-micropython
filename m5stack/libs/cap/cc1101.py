@@ -298,7 +298,9 @@ class NFCCap(NFCUnit):
             cs=self._nfc_cs,
             irq=self._port.nfc_irq,
         )
-        super().__init__(chip=self._chip)
+        self.chip = self._chip
+        if not self.chip.begin():
+            raise RuntimeError("ST25R3916 initialization failed")
 
 
 class CC1101Cap:
