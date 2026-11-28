@@ -123,7 +123,10 @@ class DevApp(app_base.AppBase):
             bg_color=0xFEFEFE,
             font=Widgets.FONTS.Montserrat12,
         )
-        self._battery_label.set_text(self._battery_text)
+        if self._battery_text:
+            self._battery_label.set_text(self._battery_text)
+            self._restore_battery_border()
+
 
     async def on_run(self):
         refresh_bar = False
@@ -175,7 +178,9 @@ class DevApp(app_base.AppBase):
             t = self._get_battery_text(M5.Power.getBatteryLevel())
             if t != self._battery_text or refresh_bar or refresh_battery:
                 self._battery_text = t
-                self._battery_label.set_text(self._battery_text)
+                if self._battery_text:
+                    self._battery_label.set_text(self._battery_text)
+                    self._restore_battery_border()
 
             refresh_bar = False
             await asyncio.sleep_ms(1500)
@@ -329,6 +334,11 @@ class DevApp(app_base.AppBase):
         else:
             src = res.BATTERY_BLACK_CHARGE_IMG if charging else res.BATTERY_BLACK_IMG
         return src
+
+    def _restore_battery_border(self):
+        if not self._battery_src:
+            return
+        M5.Lcd.drawJpg(self._battery_src, 320 - 56, 220 + 16, 0, 4, 0, 20 - 4)
 
     @staticmethod
     def _get_battery_text(battery):
